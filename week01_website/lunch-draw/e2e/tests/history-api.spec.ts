@@ -13,9 +13,23 @@ test.describe("ประวัติ", () => {
     await expect(recent).toHaveCount(3);
     // newest first
     await expect(recent.first()).toContainText(byNumber.get(ids[2])!.name);
-    await expect(page.getByText("ไปกินแล้ว")).toHaveCount(1);
     const champs = page.locator("section").filter({ hasText: "แชมป์ 7 วันล่าสุด" }).locator("ol > li");
     expect(await champs.count()).toBeGreaterThan(0);
+  });
+
+  test("TC-HIST-03 ทุกผลจับสลากมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน @P2", async ({ page }) => {
+    // 3 solo draws: the oldest confirmed, the middle one skipped, the newest still open
+    for (let i = 0; i < 3; i++) {
+      const d = await (await page.request.post("/api/draw", { data: {} })).json();
+      if (i === 0) await page.request.patch(`/api/draws/${d.id}`, { data: { eaten: true } });
+    }
+    await page.goto("/history");
+    const tags = page.locator("section").filter({ hasText: "ผลจับสลากล่าสุด" }).getByTestId("visit-tag");
+    await expect(tags).toHaveCount(3);
+    // newest first
+    await expect(tags.nth(0)).toHaveText("รอยืนยัน");
+    await expect(tags.nth(1)).toHaveText("ไม่ได้ไปกิน");
+    await expect(tags.nth(2)).toHaveText("ไปกิน");
   });
 
   test("TC-HIST-02 ยังไม่มีผลจับสลาก @P3", async ({ page }) => {

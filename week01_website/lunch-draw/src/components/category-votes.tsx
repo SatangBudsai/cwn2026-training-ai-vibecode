@@ -1,6 +1,6 @@
 "use client";
 
-import { Minus, Plus } from "lucide-react";
+import { VoteControl, votersTitle } from "./vote-control";
 import { categoryMultiplier, type CategoryScores } from "@/lib/odds";
 
 export type Category = { id: string; label: string };
@@ -46,38 +46,15 @@ export function CategoryVotes({ categories, counts, myVotes, scores, voters, dis
                 )}
               </div>
             </div>
-            <div className="flex shrink-0 items-center rounded-lg border border-line bg-deep p-0.5">
-              <button
-                type="button"
-                disabled={disabled}
-                aria-label={`ไม่อยากกิน${c.label}`}
-                aria-pressed={mine === -1}
-                onClick={() => onVote(c.id, mine === -1 ? 0 : -1)}
-                className={`grid size-8 place-items-center rounded-md transition-colors disabled:opacity-40 ${
-                  mine === -1 ? "bg-raised text-bad" : "text-fg-3 hover:text-fg"
-                }`}
-              >
-                <Minus size={16} strokeWidth={1.5} />
-              </button>
-              <span
-                data-testid="cat-net"
-                className={`w-6 text-center font-mono text-xs tnum ${net > 0 ? "text-ember-ink" : net < 0 ? "text-fg-3" : "text-fg-2"}`}
-              >
-                {net > 0 ? `+${net}` : net}
-              </span>
-              <button
-                type="button"
-                disabled={disabled}
-                aria-label={`อยากกิน${c.label}`}
-                aria-pressed={mine === 1}
-                onClick={() => onVote(c.id, mine === 1 ? 0 : 1)}
-                className={`grid size-8 place-items-center rounded-md transition-colors disabled:opacity-40 ${
-                  mine === 1 ? "bg-raised text-ember-ink" : "text-fg-3 hover:text-fg"
-                }`}
-              >
-                <Plus size={16} strokeWidth={1.5} />
-              </button>
-            </div>
+            <VoteControl
+              mine={mine}
+              net={net}
+              downLabel={`ไม่อยากกิน${c.label}`}
+              upLabel={`อยากกิน${c.label}`}
+              title={votersTitle(who)}
+              disabled={disabled}
+              onVote={(v) => onVote(c.id, v)}
+            />
           </li>
         );
       })}

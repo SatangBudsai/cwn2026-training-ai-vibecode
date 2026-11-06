@@ -21,7 +21,8 @@ export default defineConfig({
     timezoneId: "Asia/Bangkok",
     screenshot: "on",
     trace: "retain-on-failure",
-    video: "retain-on-failure",
+    // every test is recorded; e2e/make-gifs.mjs turns the videos into GIFs
+    video: { mode: "on", size: { width: 1280, height: 889 } },
   },
   outputDir: "e2e/test-results",
   webServer: {

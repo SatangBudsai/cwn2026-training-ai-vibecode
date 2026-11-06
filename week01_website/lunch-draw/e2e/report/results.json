@@ -81,6 +81,692 @@
   },
   "suites": [
     {
+      "title": "add.spec.ts",
+      "file": "add.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "เพิ่มร้านเอง",
+          "file": "add.spec.ts",
+          "line": 18,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-ADD-01 เพิ่มร้านจากเมนู แล้วขึ้นบนกระดานทันที @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2590,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:43.155Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-01-c4cd8-นู-แล้วขึ้นบนกระดานทันที-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-01-c4cd8-นู-แล้วขึ้นบนกระดานทันที-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-73057373e71242705249",
+              "file": "add.spec.ts",
+              "line": 19,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-02 ปักหมุดด้วยการกดบนแผนที่ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 774,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:45.847Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-02-ปักหมุดด้วยการกดบนแผนที่-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-02-ปักหมุดด้วยการกดบนแผนที่-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-43333922051b9a499943",
+              "file": "add.spec.ts",
+              "line": 49,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-03 วางลิงก์ Google Maps แล้วอ่านตำแหน่งได้ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:46.628Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-03-3803a--Maps-แล้วอ่านตำแหน่งได้-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-03-3803a--Maps-แล้วอ่านตำแหน่งได้-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-4d39eb9a562f939be511",
+              "file": "add.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-04 ข้อมูลไม่ครบ กดเพิ่มร้านไม่ได้ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 701,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:47.203Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-04-ข้อมูลไม่ครบ-กดเพิ่มร้านไม่ได้-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-04-ข้อมูลไม่ครบ-กดเพิ่มร้านไม่ได้-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-fc315bcb52a1975768f7",
+              "file": "add.spec.ts",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-05 ร้านที่ไกลเกิน 2 กม. เพิ่มไม่ได้ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:47.911Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-05-27752-ไกลเกิน-2-กม-เพิ่มไม่ได้-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-05-27752-ไกลเกิน-2-กม-เพิ่มไม่ได้-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-2152ee69626c18b76c77",
+              "file": "add.spec.ts",
+              "line": 82,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-06 ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในโหมดขี้เกียจเดิน @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1001,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:48.700Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-06-ddf5e-ิศอยู่ในโหมดขี้เกียจเดิน-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-06-ddf5e-ิศอยู่ในโหมดขี้เกียจเดิน-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-a01c74f08a6660494aaa",
+              "file": "add.spec.ts",
+              "line": 94,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-07 ลบได้เฉพาะร้านที่เพิ่มเอง @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1715,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:49.709Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-07-ลบได้เฉพาะร้านที่เพิ่มเอง-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-07-ลบได้เฉพาะร้านที่เพิ่มเอง-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-f7afdc19d2d9c13c57cc",
+              "file": "add.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-08 API เพิ่มร้านตรวจข้อมูลไม่ถูกต้อง ได้ 400 @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:51.432Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-a8a8fe2495d9b25c7997",
+              "file": "add.spec.ts",
+              "line": 128,
+              "column": 7
+            },
+            {
+              "title": "TC-ADD-09 คนอื่นเห็นร้านที่เพิ่มทันที (realtime) @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 569,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:51.474Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-09-0dd0a-านที่เพิ่มทันที-realtime-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-09-0dd0a-านที่เพิ่มทันที-realtime-P2\\video.webm"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\add-เพิ่มร้านเอง-TC-ADD-09-0dd0a-านที่เพิ่มทันที-realtime-P2\\test-finished-2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2f4bb8d916741bacc6cb-8dfafcb10fd1a6ab8475",
+              "file": "add.spec.ts",
+              "line": 143,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "categories.spec.ts",
+      "file": "categories.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "จัดการแนวอาหาร",
+          "file": "categories.spec.ts",
+          "line": 15,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CAT-01 เพิ่มแนวอาหารใหม่ แล้วใช้ได้ทันที @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2058,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:52.055Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร--4b87e-าหารใหม่-แล้วใช้ได้ทันที-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร--4b87e-าหารใหม่-แล้วใช้ได้ทันที-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "262c5455b60c16e7a404-f0d55f6780abd81bfdcb",
+              "file": "categories.spec.ts",
+              "line": 16,
+              "column": 7
+            },
+            {
+              "title": "TC-CAT-02 แก้ชื่อแนวอาหาร @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1029,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:54.121Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร-TC-CAT-02-แก้ชื่อแนวอาหาร-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร-TC-CAT-02-แก้ชื่อแนวอาหาร-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "262c5455b60c16e7a404-5d339dfc9c696b9bdac5",
+              "file": "categories.spec.ts",
+              "line": 30,
+              "column": 7
+            },
+            {
+              "title": "TC-CAT-03 ลบแนวอาหาร เอาออกจากทุกร้าน @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1104,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:55.157Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร--d55a6-นวอาหาร-เอาออกจากทุกร้าน-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร--d55a6-นวอาหาร-เอาออกจากทุกร้าน-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "262c5455b60c16e7a404-a5c9ea5bf32b7232f1f0",
+              "file": "categories.spec.ts",
+              "line": 40,
+              "column": 7
+            },
+            {
+              "title": "TC-CAT-04 ชื่อว่างหรือซ้ำ เพิ่มไม่ได้ @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 871,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:56.268Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร--67a10-อว่างหรือซ้ำ-เพิ่มไม่ได้-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร--67a10-อว่างหรือซ้ำ-เพิ่มไม่ได้-P3\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "262c5455b60c16e7a404-95e791a2fcfc2b544aca",
+              "file": "categories.spec.ts",
+              "line": 57,
+              "column": 7
+            },
+            {
+              "title": "TC-CAT-05 แนวใหม่ใช้โหวตได้ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 795,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:07:57.146Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร-TC-CAT-05-แนวใหม่ใช้โหวตได้-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\categories-จัดการแนวอาหาร-TC-CAT-05-แนวใหม่ใช้โหวตได้-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "262c5455b60c16e7a404-02079ba249d9ae41448c",
+              "file": "categories.spec.ts",
+              "line": 68,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "draw.spec.ts",
       "file": "draw.spec.ts",
       "column": 0,
@@ -111,18 +797,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4217,
+                      "duration": 4196,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:40.323Z",
+                      "startTime": "2026-11-06T07:07:57.951Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-01-จั-4deaf-ผลพร้อมลิงก์-Google-Maps-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-01-จั-4deaf-ผลพร้อมลิงก์-Google-Maps-P1\\video.webm"
                         }
                       ]
                     }
@@ -153,12 +844,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 156,
+                      "duration": 143,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:44.649Z",
+                      "startTime": "2026-11-06T07:08:02.156Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -189,18 +880,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 485,
+                      "duration": 580,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:44.812Z",
+                      "startTime": "2026-11-06T07:08:02.305Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-03-ร้านที่ปิดไว้ไม่ถูกสุ่ม-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-03-ร้านที่ปิดไว้ไม่ถูกสุ่ม-P1\\video.webm"
                         }
                       ]
                     }
@@ -231,18 +927,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4335,
+                      "duration": 4612,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:45.304Z",
+                      "startTime": "2026-11-06T07:08:02.892Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-04-กด-ebb48-ี้-แล้วโอกาสร้านนั้นลดลง-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-04-กด-ebb48-ี้-แล้วโอกาสร้านนั้นลดลง-P1\\video.webm"
                         }
                       ]
                     }
@@ -273,18 +974,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4373,
+                      "duration": 4609,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:49.647Z",
+                      "startTime": "2026-11-06T07:08:07.512Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-05-ยกเลิก-กินแล้ว-โอกาสกลับเป็นปกติ-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-05-ยกเลิก-กินแล้ว-โอกาสกลับเป็นปกติ-P2\\video.webm"
                         }
                       ]
                     }
@@ -315,18 +1021,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4760,
+                      "duration": 4915,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:54.027Z",
+                      "startTime": "2026-11-06T07:08:12.128Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-06-กินแล้วยังถูกนับหลังรีโหลด-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\draw-จับสลาก-TC-DRAW-06-กินแล้วยังถูกนับหลังรีโหลด-P2\\video.webm"
                         }
                       ]
                     }
@@ -374,18 +1085,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 787,
+                      "duration": 1016,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:58.802Z",
+                      "startTime": "2026-11-06T07:08:17.055Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-81e9c-นชื่อจริงและบันทึกลงไฟล์-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-81e9c-นชื่อจริงและบันทึกลงไฟล์-P1\\video.webm"
                         }
                       ]
                     }
@@ -416,18 +1132,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 924,
+                      "duration": 1035,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:26:59.597Z",
+                      "startTime": "2026-11-06T07:08:18.078Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-0d5e3-เล่นแล้วกลับเป็นชื่อจริง-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-0d5e3-เล่นแล้วกลับเป็นชื่อจริง-P3\\video.webm"
                         }
                       ]
                     }
@@ -458,18 +1179,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 866,
+                      "duration": 989,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:00.533Z",
+                      "startTime": "2026-11-06T07:08:19.121Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-03-ปิดร้าน-แล้วเปิดอีกครั้ง-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-03-ปิดร้าน-แล้วเปิดอีกครั้ง-P1\\video.webm"
                         }
                       ]
                     }
@@ -500,18 +1226,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 755,
+                      "duration": 875,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:01.408Z",
+                      "startTime": "2026-11-06T07:08:20.118Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-04-แก้แนวอาหารของร้าน-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-04-แก้แนวอาหารของร้าน-P2\\video.webm"
                         }
                       ]
                     }
@@ -542,18 +1273,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 857,
+                      "duration": 926,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:02.171Z",
+                      "startTime": "2026-11-06T07:08:21.001Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-4f8ee-กแนวอาหารอย่างน้อย-1-แนว-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-4f8ee-กแนวอาหารอย่างน้อย-1-แนว-P3\\video.webm"
                         }
                       ]
                     }
@@ -584,18 +1320,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1133,
+                      "duration": 988,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:03.035Z",
+                      "startTime": "2026-11-06T07:08:21.934Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-b9844-×2-ทำให้โอกาสเป็นสองเท่า-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-b9844-×2-ทำให้โอกาสเป็นสองเท่า-P2\\video.webm"
                         }
                       ]
                     }
@@ -626,18 +1367,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 745,
+                      "duration": 876,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:04.176Z",
+                      "startTime": "2026-11-06T07:08:22.929Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-07-ตั้งราคาร้านจากหน้าแก้ไข-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\edit-แก้ข้อมูลร้าน-TC-EDIT-07-ตั้งราคาร้านจากหน้าแก้ไข-P2\\video.webm"
                         }
                       ]
                     }
@@ -685,18 +1431,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 650,
+                      "duration": 842,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:04.931Z",
+                      "startTime": "2026-11-06T07:08:23.817Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-01-ข-058c3-ร้านที่เดินไม่เกิน-500-ม-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-01-ข-058c3-ร้านที่เดินไม่เกิน-500-ม-P1\\video.webm"
                         }
                       ]
                     }
@@ -727,18 +1478,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 612,
+                      "duration": 868,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:05.589Z",
+                      "startTime": "2026-11-06T07:08:24.666Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-02-ก-dd0a9-ที่ยังไม่มีร้านไหนมีราคา-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-02-ก-dd0a9-ที่ยังไม่มีร้านไหนมีราคา-P2\\video.webm"
                         }
                       ]
                     }
@@ -769,18 +1525,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 708,
+                      "duration": 845,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:06.210Z",
+                      "startTime": "2026-11-06T07:08:25.541Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-03-กรองราคาตามที่ตั้งไว้ให้ร้าน-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-03-กรองราคาตามที่ตั้งไว้ให้ร้าน-P1\\video.webm"
                         }
                       ]
                     }
@@ -811,18 +1572,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 630,
+                      "duration": 757,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:06.925Z",
+                      "startTime": "2026-11-06T07:08:26.393Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-04-ไ-4fc37-้านที่ยังไม่มีใครใส่ราคา-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-04-ไ-4fc37-้านที่ยังไม่มีใครใส่ราคา-P2\\video.webm"
                         }
                       ]
                     }
@@ -833,6 +1599,53 @@
               "id": "ed23e33daf90fda383e3-0faf6b14937a98a9a444",
               "file": "filter.spec.ts",
               "line": 43,
+              "column": 7
+            },
+            {
+              "title": "TC-FLT-06 ขี้เกียจเดิน ร้านยิ่งใกล้ยิ่งมีโอกาสสูง @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 900,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:27.157Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-06-ข-a326d-านยิ่งใกล้ยิ่งมีโอกาสสูง-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-06-ข-a326d-านยิ่งใกล้ยิ่งมีโอกาสสูง-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed23e33daf90fda383e3-670671149182961e4ce8",
+              "file": "filter.spec.ts",
+              "line": 50,
               "column": 7
             },
             {
@@ -853,18 +1666,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 456,
+                      "duration": 706,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:07.563Z",
+                      "startTime": "2026-11-06T07:08:28.065Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-05-ตัวกรองยังอยู่หลังรีโหลด-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\filter-ตัวกรอง-TC-FLT-05-ตัวกรองยังอยู่หลังรีโหลด-P3\\video.webm"
                         }
                       ]
                     }
@@ -874,7 +1692,7 @@
               ],
               "id": "ed23e33daf90fda383e3-e58841956b0f61d3e94b",
               "file": "filter.spec.ts",
-              "line": 50,
+              "line": 73,
               "column": 7
             }
           ]
@@ -912,18 +1730,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 285,
+                      "duration": 457,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.030Z",
+                      "startTime": "2026-11-06T07:08:28.786Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-ประวัติ-TC-HIS-89016-งผลจับสลากล่าสุดและแชมป์-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-ประวัติ-TC-HIS-89016-งผลจับสลากล่าสุดและแชมป์-P2\\video.webm"
                         }
                       ]
                     }
@@ -934,6 +1757,53 @@
               "id": "60bb350c3a16d0f09474-06fe19a095ec89113f26",
               "file": "history-api.spec.ts",
               "line": 4,
+              "column": 7
+            },
+            {
+              "title": "TC-HIST-03 ทุกผลจับสลากมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 431,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:29.250Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-ประวัติ-TC-HIS-e7fc3-กิน-ไม่ได้ไปกิน-รอยืนยัน-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-ประวัติ-TC-HIS-e7fc3-กิน-ไม่ได้ไปกิน-รอยืนยัน-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "60bb350c3a16d0f09474-478375648857ad380d7f",
+              "file": "history-api.spec.ts",
+              "line": 20,
               "column": 7
             },
             {
@@ -954,18 +1824,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 251,
+                      "duration": 354,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.322Z",
+                      "startTime": "2026-11-06T07:08:29.688Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-ประวัติ-TC-HIST-02-ยังไม่มีผลจับสลาก-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-ประวัติ-TC-HIST-02-ยังไม่มีผลจับสลาก-P3\\video.webm"
                         }
                       ]
                     }
@@ -975,7 +1850,7 @@
               ],
               "id": "60bb350c3a16d0f09474-a46f0c2bb7c47b5c5ea9",
               "file": "history-api.spec.ts",
-              "line": 21,
+              "line": 35,
               "column": 7
             }
           ]
@@ -983,7 +1858,7 @@
         {
           "title": "API",
           "file": "history-api.spec.ts",
-          "line": 27,
+          "line": 41,
           "column": 6,
           "specs": [
             {
@@ -1004,12 +1879,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 31,
+                      "duration": 33,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.580Z",
+                      "startTime": "2026-11-06T07:08:30.050Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1019,7 +1894,7 @@
               ],
               "id": "60bb350c3a16d0f09474-7601e6ddbd4ef5b0e43b",
               "file": "history-api.spec.ts",
-              "line": 28,
+              "line": 42,
               "column": 7
             },
             {
@@ -1040,12 +1915,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 24,
+                      "duration": 18,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.618Z",
+                      "startTime": "2026-11-06T07:08:30.089Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1055,7 +1930,7 @@
               ],
               "id": "60bb350c3a16d0f09474-a495e56b4891de996aa6",
               "file": "history-api.spec.ts",
-              "line": 37,
+              "line": 51,
               "column": 7
             },
             {
@@ -1076,12 +1951,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 38,
+                      "duration": 32,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.648Z",
+                      "startTime": "2026-11-06T07:08:30.113Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1091,7 +1966,7 @@
               ],
               "id": "60bb350c3a16d0f09474-5c28e8b9ebc8b076a6b0",
               "file": "history-api.spec.ts",
-              "line": 43,
+              "line": 57,
               "column": 7
             },
             {
@@ -1112,12 +1987,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.692Z",
+                      "startTime": "2026-11-06T07:08:30.150Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1127,7 +2002,7 @@
               ],
               "id": "60bb350c3a16d0f09474-fc3541a0c5b1993f095b",
               "file": "history-api.spec.ts",
-              "line": 51,
+              "line": 65,
               "column": 7
             },
             {
@@ -1148,18 +2023,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 254,
+                      "duration": 369,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.713Z",
+                      "startTime": "2026-11-06T07:08:30.173Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-API-TC-API-05--74165-านะห้องทันทีที่เชื่อมต่อ-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\history-api-API-TC-API-05--74165-านะห้องทันทีที่เชื่อมต่อ-P2\\video.webm"
                         }
                       ]
                     }
@@ -1169,7 +2049,7 @@
               ],
               "id": "60bb350c3a16d0f09474-86e6651afa6fb2448d72",
               "file": "history-api.spec.ts",
-              "line": 57,
+              "line": 71,
               "column": 7
             }
           ]
@@ -1207,18 +2087,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 376,
+                      "duration": 531,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:08.979Z",
+                      "startTime": "2026-11-06T07:08:30.553Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-01-หน้าแรกแสดงครบ-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-01-หน้าแรกแสดงครบ-P2\\video.webm"
                         }
                       ]
                     }
@@ -1249,18 +2134,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 778,
+                      "duration": 993,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:09.362Z",
+                      "startTime": "2026-11-06T07:08:31.091Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-02-แสดงร้านทั้งหมดและย่อกลับ-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-02-แสดงร้านทั้งหมดและย่อกลับ-P3\\video.webm"
                         }
                       ]
                     }
@@ -1291,18 +2181,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 370,
+                      "duration": 516,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:10.147Z",
+                      "startTime": "2026-11-06T07:08:32.092Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-03-ทุ-9d14d-ากันเมื่อยังไม่มีใครโหวต-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-03-ทุ-9d14d-ากันเมื่อยังไม่มีใครโหวต-P2\\video.webm"
                         }
                       ]
                     }
@@ -1333,18 +2228,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 407,
+                      "duration": 526,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:10.525Z",
+                      "startTime": "2026-11-06T07:08:32.615Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-04-เมนูประวัติพาไปหน้าประวัติ-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-หน้าแรก-TC-HOME-04-เมนูประวัติพาไปหน้าประวัติ-P3\\video.webm"
                         }
                       ]
                     }
@@ -1383,18 +2283,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 311,
+                      "duration": 460,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:10.939Z",
+                      "startTime": "2026-11-06T07:08:33.147Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-มือถือ-TC-MOB-01-ปุ่ม-3a85a-นสุด-ไม่มี-scroll-แนวนอน-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-มือถือ-TC-MOB-01-ปุ่ม-3a85a-นสุด-ไม่มี-scroll-แนวนอน-P3\\video.webm"
                         }
                       ]
                     }
@@ -1425,18 +2330,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4095,
+                      "duration": 4105,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:11.257Z",
+                      "startTime": "2026-11-06T07:08:33.616Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-มือถือ-TC-MOB-02-จับสลากแล้วเห็นการ์ดผลบนจอ-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\home-มือถือ-TC-MOB-02-จับสลากแล้วเห็นการ์ดผลบนจอ-P3\\video.webm"
                         }
                       ]
                     }
@@ -1447,6 +2357,949 @@
               "id": "d318381359a9b96acb1e-2001e75c893e9423a51a",
               "file": "home.spec.ts",
               "line": 50,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "map.spec.ts",
+      "file": "map.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "มุมมองแผนที่",
+          "file": "map.spec.ts",
+          "line": 42,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-MAP-01 สลับเป็นแผนที่ เห็นหมุดทุกร้าน @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:37.731Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-01-สลับเป็นแผนที่-เห็นหมุดทุกร้าน-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-01-สลับเป็นแผนที่-เห็นหมุดทุกร้าน-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-af321390673d6ed1bd17",
+              "file": "map.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "TC-MAP-02 หมุดตามตัวกรอง ขี้เกียจเดิน @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1065,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:38.732Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-02-หมุดตามตัวกรอง-ขี้เกียจเดิน-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-02-หมุดตามตัวกรอง-ขี้เกียจเดิน-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-8fed410bb1b5009d4011",
+              "file": "map.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "TC-MAP-03 กดหมุดแล้วเห็นร้าน โอกาส และโหวตได้ @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1307,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:39.805Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-03-c474e-ห็นร้าน-โอกาส-และโหวตได้-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-03-c474e-ห็นร้าน-โอกาส-และโหวตได้-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-7f36af5935a052600082",
+              "file": "map.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "TC-MAP-06 ชี้หมุดเห็นชื่อร้าน กดหมุดอื่นแล้วรายละเอียดด้านขวาเปลี่ยนตาม @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1641,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:41.119Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-06-7b466-ละเอียดด้านขวาเปลี่ยนตาม-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-06-7b466-ละเอียดด้านขวาเปลี่ยนตาม-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-24448b810c51be6a2cf4",
+              "file": "map.spec.ts",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "TC-MAP-07 หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านในจุดเดียวกัน @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1256,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:42.767Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-07-8ed2f-รายการ-ร้านในจุดเดียวกัน-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-07-8ed2f-รายการ-ร้านในจุดเดียวกัน-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-db09ad935336260c1a12",
+              "file": "map.spec.ts",
+              "line": 96,
+              "column": 7
+            },
+            {
+              "title": "TC-MAP-04 หมุดที่มีโอกาสสูงใหญ่กว่า @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:44.031Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-04-หมุดที่มีโอกาสสูงใหญ่กว่า-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-04-หมุดที่มีโอกาสสูงใหญ่กว่า-P3\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-92ab546588e33519bcaa",
+              "file": "map.spec.ts",
+              "line": 113,
+              "column": 7
+            },
+            {
+              "title": "TC-MAP-05 จับสลากบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4500,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:45.256Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-05-6c525-และกลับไปมุมมองรายการได้-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\map-มุมมองแผนที่-TC-MAP-05-6c525-และกลับไปมุมมองรายการได้-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d8799038d2916f69765-d38e600b5ace7a486c23",
+              "file": "map.spec.ts",
+              "line": 123,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "picks.spec.ts",
+      "file": "picks.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "โหวตร้าน",
+          "file": "picks.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-VOTE-06 โหวต + ร้าน ร้านนั้นมีโอกาสมากขึ้น @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 917,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:49.767Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-VOTE-06--18fdd-น-ร้านนั้นมีโอกาสมากขึ้น-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-VOTE-06--18fdd-น-ร้านนั้นมีโอกาสมากขึ้น-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8652f86b0b2446e4093a-bf85c755f91b650c5559",
+              "file": "picks.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "TC-VOTE-07 โหวต − ร้าน แล้วกดซ้ำเพื่อยกเลิก @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1271,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:50.694Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-VOTE-07--2d7db-้าน-แล้วกดซ้ำเพื่อยกเลิก-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-VOTE-07--2d7db-้าน-แล้วกดซ้ำเพื่อยกเลิก-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8652f86b0b2446e4093a-988d7f234a33cb188ab3",
+              "file": "picks.spec.ts",
+              "line": 17,
+              "column": 7
+            },
+            {
+              "title": "TC-VOTE-08 โหวตร้านรวมกับโหวตแนวอาหาร @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 955,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:51.973Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-VOTE-08-โหวตร้านรวมกับโหวตแนวอาหาร-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-VOTE-08-โหวตร้านรวมกับโหวตแนวอาหาร-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8652f86b0b2446e4093a-7fc0df555763f422a77a",
+              "file": "picks.spec.ts",
+              "line": 29,
+              "column": 7
+            },
+            {
+              "title": "TC-ROOM-09 สมาชิกโหวตร้านในห้องแบบ realtime @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2374,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:52.936Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-ROOM-09--5db06-วตร้านในห้องแบบ-realtime-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-ROOM-09--5db06-วตร้านในห้องแบบ-realtime-P1\\video.webm"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\picks-โหวตร้าน-TC-ROOM-09--5db06-วตร้านในห้องแบบ-realtime-P1\\test-finished-2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8652f86b0b2446e4093a-ae49053a9a221a68675a",
+              "file": "picks.spec.ts",
+              "line": 38,
+              "column": 7
+            },
+            {
+              "title": "TC-API-06 โหวตร้านที่ไม่มีอยู่ ได้ 400 @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:55.321Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8652f86b0b2446e4093a-88016126632c873873ef",
+              "file": "picks.spec.ts",
+              "line": 55,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "rating.spec.ts",
+      "file": "rating.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "ให้คะแนนร้าน (รูปแมว)",
+          "file": "rating.spec.ts",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-RATE-01 ให้คะแนนจากการ์ดผลจับสลาก @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4414,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:55.361Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-3e78b-ห้คะแนนจากการ์ดผลจับสลาก-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-3e78b-ห้คะแนนจากการ์ดผลจับสลาก-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-147988b93bfb4df88e78",
+              "file": "rating.spec.ts",
+              "line": 18,
+              "column": 7
+            },
+            {
+              "title": "TC-RATE-02 เปลี่ยนคะแนน และกดซ้ำเพื่อยกเลิก @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1099,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:08:59.782Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-af846-ะแนน-และกดซ้ำเพื่อยกเลิก-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-af846-ะแนน-และกดซ้ำเพื่อยกเลิก-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-9090f0645c644bfc0101",
+              "file": "rating.spec.ts",
+              "line": 33,
+              "column": 7
+            },
+            {
+              "title": "TC-RATE-03 หลายคนให้คะแนน แสดงค่าเฉลี่ย @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 826,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:09:00.889Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-881a3-คนให้คะแนน-แสดงค่าเฉลี่ย-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-881a3-คนให้คะแนน-แสดงค่าเฉลี่ย-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-1eb28e8fd9181a44a5b0",
+              "file": "rating.spec.ts",
+              "line": 48,
+              "column": 7
+            },
+            {
+              "title": "TC-RATE-04 คะแนนมีผลกับโอกาสถูกสุ่ม @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 929,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:09:01.723Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-33a34-คะแนนมีผลกับโอกาสถูกสุ่ม-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-33a34-คะแนนมีผลกับโอกาสถูกสุ่ม-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-b9fe868d94a1d1392e79",
+              "file": "rating.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "TC-RATE-05 ให้คะแนนจากแผงร้านบนแผนที่ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1055,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:09:02.659Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-05d9c-้คะแนนจากแผงร้านบนแผนที่-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-05d9c-้คะแนนจากแผงร้านบนแผนที่-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-5b6d3f5c4ae41d0174cf",
+              "file": "rating.spec.ts",
+              "line": 70,
+              "column": 7
+            },
+            {
+              "title": "TC-RATE-06 คนอื่นเห็นคะแนนทันที (realtime) @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 587,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:09:03.721Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-10953-นเห็นคะแนนทันที-realtime-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-10953-นเห็นคะแนนทันที-realtime-P2\\video.webm"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-10953-นเห็นคะแนนทันที-realtime-P2\\test-finished-2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-374e615078faf44183fd",
+              "file": "rating.spec.ts",
+              "line": 82,
+              "column": 7
+            },
+            {
+              "title": "TC-RATE-07 API ให้คะแนนตรวจข้อมูลไม่ถูกต้อง @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 339,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:09:04.318Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-03d4a-ะแนนตรวจข้อมูลไม่ถูกต้อง-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\rating-ให้คะแนนร้าน-รูปแมว-03d4a-ะแนนตรวจข้อมูลไม่ถูกต้อง-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bc73c322550029a30bc7-a2d6bba29227f2c00449",
+              "file": "rating.spec.ts",
+              "line": 94,
               "column": 7
             }
           ]
@@ -1484,18 +3337,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1408,
+                      "duration": 1297,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:15.364Z",
+                      "startTime": "2026-11-06T07:09:04.668Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-8e406-วต้องใส่ชื่อเล่นก่อนโหวต-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-8e406-วต้องใส่ชื่อเล่นก่อนโหวต-P1\\video.webm"
                         }
                       ]
                     }
@@ -1526,18 +3384,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1705,
+                      "duration": 1924,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:16.783Z",
+                      "startTime": "2026-11-06T07:09:05.972Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-88a6b-ผ่านลิงก์-คนแรกเห็นทันที-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-88a6b-ผ่านลิงก์-คนแรกเห็นทันที-P1\\video.webm"
                         },
                         {
                           "name": "screenshot",
@@ -1573,18 +3436,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2154,
+                      "duration": 2299,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:18.497Z",
+                      "startTime": "2026-11-06T07:09:07.905Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-bad7d-งทุกคนรวมกันแบบ-realtime-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-bad7d-งทุกคนรวมกันแบบ-realtime-P1\\video.webm"
                         },
                         {
                           "name": "screenshot",
@@ -1620,18 +3488,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2367,
+                      "duration": 2167,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:20.660Z",
+                      "startTime": "2026-11-06T07:09:10.213Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-4e201-องของห้องใช้ร่วมกันทุกคน-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-4e201-องของห้องใช้ร่วมกันทุกคน-P2\\video.webm"
                         },
                         {
                           "name": "screenshot",
@@ -1667,18 +3540,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5313,
+                      "duration": 5391,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:23.036Z",
+                      "startTime": "2026-11-06T07:09:12.391Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-e6ceb-อง-ทุกคนเห็นร้านเดียวกัน-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-e6ceb-อง-ทุกคนเห็นร้านเดียวกัน-P1\\video.webm"
                         },
                         {
                           "name": "screenshot",
@@ -1714,18 +3592,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1824,
+                      "duration": 1865,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:28.360Z",
+                      "startTime": "2026-11-06T07:09:17.792Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-f9067-ห็นการแก้ข้อมูลร้านทันที-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realt-f9067-ห็นการแก้ข้อมูลร้านทันที-P2\\video.webm"
                         },
                         {
                           "name": "screenshot",
@@ -1761,12 +3644,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 31,
+                      "duration": 29,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:30.193Z",
+                      "startTime": "2026-11-06T07:09:19.666Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1797,18 +3680,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 308,
+                      "duration": 427,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:30.232Z",
+                      "startTime": "2026-11-06T07:09:19.700Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realtime-TC-ROOM-08-ห้องที่ไม่มีอยู่-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\room-ห้อง-member-และ-realtime-TC-ROOM-08-ห้องที่ไม่มีอยู่-P3\\video.webm"
                         }
                       ]
                     }
@@ -1856,18 +3744,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 634,
+                      "duration": 799,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:30.550Z",
+                      "startTime": "2026-11-06T07:09:20.138Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--1028c-ก๋วยเตี๋ยวมีโอกาสมากขึ้น-P1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--1028c-ก๋วยเตี๋ยวมีโอกาสมากขึ้น-P1\\video.webm"
                         }
                       ]
                     }
@@ -1898,18 +3791,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 755,
+                      "duration": 958,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:31.191Z",
+                      "startTime": "2026-11-06T07:09:20.945Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--b2ee1-ง-ร้านฝรั่งมีโอกาสน้อยลง-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--b2ee1-ง-ร้านฝรั่งมีโอกาสน้อยลง-P2\\video.webm"
                         }
                       ]
                     }
@@ -1940,18 +3838,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 663,
+                      "duration": 841,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:31.955Z",
+                      "startTime": "2026-11-06T07:09:21.913Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว-TC-VOTE-03-กดโหวตซ้ำเพื่อยกเลิก-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว-TC-VOTE-03-กดโหวตซ้ำเพื่อยกเลิก-P3\\video.webm"
                         }
                       ]
                     }
@@ -1982,18 +3885,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 673,
+                      "duration": 941,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:32.626Z",
+                      "startTime": "2026-11-06T07:09:22.761Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--19d38-04-โหวตยังอยู่หลังรีโหลด-P3\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--19d38-04-โหวตยังอยู่หลังรีโหลด-P3\\video.webm"
                         }
                       ]
                     }
@@ -2024,18 +3932,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 983,
+                      "duration": 1108,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-06T05:27:33.306Z",
+                      "startTime": "2026-11-06T07:09:23.710Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
                           "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--2bc34-้ตัวคูณของแนวที่ดีที่สุด-P2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week01_website\\lunch-draw\\e2e\\test-results\\vote-โหวตแนวอาหาร-คนเดียว--2bc34-้ตัวคูณของแนวที่ดีที่สุด-P2\\video.webm"
                         }
                       ]
                     }
@@ -2055,9 +3968,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-06T05:26:32.302Z",
-    "duration": 62535.019,
-    "expected": 44,
+    "startTime": "2026-11-06T07:07:34.770Z",
+    "duration": 110758.96399999999,
+    "expected": 79,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -12,7 +12,7 @@ export type SeedRestaurant = {
   walkDistance: number | null;
   categories: string[];
 };
-export const SEED: SeedRestaurant[] = JSON.parse(readFileSync("data/restaurants.json", "utf8"));
+export const SEED: SeedRestaurant[] = JSON.parse(readFileSync("e2e/data/restaurants.json", "utf8"));
 export const byNumber = new Map(SEED.map((r) => [r.number, r]));
 export const walk = (r: SeedRestaurant) => r.walkDistance ?? Math.round(r.distance * 1.3);
 export const TOTAL = SEED.length;

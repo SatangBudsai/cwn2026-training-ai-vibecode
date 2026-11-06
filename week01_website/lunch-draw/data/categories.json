@@ -1,0 +1,66 @@
+[
+  {
+    "id": "noodle",
+    "label": "ก๋วยเตี๋ยว / เส้น"
+  },
+  {
+    "id": "rice-curry",
+    "label": "ข้าวแกง"
+  },
+  {
+    "id": "made-to-order",
+    "label": "อาหารตามสั่ง"
+  },
+  {
+    "id": "one-dish",
+    "label": "ข้าวจานเดียว"
+  },
+  {
+    "id": "isan",
+    "label": "ส้มตำ / อีสาน"
+  },
+  {
+    "id": "southern",
+    "label": "อาหารใต้"
+  },
+  {
+    "id": "thai",
+    "label": "อาหารไทยทั่วไป"
+  },
+  {
+    "id": "chinese",
+    "label": "จีน"
+  },
+  {
+    "id": "japanese",
+    "label": "ญี่ปุ่น"
+  },
+  {
+    "id": "korean",
+    "label": "เกาหลี"
+  },
+  {
+    "id": "indian",
+    "label": "อินเดีย"
+  },
+  {
+    "id": "halal",
+    "label": "ฮาลาล"
+  },
+  {
+    "id": "vegetarian",
+    "label": "มังสวิรัติ / เจ"
+  },
+  {
+    "id": "asian",
+    "label": "เอเชียอื่นๆ"
+  },
+  {
+    "id": "western",
+    "label": "ฝรั่ง"
+  },
+  {
+    "id": "fast-food",
+    "label": "ฟาสต์ฟู้ด"
+  }
+]

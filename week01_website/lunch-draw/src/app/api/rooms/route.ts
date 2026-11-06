@@ -15,6 +15,7 @@ export async function POST(req: Request) {
     updatedAt: now,
     members: [],
     votes: [],
+    restaurantVotes: [],
   });
   return Response.json({ code }, { status: 201 });
 }

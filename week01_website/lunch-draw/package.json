@@ -12,7 +12,9 @@
     "postinstall": "node scripts/copy-maplibre-worker.mjs",
     "data:fetch": "tsx scripts/fetch-osm.ts",
     "e2e": "playwright test",
-    "e2e:report": "python e2e/make-excel.py"
+    "e2e:report": "python e2e/make-excel.py",
+    "e2e:gifs": "node e2e/make-gifs.mjs",
+    "e2e:all": "node e2e/run-all.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.69.0",
@@ -30,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
+    "ffmpeg-static": "^5.3.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5",

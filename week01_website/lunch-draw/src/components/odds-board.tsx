@@ -1,12 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, EyeOff, Minus, Plus, RotateCcw } from "lucide-react";
-import { PRICE_LEVELS, recencyMultiplier, walkMetres, type Odd } from "@/lib/odds";
+import { ChevronDown, EyeOff, Minus, Plus, RotateCcw, Trash2 } from "lucide-react";
+import { PRICE_LEVELS, nearMultiplier, recencyMultiplier, walkMetres, type Odd } from "@/lib/odds";
 import type { RestaurantDTO } from "@/lib/server";
 import type { Category } from "./category-votes";
 import type { RestaurantPatch } from "./lunch-app";
 import { Button, NumberTag, displayName, formatMetres, formatPercent, priceLabel } from "./ui";
+import { VoteControl, votersTitle } from "./vote-control";
+import { RatingPicker, RatingSummary } from "./rating";
+
+export type Voters = Record<string | number, { up: string[]; down: string[] }>;
 
 function eatenAgo(iso: string, now: number) {
   const days = Math.floor((now - Date.parse(iso)) / (24 * 3600 * 1000));
@@ -24,9 +28,19 @@ type Props = {
   disabled: RestaurantDTO[];
   onToggleAll: () => void;
   onSave: (id: number, patch: RestaurantPatch) => Promise<void>;
+  onDelete: (id: number) => Promise<void>;
+  /** votes for restaurants: everyone's net, my own, and who voted */
+  picks: Record<number, number>;
+  myPicks: Record<number, number>;
+  pickVoters?: Voters;
+  onPick: (id: number, value: -1 | 0 | 1) => void;
+  lazy: boolean;
+  rater: string | null;
+  onRate: (id: number, score: number) => void;
 };
 
 const TOP = 15;
+const COLS = "grid-cols-[44px_1fr_auto_auto] sm:grid-cols-[44px_1fr_72px_96px_auto_64px]";
 
 export function OddsBoard({
   odds,
@@ -39,26 +53,39 @@ export function OddsBoard({
   disabled,
   onToggleAll,
   onSave,
+  onDelete,
+  picks,
+  myPicks,
+  pickVoters,
+  onPick,
+  lazy,
+  rater,
+  onRate,
 }: Props) {
   const [openId, setOpenId] = useState<number | null>(null);
   const [showDisabled, setShowDisabled] = useState(false);
   const labels = new Map(categories.map((c) => [c.id, c.label]));
   const maxP = odds[0]?.p ?? 0;
+  // orange marks the leader only when the odds actually differ; with equal odds there is no leader
+  const hasLeader = maxP - (odds[odds.length - 1]?.p ?? 0) > 1e-9;
 
   let rows = showAll ? odds : odds.slice(0, TOP);
-  // keep the winner on the board even when it ranks low
-  const extra = [highlightId, winnerId].filter(
+  // keep the winner, and the row being edited, on the board even when they rank low
+  const extra = [highlightId, winnerId, openId].filter(
     (id): id is number => id != null && !rows.some((r) => r.id === id),
   );
   if (extra.length) rows = [...rows, ...odds.filter((o) => extra.includes(o.id))];
 
   return (
     <div>
-      <div className="grid grid-cols-[44px_1fr_auto] items-center gap-3 border-b border-line px-3 pb-2 text-xs text-fg-3 sm:grid-cols-[44px_1fr_72px_120px_64px]">
+      <div className={`grid ${COLS} items-center gap-3 border-b border-line px-3 pb-2 text-xs text-fg-3`}>
         <span>เบอร์</span>
         <span>ร้าน</span>
         <span className="hidden text-right sm:block">เดิน</span>
-        <span className="hidden sm:block" />
+        <span className="hidden text-center sm:block" title="ความยาวแถบ = โอกาสเทียบกับร้านอันดับ 1">
+          เทียบอันดับ 1
+        </span>
+        <span className="w-[86px] text-center">อยากไป</span>
         <span className="text-right">โอกาส</span>
       </div>
       {odds.length === 0 && <p className="px-3 py-6 text-sm text-fg-3">ไม่มีร้านที่ตรงกับตัวกรองนี้</p>}
@@ -69,7 +96,7 @@ export function OddsBoard({
           return (
             <li key={o.id} className="border-b border-line">
               <Row
-                rank={i}
+                rank={hasLeader ? i : -1}
                 r={r}
                 odd={o}
                 maxP={maxP}
@@ -79,6 +106,11 @@ export function OddsBoard({
                 now={now}
                 open={openId === o.id}
                 onToggle={() => setOpenId(openId === o.id ? null : o.id)}
+                lazy={lazy}
+                net={picks[o.id] ?? 0}
+                mine={myPicks[o.id] ?? 0}
+                voters={pickVoters?.[o.id]}
+                onPick={(v) => onPick(o.id, v)}
               />
               {openId === o.id && (
                 <Editor
@@ -89,6 +121,12 @@ export function OddsBoard({
                     await onSave(r.id, patch);
                     setOpenId(null);
                   }}
+                  onDelete={async () => {
+                    await onDelete(r.id);
+                    setOpenId(null);
+                  }}
+                  myRating={rater ? (r.ratings[rater] ?? 0) : 0}
+                  onRate={(s) => onRate(r.id, s)}
                 />
               )}
             </li>
@@ -162,6 +200,11 @@ function Row({
   now,
   open,
   onToggle,
+  lazy,
+  net,
+  mine,
+  voters,
+  onPick,
 }: {
   rank: number;
   r: RestaurantDTO;
@@ -173,8 +216,13 @@ function Row({
   now: number;
   open: boolean;
   onToggle: () => void;
+  lazy: boolean;
+  net: number;
+  mine: number;
+  voters?: { up: string[]; down: string[] };
+  onPick: (value: -1 | 0 | 1) => void;
 }) {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     // desktop only: on mobile the board sits below the result card, which gets the focus instead
     if ((lit || won) && window.matchMedia("(min-width: 1024px)").matches)
@@ -182,23 +230,33 @@ function Row({
   }, [lit, won]);
 
   const active = lit || won;
+  const name = displayName(r);
   return (
-    <button
+    <div
       ref={ref}
-      type="button"
-      onClick={onToggle}
-      aria-expanded={open}
       data-testid="odds-row"
       data-number={r.number}
-      className={`grid min-h-12 w-full grid-cols-[44px_1fr_auto] items-center gap-3 rounded-lg px-3 py-1.5 text-left transition-colors duration-100 sm:grid-cols-[44px_1fr_72px_120px_64px] ${
+      className={`grid ${COLS} min-h-12 w-full items-center gap-3 rounded-lg px-3 py-1.5 transition-colors duration-100 ${
         active ? "bg-ember-soft" : "hover:bg-raised/60"
       }`}
     >
       <NumberTag n={r.number} tone={active ? "win" : "default"} />
-      <span className="min-w-0">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        data-testid="odds-open"
+        className="min-w-0 text-left"
+      >
         <span className="flex items-center gap-1.5">
           <span className="truncate text-sm" data-testid="odds-name">{displayName(r)}</span>
+          {r.manual && (
+            <span className="shrink-0 rounded border border-line px-1.5 text-[11px] text-fg-3" data-testid="manual-tag">
+              เพิ่มเอง
+            </span>
+          )}
           {r.priceLevel != null && <span className="shrink-0 font-mono text-xs text-fg-2">{priceLabel(r.priceLevel)}</span>}
+          <RatingSummary avg={r.ratingAvg} count={r.ratingCount} />
           <ChevronDown
             size={14}
             strokeWidth={1.5}
@@ -210,6 +268,7 @@ function Row({
           {r.categories.map((c) => labels.get(c) ?? c).join(" · ")}
           <span className="sm:hidden"> · {formatMetres(walkMetres(r))}</span>
           {r.baseWeight !== 1 && <span className="font-mono"> · น้ำหนัก ×{r.baseWeight}</span>}
+          {lazy && <span className="font-mono"> · ใกล้ ×{nearMultiplier(r, true).toFixed(1)}</span>}
           {r.lastEatenAt && (
             <span className="text-fg-2">
               {" "}· กินไปเมื่อ{eatenAgo(r.lastEatenAt, now)}{" "}
@@ -217,7 +276,7 @@ function Row({
             </span>
           )}
         </span>
-      </span>
+      </button>
       <span className="hidden text-right font-mono text-xs text-fg-2 tnum sm:block">{formatMetres(walkMetres(r))}</span>
       <span className="hidden h-1.5 overflow-hidden rounded-full bg-deep sm:block">
         <span
@@ -227,13 +286,21 @@ function Row({
           style={{ width: `${maxP ? (odd.p / maxP) * 100 : 0}%` }}
         />
       </span>
+      <VoteControl
+        mine={mine}
+        net={net}
+        downLabel={`ไม่อยากไปร้าน ${name}`}
+        upLabel={`อยากไปร้าน ${name}`}
+        title={votersTitle(voters)}
+        onVote={onPick}
+      />
       <span
         data-testid="odds-p"
         className={`text-right font-mono text-sm tnum ${rank === 0 || active ? "text-ember-ink" : "text-fg-2"}`}
       >
         {formatPercent(odd.p)}
       </span>
-    </button>
+    </div>
   );
 }
 
@@ -242,12 +309,19 @@ function Editor({
   categories,
   onCancel,
   onSave,
+  onDelete,
+  myRating,
+  onRate,
 }: {
   r: RestaurantDTO;
   categories: Category[];
   onCancel: () => void;
   onSave: (patch: RestaurantPatch) => Promise<void>;
+  onDelete: () => Promise<void>;
+  myRating: number;
+  onRate: (score: number) => void;
 }) {
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const [nickname, setNickname] = useState(r.nickname ?? "");
   const [price, setPrice] = useState<number | null>(r.priceLevel);
   const [weight, setWeight] = useState(r.baseWeight);
@@ -266,6 +340,7 @@ function Editor({
 
   return (
     <div className="mx-3 mb-3 flex flex-col gap-4 rounded-xl border border-line bg-deep p-4">
+      <RatingPicker mine={myRating} avg={r.ratingAvg} count={r.ratingCount} onRate={onRate} compact />
       <label className="block">
         <span className="mb-2 block text-xs text-fg-3">ชื่อเล่นร้าน</span>
         <input
@@ -355,10 +430,37 @@ function Editor({
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line pt-4">
-        <Button variant="ghost" disabled={saving} onClick={() => save({ disabled: true })}>
-          <EyeOff size={16} strokeWidth={1.5} />
-          ปิดร้านนี้
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="ghost" disabled={saving} onClick={() => save({ disabled: true })}>
+            <EyeOff size={16} strokeWidth={1.5} />
+            ปิดร้านนี้
+          </Button>
+          {/* only restaurants added by hand can be deleted; two steps so it is never by accident */}
+          {r.manual &&
+            (confirmDelete ? (
+              <Button
+                variant="ghost"
+                className="text-bad hover:text-bad"
+                disabled={saving}
+                onClick={async () => {
+                  setSaving(true);
+                  try {
+                    await onDelete();
+                  } finally {
+                    setSaving(false);
+                  }
+                }}
+              >
+                <Trash2 size={16} strokeWidth={1.5} />
+                ยืนยันลบร้าน
+              </Button>
+            ) : (
+              <Button variant="ghost" disabled={saving} onClick={() => setConfirmDelete(true)}>
+                <Trash2 size={16} strokeWidth={1.5} />
+                ลบร้านนี้
+              </Button>
+            ))}
+        </div>
         <div className="flex gap-2">
           <Button variant="ghost" onClick={onCancel}>
             ยกเลิก

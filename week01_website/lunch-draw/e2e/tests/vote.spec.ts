@@ -8,7 +8,7 @@ test.describe("โหวตแนวอาหาร (คนเดียว)", ()
     await page.getByRole("button", { name: "อยากกินก๋วยเตี๋ยว / เส้น", exact: true }).click();
 
     const cat = page.getByTestId("cat-noodle");
-    await expect(cat.getByTestId("cat-net")).toHaveText("+1");
+    await expect(cat.getByTestId("vote-net")).toHaveText("+1");
     await expect(cat).toContainText("×1.5");
 
     // weight 1.5 for noodle places, 1 for the rest
@@ -24,7 +24,7 @@ test.describe("โหวตแนวอาหาร (คนเดียว)", ()
     await page.getByRole("button", { name: "ไม่อยากกินฝรั่ง", exact: true }).click();
 
     const cat = page.getByTestId("cat-western");
-    await expect(cat.getByTestId("cat-net")).toHaveText("-1");
+    await expect(cat.getByTestId("vote-net")).toHaveText("-1");
     await expect(cat).toContainText("×0.5");
 
     const westernOnly = SEED.find((r) => r.categories.length === 1 && r.categories[0] === "western")!;
@@ -38,18 +38,18 @@ test.describe("โหวตแนวอาหาร (คนเดียว)", ()
     await openHome(page);
     const plus = page.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true });
     await plus.click();
-    await expect(page.getByTestId("cat-isan").getByTestId("cat-net")).toHaveText("+1");
+    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("+1");
     await plus.click();
-    await expect(page.getByTestId("cat-isan").getByTestId("cat-net")).toHaveText("0");
+    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("0");
     await expect(page.getByTestId("cat-isan")).toContainText("×1.0");
   });
 
   test("TC-VOTE-04 โหวตยังอยู่หลังรีโหลด @P3", async ({ page }) => {
     await openHome(page);
     await page.getByRole("button", { name: "อยากกินญี่ปุ่น", exact: true }).click();
-    await expect(page.getByTestId("cat-japanese").getByTestId("cat-net")).toHaveText("+1");
+    await expect(page.getByTestId("cat-japanese").getByTestId("vote-net")).toHaveText("+1");
     await page.reload();
-    await expect(page.getByTestId("cat-japanese").getByTestId("cat-net")).toHaveText("+1");
+    await expect(page.getByTestId("cat-japanese").getByTestId("vote-net")).toHaveText("+1");
     const top = await topRowNumber(page);
     expect(byNumber.get(top)!.categories).toContain("japanese");
   });

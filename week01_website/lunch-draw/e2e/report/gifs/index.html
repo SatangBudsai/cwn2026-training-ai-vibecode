@@ -1,0 +1,417 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ข้าวไหนดี · ผล E2E</title>
+<style>
+:root{color-scheme:dark}body{margin:0;padding:24px;background:#141415;color:#ededed;font-family:Tahoma,system-ui,sans-serif}
+h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 16px;font-size:14px}
+.filters button{background:#232325;color:#ededed;border:1px solid rgba(237,237,237,.14);border-radius:8px;padding:6px 14px;margin-right:8px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;margin-top:16px}
+.card{background:#19191b;border:1px solid rgba(237,237,237,.08);border-radius:14px;padding:12px}
+.card h3{font-size:14px;font-weight:500;margin:0 0 4px;display:flex;gap:8px;align-items:center}
+.card p{margin:0 0 8px;color:#a1a1a6;font-size:13px}.card img{width:100%;border-radius:8px;display:block}
+.id{font-family:ui-monospace,monospace}.prio{color:#85858b;font-size:12px}
+.badge{margin-left:auto;font-size:12px;padding:2px 8px;border-radius:6px;background:rgba(76,195,138,.15);color:#4cc38a}
+.fail .badge{background:rgba(229,72,77,.15);color:#e5484d}.skip .badge{background:#232325;color:#85858b}
+.fail{border-color:rgba(229,72,77,.5)}.none{font-style:normal;color:#85858b}
+</style></head><body>
+<h1>ผล E2E · ข้าวไหนดี</h1>
+<p class="sub">79 test case · ผ่าน 79 · ล้ม 0 · ข้าม 0</p>
+<div class="filters"><button onclick="f('all')">ทั้งหมด</button><button onclick="f('pass')">ผ่าน</button><button onclick="f('fail')">ล้ม</button></div>
+<div class="grid">
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · เพิ่มร้านจากเมนู แล้วขึ้นบนกระดานทันที</p>
+  <img loading="lazy" src="TC-ADD-01.gif" alt="TC-ADD-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · ปักหมุดด้วยการกดบนแผนที่</p>
+  <img loading="lazy" src="TC-ADD-02.gif" alt="TC-ADD-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · วางลิงก์ Google Maps แล้วอ่านตำแหน่งได้</p>
+  <img loading="lazy" src="TC-ADD-03.gif" alt="TC-ADD-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-04</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · ข้อมูลไม่ครบ กดเพิ่มร้านไม่ได้</p>
+  <img loading="lazy" src="TC-ADD-04.gif" alt="TC-ADD-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · ร้านที่ไกลเกิน 2 กม. เพิ่มไม่ได้</p>
+  <img loading="lazy" src="TC-ADD-05.gif" alt="TC-ADD-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในโหมดขี้เกียจเดิน</p>
+  <img loading="lazy" src="TC-ADD-06.gif" alt="TC-ADD-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-07</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · ลบได้เฉพาะร้านที่เพิ่มเอง</p>
+  <img loading="lazy" src="TC-ADD-07.gif" alt="TC-ADD-07">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-08</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · API เพิ่มร้านตรวจข้อมูลไม่ถูกต้อง ได้ 400</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ADD-09</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>เพิ่มร้านเอง · คนอื่นเห็นร้านที่เพิ่มทันที (realtime)</p>
+  <img loading="lazy" src="TC-ADD-09.gif" alt="TC-ADD-09">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-API-01</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>API · โหวตแนวอาหารที่ไม่มีอยู่ ได้ 400</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-API-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>API · คนที่ไม่ได้อยู่ในห้องโหวตไม่ได้</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-API-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>API · แก้ข้อมูลร้านด้วยค่าที่ไม่ถูกต้อง ได้ 400</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-API-04</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>API · ไม่มีร้านให้สุ่ม ได้ 409</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-API-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>API · realtime stream ส่งสถานะห้องทันทีที่เชื่อมต่อ</p>
+  <img loading="lazy" src="TC-API-05.gif" alt="TC-API-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-API-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>API · โหวตร้านที่ไม่มีอยู่ ได้ 400</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-CAT-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>จัดการแนวอาหาร · เพิ่มแนวอาหารใหม่ แล้วใช้ได้ทันที</p>
+  <img loading="lazy" src="TC-CAT-01.gif" alt="TC-CAT-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-CAT-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>จัดการแนวอาหาร · แก้ชื่อแนวอาหาร</p>
+  <img loading="lazy" src="TC-CAT-02.gif" alt="TC-CAT-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-CAT-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>จัดการแนวอาหาร · ลบแนวอาหาร เอาออกจากทุกร้าน</p>
+  <img loading="lazy" src="TC-CAT-03.gif" alt="TC-CAT-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-CAT-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>จัดการแนวอาหาร · ชื่อว่างหรือซ้ำ เพิ่มไม่ได้</p>
+  <img loading="lazy" src="TC-CAT-04.gif" alt="TC-CAT-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-CAT-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>จัดการแนวอาหาร · แนวใหม่ใช้โหวตได้</p>
+  <img loading="lazy" src="TC-CAT-05.gif" alt="TC-CAT-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-DRAW-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>จับสลาก · จับสลากแล้วได้การ์ดผลพร้อมลิงก์ Google Maps</p>
+  <img loading="lazy" src="TC-DRAW-01.gif" alt="TC-DRAW-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-DRAW-02</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>จับสลาก · ผลจับสลากเป็นไปตามโหมดขี้เกียจเดินเสมอ</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-DRAW-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>จับสลาก · ร้านที่ปิดไว้ไม่ถูกสุ่ม</p>
+  <img loading="lazy" src="TC-DRAW-03.gif" alt="TC-DRAW-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-DRAW-04</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>จับสลาก · กด ไปกินร้านนี้ แล้วโอกาสร้านนั้นลดลง</p>
+  <img loading="lazy" src="TC-DRAW-04.gif" alt="TC-DRAW-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-DRAW-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>จับสลาก · ยกเลิก กินแล้ว โอกาสกลับเป็นปกติ</p>
+  <img loading="lazy" src="TC-DRAW-05.gif" alt="TC-DRAW-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-DRAW-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>จับสลาก · กินแล้วยังถูกนับหลังรีโหลด</p>
+  <img loading="lazy" src="TC-DRAW-06.gif" alt="TC-DRAW-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · ตั้งชื่อเล่นร้าน แสดงแทนชื่อจริงและบันทึกลงไฟล์</p>
+  <img loading="lazy" src="TC-EDIT-01.gif" alt="TC-EDIT-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-02</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · ลบชื่อเล่นแล้วกลับเป็นชื่อจริง</p>
+  <img loading="lazy" src="TC-EDIT-02.gif" alt="TC-EDIT-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · ปิดร้าน แล้วเปิดอีกครั้ง</p>
+  <img loading="lazy" src="TC-EDIT-03.gif" alt="TC-EDIT-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-04</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · แก้แนวอาหารของร้าน</p>
+  <img loading="lazy" src="TC-EDIT-04.gif" alt="TC-EDIT-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-05</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · ต้องเลือกแนวอาหารอย่างน้อย 1 แนว</p>
+  <img loading="lazy" src="TC-EDIT-05.gif" alt="TC-EDIT-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · น้ำหนักพื้นฐาน ×2 ทำให้โอกาสเป็นสองเท่า</p>
+  <img loading="lazy" src="TC-EDIT-06.gif" alt="TC-EDIT-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-EDIT-07</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>แก้ข้อมูลร้าน · ตั้งราคาร้านจากหน้าแก้ไข</p>
+  <img loading="lazy" src="TC-EDIT-07.gif" alt="TC-EDIT-07">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-FLT-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ตัวกรอง · ขี้เกียจเดิน เหลือเฉพาะร้านที่เดินไม่เกิน 500 ม.</p>
+  <img loading="lazy" src="TC-FLT-01.gif" alt="TC-FLT-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-FLT-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ตัวกรอง · กรองราคา ฿ ตอนที่ยังไม่มีร้านไหนมีราคา</p>
+  <img loading="lazy" src="TC-FLT-02.gif" alt="TC-FLT-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-FLT-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ตัวกรอง · กรองราคาตามที่ตั้งไว้ให้ร้าน</p>
+  <img loading="lazy" src="TC-FLT-03.gif" alt="TC-FLT-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-FLT-04</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ตัวกรอง · ไม่ระบุราคา คือร้านที่ยังไม่มีใครใส่ราคา</p>
+  <img loading="lazy" src="TC-FLT-04.gif" alt="TC-FLT-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-FLT-05</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>ตัวกรอง · ตัวกรองยังอยู่หลังรีโหลด</p>
+  <img loading="lazy" src="TC-FLT-05.gif" alt="TC-FLT-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-FLT-06</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ตัวกรอง · ขี้เกียจเดิน ร้านยิ่งใกล้ยิ่งมีโอกาสสูง</p>
+  <img loading="lazy" src="TC-FLT-06.gif" alt="TC-FLT-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HIST-01</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ประวัติ · ประวัติแสดงผลจับสลากล่าสุดและแชมป์</p>
+  <img loading="lazy" src="TC-HIST-01.gif" alt="TC-HIST-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HIST-02</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>ประวัติ · ยังไม่มีผลจับสลาก</p>
+  <img loading="lazy" src="TC-HIST-02.gif" alt="TC-HIST-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HIST-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ประวัติ · ทุกผลจับสลากมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน</p>
+  <img loading="lazy" src="TC-HIST-03.gif" alt="TC-HIST-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HOME-01</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>หน้าแรก · หน้าแรกแสดงครบ</p>
+  <img loading="lazy" src="TC-HOME-01.gif" alt="TC-HOME-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HOME-02</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>หน้าแรก · แสดงร้านทั้งหมดและย่อกลับ</p>
+  <img loading="lazy" src="TC-HOME-02.gif" alt="TC-HOME-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HOME-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>หน้าแรก · ทุกร้านโอกาสเท่ากันเมื่อยังไม่มีใครโหวต</p>
+  <img loading="lazy" src="TC-HOME-03.gif" alt="TC-HOME-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-HOME-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>หน้าแรก · เมนูประวัติพาไปหน้าประวัติ</p>
+  <img loading="lazy" src="TC-HOME-04.gif" alt="TC-HOME-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · สลับเป็นแผนที่ เห็นหมุดทุกร้าน</p>
+  <img loading="lazy" src="TC-MAP-01.gif" alt="TC-MAP-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · หมุดตามตัวกรอง ขี้เกียจเดิน</p>
+  <img loading="lazy" src="TC-MAP-02.gif" alt="TC-MAP-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · กดหมุดแล้วเห็นร้าน โอกาส และโหวตได้</p>
+  <img loading="lazy" src="TC-MAP-03.gif" alt="TC-MAP-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · หมุดที่มีโอกาสสูงใหญ่กว่า</p>
+  <img loading="lazy" src="TC-MAP-04.gif" alt="TC-MAP-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · จับสลากบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้</p>
+  <img loading="lazy" src="TC-MAP-05.gif" alt="TC-MAP-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-06</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · ชี้หมุดเห็นชื่อร้าน กดหมุดอื่นแล้วรายละเอียดด้านขวาเปลี่ยนตาม</p>
+  <img loading="lazy" src="TC-MAP-06.gif" alt="TC-MAP-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MAP-07</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>แผนที่ · หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านในจุดเดียวกัน</p>
+  <img loading="lazy" src="TC-MAP-07.gif" alt="TC-MAP-07">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MOB-01</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>มือถือ · ปุ่มจับสลากอยู่บนสุด ไม่มี scroll แนวนอน</p>
+  <img loading="lazy" src="TC-MOB-01.gif" alt="TC-MOB-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-MOB-02</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>มือถือ · จับสลากแล้วเห็นการ์ดผลบนจอ</p>
+  <img loading="lazy" src="TC-MOB-02.gif" alt="TC-MOB-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · ให้คะแนนจากการ์ดผลจับสลาก</p>
+  <img loading="lazy" src="TC-RATE-01.gif" alt="TC-RATE-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · เปลี่ยนคะแนน และกดซ้ำเพื่อยกเลิก</p>
+  <img loading="lazy" src="TC-RATE-02.gif" alt="TC-RATE-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · หลายคนให้คะแนน แสดงค่าเฉลี่ย</p>
+  <img loading="lazy" src="TC-RATE-03.gif" alt="TC-RATE-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-04</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · คะแนนมีผลกับโอกาสถูกสุ่ม</p>
+  <img loading="lazy" src="TC-RATE-04.gif" alt="TC-RATE-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · ให้คะแนนจากแผงร้านบนแผนที่</p>
+  <img loading="lazy" src="TC-RATE-05.gif" alt="TC-RATE-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · คนอื่นเห็นคะแนนทันที (realtime)</p>
+  <img loading="lazy" src="TC-RATE-06.gif" alt="TC-RATE-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-RATE-07</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ให้คะแนนร้าน · API ให้คะแนนตรวจข้อมูลไม่ถูกต้อง</p>
+  <img loading="lazy" src="TC-RATE-07.gif" alt="TC-RATE-07">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · เปิดห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต</p>
+  <img loading="lazy" src="TC-ROOM-01.gif" alt="TC-ROOM-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-02</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · สมาชิกคนที่สองเข้าห้องผ่านลิงก์ คนแรกเห็นทันที</p>
+  <img loading="lazy" src="TC-ROOM-02.gif" alt="TC-ROOM-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · โหวตของทุกคนรวมกันแบบ realtime</p>
+  <img loading="lazy" src="TC-ROOM-03.gif" alt="TC-ROOM-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-04</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · ตัวกรองของห้องใช้ร่วมกันทุกคน</p>
+  <img loading="lazy" src="TC-ROOM-04.gif" alt="TC-ROOM-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-05</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · จับสลากในห้อง ทุกคนเห็นร้านเดียวกัน</p>
+  <img loading="lazy" src="TC-ROOM-05.gif" alt="TC-ROOM-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · สมาชิกเห็นการแก้ข้อมูลร้านทันที</p>
+  <img loading="lazy" src="TC-ROOM-06.gif" alt="TC-ROOM-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-07</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · ใช้ชื่อเล่นซ้ำในห้อง คือคนเดิม</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-08</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · ห้องที่ไม่มีอยู่</p>
+  <img loading="lazy" src="TC-ROOM-08.gif" alt="TC-ROOM-08">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-09</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · สมาชิกโหวตร้านในห้องแบบ realtime</p>
+  <img loading="lazy" src="TC-ROOM-09.gif" alt="TC-ROOM-09">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตแนวอาหาร · โหวต + ก๋วยเตี๋ยว ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น</p>
+  <img loading="lazy" src="TC-VOTE-01.gif" alt="TC-VOTE-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตแนวอาหาร · โหวต − ฝรั่ง ร้านฝรั่งมีโอกาสน้อยลง</p>
+  <img loading="lazy" src="TC-VOTE-02.gif" alt="TC-VOTE-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-03</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตแนวอาหาร · กดโหวตซ้ำเพื่อยกเลิก</p>
+  <img loading="lazy" src="TC-VOTE-03.gif" alt="TC-VOTE-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตแนวอาหาร · โหวตยังอยู่หลังรีโหลด</p>
+  <img loading="lazy" src="TC-VOTE-04.gif" alt="TC-VOTE-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตแนวอาหาร · ร้านหลายแนวได้ตัวคูณของแนวที่ดีที่สุด</p>
+  <img loading="lazy" src="TC-VOTE-05.gif" alt="TC-VOTE-05">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-06</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตร้าน · โหวต + ร้าน ร้านนั้นมีโอกาสมากขึ้น</p>
+  <img loading="lazy" src="TC-VOTE-06.gif" alt="TC-VOTE-06">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-07</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตร้าน · โหวต − ร้าน แล้วกดซ้ำเพื่อยกเลิก</p>
+  <img loading="lazy" src="TC-VOTE-07.gif" alt="TC-VOTE-07">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-08</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>โหวตร้าน · โหวตร้านรวมกับโหวตแนวอาหาร</p>
+  <img loading="lazy" src="TC-VOTE-08.gif" alt="TC-VOTE-08">
+</section>
+</div>
+<script>function f(s){document.querySelectorAll('.card').forEach(c=>c.style.display=(s==='all'||c.dataset.status===s)?'':'none')}</script>
+</body></html>

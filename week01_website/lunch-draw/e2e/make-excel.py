@@ -30,6 +30,8 @@ ANSI = re.compile(r"\x1b\[[0-9;]*m")
 cases = json.loads((ROOT / "test-cases.json").read_text(encoding="utf-8"))
 results = json.loads((REPORT / "results.json").read_text(encoding="utf-8"))
 defects = json.loads((ROOT / "defects.json").read_text(encoding="utf-8"))
+gifs_file = REPORT / "gifs" / "gifs.json"
+gifs = {g["id"]: g for g in json.loads(gifs_file.read_text(encoding="utf-8"))} if gifs_file.exists() else {}
 
 # ---------- collect results by test id ----------
 STATUS = {"passed": "Pass", "failed": "Fail", "timedOut": "Fail", "interrupted": "Fail", "skipped": "Skip"}
@@ -113,8 +115,8 @@ tc = wb.active
 tc.title = "Test Cases"
 cols = ["ลำดับ", "Test ID", "โมดูล", "สิ่งที่ทดสอบ", "ระดับ", "ประเภท", "เงื่อนไขก่อนทดสอบ",
         "ขั้นตอนการทดสอบ", "ผลที่คาดหวัง (Expected)", "ผลที่ได้จริง (Actual)", "สถานะ (Status)",
-        "เวลา (วินาที)", "หลักฐาน", "ไฟล์ test", "วันที่ทดสอบ"]
-widths = [7, 13, 15, 34, 8, 12, 26, 38, 46, 40, 11, 10, 14, 26, 16]
+        "เวลา (วินาที)", "ภาพหน้าจอ", "GIF", "ไฟล์ test", "วันที่ทดสอบ"]
+widths = [7, 13, 15, 34, 8, 12, 26, 38, 46, 40, 11, 10, 12, 10, 26, 16]
 header(tc, 1, cols, widths)
 tc.freeze_panes = "C2"
 
@@ -122,18 +124,25 @@ for i, c in enumerate(cases, 1):
     r = found[c["id"]]
     actual = "เป็นไปตามที่คาดหวัง" if r["status"] == "Pass" else ("ข้ามการทดสอบ" if r["status"] == "Skip" else r["error"])
     values = [i, c["id"], c["module"], c["title"], c["priority"], c["type"], c["pre"], c["steps"],
-              c["expected"], actual, r["status"], r["seconds"], None, r["file"], run_at]
+              c["expected"], actual, r["status"], r["seconds"], None, None, r["file"], run_at]
     row = i + 1
     for j, v in enumerate(values, 1):
         cell = tc.cell(row=row, column=j, value=v)
         cell.font, cell.border = BODY, BORDER
-        cell.alignment = CENTER if j in (1, 2, 5, 6, 11, 12, 15) else WRAP
+        cell.alignment = CENTER if j in (1, 2, 5, 6, 11, 12, 13, 14, 16) else WRAP
     if r.get("shot_rel"):
         cell = tc.cell(row=row, column=13, value="ดูภาพ")
         cell.hyperlink = r["shot_rel"]
         cell.font = LINK
     else:
         tc.cell(row=row, column=13, value="-").font = BODY
+    g = gifs.get(c["id"])
+    if g and g.get("gif"):
+        cell = tc.cell(row=row, column=14, value="ดู GIF")
+        cell.hyperlink = f"gifs/{g['gif']}"
+        cell.font = LINK
+    else:
+        tc.cell(row=row, column=14, value="- (API)" if c["type"] in ("API", "Negative", "Security") else "-").font = BODY
     tc.cell(row=row, column=12).number_format = "0.00"
 
 last = len(cases) + 1
@@ -156,13 +165,14 @@ info = [
     ("เครื่องมือ", f"Playwright {pw_version} · Chromium (Desktop 1440×1000 และมือถือ 390×844)"),
     ("ข้อมูลเริ่มต้น", "data/restaurants.json 237 ร้าน · รีเซ็ตก่อนทุก test ผ่าน POST /api/test/reset"),
     ("เวลารวม (วินาที)", round(stats.get("duration", 0) / 1000, 1)),
+    ("GIF ทุก test", "e2e/report/gifs/index.html (เปิดในเบราว์เซอร์) · ลิงก์รายข้ออยู่ในชีต Test Cases"),
 ]
 for k, (label, val) in enumerate(info, 3):
     sm.cell(row=k, column=1, value=label).font = BOLD
     sm.cell(row=k, column=2, value=val).font = BODY
 
 TCS = "'Test Cases'"
-row0 = 10
+row0 = 11
 sm.cell(row=row0 - 1, column=1, value="ผลตามระดับความสำคัญ").font = BOLD
 header(sm, row0, ["ระดับ", "ทั้งหมด", "ผ่าน", "ล้ม", "ข้าม", "อัตราผ่าน"])
 levels = [("P1 ร้ายแรง", "P1"), ("P2 ปานกลาง", "P2"), ("P3 เล็กน้อย", "P3")]
@@ -261,6 +271,12 @@ for ws in wb.worksheets:
 wb.calculation.fullCalcOnLoad = True
 
 REPORT.mkdir(parents=True, exist_ok=True)
-wb.save(OUT)
+try:
+    wb.save(OUT)
+except PermissionError:
+    # the report is open in Excel: keep that copy and write a new one next to it
+    OUT = REPORT / f"E2E-TEST-REPORT-{datetime.now().strftime('%Y%m%d-%H%M')}.xlsx"
+    wb.save(OUT)
+    print("E2E-TEST-REPORT.xlsx is open in Excel, saved as", OUT.name)
 passed = sum(1 for r in found.values() if r["status"] == "Pass")
 print(f"wrote {OUT} · {passed}/{len(found)} passed · {len(rows_d)} defect rows · screenshots: {len(list(SHOTS.glob('*.png')))}")

@@ -4,7 +4,7 @@ import { SEED, TOTAL, byNumber, expect, openHome, pct, poolCount, row, rowPercen
 const dataFile = () => JSON.parse(readFileSync("e2e/.data/restaurants.json", "utf8")) as { number: number; [k: string]: unknown }[];
 
 async function openEditor(page: import("@playwright/test").Page, n: number) {
-  await row(page, n).click();
+  await row(page, n).getByTestId("odds-open").click();
   await expect(page.getByRole("button", { name: "บันทึก" })).toBeVisible();
 }
 

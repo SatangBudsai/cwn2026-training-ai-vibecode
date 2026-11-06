@@ -14,6 +14,24 @@ const fmt = new Intl.DateTimeFormat("th-TH", {
   timeZone: "Asia/Bangkok",
 });
 
+type VisitTag = "eaten" | "skipped" | "pending";
+const PENDING_MS = 2 * 3600 * 1000;
+
+const TAGS: Record<VisitTag, { label: string; className: string }> = {
+  eaten: { label: "ไปกิน", className: "border-ember/50 bg-ember-soft text-ember-ink" },
+  skipped: { label: "ไม่ได้ไปกิน", className: "border-line text-fg-3" },
+  pending: { label: "รอยืนยัน", className: "border-line-strong text-fg-2" },
+};
+
+function VisitBadge({ tag }: { tag: VisitTag }) {
+  const t = TAGS[tag];
+  return (
+    <span data-testid="visit-tag" data-tag={tag} className={`inline-flex h-6 shrink-0 items-center rounded-md border px-2 text-xs ${t.className}`}>
+      {t.label}
+    </span>
+  );
+}
+
 async function getHistory() {
   await connection();
   const since = Date.now() - 7 * 24 * 3600 * 1000;
@@ -23,11 +41,28 @@ async function getHistory() {
     return { number: n, name: r ? (r.nickname ?? r.name) : `ร้าน #${n}` };
   };
   const draws = getDraws();
+  const now = Date.now();
+
+  // the newest draw of each room (or of solo use) may still be waiting for "ไปกินร้านนี้"
+  const latestPerScope = new Set<string>();
+  const seen = new Set<string>();
+  for (const d of [...draws].reverse()) {
+    const scope = d.roomCode ?? "solo";
+    if (!seen.has(scope)) {
+      seen.add(scope);
+      latestPerScope.add(d.id);
+    }
+  }
+  const tagOf = (d: (typeof draws)[number]): VisitTag => {
+    if (d.eatenAt) return "eaten";
+    const fresh = now - Date.parse(d.createdAt) < PENDING_MS;
+    return fresh && latestPerScope.has(d.id) ? "pending" : "skipped";
+  };
 
   const recent = [...draws]
     .reverse()
     .slice(0, 30)
-    .map((d) => ({ ...d, createdAt: new Date(d.createdAt), restaurant: label(d.restaurantId) }));
+    .map((d) => ({ ...d, createdAt: new Date(d.createdAt), restaurant: label(d.restaurantId), tag: tagOf(d) }));
 
   const wins = new Map<number, number>();
   for (const d of draws) {
@@ -93,9 +128,9 @@ async function History() {
                   <div className="text-xs text-fg-3">
                     {d.roomCode ? `ห้อง ${d.roomCode}` : "สุ่มคนเดียว"}
                     {d.lazyMode && " · ขี้เกียจเดิน"}
-                    {d.eatenAt && <span className="text-ember-ink"> · ไปกินแล้ว</span>}
                   </div>
                 </div>
+                <VisitBadge tag={d.tag} />
                 <div className="text-right">
                   <div className="font-mono text-xs text-fg-2 tnum">{formatPercent(d.probability)}</div>
                   <div className="text-xs text-fg-3">{fmt.format(d.createdAt)}</div>

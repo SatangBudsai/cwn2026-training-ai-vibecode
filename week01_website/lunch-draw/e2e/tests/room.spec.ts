@@ -32,9 +32,9 @@ test.describe("ห้อง (member) และ realtime", () => {
     await joinRoom(b, url, "มิว");
 
     await page.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true }).click();
-    await expect(b.getByTestId("cat-isan").getByTestId("cat-net")).toHaveText("+1", LIVE);
+    await expect(b.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("+1", LIVE);
     await b.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true }).click();
-    await expect(page.getByTestId("cat-isan").getByTestId("cat-net")).toHaveText("+2", LIVE);
+    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("+2", LIVE);
     await expect(page.getByTestId("cat-isan")).toContainText("×2.0");
     await b.context().close();
   });

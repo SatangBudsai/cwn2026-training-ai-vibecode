@@ -13,6 +13,8 @@ export type OddsRestaurant = {
   priceLevel?: number | null;
   /** ISO time the team last ate here (within the penalty window), or null */
   lastEatenAt?: string | null;
+  /** average cat rating 1–4, null when nobody rated yet */
+  ratingAvg?: number | null;
 };
 
 /** Net vote per category, e.g. { noodle: 3, isan: -1 } */
@@ -48,15 +50,67 @@ export function recencyMultiplier(lastEatenAt: string | null | undefined, now: n
   return RECENT_FLOOR + (1 - RECENT_FLOOR) * (days / RECENT_DAYS);
 }
 
+/** Net vote per restaurant number, e.g. { 12: 2, 40: -1 } */
+export type RestaurantScores = Record<number, number>;
+
 /**
- * A restaurant takes the multiplier of its best matching category:
- * if it serves anything the group wants, it gets the boost.
+ * weight = base weight
+ *        × multiplier of the restaurant's best matching category (serves anything the group wants -> boost)
+ *        × multiplier of votes for this restaurant itself (same formula as categories)
+ *        × recently-eaten penalty
  */
-export function restaurantWeight(r: OddsRestaurant, scores: CategoryScores, now = Date.now()) {
+export const NEAR_BONUS = 1; // lazy mode: right next to the office gets ×(1 + NEAR_BONUS)
+
+/** Cat ratings, best first. Scores are 1–4; images live in public/meme_cat. */
+export const RATINGS = [
+  { score: 4, label: "อร่อยมาก", img: "/meme_cat/good.jpg" },
+  { score: 3, label: "โอเค", img: "/meme_cat/neutral.jpg" },
+  { score: 2, label: "เฉยๆ", img: "/meme_cat/boring.jpg" },
+  { score: 1, label: "ไม่ไหว", img: "/meme_cat/bad.webp" },
+] as const;
+export const RATING_MIN_MULT = 0.6;
+export const RATING_MAX_MULT = 1.4;
+
+/** Well rated places come up a bit more often: average 1 -> ×0.6 ... average 4 -> ×1.4; no ratings -> ×1 */
+export function ratingMultiplier(avg: number | null | undefined) {
+  if (avg == null || !Number.isFinite(avg)) return 1;
+  const a = Math.min(4, Math.max(1, avg));
+  return RATING_MIN_MULT + ((a - 1) / 3) * (RATING_MAX_MULT - RATING_MIN_MULT);
+}
+
+/** The cat that stands for an average score */
+export function ratingFor(avg: number) {
+  const s = Math.min(4, Math.max(1, Math.round(avg)));
+  return RATINGS.find((r) => r.score === s)!;
+}
+
+/**
+ * Lazy mode only: the shorter the walk, the better. ×2.0 at the door, falling
+ * linearly to ×1.0 at the 500 m limit. Outside lazy mode distance does not matter.
+ */
+export function nearMultiplier(r: Pick<OddsRestaurant, "distance" | "walkDistance">, lazy: boolean) {
+  if (!lazy) return 1;
+  const w = Math.min(LAZY_RADIUS_M, Math.max(0, walkMetres(r)));
+  return 1 + NEAR_BONUS * (1 - w / LAZY_RADIUS_M);
+}
+
+export function restaurantWeight(
+  r: OddsRestaurant,
+  scores: CategoryScores,
+  now = Date.now(),
+  picks: RestaurantScores = {},
+  lazy = false,
+) {
   if (r.baseWeight <= 0) return 0;
-  const cats = r.categories.length ? r.categories : ["thai"];
-  const mult = Math.max(...cats.map((c) => categoryMultiplier(scores[c] ?? 0)));
-  return r.baseWeight * mult * recencyMultiplier(r.lastEatenAt, now);
+  const mult = r.categories.length ? Math.max(...r.categories.map((c) => categoryMultiplier(scores[c] ?? 0))) : 1;
+  return (
+    r.baseWeight *
+    mult *
+    categoryMultiplier(picks[r.id] ?? 0) *
+    recencyMultiplier(r.lastEatenAt, now) *
+    nearMultiplier(r, lazy) *
+    ratingMultiplier(r.ratingAvg)
+  );
 }
 
 export type Odd = { id: number; weight: number; p: number };
@@ -95,9 +149,10 @@ export function computeOdds(
   scores: CategoryScores,
   filter: DrawFilter,
   now = Date.now(),
+  picks: RestaurantScores = {},
 ): Odd[] {
   const eligible = list.filter((r) => matchesFilter(r, filter));
-  const weighted = eligible.map((r) => ({ id: r.id, weight: restaurantWeight(r, scores, now) }));
+  const weighted = eligible.map((r) => ({ id: r.id, weight: restaurantWeight(r, scores, now, picks, filter.lazy) }));
   const total = weighted.reduce((s, w) => s + w.weight, 0);
   return weighted
     .map((w) => ({ ...w, p: total > 0 ? w.weight / total : 0 }))
@@ -121,6 +176,12 @@ export function secureRandom() {
   const buf = new Uint32Array(1);
   crypto.getRandomValues(buf);
   return buf[0] / 2 ** 32;
+}
+
+export function sumRestaurantVotes(votes: { restaurantId: number; value: number }[]): RestaurantScores {
+  const out: RestaurantScores = {};
+  for (const v of votes) out[v.restaurantId] = (out[v.restaurantId] ?? 0) + v.value;
+  return out;
 }
 
 export function sumVotes(votes: { categoryId: string; value: number }[]): CategoryScores {

@@ -1,4 +1,4 @@
-import { LAZY_TOTAL, TOTAL, byNumber, expect, openHome, poolCount, rowPercent, rows, setRestaurant, showAll, test, walk } from "../fixtures";
+import { LAZY_TOTAL, SEED, TOTAL, byNumber, expect, openHome, pct, poolCount, row, rowPercent, rows, setRestaurant, showAll, test, topRowNumber, walk } from "../fixtures";
 
 const priceButton = (page: import("@playwright/test").Page, label: string) =>
   page.locator("fieldset").getByRole("button", { name: label, exact: true });
@@ -45,6 +45,29 @@ test.describe("ตัวกรอง", () => {
     await openHome(page);
     await priceButton(page, "ไม่ระบุ").click();
     await expect(page.getByTestId("pool-count")).toHaveText(String(TOTAL - 1));
+  });
+
+  test("TC-FLT-06 ขี้เกียจเดิน ร้านยิ่งใกล้ยิ่งมีโอกาสสูง @P1", async ({ page }) => {
+    await openHome(page);
+    await page.getByRole("switch").check({ force: true });
+    // weight = 1 + (500 − walk) / 500  ->  ×2 at the door, ×1 at 500 m
+    const lazy = SEED.filter((r) => walk(r) <= 500);
+    const w = (r: (typeof SEED)[number]) => 1 + (1 - Math.min(500, walk(r)) / 500);
+    const total = lazy.reduce((s, r) => s + w(r), 0);
+    const nearest = [...lazy].sort((a, b) => walk(a) - walk(b))[0];
+    const farthest = [...lazy].sort((a, b) => walk(b) - walk(a))[0];
+
+    expect(await topRowNumber(page)).toBe(nearest.number);
+    expect(await rowPercent(page, nearest.number)).toBe(pct(w(nearest) / total));
+    await expect(row(page, nearest.number)).toContainText(`ใกล้ ×${w(nearest).toFixed(1)}`);
+    await showAll(page);
+    expect(await rowPercent(page, farthest.number)).toBe(pct(w(farthest) / total));
+    // odds go down as the walk gets longer
+    const ps = await rows(page).getByTestId("odds-p").allTextContents();
+    const nums = await rows(page).evaluateAll((els) => els.map((e) => Number(e.getAttribute("data-number"))));
+    const walks = nums.map((n) => walk(byNumber.get(n)!));
+    for (let i = 1; i < walks.length; i++) expect(walks[i]).toBeGreaterThanOrEqual(walks[i - 1] - 1);
+    expect(ps.length).toBe(LAZY_TOTAL);
   });
 
   test("TC-FLT-05 ตัวกรองยังอยู่หลังรีโหลด @P3", async ({ page }) => {

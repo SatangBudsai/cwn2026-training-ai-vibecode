@@ -1,14 +1,25 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Check, Copy, Footprints, MapPin, Navigation, Users, UtensilsCrossed } from "lucide-react";
-import { computeOdds, walkMetres, type CategoryScores, type DrawFilter, type Odd } from "@/lib/odds";
+import { Check, Copy, Footprints, List, Map as MapIcon, MapPin, Navigation, Users, UtensilsCrossed } from "lucide-react";
+import {
+  computeOdds,
+  sumRestaurantVotes,
+  walkMetres,
+  type CategoryScores,
+  type DrawFilter,
+  type Odd,
+  type RestaurantScores,
+} from "@/lib/odds";
 import { googleDirectionsUrl, googleMapsUrl, LAZY_RADIUS_M } from "@/lib/geo";
 import type { RestaurantDTO, RoomState } from "@/lib/server";
 import { CategoryVotes, type Category } from "./category-votes";
 import { OddsBoard } from "./odds-board";
+import { OddsMap } from "./odds-map";
 import { WalkMap } from "./walk-map";
+import { RatingPicker } from "./rating";
 import { PriceFilter } from "./price-filter";
 import { Button, NumberTag, displayName, formatMetres, formatPercent, priceLabel, walkMinutes } from "./ui";
 
@@ -31,6 +42,8 @@ type Props = {
 };
 
 const SOLO_KEY = "lunch-draw:solo";
+const RATER_KEY = "lunch-draw:rater";
+type SoloState = { votes?: CategoryScores; lazy?: boolean; prices?: number[]; picks?: RestaurantScores };
 const memberKey = (code: string) => `lunch-draw:member:${code}`;
 
 function readStore<T>(key: string, fallback: T): T {
@@ -49,19 +62,23 @@ function writeStore(key: string, value: unknown) {
   }
 }
 
-export function LunchApp({ restaurants: initialRestaurants, categories, room: initialRoom }: Props) {
+export function LunchApp({ restaurants: initialRestaurants, categories: initialCategories, room: initialRoom }: Props) {
+  const [categories, setCategories] = useState(initialCategories);
   const router = useRouter();
   const isRoom = Boolean(initialRoom);
   const [restaurants, setRestaurants] = useState(initialRestaurants);
   const [room, setRoom] = useState(initialRoom);
   const [member, setMember] = useState<{ id: string; nickname: string } | null>(null);
+  const [rater, setRater] = useState<string | null>(null); // this browser's id for cat ratings
 
   // solo state (kept in this browser)
   const [soloVotes, setSoloVotes] = useState<CategoryScores>({});
   const [soloLazy, setSoloLazy] = useState(false);
   const [soloPrices, setSoloPrices] = useState<number[]>([]);
+  const [soloPicks, setSoloPicks] = useState<RestaurantScores>({});
 
   const [showAll, setShowAll] = useState(false);
+  const [view, setView] = useState<"list" | "map">("list");
   const [highlightId, setHighlightId] = useState<number | null>(null);
   const [draw, setDraw] = useState<Draw | null>((initialRoom?.latestDraw as Draw | null) ?? null);
   const [rolling, setRolling] = useState(false);
@@ -74,15 +91,22 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
   // Restore this browser's state after mount (localStorage is not available on the server)
   useEffect(() => {
     /* eslint-disable react-hooks/set-state-in-effect */
+    let id = readStore<string | null>(RATER_KEY, null);
+    if (!id) {
+      id = crypto.randomUUID();
+      writeStore(RATER_KEY, id);
+    }
+    setRater(id);
     if (isRoom && initialRoom) {
       const m = readStore<{ id: string; nickname: string } | null>(memberKey(initialRoom.code), null);
       // only trust a stored member that still exists in this room
       if (m && initialRoom.members.some((x) => x.id === m.id)) setMember(m);
     } else {
-      const s = readStore<{ votes?: CategoryScores; lazy?: boolean; prices?: number[] }>(SOLO_KEY, {});
+      const s = readStore<SoloState>(SOLO_KEY, {});
       setSoloVotes(s.votes ?? {});
       setSoloLazy(Boolean(s.lazy));
       setSoloPrices(Array.isArray(s.prices) ? s.prices : []);
+      setSoloPicks(s.picks && typeof s.picks === "object" ? s.picks : {});
     }
     /* eslint-enable react-hooks/set-state-in-effect */
   }, [isRoom, initialRoom]);
@@ -92,8 +116,8 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
   const roomPrices = room?.prices;
   const prices = useMemo(() => (isRoom ? (roomPrices ?? []) : soloPrices), [isRoom, roomPrices, soloPrices]);
   const filter: DrawFilter = useMemo(() => ({ lazy, prices }), [lazy, prices]);
-  const saveSolo = (next: { votes?: CategoryScores; lazy?: boolean; prices?: number[] }) =>
-    writeStore(SOLO_KEY, { votes: soloVotes, lazy: soloLazy, prices: soloPrices, ...next });
+  const saveSolo = (next: SoloState) =>
+    writeStore(SOLO_KEY, { votes: soloVotes, lazy: soloLazy, prices: soloPrices, picks: soloPicks, ...next });
   const roomScores = room?.scores;
   const scores: CategoryScores = useMemo(
     () => (isRoom ? (roomScores ?? {}) : soloVotes),
@@ -106,7 +130,22 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
     return out;
   }, [isRoom, soloVotes, room, member]);
 
-  const odds = useMemo(() => computeOdds(restaurants, scores, filter, now), [restaurants, scores, filter, now]);
+  const roomPicks = room?.restaurantScores;
+  const picks: RestaurantScores = useMemo(
+    () => (isRoom ? (roomPicks ?? {}) : soloPicks),
+    [isRoom, roomPicks, soloPicks],
+  );
+  const myPicks: RestaurantScores = useMemo(() => {
+    if (!isRoom) return soloPicks;
+    const out: RestaurantScores = {};
+    room?.restaurantVotes.filter((v) => v.memberId === member?.id).forEach((v) => (out[v.restaurantId] = v.value));
+    return out;
+  }, [isRoom, soloPicks, room, member]);
+
+  const odds = useMemo(
+    () => computeOdds(restaurants, scores, filter, now, picks),
+    [restaurants, scores, filter, now, picks],
+  );
   const pool = useMemo(() => odds.map((o) => byId.get(o.id)!).filter(Boolean), [odds, byId]);
   const counts = useMemo(() => {
     const c: Record<string, number> = {};
@@ -119,6 +158,16 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
     const out: Record<string, { up: string[]; down: string[] }> = {};
     room.votes.forEach((v) => {
       const e = (out[v.categoryId] ??= { up: [], down: [] });
+      (v.value > 0 ? e.up : e.down).push(names.get(v.memberId) ?? "?");
+    });
+    return out;
+  }, [room]);
+  const pickVoters = useMemo(() => {
+    if (!room) return undefined;
+    const names = new Map(room.members.map((m) => [m.id, m.nickname]));
+    const out: Record<number, { up: string[]; down: string[] }> = {};
+    room.restaurantVotes.forEach((v) => {
+      const e = (out[v.restaurantId] ??= { up: [], down: [] });
       (v.value > 0 ? e.up : e.down).push(names.get(v.memberId) ?? "?");
     });
     return out;
@@ -160,6 +209,7 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
       setRestaurants(JSON.parse((e as MessageEvent).data));
       setNow(Date.now()); // keep the 7-day penalty measured from the current time
     });
+    es.addEventListener("categories", (e) => setCategories(JSON.parse((e as MessageEvent).data)));
     es.addEventListener("room", (e) => {
       const next: RoomState | null = JSON.parse((e as MessageEvent).data);
       if (!next) return;
@@ -168,7 +218,8 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
       if (d && d.id !== seenDraw.current) {
         seenDraw.current = d.id;
         seenEaten.current = String(d.eatenAt ?? "");
-        reveal(d, computeOdds(restaurantsRef.current, next.scores, { lazy: next.lazyMode, prices: next.prices }));
+        const f = { lazy: next.lazyMode, prices: next.prices };
+        reveal(d, computeOdds(restaurantsRef.current, next.scores, f, Date.now(), next.restaurantScores));
       } else if (d && String(d.eatenAt ?? "") !== seenEaten.current) {
         seenEaten.current = String(d.eatenAt ?? "");
         setDraw(d);
@@ -217,6 +268,31 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
     if (res.ok) setRoom(await res.json());
   }
 
+  /** Vote for a specific restaurant (−1, 0, +1) */
+  async function votePick(restaurantId: number, value: -1 | 0 | 1) {
+    if (!isRoom) {
+      const n = { ...soloPicks };
+      if (value === 0) delete n[restaurantId];
+      else n[restaurantId] = value;
+      setSoloPicks(n);
+      saveSolo({ picks: n });
+      return;
+    }
+    if (!room || !member) return;
+    setRoom((r) => {
+      if (!r) return r;
+      const rv = r.restaurantVotes.filter((v) => !(v.memberId === member.id && v.restaurantId === restaurantId));
+      if (value !== 0) rv.push({ memberId: member.id, restaurantId, value });
+      return { ...r, restaurantVotes: rv, restaurantScores: sumRestaurantVotes(rv) };
+    });
+    const res = await fetch(`/api/rooms/${room.code}/votes`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ memberId: member.id, restaurantId, value }),
+    });
+    if (res.ok) setRoom(await res.json());
+  }
+
   async function setLazy(next: boolean) {
     if (!isRoom) {
       setSoloLazy(next);
@@ -253,7 +329,7 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
     const res = await fetch("/api/draw", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(room ? { roomCode: room.code } : { lazy: soloLazy, prices: soloPrices, scores: soloVotes }),
+      body: JSON.stringify(room ? { roomCode: room.code } : { lazy: soloLazy, prices: soloPrices, scores: soloVotes, picks: soloPicks }),
     });
     const json = await res.json();
     if (!res.ok) return setError(json.error ?? "สุ่มไม่สำเร็จ");
@@ -269,6 +345,34 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
     });
     if (!res.ok) return setError((await res.json()).error ?? "บันทึกไม่สำเร็จ");
     setRestaurants((rs) => rs.map((r) => (r.id === id ? { ...r, ...patch } : r)));
+  }
+
+  /** Rate a restaurant with a cat (score 1–4, 0 takes my rating back) */
+  async function rate(id: number, score: number) {
+    if (!rater) return;
+    setRestaurants((rs) =>
+      rs.map((r) => {
+        if (r.id !== id) return r;
+        const ratings = { ...r.ratings };
+        if (score) ratings[rater] = score;
+        else delete ratings[rater];
+        const all = Object.values(ratings);
+        const avg = all.length ? all.reduce((a, b) => a + b, 0) / all.length : null;
+        return { ...r, ratings, ratingCount: all.length, ratingAvg: avg };
+      }),
+    );
+    const res = await fetch(`/api/restaurants/${id}/rating`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rater, score, name: member?.nickname ?? null }),
+    });
+    if (!res.ok) setError((await res.json()).error ?? "ให้คะแนนไม่สำเร็จ");
+  }
+
+  async function deleteRestaurant(id: number) {
+    const res = await fetch(`/api/restaurants/${id}`, { method: "DELETE" });
+    if (!res.ok) return setError((await res.json()).error ?? "ลบไม่สำเร็จ");
+    setRestaurants((rs) => rs.filter((r) => r.id !== id));
   }
 
   async function createRoom() {
@@ -309,7 +413,7 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
               <Footprints size={18} strokeWidth={1.5} className="text-fg-2" />
               <span>
                 <span className="block text-sm">ขี้เกียจเดิน</span>
-                <span className="block text-xs text-fg-3">เฉพาะร้านที่เดินไม่เกิน 500 ม.</span>
+                <span className="block text-xs text-fg-3">เฉพาะร้านที่เดินไม่เกิน 500 ม. ยิ่งใกล้ยิ่งมีโอกาส</span>
               </span>
             </span>
             <input
@@ -345,6 +449,8 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
             r={winner}
             p={draw.probability}
             eaten={Boolean(draw.eatenAt)}
+            myRating={rater ? (winner.ratings[rater] ?? 0) : 0}
+            onRate={(s) => rate(winner.id, s)}
             labels={categories}
             onEaten={markEaten}
           />
@@ -368,7 +474,12 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
       <div className="flex min-w-0 flex-col gap-6 lg:order-1">
         <section className="rounded-2xl border border-line bg-card p-5">
           <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="text-base font-medium">วันนี้อยากกินแนวไหน</h2>
+            <h2 className="flex items-baseline gap-3 text-base font-medium">
+              วันนี้อยากกินแนวไหน
+              <Link href="/categories" className="text-xs font-normal text-fg-3 underline-offset-4 hover:text-fg hover:underline">
+                จัดการแนวอาหาร
+              </Link>
+            </h2>
             <span className="text-xs text-fg-3" data-testid="vote-status">
               {room
                 ? `${room.members.length} คนในห้อง · คุณคือ ${member?.nickname}`
@@ -388,10 +499,52 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
         </section>
 
         <section className="rounded-2xl border border-line bg-card p-5">
-          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
             <h2 className="text-base font-medium">กระดานโอกาส</h2>
-            <span className="text-xs text-fg-3">กดที่ร้านเพื่อแก้ชื่อเล่น ราคา แนวอาหาร หรือปิดร้าน</span>
+            <div className="flex items-center gap-3">
+              <span className="hidden text-xs text-fg-3 sm:inline">
+                {view === "list" ? "กดที่ชื่อร้านเพื่อแก้ชื่อเล่น ราคา แนวอาหาร หรือปิดร้าน" : "กดหมุดเพื่อดูร้านและโหวต"}
+              </span>
+              <div role="radiogroup" aria-label="มุมมอง" className="flex rounded-lg border border-line bg-deep p-0.5">
+                {(
+                  [
+                    ["list", "รายการ", List],
+                    ["map", "แผนที่", MapIcon],
+                  ] as const
+                ).map(([v, label, Icon]) => (
+                  <button
+                    key={v}
+                    type="button"
+                    role="radio"
+                    aria-checked={view === v}
+                    onClick={() => setView(v)}
+                    className={`inline-flex h-8 items-center gap-1.5 rounded-md px-3 text-xs transition-colors ${
+                      view === v ? "bg-raised text-fg" : "text-fg-3 hover:text-fg"
+                    }`}
+                  >
+                    <Icon size={14} strokeWidth={1.5} />
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
+          {view === "map" ? (
+            <OddsMap
+              odds={odds}
+              byId={byId}
+              categories={categories}
+              lazy={lazy}
+              highlightId={highlightId}
+              winnerId={draw?.restaurantId ?? null}
+              picks={picks}
+              myPicks={myPicks}
+              pickVoters={pickVoters}
+              onPick={votePick}
+              rater={rater}
+              onRate={rate}
+            />
+          ) : (
           <OddsBoard
             odds={odds}
             byId={byId}
@@ -402,8 +555,17 @@ export function LunchApp({ restaurants: initialRestaurants, categories, room: in
             onToggleAll={() => setShowAll((s) => !s)}
             disabled={disabledList}
             onSave={saveRestaurant}
+            onDelete={deleteRestaurant}
+            rater={rater}
+            onRate={rate}
+            picks={picks}
+            myPicks={myPicks}
+            pickVoters={pickVoters}
+            onPick={votePick}
+            lazy={lazy}
             now={now}
           />
+          )}
         </section>
       </div>
     </div>
@@ -416,12 +578,16 @@ function WinnerCard({
   eaten,
   labels,
   onEaten,
+  myRating,
+  onRate,
 }: {
   r: RestaurantDTO;
   p: number;
   eaten: boolean;
   labels: Category[];
   onEaten: (eaten: boolean) => void;
+  myRating: number;
+  onRate: (score: number) => void;
 }) {
   const walk = walkMetres(r);
   const names = new Map(labels.map((c) => [c.id, c.label]));
@@ -483,6 +649,10 @@ function WinnerCard({
       <p className="mt-2 text-xs text-fg-3">
         {eaten ? "ร้านนี้จะมีโอกาสน้อยลงใน 7 วันข้างหน้า" : "กดเมื่อไปกินจริง ร้านนี้จะมีโอกาสน้อยลงใน 7 วันข้างหน้า"}
       </p>
+
+      <div className="mt-4 border-t border-line pt-4">
+        <RatingPicker mine={myRating} avg={r.ratingAvg} count={r.ratingCount} onRate={onRate} />
+      </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2">
         <a href={googleDirectionsUrl(r.lat, r.lon)} target="_blank" rel="noreferrer" className="contents">

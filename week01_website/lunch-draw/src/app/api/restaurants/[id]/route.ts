@@ -1,9 +1,7 @@
-import { CATEGORIES } from "@/lib/categories";
 import { PRICE_LEVELS } from "@/lib/odds";
-import { bad } from "@/lib/server";
-import { updateRestaurant, type Restaurant } from "@/lib/store";
+import { bad, isCategory } from "@/lib/server";
+import { deleteRestaurant, updateRestaurant, type Restaurant } from "@/lib/store";
 
-const VALID = new Set<string>(CATEGORIES.map((c) => c.id));
 
 // Edit a restaurant: base weight, food categories, nickname, price level, disabled.
 // Saved into data/restaurants.json.
@@ -35,11 +33,21 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   if (body.categories !== undefined) {
     if (!Array.isArray(body.categories) || !body.categories.length) return bad("pick at least one category");
     const cats = [...new Set<string>(body.categories)];
-    if (cats.some((c) => !VALID.has(c))) return bad("unknown category");
+    if (cats.some((c) => !isCategory(c))) return bad("unknown category");
     patch.categories = cats;
   }
 
   const r = await updateRestaurant(id, patch);
   if (!r) return bad("not found", 404);
+  return Response.json({ ok: true });
+}
+
+// Delete a restaurant that was added by hand. OSM restaurants can only be disabled.
+export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const id = Number((await params).id);
+  if (!Number.isInteger(id)) return bad("invalid id");
+  const res = await deleteRestaurant(id);
+  if (res === "not-found") return bad("not found", 404);
+  if (res === "not-manual") return bad("ลบได้เฉพาะร้านที่เพิ่มเอง ร้านจาก OpenStreetMap ให้ใช้ปิดร้านแทน", 409);
   return Response.json({ ok: true });
 }

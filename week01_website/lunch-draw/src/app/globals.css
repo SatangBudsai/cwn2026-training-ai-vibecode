@@ -71,3 +71,68 @@ body {
     animation: none;
   }
 }
+
+/* Map pins (odds map). MapLibre positions .map-pin itself (position: absolute + transform),
+   so never set position or transform on it; only its children are styled. */
+.map-pin {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.map-pin-dot {
+  display: block;
+  border-radius: 999px;
+  background: rgb(161 161 166 / 0.75);
+  box-shadow: 0 0 0 2px rgb(15 15 16 / 0.9);
+  transition:
+    width 200ms var(--ease-out-soft),
+    height 200ms var(--ease-out-soft),
+    background-color 150ms;
+}
+.map-pin[data-tone="top"] .map-pin-dot,
+.map-pin[data-tone="lit"] .map-pin-dot {
+  background: var(--color-ember);
+}
+.map-pin[data-tone="lit"] .map-pin-dot {
+  box-shadow: 0 0 0 4px rgb(240 136 62 / 0.45);
+}
+.map-pin[data-selected="true"] .map-pin-dot {
+  box-shadow: 0 0 0 3px var(--color-fg);
+}
+.map-pin-tip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 4px 8px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 6px;
+  background: var(--color-card);
+  color: var(--color-fg);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 120ms,
+    transform 120ms var(--ease-out-soft);
+}
+.map-pin:hover .map-pin-tip,
+.map-pin:focus-visible .map-pin-tip,
+.map-pin[data-selected="true"] .map-pin-tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.map-office {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--color-fg);
+  box-shadow: 0 0 0 3px rgb(15 15 16 / 0.9);
+}

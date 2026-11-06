@@ -90,6 +90,10 @@ async function main() {
   const byOsm = new Map(old.map((r) => [r.osmId, r]));
   let next = Math.max(0, ...old.map((r) => r.number)) + 1;
   const EDITS = ["baseWeight", "nickname", "priceLevel", "disabled", "categories"] as const;
+  // categories the team deleted in the app must not come back from the auto-classifier
+  const catFile = "data/categories.json";
+  const known = existsSync(catFile) ? new Set<string>(JSON.parse(readFileSync(catFile, "utf8")).map((c: { id: string }) => c.id)) : null;
+  for (const p of places) if (known) p.categories = p.categories.filter((c) => known.has(c));
 
   const fresh = places.map((p, i) => {
     const prev = byOsm.get(p.osmId);

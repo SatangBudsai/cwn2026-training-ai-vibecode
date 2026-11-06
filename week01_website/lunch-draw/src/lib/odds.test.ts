@@ -6,7 +6,10 @@ import {
   recencyMultiplier,
   restaurantWeight,
   sumVotes,
+  nearMultiplier,
   parsePrices,
+  ratingFor,
+  ratingMultiplier,
   type OddsRestaurant,
 } from "./odds";
 
@@ -93,6 +96,58 @@ describe("odds", () => {
 
   it("pick returns null when nothing can be drawn", () => {
     expect(pick(computeOdds([r(1, ["noodle"], { baseWeight: 0 })], {}, ALL), 0.5)).toBeNull();
+  });
+});
+
+describe("restaurant votes", () => {
+  it("votes for a restaurant multiply its weight, on top of category votes", () => {
+    const x = r(7, ["noodle"]);
+    expect(restaurantWeight(x, {}, Date.now(), { 7: 2 })).toBe(2);
+    expect(restaurantWeight(x, { noodle: 1 }, Date.now(), { 7: 2 })).toBe(3);
+    expect(restaurantWeight(x, {}, Date.now(), { 7: -5 })).toBeCloseTo(0.1);
+    expect(restaurantWeight(x, {}, Date.now(), { 8: 3 })).toBe(1); // votes for another place
+  });
+
+  it("odds follow restaurant votes", () => {
+    const odds = computeOdds([r(1, ["thai"]), r(2, ["thai"])], {}, ALL, Date.now(), { 2: 2 });
+    expect(odds[0]).toMatchObject({ id: 2, p: 2 / 3 });
+  });
+});
+
+describe("lazy mode prefers the closest places", () => {
+  it("×2 at the door, ×1 at 500 m, no effect outside lazy mode", () => {
+    expect(nearMultiplier({ distance: 0, walkDistance: 0 }, true)).toBe(2);
+    expect(nearMultiplier({ distance: 0, walkDistance: 250 }, true)).toBe(1.5);
+    expect(nearMultiplier({ distance: 0, walkDistance: 500 }, true)).toBe(1);
+    expect(nearMultiplier({ distance: 0, walkDistance: 100 }, false)).toBe(1);
+  });
+
+  it("closer places get higher odds in lazy mode", () => {
+    const near = r(1, ["thai"], { walkDistance: 100 });
+    const far = r(2, ["thai"], { walkDistance: 400 });
+    const odds = computeOdds([far, near], {}, { lazy: true, prices: [] });
+    expect(odds[0].id).toBe(1);
+    expect(odds[0].p).toBeCloseTo(1.8 / (1.8 + 1.2));
+    expect(computeOdds([far, near], {}, ALL)[0].p).toBe(0.5);
+  });
+});
+
+describe("cat ratings", () => {
+  it("average 1 -> ×0.6, 4 -> ×1.4, none -> ×1", () => {
+    expect(ratingMultiplier(1)).toBeCloseTo(0.6);
+    expect(ratingMultiplier(4)).toBeCloseTo(1.4);
+    expect(ratingMultiplier(2.5)).toBeCloseTo(1);
+    expect(ratingMultiplier(null)).toBe(1);
+  });
+
+  it("picks the cat for an average", () => {
+    expect(ratingFor(3.6).label).toBe("อร่อยมาก");
+    expect(ratingFor(1.2).label).toBe("ไม่ไหว");
+  });
+
+  it("well rated places get higher odds", () => {
+    const odds = computeOdds([r(1, ["thai"], { ratingAvg: 4 }), r(2, ["thai"], { ratingAvg: 1 })], {}, ALL);
+    expect(odds[0]).toMatchObject({ id: 1, p: 1.4 / 2 });
   });
 });
 

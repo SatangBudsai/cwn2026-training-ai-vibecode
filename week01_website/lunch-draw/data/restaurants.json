@@ -14,7 +14,10 @@
       "thai",
       "made-to-order"
     ],
-    "walkDistance": 164
+    "walkDistance": 164,
+    "baseWeight": 1,
+    "nickname": null,
+    "priceLevel": null
   },
   {
     "number": 2,
@@ -119,7 +122,10 @@
     "categories": [
       "thai"
     ],
-    "walkDistance": 426
+    "walkDistance": 426,
+    "baseWeight": 1,
+    "nickname": "ร้านพี่ตอง",
+    "priceLevel": null
   },
   {
     "number": 9,
@@ -3594,5 +3600,22 @@
       "noodle"
     ],
     "walkDistance": 1466
+  },
+  {
+    "number": 238,
+    "osmId": "manual/e137a8bd-9ec1-4860-9b25-b6914d28cd7a",
+    "name": "มะเดื่อ",
+    "nameEn": null,
+    "lat": 13.72372,
+    "lon": 100.523895,
+    "cuisine": "",
+    "openingHours": null,
+    "distance": 127,
+    "walkDistance": 316,
+    "categories": [
+      "made-to-order"
+    ],
+    "nickname": "ร้านพี่ท็อป",
+    "priceLevel": 2
   }
 ]
