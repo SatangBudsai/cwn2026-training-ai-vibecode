@@ -1,0 +1,99 @@
+import { readFileSync } from "node:fs";
+import { SEED, TOTAL, byNumber, expect, openHome, pct, poolCount, row, rowPercent, test, topRowNumber } from "../fixtures";
+
+const dataFile = () => JSON.parse(readFileSync("e2e/.data/restaurants.json", "utf8")) as { number: number; [k: string]: unknown }[];
+
+async function openEditor(page: import("@playwright/test").Page, n: number) {
+  await row(page, n).click();
+  await expect(page.getByRole("button", { name: "บันทึก" })).toBeVisible();
+}
+
+test.describe("แก้ข้อมูลร้าน", () => {
+  test("TC-EDIT-01 ตั้งชื่อเล่นร้าน แสดงแทนชื่อจริงและบันทึกลงไฟล์ @P1", async ({ page }) => {
+    const r = byNumber.get(1)!;
+    await openHome(page);
+    await openEditor(page, 1);
+    await page.getByPlaceholder(r.name).fill("ร้านประจำ");
+    await page.getByRole("button", { name: "บันทึก" }).click();
+
+    await expect(row(page, 1).getByTestId("odds-name")).toHaveText("ร้านประจำ");
+    await expect(row(page, 1)).toContainText(r.name); // real name stays as the subtitle
+    await page.reload();
+    await expect(row(page, 1).getByTestId("odds-name")).toHaveText("ร้านประจำ");
+    await expect.poll(() => dataFile().find((x) => x.number === 1)?.nickname).toBe("ร้านประจำ");
+  });
+
+  test("TC-EDIT-02 ลบชื่อเล่นแล้วกลับเป็นชื่อจริง @P3", async ({ page }) => {
+    const r = byNumber.get(1)!;
+    await openHome(page);
+    await openEditor(page, 1);
+    await page.getByPlaceholder(r.name).fill("ชั่วคราว");
+    await page.getByRole("button", { name: "บันทึก" }).click();
+    await expect(row(page, 1).getByTestId("odds-name")).toHaveText("ชั่วคราว");
+    await openEditor(page, 1);
+    await page.getByPlaceholder(r.name).fill("");
+    await page.getByRole("button", { name: "บันทึก" }).click();
+    await expect(row(page, 1).getByTestId("odds-name")).toHaveText(r.name);
+  });
+
+  test("TC-EDIT-03 ปิดร้าน แล้วเปิดอีกครั้ง @P1", async ({ page }) => {
+    await openHome(page);
+    await openEditor(page, 1);
+    await page.getByRole("button", { name: "ปิดร้านนี้" }).click();
+
+    await expect(page.getByTestId("pool-count")).toHaveText(String(TOTAL - 1));
+    await expect(row(page, 1)).toHaveCount(0);
+    const closed = page.getByRole("button", { name: /ร้านที่ปิดไว้/ });
+    await expect(closed).toContainText("1");
+    await closed.click();
+    const item = page.locator('[data-testid="disabled-row"][data-number="1"]');
+    await expect(item).toBeVisible();
+
+    await item.getByRole("button", { name: "เปิดอีกครั้ง" }).click();
+    await expect(page.getByTestId("pool-count")).toHaveText(String(TOTAL));
+    await expect(row(page, 1)).toBeVisible();
+  });
+
+  test("TC-EDIT-04 แก้แนวอาหารของร้าน @P2", async ({ page }) => {
+    const r = byNumber.get(3)!; // Mama Mia Bangkok
+    const before = SEED.filter((x) => x.categories.includes("japanese")).length;
+    test.skip(r.categories.includes("japanese"), "restaurant #3 is already japanese");
+    await openHome(page);
+    await expect(page.getByTestId("cat-japanese")).toContainText(`${before} ร้าน`);
+    await openEditor(page, 3);
+    await page.getByRole("button", { name: "ญี่ปุ่น", exact: true }).click();
+    await page.getByRole("button", { name: "บันทึก" }).click();
+    await expect(row(page, 3)).toContainText("ญี่ปุ่น");
+    await expect(page.getByTestId("cat-japanese")).toContainText(`${before + 1} ร้าน`);
+  });
+
+  test("TC-EDIT-05 ต้องเลือกแนวอาหารอย่างน้อย 1 แนว @P3", async ({ page }) => {
+    const r = byNumber.get(1)!;
+    await openHome(page);
+    await openEditor(page, 1);
+    const labels: Record<string, string> = { "rice-curry": "ข้าวแกง", thai: "อาหารไทยทั่วไป", "made-to-order": "อาหารตามสั่ง" };
+    for (const c of r.categories) await page.getByRole("button", { name: labels[c] ?? c, exact: true }).click();
+    await expect(page.getByRole("button", { name: "บันทึก" })).toBeDisabled();
+  });
+
+  test("TC-EDIT-06 น้ำหนักพื้นฐาน ×2 ทำให้โอกาสเป็นสองเท่า @P2", async ({ page }) => {
+    await openHome(page);
+    await openEditor(page, 2);
+    await page.getByRole("button", { name: "เพิ่มน้ำหนัก" }).click();
+    await page.getByRole("button", { name: "เพิ่มน้ำหนัก" }).click();
+    await page.getByRole("button", { name: "บันทึก" }).click();
+    await expect(row(page, 2)).toContainText("น้ำหนัก ×2");
+    expect(await topRowNumber(page)).toBe(2);
+    await expect.poll(() => rowPercent(page, 2)).toBe(pct(2 / (TOTAL + 1)));
+  });
+
+  test("TC-EDIT-07 ตั้งราคาร้านจากหน้าแก้ไข @P2", async ({ page }) => {
+    await openHome(page);
+    await openEditor(page, 4);
+    await page.getByRole("button", { name: /^฿฿\s*60–120/ }).click();
+    await page.getByRole("button", { name: "บันทึก" }).click();
+    await expect(row(page, 4)).toContainText("฿฿");
+    await expect.poll(() => dataFile().find((x) => x.number === 4)?.priceLevel).toBe(2);
+    expect(await poolCount(page)).toBe(TOTAL);
+  });
+});

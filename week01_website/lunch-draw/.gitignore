@@ -42,10 +42,15 @@ next-env.d.ts
 
 /src/generated/prisma
 
-# local db
-/dev.db*
-.env
 
 # copied from node_modules on install
 /public/maplibre
-!.env.example
+
+# runtime state: rooms, votes, draw history
+/data/state.json
+/data/*.tmp
+
+# e2e
+/e2e/.data
+/e2e/test-results
+/e2e/report/html

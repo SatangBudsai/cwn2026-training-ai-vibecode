@@ -1,22 +1,21 @@
-import { prisma } from "@/lib/db";
-import { computeOdds, pick, secureRandom, type CategoryScores } from "@/lib/odds";
+import { computeOdds, parsePrices, pick, secureRandom, type CategoryScores, type DrawFilter } from "@/lib/odds";
 import { bad, listRestaurants, roomState } from "@/lib/server";
+import { addDraw, newId } from "@/lib/store";
 
 // The draw always happens on the server, so everyone in a room sees the same result.
-// Solo: { lazy, scores }   Room: { roomCode } (lazy mode and votes come from the room)
+// Solo: { lazy, prices, scores }   Room: { roomCode } (filters and votes come from the room)
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
-  let lazy = Boolean(body?.lazy);
+  const filter: DrawFilter = { lazy: Boolean(body?.lazy), prices: parsePrices(body?.prices) };
   let scores: CategoryScores = {};
-  let roomId: string | null = null;
+  let roomCode: string | null = null;
 
   if (body?.roomCode) {
-    const code = String(body.roomCode).toUpperCase();
-    const room = await prisma.room.findUnique({ where: { code }, select: { id: true } });
-    const state = await roomState(code);
-    if (!room || !state) return bad("room not found", 404);
-    roomId = room.id;
-    lazy = state.lazyMode;
+    const state = roomState(String(body.roomCode));
+    if (!state) return bad("room not found", 404);
+    roomCode = state.code;
+    filter.lazy = state.lazyMode;
+    filter.prices = state.prices;
     scores = state.scores;
   } else if (body?.scores && typeof body.scores === "object") {
     for (const [k, v] of Object.entries(body.scores)) {
@@ -25,13 +24,26 @@ export async function POST(req: Request) {
     }
   }
 
-  const restaurants = await listRestaurants();
-  const winner = pick(computeOdds(restaurants, scores, lazy), secureRandom());
-  if (!winner) return bad("ไม่มีร้านให้สุ่ม ลองปิดโหมดขี้เกียจเดินหรือปรับน้ำหนัก", 409);
+  const winner = pick(computeOdds(listRestaurants(), scores, filter), secureRandom());
+  if (!winner) return bad("ไม่มีร้านให้สุ่ม ลองปิดโหมดขี้เกียจเดินหรือเลือกช่วงราคาเพิ่ม", 409);
 
-  const draw = await prisma.draw.create({
-    data: { roomId, restaurantId: winner.id, probability: winner.p, lazyMode: lazy },
-    select: { id: true, restaurantId: true, probability: true, createdAt: true, eatenAt: true },
+  const draw = await addDraw({
+    id: newId(),
+    roomCode,
+    restaurantId: winner.id,
+    probability: winner.p,
+    lazyMode: filter.lazy,
+    createdAt: new Date().toISOString(),
+    eatenAt: null,
   });
-  return Response.json(draw, { status: 201 });
+  return Response.json(
+    {
+      id: draw.id,
+      restaurantId: draw.restaurantId,
+      probability: draw.probability,
+      createdAt: draw.createdAt,
+      eatenAt: draw.eatenAt,
+    },
+    { status: 201 },
+  );
 }

@@ -26,6 +26,7 @@ export function CategoryVotes({ categories, counts, myVotes, scores, voters, dis
         return (
           <li
             key={c.id}
+            data-testid={`cat-${c.id}`}
             className={`flex h-11 items-center gap-2 rounded-lg px-2 transition-colors ${
               net > 0 ? "bg-ember-soft" : net < 0 ? "bg-deep" : "hover:bg-raised/60"
             }`}
@@ -59,6 +60,7 @@ export function CategoryVotes({ categories, counts, myVotes, scores, voters, dis
                 <Minus size={16} strokeWidth={1.5} />
               </button>
               <span
+                data-testid="cat-net"
                 className={`w-6 text-center font-mono text-xs tnum ${net > 0 ? "text-ember-ink" : net < 0 ? "text-fg-3" : "text-fg-2"}`}
               >
                 {net > 0 ? `+${net}` : net}

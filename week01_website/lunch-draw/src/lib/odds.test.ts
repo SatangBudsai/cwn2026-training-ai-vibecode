@@ -6,8 +6,11 @@ import {
   recencyMultiplier,
   restaurantWeight,
   sumVotes,
+  parsePrices,
   type OddsRestaurant,
 } from "./odds";
+
+const ALL = { lazy: false, prices: [] };
 
 const r = (id: number, categories: string[], extra: Partial<OddsRestaurant> = {}): OddsRestaurant => ({
   id,
@@ -53,6 +56,10 @@ describe("recently eaten", () => {
     expect(recencyMultiplier(null, now)).toBe(1);
   });
 
+  it("a visit stamped just after the page loaded still counts as today", () => {
+    expect(recencyMultiplier(new Date(now + 60_000).toISOString(), now)).toBeCloseTo(0.2);
+  });
+
   it("stacks with category votes", () => {
     expect(restaurantWeight(r(1, ["noodle"], { lastEatenAt: daysAgo(0) }), { noodle: 2 }, now)).toBeCloseTo(0.4);
   });
@@ -67,17 +74,17 @@ describe("odds", () => {
   ];
 
   it("probabilities add up to 1", () => {
-    const odds = computeOdds(list, { noodle: 2 }, false);
+    const odds = computeOdds(list, { noodle: 2 }, ALL);
     expect(odds.reduce((s, o) => s + o.p, 0)).toBeCloseTo(1);
     expect(odds[0].id).toBe(1);
   });
 
   it("lazy mode keeps only places within a 500 m walk", () => {
-    expect(computeOdds(list, {}, true).map((o) => o.id).sort()).toEqual([1, 2]);
+    expect(computeOdds(list, {}, { lazy: true, prices: [] }).map((o) => o.id).sort()).toEqual([1, 2]);
   });
 
   it("pick follows the weights over many draws", () => {
-    const odds = computeOdds(list.slice(0, 2), { noodle: 2 }, false); // weights 2 : 1
+    const odds = computeOdds(list.slice(0, 2), { noodle: 2 }, ALL); // weights 2 : 1
     const counts: Record<number, number> = { 1: 0, 2: 0 };
     const N = 20000;
     for (let i = 0; i < N; i++) counts[pick(odds, Math.random())!.id]++;
@@ -85,6 +92,31 @@ describe("odds", () => {
   });
 
   it("pick returns null when nothing can be drawn", () => {
-    expect(pick(computeOdds([r(1, ["noodle"], { baseWeight: 0 })], {}, false), 0.5)).toBeNull();
+    expect(pick(computeOdds([r(1, ["noodle"], { baseWeight: 0 })], {}, ALL), 0.5)).toBeNull();
+  });
+});
+
+describe("filters", () => {
+  const list = [
+    r(1, ["noodle"], { priceLevel: 1 }),
+    r(2, ["noodle"], { priceLevel: 3 }),
+    r(3, ["noodle"], { priceLevel: null }),
+    r(4, ["noodle"], { priceLevel: 1, disabled: true }),
+  ];
+  const ids = (prices: number[]) => computeOdds(list, {}, { lazy: false, prices }).map((o) => o.id).sort();
+
+  it("disabled restaurants never appear", () => {
+    expect(ids([])).toEqual([1, 2, 3]);
+  });
+
+  it("price filter keeps the chosen levels, 0 means price not set", () => {
+    expect(ids([1])).toEqual([1]);
+    expect(ids([1, 0])).toEqual([1, 3]);
+  });
+
+  it("parses price filters from csv or arrays and drops junk", () => {
+    expect(parsePrices("2,1,x,9")).toEqual([1, 2]);
+    expect(parsePrices([0, 4, 4])).toEqual([0, 4]);
+    expect(parsePrices("")).toEqual([]);
   });
 });

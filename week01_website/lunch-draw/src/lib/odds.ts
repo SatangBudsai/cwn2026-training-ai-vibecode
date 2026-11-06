@@ -8,6 +8,9 @@ export type OddsRestaurant = {
   distance: number;
   walkDistance: number | null;
   categories: string[];
+  disabled?: boolean;
+  /** 1–4, null = unknown */
+  priceLevel?: number | null;
   /** ISO time the team last ate here (within the penalty window), or null */
   lastEatenAt?: string | null;
 };
@@ -37,8 +40,11 @@ const DAY_MS = 24 * 3600 * 1000;
  */
 export function recencyMultiplier(lastEatenAt: string | null | undefined, now: number) {
   if (!lastEatenAt) return 1;
-  const days = (now - Date.parse(lastEatenAt)) / DAY_MS;
-  if (!(days >= 0) || days >= RECENT_DAYS) return 1;
+  const t = Date.parse(lastEatenAt);
+  if (Number.isNaN(t)) return 1;
+  // a visit stamped a moment after `now` (clock skew, page loaded earlier) counts as today
+  const days = Math.max(0, (now - t) / DAY_MS);
+  if (days >= RECENT_DAYS) return 1;
   return RECENT_FLOOR + (1 - RECENT_FLOOR) * (days / RECENT_DAYS);
 }
 
@@ -55,13 +61,42 @@ export function restaurantWeight(r: OddsRestaurant, scores: CategoryScores, now 
 
 export type Odd = { id: number; weight: number; p: number };
 
+export const PRICE_LEVELS = [
+  { level: 1, label: "฿", hint: "ไม่เกิน 60" },
+  { level: 2, label: "฿฿", hint: "60–120" },
+  { level: 3, label: "฿฿฿", hint: "120–250" },
+  { level: 4, label: "฿฿฿฿", hint: "250 ขึ้นไป" },
+] as const;
+/** Price filter value for restaurants whose price nobody has set yet */
+export const PRICE_UNKNOWN = 0;
+
+export type DrawFilter = {
+  lazy: boolean;
+  /** Allowed price levels (0 = unknown). Empty = no price filter. */
+  prices: number[];
+};
+
+export function matchesFilter(r: OddsRestaurant, f: DrawFilter) {
+  if (r.disabled) return false;
+  if (f.lazy && walkMetres(r) > LAZY_RADIUS_M) return false;
+  if (f.prices.length && !f.prices.includes(r.priceLevel ?? PRICE_UNKNOWN)) return false;
+  return true;
+}
+
+export function parsePrices(v: unknown): number[] {
+  const raw = Array.isArray(v) ? v : typeof v === "string" ? v.split(",") : [];
+  const ok = new Set<number>([PRICE_UNKNOWN, ...PRICE_LEVELS.map((p) => p.level)]);
+  const nums = raw.filter((x) => x !== "" && x != null).map((x) => Number(x));
+  return [...new Set(nums.filter((n) => ok.has(n)))].sort((a, b) => a - b);
+}
+
 export function computeOdds(
   list: OddsRestaurant[],
   scores: CategoryScores,
-  lazy: boolean,
+  filter: DrawFilter,
   now = Date.now(),
 ): Odd[] {
-  const eligible = list.filter((r) => !lazy || walkMetres(r) <= LAZY_RADIUS_M);
+  const eligible = list.filter((r) => matchesFilter(r, filter));
   const weighted = eligible.map((r) => ({ id: r.id, weight: restaurantWeight(r, scores, now) }));
   const total = weighted.reduce((s, w) => s + w.weight, 0);
   return weighted

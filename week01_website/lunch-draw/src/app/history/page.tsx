@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { prisma } from "@/lib/db";
+import { getDraws, getRestaurants } from "@/lib/store";
 import { NumberTag, formatPercent } from "@/components/ui";
 
 export const metadata = { title: "ประวัติ · ข้าวไหนดี" };
@@ -16,26 +16,27 @@ const fmt = new Intl.DateTimeFormat("th-TH", {
 
 async function getHistory() {
   await connection();
-  const since = new Date(Date.now() - 7 * 24 * 3600 * 1000);
-  const [recent, top] = await Promise.all([
-    prisma.draw.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 30,
-      include: { room: { select: { code: true } }, restaurant: { select: { number: true, name: true } } },
-    }),
-    prisma.draw.groupBy({
-      by: ["restaurantId"],
-      where: { createdAt: { gte: since } },
-      _count: { _all: true },
-      orderBy: { _count: { restaurantId: "desc" } },
-      take: 5,
-    }),
-  ]);
-  const names = await prisma.restaurant.findMany({
-    where: { id: { in: top.map((t) => t.restaurantId) } },
-    select: { id: true, number: true, name: true },
-  });
-  const champs = top.map((t) => ({ ...names.find((n) => n.id === t.restaurantId)!, wins: t._count._all }));
+  const since = Date.now() - 7 * 24 * 3600 * 1000;
+  const byNumber = new Map(getRestaurants().map((r) => [r.number, r]));
+  const label = (n: number) => {
+    const r = byNumber.get(n);
+    return { number: n, name: r ? (r.nickname ?? r.name) : `ร้าน #${n}` };
+  };
+  const draws = getDraws();
+
+  const recent = [...draws]
+    .reverse()
+    .slice(0, 30)
+    .map((d) => ({ ...d, createdAt: new Date(d.createdAt), restaurant: label(d.restaurantId) }));
+
+  const wins = new Map<number, number>();
+  for (const d of draws) {
+    if (Date.parse(d.createdAt) >= since) wins.set(d.restaurantId, (wins.get(d.restaurantId) ?? 0) + 1);
+  }
+  const champs = [...wins.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([id, n]) => ({ id, ...label(id), wins: n }));
   return { recent, champs };
 }
 
@@ -90,7 +91,7 @@ async function History() {
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-sm">{d.restaurant.name}</div>
                   <div className="text-xs text-fg-3">
-                    {d.room ? `ห้อง ${d.room.code}` : "สุ่มคนเดียว"}
+                    {d.roomCode ? `ห้อง ${d.roomCode}` : "สุ่มคนเดียว"}
                     {d.lazyMode && " · ขี้เกียจเดิน"}
                     {d.eatenAt && <span className="text-ember-ink"> · ไปกินแล้ว</span>}
                   </div>

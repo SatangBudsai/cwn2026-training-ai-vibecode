@@ -1,6 +1,7 @@
 import "server-only";
-import { prisma } from "./db";
+import { CATEGORIES } from "./categories";
 import { RECENT_DAYS, sumVotes } from "./odds";
+import { getDraws, getRestaurants, getRoom } from "./store";
 
 export type RestaurantDTO = {
   id: number;
@@ -13,26 +14,23 @@ export type RestaurantDTO = {
   walkDistance: number | null;
   openingHours: string | null;
   baseWeight: number;
+  nickname: string | null;
+  priceLevel: number | null;
+  disabled: boolean;
   categories: string[];
   lastEatenAt: string | null;
 };
 
-export async function listRestaurants(): Promise<RestaurantDTO[]> {
-  const since = new Date(Date.now() - RECENT_DAYS * 24 * 3600 * 1000);
-  const [rows, eaten] = await Promise.all([
-    prisma.restaurant.findMany({
-      orderBy: { number: "asc" },
-      include: { categories: { select: { categoryId: true } } },
-    }),
-    prisma.draw.groupBy({
-      by: ["restaurantId"],
-      where: { eatenAt: { gte: since } },
-      _max: { eatenAt: true },
-    }),
-  ]);
-  const last = new Map(eaten.map((e) => [e.restaurantId, e._max.eatenAt?.toISOString() ?? null]));
-  return rows.map((r) => ({
-    id: r.id,
+export function listRestaurants(): RestaurantDTO[] {
+  const since = Date.now() - RECENT_DAYS * 24 * 3600 * 1000;
+  const lastEaten = new Map<number, string>();
+  for (const d of getDraws()) {
+    if (!d.eatenAt || Date.parse(d.eatenAt) < since) continue;
+    const prev = lastEaten.get(d.restaurantId);
+    if (!prev || prev < d.eatenAt) lastEaten.set(d.restaurantId, d.eatenAt);
+  }
+  return getRestaurants().map((r) => ({
+    id: r.number,
     number: r.number,
     name: r.name,
     nameEn: r.nameEn,
@@ -41,41 +39,41 @@ export async function listRestaurants(): Promise<RestaurantDTO[]> {
     distance: r.distance,
     walkDistance: r.walkDistance,
     openingHours: r.openingHours,
-    baseWeight: r.baseWeight,
-    categories: r.categories.map((c) => c.categoryId),
-    lastEatenAt: last.get(r.id) ?? null,
+    baseWeight: r.baseWeight ?? 1,
+    nickname: r.nickname ?? null,
+    priceLevel: r.priceLevel ?? null,
+    disabled: r.disabled ?? false,
+    categories: r.categories,
+    lastEatenAt: lastEaten.get(r.number) ?? null,
   }));
 }
 
-export async function listCategories() {
-  return prisma.category.findMany({ orderBy: { sort: "asc" }, select: { id: true, label: true } });
+export function listCategories() {
+  return CATEGORIES.map((c) => ({ id: c.id as string, label: c.label as string }));
 }
 
-export async function roomState(code: string) {
-  const room = await prisma.room.findUnique({
-    where: { code: code.toUpperCase() },
-    include: {
-      members: { orderBy: { createdAt: "asc" }, select: { id: true, nickname: true } },
-      votes: { select: { memberId: true, categoryId: true, value: true } },
-      draws: {
-        orderBy: { createdAt: "desc" },
-        take: 1,
-        select: { id: true, restaurantId: true, probability: true, createdAt: true, eatenAt: true },
-      },
-    },
-  });
+export function roomState(code: string) {
+  const room = getRoom(code);
   if (!room) return null;
+  const latest = [...getDraws()].reverse().find((d) => d.roomCode === room.code) ?? null;
   return {
     code: room.code,
     lazyMode: room.lazyMode,
-    members: room.members,
+    prices: room.prices,
+    members: room.members.map((m) => ({ id: m.id, nickname: m.nickname })),
     votes: room.votes,
     scores: sumVotes(room.votes),
-    latestDraw: room.draws[0] ?? null,
+    latestDraw: latest && {
+      id: latest.id,
+      restaurantId: latest.restaurantId,
+      probability: latest.probability,
+      createdAt: latest.createdAt,
+      eatenAt: latest.eatenAt,
+    },
   };
 }
 
-export type RoomState = NonNullable<Awaited<ReturnType<typeof roomState>>>;
+export type RoomState = NonNullable<ReturnType<typeof roomState>>;
 
 // No 0/O/1/I so codes are easy to read out loud
 const ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";

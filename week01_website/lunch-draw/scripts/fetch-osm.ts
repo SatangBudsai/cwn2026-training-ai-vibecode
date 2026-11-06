@@ -1,8 +1,11 @@
 // Builds data/restaurants.json from OpenStreetMap (free, no API key).
 // 1. Overpass: food places within RADIUS_M of the office (cafes excluded)
 // 2. OSRM foot profile: real walking distance from the office to each place
+// Edits made in the app (nickname, price, disabled, weight, categories) and the
+// restaurant numbers are kept: matching is by OSM id. Places that disappeared from
+// OSM stay in the file so old draws still have a name.
 // Run: npm run data:fetch
-import { writeFileSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { OFFICE, RADIUS_M, haversine } from "../src/lib/geo";
 import { classify } from "../src/lib/categories";
 
@@ -81,12 +84,27 @@ async function main() {
 
   console.log(`places: ${places.length}, fetching walking distances...`);
   const walks = await walkDistances(places);
-  const data = places.map((p, i) => ({ number: i + 1, ...p, walkDistance: walks[i] }));
+  const FILE = "data/restaurants.json";
+  type Saved = { osmId: string; number: number; [k: string]: unknown };
+  const old: Saved[] = existsSync(FILE) ? JSON.parse(readFileSync(FILE, "utf8")) : [];
+  const byOsm = new Map(old.map((r) => [r.osmId, r]));
+  let next = Math.max(0, ...old.map((r) => r.number)) + 1;
+  const EDITS = ["baseWeight", "nickname", "priceLevel", "disabled", "categories"] as const;
+
+  const fresh = places.map((p, i) => {
+    const prev = byOsm.get(p.osmId);
+    const row: Record<string, unknown> = { number: prev?.number ?? next++, ...p, walkDistance: walks[i] };
+    if (prev) for (const k of EDITS) if (prev[k] !== undefined) row[k] = prev[k];
+    return row;
+  });
+  const seenOsm = new Set(places.map((p) => p.osmId));
+  const gone = old.filter((r) => !seenOsm.has(r.osmId));
+  const data = [...fresh, ...gone].sort((a, b) => (a.number as number) - (b.number as number));
 
   mkdirSync("data", { recursive: true });
-  writeFileSync("data/restaurants.json", JSON.stringify(data, null, 2));
-  const lazy = data.filter((d) => (d.walkDistance ?? d.distance * 1.3) <= 500).length;
-  console.log(`wrote data/restaurants.json: ${data.length} places, ${lazy} within 500 m walk`);
+  writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n");
+  const lazy = fresh.filter((d) => ((d.walkDistance as number | null) ?? (d.distance as number) * 1.3) <= 500).length;
+  console.log(`wrote ${FILE}: ${fresh.length} places from OSM (${lazy} within 500 m walk), ${gone.length} kept from before`);
 }
 
 main().catch((e) => {

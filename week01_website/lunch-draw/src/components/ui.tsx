@@ -36,6 +36,15 @@ export function walkMinutes(m: number) {
   return Math.max(1, Math.round(m / 80));
 }
 
+/** The team's nickname wins over the OSM name */
+export function displayName(r: { name: string; nickname?: string | null }) {
+  return r.nickname || r.name;
+}
+
+export function priceLabel(level: number | null | undefined) {
+  return level ? "฿".repeat(level) : "";
+}
+
 export function formatPercent(p: number) {
   if (p === 0) return "0%";
   if (p < 0.001) return "<0.1%";
