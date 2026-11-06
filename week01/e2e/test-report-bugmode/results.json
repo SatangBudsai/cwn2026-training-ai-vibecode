@@ -1,0 +1,2168 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\playwright.config.js",
+    "rootDir": "D:/ME/cwn2026-training-ai-vibecode/week01/e2e/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\global-setup.js",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/ME/cwn2026-training-ai-vibecode/week01/e2e/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/ME/cwn2026-training-ai-vibecode/week01/e2e/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "test-report/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-report/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.spec.js",
+      "file": "auth.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth",
+          "file": "auth.spec.js",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-AUTH-01 สมัครสำเร็จ @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3652,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:43:57.291Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-01-สมัครสำเร็จ-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-bca961ac4221db015417",
+              "file": "auth.spec.js",
+              "line": 15,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-02 ส่งฟอร์มเปล่า error ทุกช่อง @P2",
+              "ok": false,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7178,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('error-confirm')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('error-confirm')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('error-confirm')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('error-confirm')\u001b[22m\n\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\auth.spec.js:35:53",
+                        "location": {
+                          "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\auth.spec.js",
+                          "column": 53,
+                          "line": 35
+                        },
+                        "snippet": "  33 |     await expect(page.getByTestId('error-email')).toBeVisible();\n  34 |     await expect(page.getByTestId('error-password')).toBeVisible();\n> 35 |     await expect(page.getByTestId('error-confirm')).toBeVisible();\n     |                                                     ^\n  36 |     await expect(page.getByTestId('error-terms')).toBeVisible();\n  37 |     await page.waitForTimeout(1500);\n  38 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\auth.spec.js",
+                            "column": 53,
+                            "line": 35
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('error-confirm')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('error-confirm')\u001b[22m\n\n\n  33 |     await expect(page.getByTestId('error-email')).toBeVisible();\n  34 |     await expect(page.getByTestId('error-password')).toBeVisible();\n> 35 |     await expect(page.getByTestId('error-confirm')).toBeVisible();\n     |                                                     ^\n  36 |     await expect(page.getByTestId('error-terms')).toBeVisible();\n  37 |     await page.waitForTimeout(1500);\n  38 |   });\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\auth.spec.js:35:53"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:01.051Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-02-ส่งฟอร์มเปล่า-error-ทุกช่อง-P2\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-02-ส่งฟอร์มเปล่า-error-ทุกช่อง-P2\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-02-ส่งฟอร์มเปล่า-error-ทุกช่อง-P2\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-02-ส่งฟอร์มเปล่า-error-ทุกช่อง-P2\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\auth.spec.js",
+                        "column": 53,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-b44aae5e7f725ec7e376",
+              "file": "auth.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-03 รหัสผ่านอ่อน / ไม่ตรงกัน @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2424,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:08.874Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-03-รหัสผ่านอ่อน-ไม่ตรงกัน-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-c70defbeef4b7e081f01",
+              "file": "auth.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-04 อีเมลซ้ำ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2478,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:11.408Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-04-อีเมลซ้ำ-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-9dbd019b1b2ff6a65b7f",
+              "file": "auth.spec.js",
+              "line": 51,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-05 รหัสผ่านผิด @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2364,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:13.901Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-05-รหัสผ่านผิด-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-d819cee06de196bcb6e6",
+              "file": "auth.spec.js",
+              "line": 60,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-06 เข้า / ออกจากระบบ @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4144,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:16.274Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-06-เข้า-ออกจากระบบ-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-093a7c463e6630a079ce",
+              "file": "auth.spec.js",
+              "line": 70,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "cart-cpn.spec.js",
+      "file": "cart-cpn.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Cart",
+          "file": "cart-cpn.spec.js",
+          "line": 25,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-01 ใส่ 2 ชิ้น @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2402,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:20.438Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-01-ใส่-2-ชิ้น-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-f402b4d77d04d4b37319",
+              "file": "cart-cpn.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "TC-CART-02 เพิ่ม / ลด / ลบ @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5296,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:22.853Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-02-เพิ่ม-ลด-ลบ-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-53c80abaa8f0e7531c68",
+              "file": "cart-cpn.spec.js",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "TC-CART-03 ส่งฟรีเมื่อครบ ฿999 @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4276,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:28.161Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-03-ส่งฟรีเมื่อครบ-฿999-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-d51e3a5dc3bc7a902fb2",
+              "file": "cart-cpn.spec.js",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "TC-CART-04 รีโหลด + สินค้าแนะนำ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2721,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:32.449Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-04-รีโหลด-สินค้าแนะนำ-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-47fa13757d960c18b294",
+              "file": "cart-cpn.spec.js",
+              "line": 78,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Coupon",
+          "file": "cart-cpn.spec.js",
+          "line": 91,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CPN-01 PAW10 @P1",
+              "ok": false,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6494,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: \u001b[32m/ส่วนลด\\s*PAW10\\s*-฿79/\u001b[39m\nReceived string:  \u001b[31m\"🛒 ตะกร้าสินค้าตะกร้าของฉัน🛒ซื้อเพิ่มอีก ฿200 เพื่อส่งฟรี🚚แมวโต สูตรไก่Adult Chicken · ขนาด 3 kgชิ้นละ ฿799จำนวน แมวโต สูตรไก่ 3 kg−+฿799✕← เลือกซื้อสินค้าต่อสรุปคำสั่งซื้อโค้ดส่วนลดใช้โค้ดใช้คูปอง PAW10 แล้วนำคูปอง PAW10 ออกยอดรวมสินค้า฿799ส่วนลดPAW10-฿7ค่าจัดส่ง฿50ยอดชำระทั้งหมด฿842ดำเนินการชำระเงิน →ค่าจัดส่งแบบปกติ ฿50 · ส่งฟรีเมื่อซื้อครบ ฿999🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กับสินค้าในตะกร้า🐱 แมวโต🌾 เกรนฟรีอาหารเปียก★ 4.7เพาช์ทูน่าในเยลลี่Tuna in Jellyเริ่มต้น฿35ใส่ตะกร้า\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    14 × locator resolved to <main id=\"main\" class=\"site-main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"🛒 ตะกร้าสินค้าตะกร้าของฉัน🛒ซื้อเพิ่มอีก ฿200 เพื่อส่งฟรี🚚แมวโต สูตรไก่Adult Chicken · ขนาด 3 kgชิ้นละ ฿799จำนวน แมวโต สูตรไก่ 3 kg−+฿799✕← เลือกซื้อสินค้าต่อสรุปคำสั่งซื้อโค้ดส่วนลดใช้โค้ดใช้คูปอง PAW10 แล้วนำคูปอง PAW10 ออกยอดรวมสินค้า฿799ส่วนลดPAW10-฿7ค่าจัดส่ง฿50ยอดชำระทั้งหมด฿842ดำเนินการชำระเงิน →ค่าจัดส่งแบบปกติ ฿50 · ส่งฟรีเมื่อซื้อครบ ฿999🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กับสินค้าในตะกร้า🐱 แมวโต🌾 เกรนฟรีอาหารเปียก★ 4.7เพาช์ทูน่าในเยลลี่Tuna in Jellyเริ่มต้น฿35ใส่ตะกร้า\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: \u001b[32m/ส่วนลด\\s*PAW10\\s*-฿79/\u001b[39m\nReceived string:  \u001b[31m\"🛒 ตะกร้าสินค้าตะกร้าของฉัน🛒ซื้อเพิ่มอีก ฿200 เพื่อส่งฟรี🚚แมวโต สูตรไก่Adult Chicken · ขนาด 3 kgชิ้นละ ฿799จำนวน แมวโต สูตรไก่ 3 kg−+฿799✕← เลือกซื้อสินค้าต่อสรุปคำสั่งซื้อโค้ดส่วนลดใช้โค้ดใช้คูปอง PAW10 แล้วนำคูปอง PAW10 ออกยอดรวมสินค้า฿799ส่วนลดPAW10-฿7ค่าจัดส่ง฿50ยอดชำระทั้งหมด฿842ดำเนินการชำระเงิน →ค่าจัดส่งแบบปกติ ฿50 · ส่งฟรีเมื่อซื้อครบ ฿999🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กับสินค้าในตะกร้า🐱 แมวโต🌾 เกรนฟรีอาหารเปียก★ 4.7เพาช์ทูน่าในเยลลี่Tuna in Jellyเริ่มต้น฿35ใส่ตะกร้า\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    14 × locator resolved to <main id=\"main\" class=\"site-main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"🛒 ตะกร้าสินค้าตะกร้าของฉัน🛒ซื้อเพิ่มอีก ฿200 เพื่อส่งฟรี🚚แมวโต สูตรไก่Adult Chicken · ขนาด 3 kgชิ้นละ ฿799จำนวน แมวโต สูตรไก่ 3 kg−+฿799✕← เลือกซื้อสินค้าต่อสรุปคำสั่งซื้อโค้ดส่วนลดใช้โค้ดใช้คูปอง PAW10 แล้วนำคูปอง PAW10 ออกยอดรวมสินค้า฿799ส่วนลดPAW10-฿7ค่าจัดส่ง฿50ยอดชำระทั้งหมด฿842ดำเนินการชำระเงิน →ค่าจัดส่งแบบปกติ ฿50 · ส่งฟรีเมื่อซื้อครบ ฿999🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กับสินค้าในตะกร้า🐱 แมวโต🌾 เกรนฟรีอาหารเปียก★ 4.7เพาช์ทูน่าในเยลลี่Tuna in Jellyเริ่มต้น฿35ใส่ตะกร้า\"\u001b[22m\n\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\cart-cpn.spec.js:98:30",
+                        "location": {
+                          "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\cart-cpn.spec.js",
+                          "column": 30,
+                          "line": 98
+                        },
+                        "snippet": "   96 |     await applyCoupon(page, 'PAW10');\n   97 |     await expect(main(page)).toContainText('ใช้คูปอง PAW10 แล้ว');\n>  98 |     await expect(main(page)).toContainText(/ส่วนลด\\s*PAW10\\s*-฿79/);\n      |                              ^\n   99 |     await expect(main(page)).toContainText(/ยอดชำระทั้งหมด\\s*฿770/);\n  100 |     await page.waitForTimeout(PAUSE);\n  101 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\cart-cpn.spec.js",
+                            "column": 30,
+                            "line": 98
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: \u001b[32m/ส่วนลด\\s*PAW10\\s*-฿79/\u001b[39m\nReceived string:  \u001b[31m\"🛒 ตะกร้าสินค้าตะกร้าของฉัน🛒ซื้อเพิ่มอีก ฿200 เพื่อส่งฟรี🚚แมวโต สูตรไก่Adult Chicken · ขนาด 3 kgชิ้นละ ฿799จำนวน แมวโต สูตรไก่ 3 kg−+฿799✕← เลือกซื้อสินค้าต่อสรุปคำสั่งซื้อโค้ดส่วนลดใช้โค้ดใช้คูปอง PAW10 แล้วนำคูปอง PAW10 ออกยอดรวมสินค้า฿799ส่วนลดPAW10-฿7ค่าจัดส่ง฿50ยอดชำระทั้งหมด฿842ดำเนินการชำระเงิน →ค่าจัดส่งแบบปกติ ฿50 · ส่งฟรีเมื่อซื้อครบ ฿999🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กับสินค้าในตะกร้า🐱 แมวโต🌾 เกรนฟรีอาหารเปียก★ 4.7เพาช์ทูน่าในเยลลี่Tuna in Jellyเริ่มต้น฿35ใส่ตะกร้า\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    14 × locator resolved to <main id=\"main\" class=\"site-main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"🛒 ตะกร้าสินค้าตะกร้าของฉัน🛒ซื้อเพิ่มอีก ฿200 เพื่อส่งฟรี🚚แมวโต สูตรไก่Adult Chicken · ขนาด 3 kgชิ้นละ ฿799จำนวน แมวโต สูตรไก่ 3 kg−+฿799✕← เลือกซื้อสินค้าต่อสรุปคำสั่งซื้อโค้ดส่วนลดใช้โค้ดใช้คูปอง PAW10 แล้วนำคูปอง PAW10 ออกยอดรวมสินค้า฿799ส่วนลดPAW10-฿7ค่าจัดส่ง฿50ยอดชำระทั้งหมด฿842ดำเนินการชำระเงิน →ค่าจัดส่งแบบปกติ ฿50 · ส่งฟรีเมื่อซื้อครบ ฿999🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กับสินค้าในตะกร้า🐱 แมวโต🌾 เกรนฟรีอาหารเปียก★ 4.7เพาช์ทูน่าในเยลลี่Tuna in Jellyเริ่มต้น฿35ใส่ตะกร้า\"\u001b[22m\n\n\n   96 |     await applyCoupon(page, 'PAW10');\n   97 |     await expect(main(page)).toContainText('ใช้คูปอง PAW10 แล้ว');\n>  98 |     await expect(main(page)).toContainText(/ส่วนลด\\s*PAW10\\s*-฿79/);\n      |                              ^\n   99 |     await expect(main(page)).toContainText(/ยอดชำระทั้งหมด\\s*฿770/);\n  100 |     await page.waitForTimeout(PAUSE);\n  101 |   });\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\cart-cpn.spec.js:98:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:35.182Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-01-PAW10-P1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-01-PAW10-P1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-01-PAW10-P1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-01-PAW10-P1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\cart-cpn.spec.js",
+                        "column": 30,
+                        "line": 98
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-1733bd58a7fa0ac0b98c",
+              "file": "cart-cpn.spec.js",
+              "line": 92,
+              "column": 3
+            },
+            {
+              "title": "TC-CPN-02 คูปองผิด / หมดอายุ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3891,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:42.611Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-02-คูปองผิด-หมดอายุ-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-e4e0b633300550da1c25",
+              "file": "cart-cpn.spec.js",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "TC-CPN-03 NEWCAT50 @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4968,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:46.629Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-03-NEWCAT50-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5361aeca666fbd2b41a6-69b6e9b5d8b645f37a3b",
+              "file": "cart-cpn.spec.js",
+              "line": 121,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "chk.spec.js",
+      "file": "chk.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Checkout",
+          "file": "chk.spec.js",
+          "line": 42,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CHK-01 ยังไม่เข้าสู่ระบบ @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5622,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:51.628Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-01-ยังไม่เข้าสู่ระบบ-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9550639eb9a6fb2dfb17-8599637bc3b2bc2d7cbe",
+              "file": "chk.spec.js",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "TC-CHK-02 ฟอร์มที่อยู่ผิด @P1",
+              "ok": false,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10165,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/เบอร์โทร.*10 หลัก/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/เบอร์โทร.*10 หลัก/)\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/เบอร์โทร.*10 หลัก/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/เบอร์โทร.*10 หลัก/)\u001b[22m\n\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\chk.spec.js:72:55",
+                        "location": {
+                          "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\chk.spec.js",
+                          "column": 55,
+                          "line": 72
+                        },
+                        "snippet": "  70 |     await fillAddress(page, { phone: '081234567', zip: '1090', addr: 'สั้นไป' });\n  71 |     await submit.click();\n> 72 |     await expect(page.getByText(/เบอร์โทร.*10 หลัก/)).toBeVisible();\n     |                                                       ^\n  73 |     await expect(page.getByText(/รหัสไปรษณีย์.*5 หลัก/)).toBeVisible();\n  74 |     await expect(page.getByText(/กรุณากรอกที่อยู่/)).toBeVisible();\n  75 |     await expect(page).toHaveURL(/\\/checkout/);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\chk.spec.js",
+                            "column": 55,
+                            "line": 72
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/เบอร์โทร.*10 หลัก/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/เบอร์โทร.*10 หลัก/)\u001b[22m\n\n\n  70 |     await fillAddress(page, { phone: '081234567', zip: '1090', addr: 'สั้นไป' });\n  71 |     await submit.click();\n> 72 |     await expect(page.getByText(/เบอร์โทร.*10 หลัก/)).toBeVisible();\n     |                                                       ^\n  73 |     await expect(page.getByText(/รหัสไปรษณีย์.*5 หลัก/)).toBeVisible();\n  74 |     await expect(page.getByText(/กรุณากรอกที่อยู่/)).toBeVisible();\n  75 |     await expect(page).toHaveURL(/\\/checkout/);\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\chk.spec.js:72:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:44:57.266Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-02-ฟอร์มที่อยู่ผิด-P1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-02-ฟอร์มที่อยู่ผิด-P1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-02-ฟอร์มที่อยู่ผิด-P1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-02-ฟอร์มที่อยู่ผิด-P1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\chk.spec.js",
+                        "column": 55,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9550639eb9a6fb2dfb17-e0c7b531b27e8072f5eb",
+              "file": "chk.spec.js",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "TC-CHK-03 ซื้อของจนจบ E2E @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9237,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:08.568Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-03-ซื้อของจนจบ-E2E-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9550639eb9a6fb2dfb17-2bf0ad9df6f3d30d0732",
+              "file": "chk.spec.js",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "TC-CHK-04 สต็อกลดลง @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7632,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:17.931Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-04-สต็อกลดลง-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9550639eb9a6fb2dfb17-e69ed83d1fa45317d099",
+              "file": "chk.spec.js",
+              "line": 113,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "home-cat.spec.js",
+      "file": "home-cat.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "หน้าแรก + ค้นหา/กรอง",
+          "file": "home-cat.spec.js",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-HOME-01 หน้าแรกแสดงครบ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2686,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:25.597Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-HOME-01-หน้าแรกแสดงครบ-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-53c19a1c5b45afd205c3",
+              "file": "home-cat.spec.js",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "TC-HOME-02 ปุ่ม \"ช้อปอาหารแมว\" @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3097,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:28.299Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-HOME-02-ปุ่ม-ช้อปอาหารแมว-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-d1fdc699c5e7cda0662e",
+              "file": "home-cat.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "TC-CAT-01 ค้นหา \"แซลมอน\" @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2742,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:31.411Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-01-ค้นหา-แซลมอน-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-9edfd4ec2dcb50a0487a",
+              "file": "home-cat.spec.js",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "TC-CAT-02 กรองแมว + อาหารเปียก @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2870,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:34.167Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-02-กรองแมว-อาหารเปียก-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-4335d99804c5cb243d95",
+              "file": "home-cat.spec.js",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "TC-CAT-03 เรียงราคาน้อย → มาก @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2631,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:37.048Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-03-เรียงราคาน้อย-→-มาก-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-fa1a52223d8d9922b6d3",
+              "file": "home-cat.spec.js",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "TC-CAT-04 กรองเกรนฟรี @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2485,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:39.691Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-04-กรองเกรนฟรี-P3\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-d409b74a12a613c18679",
+              "file": "home-cat.spec.js",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "TC-CAT-05 ค้นหาไม่เจอ @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3653,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:42.190Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-05-ค้นหาไม่เจอ-P3\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-0c141089a9dfe76a0e04",
+              "file": "home-cat.spec.js",
+              "line": 85,
+              "column": 3
+            },
+            {
+              "title": "TC-CAT-06 เมนู \"ของเล่น\" @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2532,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:45.860Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-06-เมนู-ของเล่น-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e55e9b3e3015605ce888-81124704fc961522f138",
+              "file": "home-cat.spec.js",
+              "line": 97,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mob-api.spec.js",
+      "file": "mob-api.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "มือถือ",
+          "file": "mob-api.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-MOB-01 เมนูแฮมเบอร์เกอร์ ไปหน้าสินค้าหมา @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5149,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:48.411Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\mob-api-มือถือ-TC-MOB-01-เ-17dae-อร์เกอร์-ไปหน้าสินค้าหมา-P3\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c38b5a185ebdb55cb616-9c96404f1d20eb5fb469",
+              "file": "mob-api.spec.js",
+              "line": 6,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "API",
+          "file": "mob-api.spec.js",
+          "line": 29,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-API-01 รายการสินค้าหมา 200 และ 14 รายการ @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 49,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:53.572Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c38b5a185ebdb55cb616-b9e40a1bdcb2f4143c2e",
+              "file": "mob-api.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "TC-API-02 สั่งซื้อโดยไม่ login @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:53.630Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c38b5a185ebdb55cb616-a29299337b5424e8004c",
+              "file": "mob-api.spec.js",
+              "line": 38,
+              "column": 3
+            },
+            {
+              "title": "TC-API-03 สินค้าที่ไม่มีอยู่ @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:53.652Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c38b5a185ebdb55cb616-acb24e431f871c5c0835",
+              "file": "mob-api.spec.js",
+              "line": 45,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "my.spec.js",
+      "file": "my.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "คิดเอง",
+          "file": "my.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-MY-01 ค้นหา \"เป็ด\" ต้องเจอ 2 รายการ @P3",
+              "ok": true,
+              "tags": [
+                "P3"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2678,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:53.687Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\my-คิดเอง-TC-MY-01-ค้นหา-เป็ด-ต้องเจอ-2-รายการ-P3\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "456a0147b2edf635f6a3-b9d3e4ac3df542fd86e0",
+              "file": "my.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "TC-MY-02 ซื้อครบ ฿999 เลือกส่งด่วน ค่าส่งต้องเป็น ฿120 @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3862,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:45:56.376Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\my-คิดเอง-TC-MY-02-ซื้อครบ-06443-ด่วน-ค่าส่งต้องเป็น-฿120-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "456a0147b2edf635f6a3-ca4d26d2839f40567ecc",
+              "file": "my.spec.js",
+              "line": 16,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "prd-wish.spec.js",
+      "file": "prd-wish.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-PRD-01 เลือกขนาด @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3314,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:00.258Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-01-เลือกขนาด-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-b97ca3810b02986989af",
+          "file": "prd-wish.spec.js",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "TC-PRD-02 สินค้าหมด @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2681,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:03.580Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-02-สินค้าหมด-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-c7c58f30a928579a262e",
+          "file": "prd-wish.spec.js",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "TC-PRD-03 จำนวนเกินสต็อก @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:06.270Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-03-จำนวนเกินสต็อก-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-90312ff0538c3415b08a",
+          "file": "prd-wish.spec.js",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "TC-PRD-04 สินค้าที่ไม่มีอยู่ @P3",
+          "ok": true,
+          "tags": [
+            "P3"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3295,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:09.578Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-04-สินค้าที่ไม่มีอยู่-P3\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-3e6f01de61f16820ead3",
+          "file": "prd-wish.spec.js",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "TC-WISH-01 กดหัวใจ 2 ชิ้น @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:12.880Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-01-กดหัวใจ-2-ชิ้น-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-4668b8331f1e9efd4ca4",
+          "file": "prd-wish.spec.js",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "TC-WISH-02 ลบออก @P2",
+          "ok": false,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7526,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('wishlist-count')\nExpected: \u001b[32m\"1\"\u001b[39m\nReceived: \u001b[31m\"2\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('wishlist-count')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"count-badge pop\" data-testid=\"wishlist-count\">2</span>\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('wishlist-count')\nExpected: \u001b[32m\"1\"\u001b[39m\nReceived: \u001b[31m\"2\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('wishlist-count')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"count-badge pop\" data-testid=\"wishlist-count\">2</span>\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js:80:33",
+                    "location": {
+                      "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js",
+                      "column": 33,
+                      "line": 80
+                    },
+                    "snippet": "  78 |   await page.waitForTimeout(1000);\n  79 |   await page.getByTestId('wishlist-remove').first().click();\n> 80 |   await expect(wishCount(page)).toHaveText('1');\n     |                                 ^\n  81 |   await expect(page.getByTestId('wishlist-remove')).toHaveCount(1);\n  82 |   await page.waitForTimeout(1500);\n  83 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js",
+                        "column": 33,
+                        "line": 80
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('wishlist-count')\nExpected: \u001b[32m\"1\"\u001b[39m\nReceived: \u001b[31m\"2\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('wishlist-count')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"count-badge pop\" data-testid=\"wishlist-count\">2</span>\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n\n\n  78 |   await page.waitForTimeout(1000);\n  79 |   await page.getByTestId('wishlist-remove').first().click();\n> 80 |   await expect(wishCount(page)).toHaveText('1');\n     |                                 ^\n  81 |   await expect(page.getByTestId('wishlist-remove')).toHaveCount(1);\n  82 |   await page.waitForTimeout(1500);\n  83 | });\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js:80:33"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:16.629Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-02-ลบออก-P2\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-02-ลบออก-P2\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-02-ลบออก-P2\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-02-ลบออก-P2\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js",
+                    "column": 33,
+                    "line": 80
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-dd11d1995065385945e1",
+          "file": "prd-wish.spec.js",
+          "line": 72,
+          "column": 1
+        },
+        {
+          "title": "TC-WISH-03 ย้ายไปตะกร้า @P2",
+          "ok": false,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7249,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('wishlist-count')\nExpected: \u001b[32m\"0\"\u001b[39m\nReceived: \u001b[31m\"1\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('wishlist-count')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"count-badge pop\" data-testid=\"wishlist-count\">1</span>\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('wishlist-count')\nExpected: \u001b[32m\"0\"\u001b[39m\nReceived: \u001b[31m\"1\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('wishlist-count')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"count-badge pop\" data-testid=\"wishlist-count\">1</span>\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js:93:33",
+                    "location": {
+                      "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js",
+                      "column": 33,
+                      "line": 93
+                    },
+                    "snippet": "  91 |   await page.getByTestId('move-to-cart').click();\n  92 |   await expect(page.getByRole('link', { name: 'แมวโต สูตรไก่' })).toHaveCount(0);\n> 93 |   await expect(wishCount(page)).toHaveText('0');\n     |                                 ^\n  94 |   await expect(cartCount(page)).toHaveText('1');\n  95 |   await page.waitForTimeout(1500);\n  96 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js",
+                        "column": 33,
+                        "line": 93
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('wishlist-count')\nExpected: \u001b[32m\"0\"\u001b[39m\nReceived: \u001b[31m\"1\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('wishlist-count')\u001b[22m\n\u001b[2m    14 × locator resolved to <span class=\"count-badge pop\" data-testid=\"wishlist-count\">1</span>\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n  91 |   await page.getByTestId('move-to-cart').click();\n  92 |   await expect(page.getByRole('link', { name: 'แมวโต สูตรไก่' })).toHaveCount(0);\n> 93 |   await expect(wishCount(page)).toHaveText('0');\n     |                                 ^\n  94 |   await expect(cartCount(page)).toHaveText('1');\n  95 |   await page.waitForTimeout(1500);\n  96 | });\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js:93:33"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T03:46:25.138Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-03-ย้ายไปตะกร้า-P2\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-03-ย้ายไปตะกร้า-P2\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-03-ย้ายไปตะกร้า-P2\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-03-ย้ายไปตะกร้า-P2\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\tests\\prd-wish.spec.js",
+                    "column": 33,
+                    "line": 93
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4d3500a5b68f2afc5e5b-c9788ef01338de31ae16",
+          "file": "prd-wish.spec.js",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "rec.spec.js",
+      "file": "rec.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Recommendation",
+          "file": "rec.spec.js",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-REC-01 Finder ลูกแมว แพ้ไก่ @P1",
+              "ok": true,
+              "tags": [
+                "P1"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4303,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:46:33.286Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-01-Finder-ลูกแมว-แพ้ไก่-P1\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce62a4bd2eefe2fe8b86-040f06673f568b46f788",
+              "file": "rec.spec.js",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "TC-REC-02 Finder หมาสูงวัย เกรนฟรี ขนม @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4142,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:46:37.708Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-02-Finder-หมาสูงวัย-เกรนฟรี-ขนม-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce62a4bd2eefe2fe8b86-2550291c03092cf5d8e8",
+              "file": "rec.spec.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "TC-REC-03 แนะนำตามที่เคยดู @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4917,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:46:41.860Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-03-แนะนำตามที่เคยดู-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce62a4bd2eefe2fe8b86-36c7b08f48c334050131",
+              "file": "rec.spec.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "TC-REC-04 ซื้อคู่กันบ่อย @P2",
+              "ok": true,
+              "tags": [
+                "P2"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3873,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T03:46:46.786Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-04-ซื้อคู่กันบ่อย-P2\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce62a4bd2eefe2fe8b86-9684998fb42693b0d086",
+              "file": "rec.spec.js",
+              "line": 62,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-06T03:43:56.869Z",
+    "duration": 173925.4,
+    "expected": 37,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

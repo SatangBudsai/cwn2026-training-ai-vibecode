@@ -1,0 +1,222 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>PawPantry test report</title>
+<style>body{font-family:system-ui,sans-serif;margin:24px;background:#fafafa;color:#222}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:#fff;border:2px solid #4caf50;border-radius:8px;padding:12px}.card.fail{border-color:#e53935}
+.card img{width:100%;border-radius:4px}.badge{font-size:.8em;padding:2px 8px;border-radius:10px;background:#4caf50;color:#fff}
+.fail .badge{background:#e53935}.tag{color:#888;font-size:.8em}button{margin-right:8px;padding:6px 14px}</style></head><body>
+<h1>PawPantry — ผลทดสอบ 42 ข้อ: ผ่าน 37 · ล้ม 5</h1>
+<p><button onclick="f('all')">ทั้งหมด</button><button onclick="f('pass')">ผ่าน</button><button onclick="f('fail')">ล้ม</button></p>
+<div class="grid">
+  <section class="card pass" data-status="pass">
+    <h3>TC-API-01 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-API-01 รายการสินค้าหมา 200 และ 14 รายการ @P2</p>
+    <p><i>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดเบราว์เซอร์</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-API-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-API-02 สั่งซื้อโดยไม่ login @P1</p>
+    <p><i>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดเบราว์เซอร์</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-API-03 <span class="tag">P3</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-API-03 สินค้าที่ไม่มีอยู่ @P3</p>
+    <p><i>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดเบราว์เซอร์</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-01 สมัครสำเร็จ @P1</p>
+    <img loading="lazy" src="gifs/TC-AUTH-01.gif" alt="TC-AUTH-01">
+  </section>
+  <section class="card fail" data-status="fail">
+    <h3>TC-AUTH-02 <span class="tag">P2</span> <span class="badge">ล้ม</span></h3>
+    <p>TC-AUTH-02 ส่งฟอร์มเปล่า error ทุกช่อง @P2</p>
+    <img loading="lazy" src="gifs/TC-AUTH-02.gif" alt="TC-AUTH-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-03 รหัสผ่านอ่อน / ไม่ตรงกัน @P2</p>
+    <img loading="lazy" src="gifs/TC-AUTH-03.gif" alt="TC-AUTH-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-04 อีเมลซ้ำ @P2</p>
+    <img loading="lazy" src="gifs/TC-AUTH-04.gif" alt="TC-AUTH-04">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-05 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-05 รหัสผ่านผิด @P1</p>
+    <img loading="lazy" src="gifs/TC-AUTH-05.gif" alt="TC-AUTH-05">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-06 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-06 เข้า / ออกจากระบบ @P1</p>
+    <img loading="lazy" src="gifs/TC-AUTH-06.gif" alt="TC-AUTH-06">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CART-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CART-01 ใส่ 2 ชิ้น @P1</p>
+    <img loading="lazy" src="gifs/TC-CART-01.gif" alt="TC-CART-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CART-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CART-02 เพิ่ม / ลด / ลบ @P1</p>
+    <img loading="lazy" src="gifs/TC-CART-02.gif" alt="TC-CART-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CART-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CART-03 ส่งฟรีเมื่อครบ ฿999 @P2</p>
+    <img loading="lazy" src="gifs/TC-CART-03.gif" alt="TC-CART-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CART-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CART-04 รีโหลด + สินค้าแนะนำ @P2</p>
+    <img loading="lazy" src="gifs/TC-CART-04.gif" alt="TC-CART-04">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CAT-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CAT-01 ค้นหา "แซลมอน" @P1</p>
+    <img loading="lazy" src="gifs/TC-CAT-01.gif" alt="TC-CAT-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CAT-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CAT-02 กรองแมว + อาหารเปียก @P1</p>
+    <img loading="lazy" src="gifs/TC-CAT-02.gif" alt="TC-CAT-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CAT-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CAT-03 เรียงราคาน้อย → มาก @P2</p>
+    <img loading="lazy" src="gifs/TC-CAT-03.gif" alt="TC-CAT-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CAT-04 <span class="tag">P3</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CAT-04 กรองเกรนฟรี @P3</p>
+    <img loading="lazy" src="gifs/TC-CAT-04.gif" alt="TC-CAT-04">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CAT-05 <span class="tag">P3</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CAT-05 ค้นหาไม่เจอ @P3</p>
+    <img loading="lazy" src="gifs/TC-CAT-05.gif" alt="TC-CAT-05">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CAT-06 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CAT-06 เมนู "ของเล่น" @P2</p>
+    <img loading="lazy" src="gifs/TC-CAT-06.gif" alt="TC-CAT-06">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CHK-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CHK-01 ยังไม่เข้าสู่ระบบ @P1</p>
+    <img loading="lazy" src="gifs/TC-CHK-01.gif" alt="TC-CHK-01">
+  </section>
+  <section class="card fail" data-status="fail">
+    <h3>TC-CHK-02 <span class="tag">P1</span> <span class="badge">ล้ม</span></h3>
+    <p>TC-CHK-02 ฟอร์มที่อยู่ผิด @P1</p>
+    <img loading="lazy" src="gifs/TC-CHK-02.gif" alt="TC-CHK-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CHK-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CHK-03 ซื้อของจนจบ E2E @P1</p>
+    <img loading="lazy" src="gifs/TC-CHK-03.gif" alt="TC-CHK-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CHK-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CHK-04 สต็อกลดลง @P2</p>
+    <img loading="lazy" src="gifs/TC-CHK-04.gif" alt="TC-CHK-04">
+  </section>
+  <section class="card fail" data-status="fail">
+    <h3>TC-CPN-01 <span class="tag">P1</span> <span class="badge">ล้ม</span></h3>
+    <p>TC-CPN-01 PAW10 @P1</p>
+    <img loading="lazy" src="gifs/TC-CPN-01.gif" alt="TC-CPN-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CPN-02 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CPN-02 คูปองผิด / หมดอายุ @P2</p>
+    <img loading="lazy" src="gifs/TC-CPN-02.gif" alt="TC-CPN-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-CPN-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-CPN-03 NEWCAT50 @P2</p>
+    <img loading="lazy" src="gifs/TC-CPN-03.gif" alt="TC-CPN-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-HOME-01 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-HOME-01 หน้าแรกแสดงครบ @P2</p>
+    <img loading="lazy" src="gifs/TC-HOME-01.gif" alt="TC-HOME-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-HOME-02 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-HOME-02 ปุ่ม "ช้อปอาหารแมว" @P2</p>
+    <img loading="lazy" src="gifs/TC-HOME-02.gif" alt="TC-HOME-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-MOB-01 <span class="tag">P3</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-MOB-01 เมนูแฮมเบอร์เกอร์ ไปหน้าสินค้าหมา @P3</p>
+    <img loading="lazy" src="gifs/TC-MOB-01.gif" alt="TC-MOB-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-MY-01 <span class="tag">P3</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-MY-01 ค้นหา "เป็ด" ต้องเจอ 2 รายการ @P3</p>
+    <img loading="lazy" src="gifs/TC-MY-01.gif" alt="TC-MY-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-MY-02 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-MY-02 ซื้อครบ ฿999 เลือกส่งด่วน ค่าส่งต้องเป็น ฿120 @P2</p>
+    <img loading="lazy" src="gifs/TC-MY-02.gif" alt="TC-MY-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PRD-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PRD-01 เลือกขนาด @P1</p>
+    <img loading="lazy" src="gifs/TC-PRD-01.gif" alt="TC-PRD-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PRD-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PRD-02 สินค้าหมด @P1</p>
+    <img loading="lazy" src="gifs/TC-PRD-02.gif" alt="TC-PRD-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PRD-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PRD-03 จำนวนเกินสต็อก @P2</p>
+    <img loading="lazy" src="gifs/TC-PRD-03.gif" alt="TC-PRD-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PRD-04 <span class="tag">P3</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PRD-04 สินค้าที่ไม่มีอยู่ @P3</p>
+    <img loading="lazy" src="gifs/TC-PRD-04.gif" alt="TC-PRD-04">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-REC-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-REC-01 Finder ลูกแมว แพ้ไก่ @P1</p>
+    <img loading="lazy" src="gifs/TC-REC-01.gif" alt="TC-REC-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-REC-02 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-REC-02 Finder หมาสูงวัย เกรนฟรี ขนม @P2</p>
+    <img loading="lazy" src="gifs/TC-REC-02.gif" alt="TC-REC-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-REC-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-REC-03 แนะนำตามที่เคยดู @P2</p>
+    <img loading="lazy" src="gifs/TC-REC-03.gif" alt="TC-REC-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-REC-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-REC-04 ซื้อคู่กันบ่อย @P2</p>
+    <img loading="lazy" src="gifs/TC-REC-04.gif" alt="TC-REC-04">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WISH-01 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WISH-01 กดหัวใจ 2 ชิ้น @P2</p>
+    <img loading="lazy" src="gifs/TC-WISH-01.gif" alt="TC-WISH-01">
+  </section>
+  <section class="card fail" data-status="fail">
+    <h3>TC-WISH-02 <span class="tag">P2</span> <span class="badge">ล้ม</span></h3>
+    <p>TC-WISH-02 ลบออก @P2</p>
+    <img loading="lazy" src="gifs/TC-WISH-02.gif" alt="TC-WISH-02">
+  </section>
+  <section class="card fail" data-status="fail">
+    <h3>TC-WISH-03 <span class="tag">P2</span> <span class="badge">ล้ม</span></h3>
+    <p>TC-WISH-03 ย้ายไปตะกร้า @P2</p>
+    <img loading="lazy" src="gifs/TC-WISH-03.gif" alt="TC-WISH-03">
+  </section></div>
+<script>function f(s){document.querySelectorAll('.card').forEach(c=>c.style.display=(s==='all'||c.dataset.status===s)?'':'none')}</script>
+</body></html>

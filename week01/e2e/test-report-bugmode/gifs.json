@@ -1,0 +1,335 @@
+[
+  {
+    "id": "TC-API-01",
+    "prio": "P2",
+    "title": "TC-API-01 รายการสินค้าหมา 200 และ 14 รายการ @P2",
+    "status": "pass",
+    "gifSeconds": 0
+  },
+  {
+    "id": "TC-API-02",
+    "prio": "P1",
+    "title": "TC-API-02 สั่งซื้อโดยไม่ login @P1",
+    "status": "pass",
+    "gifSeconds": 0
+  },
+  {
+    "id": "TC-API-03",
+    "prio": "P3",
+    "title": "TC-API-03 สินค้าที่ไม่มีอยู่ @P3",
+    "status": "pass",
+    "gifSeconds": 0
+  },
+  {
+    "id": "TC-AUTH-01",
+    "prio": "P1",
+    "title": "TC-AUTH-01 สมัครสำเร็จ @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-01-สมัครสำเร็จ-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-AUTH-02",
+    "prio": "P2",
+    "title": "TC-AUTH-02 ส่งฟอร์มเปล่า error ทุกช่อง @P2",
+    "status": "fail",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-02-ส่งฟอร์มเปล่า-error-ทุกช่อง-P2\\video.webm",
+    "gifSeconds": 7.51
+  },
+  {
+    "id": "TC-AUTH-03",
+    "prio": "P2",
+    "title": "TC-AUTH-03 รหัสผ่านอ่อน / ไม่ตรงกัน @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-03-รหัสผ่านอ่อน-ไม่ตรงกัน-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-AUTH-04",
+    "prio": "P2",
+    "title": "TC-AUTH-04 อีเมลซ้ำ @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-04-อีเมลซ้ำ-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-AUTH-05",
+    "prio": "P1",
+    "title": "TC-AUTH-05 รหัสผ่านผิด @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-05-รหัสผ่านผิด-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-AUTH-06",
+    "prio": "P1",
+    "title": "TC-AUTH-06 เข้า / ออกจากระบบ @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\auth-Auth-TC-AUTH-06-เข้า-ออกจากระบบ-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CART-01",
+    "prio": "P1",
+    "title": "TC-CART-01 ใส่ 2 ชิ้น @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-01-ใส่-2-ชิ้น-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CART-02",
+    "prio": "P1",
+    "title": "TC-CART-02 เพิ่ม / ลด / ลบ @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-02-เพิ่ม-ลด-ลบ-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CART-03",
+    "prio": "P2",
+    "title": "TC-CART-03 ส่งฟรีเมื่อครบ ฿999 @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-03-ส่งฟรีเมื่อครบ-฿999-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CART-04",
+    "prio": "P2",
+    "title": "TC-CART-04 รีโหลด + สินค้าแนะนำ @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Cart-TC-CART-04-รีโหลด-สินค้าแนะนำ-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CAT-01",
+    "prio": "P1",
+    "title": "TC-CAT-01 ค้นหา \"แซลมอน\" @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-01-ค้นหา-แซลมอน-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CAT-02",
+    "prio": "P1",
+    "title": "TC-CAT-02 กรองแมว + อาหารเปียก @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-02-กรองแมว-อาหารเปียก-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CAT-03",
+    "prio": "P2",
+    "title": "TC-CAT-03 เรียงราคาน้อย → มาก @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-03-เรียงราคาน้อย-→-มาก-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CAT-04",
+    "prio": "P3",
+    "title": "TC-CAT-04 กรองเกรนฟรี @P3",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-04-กรองเกรนฟรี-P3\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CAT-05",
+    "prio": "P3",
+    "title": "TC-CAT-05 ค้นหาไม่เจอ @P3",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-05-ค้นหาไม่เจอ-P3\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CAT-06",
+    "prio": "P2",
+    "title": "TC-CAT-06 เมนู \"ของเล่น\" @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-CAT-06-เมนู-ของเล่น-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CHK-01",
+    "prio": "P1",
+    "title": "TC-CHK-01 ยังไม่เข้าสู่ระบบ @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-01-ยังไม่เข้าสู่ระบบ-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CHK-02",
+    "prio": "P1",
+    "title": "TC-CHK-02 ฟอร์มที่อยู่ผิด @P1",
+    "status": "fail",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-02-ฟอร์มที่อยู่ผิด-P1\\video.webm",
+    "gifSeconds": 10.13
+  },
+  {
+    "id": "TC-CHK-03",
+    "prio": "P1",
+    "title": "TC-CHK-03 ซื้อของจนจบ E2E @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-03-ซื้อของจนจบ-E2E-P1\\video.webm",
+    "gifSeconds": 8.88
+  },
+  {
+    "id": "TC-CHK-04",
+    "prio": "P2",
+    "title": "TC-CHK-04 สต็อกลดลง @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\chk-Checkout-TC-CHK-04-สต็อกลดลง-P2\\video.webm",
+    "gifSeconds": 7.38
+  },
+  {
+    "id": "TC-CPN-01",
+    "prio": "P1",
+    "title": "TC-CPN-01 PAW10 @P1",
+    "status": "fail",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-01-PAW10-P1\\video.webm",
+    "gifSeconds": 7.26
+  },
+  {
+    "id": "TC-CPN-02",
+    "prio": "P2",
+    "title": "TC-CPN-02 คูปองผิด / หมดอายุ @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-02-คูปองผิด-หมดอายุ-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-CPN-03",
+    "prio": "P2",
+    "title": "TC-CPN-03 NEWCAT50 @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\cart-cpn-Coupon-TC-CPN-03-NEWCAT50-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-HOME-01",
+    "prio": "P2",
+    "title": "TC-HOME-01 หน้าแรกแสดงครบ @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-HOME-01-หน้าแรกแสดงครบ-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-HOME-02",
+    "prio": "P2",
+    "title": "TC-HOME-02 ปุ่ม \"ช้อปอาหารแมว\" @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\home-cat-หน้าแรก-ค้นหา-กรอง-TC-HOME-02-ปุ่ม-ช้อปอาหารแมว-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-MOB-01",
+    "prio": "P3",
+    "title": "TC-MOB-01 เมนูแฮมเบอร์เกอร์ ไปหน้าสินค้าหมา @P3",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\mob-api-มือถือ-TC-MOB-01-เ-17dae-อร์เกอร์-ไปหน้าสินค้าหมา-P3\\video.webm",
+    "gifSeconds": 5.88
+  },
+  {
+    "id": "TC-MY-01",
+    "prio": "P3",
+    "title": "TC-MY-01 ค้นหา \"เป็ด\" ต้องเจอ 2 รายการ @P3",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\my-คิดเอง-TC-MY-01-ค้นหา-เป็ด-ต้องเจอ-2-รายการ-P3\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-MY-02",
+    "prio": "P2",
+    "title": "TC-MY-02 ซื้อครบ ฿999 เลือกส่งด่วน ค่าส่งต้องเป็น ฿120 @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\my-คิดเอง-TC-MY-02-ซื้อครบ-06443-ด่วน-ค่าส่งต้องเป็น-฿120-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-PRD-01",
+    "prio": "P1",
+    "title": "TC-PRD-01 เลือกขนาด @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-01-เลือกขนาด-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-PRD-02",
+    "prio": "P1",
+    "title": "TC-PRD-02 สินค้าหมด @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-02-สินค้าหมด-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-PRD-03",
+    "prio": "P2",
+    "title": "TC-PRD-03 จำนวนเกินสต็อก @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-03-จำนวนเกินสต็อก-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-PRD-04",
+    "prio": "P3",
+    "title": "TC-PRD-04 สินค้าที่ไม่มีอยู่ @P3",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-PRD-04-สินค้าที่ไม่มีอยู่-P3\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-REC-01",
+    "prio": "P1",
+    "title": "TC-REC-01 Finder ลูกแมว แพ้ไก่ @P1",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-01-Finder-ลูกแมว-แพ้ไก่-P1\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-REC-02",
+    "prio": "P2",
+    "title": "TC-REC-02 Finder หมาสูงวัย เกรนฟรี ขนม @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-02-Finder-หมาสูงวัย-เกรนฟรี-ขนม-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-REC-03",
+    "prio": "P2",
+    "title": "TC-REC-03 แนะนำตามที่เคยดู @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-03-แนะนำตามที่เคยดู-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-REC-04",
+    "prio": "P2",
+    "title": "TC-REC-04 ซื้อคู่กันบ่อย @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\rec-Recommendation-TC-REC-04-ซื้อคู่กันบ่อย-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-WISH-01",
+    "prio": "P2",
+    "title": "TC-WISH-01 กดหัวใจ 2 ชิ้น @P2",
+    "status": "pass",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-01-กดหัวใจ-2-ชิ้น-P2\\video.webm",
+    "gifSeconds": 5.51
+  },
+  {
+    "id": "TC-WISH-02",
+    "prio": "P2",
+    "title": "TC-WISH-02 ลบออก @P2",
+    "status": "fail",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-02-ลบออก-P2\\video.webm",
+    "gifSeconds": 8.38
+  },
+  {
+    "id": "TC-WISH-03",
+    "prio": "P2",
+    "title": "TC-WISH-03 ย้ายไปตะกร้า @P2",
+    "status": "fail",
+    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week01\\e2e\\test-results\\prd-wish-TC-WISH-03-ย้ายไปตะกร้า-P2\\video.webm",
+    "gifSeconds": 8.01
+  }
+]

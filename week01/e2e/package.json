@@ -1,0 +1,11 @@
+{
+  "name": "pawpantry-e2e",
+  "private": true,
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "ffmpeg-static": "^5.3.0"
+  }
+}
