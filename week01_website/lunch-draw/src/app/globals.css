@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Graphite dark ramp + one ember accent (unslop tokens) */
+@theme inline {
+  --color-deep: #0f0f10;
+  --color-page: #141415;
+  --color-card: #19191b;
+  --color-raised: #232325;
+  --color-line: rgb(237 237 237 / 0.08);
+  --color-line-strong: rgb(237 237 237 / 0.14);
+  --color-fg: #ededed;
+  --color-fg-2: #a1a1a6;
+  --color-fg-3: #85858b;
+  --color-ember: #f0883e;
+  --color-ember-ink: #ffb27a;
+  --color-ember-soft: rgb(240 136 62 / 0.14);
+  --color-good: #4cc38a;
+  --color-bad: #e5484d;
+
+  --font-sans: var(--font-plex-thai), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* One entrance on load */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 320ms var(--ease-out-soft) both;
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgb(15 15 16 / 0.8) !important;
+  color: var(--color-fg-3) !important;
+  font-size: 11px;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--color-fg-2) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}

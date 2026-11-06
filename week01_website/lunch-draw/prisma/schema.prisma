@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Restaurant {
+  id           Int                  @id @default(autoincrement())
+  osmId        String               @unique
+  number       Int                  @unique // "เบอร์" shown on the odds board
+  name         String
+  nameEn       String?
+  lat          Float
+  lon          Float
+  cuisine      String               @default("")
+  openingHours String?
+  distance     Int // straight line, metres
+  walkDistance Int? // walking route, metres
+  baseWeight   Float                @default(1) // 0 = never draw
+  categories   RestaurantCategory[]
+  draws        Draw[]
+}
+
+model Category {
+  id          String               @id // slug, e.g. "noodle"
+  label       String
+  sort        Int
+  restaurants RestaurantCategory[]
+  votes       CategoryVote[]
+}
+
+model RestaurantCategory {
+  restaurantId Int
+  categoryId   String
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  category     Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([restaurantId, categoryId])
+}
+
+model Room {
+  id        String         @id @default(cuid())
+  code      String         @unique
+  lazyMode  Boolean        @default(false)
+  createdAt DateTime       @default(now())
+  members   Member[]
+  votes     CategoryVote[]
+  draws     Draw[]
+}
+
+model Member {
+  id        String         @id @default(cuid())
+  roomId    String
+  nickname  String
+  createdAt DateTime       @default(now())
+  room      Room           @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  votes     CategoryVote[]
+
+  @@unique([roomId, nickname])
+}
+
+// What kind of food a member feels like today: -1 no, 0 neutral, +1 yes
+model CategoryVote {
+  id         String   @id @default(cuid())
+  roomId     String
+  memberId   String
+  categoryId String
+  value      Int
+  room       Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  member     Member   @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([memberId, categoryId])
+  @@index([roomId])
+}
+
+model Draw {
+  id           String     @id @default(cuid())
+  roomId       String?
+  restaurantId Int
+  probability  Float // chance the winner had at draw time
+  lazyMode     Boolean
+  eatenAt      DateTime? // set when the group confirms they went; drives the 7-day penalty
+  createdAt    DateTime   @default(now())
+  room         Room?      @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
+  @@index([roomId, createdAt])
+  @@index([eatenAt])
+}

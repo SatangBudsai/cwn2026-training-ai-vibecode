@@ -1,0 +1,537 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Check, Copy, Footprints, MapPin, Navigation, Users, UtensilsCrossed } from "lucide-react";
+import { computeOdds, walkMetres, type CategoryScores, type Odd } from "@/lib/odds";
+import { googleDirectionsUrl, googleMapsUrl, LAZY_RADIUS_M } from "@/lib/geo";
+import type { RestaurantDTO, RoomState } from "@/lib/server";
+import { CategoryVotes, type Category } from "./category-votes";
+import { OddsBoard } from "./odds-board";
+import { WalkMap } from "./walk-map";
+import { Button, NumberTag, formatMetres, formatPercent, walkMinutes } from "./ui";
+
+type Draw = {
+  id: string;
+  restaurantId: number;
+  probability: number;
+  createdAt: string | Date;
+  eatenAt: string | Date | null;
+};
+
+type Props = {
+  restaurants: RestaurantDTO[];
+  categories: Category[];
+  room?: RoomState & { code: string };
+};
+
+const SOLO_KEY = "lunch-draw:solo";
+const memberKey = (code: string) => `lunch-draw:member:${code}`;
+
+function readStore<T>(key: string, fallback: T): T {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? (JSON.parse(raw) as T) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+function writeStore(key: string, value: unknown) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    /* private mode: fine */
+  }
+}
+
+export function LunchApp({ restaurants: initialRestaurants, categories, room: initialRoom }: Props) {
+  const router = useRouter();
+  const isRoom = Boolean(initialRoom);
+  const [restaurants, setRestaurants] = useState(initialRestaurants);
+  const [room, setRoom] = useState(initialRoom);
+  const [member, setMember] = useState<{ id: string; nickname: string } | null>(null);
+
+  // solo state (kept in this browser)
+  const [soloVotes, setSoloVotes] = useState<CategoryScores>({});
+  const [soloLazy, setSoloLazy] = useState(false);
+
+  const [showAll, setShowAll] = useState(false);
+  const [highlightId, setHighlightId] = useState<number | null>(null);
+  const [draw, setDraw] = useState<Draw | null>((initialRoom?.latestDraw as Draw | null) ?? null);
+  const [rolling, setRolling] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const seenDraw = useRef<string | null>(initialRoom?.latestDraw?.id ?? null);
+
+  // Time used for the 7-day "recently eaten" penalty; fixed per page view
+  const [now] = useState(() => Date.now());
+
+  // Restore this browser's state after mount (localStorage is not available on the server)
+  useEffect(() => {
+    /* eslint-disable react-hooks/set-state-in-effect */
+    if (isRoom && initialRoom) {
+      const m = readStore<{ id: string; nickname: string } | null>(memberKey(initialRoom.code), null);
+      // only trust a stored member that still exists in this room
+      if (m && initialRoom.members.some((x) => x.id === m.id)) setMember(m);
+    } else {
+      const s = readStore(SOLO_KEY, { votes: {}, lazy: false });
+      setSoloVotes(s.votes ?? {});
+      setSoloLazy(Boolean(s.lazy));
+    }
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, [isRoom, initialRoom]);
+
+  const byId = useMemo(() => new Map(restaurants.map((r) => [r.id, r])), [restaurants]);
+  const lazy = isRoom ? Boolean(room?.lazyMode) : soloLazy;
+  const roomScores = room?.scores;
+  const scores: CategoryScores = useMemo(
+    () => (isRoom ? (roomScores ?? {}) : soloVotes),
+    [isRoom, roomScores, soloVotes],
+  );
+  const myVotes: Record<string, number> = useMemo(() => {
+    if (!isRoom) return soloVotes;
+    const out: Record<string, number> = {};
+    room?.votes.filter((v) => v.memberId === member?.id).forEach((v) => (out[v.categoryId] = v.value));
+    return out;
+  }, [isRoom, soloVotes, room, member]);
+
+  const odds = useMemo(() => computeOdds(restaurants, scores, lazy, now), [restaurants, scores, lazy, now]);
+  const pool = useMemo(() => odds.map((o) => byId.get(o.id)!).filter(Boolean), [odds, byId]);
+  const counts = useMemo(() => {
+    const c: Record<string, number> = {};
+    pool.forEach((r) => r.categories.forEach((x) => (c[x] = (c[x] ?? 0) + 1)));
+    return c;
+  }, [pool]);
+  const voters = useMemo(() => {
+    if (!room) return undefined;
+    const names = new Map(room.members.map((m) => [m.id, m.nickname]));
+    const out: Record<string, { up: string[]; down: string[] }> = {};
+    room.votes.forEach((v) => {
+      const e = (out[v.categoryId] ??= { up: [], down: [] });
+      (v.value > 0 ? e.up : e.down).push(names.get(v.memberId) ?? "?");
+    });
+    return out;
+  }, [room]);
+
+  /** Run the highlight down the board, slowing until it lands on the winner */
+  const reveal = useCallback(
+    (next: Draw, board: Odd[]) => {
+      setError(null);
+      setRolling(true);
+      setDraw(null);
+      const candidates = board.filter((o) => o.weight > 0).slice(0, 12).map((o) => o.id);
+      const steps = 16;
+      let t = 0;
+      for (let i = 0; i < steps; i++) {
+        t += 45 + i * i * 1.6;
+        const id = i === steps - 1 ? next.restaurantId : candidates[i % Math.max(1, candidates.length)];
+        setTimeout(() => setHighlightId(id), t);
+      }
+      setTimeout(() => {
+        setHighlightId(null);
+        setDraw(next);
+        setRolling(false);
+      }, t + 380);
+    },
+    [],
+  );
+
+  const refreshRestaurants = useCallback(async () => {
+    const res = await fetch("/api/restaurants", { cache: "no-store" });
+    if (res.ok) setRestaurants((await res.json()).restaurants);
+  }, []);
+
+  // Room: poll so everyone sees votes and draws live
+  const seenEaten = useRef<string | null>(String(initialRoom?.latestDraw?.eatenAt ?? ""));
+  useEffect(() => {
+    if (!room) return;
+    const code = room.code;
+    const timer = setInterval(async () => {
+      if (document.hidden) return;
+      const res = await fetch(`/api/rooms/${code}`, { cache: "no-store" });
+      if (!res.ok) return;
+      const next: RoomState = await res.json();
+      setRoom(next);
+      const d = next.latestDraw as Draw | null;
+      if (d && d.id !== seenDraw.current) {
+        seenDraw.current = d.id;
+        seenEaten.current = String(d.eatenAt ?? "");
+        reveal(d, computeOdds(restaurants, next.scores, next.lazyMode));
+      } else if (d && String(d.eatenAt ?? "") !== seenEaten.current) {
+        // someone confirmed (or undid) "we ate here": refresh the 7-day penalty
+        seenEaten.current = String(d.eatenAt ?? "");
+        setDraw(d);
+        refreshRestaurants();
+      }
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [room?.code, restaurants, reveal, refreshRestaurants]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function markEaten(eaten: boolean) {
+    if (!draw) return;
+    const res = await fetch(`/api/draws/${draw.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ eaten }),
+    });
+    if (!res.ok) return setError("บันทึกไม่สำเร็จ");
+    const next: Draw = await res.json();
+    seenEaten.current = String(next.eatenAt ?? "");
+    setDraw(next);
+    refreshRestaurants();
+  }
+
+  async function vote(categoryId: string, value: -1 | 0 | 1) {
+    if (!isRoom) {
+      const n = { ...soloVotes };
+      if (value === 0) delete n[categoryId];
+      else n[categoryId] = value;
+      setSoloVotes(n);
+      writeStore(SOLO_KEY, { votes: n, lazy: soloLazy });
+      return;
+    }
+    if (!room || !member) return;
+    // optimistic update
+    setRoom((r) => {
+      if (!r) return r;
+      const votes = r.votes.filter((v) => !(v.memberId === member.id && v.categoryId === categoryId));
+      if (value !== 0) votes.push({ memberId: member.id, categoryId, value });
+      const s: CategoryScores = {};
+      votes.forEach((v) => (s[v.categoryId] = (s[v.categoryId] ?? 0) + v.value));
+      return { ...r, votes, scores: s };
+    });
+    const res = await fetch(`/api/rooms/${room.code}/votes`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ memberId: member.id, categoryId, value }),
+    });
+    if (res.ok) setRoom(await res.json());
+  }
+
+  async function setLazy(next: boolean) {
+    if (!isRoom) {
+      setSoloLazy(next);
+      writeStore(SOLO_KEY, { votes: soloVotes, lazy: next });
+      return;
+    }
+    if (!room) return;
+    setRoom({ ...room, lazyMode: next });
+    const res = await fetch(`/api/rooms/${room.code}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lazyMode: next }),
+    });
+    if (res.ok) setRoom(await res.json());
+  }
+
+  async function runDraw() {
+    setError(null);
+    const res = await fetch("/api/draw", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(room ? { roomCode: room.code } : { lazy: soloLazy, scores: soloVotes }),
+    });
+    const json = await res.json();
+    if (!res.ok) return setError(json.error ?? "สุ่มไม่สำเร็จ");
+    seenDraw.current = json.id;
+    reveal(json, odds);
+  }
+
+  async function saveRestaurant(id: number, patch: { baseWeight: number; categories: string[] }) {
+    const res = await fetch(`/api/restaurants/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(patch),
+    });
+    if (!res.ok) return setError((await res.json()).error ?? "บันทึกไม่สำเร็จ");
+    setRestaurants((rs) => rs.map((r) => (r.id === id ? { ...r, ...patch } : r)));
+  }
+
+  async function createRoom() {
+    const res = await fetch("/api/rooms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lazyMode: soloLazy }),
+    });
+    if (res.ok) router.push(`/room/${(await res.json()).code}`);
+  }
+
+  const winner = draw ? byId.get(draw.restaurantId) : null;
+  const votedCount = Object.values(scores).filter((v) => v !== 0).length;
+
+  if (room && !member) {
+    return <JoinRoom code={room.code} members={room.members} onJoined={setMember} />;
+  }
+
+  return (
+    <div className="rise grid gap-6 pt-4 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-8">
+      {/* Draw + winner: first on mobile, right column on desktop */}
+      <section className="flex flex-col gap-4 lg:sticky lg:top-6 lg:order-2 lg:self-start">
+        <div className="rounded-2xl border border-line bg-card p-5">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-xl font-medium">{room ? `ห้อง ${room.code}` : "วันนี้กินร้านไหน"}</h1>
+              <p className="mt-1 text-sm text-fg-2">
+                {pool.length} ร้านในระยะเดิน {lazy ? formatMetres(LAZY_RADIUS_M) : "1 กม."} จากจันวาณิชย์
+              </p>
+            </div>
+            {room && <ShareButton code={room.code} />}
+          </div>
+
+          <label className="mt-5 flex cursor-pointer items-center justify-between gap-4 rounded-xl border border-line bg-deep px-4 py-3">
+            <span className="flex items-center gap-3">
+              <Footprints size={18} strokeWidth={1.5} className="text-fg-2" />
+              <span>
+                <span className="block text-sm">ขี้เกียจเดิน</span>
+                <span className="block text-xs text-fg-3">เฉพาะร้านที่เดินไม่เกิน 500 ม.</span>
+              </span>
+            </span>
+            <input
+              type="checkbox"
+              role="switch"
+              checked={lazy}
+              onChange={(e) => setLazy(e.target.checked)}
+              className="peer sr-only"
+            />
+            <span
+              aria-hidden
+              className={`relative h-6 w-10 shrink-0 rounded-full transition-colors peer-focus-visible:outline-2 peer-focus-visible:outline-ember ${lazy ? "bg-ember" : "bg-raised"}`}
+            >
+              <span
+                className={`absolute top-1 size-4 rounded-full bg-fg transition-transform duration-200 ease-[var(--ease-out-soft)] ${lazy ? "translate-x-5" : "translate-x-1"}`}
+              />
+            </span>
+          </label>
+
+          <Button variant="primary" className="mt-4 h-12 w-full text-base" onClick={runDraw} disabled={rolling || !pool.length}>
+            {rolling ? "กำลังจับสลาก" : draw ? "จับสลากใหม่" : "จับสลาก"}
+          </Button>
+          {error && <p className="mt-3 text-sm text-bad">{error}</p>}
+          {room && (
+            <p className="mt-3 text-xs text-fg-3">ใครกดก็ได้ ทุกคนในห้องจะเห็นผลเดียวกัน</p>
+          )}
+        </div>
+
+        {winner && draw && (
+          <WinnerCard
+            r={winner}
+            p={draw.probability}
+            eaten={Boolean(draw.eatenAt)}
+            labels={categories}
+            onEaten={markEaten}
+          />
+        )}
+
+        {!isRoom && (
+          <div className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-card p-5">
+            <div>
+              <div className="text-sm">ไปกินกันหลายคน</div>
+              <div className="text-xs text-fg-3">เปิดห้องแล้วส่งลิงก์ให้ทุกคนโหวตแนวอาหาร</div>
+            </div>
+            <Button onClick={createRoom}>
+              <Users size={16} strokeWidth={1.5} />
+              เปิดห้อง
+            </Button>
+          </div>
+        )}
+      </section>
+
+      {/* Votes + odds board */}
+      <div className="flex min-w-0 flex-col gap-6 lg:order-1">
+        <section className="rounded-2xl border border-line bg-card p-5">
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-base font-medium">วันนี้อยากกินแนวไหน</h2>
+            <span className="text-xs text-fg-3">
+              {room
+                ? `${room.members.length} คนในห้อง · คุณคือ ${member?.nickname}`
+                : votedCount
+                  ? `โหวตแล้ว ${votedCount} แนว`
+                  : "กด + แนวที่อยาก กด − แนวที่ไม่เอา"}
+            </span>
+          </div>
+          <CategoryVotes
+            categories={categories}
+            counts={counts}
+            myVotes={myVotes}
+            scores={scores}
+            voters={voters}
+            onVote={vote}
+          />
+        </section>
+
+        <section className="rounded-2xl border border-line bg-card p-5">
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-base font-medium">กระดานโอกาส</h2>
+            <span className="text-xs text-fg-3">กดที่ร้านเพื่อแก้แนวอาหารหรือน้ำหนัก</span>
+          </div>
+          <OddsBoard
+            odds={odds}
+            byId={byId}
+            categories={categories}
+            highlightId={highlightId}
+            winnerId={draw?.restaurantId ?? null}
+            showAll={showAll}
+            onToggleAll={() => setShowAll((s) => !s)}
+            onSave={saveRestaurant}
+            now={now}
+          />
+        </section>
+      </div>
+    </div>
+  );
+}
+
+function WinnerCard({
+  r,
+  p,
+  eaten,
+  labels,
+  onEaten,
+}: {
+  r: RestaurantDTO;
+  p: number;
+  eaten: boolean;
+  labels: Category[];
+  onEaten: (eaten: boolean) => void;
+}) {
+  const walk = walkMetres(r);
+  const names = new Map(labels.map((c) => [c.id, c.label]));
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!window.matchMedia("(min-width: 1024px)").matches)
+      ref.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }, [r.id]);
+  return (
+    <article ref={ref} className="rise scroll-mt-4 rounded-2xl border border-line bg-card p-5" aria-live="polite">
+      <div className="text-xs text-fg-3">ผลจับสลาก · โอกาส {formatPercent(p)}</div>
+      <div className="mt-3 flex items-start gap-3">
+        <NumberTag n={r.number} tone="win" />
+        <div className="min-w-0">
+          <h2 className="text-2xl leading-tight font-medium">{r.name}</h2>
+          {r.nameEn && r.nameEn !== r.name && <div className="mt-0.5 truncate text-sm text-fg-2">{r.nameEn}</div>}
+          <div className="mt-2 text-sm text-fg-2">{r.categories.map((c) => names.get(c) ?? c).join(" · ")}</div>
+        </div>
+      </div>
+
+      <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
+        <div className="bg-deep px-4 py-3">
+          <dt className="text-xs text-fg-3">เดิน</dt>
+          <dd className="font-mono text-lg tnum">{formatMetres(walk)}</dd>
+        </div>
+        <div className="bg-deep px-4 py-3">
+          <dt className="text-xs text-fg-3">ประมาณ</dt>
+          <dd className="font-mono text-lg tnum">{walkMinutes(walk)} นาที</dd>
+        </div>
+      </dl>
+      {r.openingHours && <p className="mt-3 font-mono text-xs text-fg-3">เวลาเปิด {r.openingHours}</p>}
+
+      <div className="mt-4">
+        <WalkMap lat={r.lat} lon={r.lon} />
+      </div>
+
+      <Button
+        variant={eaten ? "ghost" : "secondary"}
+        className="mt-4 h-11 w-full"
+        aria-pressed={eaten}
+        onClick={() => onEaten(!eaten)}
+      >
+        <UtensilsCrossed size={16} strokeWidth={1.5} />
+        {eaten ? "บันทึกว่ากินร้านนี้แล้ว · ยกเลิก" : "ไปกินร้านนี้"}
+      </Button>
+      <p className="mt-2 text-xs text-fg-3">
+        {eaten ? "ร้านนี้จะมีโอกาสน้อยลงใน 7 วันข้างหน้า" : "กดเมื่อไปกินจริง ร้านนี้จะมีโอกาสน้อยลงใน 7 วันข้างหน้า"}
+      </p>
+
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        <a href={googleDirectionsUrl(r.lat, r.lon)} target="_blank" rel="noreferrer" className="contents">
+          <Button variant="ghost" className="w-full">
+            <Navigation size={16} strokeWidth={1.5} />
+            นำทางเดิน
+          </Button>
+        </a>
+        <a href={googleMapsUrl(r.lat, r.lon, r.name)} target="_blank" rel="noreferrer" className="contents">
+          <Button variant="ghost" className="w-full">
+            <MapPin size={16} strokeWidth={1.5} />
+            Google Maps
+          </Button>
+        </a>
+      </div>
+    </article>
+  );
+}
+
+function ShareButton({ code }: { code: string }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <Button
+      variant="ghost"
+      className="shrink-0"
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(`${location.origin}/room/${code}`);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1600);
+        } catch {
+          /* clipboard blocked */
+        }
+      }}
+    >
+      {copied ? <Check size={16} strokeWidth={1.5} /> : <Copy size={16} strokeWidth={1.5} />}
+      {copied ? "คัดลอกแล้ว" : "ลิงก์ห้อง"}
+    </Button>
+  );
+}
+
+function JoinRoom({
+  code,
+  members,
+  onJoined,
+}: {
+  code: string;
+  members: { id: string; nickname: string }[];
+  onJoined: (m: { id: string; nickname: string }) => void;
+}) {
+  const [name, setName] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  async function join(e: React.FormEvent) {
+    e.preventDefault();
+    setBusy(true);
+    setErr(null);
+    const res = await fetch(`/api/rooms/${code}/members`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nickname: name }),
+    });
+    setBusy(false);
+    if (!res.ok) return setErr((await res.json()).error ?? "เข้าห้องไม่สำเร็จ");
+    const m = await res.json();
+    writeStore(memberKey(code), m);
+    onJoined(m);
+  }
+
+  return (
+    <div className="rise mx-auto mt-16 max-w-sm rounded-2xl border border-line bg-card p-6">
+      <div className="font-mono text-xs text-fg-3">ห้อง {code}</div>
+      <h1 className="mt-2 text-xl font-medium">ใส่ชื่อเล่นเพื่อโหวต</h1>
+      <p className="mt-1 text-sm text-fg-2">
+        {members.length ? `ในห้องตอนนี้ ${members.map((m) => m.nickname).join(", ")}` : "ยังไม่มีใครเข้าห้อง"}
+      </p>
+      <form onSubmit={join} className="mt-5 flex gap-2">
+        <input
+          autoFocus
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          maxLength={24}
+          placeholder="ชื่อเล่น"
+          aria-label="ชื่อเล่น"
+          className="h-10 min-w-0 flex-1 rounded-lg border border-line-strong bg-raised px-3 text-sm placeholder:text-fg-3 focus:border-ember/60 focus:outline-none"
+        />
+        <Button variant="primary" className="h-10" disabled={busy || !name.trim()}>
+          เข้าห้อง
+        </Button>
+      </form>
+      {err && <p className="mt-3 text-sm text-bad">{err}</p>}
+    </div>
+  );
+}
