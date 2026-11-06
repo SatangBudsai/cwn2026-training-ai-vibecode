@@ -12,10 +12,12 @@ type Props = {
   scores: CategoryScores; // net votes of everyone
   voters?: Record<string, { up: string[]; down: string[] }>;
   disabled?: boolean;
+  /** unsaved choices */
+  pending?: Record<string, number>;
   onVote: (categoryId: string, value: -1 | 0 | 1) => void;
 };
 
-export function CategoryVotes({ categories, counts, myVotes, scores, voters, disabled, onVote }: Props) {
+export function CategoryVotes({ categories, counts, myVotes, scores, voters, disabled, pending, onVote }: Props) {
   return (
     <ul className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
       {categories.map((c) => {
@@ -36,12 +38,12 @@ export function CategoryVotes({ categories, counts, myVotes, scores, voters, dis
                 {c.label}
               </div>
               <div className="truncate font-mono text-[11px] text-fg-3 tnum">
-                {counts[c.id] ?? 0} ร้าน · ×{mult.toFixed(1)}
+                {counts[c.id] ?? 0} ร้าน
+                {net !== 0 && ` · โอกาส ×${mult.toFixed(1)}`}
                 {who && (who.up.length > 0 || who.down.length > 0) && (
-                  <span title={[...who.up.map((n) => `+ ${n}`), ...who.down.map((n) => `− ${n}`)].join("\n")}>
-                    {" "}· {who.up.length > 0 && `+${who.up.length}`}
-                    {who.up.length > 0 && who.down.length > 0 && " "}
-                    {who.down.length > 0 && `−${who.down.length}`}
+                  <span title={votersTitle(who)}>
+                    {who.up.length > 0 && ` · เห็นด้วย ${who.up.length}`}
+                    {who.down.length > 0 && ` · ไม่เห็นด้วย ${who.down.length}`}
                   </span>
                 )}
               </div>
@@ -49,10 +51,11 @@ export function CategoryVotes({ categories, counts, myVotes, scores, voters, dis
             <VoteControl
               mine={mine}
               net={net}
-              downLabel={`ไม่อยากกิน${c.label}`}
-              upLabel={`อยากกิน${c.label}`}
+              groupLabel={`โหวต ${c.label}`}
+              showNet={voters !== undefined}
               title={votersTitle(who)}
               disabled={disabled}
+              pending={pending?.[c.id] !== undefined}
               onVote={(v) => onVote(c.id, v)}
             />
           </li>

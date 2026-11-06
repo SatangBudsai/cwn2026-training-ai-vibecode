@@ -29,7 +29,7 @@ export function AddRestaurantForm({ categories }: { categories: { id: string; la
 
   const distance = useMemo(() => (loc ? Math.round(haversine(OFFICE, loc)) : null), [loc]);
   const tooFar = distance != null && distance > MAX_ADD_RADIUS_M;
-  const missing = [!name.trim() && "ชื่อร้าน", !loc && "ตำแหน่ง", !cats.length && "แนวอาหาร"].filter(Boolean) as string[];
+  const missing = [!name.trim() && "ชื่อร้าน", !loc && "ตำแหน่ง", !cats.length && "ประเภทอาหาร"].filter(Boolean) as string[];
 
   function readPasted(text: string) {
     setPasted(text);
@@ -93,14 +93,14 @@ export function AddRestaurantForm({ categories }: { categories: { id: string; la
           <h1 className="text-xl font-medium">{added.name}</h1>
         </div>
         <p className="mt-2 text-sm text-fg-2">
-          เดิน {formatMetres(added.walk)}
+          ระยะเดิน {formatMetres(added.walk)}
           {added.estimated && " (ประมาณ)"}
-          {added.walk <= LAZY_RADIUS_M && " · อยู่ในโหมดขี้เกียจเดิน"}
+          {added.walk <= LAZY_RADIUS_M && " · อยู่ในระยะโหมดขี้เกียจเดิน"}
         </p>
         <div className="mt-6 flex gap-2">
           <Link href="/" className="contents">
             <Button variant="primary" className="flex-1">
-              ไปหน้าจับสลาก
+              ไปหน้าสุ่มร้าน
             </Button>
           </Link>
           <Button onClick={reset}>เพิ่มอีกร้าน</Button>
@@ -114,7 +114,7 @@ export function AddRestaurantForm({ categories }: { categories: { id: string; la
       <section className="flex flex-col gap-4 rounded-2xl border border-line bg-card p-5">
         <div>
           <h1 className="text-xl font-medium">เพิ่มร้าน</h1>
-          <p className="mt-1 text-sm text-fg-2">ร้านที่ยังไม่มีบนกระดาน ปักหมุดบนแผนที่หรือวางลิงก์ Google Maps</p>
+          <p className="mt-1 text-sm text-fg-2">เพิ่มร้านที่ยังไม่มีในรายการ กดบนแผนที่เพื่อปักหมุด หรือวางลิงก์ Google Maps</p>
         </div>
         <LocationPicker value={loc} onChange={(v) => { setLoc(v); setPasted(""); setPasteError(false); }} />
         <label className="block">
@@ -138,7 +138,7 @@ export function AddRestaurantForm({ categories }: { categories: { id: string; la
               <span className="font-mono tnum">
                 {loc.lat.toFixed(5)}, {loc.lon.toFixed(5)}
               </span>{" "}
-              · ห่างออฟฟิศ {formatMetres(distance!)} (เส้นตรง)
+              · ห่างจากออฟฟิศ {formatMetres(distance!)} (วัดเป็นเส้นตรง)
               {tooFar && ` · ไกลเกิน ${MAX_ADD_RADIUS_M / 1000} กม.`}
             </span>
           ) : (
@@ -158,7 +158,7 @@ export function AddRestaurantForm({ categories }: { categories: { id: string; la
         </label>
 
         <fieldset>
-          <legend className="mb-2 text-xs text-fg-3">แนวอาหาร</legend>
+          <legend className="mb-2 text-xs text-fg-3">ประเภทอาหาร</legend>
           <div className="flex flex-wrap gap-1.5">
             {categories.map((c) => {
               const on = cats.includes(c.id);

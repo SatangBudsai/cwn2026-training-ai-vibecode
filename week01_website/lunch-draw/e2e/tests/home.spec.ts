@@ -8,7 +8,7 @@ test.describe("หน้าแรก", () => {
     expect(await poolCount(page)).toBe(TOTAL);
     await expect(page.locator('li[data-testid^="cat-"]')).toHaveCount(CATEGORIES.length);
     await expect(rows(page)).toHaveCount(15);
-    await expect(page.getByRole("button", { name: "จับสลาก", exact: true })).toBeEnabled();
+    await expect(page.getByRole("button", { name: "สุ่มร้าน", exact: true })).toBeEnabled();
   });
 
   test("TC-HOME-02 แสดงร้านทั้งหมดและย่อกลับ @P3", async ({ page }) => {
@@ -30,24 +30,24 @@ test.describe("หน้าแรก", () => {
     await openHome(page);
     await page.getByRole("link", { name: "ประวัติ" }).click();
     await expect(page).toHaveURL(/\/history$/);
-    await expect(page.getByRole("heading", { name: "แชมป์ 7 วันล่าสุด" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "สุ่มได้บ่อยใน 7 วัน" })).toBeVisible();
   });
 });
 
 test.describe("มือถือ", () => {
   test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
 
-  test("TC-MOB-01 ปุ่มจับสลากอยู่บนสุด ไม่มี scroll แนวนอน @P3", async ({ page }) => {
+  test("TC-MOB-01 ปุ่มสุ่มร้านอยู่บนสุด ไม่มี scroll แนวนอน @P3", async ({ page }) => {
     await openHome(page);
-    const drawBtn = await page.getByRole("button", { name: "จับสลาก", exact: true }).boundingBox();
-    const board = await page.getByRole("heading", { name: "กระดานโอกาส" }).boundingBox();
+    const drawBtn = await page.getByRole("button", { name: "สุ่มร้าน", exact: true }).boundingBox();
+    const board = await page.getByRole("heading", { name: "โอกาสของแต่ละร้าน" }).boundingBox();
     expect(drawBtn!.y).toBeLessThan(board!.y);
     expect(drawBtn!.y + drawBtn!.height).toBeLessThan(844); // visible without scrolling
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(0);
   });
 
-  test("TC-MOB-02 จับสลากแล้วเห็นการ์ดผลบนจอ @P3", async ({ page }) => {
+  test("TC-MOB-02 สุ่มร้านแล้วเห็นการ์ดผลบนจอ @P3", async ({ page }) => {
     await openHome(page);
     await draw(page);
     await expect(page.getByTestId("winner")).toBeInViewport({ ratio: 0.3 });

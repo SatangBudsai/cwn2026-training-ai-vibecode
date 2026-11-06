@@ -1,7 +1,7 @@
 import { byNumber, expect, test } from "../fixtures";
 
 test.describe("ประวัติ", () => {
-  test("TC-HIST-01 ประวัติแสดงผลจับสลากล่าสุดและแชมป์ @P2", async ({ page }) => {
+  test("TC-HIST-01 ประวัติแสดงผลการสุ่มล่าสุดและแชมป์ @P2", async ({ page }) => {
     const ids: number[] = [];
     for (let i = 0; i < 3; i++) {
       const d = await (await page.request.post("/api/draw", { data: {} })).json();
@@ -9,22 +9,22 @@ test.describe("ประวัติ", () => {
       if (i === 0) await page.request.patch(`/api/draws/${d.id}`, { data: { eaten: true } });
     }
     await page.goto("/history");
-    const recent = page.locator("section").filter({ hasText: "ผลจับสลากล่าสุด" }).locator("ol > li");
+    const recent = page.locator("section").filter({ hasText: "ผลการสุ่มล่าสุด" }).locator("ol > li");
     await expect(recent).toHaveCount(3);
     // newest first
     await expect(recent.first()).toContainText(byNumber.get(ids[2])!.name);
-    const champs = page.locator("section").filter({ hasText: "แชมป์ 7 วันล่าสุด" }).locator("ol > li");
+    const champs = page.locator("section").filter({ hasText: "สุ่มได้บ่อยใน 7 วัน" }).locator("ol > li");
     expect(await champs.count()).toBeGreaterThan(0);
   });
 
-  test("TC-HIST-03 ทุกผลจับสลากมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน @P2", async ({ page }) => {
+  test("TC-HIST-03 ทุกผลการสุ่มมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน @P2", async ({ page }) => {
     // 3 solo draws: the oldest confirmed, the middle one skipped, the newest still open
     for (let i = 0; i < 3; i++) {
       const d = await (await page.request.post("/api/draw", { data: {} })).json();
       if (i === 0) await page.request.patch(`/api/draws/${d.id}`, { data: { eaten: true } });
     }
     await page.goto("/history");
-    const tags = page.locator("section").filter({ hasText: "ผลจับสลากล่าสุด" }).getByTestId("visit-tag");
+    const tags = page.locator("section").filter({ hasText: "ผลการสุ่มล่าสุด" }).getByTestId("visit-tag");
     await expect(tags).toHaveCount(3);
     // newest first
     await expect(tags.nth(0)).toHaveText("รอยืนยัน");
@@ -32,14 +32,14 @@ test.describe("ประวัติ", () => {
     await expect(tags.nth(2)).toHaveText("ไปกิน");
   });
 
-  test("TC-HIST-02 ยังไม่มีผลจับสลาก @P3", async ({ page }) => {
+  test("TC-HIST-02 ยังไม่เคยสุ่ม @P3", async ({ page }) => {
     await page.goto("/history");
-    await expect(page.getByText("ยังไม่มีผลจับสลาก")).toHaveCount(2);
+    await expect(page.getByText("ยังไม่เคยสุ่ม")).toHaveCount(2);
   });
 });
 
 test.describe("API", () => {
-  test("TC-API-01 โหวตแนวอาหารที่ไม่มีอยู่ ได้ 400 @P2", async ({ request }) => {
+  test("TC-API-01 โหวตประเภทอาหารที่ไม่มีอยู่ ได้ 400 @P2", async ({ request }) => {
     const { code } = await (await request.post("/api/rooms", { data: {} })).json();
     const m = await (await request.post(`/api/rooms/${code}/members`, { data: { nickname: "ต้น" } })).json();
     const bad = await request.put(`/api/rooms/${code}/votes`, { data: { memberId: m.id, categoryId: "pizza", value: 1 } });

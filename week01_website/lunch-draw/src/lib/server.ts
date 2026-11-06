@@ -1,6 +1,6 @@
 import "server-only";
 import { RECENT_DAYS, sumRestaurantVotes, sumVotes } from "./odds";
-import { MANUAL_PREFIX, getCategories, getDraws, getRatings, getRestaurants, getRoom } from "./store";
+import { MANUAL_PREFIX, getCategories, getDraws, getRatings, getRestaurants, getRoom, storageMode } from "./store";
 
 export type RestaurantDTO = {
   id: number;
@@ -26,21 +26,22 @@ export type RestaurantDTO = {
   ratings: Record<string, number>;
 };
 
-export function listRestaurants(): RestaurantDTO[] {
+export async function listRestaurants(): Promise<RestaurantDTO[]> {
   const since = Date.now() - RECENT_DAYS * 24 * 3600 * 1000;
   const lastEaten = new Map<number, string>();
-  for (const d of getDraws()) {
+  const [draws, ratingRows, restaurants] = await Promise.all([getDraws(), getRatings(), getRestaurants()]);
+  for (const d of draws) {
     if (!d.eatenAt || Date.parse(d.eatenAt) < since) continue;
     const prev = lastEaten.get(d.restaurantId);
     if (!prev || prev < d.eatenAt) lastEaten.set(d.restaurantId, d.eatenAt);
   }
   const byPlace = new Map<number, Record<string, number>>();
-  for (const x of getRatings()) {
+  for (const x of ratingRows) {
     const m = byPlace.get(x.restaurantId) ?? {};
     m[x.rater] = x.score;
     byPlace.set(x.restaurantId, m);
   }
-  return getRestaurants().map((r) => {
+  return restaurants.map((r) => {
     const ratings = byPlace.get(r.number) ?? {};
     const scores = Object.values(ratings);
     return {
@@ -68,25 +69,26 @@ export function listRestaurants(): RestaurantDTO[] {
 }
 
 /** Food categories with how many restaurants (not disabled) have each */
-export function listCategories() {
+export async function listCategories() {
+  const [restaurants, categories] = await Promise.all([getRestaurants(), getCategories()]);
   const counts = new Map<string, number>();
-  for (const r of getRestaurants()) {
+  for (const r of restaurants) {
     if (r.disabled) continue;
     for (const c of r.categories) counts.set(c, (counts.get(c) ?? 0) + 1);
   }
-  return getCategories().map((c) => ({ id: c.id, label: c.label, restaurants: counts.get(c.id) ?? 0 }));
+  return categories.map((c) => ({ id: c.id, label: c.label, restaurants: counts.get(c.id) ?? 0 }));
 }
 
-export type CategoryDTO = ReturnType<typeof listCategories>[number];
+export type CategoryDTO = Awaited<ReturnType<typeof listCategories>>[number];
 
-export function isCategory(id: unknown): id is string {
-  return typeof id === "string" && getCategories().some((c) => c.id === id);
+export async function isCategory(id: unknown): Promise<boolean> {
+  return typeof id === "string" && (await getCategories()).some((c) => c.id === id);
 }
 
-export function roomState(code: string) {
-  const room = getRoom(code);
+export async function roomState(code: string) {
+  const room = await getRoom(code);
   if (!room) return null;
-  const latest = [...getDraws()].reverse().find((d) => d.roomCode === room.code) ?? null;
+  const latest = [...(await getDraws())].reverse().find((d) => d.roomCode === room.code) ?? null;
   return {
     code: room.code,
     lazyMode: room.lazyMode,
@@ -106,7 +108,7 @@ export function roomState(code: string) {
   };
 }
 
-export type RoomState = NonNullable<ReturnType<typeof roomState>>;
+export type RoomState = NonNullable<Awaited<ReturnType<typeof roomState>>>;
 
 // No 0/O/1/I so codes are easy to read out loud
 const ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -118,4 +120,10 @@ export function newRoomCode() {
 
 export function bad(message: string, status = 400) {
   return Response.json({ error: message }, { status });
+}
+
+/** How pages get live updates: SSE with one Node process (file mode), polling on Vercel (Redis) */
+export type RealtimeMode = "sse" | "poll";
+export function realtimeMode(): RealtimeMode {
+  return storageMode === "redis" ? "poll" : "sse";
 }

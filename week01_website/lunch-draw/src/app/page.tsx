@@ -2,12 +2,12 @@ import { Suspense } from "react";
 import { connection } from "next/server";
 import { LunchApp } from "@/components/lunch-app";
 import { BoardSkeleton } from "@/components/board-skeleton";
-import { listCategories, listRestaurants } from "@/lib/server";
+import { listCategories, listRestaurants, realtimeMode } from "@/lib/server";
 
 async function Board() {
   await connection(); // weights and recent visits change per request
   const [restaurants, categories] = await Promise.all([listRestaurants(), listCategories()]);
-  return <LunchApp restaurants={restaurants} categories={categories} />;
+  return <LunchApp restaurants={restaurants} categories={categories} realtime={realtimeMode()} />;
 }
 
 export default function Home() {

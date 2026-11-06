@@ -14,7 +14,7 @@ export type Voters = Record<string | number, { up: string[]; down: string[] }>;
 
 function eatenAgo(iso: string, now: number) {
   const days = Math.floor((now - Date.parse(iso)) / (24 * 3600 * 1000));
-  return days <= 0 ? "วันนี้" : days === 1 ? "เมื่อวาน" : ` ${days} วันก่อน`;
+  return days <= 0 ? "วันนี้" : days === 1 ? "เมื่อวาน" : `เมื่อ ${days} วันก่อน`;
 }
 
 type Props = {
@@ -37,10 +37,16 @@ type Props = {
   lazy: boolean;
   rater: string | null;
   onRate: (id: number, score: number) => void;
+  /** restaurants matching the search box, or null when not searching */
+  matchIds: Set<number> | null;
+  query: string;
+  /** unsaved restaurant votes */
+  pending: Record<number, number>;
 };
 
 const TOP = 15;
-const COLS = "grid-cols-[44px_1fr_auto_auto] sm:grid-cols-[44px_1fr_72px_96px_auto_64px]";
+// phone: number · name · odds, with the vote switch on a second line; wider: one line
+const COLS = "grid-cols-[44px_1fr_auto] sm:grid-cols-[44px_1fr_72px_96px_auto_64px]";
 
 export function OddsBoard({
   odds,
@@ -61,6 +67,9 @@ export function OddsBoard({
   lazy,
   rater,
   onRate,
+  matchIds,
+  query,
+  pending,
 }: Props) {
   const [openId, setOpenId] = useState<number | null>(null);
   const [showDisabled, setShowDisabled] = useState(false);
@@ -69,34 +78,43 @@ export function OddsBoard({
   // orange marks the leader only when the odds actually differ; with equal odds there is no leader
   const hasLeader = maxP - (odds[odds.length - 1]?.p ?? 0) > 1e-9;
 
-  let rows = showAll ? odds : odds.slice(0, TOP);
-  // keep the winner, and the row being edited, on the board even when they rank low
-  const extra = [highlightId, winnerId, openId].filter(
-    (id): id is number => id != null && !rows.some((r) => r.id === id),
-  );
-  if (extra.length) rows = [...rows, ...odds.filter((o) => extra.includes(o.id))];
+  // rank on the full board, so the orange leader stays the real leader while searching
+  const rankOf = new Map(odds.map((o, i) => [o.id, i]));
+  let rows = matchIds ? odds.filter((o) => matchIds.has(o.id)) : showAll ? odds : odds.slice(0, TOP);
+  if (!matchIds) {
+    // keep the winner, and the row being edited, on the board even when they rank low
+    const extra = [highlightId, winnerId, openId].filter(
+      (id): id is number => id != null && !rows.some((r) => r.id === id),
+    );
+    if (extra.length) rows = [...rows, ...odds.filter((o) => extra.includes(o.id))];
+  }
+  const shownDisabled = matchIds ? disabled.filter((r) => matchIds.has(r.id)) : disabled;
+  const disabledOpen = showDisabled || (matchIds != null && shownDisabled.length > 0);
 
   return (
     <div>
       <div className={`grid ${COLS} items-center gap-3 border-b border-line px-3 pb-2 text-xs text-fg-3`}>
         <span>เบอร์</span>
         <span>ร้าน</span>
-        <span className="hidden text-right sm:block">เดิน</span>
+        <span className="hidden text-right sm:block">ระยะเดิน</span>
         <span className="hidden text-center sm:block" title="ความยาวแถบ = โอกาสเทียบกับร้านอันดับ 1">
           เทียบอันดับ 1
         </span>
-        <span className="w-[86px] text-center">อยากไป</span>
+        <span className="hidden text-center sm:block">อยากไปร้านนี้ไหม</span>
         <span className="text-right">โอกาส</span>
       </div>
       {odds.length === 0 && <p className="px-3 py-6 text-sm text-fg-3">ไม่มีร้านที่ตรงกับตัวกรองนี้</p>}
+      {odds.length > 0 && matchIds && rows.length === 0 && (
+        <p className="px-3 py-6 text-sm text-fg-3">ไม่พบร้านที่ตรงกับ “{query.trim()}”</p>
+      )}
       <ol>
-        {rows.map((o, i) => {
+        {rows.map((o) => {
           const r = byId.get(o.id);
           if (!r) return null;
           return (
             <li key={o.id} className="border-b border-line">
               <Row
-                rank={hasLeader ? i : -1}
+                rank={hasLeader ? (rankOf.get(o.id) ?? -1) : -1}
                 r={r}
                 odd={o}
                 maxP={maxP}
@@ -110,6 +128,8 @@ export function OddsBoard({
                 net={picks[o.id] ?? 0}
                 mine={myPicks[o.id] ?? 0}
                 voters={pickVoters?.[o.id]}
+                showNet={pickVoters !== undefined}
+                pending={pending[o.id] !== undefined}
                 onPick={(v) => onPick(o.id, v)}
               />
               {openId === o.id && (
@@ -133,7 +153,7 @@ export function OddsBoard({
           );
         })}
       </ol>
-      {odds.length > TOP && (
+      {!matchIds && odds.length > TOP && (
         <button
           type="button"
           onClick={onToggleAll}
@@ -143,27 +163,27 @@ export function OddsBoard({
         </button>
       )}
 
-      {disabled.length > 0 && (
+      {shownDisabled.length > 0 && (
         <div className="mt-4 border-t border-line pt-3">
           <button
             type="button"
-            aria-expanded={showDisabled}
+            aria-expanded={disabledOpen}
             onClick={() => setShowDisabled((s) => !s)}
             className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm text-fg-2 transition-colors hover:bg-raised hover:text-fg"
           >
             <span className="flex items-center gap-2">
               <EyeOff size={16} strokeWidth={1.5} />
-              ร้านที่ปิดไว้ <span className="font-mono text-fg-3 tnum">{disabled.length}</span>
+              ร้านที่ไม่สุ่ม <span className="font-mono text-fg-3 tnum">{shownDisabled.length}</span>
             </span>
             <ChevronDown
               size={14}
               strokeWidth={1.5}
-              className={`text-fg-3 transition-transform ${showDisabled ? "rotate-180" : ""}`}
+              className={`text-fg-3 transition-transform ${disabledOpen ? "rotate-180" : ""}`}
             />
           </button>
-          {showDisabled && (
+          {disabledOpen && (
             <ul className="mt-1">
-              {disabled.map((r) => (
+              {shownDisabled.map((r) => (
                 <li
                   key={r.id}
                   data-testid="disabled-row"
@@ -177,7 +197,7 @@ export function OddsBoard({
                   </div>
                   <Button variant="ghost" onClick={() => onSave(r.id, { disabled: false })}>
                     <RotateCcw size={16} strokeWidth={1.5} />
-                    เปิดอีกครั้ง
+                    กลับมาสุ่ม
                   </Button>
                 </li>
               ))}
@@ -204,6 +224,8 @@ function Row({
   net,
   mine,
   voters,
+  showNet,
+  pending,
   onPick,
 }: {
   rank: number;
@@ -220,6 +242,8 @@ function Row({
   net: number;
   mine: number;
   voters?: { up: string[]; down: string[] };
+  showNet: boolean;
+  pending: boolean;
   onPick: (value: -1 | 0 | 1) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -267,11 +291,11 @@ function Row({
           {r.nickname && <span>{r.name} · </span>}
           {r.categories.map((c) => labels.get(c) ?? c).join(" · ")}
           <span className="sm:hidden"> · {formatMetres(walkMetres(r))}</span>
-          {r.baseWeight !== 1 && <span className="font-mono"> · น้ำหนัก ×{r.baseWeight}</span>}
+          {r.baseWeight !== 1 && <span className="font-mono"> · ตัวคูณ ×{r.baseWeight}</span>}
           {lazy && <span className="font-mono"> · ใกล้ ×{nearMultiplier(r, true).toFixed(1)}</span>}
           {r.lastEatenAt && (
             <span className="text-fg-2">
-              {" "}· กินไปเมื่อ{eatenAgo(r.lastEatenAt, now)}{" "}
+              {" "}· ไปกินมา{eatenAgo(r.lastEatenAt, now)}{" "}
               <span className="font-mono">×{recencyMultiplier(r.lastEatenAt, now).toFixed(1)}</span>
             </span>
           )}
@@ -286,14 +310,17 @@ function Row({
           style={{ width: `${maxP ? (odd.p / maxP) * 100 : 0}%` }}
         />
       </span>
-      <VoteControl
-        mine={mine}
-        net={net}
-        downLabel={`ไม่อยากไปร้าน ${name}`}
-        upLabel={`อยากไปร้าน ${name}`}
-        title={votersTitle(voters)}
-        onVote={onPick}
-      />
+      <div className="col-span-2 col-start-2 row-start-2 sm:col-span-1 sm:col-start-auto sm:row-start-auto">
+        <VoteControl
+          mine={mine}
+          net={net}
+          groupLabel={`โหวตร้าน ${name}`}
+          showNet={showNet}
+          title={votersTitle(voters)}
+          pending={pending}
+          onVote={onPick}
+        />
+      </div>
       <span
         data-testid="odds-p"
         className={`text-right font-mono text-sm tnum ${rank === 0 || active ? "text-ember-ink" : "text-fg-2"}`}
@@ -383,7 +410,7 @@ function Editor({
       </div>
 
       <div>
-        <div className="mb-2 text-xs text-fg-3">ร้านนี้มีอาหารแนวไหน</div>
+        <div className="mb-2 text-xs text-fg-3">ร้านนี้ขายอาหารประเภทไหน</div>
         <div className="flex flex-wrap gap-1.5">
           {categories.map((c) => {
             const on = cats.includes(c.id);
@@ -406,11 +433,11 @@ function Editor({
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="text-xs text-fg-3">น้ำหนักพื้นฐาน</span>
+          <span className="text-xs text-fg-3">ตัวคูณโอกาส</span>
           <div className="flex items-center rounded-lg border border-line bg-card p-0.5">
             <button
               type="button"
-              aria-label="ลดน้ำหนัก"
+              aria-label="ลดตัวคูณ"
               onClick={() => setWeight((w) => Math.max(0.5, w - 0.5))}
               className="grid size-8 place-items-center rounded-md text-fg-2 hover:text-fg"
             >
@@ -419,7 +446,7 @@ function Editor({
             <span className="w-10 text-center font-mono text-sm tnum">×{weight}</span>
             <button
               type="button"
-              aria-label="เพิ่มน้ำหนัก"
+              aria-label="เพิ่มตัวคูณ"
               onClick={() => setWeight((w) => Math.min(5, w + 0.5))}
               className="grid size-8 place-items-center rounded-md text-fg-2 hover:text-fg"
             >
@@ -433,7 +460,7 @@ function Editor({
         <div className="flex flex-wrap gap-2">
           <Button variant="ghost" disabled={saving} onClick={() => save({ disabled: true })}>
             <EyeOff size={16} strokeWidth={1.5} />
-            ปิดร้านนี้
+            ไม่สุ่มร้านนี้
           </Button>
           {/* only restaurants added by hand can be deleted; two steps so it is never by accident */}
           {r.manual &&

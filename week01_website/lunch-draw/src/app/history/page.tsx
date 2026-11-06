@@ -35,12 +35,12 @@ function VisitBadge({ tag }: { tag: VisitTag }) {
 async function getHistory() {
   await connection();
   const since = Date.now() - 7 * 24 * 3600 * 1000;
-  const byNumber = new Map(getRestaurants().map((r) => [r.number, r]));
+  const byNumber = new Map((await getRestaurants()).map((r) => [r.number, r]));
   const label = (n: number) => {
     const r = byNumber.get(n);
     return { number: n, name: r ? (r.nickname ?? r.name) : `ร้าน #${n}` };
   };
-  const draws = getDraws();
+  const draws = await getDraws();
   const now = Date.now();
 
   // the newest draw of each room (or of solo use) may still be waiting for "ไปกินร้านนี้"
@@ -90,9 +90,9 @@ async function History() {
   return (
     <div className="rise grid gap-6 pt-4 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-8">
       <section className="self-start rounded-2xl border border-line bg-card p-5">
-        <h1 className="text-base font-medium">แชมป์ 7 วันล่าสุด</h1>
+        <h1 className="text-base font-medium">สุ่มได้บ่อยใน 7 วัน</h1>
         {champs.length === 0 ? (
-          <p className="mt-3 text-sm text-fg-3">ยังไม่มีผลจับสลาก</p>
+          <p className="mt-3 text-sm text-fg-3">ยังไม่เคยสุ่ม</p>
         ) : (
           <ol className="mt-4 flex flex-col gap-3">
             {champs.map((c, i) => (
@@ -115,9 +115,9 @@ async function History() {
       </section>
 
       <section className="rounded-2xl border border-line bg-card p-5">
-        <h2 className="text-base font-medium">ผลจับสลากล่าสุด</h2>
+        <h2 className="text-base font-medium">ผลการสุ่มล่าสุด</h2>
         {recent.length === 0 ? (
-          <p className="mt-3 text-sm text-fg-3">ยังไม่มีผลจับสลาก</p>
+          <p className="mt-3 text-sm text-fg-3">ยังไม่เคยสุ่ม</p>
         ) : (
           <ol className="mt-3">
             {recent.map((d) => (

@@ -8,9 +8,9 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   const { id } = await params;
   const body = await req.json().catch(() => null);
   const label = typeof body?.label === "string" ? body.label.trim() : "";
-  if (!label) return bad("ใส่ชื่อแนวอาหาร");
+  if (!label) return bad("ใส่ชื่อประเภทอาหาร");
   if (label.length > MAX_LABEL) return bad(`ชื่อยาวได้ไม่เกิน ${MAX_LABEL} ตัวอักษร`);
-  if (getCategories().some((c) => c.label === label && c.id !== id)) return bad("มีแนวอาหารนี้อยู่แล้ว", 409);
+  if ((await getCategories()).some((c) => c.label === label && c.id !== id)) return bad("มีประเภทอาหารนี้อยู่แล้ว", 409);
   const c = await renameCategory(id, label);
   if (!c) return bad("not found", 404);
   return Response.json(c);

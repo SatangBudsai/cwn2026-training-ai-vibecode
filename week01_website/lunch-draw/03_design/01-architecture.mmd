@@ -1,0 +1,41 @@
+flowchart LR
+  subgraph Browser["เบราว์เซอร์ (มือถือ / คอม)"]
+    UI["หน้าเว็บ React<br/>lunch-app · odds-board · odds-map"]
+    LS[("localStorage<br/>โหวต ตัวกรอง rater id")]
+    ODDS_C["odds.ts<br/>คิด % ให้กระดาน"]
+    UI --- LS
+    UI --- ODDS_C
+  end
+
+  subgraph Server["Next.js 16 · Node process เดียว"]
+    PAGES["App Router pages<br/>/ · /room/[code] · /history<br/>/restaurants/new · /categories"]
+    API["Route Handlers /api/*<br/>draw · rooms · restaurants<br/>categories · draws · events"]
+    ODDS_S["odds.ts<br/>คิด % + สุ่ม (crypto)"]
+    STORE["store.ts<br/>ข้อมูลในหน่วยความจำ<br/>+ EventEmitter"]
+    API --> ODDS_S
+    API --> STORE
+    PAGES --> STORE
+  end
+
+  subgraph Disk["data/ (ไฟล์ JSON)"]
+    R[("restaurants.json")]
+    C[("categories.json")]
+    RT[("ratings.json")]
+    S[("state.json<br/>ห้อง โหวต ผลการสุ่ม")]
+  end
+
+  subgraph External["บริการฟรีภายนอก"]
+    OSM["OpenStreetMap<br/>(ดึงร้าน ตอน data:fetch)"]
+    OSRM["routing.openstreetmap.de<br/>ระยะเดินจริง"]
+    CARTO["CARTO tiles<br/>แผนที่พื้นหลัง"]
+    GMAPS["Google Maps<br/>ลิงก์นำทาง"]
+  end
+
+  UI -- "fetch JSON" --> API
+  API -- "SSE /api/events<br/>room · restaurants · categories" --> UI
+  STORE -- "เขียน atomic<br/>tmp + rename" --> Disk
+  Disk -- "อ่านตอนเริ่ม / ไฟล์เปลี่ยน" --> STORE
+  API -. "เพิ่มร้าน (timeout 4 วิ)" .-> OSRM
+  UI -. "tiles" .-> CARTO
+  UI -. "ลิงก์" .-> GMAPS
+  OSM -. "scripts/fetch-osm.ts" .-> R

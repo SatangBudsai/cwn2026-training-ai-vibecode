@@ -1,0 +1,71 @@
+erDiagram
+  RESTAURANT {
+    int number PK "เลขร้าน / id"
+    string osmId "node/… หรือ manual/…"
+    string name
+    string nameEn
+    float lat
+    float lon
+    int distance "ม. เส้นตรงจากออฟฟิศ"
+    int walkDistance "ม. เดินจริง (null ได้)"
+    string openingHours
+    string_array categories FK
+    float baseWeight "0.5–5 ค่าเริ่ม 1"
+    string nickname "≤40"
+    int priceLevel "1–4 หรือ null"
+    bool disabled
+  }
+  CATEGORY {
+    string id PK "noodle · c-xxxxxxxx"
+    string label "≤30 ห้ามซ้ำ"
+  }
+  RATING {
+    int restaurantId FK
+    string rater PK "id สุ่มในเบราว์เซอร์"
+    int score "1–4"
+    string name "ชื่อเล่น ≤24"
+    datetime at
+  }
+  ROOM {
+    string code PK "4 ตัว"
+    bool lazyMode
+    int_array prices
+    datetime createdAt
+    datetime updatedAt "ไม่ขยับ 3 วัน = ลบ"
+  }
+  MEMBER {
+    string id PK
+    string nickname "≤24 ซ้ำในห้อง = คนเดิม"
+    datetime createdAt
+  }
+  VOTE {
+    string memberId FK
+    string categoryId FK
+    int value "-1 หรือ +1"
+  }
+  RESTAURANT_VOTE {
+    string memberId FK
+    int restaurantId FK
+    int value "-1 หรือ +1"
+  }
+  DRAW {
+    string id PK
+    string roomCode FK "null = คนเดียว"
+    int restaurantId FK
+    float probability
+    bool lazyMode
+    datetime createdAt
+    datetime eatenAt "null = ยังไม่ยืนยัน"
+  }
+
+  CATEGORY ||--o{ RESTAURANT : "จัดแนว (หลายต่อหลาย ผ่าน categories[])"
+  RESTAURANT ||--o{ RATING : "ได้คะแนน"
+  ROOM ||--o{ MEMBER : "มีสมาชิก"
+  ROOM ||--o{ VOTE : "เก็บโหวตแนว"
+  ROOM ||--o{ RESTAURANT_VOTE : "เก็บโหวตร้าน"
+  MEMBER ||--o{ VOTE : "โหวต"
+  MEMBER ||--o{ RESTAURANT_VOTE : "โหวต"
+  CATEGORY ||--o{ VOTE : "ถูกโหวต"
+  RESTAURANT ||--o{ RESTAURANT_VOTE : "ถูกโหวต"
+  RESTAURANT ||--o{ DRAW : "ถูกสุ่มได้"
+  ROOM |o--o{ DRAW : "สุ่มในห้อง"

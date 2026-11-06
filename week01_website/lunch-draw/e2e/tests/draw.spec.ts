@@ -1,7 +1,7 @@
 import { SEED, TOTAL, byNumber, draw, expect, openHome, pct, row, rowPercent, setRestaurant, showAll, test, walk } from "../fixtures";
 
-test.describe("จับสลาก", () => {
-  test("TC-DRAW-01 จับสลากแล้วได้การ์ดผลพร้อมลิงก์ Google Maps @P1", async ({ page }) => {
+test.describe("สุ่มร้าน", () => {
+  test("TC-DRAW-01 สุ่มร้านแล้วได้การ์ดผลพร้อมลิงก์ Google Maps @P1", async ({ page }) => {
     await openHome(page);
     const n = await draw(page);
     const r = byNumber.get(n)!;
@@ -11,12 +11,12 @@ test.describe("จับสลาก", () => {
     await expect(card).toContainText("นาที");
     const maps = card.getByRole("link", { name: /Google Maps/ });
     await expect(maps).toHaveAttribute("href", new RegExp(`google\\.com/maps/search/.*${r.lat}`));
-    const walkLink = card.getByRole("link", { name: /นำทางเดิน/ });
+    const walkLink = card.getByRole("link", { name: /เส้นทางเดิน/ });
     await expect(walkLink).toHaveAttribute("href", /travelmode=walking/);
-    await expect(page.getByRole("button", { name: "จับสลากใหม่" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "สุ่มใหม่" })).toBeVisible();
   });
 
-  test("TC-DRAW-02 ผลจับสลากเป็นไปตามโหมดขี้เกียจเดินเสมอ @P1", async ({ request }) => {
+  test("TC-DRAW-02 ผลการสุ่มเป็นไปตามโหมดขี้เกียจเดินเสมอ @P1", async ({ request }) => {
     for (let i = 0; i < 25; i++) {
       const res = await request.post("/api/draw", { data: { lazy: true } });
       expect(res.status()).toBe(201);
@@ -25,7 +25,7 @@ test.describe("จับสลาก", () => {
     }
   });
 
-  test("TC-DRAW-03 ร้านที่ปิดไว้ไม่ถูกสุ่ม @P1", async ({ page }) => {
+  test("TC-DRAW-03 ร้านที่ไม่สุ่มไม่ถูกสุ่ม @P1", async ({ page }) => {
     // close every lazy-mode place except one: that one must always win
     const lazy = SEED.filter((r) => walk(r) <= 500);
     const keep = lazy[0].number;
@@ -41,10 +41,10 @@ test.describe("จับสลาก", () => {
     await openHome(page);
     const n = await draw(page);
     await page.getByRole("button", { name: "ไปกินร้านนี้" }).click();
-    await expect(page.getByRole("button", { name: /บันทึกว่ากินร้านนี้แล้ว/ })).toBeVisible();
+    await expect(page.getByRole("button", { name: /ไปกินแล้ว · กดเพื่อยกเลิก/ })).toBeVisible();
 
     await showAll(page);
-    await expect(row(page, n)).toContainText("กินไปเมื่อวันนี้");
+    await expect(row(page, n)).toContainText("ไปกินมาวันนี้");
     await expect(row(page, n)).toContainText("×0.2");
     // eaten today: weight 0.2, everyone else 1
     await expect.poll(() => rowPercent(page, n)).toBe(pct(0.2 / (TOTAL - 1 + 0.2)));
@@ -54,20 +54,20 @@ test.describe("จับสลาก", () => {
     await openHome(page);
     const n = await draw(page);
     await page.getByRole("button", { name: "ไปกินร้านนี้" }).click();
-    await page.getByRole("button", { name: /บันทึกว่ากินร้านนี้แล้ว/ }).click();
+    await page.getByRole("button", { name: /ไปกินแล้ว · กดเพื่อยกเลิก/ }).click();
     await expect(page.getByRole("button", { name: "ไปกินร้านนี้" })).toBeVisible();
     await showAll(page);
     await expect.poll(() => rowPercent(page, n)).toBe(pct(1 / TOTAL));
-    await expect(row(page, n)).not.toContainText("กินไปเมื่อ");
+    await expect(row(page, n)).not.toContainText("ไปกินมา");
   });
 
   test("TC-DRAW-06 กินแล้วยังถูกนับหลังรีโหลด @P2", async ({ page }) => {
     await openHome(page);
     const n = await draw(page);
     await page.getByRole("button", { name: "ไปกินร้านนี้" }).click();
-    await expect(page.getByRole("button", { name: /บันทึกว่ากินร้านนี้แล้ว/ })).toBeVisible();
+    await expect(page.getByRole("button", { name: /ไปกินแล้ว · กดเพื่อยกเลิก/ })).toBeVisible();
     await page.reload();
     await showAll(page);
-    await expect(row(page, n)).toContainText("กินไปเมื่อวันนี้");
+    await expect(row(page, n)).toContainText("ไปกินมาวันนี้");
   });
 });

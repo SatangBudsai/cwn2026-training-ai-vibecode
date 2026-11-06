@@ -55,6 +55,10 @@ type Props = {
   onPick: (id: number, value: -1 | 0 | 1) => void;
   rater: string | null;
   onRate: (id: number, score: number) => void;
+  /** restaurants matching the search box, or null when not searching */
+  matchIds: Set<number> | null;
+  /** unsaved restaurant votes */
+  pending: Record<number, number>;
 };
 
 /** Every restaurant in the current pool on one map; pin size follows the odds */
@@ -71,6 +75,8 @@ export function OddsMap({
   onPick,
   rater,
   onRate,
+  matchIds,
+  pending,
 }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const map = useRef<MlMap | null>(null);
@@ -157,7 +163,7 @@ export function OddsMap({
     const keep = new Set<number>();
     for (const o of odds) {
       const r = byId.get(o.id);
-      if (!r) continue;
+      if (!r || (matchIds && !matchIds.has(o.id))) continue;
       keep.add(o.id);
       let pin = pins.current.get(o.id);
       if (!pin) {
@@ -195,7 +201,20 @@ export function OddsMap({
         pins.current.delete(id);
       }
     }
-  }, [odds, byId, highlightId, winnerId, selected, mapReady]);
+  }, [odds, byId, highlightId, winnerId, selected, mapReady, matchIds]);
+
+  // searching: zoom to what was found, only when the results change (not on every live update)
+  const matchKey = matchIds ? [...matchIds].sort((x, y) => x - y).join(",") : "";
+  useEffect(() => {
+    const m = map.current;
+    const lib = ml.current;
+    if (!m || !lib || !matchIds || !matchIds.size) return;
+    const found = [...matchIds].map((id) => byIdRef.current.get(id)).filter((r): r is RestaurantDTO => !!r && !r.disabled);
+    if (!found.length) return;
+    const b = new lib.LngLatBounds([found[0].lon, found[0].lat], [found[0].lon, found[0].lat]);
+    found.forEach((r) => b.extend([r.lon, r.lat]));
+    m.fitBounds(b, { padding: 60, maxZoom: 17, duration: 400 });
+  }, [matchKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // follow the draw: fly to the winner and open it
   useEffect(() => {
@@ -205,6 +224,8 @@ export function OddsMap({
   }, [winnerId, byId]);
 
   const sel = selected != null ? byId.get(selected) : null;
+  // side panel list: the top places, or what the search found
+  const listed = matchIds ? odds.filter((o) => matchIds.has(o.id)).slice(0, 12) : odds.slice(0, TOP_ACCENT);
   const selOdd = selected != null ? odds.find((o) => o.id === selected) : null;
 
   function focus(id: number) {
@@ -227,10 +248,10 @@ export function OddsMap({
             <span className="inline-block size-3 rounded-[3px] bg-fg" /> จันวาณิชย์
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block size-3 rounded-full bg-ember" /> โอกาสสูงสุด {TOP_ACCENT} ร้าน
+            <span className="inline-block size-3 rounded-full bg-ember" /> {TOP_ACCENT} ร้านที่มีโอกาสสูงสุด
           </span>
-          <span>ขนาดหมุดตามโอกาส · {odds.length} ร้าน</span>
-          {lazy && <span>เส้นประ = ระยะ 500 ม.</span>}
+          <span>หมุดยิ่งใหญ่ยิ่งมีโอกาส · {odds.length} ร้าน</span>
+          {lazy && <span>เส้นประคือระยะเดิน 500 ม.</span>}
         </div>
       </div>
 
@@ -264,18 +285,19 @@ export function OddsMap({
                 <dd className="font-mono text-base tnum" data-testid="map-selected-p">{formatPercent(selOdd.p)}</dd>
               </div>
               <div className="bg-card px-3 py-2">
-                <dt className="text-xs text-fg-3">เดิน</dt>
+                <dt className="text-xs text-fg-3">ระยะเดิน</dt>
                 <dd className="font-mono text-base tnum">{formatMetres(walkMetres(sel))}</dd>
               </div>
             </dl>
 
-            <div className="mt-4 flex items-center justify-between gap-3">
-              <span className="text-sm text-fg-2">อยากไปร้านนี้</span>
+            <div className="mt-4 flex flex-col items-start gap-2">
+              <span className="text-sm text-fg-2">อยากไปร้านนี้ไหม</span>
               <VoteControl
                 mine={myPicks[sel.id] ?? 0}
                 net={picks[sel.id] ?? 0}
-                downLabel={`ไม่อยากไปร้าน ${displayName(sel)}`}
-                upLabel={`อยากไปร้าน ${displayName(sel)}`}
+                groupLabel={`โหวตร้าน ${displayName(sel)}`}
+                showNet={pickVoters !== undefined}
+                pending={pending[sel.id] !== undefined}
                 title={votersTitle(pickVoters?.[sel.id])}
                 onVote={(v) => onPick(sel.id, v)}
               />
@@ -293,7 +315,7 @@ export function OddsMap({
 
             {here.length > 1 && (
               <div className="mt-4 border-t border-line pt-3" data-testid="map-here">
-                <div className="text-xs text-fg-3">ร้านในจุดเดียวกัน {here.length} ร้าน</div>
+                <div className="text-xs text-fg-3">ร้านที่อยู่จุดเดียวกัน {here.length} ร้าน</div>
                 <ul className="mt-1">
                   {here.map((id) => {
                     const r = byId.get(id);
@@ -322,7 +344,7 @@ export function OddsMap({
               <a href={googleDirectionsUrl(sel.lat, sel.lon)} target="_blank" rel="noreferrer" className="contents">
                 <Button className="w-full">
                   <Navigation size={16} strokeWidth={1.5} />
-                  นำทางเดิน
+                  เส้นทางเดิน
                 </Button>
               </a>
               <a href={googleMapsUrl(sel.lat, sel.lon, sel.name)} target="_blank" rel="noreferrer" className="contents">
@@ -335,10 +357,10 @@ export function OddsMap({
           </div>
         ) : (
           <div>
-            <h3 className="text-sm font-medium">โอกาสสูงสุด</h3>
-            <p className="mt-1 text-xs text-fg-3">ชี้ที่หมุดเพื่อดูชื่อร้าน กดเพื่อดูรายละเอียดและโหวต</p>
+            <h3 className="text-sm font-medium">{matchIds ? `ผลการค้นหา ${listed.length} ร้าน` : "โอกาสสูงสุด"}</h3>
+            <p className="mt-1 text-xs text-fg-3">ชี้หมุดเพื่อดูชื่อร้าน กดหมุดเพื่อดูรายละเอียดและโหวต</p>
             <ol className="mt-3">
-              {odds.slice(0, TOP_ACCENT).map((o) => {
+              {listed.map((o) => {
                 const r = byId.get(o.id);
                 if (!r) return null;
                 return (

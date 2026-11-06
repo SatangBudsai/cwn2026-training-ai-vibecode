@@ -15,7 +15,7 @@ async function openEditor(page: Page, n: number) {
 }
 
 test.describe("ให้คะแนนร้าน (รูปแมว)", () => {
-  test("TC-RATE-01 ให้คะแนนจากการ์ดผลจับสลาก @P1", async ({ page }) => {
+  test("TC-RATE-01 ให้คะแนนจากการ์ดผลการสุ่ม @P1", async ({ page }) => {
     await openHome(page);
     const n = await draw(page);
     const card = page.getByTestId("winner");

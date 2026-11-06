@@ -1,14 +1,14 @@
-import { SEED, byNumber, expect, openHome, pct, row, rowPercent, showAll, test, topRowNumber } from "../fixtures";
+import { SEED, byNumber, catSwitch, vote, chosen, expect, openHome, pct, row, rowPercent, showAll, test, topRowNumber } from "../fixtures";
 
 const has = (cat: string) => SEED.filter((r) => r.categories.includes(cat));
 
-test.describe("โหวตแนวอาหาร (คนเดียว)", () => {
-  test("TC-VOTE-01 โหวต + ก๋วยเตี๋ยว ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น @P1", async ({ page }) => {
+test.describe("โหวตประเภทอาหาร (คนเดียว)", () => {
+  test("TC-VOTE-01 เห็นด้วยกับก๋วยเตี๋ยว / เมนูเส้น ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น @P1", async ({ page }) => {
     await openHome(page);
-    await page.getByRole("button", { name: "อยากกินก๋วยเตี๋ยว / เส้น", exact: true }).click();
+    await vote(catSwitch(page, "ก๋วยเตี๋ยว / เมนูเส้น"), "เห็นด้วย");
 
     const cat = page.getByTestId("cat-noodle");
-    await expect(cat.getByTestId("vote-net")).toHaveText("+1");
+    await expect(chosen(catSwitch(page, "ก๋วยเตี๋ยว / เมนูเส้น"))).toHaveText("เห็นด้วย");
     await expect(cat).toContainText("×1.5");
 
     // weight 1.5 for noodle places, 1 for the rest
@@ -19,12 +19,12 @@ test.describe("โหวตแนวอาหาร (คนเดียว)", ()
     expect(await rowPercent(page, top)).toBe(expected);
   });
 
-  test("TC-VOTE-02 โหวต − ฝรั่ง ร้านฝรั่งมีโอกาสน้อยลง @P2", async ({ page }) => {
+  test("TC-VOTE-02 ไม่เห็นด้วยกับอาหารตะวันตก ร้านอาหารตะวันตกมีโอกาสน้อยลง @P2", async ({ page }) => {
     await openHome(page);
-    await page.getByRole("button", { name: "ไม่อยากกินฝรั่ง", exact: true }).click();
+    await vote(catSwitch(page, "อาหารตะวันตก"), "ไม่เห็นด้วย");
 
     const cat = page.getByTestId("cat-western");
-    await expect(cat.getByTestId("vote-net")).toHaveText("-1");
+    await expect(chosen(catSwitch(page, "อาหารตะวันตก"))).toHaveText("ไม่เห็นด้วย");
     await expect(cat).toContainText("×0.5");
 
     const westernOnly = SEED.find((r) => r.categories.length === 1 && r.categories[0] === "western")!;
@@ -34,22 +34,24 @@ test.describe("โหวตแนวอาหาร (คนเดียว)", ()
     expect(await rowPercent(page, westernOnly.number)).toBe(pct(0.5 / total));
   });
 
-  test("TC-VOTE-03 กดโหวตซ้ำเพื่อยกเลิก @P3", async ({ page }) => {
+  test("TC-VOTE-03 กลับมาเลือก ปกติ เพื่อยกเลิกโหวต @P3", async ({ page }) => {
     await openHome(page);
-    const plus = page.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true });
-    await plus.click();
-    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("+1");
-    await plus.click();
-    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("0");
-    await expect(page.getByTestId("cat-isan")).toContainText("×1.0");
+    const sw = catSwitch(page, "อาหารอีสาน");
+    await expect(chosen(sw)).toHaveText("ปกติ"); // default
+    await vote(sw, "เห็นด้วย");
+    await expect(chosen(sw)).toHaveText("เห็นด้วย");
+    await expect(page.getByTestId("cat-isan")).toContainText("×1.5");
+    await vote(sw, "ปกติ");
+    await expect(chosen(sw)).toHaveText("ปกติ");
+    await expect(page.getByTestId("cat-isan")).not.toContainText("×");
   });
 
   test("TC-VOTE-04 โหวตยังอยู่หลังรีโหลด @P3", async ({ page }) => {
     await openHome(page);
-    await page.getByRole("button", { name: "อยากกินญี่ปุ่น", exact: true }).click();
-    await expect(page.getByTestId("cat-japanese").getByTestId("vote-net")).toHaveText("+1");
+    await vote(catSwitch(page, "อาหารญี่ปุ่น"), "เห็นด้วย");
+    await expect(chosen(catSwitch(page, "อาหารญี่ปุ่น"))).toHaveText("เห็นด้วย");
     await page.reload();
-    await expect(page.getByTestId("cat-japanese").getByTestId("vote-net")).toHaveText("+1");
+    await expect(chosen(catSwitch(page, "อาหารญี่ปุ่น"))).toHaveText("เห็นด้วย");
     const top = await topRowNumber(page);
     expect(byNumber.get(top)!.categories).toContain("japanese");
   });
@@ -59,8 +61,8 @@ test.describe("โหวตแนวอาหาร (คนเดียว)", ()
     const both = SEED.find((r) => r.categories.includes("noodle") && r.categories.includes("isan"));
     test.skip(!both, "no restaurant has both categories in the data");
     await openHome(page);
-    await page.getByRole("button", { name: "ไม่อยากกินก๋วยเตี๋ยว / เส้น", exact: true }).click();
-    await page.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true }).click();
+    await vote(catSwitch(page, "ก๋วยเตี๋ยว / เมนูเส้น"), "ไม่เห็นด้วย");
+    await vote(catSwitch(page, "อาหารอีสาน"), "เห็นด้วย");
     const weight = (r: (typeof SEED)[number]) =>
       Math.max(...r.categories.map((c) => (c === "noodle" ? 0.5 : c === "isan" ? 1.5 : 1)));
     const total = SEED.reduce((s, r) => s + weight(r), 0);

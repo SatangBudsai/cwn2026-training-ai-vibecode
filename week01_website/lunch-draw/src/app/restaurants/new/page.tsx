@@ -7,7 +7,7 @@ export const metadata = { title: "เพิ่มร้าน · ข้าวไ
 
 async function Form() {
   await connection(); // the category list can be edited
-  return <AddRestaurantForm categories={listCategories()} />;
+  return <AddRestaurantForm categories={await listCategories()} />;
 }
 
 export default function NewRestaurantPage() {

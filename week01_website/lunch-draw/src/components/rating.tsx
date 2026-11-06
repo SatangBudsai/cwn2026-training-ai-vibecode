@@ -45,7 +45,7 @@ export function RatingPicker({
   return (
     <div data-testid="rating-picker">
       <div className="mb-2 flex items-baseline justify-between gap-2 text-xs text-fg-3">
-        <span>{mine ? "คุณให้คะแนนแล้ว กดอีกครั้งเพื่อยกเลิก" : "ให้คะแนนร้านนี้"}</span>
+        <span>{mine ? "ให้คะแนนแล้ว กดรูปเดิมเพื่อยกเลิก" : "ให้คะแนนร้านนี้"}</span>
         {avg != null && count > 0 && (
           <span data-testid="rating-avg">
             เฉลี่ย {ratingFor(avg).label} · {count} คน

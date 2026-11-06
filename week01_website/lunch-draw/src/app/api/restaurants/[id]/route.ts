@@ -33,7 +33,7 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   if (body.categories !== undefined) {
     if (!Array.isArray(body.categories) || !body.categories.length) return bad("pick at least one category");
     const cats = [...new Set<string>(body.categories)];
-    if (cats.some((c) => !isCategory(c))) return bad("unknown category");
+    for (const c of cats) if (!(await isCategory(c))) return bad("unknown category");
     patch.categories = cats;
   }
 
@@ -48,6 +48,6 @@ export async function DELETE(_req: Request, { params }: { params: Promise<{ id: 
   if (!Number.isInteger(id)) return bad("invalid id");
   const res = await deleteRestaurant(id);
   if (res === "not-found") return bad("not found", 404);
-  if (res === "not-manual") return bad("ลบได้เฉพาะร้านที่เพิ่มเอง ร้านจาก OpenStreetMap ให้ใช้ปิดร้านแทน", 409);
+  if (res === "not-manual") return bad("ลบได้เฉพาะร้านที่เพิ่มเอง ร้านจาก OpenStreetMap ให้ใช้ \"ไม่สุ่มร้านนี้\" แทน", 409);
   return Response.json({ ok: true });
 }

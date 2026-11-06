@@ -20,7 +20,7 @@ test.describe("ตัวกรอง", () => {
     await priceButton(page, "฿").click();
     await expect(page.getByTestId("pool-count")).toHaveText("0");
     await expect(page.getByText("ไม่มีร้านที่ตรงกับตัวกรองนี้")).toBeVisible();
-    await expect(page.getByRole("button", { name: "จับสลาก", exact: true })).toBeDisabled();
+    await expect(page.getByRole("button", { name: "สุ่มร้าน", exact: true })).toBeDisabled();
   });
 
   test("TC-FLT-03 กรองราคาตามที่ตั้งไว้ให้ร้าน @P1", async ({ page }) => {

@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   let roomCode: string | null = null;
 
   if (body?.roomCode) {
-    const state = roomState(String(body.roomCode));
+    const state = await roomState(String(body.roomCode));
     if (!state) return bad("room not found", 404);
     roomCode = state.code;
     filter.lazy = state.lazyMode;
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     }
   }
 
-  const winner = pick(computeOdds(listRestaurants(), scores, filter, Date.now(), picks), secureRandom());
+  const winner = pick(computeOdds(await listRestaurants(), scores, filter, Date.now(), picks), secureRandom());
   if (!winner) return bad("ไม่มีร้านให้สุ่ม ลองปิดโหมดขี้เกียจเดินหรือเลือกช่วงราคาเพิ่ม", 409);
 
   const draw = await addDraw({

@@ -5,7 +5,7 @@ import { getRestaurants, setRating } from "@/lib/store";
 // `rater` is a random id the browser keeps, so each person has one rating per place.
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const id = Number((await params).id);
-  if (!Number.isInteger(id) || !getRestaurants().some((r) => r.number === id)) return bad("not found", 404);
+  if (!Number.isInteger(id) || !(await getRestaurants()).some((r) => r.number === id)) return bad("not found", 404);
   const body = await req.json().catch(() => null);
   const rater = typeof body?.rater === "string" ? body.rater.trim() : "";
   if (!/^[\w-]{8,64}$/.test(rater)) return bad("invalid rater");

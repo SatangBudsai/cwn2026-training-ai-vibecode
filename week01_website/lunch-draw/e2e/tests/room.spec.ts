@@ -1,13 +1,13 @@
-import { LAZY_TOTAL, createRoom, draw, expect, joinRoom, newMember, openHome, row, test } from "../fixtures";
+import { LAZY_TOTAL, catSwitch, vote, createRoom, draw, expect, joinRoom, newMember, openHome, row, test } from "../fixtures";
 
 // realtime: everything below must show up on the other screen without a reload
 const LIVE = { timeout: 3_000 };
 
 test.describe("ห้อง (member) และ realtime", () => {
-  test("TC-ROOM-01 เปิดห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต @P1", async ({ page }) => {
+  test("TC-ROOM-01 สร้างห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต @P1", async ({ page }) => {
     // real flow: button on the home page -> join form -> room
     await openHome(page);
-    await page.getByRole("button", { name: "เปิดห้อง" }).click();
+    await page.getByRole("button", { name: "สร้างห้อง" }).click();
     await page.waitForURL(/\/room\/[A-Z2-9]{4}$/);
     const code = page.url().split("/").pop()!;
     await expect(page.getByRole("heading", { name: "ใส่ชื่อเล่นเพื่อโหวต" })).toBeVisible();
@@ -15,14 +15,14 @@ test.describe("ห้อง (member) และ realtime", () => {
     await page.getByLabel("ชื่อเล่น").fill("ต้น");
     await page.getByRole("button", { name: "เข้าห้อง" }).click();
     await expect(page.getByRole("heading", { name: `ห้อง ${code}` })).toBeVisible();
-    await expect(page.getByTestId("vote-status").filter({ visible: true })).toHaveText("1 คนในห้อง · คุณคือ ต้น");
+    await expect(page.getByTestId("vote-status").filter({ visible: true })).toHaveText("ในห้องมี 1 คน · คุณคือ ต้น");
   });
 
   test("TC-ROOM-02 สมาชิกคนที่สองเข้าห้องผ่านลิงก์ คนแรกเห็นทันที @P1", async ({ page, browser }) => {
     const url = await createRoom(page, "ต้น");
     const b = await newMember(browser);
     await joinRoom(b, url, "มิว");
-    await expect(page.getByTestId("vote-status")).toContainText("2 คนในห้อง", LIVE);
+    await expect(page.getByTestId("vote-status")).toContainText("ในห้องมี 2 คน", LIVE);
     await b.context().close();
   });
 
@@ -31,10 +31,10 @@ test.describe("ห้อง (member) และ realtime", () => {
     const b = await newMember(browser);
     await joinRoom(b, url, "มิว");
 
-    await page.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true }).click();
-    await expect(b.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("+1", LIVE);
-    await b.getByRole("button", { name: "อยากกินส้มตำ / อีสาน", exact: true }).click();
-    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("+2", LIVE);
+    await vote(catSwitch(page, "อาหารอีสาน"), "เห็นด้วย");
+    await expect(b.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("รวม +1", LIVE);
+    await vote(catSwitch(b, "อาหารอีสาน"), "เห็นด้วย");
+    await expect(page.getByTestId("cat-isan").getByTestId("vote-net")).toHaveText("รวม +2", LIVE);
     await expect(page.getByTestId("cat-isan")).toContainText("×2.0");
     await b.context().close();
   });
@@ -49,11 +49,11 @@ test.describe("ห้อง (member) และ realtime", () => {
     await expect(page.getByRole("switch")).toBeChecked();
 
     await b.locator("fieldset").getByRole("button", { name: "ไม่ระบุ", exact: true }).click();
-    await expect(page.getByText("กรองราคา")).toBeVisible(LIVE);
+    await expect(page.getByText("กรองตามราคา")).toBeVisible(LIVE);
     await b.context().close();
   });
 
-  test("TC-ROOM-05 จับสลากในห้อง ทุกคนเห็นร้านเดียวกัน @P1", async ({ page, browser }) => {
+  test("TC-ROOM-05 สุ่มในห้อง ทุกคนเห็นร้านเดียวกัน @P1", async ({ page, browser }) => {
     const url = await createRoom(page, "ต้น");
     const b = await newMember(browser);
     await joinRoom(b, url, "มิว");

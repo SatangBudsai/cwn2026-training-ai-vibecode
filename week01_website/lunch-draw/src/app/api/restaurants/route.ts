@@ -6,7 +6,8 @@ import { walkingDistance } from "@/lib/walk";
 
 
 export async function GET() {
-  return Response.json({ restaurants: listRestaurants(), categories: listCategories() });
+  const [restaurants, categories] = await Promise.all([listRestaurants(), listCategories()]);
+  return Response.json({ restaurants, categories });
 }
 
 // Add a restaurant by hand: { name, lat, lon, categories, nickname?, priceLevel?, openingHours? }
@@ -26,8 +27,8 @@ export async function POST(req: Request) {
   if (distance > MAX_ADD_RADIUS_M) return bad(`ร้านอยู่ไกลเกิน ${MAX_ADD_RADIUS_M / 1000} กม. จากออฟฟิศ`);
 
   const categories = Array.isArray(body.categories) ? [...new Set<string>(body.categories)] : [];
-  if (!categories.length) return bad("เลือกแนวอาหารอย่างน้อย 1 แนว");
-  if (categories.some((c) => !isCategory(c))) return bad("unknown category");
+  if (!categories.length) return bad("เลือกประเภทอาหารอย่างน้อย 1 ประเภท");
+  for (const c of categories) if (!(await isCategory(c))) return bad("unknown category");
 
   const priceLevel = body.priceLevel ?? null;
   if (priceLevel !== null && !PRICE_LEVELS.some((p) => p.level === priceLevel)) return bad("priceLevel must be 1–4 or null");

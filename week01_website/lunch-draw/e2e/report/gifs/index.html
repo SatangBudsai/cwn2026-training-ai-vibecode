@@ -14,9 +14,14 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 .fail{border-color:rgba(229,72,77,.5)}.none{font-style:normal;color:#85858b}
 </style></head><body>
 <h1>ผล E2E · ข้าวไหนดี</h1>
-<p class="sub">79 test case · ผ่าน 79 · ล้ม 0 · ข้าม 0</p>
+<p class="sub">106 test case · ผ่าน 89 · ล้ม 17 · ข้าม 0</p>
 <div class="filters"><button onclick="f('all')">ทั้งหมด</button><button onclick="f('pass')">ผ่าน</button><button onclick="f('fail')">ล้ม</button></div>
 <div class="grid">
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-ACC-01</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>การเข้าถึง · สุ่มด้วยคีย์บอร์ดแล้ว focus ไม่หลุดไป body</p>
+  <img loading="lazy" src="TC-ACC-01.gif" alt="TC-ACC-01">
+</section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-ADD-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
   <p>เพิ่มร้านเอง · เพิ่มร้านจากเมนู แล้วขึ้นบนกระดานทันที</p>
@@ -44,7 +49,7 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-ADD-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>เพิ่มร้านเอง · ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในโหมดขี้เกียจเดิน</p>
+  <p>เพิ่มร้านเอง · ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในระยะโหมดขี้เกียจเดิน</p>
   <img loading="lazy" src="TC-ADD-06.gif" alt="TC-ADD-06">
 </section>
 <section class="card pass" data-status="pass">
@@ -62,9 +67,24 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
   <p>เพิ่มร้านเอง · คนอื่นเห็นร้านที่เพิ่มทันที (realtime)</p>
   <img loading="lazy" src="TC-ADD-09.gif" alt="TC-ADD-09">
 </section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-ADD-10</span> <span class="prio">P1</span> <span class="badge">ล้ม</span></h3>
+  <p>เพิ่มร้านเอง · ลบร้านที่เพิ่มเองแล้วเพิ่มใหม่ เลขไม่ซ้ำ ไม่รับข้อมูลเก่า ประวัติไม่เปลี่ยน</p>
+  <img loading="lazy" src="TC-ADD-10.gif" alt="TC-ADD-10">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-ADD-11</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>เพิ่มร้านเอง · ชื่อยาวลงท้ายอีโมจิไม่ถูกตัดครึ่งตัว</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-ADD-12</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>เพิ่มร้านเอง · วางลิงก์ /maps/dir/ และข้อความที่มี % แล้วอ่านตำแหน่งถูก</p>
+  <img loading="lazy" src="TC-ADD-12.gif" alt="TC-ADD-12">
+</section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-API-01</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>API · โหวตแนวอาหารที่ไม่มีอยู่ ได้ 400</p>
+  <p>API · โหวตประเภทอาหารที่ไม่มีอยู่ ได้ 400</p>
   <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
 </section>
 <section class="card pass" data-status="pass">
@@ -92,60 +112,100 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
   <p>API · โหวตร้านที่ไม่มีอยู่ ได้ 400</p>
   <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
 </section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-API-07</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>API · /api/draw รับ input ผิด ได้ 400 และไม่บันทึกผล</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-API-08</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>API · ค่าผิดชนิด (null, "", true, "0x2", [2]) ได้ 400</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-API-09</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>API · id ใน path แปลก (0x10, 1e1) ได้ 400</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-API-10</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>API · POST text/plain จาก origin อื่นถูกปฏิเสธ</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-API-11</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>API · GET /api/restaurants ไม่เปิดเผย rater id ของคนอื่น</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-CAT-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>จัดการแนวอาหาร · เพิ่มแนวอาหารใหม่ แล้วใช้ได้ทันที</p>
+  <p>จัดการประเภทอาหาร · เพิ่มประเภทอาหารใหม่ แล้วใช้ได้ทันที</p>
   <img loading="lazy" src="TC-CAT-01.gif" alt="TC-CAT-01">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-CAT-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>จัดการแนวอาหาร · แก้ชื่อแนวอาหาร</p>
+  <p>จัดการประเภทอาหาร · แก้ชื่อประเภทอาหาร</p>
   <img loading="lazy" src="TC-CAT-02.gif" alt="TC-CAT-02">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-CAT-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>จัดการแนวอาหาร · ลบแนวอาหาร เอาออกจากทุกร้าน</p>
+  <p>จัดการประเภทอาหาร · ลบประเภทอาหาร เอาออกจากทุกร้าน</p>
   <img loading="lazy" src="TC-CAT-03.gif" alt="TC-CAT-03">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-CAT-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>จัดการแนวอาหาร · ชื่อว่างหรือซ้ำ เพิ่มไม่ได้</p>
+  <p>จัดการประเภทอาหาร · ชื่อว่างหรือซ้ำ เพิ่มไม่ได้</p>
   <img loading="lazy" src="TC-CAT-04.gif" alt="TC-CAT-04">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-CAT-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>จัดการแนวอาหาร · แนวใหม่ใช้โหวตได้</p>
+  <p>จัดการประเภทอาหาร · แนวใหม่ใช้โหวตได้</p>
   <img loading="lazy" src="TC-CAT-05.gif" alt="TC-CAT-05">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-CAT-06</span> <span class="prio">P2</span> <span class="badge">ล้ม</span></h3>
+  <p>จัดการประเภทอาหาร · ลบประเภทที่เป็นประเภทเดียวของร้าน ต้องถูกกันหรือย้ายร้าน</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-DRAW-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>จับสลาก · จับสลากแล้วได้การ์ดผลพร้อมลิงก์ Google Maps</p>
+  <p>สุ่มร้าน · สุ่มร้านแล้วได้การ์ดผลพร้อมลิงก์ Google Maps</p>
   <img loading="lazy" src="TC-DRAW-01.gif" alt="TC-DRAW-01">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-DRAW-02</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>จับสลาก · ผลจับสลากเป็นไปตามโหมดขี้เกียจเดินเสมอ</p>
+  <p>สุ่มร้าน · ผลการสุ่มเป็นไปตามโหมดขี้เกียจเดินเสมอ</p>
   <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-DRAW-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>จับสลาก · ร้านที่ปิดไว้ไม่ถูกสุ่ม</p>
+  <p>สุ่มร้าน · ร้านที่ไม่สุ่มไม่ถูกสุ่ม</p>
   <img loading="lazy" src="TC-DRAW-03.gif" alt="TC-DRAW-03">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-DRAW-04</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>จับสลาก · กด ไปกินร้านนี้ แล้วโอกาสร้านนั้นลดลง</p>
+  <p>สุ่มร้าน · กด ไปกินร้านนี้ แล้วโอกาสร้านนั้นลดลง</p>
   <img loading="lazy" src="TC-DRAW-04.gif" alt="TC-DRAW-04">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-DRAW-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>จับสลาก · ยกเลิก กินแล้ว โอกาสกลับเป็นปกติ</p>
+  <p>สุ่มร้าน · ยกเลิก กินแล้ว โอกาสกลับเป็นปกติ</p>
   <img loading="lazy" src="TC-DRAW-05.gif" alt="TC-DRAW-05">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-DRAW-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>จับสลาก · กินแล้วยังถูกนับหลังรีโหลด</p>
+  <p>สุ่มร้าน · กินแล้วยังถูกนับหลังรีโหลด</p>
   <img loading="lazy" src="TC-DRAW-06.gif" alt="TC-DRAW-06">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-DRAW-07</span> <span class="prio">P2</span> <span class="badge">ล้ม</span></h3>
+  <p>สุ่มร้าน · ดับเบิลคลิก / กด Enter รัว สร้างผลสุ่มครั้งเดียว</p>
+  <img loading="lazy" src="TC-DRAW-07.gif" alt="TC-DRAW-07">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-DRAW-08</span> <span class="prio">P2</span> <span class="badge">ล้ม</span></h3>
+  <p>สุ่มร้าน · โทษกินแล้วยังอยู่หลังสุ่มเพิ่ม 1,000 ครั้ง</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-EDIT-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
@@ -159,22 +219,22 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-EDIT-03</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>แก้ข้อมูลร้าน · ปิดร้าน แล้วเปิดอีกครั้ง</p>
+  <p>แก้ข้อมูลร้าน · ปิดร้าน แล้วกลับมาสุ่ม</p>
   <img loading="lazy" src="TC-EDIT-03.gif" alt="TC-EDIT-03">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-EDIT-04</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>แก้ข้อมูลร้าน · แก้แนวอาหารของร้าน</p>
+  <p>แก้ข้อมูลร้าน · แก้ประเภทอาหารของร้าน</p>
   <img loading="lazy" src="TC-EDIT-04.gif" alt="TC-EDIT-04">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-EDIT-05</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>แก้ข้อมูลร้าน · ต้องเลือกแนวอาหารอย่างน้อย 1 แนว</p>
+  <p>แก้ข้อมูลร้าน · ต้องเลือกประเภทอาหารอย่างน้อย 1 ประเภท</p>
   <img loading="lazy" src="TC-EDIT-05.gif" alt="TC-EDIT-05">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-EDIT-06</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>แก้ข้อมูลร้าน · น้ำหนักพื้นฐาน ×2 ทำให้โอกาสเป็นสองเท่า</p>
+  <p>แก้ข้อมูลร้าน · ตัวคูณโอกาส ×2 ทำให้โอกาสเป็นสองเท่า</p>
   <img loading="lazy" src="TC-EDIT-06.gif" alt="TC-EDIT-06">
 </section>
 <section class="card pass" data-status="pass">
@@ -214,17 +274,17 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-HIST-01</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>ประวัติ · ประวัติแสดงผลจับสลากล่าสุดและแชมป์</p>
+  <p>ประวัติ · ประวัติแสดงผลการสุ่มล่าสุดและแชมป์</p>
   <img loading="lazy" src="TC-HIST-01.gif" alt="TC-HIST-01">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-HIST-02</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>ประวัติ · ยังไม่มีผลจับสลาก</p>
+  <p>ประวัติ · ยังไม่เคยสุ่ม</p>
   <img loading="lazy" src="TC-HIST-02.gif" alt="TC-HIST-02">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-HIST-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>ประวัติ · ทุกผลจับสลากมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน</p>
+  <p>ประวัติ · ทุกผลการสุ่มมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน</p>
   <img loading="lazy" src="TC-HIST-03.gif" alt="TC-HIST-03">
 </section>
 <section class="card pass" data-status="pass">
@@ -246,6 +306,11 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
   <h3><span class="id">TC-HOME-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
   <p>หน้าแรก · เมนูประวัติพาไปหน้าประวัติ</p>
   <img loading="lazy" src="TC-HOME-04.gif" alt="TC-HOME-04">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-HOME-05</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>หน้าแรก · โหวตใน localStorage ผิดช่วง: % บนกระดาน = การ์ดผล = server</p>
+  <img loading="lazy" src="TC-HOME-05.gif" alt="TC-HOME-05">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-MAP-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
@@ -269,7 +334,7 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-MAP-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>แผนที่ · จับสลากบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้</p>
+  <p>แผนที่ · สุ่มบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้</p>
   <img loading="lazy" src="TC-MAP-05.gif" alt="TC-MAP-05">
 </section>
 <section class="card pass" data-status="pass">
@@ -279,22 +344,32 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-MAP-07</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>แผนที่ · หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านในจุดเดียวกัน</p>
+  <p>แผนที่ · หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านที่อยู่จุดเดียวกัน</p>
   <img loading="lazy" src="TC-MAP-07.gif" alt="TC-MAP-07">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-MAP-08</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>แผนที่ · ตัวกรองไม่เหลือร้าน แผงแผนที่แสดงข้อความอธิบาย</p>
+  <img loading="lazy" src="TC-MAP-08.gif" alt="TC-MAP-08">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-MOB-01</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>มือถือ · ปุ่มจับสลากอยู่บนสุด ไม่มี scroll แนวนอน</p>
+  <p>มือถือ · ปุ่มสุ่มร้านอยู่บนสุด ไม่มี scroll แนวนอน</p>
   <img loading="lazy" src="TC-MOB-01.gif" alt="TC-MOB-01">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-MOB-02</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>มือถือ · จับสลากแล้วเห็นการ์ดผลบนจอ</p>
+  <p>มือถือ · สุ่มร้านแล้วเห็นการ์ดผลบนจอ</p>
   <img loading="lazy" src="TC-MOB-02.gif" alt="TC-MOB-02">
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-MOB-03</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>มือถือ · แผนที่บนจอ 390 px ไม่มี scroll แนวนอนแม้ชื่อร้านยาว</p>
+  <img loading="lazy" src="TC-MOB-03.gif" alt="TC-MOB-03">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-RATE-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>ให้คะแนนร้าน · ให้คะแนนจากการ์ดผลจับสลาก</p>
+  <p>ให้คะแนนร้าน · ให้คะแนนจากการ์ดผลการสุ่ม</p>
   <img loading="lazy" src="TC-RATE-01.gif" alt="TC-RATE-01">
 </section>
 <section class="card pass" data-status="pass">
@@ -329,7 +404,7 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-ROOM-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>ห้อง (member) · เปิดห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต</p>
+  <p>ห้อง (member) · สร้างห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต</p>
   <img loading="lazy" src="TC-ROOM-01.gif" alt="TC-ROOM-01">
 </section>
 <section class="card pass" data-status="pass">
@@ -349,7 +424,7 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-ROOM-05</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>ห้อง (member) · จับสลากในห้อง ทุกคนเห็นร้านเดียวกัน</p>
+  <p>ห้อง (member) · สุ่มในห้อง ทุกคนเห็นร้านเดียวกัน</p>
   <img loading="lazy" src="TC-ROOM-05.gif" alt="TC-ROOM-05">
 </section>
 <section class="card pass" data-status="pass">
@@ -372,45 +447,105 @@ h1{font-size:20px;font-weight:500;margin:0 0 4px}.sub{color:#a1a1a6;margin:0 0 1
   <p>ห้อง (member) · สมาชิกโหวตร้านในห้องแบบ realtime</p>
   <img loading="lazy" src="TC-ROOM-09.gif" alt="TC-ROOM-09">
 </section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-ROOM-10</span> <span class="prio">P1</span> <span class="badge">ล้ม</span></h3>
+  <p>ห้อง (member) · สองคนกดสุ่มพร้อมกัน ทุกจอแสดงร้านเดียวกับผลล่าสุดของห้อง</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-11</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · response ของโหวตที่มาช้าไม่ทับโหวตที่ใหม่กว่า</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-12</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · โหวตหลังห้องถูกลบ แสดงข้อความและไม่ค้างสถานะกดแล้ว</p>
+  <p class='none'>ไม่มี GIF: test นี้เรียก API โดยไม่เปิดหน้าเว็บ</p>
+</section>
+<section class="card fail" data-status="fail">
+  <h3><span class="id">TC-ROOM-13</span> <span class="prio">P3</span> <span class="badge">ล้ม</span></h3>
+  <p>ห้อง (member) · เปิด /room/ZZZZ ได้ HTTP 404</p>
+  <img loading="lazy" src="TC-ROOM-13.gif" alt="TC-ROOM-13">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-ROOM-17</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ห้อง (member) · ในห้อง คนอื่นเห็นโหวตหลังกดบันทึกเท่านั้น</p>
+  <img loading="lazy" src="TC-ROOM-17.gif" alt="TC-ROOM-17">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-SEARCH-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>ค้นหาร้าน · ค้นหาด้วยชื่อร้าน แสดงเฉพาะร้านที่ตรง</p>
+  <img loading="lazy" src="TC-SEARCH-01.gif" alt="TC-SEARCH-01">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-SEARCH-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ค้นหาร้าน · ค้นหาด้วยประเภทอาหาร ชื่อเล่น และเบอร์ร้าน</p>
+  <img loading="lazy" src="TC-SEARCH-02.gif" alt="TC-SEARCH-02">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-SEARCH-03</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ค้นหาร้าน · ร้านที่ตรงคำค้นแต่ถูกตัวกรองซ่อน มีข้อความบอก</p>
+  <img loading="lazy" src="TC-SEARCH-03.gif" alt="TC-SEARCH-03">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-SEARCH-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
+  <p>ค้นหาร้าน · ล้างคำค้นด้วยปุ่ม X หรือ Esc กลับมาแสดงตามปกติ</p>
+  <img loading="lazy" src="TC-SEARCH-04.gif" alt="TC-SEARCH-04">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-SEARCH-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>ค้นหาร้าน · ค้นหาบนแผนที่ เหลือเฉพาะหมุดที่ตรง และแผงขวาแสดงผลการค้นหา</p>
+  <img loading="lazy" src="TC-SEARCH-05.gif" alt="TC-SEARCH-05">
+</section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-01</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตแนวอาหาร · โหวต + ก๋วยเตี๋ยว ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น</p>
+  <p>โหวตประเภทอาหาร · เห็นด้วยกับก๋วยเตี๋ยว / เมนูเส้น ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น</p>
   <img loading="lazy" src="TC-VOTE-01.gif" alt="TC-VOTE-01">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-02</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตแนวอาหาร · โหวต − ฝรั่ง ร้านฝรั่งมีโอกาสน้อยลง</p>
+  <p>โหวตประเภทอาหาร · ไม่เห็นด้วยกับอาหารตะวันตก ร้านอาหารตะวันตกมีโอกาสน้อยลง</p>
   <img loading="lazy" src="TC-VOTE-02.gif" alt="TC-VOTE-02">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-03</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตแนวอาหาร · กดโหวตซ้ำเพื่อยกเลิก</p>
+  <p>โหวตประเภทอาหาร · กลับมาเลือก ปกติ เพื่อยกเลิกโหวต</p>
   <img loading="lazy" src="TC-VOTE-03.gif" alt="TC-VOTE-03">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-04</span> <span class="prio">P3</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตแนวอาหาร · โหวตยังอยู่หลังรีโหลด</p>
+  <p>โหวตประเภทอาหาร · โหวตยังอยู่หลังรีโหลด</p>
   <img loading="lazy" src="TC-VOTE-04.gif" alt="TC-VOTE-04">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-05</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตแนวอาหาร · ร้านหลายแนวได้ตัวคูณของแนวที่ดีที่สุด</p>
+  <p>โหวตประเภทอาหาร · ร้านหลายแนวได้ตัวคูณของแนวที่ดีที่สุด</p>
   <img loading="lazy" src="TC-VOTE-05.gif" alt="TC-VOTE-05">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-06</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตร้าน · โหวต + ร้าน ร้านนั้นมีโอกาสมากขึ้น</p>
+  <p>โหวตร้าน · เห็นด้วยกับร้าน ร้านนั้นมีโอกาสมากขึ้น</p>
   <img loading="lazy" src="TC-VOTE-06.gif" alt="TC-VOTE-06">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-07</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตร้าน · โหวต − ร้าน แล้วกดซ้ำเพื่อยกเลิก</p>
+  <p>โหวตร้าน · ไม่เห็นด้วยกับร้าน แล้วกลับมาเลือก ปกติ</p>
   <img loading="lazy" src="TC-VOTE-07.gif" alt="TC-VOTE-07">
 </section>
 <section class="card pass" data-status="pass">
   <h3><span class="id">TC-VOTE-08</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
-  <p>โหวตร้าน · โหวตร้านรวมกับโหวตแนวอาหาร</p>
+  <p>โหวตร้าน · โหวตร้านรวมกับโหวตประเภทอาหาร</p>
   <img loading="lazy" src="TC-VOTE-08.gif" alt="TC-VOTE-08">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-09</span> <span class="prio">P1</span> <span class="badge">ผ่าน</span></h3>
+  <p>บันทึกโหวต · โหวตแล้วกระดานไม่เรียงใหม่ จนกว่าจะกด บันทึกโหวต</p>
+  <img loading="lazy" src="TC-VOTE-09.gif" alt="TC-VOTE-09">
+</section>
+<section class="card pass" data-status="pass">
+  <h3><span class="id">TC-VOTE-10</span> <span class="prio">P2</span> <span class="badge">ผ่าน</span></h3>
+  <p>บันทึกโหวต · กด ยกเลิก แล้วโหวตกลับเป็นค่าเดิม</p>
+  <img loading="lazy" src="TC-VOTE-10.gif" alt="TC-VOTE-10">
 </section>
 </div>
 <script>function f(s){document.querySelectorAll('.card').forEach(c=>c.style.display=(s==='all'||c.dataset.status===s)?'':'none')}</script>

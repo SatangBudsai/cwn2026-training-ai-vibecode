@@ -12,7 +12,7 @@ export function SiteHeader() {
       </Link>
       <nav className="flex items-center gap-1 text-sm">
         <Link href="/" className="rounded-lg px-3 py-2 text-fg-2 transition-colors hover:bg-raised hover:text-fg">
-          จับสลาก
+          สุ่มร้าน
         </Link>
         <Link href="/history" className="rounded-lg px-3 py-2 text-fg-2 transition-colors hover:bg-raised hover:text-fg">
           ประวัติ

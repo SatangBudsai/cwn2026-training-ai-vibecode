@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { connection } from "next/server";
 import { LunchApp } from "@/components/lunch-app";
 import { BoardSkeleton } from "@/components/board-skeleton";
-import { listCategories, listRestaurants, roomState } from "@/lib/server";
+import { listCategories, listRestaurants, realtimeMode, roomState } from "@/lib/server";
 
 export async function generateMetadata({ params }: PageProps<"/room/[code]">): Promise<Metadata> {
   const { code } = await params;
@@ -20,7 +20,7 @@ async function Room({ params }: { params: PageProps<"/room/[code]">["params"] })
     listCategories(),
   ]);
   if (!room) notFound();
-  return <LunchApp restaurants={restaurants} categories={categories} room={room} />;
+  return <LunchApp restaurants={restaurants} categories={categories} room={room} realtime={realtimeMode()} />;
 }
 
 export default function RoomPage({ params }: PageProps<"/room/[code]">) {

@@ -18,7 +18,7 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "ข้าวไหนดี · สีลม",
-  description: "จับสลากร้านข้าวกลางวันรอบจันวาณิชย์ สีลม ตามแนวอาหารที่ทีมโหวต",
+  description: "สุ่มร้านร้านข้าวกลางวันรอบจันวาณิชย์ สีลม ตามประเภทอาหารที่ทีมโหวต",
 };
 
 export const viewport: Viewport = { themeColor: "#141415" };

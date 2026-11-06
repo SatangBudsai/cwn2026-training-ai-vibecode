@@ -1,7 +1,7 @@
 [
   {
     "id": "noodle",
-    "label": "ก๋วยเตี๋ยว / เส้น"
+    "label": "ก๋วยเตี๋ยว / เมนูเส้น"
   },
   {
     "id": "rice-curry",
@@ -17,47 +17,47 @@
   },
   {
     "id": "isan",
-    "label": "ส้มตำ / อีสาน"
+    "label": "อาหารอีสาน"
   },
   {
     "id": "southern",
-    "label": "อาหารใต้"
+    "label": "อาหารปักษ์ใต้"
   },
   {
     "id": "thai",
-    "label": "อาหารไทยทั่วไป"
+    "label": "อาหารไทย"
   },
   {
     "id": "chinese",
-    "label": "จีน"
+    "label": "อาหารจีน"
   },
   {
     "id": "japanese",
-    "label": "ญี่ปุ่น"
+    "label": "อาหารญี่ปุ่น"
   },
   {
     "id": "korean",
-    "label": "เกาหลี"
+    "label": "อาหารเกาหลี"
   },
   {
     "id": "indian",
-    "label": "อินเดีย"
+    "label": "อาหารอินเดีย"
   },
   {
     "id": "halal",
-    "label": "ฮาลาล"
+    "label": "อาหารฮาลาล"
   },
   {
     "id": "vegetarian",
-    "label": "มังสวิรัติ / เจ"
+    "label": "มังสวิรัติ / อาหารเจ"
   },
   {
     "id": "asian",
-    "label": "เอเชียอื่นๆ"
+    "label": "อาหารเอเชียอื่นๆ"
   },
   {
     "id": "western",
-    "label": "ฝรั่ง"
+    "label": "อาหารตะวันตก"
   },
   {
     "id": "fast-food",

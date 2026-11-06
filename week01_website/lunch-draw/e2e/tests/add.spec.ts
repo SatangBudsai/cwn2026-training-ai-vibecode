@@ -31,7 +31,7 @@ test.describe("เพิ่มร้านเอง", () => {
     await expect(added).toContainText(String(NEW));
     await expect(added).toContainText("ป้าแดง");
 
-    await page.getByRole("button", { name: "ไปหน้าจับสลาก" }).click();
+    await page.getByRole("button", { name: "ไปหน้าสุ่มร้าน" }).click();
     await expect(page).toHaveURL(/\/$/);
     await expect(page.getByTestId("pool-count").filter({ visible: true })).toHaveText(String(TOTAL + 1));
     await showAll(page);
@@ -53,7 +53,7 @@ test.describe("เพิ่มร้านเอง", () => {
     await expect(map.locator("canvas")).toBeVisible();
     await map.click({ position: { x: 300, y: 100 } });
     await expect(page.getByTestId("location-status")).toContainText(/13\.7\d+, 100\.5\d+/);
-    await expect(page.getByTestId("location-status")).toContainText("ห่างออฟฟิศ");
+    await expect(page.getByTestId("location-status")).toContainText("ห่างจากออฟฟิศ");
   });
 
   test("TC-ADD-03 วางลิงก์ Google Maps แล้วอ่านตำแหน่งได้ @P2", async ({ page }) => {
@@ -67,14 +67,14 @@ test.describe("เพิ่มร้านเอง", () => {
   test("TC-ADD-04 ข้อมูลไม่ครบ กดเพิ่มร้านไม่ได้ @P2", async ({ page }) => {
     await page.goto("/restaurants/new");
     const hint = page.getByTestId("form-hint");
-    await expect(hint).toHaveText("ยังขาด: ชื่อร้าน, ตำแหน่ง, แนวอาหาร");
+    await expect(hint).toHaveText("ยังขาด: ชื่อร้าน, ตำแหน่ง, ประเภทอาหาร");
     await expect(submit(page)).toBeDisabled();
     await page.getByLabel("ชื่อร้าน", { exact: true }).fill("ร้านทดสอบ");
-    await expect(hint).toHaveText("ยังขาด: ตำแหน่ง, แนวอาหาร");
+    await expect(hint).toHaveText("ยังขาด: ตำแหน่ง, ประเภทอาหาร");
     await paste(page).fill(NEAR);
-    await expect(hint).toHaveText("ยังขาด: แนวอาหาร");
+    await expect(hint).toHaveText("ยังขาด: ประเภทอาหาร");
     await expect(submit(page)).toBeDisabled();
-    await page.getByRole("button", { name: "จีน", exact: true }).click();
+    await page.getByRole("button", { name: "อาหารจีน", exact: true }).click();
     await expect(hint).toHaveText("พร้อมเพิ่มร้าน");
     await expect(submit(page)).toBeEnabled();
   });
@@ -91,11 +91,11 @@ test.describe("เพิ่มร้านเอง", () => {
     expect(res.status()).toBe(400);
   });
 
-  test("TC-ADD-06 ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในโหมดขี้เกียจเดิน @P2", async ({ page }) => {
+  test("TC-ADD-06 ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในระยะโหมดขี้เกียจเดิน @P2", async ({ page }) => {
     await page.goto("/restaurants/new");
     await fillValid(page);
     await submit(page).click();
-    await expect(page.getByTestId("added")).toContainText("อยู่ในโหมดขี้เกียจเดิน");
+    await expect(page.getByTestId("added")).toContainText("อยู่ในระยะโหมดขี้เกียจเดิน");
     await openHome(page);
     await page.getByRole("switch").check({ force: true });
     await expect(page.getByTestId("pool-count")).toHaveText(String(LAZY_TOTAL + 1));

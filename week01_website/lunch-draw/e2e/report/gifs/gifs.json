@@ -1,5 +1,14 @@
 [
   {
+    "id": "TC-ACC-01",
+    "prio": "P3",
+    "title": "สุ่มด้วยคีย์บอร์ดแล้ว focus ไม่หลุดไป body",
+    "module": "การเข้าถึง",
+    "status": "fail",
+    "gif": "TC-ACC-01.gif",
+    "seconds": 5.5
+  },
+  {
     "id": "TC-ADD-01",
     "prio": "P1",
     "title": "เพิ่มร้านจากเมนู แล้วขึ้นบนกระดานทันที",
@@ -47,7 +56,7 @@
   {
     "id": "TC-ADD-06",
     "prio": "P2",
-    "title": "ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในโหมดขี้เกียจเดิน",
+    "title": "ร้านที่เพิ่มใกล้ออฟฟิศอยู่ในระยะโหมดขี้เกียจเดิน",
     "module": "เพิ่มร้านเอง",
     "status": "pass",
     "gif": "TC-ADD-06.gif",
@@ -80,9 +89,35 @@
     "seconds": 5.5
   },
   {
+    "id": "TC-ADD-10",
+    "prio": "P1",
+    "title": "ลบร้านที่เพิ่มเองแล้วเพิ่มใหม่ เลขไม่ซ้ำ ไม่รับข้อมูลเก่า ประวัติไม่เปลี่ยน",
+    "module": "เพิ่มร้านเอง",
+    "status": "fail",
+    "gif": "TC-ADD-10.gif",
+    "seconds": 6.2
+  },
+  {
+    "id": "TC-ADD-11",
+    "prio": "P3",
+    "title": "ชื่อยาวลงท้ายอีโมจิไม่ถูกตัดครึ่งตัว",
+    "module": "เพิ่มร้านเอง",
+    "status": "fail",
+    "gif": null
+  },
+  {
+    "id": "TC-ADD-12",
+    "prio": "P3",
+    "title": "วางลิงก์ /maps/dir/ และข้อความที่มี % แล้วอ่านตำแหน่งถูก",
+    "module": "เพิ่มร้านเอง",
+    "status": "fail",
+    "gif": "TC-ADD-12.gif",
+    "seconds": 11.2
+  },
+  {
     "id": "TC-API-01",
     "prio": "P2",
-    "title": "โหวตแนวอาหารที่ไม่มีอยู่ ได้ 400",
+    "title": "โหวตประเภทอาหารที่ไม่มีอยู่ ได้ 400",
     "module": "API",
     "status": "pass",
     "gif": null
@@ -129,10 +164,50 @@
     "gif": null
   },
   {
+    "id": "TC-API-07",
+    "prio": "P3",
+    "title": "/api/draw รับ input ผิด ได้ 400 และไม่บันทึกผล",
+    "module": "API",
+    "status": "fail",
+    "gif": null
+  },
+  {
+    "id": "TC-API-08",
+    "prio": "P3",
+    "title": "ค่าผิดชนิด (null, \"\", true, \"0x2\", [2]) ได้ 400",
+    "module": "API",
+    "status": "fail",
+    "gif": null
+  },
+  {
+    "id": "TC-API-09",
+    "prio": "P3",
+    "title": "id ใน path แปลก (0x10, 1e1) ได้ 400",
+    "module": "API",
+    "status": "fail",
+    "gif": null
+  },
+  {
+    "id": "TC-API-10",
+    "prio": "P3",
+    "title": "POST text/plain จาก origin อื่นถูกปฏิเสธ",
+    "module": "API",
+    "status": "fail",
+    "gif": null
+  },
+  {
+    "id": "TC-API-11",
+    "prio": "P3",
+    "title": "GET /api/restaurants ไม่เปิดเผย rater id ของคนอื่น",
+    "module": "API",
+    "status": "fail",
+    "gif": null
+  },
+  {
     "id": "TC-CAT-01",
     "prio": "P1",
-    "title": "เพิ่มแนวอาหารใหม่ แล้วใช้ได้ทันที",
-    "module": "จัดการแนวอาหาร",
+    "title": "เพิ่มประเภทอาหารใหม่ แล้วใช้ได้ทันที",
+    "module": "จัดการประเภทอาหาร",
     "status": "pass",
     "gif": "TC-CAT-01.gif",
     "seconds": 5.5
@@ -140,8 +215,8 @@
   {
     "id": "TC-CAT-02",
     "prio": "P2",
-    "title": "แก้ชื่อแนวอาหาร",
-    "module": "จัดการแนวอาหาร",
+    "title": "แก้ชื่อประเภทอาหาร",
+    "module": "จัดการประเภทอาหาร",
     "status": "pass",
     "gif": "TC-CAT-02.gif",
     "seconds": 5.5
@@ -149,8 +224,8 @@
   {
     "id": "TC-CAT-03",
     "prio": "P1",
-    "title": "ลบแนวอาหาร เอาออกจากทุกร้าน",
-    "module": "จัดการแนวอาหาร",
+    "title": "ลบประเภทอาหาร เอาออกจากทุกร้าน",
+    "module": "จัดการประเภทอาหาร",
     "status": "pass",
     "gif": "TC-CAT-03.gif",
     "seconds": 5.5
@@ -159,7 +234,7 @@
     "id": "TC-CAT-04",
     "prio": "P3",
     "title": "ชื่อว่างหรือซ้ำ เพิ่มไม่ได้",
-    "module": "จัดการแนวอาหาร",
+    "module": "จัดการประเภทอาหาร",
     "status": "pass",
     "gif": "TC-CAT-04.gif",
     "seconds": 5.5
@@ -168,16 +243,24 @@
     "id": "TC-CAT-05",
     "prio": "P2",
     "title": "แนวใหม่ใช้โหวตได้",
-    "module": "จัดการแนวอาหาร",
+    "module": "จัดการประเภทอาหาร",
     "status": "pass",
     "gif": "TC-CAT-05.gif",
     "seconds": 5.5
   },
   {
+    "id": "TC-CAT-06",
+    "prio": "P2",
+    "title": "ลบประเภทที่เป็นประเภทเดียวของร้าน ต้องถูกกันหรือย้ายร้าน",
+    "module": "จัดการประเภทอาหาร",
+    "status": "fail",
+    "gif": null
+  },
+  {
     "id": "TC-DRAW-01",
     "prio": "P1",
-    "title": "จับสลากแล้วได้การ์ดผลพร้อมลิงก์ Google Maps",
-    "module": "จับสลาก",
+    "title": "สุ่มร้านแล้วได้การ์ดผลพร้อมลิงก์ Google Maps",
+    "module": "สุ่มร้าน",
     "status": "pass",
     "gif": "TC-DRAW-01.gif",
     "seconds": 5.5
@@ -185,16 +268,16 @@
   {
     "id": "TC-DRAW-02",
     "prio": "P1",
-    "title": "ผลจับสลากเป็นไปตามโหมดขี้เกียจเดินเสมอ",
-    "module": "จับสลาก",
+    "title": "ผลการสุ่มเป็นไปตามโหมดขี้เกียจเดินเสมอ",
+    "module": "สุ่มร้าน",
     "status": "pass",
     "gif": null
   },
   {
     "id": "TC-DRAW-03",
     "prio": "P1",
-    "title": "ร้านที่ปิดไว้ไม่ถูกสุ่ม",
-    "module": "จับสลาก",
+    "title": "ร้านที่ไม่สุ่มไม่ถูกสุ่ม",
+    "module": "สุ่มร้าน",
     "status": "pass",
     "gif": "TC-DRAW-03.gif",
     "seconds": 5.5
@@ -203,7 +286,7 @@
     "id": "TC-DRAW-04",
     "prio": "P1",
     "title": "กด ไปกินร้านนี้ แล้วโอกาสร้านนั้นลดลง",
-    "module": "จับสลาก",
+    "module": "สุ่มร้าน",
     "status": "pass",
     "gif": "TC-DRAW-04.gif",
     "seconds": 5.5
@@ -212,7 +295,7 @@
     "id": "TC-DRAW-05",
     "prio": "P2",
     "title": "ยกเลิก กินแล้ว โอกาสกลับเป็นปกติ",
-    "module": "จับสลาก",
+    "module": "สุ่มร้าน",
     "status": "pass",
     "gif": "TC-DRAW-05.gif",
     "seconds": 5.5
@@ -221,10 +304,27 @@
     "id": "TC-DRAW-06",
     "prio": "P2",
     "title": "กินแล้วยังถูกนับหลังรีโหลด",
-    "module": "จับสลาก",
+    "module": "สุ่มร้าน",
     "status": "pass",
     "gif": "TC-DRAW-06.gif",
     "seconds": 5.5
+  },
+  {
+    "id": "TC-DRAW-07",
+    "prio": "P2",
+    "title": "ดับเบิลคลิก / กด Enter รัว สร้างผลสุ่มครั้งเดียว",
+    "module": "สุ่มร้าน",
+    "status": "fail",
+    "gif": "TC-DRAW-07.gif",
+    "seconds": 10.3
+  },
+  {
+    "id": "TC-DRAW-08",
+    "prio": "P2",
+    "title": "โทษกินแล้วยังอยู่หลังสุ่มเพิ่ม 1,000 ครั้ง",
+    "module": "สุ่มร้าน",
+    "status": "fail",
+    "gif": null
   },
   {
     "id": "TC-EDIT-01",
@@ -247,7 +347,7 @@
   {
     "id": "TC-EDIT-03",
     "prio": "P1",
-    "title": "ปิดร้าน แล้วเปิดอีกครั้ง",
+    "title": "ปิดร้าน แล้วกลับมาสุ่ม",
     "module": "แก้ข้อมูลร้าน",
     "status": "pass",
     "gif": "TC-EDIT-03.gif",
@@ -256,7 +356,7 @@
   {
     "id": "TC-EDIT-04",
     "prio": "P2",
-    "title": "แก้แนวอาหารของร้าน",
+    "title": "แก้ประเภทอาหารของร้าน",
     "module": "แก้ข้อมูลร้าน",
     "status": "pass",
     "gif": "TC-EDIT-04.gif",
@@ -265,7 +365,7 @@
   {
     "id": "TC-EDIT-05",
     "prio": "P3",
-    "title": "ต้องเลือกแนวอาหารอย่างน้อย 1 แนว",
+    "title": "ต้องเลือกประเภทอาหารอย่างน้อย 1 ประเภท",
     "module": "แก้ข้อมูลร้าน",
     "status": "pass",
     "gif": "TC-EDIT-05.gif",
@@ -274,7 +374,7 @@
   {
     "id": "TC-EDIT-06",
     "prio": "P2",
-    "title": "น้ำหนักพื้นฐาน ×2 ทำให้โอกาสเป็นสองเท่า",
+    "title": "ตัวคูณโอกาส ×2 ทำให้โอกาสเป็นสองเท่า",
     "module": "แก้ข้อมูลร้าน",
     "status": "pass",
     "gif": "TC-EDIT-06.gif",
@@ -346,7 +446,7 @@
   {
     "id": "TC-HIST-01",
     "prio": "P2",
-    "title": "ประวัติแสดงผลจับสลากล่าสุดและแชมป์",
+    "title": "ประวัติแสดงผลการสุ่มล่าสุดและแชมป์",
     "module": "ประวัติ",
     "status": "pass",
     "gif": "TC-HIST-01.gif",
@@ -355,7 +455,7 @@
   {
     "id": "TC-HIST-02",
     "prio": "P3",
-    "title": "ยังไม่มีผลจับสลาก",
+    "title": "ยังไม่เคยสุ่ม",
     "module": "ประวัติ",
     "status": "pass",
     "gif": "TC-HIST-02.gif",
@@ -364,7 +464,7 @@
   {
     "id": "TC-HIST-03",
     "prio": "P2",
-    "title": "ทุกผลจับสลากมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน",
+    "title": "ทุกผลการสุ่มมีป้าย ไปกิน / ไม่ได้ไปกิน / รอยืนยัน",
     "module": "ประวัติ",
     "status": "pass",
     "gif": "TC-HIST-03.gif",
@@ -407,6 +507,15 @@
     "seconds": 5.5
   },
   {
+    "id": "TC-HOME-05",
+    "prio": "P3",
+    "title": "โหวตใน localStorage ผิดช่วง: % บนกระดาน = การ์ดผล = server",
+    "module": "หน้าแรก",
+    "status": "fail",
+    "gif": "TC-HOME-05.gif",
+    "seconds": 6
+  },
+  {
     "id": "TC-MAP-01",
     "prio": "P1",
     "title": "สลับเป็นแผนที่ เห็นหมุดทุกร้าน",
@@ -445,7 +554,7 @@
   {
     "id": "TC-MAP-05",
     "prio": "P2",
-    "title": "จับสลากบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้",
+    "title": "สุ่มบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้",
     "module": "แผนที่",
     "status": "pass",
     "gif": "TC-MAP-05.gif",
@@ -463,16 +572,25 @@
   {
     "id": "TC-MAP-07",
     "prio": "P2",
-    "title": "หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านในจุดเดียวกัน",
+    "title": "หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านที่อยู่จุดเดียวกัน",
     "module": "แผนที่",
     "status": "pass",
     "gif": "TC-MAP-07.gif",
     "seconds": 5.5
   },
   {
+    "id": "TC-MAP-08",
+    "prio": "P3",
+    "title": "ตัวกรองไม่เหลือร้าน แผงแผนที่แสดงข้อความอธิบาย",
+    "module": "แผนที่",
+    "status": "fail",
+    "gif": "TC-MAP-08.gif",
+    "seconds": 6.3
+  },
+  {
     "id": "TC-MOB-01",
     "prio": "P3",
-    "title": "ปุ่มจับสลากอยู่บนสุด ไม่มี scroll แนวนอน",
+    "title": "ปุ่มสุ่มร้านอยู่บนสุด ไม่มี scroll แนวนอน",
     "module": "มือถือ",
     "status": "pass",
     "gif": "TC-MOB-01.gif",
@@ -481,16 +599,25 @@
   {
     "id": "TC-MOB-02",
     "prio": "P3",
-    "title": "จับสลากแล้วเห็นการ์ดผลบนจอ",
+    "title": "สุ่มร้านแล้วเห็นการ์ดผลบนจอ",
     "module": "มือถือ",
     "status": "pass",
     "gif": "TC-MOB-02.gif",
     "seconds": 5.5
   },
   {
+    "id": "TC-MOB-03",
+    "prio": "P3",
+    "title": "แผนที่บนจอ 390 px ไม่มี scroll แนวนอนแม้ชื่อร้านยาว",
+    "module": "มือถือ",
+    "status": "fail",
+    "gif": "TC-MOB-03.gif",
+    "seconds": 5.5
+  },
+  {
     "id": "TC-RATE-01",
     "prio": "P1",
-    "title": "ให้คะแนนจากการ์ดผลจับสลาก",
+    "title": "ให้คะแนนจากการ์ดผลการสุ่ม",
     "module": "ให้คะแนนร้าน",
     "status": "pass",
     "gif": "TC-RATE-01.gif",
@@ -553,7 +680,7 @@
   {
     "id": "TC-ROOM-01",
     "prio": "P1",
-    "title": "เปิดห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต",
+    "title": "สร้างห้องแล้วต้องใส่ชื่อเล่นก่อนโหวต",
     "module": "ห้อง (member)",
     "status": "pass",
     "gif": "TC-ROOM-01.gif",
@@ -589,11 +716,11 @@
   {
     "id": "TC-ROOM-05",
     "prio": "P1",
-    "title": "จับสลากในห้อง ทุกคนเห็นร้านเดียวกัน",
+    "title": "สุ่มในห้อง ทุกคนเห็นร้านเดียวกัน",
     "module": "ห้อง (member)",
     "status": "pass",
     "gif": "TC-ROOM-05.gif",
-    "seconds": 6
+    "seconds": 5.7
   },
   {
     "id": "TC-ROOM-06",
@@ -631,10 +758,97 @@
     "seconds": 5.5
   },
   {
+    "id": "TC-ROOM-10",
+    "prio": "P1",
+    "title": "สองคนกดสุ่มพร้อมกัน ทุกจอแสดงร้านเดียวกับผลล่าสุดของห้อง",
+    "module": "ห้อง (member)",
+    "status": "fail",
+    "gif": null
+  },
+  {
+    "id": "TC-ROOM-11",
+    "prio": "P2",
+    "title": "response ของโหวตที่มาช้าไม่ทับโหวตที่ใหม่กว่า",
+    "module": "ห้อง (member)",
+    "status": "pass",
+    "gif": null
+  },
+  {
+    "id": "TC-ROOM-12",
+    "prio": "P2",
+    "title": "โหวตหลังห้องถูกลบ แสดงข้อความและไม่ค้างสถานะกดแล้ว",
+    "module": "ห้อง (member)",
+    "status": "pass",
+    "gif": null
+  },
+  {
+    "id": "TC-ROOM-13",
+    "prio": "P3",
+    "title": "เปิด /room/ZZZZ ได้ HTTP 404",
+    "module": "ห้อง (member)",
+    "status": "fail",
+    "gif": "TC-ROOM-13.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-ROOM-17",
+    "prio": "P2",
+    "title": "ในห้อง คนอื่นเห็นโหวตหลังกดบันทึกเท่านั้น",
+    "module": "ห้อง (member)",
+    "status": "pass",
+    "gif": "TC-ROOM-17.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-SEARCH-01",
+    "prio": "P1",
+    "title": "ค้นหาด้วยชื่อร้าน แสดงเฉพาะร้านที่ตรง",
+    "module": "ค้นหาร้าน",
+    "status": "pass",
+    "gif": "TC-SEARCH-01.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-SEARCH-02",
+    "prio": "P2",
+    "title": "ค้นหาด้วยประเภทอาหาร ชื่อเล่น และเบอร์ร้าน",
+    "module": "ค้นหาร้าน",
+    "status": "pass",
+    "gif": "TC-SEARCH-02.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-SEARCH-03",
+    "prio": "P2",
+    "title": "ร้านที่ตรงคำค้นแต่ถูกตัวกรองซ่อน มีข้อความบอก",
+    "module": "ค้นหาร้าน",
+    "status": "pass",
+    "gif": "TC-SEARCH-03.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-SEARCH-04",
+    "prio": "P3",
+    "title": "ล้างคำค้นด้วยปุ่ม X หรือ Esc กลับมาแสดงตามปกติ",
+    "module": "ค้นหาร้าน",
+    "status": "pass",
+    "gif": "TC-SEARCH-04.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-SEARCH-05",
+    "prio": "P2",
+    "title": "ค้นหาบนแผนที่ เหลือเฉพาะหมุดที่ตรง และแผงขวาแสดงผลการค้นหา",
+    "module": "ค้นหาร้าน",
+    "status": "pass",
+    "gif": "TC-SEARCH-05.gif",
+    "seconds": 5.5
+  },
+  {
     "id": "TC-VOTE-01",
     "prio": "P1",
-    "title": "โหวต + ก๋วยเตี๋ยว ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น",
-    "module": "โหวตแนวอาหาร",
+    "title": "เห็นด้วยกับก๋วยเตี๋ยว / เมนูเส้น ร้านก๋วยเตี๋ยวมีโอกาสมากขึ้น",
+    "module": "โหวตประเภทอาหาร",
     "status": "pass",
     "gif": "TC-VOTE-01.gif",
     "seconds": 5.5
@@ -642,8 +856,8 @@
   {
     "id": "TC-VOTE-02",
     "prio": "P2",
-    "title": "โหวต − ฝรั่ง ร้านฝรั่งมีโอกาสน้อยลง",
-    "module": "โหวตแนวอาหาร",
+    "title": "ไม่เห็นด้วยกับอาหารตะวันตก ร้านอาหารตะวันตกมีโอกาสน้อยลง",
+    "module": "โหวตประเภทอาหาร",
     "status": "pass",
     "gif": "TC-VOTE-02.gif",
     "seconds": 5.5
@@ -651,8 +865,8 @@
   {
     "id": "TC-VOTE-03",
     "prio": "P3",
-    "title": "กดโหวตซ้ำเพื่อยกเลิก",
-    "module": "โหวตแนวอาหาร",
+    "title": "กลับมาเลือก ปกติ เพื่อยกเลิกโหวต",
+    "module": "โหวตประเภทอาหาร",
     "status": "pass",
     "gif": "TC-VOTE-03.gif",
     "seconds": 5.5
@@ -661,7 +875,7 @@
     "id": "TC-VOTE-04",
     "prio": "P3",
     "title": "โหวตยังอยู่หลังรีโหลด",
-    "module": "โหวตแนวอาหาร",
+    "module": "โหวตประเภทอาหาร",
     "status": "pass",
     "gif": "TC-VOTE-04.gif",
     "seconds": 5.5
@@ -670,7 +884,7 @@
     "id": "TC-VOTE-05",
     "prio": "P2",
     "title": "ร้านหลายแนวได้ตัวคูณของแนวที่ดีที่สุด",
-    "module": "โหวตแนวอาหาร",
+    "module": "โหวตประเภทอาหาร",
     "status": "pass",
     "gif": "TC-VOTE-05.gif",
     "seconds": 5.5
@@ -678,7 +892,7 @@
   {
     "id": "TC-VOTE-06",
     "prio": "P1",
-    "title": "โหวต + ร้าน ร้านนั้นมีโอกาสมากขึ้น",
+    "title": "เห็นด้วยกับร้าน ร้านนั้นมีโอกาสมากขึ้น",
     "module": "โหวตร้าน",
     "status": "pass",
     "gif": "TC-VOTE-06.gif",
@@ -687,7 +901,7 @@
   {
     "id": "TC-VOTE-07",
     "prio": "P2",
-    "title": "โหวต − ร้าน แล้วกดซ้ำเพื่อยกเลิก",
+    "title": "ไม่เห็นด้วยกับร้าน แล้วกลับมาเลือก ปกติ",
     "module": "โหวตร้าน",
     "status": "pass",
     "gif": "TC-VOTE-07.gif",
@@ -696,10 +910,28 @@
   {
     "id": "TC-VOTE-08",
     "prio": "P2",
-    "title": "โหวตร้านรวมกับโหวตแนวอาหาร",
+    "title": "โหวตร้านรวมกับโหวตประเภทอาหาร",
     "module": "โหวตร้าน",
     "status": "pass",
     "gif": "TC-VOTE-08.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-VOTE-09",
+    "prio": "P1",
+    "title": "โหวตแล้วกระดานไม่เรียงใหม่ จนกว่าจะกด บันทึกโหวต",
+    "module": "บันทึกโหวต",
+    "status": "pass",
+    "gif": "TC-VOTE-09.gif",
+    "seconds": 5.5
+  },
+  {
+    "id": "TC-VOTE-10",
+    "prio": "P2",
+    "title": "กด ยกเลิก แล้วโหวตกลับเป็นค่าเดิม",
+    "module": "บันทึกโหวต",
+    "status": "pass",
+    "gif": "TC-VOTE-10.gif",
     "seconds": 5.5
   }
 ]

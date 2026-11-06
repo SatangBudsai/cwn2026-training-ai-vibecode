@@ -1,5 +1,5 @@
 import type { Page } from "@playwright/test";
-import { LAZY_TOTAL, TOTAL, byNumber, draw, expect, openHome, test } from "../fixtures";
+import { LAZY_TOTAL, TOTAL, byNumber, vote, chosen, draw, expect, openHome, test } from "../fixtures";
 
 const pins = (page: Page) => page.getByTestId("map-pin");
 const pin = (page: Page, n: number) => page.locator(`[data-testid="map-pin"][data-number="${n}"]`);
@@ -58,8 +58,8 @@ test.describe("มุมมองแผนที่", () => {
     const panel = await selectOnMap(page, 5);
     await expect(panel).toContainText(byNumber.get(5)!.name);
     await expect(panel.getByTestId("map-selected-p")).toHaveText(`${((1 / TOTAL) * 100).toFixed(1)}%`);
-    await panel.getByRole("button", { name: /^อยากไปร้าน/ }).click();
-    await expect(panel.getByTestId("vote-net")).toHaveText("+1");
+    await vote(panel.getByRole("radiogroup"), "เห็นด้วย");
+    await expect(chosen(panel.getByRole("radiogroup"))).toHaveText("เห็นด้วย");
     await expect(panel.getByTestId("map-selected-p")).toHaveText(`${((1.5 / (TOTAL + 0.5)) * 100).toFixed(1)}%`);
     await expect(panel.getByRole("link").first()).toHaveAttribute("href", /travelmode=walking/);
   });
@@ -93,12 +93,12 @@ test.describe("มุมมองแผนที่", () => {
     await expect(page.getByTestId("map-panel")).toContainText("โอกาสสูงสุด");
   });
 
-  test("TC-MAP-07 หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านในจุดเดียวกัน @P2", async ({ page }) => {
+  test("TC-MAP-07 หมุดที่ซ้อนกัน เลือกร้านจากรายการ ร้านที่อยู่จุดเดียวกัน @P2", async ({ page }) => {
     // several places share one building near the office (e.g. #3): their pins sit on top of each other
     await openMap(page);
     await pin(page, 3).click({ force: true });
     const here = page.getByTestId("map-here");
-    await expect(here).toContainText(/ร้านในจุดเดียวกัน \d+ ร้าน/);
+    await expect(here).toContainText(/ร้านที่อยู่จุดเดียวกัน \d+ ร้าน/);
     const items = here.getByRole("button");
     expect(await items.count()).toBeGreaterThan(1);
     const panel = page.getByTestId("map-selected");
@@ -116,11 +116,11 @@ test.describe("มุมมองแผนที่", () => {
     const dot = pin(page, n).locator(".map-pin-dot");
     const before = (await dot.boundingBox())!.width;
     const panel = await selectOnMap(page, n);
-    await panel.getByRole("button", { name: /^อยากไปร้าน/ }).click();
+    await vote(panel.getByRole("radiogroup"), "เห็นด้วย");
     await expect.poll(async () => (await dot.boundingBox())!.width).toBeGreaterThan(before);
   });
 
-  test("TC-MAP-05 จับสลากบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้ @P2", async ({ page }) => {
+  test("TC-MAP-05 สุ่มบนแผนที่ หมุดร้านที่ได้เด่นขึ้น และกลับไปมุมมองรายการได้ @P2", async ({ page }) => {
     await openMap(page);
     const n = await draw(page);
     await expect.poll(async () => (await pin(page, n).locator(".map-pin-dot").boundingBox())?.width ?? 0).toBeGreaterThanOrEqual(18);

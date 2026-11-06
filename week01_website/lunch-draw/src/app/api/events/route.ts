@@ -1,11 +1,13 @@
 import { listCategories, listRestaurants, roomState } from "@/lib/server";
-import { subscribe } from "@/lib/store";
+import { storageMode, subscribe } from "@/lib/store";
 
 // Realtime updates with Server-Sent Events.
 // GET /api/events?room=CODE -> "room" events (votes, filters, draws) + "restaurants" events (edits, eaten)
 // GET /api/events           -> "restaurants" events only
 // Both start with the current state right after connecting.
 export async function GET(req: Request) {
+  // Redis mode (Vercel) cannot push across instances: pages poll /api/poll instead
+  if (storageMode !== "file") return Response.json({ error: "use /api/poll" }, { status: 404 });
   const code = new URL(req.url).searchParams.get("room")?.toUpperCase() ?? null;
   const enc = new TextEncoder();
   let cleanup = () => {};
@@ -23,12 +25,16 @@ export async function GET(req: Request) {
 
       // current state on every (re)connect, so a page restored from cache or after a
       // dropped connection never shows stale data
-      send("restaurants", listRestaurants());
-      if (code) send("room", roomState(code));
+      void (async () => {
+        send("restaurants", await listRestaurants());
+        if (code) send("room", await roomState(code));
+      })();
       const unsubscribe = subscribe((e) => {
-        if (e.type === "room" && e.code === code) send("room", roomState(code));
-        if (e.type === "restaurants") send("restaurants", listRestaurants());
-        if (e.type === "categories") send("categories", listCategories());
+        void (async () => {
+          if (e.type === "room" && e.code === code) send("room", await roomState(code));
+          if (e.type === "restaurants") send("restaurants", await listRestaurants());
+          if (e.type === "categories") send("categories", await listCategories());
+        })();
       });
       // keep proxies from closing an idle connection
       const ping = setInterval(() => write(": ping\n\n"), 20000);

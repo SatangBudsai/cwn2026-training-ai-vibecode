@@ -1,0 +1,44 @@
+sequenceDiagram
+  autonumber
+  actor Ton as ต้น (เปิดห้อง)
+  actor Mew as มิว
+  participant API as Next.js API
+  participant Store as store.ts (+EventEmitter)
+  participant Disk as state.json
+
+  Ton->>API: POST /api/rooms {lazyMode, prices}
+  API->>Store: createRoom(code)
+  Store->>Disk: เขียน atomic
+  API-->>Ton: 201 {code: "K7PQ"}
+  Ton->>API: POST /api/rooms/K7PQ/members {nickname:"ต้น"}
+  API-->>Ton: 201 {id: m1}
+  Ton->>API: GET /api/events?room=K7PQ (SSE ค้างไว้)
+  API-->>Ton: event restaurants + event room (สถานะปัจจุบัน)
+
+  Mew->>API: เปิดลิงก์ /room/K7PQ → POST members {nickname:"มิว"}
+  API->>Store: updateRoom → emit room
+  Store-->>API: change
+  API-->>Ton: event room (2 คนในห้อง)
+  Mew->>API: GET /api/events?room=K7PQ
+  API-->>Mew: event restaurants + event room
+
+  par โหวตพร้อมกัน
+    Ton->>API: PUT votes {m1, isan, +1}
+  and
+    Mew->>API: PUT votes {m2, isan, +1}
+  end
+  API->>Store: updateRoom ×2 → persist ทีละครั้ง
+  API-->>Ton: event room (isan +2 ×2.0)
+  API-->>Mew: event room (isan +2 ×2.0)
+
+  Ton->>API: POST /api/draw {roomCode:"K7PQ"}
+  API->>Store: roomState → computeOdds → pick(crypto)
+  Store->>Disk: บันทึก Draw
+  API-->>Ton: 201 {restaurantId: 46, probability}
+  API-->>Mew: event room (latestDraw = 46)
+  Note over Ton,Mew: ทั้งสองจอแสดงการ์ดผลร้าน #46 ภายใน 3 วินาที (NFR-03)
+
+  Mew->>API: PATCH /api/draws/{id} {eaten:true}
+  API->>Store: setEaten → emit restaurants
+  API-->>Ton: event restaurants (ร้าน #46 ×0.2)
+  API-->>Mew: event restaurants

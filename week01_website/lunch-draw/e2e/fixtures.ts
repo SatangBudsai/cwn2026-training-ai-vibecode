@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { test as base, expect, type Browser, type BrowserContext, type Page } from "@playwright/test";
+import { test as base, expect, type Browser, type BrowserContext, type Locator, type Page } from "@playwright/test";
 
 /** The restaurant data every test starts from */
 export type SeedRestaurant = {
@@ -69,10 +69,41 @@ export async function showAll(page: Page) {
 }
 
 export async function draw(page: Page) {
-  await page.getByRole("button", { name: /^จับสลาก(ใหม่)?$/ }).click();
+  await page.getByRole("button", { name: /^(สุ่มร้าน|สุ่มใหม่)$/ }).click();
   const card = page.getByTestId("winner");
   await expect(card).toBeVisible({ timeout: 10_000 });
   return Number(await card.getAttribute("data-number"));
+}
+
+// ---------- three-way vote switch: ไม่เห็นด้วย | ปกติ | เห็นด้วย ----------
+
+export type Choice = "ไม่เห็นด้วย" | "ปกติ" | "เห็นด้วย";
+
+/** The switch for one food category, e.g. catSwitch(page, "อาหารอีสาน") */
+export const catSwitch = (scope: Page | Locator, label: string) =>
+  scope.getByRole("radiogroup", { name: `โหวต ${label}`, exact: true });
+
+/** The switch on a restaurant row */
+export const placeSwitch = (scope: Page | Locator, n: number) =>
+  scope.locator(`[data-testid="odds-row"][data-number="${n}"]`).getByRole("radiogroup");
+
+/** Press one option of a switch */
+export const choose = (sw: Locator, choice: Choice) => sw.getByRole("radio", { name: choice, exact: true }).click();
+
+/** The option that is selected in a switch */
+export const chosen = (sw: Locator) => sw.locator('[role="radio"][aria-checked="true"]');
+
+/** Votes are drafts until "บันทึกโหวต" is pressed */
+export async function saveVotes(page: Page) {
+  const bar = page.getByTestId("vote-savebar");
+  await bar.getByRole("button", { name: "บันทึกโหวต" }).click();
+  await expect(bar).toHaveCount(0);
+}
+
+/** Choose an option and save it right away */
+export async function vote(sw: Locator, choice: Choice) {
+  await choose(sw, choice);
+  await saveVotes(sw.page());
 }
 
 export async function setRestaurant(page: Page, n: number, patch: Record<string, unknown>) {
@@ -96,7 +127,7 @@ export async function joinRoom(page: Page, url: string, nickname: string) {
 
 export async function createRoom(page: Page, nickname: string) {
   await openHome(page);
-  await page.getByRole("button", { name: "เปิดห้อง" }).click();
+  await page.getByRole("button", { name: "สร้างห้อง" }).click();
   await page.waitForURL(/\/room\/[A-Z2-9]{4}$/);
   const url = page.url();
   // Next keeps the previous page hidden in the DOM after client navigation;

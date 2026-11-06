@@ -5,7 +5,7 @@ import { createRoom, getRoom } from "@/lib/store";
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
   let code = newRoomCode();
-  while (getRoom(code)) code = newRoomCode();
+  while (await getRoom(code)) code = newRoomCode();
   const now = new Date().toISOString();
   await createRoom({
     code,

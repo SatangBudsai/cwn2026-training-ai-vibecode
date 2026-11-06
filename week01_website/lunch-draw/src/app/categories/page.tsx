@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
 import { CategoryManager } from "@/components/category-manager";
-import { listCategories } from "@/lib/server";
+import { listCategories, realtimeMode } from "@/lib/server";
 
-export const metadata = { title: "แนวอาหาร · ข้าวไหนดี" };
+export const metadata = { title: "ประเภทอาหาร · ข้าวไหนดี" };
 
 async function Manager() {
   await connection();
-  return <CategoryManager initial={listCategories()} />;
+  return <CategoryManager initial={await listCategories()} realtime={realtimeMode()} />;
 }
 
 export default function CategoriesPage() {

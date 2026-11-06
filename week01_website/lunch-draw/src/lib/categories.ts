@@ -1,21 +1,21 @@
-// Food categories ("แนวอาหาร"). Each restaurant has one or more; members vote on
+// Food categories ("ประเภทอาหาร"). Each restaurant has one or more; members vote on
 // which ones they feel like today, and that vote drives the restaurant odds.
 export const CATEGORIES = [
-  { id: "noodle", label: "ก๋วยเตี๋ยว / เส้น" },
+  { id: "noodle", label: "ก๋วยเตี๋ยว / เมนูเส้น" },
   { id: "rice-curry", label: "ข้าวแกง" },
   { id: "made-to-order", label: "อาหารตามสั่ง" },
   { id: "one-dish", label: "ข้าวจานเดียว" },
-  { id: "isan", label: "ส้มตำ / อีสาน" },
-  { id: "southern", label: "อาหารใต้" },
-  { id: "thai", label: "อาหารไทยทั่วไป" },
-  { id: "chinese", label: "จีน" },
-  { id: "japanese", label: "ญี่ปุ่น" },
-  { id: "korean", label: "เกาหลี" },
-  { id: "indian", label: "อินเดีย" },
-  { id: "halal", label: "ฮาลาล" },
-  { id: "vegetarian", label: "มังสวิรัติ / เจ" },
-  { id: "asian", label: "เอเชียอื่นๆ" },
-  { id: "western", label: "ฝรั่ง" },
+  { id: "isan", label: "อาหารอีสาน" },
+  { id: "southern", label: "อาหารปักษ์ใต้" },
+  { id: "thai", label: "อาหารไทย" },
+  { id: "chinese", label: "อาหารจีน" },
+  { id: "japanese", label: "อาหารญี่ปุ่น" },
+  { id: "korean", label: "อาหารเกาหลี" },
+  { id: "indian", label: "อาหารอินเดีย" },
+  { id: "halal", label: "อาหารฮาลาล" },
+  { id: "vegetarian", label: "มังสวิรัติ / อาหารเจ" },
+  { id: "asian", label: "อาหารเอเชียอื่นๆ" },
+  { id: "western", label: "อาหารตะวันตก" },
   { id: "fast-food", label: "ฟาสต์ฟู้ด" },
 ] as const;
 

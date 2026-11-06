@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Check, Copy, Footprints, List, Map as MapIcon, MapPin, Navigation, Users, UtensilsCrossed } from "lucide-react";
+import { Check, Copy, Footprints, List, Map as MapIcon, MapPin, Navigation, Search, Users, UtensilsCrossed, X } from "lucide-react";
 import {
   computeOdds,
   sumRestaurantVotes,
+  sumVotes,
   walkMetres,
   type CategoryScores,
   type DrawFilter,
@@ -14,11 +15,12 @@ import {
   type RestaurantScores,
 } from "@/lib/odds";
 import { googleDirectionsUrl, googleMapsUrl, LAZY_RADIUS_M } from "@/lib/geo";
-import type { RestaurantDTO, RoomState } from "@/lib/server";
+import type { RealtimeMode, RestaurantDTO, RoomState } from "@/lib/server";
 import { CategoryVotes, type Category } from "./category-votes";
 import { OddsBoard } from "./odds-board";
 import { OddsMap } from "./odds-map";
 import { WalkMap } from "./walk-map";
+import { matchesQuery } from "@/lib/search";
 import { RatingPicker } from "./rating";
 import { PriceFilter } from "./price-filter";
 import { Button, NumberTag, displayName, formatMetres, formatPercent, priceLabel, walkMinutes } from "./ui";
@@ -36,6 +38,8 @@ export type RestaurantPatch = Partial<
 >;
 
 type Props = {
+  /** how live updates arrive: SSE (one server) or polling (Vercel) */
+  realtime: RealtimeMode;
   restaurants: RestaurantDTO[];
   categories: Category[];
   room?: RoomState & { code: string };
@@ -62,7 +66,12 @@ function writeStore(key: string, value: unknown) {
   }
 }
 
-export function LunchApp({ restaurants: initialRestaurants, categories: initialCategories, room: initialRoom }: Props) {
+export function LunchApp({
+  restaurants: initialRestaurants,
+  categories: initialCategories,
+  room: initialRoom,
+  realtime,
+}: Props) {
   const [categories, setCategories] = useState(initialCategories);
   const router = useRouter();
   const isRoom = Boolean(initialRoom);
@@ -79,6 +88,12 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
 
   const [showAll, setShowAll] = useState(false);
   const [view, setView] = useState<"list" | "map">("list");
+  // votes not saved yet: { categoryId: value } and { restaurantId: value }
+  const [draftVotes, setDraftVotes] = useState<Record<string, number>>({});
+  const [draftPicks, setDraftPicks] = useState<Record<number, number>>({});
+  const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
   const [highlightId, setHighlightId] = useState<number | null>(null);
   const [draw, setDraw] = useState<Draw | null>((initialRoom?.latestDraw as Draw | null) ?? null);
   const [rolling, setRolling] = useState(false);
@@ -204,14 +219,11 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
   }, [restaurants]);
   const roomCode = room?.code;
   useEffect(() => {
-    const es = new EventSource(roomCode ? `/api/events?room=${roomCode}` : "/api/events");
-    es.addEventListener("restaurants", (e) => {
-      setRestaurants(JSON.parse((e as MessageEvent).data));
+    const onRestaurants = (list: RestaurantDTO[]) => {
+      setRestaurants(list);
       setNow(Date.now()); // keep the 7-day penalty measured from the current time
-    });
-    es.addEventListener("categories", (e) => setCategories(JSON.parse((e as MessageEvent).data)));
-    es.addEventListener("room", (e) => {
-      const next: RoomState | null = JSON.parse((e as MessageEvent).data);
+    };
+    const onRoom = (next: RoomState | null) => {
       if (!next) return;
       setRoom(next);
       const d = next.latestDraw as Draw | null;
@@ -224,9 +236,36 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
         seenEaten.current = String(d.eatenAt ?? "");
         setDraw(d);
       }
-    });
+    };
+
+    if (realtime === "poll") {
+      // Vercel: no shared process to push from, so ask about once a second
+      let v = -1;
+      let stopped = false;
+      const tick = async () => {
+        if (stopped || document.hidden) return;
+        const res = await fetch(`/api/poll?v=${v}${roomCode ? `&room=${roomCode}` : ""}`, { cache: "no-store" }).catch(() => null);
+        if (!res?.ok || stopped) return;
+        const data = await res.json();
+        if (data.restaurants) onRestaurants(data.restaurants);
+        if (data.categories) setCategories(data.categories);
+        if (roomCode) onRoom(data.room);
+        v = data.v;
+      };
+      tick();
+      const timer = setInterval(tick, 1000);
+      return () => {
+        stopped = true;
+        clearInterval(timer);
+      };
+    }
+
+    const es = new EventSource(roomCode ? `/api/events?room=${roomCode}` : "/api/events");
+    es.addEventListener("restaurants", (e) => onRestaurants(JSON.parse((e as MessageEvent).data)));
+    es.addEventListener("categories", (e) => setCategories(JSON.parse((e as MessageEvent).data)));
+    es.addEventListener("room", (e) => onRoom(JSON.parse((e as MessageEvent).data)));
     return () => es.close();
-  }, [roomCode, reveal]);
+  }, [roomCode, reveal, realtime]);
 
   async function markEaten(eaten: boolean) {
     if (!draw) return;
@@ -241,56 +280,103 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
     setDraw(next); // the board updates through the "restaurants" event
   }
 
-  async function vote(categoryId: string, value: -1 | 0 | 1) {
-    if (!isRoom) {
-      const n = { ...soloVotes };
-      if (value === 0) delete n[categoryId];
+  // ---------- votes are drafted first and sent together with "บันทึกโหวต" ----------
+  // so the board does not re-sort (and jump) on every tap
+
+  function vote(categoryId: string, value: -1 | 0 | 1) {
+    setSaveError(null);
+    setDraftVotes((d) => {
+      const n = { ...d };
+      if (value === (myVotes[categoryId] ?? 0)) delete n[categoryId];
       else n[categoryId] = value;
-      setSoloVotes(n);
-      saveSolo({ votes: n });
-      return;
-    }
-    if (!room || !member) return;
-    // optimistic update
-    setRoom((r) => {
-      if (!r) return r;
-      const votes = r.votes.filter((v) => !(v.memberId === member.id && v.categoryId === categoryId));
-      if (value !== 0) votes.push({ memberId: member.id, categoryId, value });
-      const s: CategoryScores = {};
-      votes.forEach((v) => (s[v.categoryId] = (s[v.categoryId] ?? 0) + v.value));
-      return { ...r, votes, scores: s };
+      return n;
     });
-    const res = await fetch(`/api/rooms/${room.code}/votes`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ memberId: member.id, categoryId, value }),
-    });
-    if (res.ok) setRoom(await res.json());
   }
 
-  /** Vote for a specific restaurant (−1, 0, +1) */
-  async function votePick(restaurantId: number, value: -1 | 0 | 1) {
-    if (!isRoom) {
-      const n = { ...soloPicks };
-      if (value === 0) delete n[restaurantId];
+  function votePick(restaurantId: number, value: -1 | 0 | 1) {
+    setSaveError(null);
+    setDraftPicks((d) => {
+      const n = { ...d };
+      if (value === (myPicks[restaurantId] ?? 0)) delete n[restaurantId];
       else n[restaurantId] = value;
-      setSoloPicks(n);
-      saveSolo({ picks: n });
+      return n;
+    });
+  }
+
+  function cancelDraft() {
+    setDraftVotes({});
+    setDraftPicks({});
+  }
+
+  async function saveVotes() {
+    const cats = Object.entries(draftVotes);
+    const places = Object.entries(draftPicks).map(([id, v]) => [Number(id), v] as const);
+    if (!cats.length && !places.length) return;
+    setSaveError(null);
+
+    if (!isRoom) {
+      const v = { ...soloVotes };
+      for (const [k, val] of cats) {
+        if (val === 0) delete v[k];
+        else v[k] = val;
+      }
+      const pk = { ...soloPicks };
+      for (const [k, val] of places) {
+        if (val === 0) delete pk[k];
+        else pk[k] = val;
+      }
+      setSoloVotes(v);
+      setSoloPicks(pk);
+      saveSolo({ votes: v, picks: pk });
+      cancelDraft();
       return;
     }
+
     if (!room || !member) return;
+    setSaving(true);
+    const before = room;
+    // show the result right away; the live room event confirms it a moment later
     setRoom((r) => {
       if (!r) return r;
-      const rv = r.restaurantVotes.filter((v) => !(v.memberId === member.id && v.restaurantId === restaurantId));
-      if (value !== 0) rv.push({ memberId: member.id, restaurantId, value });
-      return { ...r, restaurantVotes: rv, restaurantScores: sumRestaurantVotes(rv) };
+      let votes = r.votes;
+      for (const [categoryId, value] of cats) {
+        votes = votes.filter((x) => !(x.memberId === member.id && x.categoryId === categoryId));
+        if (value !== 0) votes = [...votes, { memberId: member.id, categoryId, value }];
+      }
+      let rv = r.restaurantVotes;
+      for (const [restaurantId, value] of places) {
+        rv = rv.filter((x) => !(x.memberId === member.id && x.restaurantId === restaurantId));
+        if (value !== 0) rv = [...rv, { memberId: member.id, restaurantId, value }];
+      }
+      return { ...r, votes, scores: sumVotes(votes), restaurantVotes: rv, restaurantScores: sumRestaurantVotes(rv) };
     });
-    const res = await fetch(`/api/rooms/${room.code}/votes`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ memberId: member.id, restaurantId, value }),
-    });
-    if (res.ok) setRoom(await res.json());
+    cancelDraft();
+
+    const bodies = [
+      ...cats.map(([categoryId, value]) => ({ categoryId, value })),
+      ...places.map(([restaurantId, value]) => ({ restaurantId, value })),
+    ];
+    let failed = false;
+    for (const body of bodies) {
+      const res = await fetch(`/api/rooms/${room.code}/votes`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ memberId: member.id, ...body }),
+      }).catch(() => null);
+      // replies are not applied to the screen: a slow reply could overwrite newer votes;
+      // the room's live event carries the current state instead
+      if (!res?.ok) {
+        failed = true;
+        break;
+      }
+    }
+    setSaving(false);
+    if (failed) {
+      setSaveError("บันทึกโหวตไม่สำเร็จ ห้องนี้อาจหมดอายุแล้ว ลองรีโหลดหน้า");
+      const fresh = await fetch(`/api/rooms/${room.code}`, { cache: "no-store" }).catch(() => null);
+      if (fresh?.ok) setRoom(await fresh.json());
+      else setRoom(before); // the room is gone: take the optimistic votes back
+    }
   }
 
   async function setLazy(next: boolean) {
@@ -386,6 +472,16 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
 
   const winner = draw ? byId.get(draw.restaurantId) : null;
   const disabledList = restaurants.filter((r) => r.disabled);
+
+  // search only changes what is shown, never the odds or the draw
+  const matchIds = useMemo(() => {
+    if (!query.trim()) return null;
+    const catLabels = new Map(categories.map((c) => [c.id, c.label]));
+    return new Set(restaurants.filter((r) => matchesQuery(r, query, catLabels)).map((r) => r.id));
+  }, [query, restaurants, categories]);
+  const inPool = new Set(odds.map((o) => o.id));
+  const matchesInPool = matchIds ? odds.filter((o) => matchIds.has(o.id)).length : 0;
+  const matchesFiltered = matchIds ? [...matchIds].filter((id) => !inPool.has(id) && !byId.get(id)?.disabled).length : 0;
   const votedCount = Object.values(scores).filter((v) => v !== 0).length;
 
   if (room && !member) {
@@ -402,7 +498,7 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
               <h1 className="text-xl font-medium">{room ? `ห้อง ${room.code}` : "วันนี้กินร้านไหน"}</h1>
               <p className="mt-1 text-sm text-fg-2">
                 <span data-testid="pool-count">{pool.length}</span> ร้านในระยะเดิน {lazy ? formatMetres(LAZY_RADIUS_M) : "1 กม."} จากจันวาณิชย์
-                {prices.length > 0 && " · กรองราคา"}
+                {prices.length > 0 && " · กรองตามราคา"}
               </p>
             </div>
             {room && <ShareButton code={room.code} />}
@@ -413,7 +509,7 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
               <Footprints size={18} strokeWidth={1.5} className="text-fg-2" />
               <span>
                 <span className="block text-sm">ขี้เกียจเดิน</span>
-                <span className="block text-xs text-fg-3">เฉพาะร้านที่เดินไม่เกิน 500 ม. ยิ่งใกล้ยิ่งมีโอกาส</span>
+                <span className="block text-xs text-fg-3">เดินไม่เกิน 500 ม. ยิ่งใกล้ยิ่งมีโอกาส</span>
               </span>
             </span>
             <input
@@ -436,11 +532,11 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
           <PriceFilter value={prices} onChange={setPrices} />
 
           <Button variant="primary" className="mt-4 h-12 w-full text-base" onClick={runDraw} disabled={rolling || !pool.length}>
-            {rolling ? "กำลังจับสลาก" : draw ? "จับสลากใหม่" : "จับสลาก"}
+            {rolling ? "กำลังสุ่ม" : draw ? "สุ่มใหม่" : "สุ่มร้าน"}
           </Button>
           {error && <p className="mt-3 text-sm text-bad">{error}</p>}
           {room && (
-            <p className="mt-3 text-xs text-fg-3">ใครกดก็ได้ ทุกคนในห้องจะเห็นผลเดียวกัน</p>
+            <p className="mt-3 text-xs text-fg-3">ใครกดสุ่มก็ได้ ทุกคนในห้องเห็นผลเดียวกัน</p>
           )}
         </div>
 
@@ -460,11 +556,11 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
           <div className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-card p-5">
             <div>
               <div className="text-sm">ไปกินกันหลายคน</div>
-              <div className="text-xs text-fg-3">เปิดห้องแล้วส่งลิงก์ให้ทุกคนโหวตแนวอาหาร</div>
+              <div className="text-xs text-fg-3">สร้างห้องแล้วส่งลิงก์ให้เพื่อนมาโหวตด้วยกัน</div>
             </div>
             <Button onClick={createRoom}>
               <Users size={16} strokeWidth={1.5} />
-              เปิดห้อง
+              สร้างห้อง
             </Button>
           </div>
         )}
@@ -475,23 +571,24 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
         <section className="rounded-2xl border border-line bg-card p-5">
           <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="flex items-baseline gap-3 text-base font-medium">
-              วันนี้อยากกินแนวไหน
+              วันนี้อยากกินอะไร
               <Link href="/categories" className="text-xs font-normal text-fg-3 underline-offset-4 hover:text-fg hover:underline">
-                จัดการแนวอาหาร
+                จัดการประเภทอาหาร
               </Link>
             </h2>
             <span className="text-xs text-fg-3" data-testid="vote-status">
               {room
-                ? `${room.members.length} คนในห้อง · คุณคือ ${member?.nickname}`
+                ? `ในห้องมี ${room.members.length} คน · คุณคือ ${member?.nickname}`
                 : votedCount
-                  ? `โหวตแล้ว ${votedCount} แนว`
-                  : "กด + แนวที่อยาก กด − แนวที่ไม่เอา"}
+                  ? `โหวตแล้ว ${votedCount} ประเภท`
+                  : "เห็นด้วย = อยากกิน · ไม่เห็นด้วย = ไม่อยากกิน"}
             </span>
           </div>
           <CategoryVotes
             categories={categories}
             counts={counts}
-            myVotes={myVotes}
+            myVotes={{ ...myVotes, ...draftVotes }}
+            pending={draftVotes}
             scores={scores}
             voters={voters}
             onVote={vote}
@@ -500,10 +597,10 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
 
         <section className="rounded-2xl border border-line bg-card p-5">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="text-base font-medium">กระดานโอกาส</h2>
+            <h2 className="text-base font-medium">โอกาสของแต่ละร้าน</h2>
             <div className="flex items-center gap-3">
               <span className="hidden text-xs text-fg-3 sm:inline">
-                {view === "list" ? "กดที่ชื่อร้านเพื่อแก้ชื่อเล่น ราคา แนวอาหาร หรือปิดร้าน" : "กดหมุดเพื่อดูร้านและโหวต"}
+                {view === "list" ? "กดชื่อร้านเพื่อให้คะแนนหรือแก้ข้อมูลร้าน" : "กดหมุดเพื่อดูร้านและโหวต"}
               </span>
               <div role="radiogroup" aria-label="มุมมอง" className="flex rounded-lg border border-line bg-deep p-0.5">
                 {(
@@ -529,6 +626,12 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
               </div>
             </div>
           </div>
+          <SearchBox
+            value={query}
+            onChange={setQuery}
+            found={matchesInPool}
+            filtered={matchesFiltered}
+          />
           {view === "map" ? (
             <OddsMap
               odds={odds}
@@ -538,11 +641,13 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
               highlightId={highlightId}
               winnerId={draw?.restaurantId ?? null}
               picks={picks}
-              myPicks={myPicks}
+              myPicks={{ ...myPicks, ...draftPicks }}
+              pending={draftPicks}
               pickVoters={pickVoters}
               onPick={votePick}
               rater={rater}
               onRate={rate}
+              matchIds={matchIds}
             />
           ) : (
           <OddsBoard
@@ -559,15 +664,122 @@ export function LunchApp({ restaurants: initialRestaurants, categories: initialC
             rater={rater}
             onRate={rate}
             picks={picks}
-            myPicks={myPicks}
+            myPicks={{ ...myPicks, ...draftPicks }}
+            pending={draftPicks}
             pickVoters={pickVoters}
             onPick={votePick}
             lazy={lazy}
             now={now}
+            matchIds={matchIds}
+            query={query}
           />
           )}
         </section>
       </div>
+      <SaveBar
+        count={Object.keys(draftVotes).length + Object.keys(draftPicks).length}
+        saving={saving}
+        error={saveError}
+        onSave={saveVotes}
+        onCancel={cancelDraft}
+        onDismiss={() => setSaveError(null)}
+      />
+    </div>
+  );
+}
+
+/** Floating bar: unsaved votes, or why saving failed */
+function SaveBar({
+  count,
+  saving,
+  error,
+  onSave,
+  onCancel,
+  onDismiss,
+}: {
+  count: number;
+  saving: boolean;
+  error: string | null;
+  onSave: () => void;
+  onCancel: () => void;
+  onDismiss: () => void;
+}) {
+  if (!count && !error) return null;
+  return (
+    <div className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-4">
+      <div
+        data-testid="vote-savebar"
+        role={error ? "alert" : "status"}
+        className="rise pointer-events-auto flex w-full max-w-xl flex-wrap items-center gap-3 rounded-2xl border border-line-strong bg-card px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+      >
+        {error ? (
+          <>
+            <span className="min-w-0 flex-1 text-sm text-bad">{error}</span>
+            <Button variant="ghost" onClick={onDismiss}>
+              ปิด
+            </Button>
+          </>
+        ) : (
+          <>
+            <span className="min-w-0 flex-1 text-sm">
+              มีโหวตที่ยังไม่บันทึก <span className="font-mono tnum">{count}</span> รายการ
+              <span className="block text-xs text-fg-3">กดบันทึกแล้วโอกาสของแต่ละร้านจะคำนวณใหม่</span>
+            </span>
+            <Button variant="ghost" onClick={onCancel} disabled={saving}>
+              ยกเลิก
+            </Button>
+            <Button variant="primary" onClick={onSave} disabled={saving}>
+              {saving ? "กำลังบันทึก" : "บันทึกโหวต"}
+            </Button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SearchBox({
+  value,
+  onChange,
+  found,
+  filtered,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  found: number;
+  filtered: number;
+}) {
+  const active = value.trim().length > 0;
+  return (
+    <div className="mb-4">
+      <div className="relative">
+        <Search size={16} strokeWidth={1.5} className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-fg-3" />
+        <input
+          type="search"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onKeyDown={(e) => e.key === "Escape" && onChange("")}
+          placeholder="ค้นหาร้าน ชื่อเล่น ประเภทอาหาร หรือเบอร์"
+          aria-label="ค้นหาร้าน"
+          className="h-10 w-full rounded-lg border border-line-strong bg-raised pr-10 pl-9 text-sm placeholder:text-fg-3 focus:border-ember/60 focus:outline-none [&::-webkit-search-cancel-button]:hidden"
+        />
+        {active && (
+          <button
+            type="button"
+            aria-label="ล้างคำค้น"
+            onClick={() => onChange("")}
+            className="absolute top-1/2 right-1.5 grid size-7 -translate-y-1/2 place-items-center rounded-md text-fg-3 hover:bg-card hover:text-fg"
+          >
+            <X size={16} strokeWidth={1.5} />
+          </button>
+        )}
+      </div>
+      {active && (
+        <p className="mt-2 text-xs text-fg-3" data-testid="search-status" aria-live="polite">
+          {found ? `พบ ${found} ร้าน` : "ไม่พบร้านที่ตรงกับคำค้น"}
+          {filtered > 0 && ` · อีก ${filtered} ร้านตรงคำค้นแต่ถูกตัวกรองซ่อนไว้ (ขี้เกียจเดินหรือช่วงราคา)`}
+        </p>
+      )}
     </div>
   );
 }
@@ -604,7 +816,7 @@ function WinnerCard({
       className="rise scroll-mt-4 rounded-2xl border border-line bg-card p-5"
       aria-live="polite"
     >
-      <div className="text-xs text-fg-3">ผลจับสลาก · โอกาส {formatPercent(p)}</div>
+      <div className="text-xs text-fg-3">ผลการสุ่ม · มีโอกาส {formatPercent(p)}</div>
       <div className="mt-3 flex items-start gap-3">
         <NumberTag n={r.number} tone="win" />
         <div className="min-w-0">
@@ -623,12 +835,12 @@ function WinnerCard({
 
       <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
         <div className="bg-deep px-4 py-3">
-          <dt className="text-xs text-fg-3">เดิน</dt>
+          <dt className="text-xs text-fg-3">ระยะเดิน</dt>
           <dd className="font-mono text-lg tnum">{formatMetres(walk)}</dd>
         </div>
         <div className="bg-deep px-4 py-3">
-          <dt className="text-xs text-fg-3">ประมาณ</dt>
-          <dd className="font-mono text-lg tnum">{walkMinutes(walk)} นาที</dd>
+          <dt className="text-xs text-fg-3">เวลาเดิน</dt>
+          <dd className="font-mono text-lg tnum">ประมาณ {walkMinutes(walk)} นาที</dd>
         </div>
       </dl>
       {r.openingHours && <p className="mt-3 font-mono text-xs text-fg-3">เวลาเปิด {r.openingHours}</p>}
@@ -644,10 +856,10 @@ function WinnerCard({
         onClick={() => onEaten(!eaten)}
       >
         <UtensilsCrossed size={16} strokeWidth={1.5} />
-        {eaten ? "บันทึกว่ากินร้านนี้แล้ว · ยกเลิก" : "ไปกินร้านนี้"}
+        {eaten ? "ไปกินแล้ว · กดเพื่อยกเลิก" : "ไปกินร้านนี้"}
       </Button>
       <p className="mt-2 text-xs text-fg-3">
-        {eaten ? "ร้านนี้จะมีโอกาสน้อยลงใน 7 วันข้างหน้า" : "กดเมื่อไปกินจริง ร้านนี้จะมีโอกาสน้อยลงใน 7 วันข้างหน้า"}
+        {eaten ? "ร้านนี้จะถูกสุ่มน้อยลงใน 7 วันจากนี้" : "กดเมื่อไปกินจริง ร้านนี้จะถูกสุ่มน้อยลงใน 7 วันจากนี้"}
       </p>
 
       <div className="mt-4 border-t border-line pt-4">
@@ -658,7 +870,7 @@ function WinnerCard({
         <a href={googleDirectionsUrl(r.lat, r.lon)} target="_blank" rel="noreferrer" className="contents">
           <Button variant="ghost" className="w-full">
             <Navigation size={16} strokeWidth={1.5} />
-            นำทางเดิน
+            เส้นทางเดิน
           </Button>
         </a>
         <a href={googleMapsUrl(r.lat, r.lon, r.name)} target="_blank" rel="noreferrer" className="contents">
@@ -689,7 +901,7 @@ function ShareButton({ code }: { code: string }) {
       }}
     >
       {copied ? <Check size={16} strokeWidth={1.5} /> : <Copy size={16} strokeWidth={1.5} />}
-      {copied ? "คัดลอกแล้ว" : "ลิงก์ห้อง"}
+      {copied ? "คัดลอกแล้ว" : "คัดลอกลิงก์"}
     </Button>
   );
 }
@@ -728,7 +940,7 @@ function JoinRoom({
       <div className="font-mono text-xs text-fg-3">ห้อง {code}</div>
       <h1 className="mt-2 text-xl font-medium">ใส่ชื่อเล่นเพื่อโหวต</h1>
       <p className="mt-1 text-sm text-fg-2">
-        {members.length ? `ในห้องตอนนี้ ${members.map((m) => m.nickname).join(", ")}` : "ยังไม่มีใครเข้าห้อง"}
+        {members.length ? `ตอนนี้ในห้องมี ${members.map((m) => m.nickname).join(", ")}` : "ยังไม่มีใครเข้าห้อง"}
       </p>
       <form onSubmit={join} className="mt-5 flex gap-2">
         <input

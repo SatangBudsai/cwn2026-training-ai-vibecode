@@ -45,7 +45,7 @@ export function PriceFilter({ value, onChange }: { value: number[]; onChange: (n
       </div>
       <p className="mt-2 text-xs text-fg-3">
         {value.length === 0
-          ? "ไม่กรองราคา · ฿ ไม่เกิน 60 · ฿฿ 60–120 · ฿฿฿ 120–250 · ฿฿฿฿ 250+"
+          ? "ทุกราคา · ฿ ไม่เกิน 60 · ฿฿ 60–120 · ฿฿฿ 120–250 · ฿฿฿฿ 250 ขึ้นไป (บาทต่อคน)"
           : OPTIONS.filter((o) => value.includes(o.value))
               .map((o) => (o.value === PRICE_UNKNOWN ? "ไม่ระบุราคา" : o.hint))
               .join(" · ")}

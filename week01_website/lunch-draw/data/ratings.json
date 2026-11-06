@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "restaurantId": 8,
+    "rater": "66efaf82-ba60-4025-b698-01d5e1ed846f",
+    "score": 3,
+    "name": null,
+    "at": "2026-11-06T07:26:01.524Z"
+  }
+]

@@ -1,38 +1,53 @@
-import { TOTAL, createRoom, expect, joinRoom, newMember, openHome, pct, row, rowPercent, test, topRowNumber } from "../fixtures";
+import {
+  TOTAL,
+  catSwitch,
+  vote,
+  chosen,
+  createRoom,
+  expect,
+  joinRoom,
+  newMember,
+  openHome,
+  pct,
+  placeSwitch,
+  row,
+  rowPercent,
+  test,
+  topRowNumber,
+} from "../fixtures";
 
 const LIVE = { timeout: 3_000 };
-const up = (n: number) => `[data-testid="odds-row"][data-number="${n}"] button[aria-label^="อยากไปร้าน"]`;
-const down = (n: number) => `[data-testid="odds-row"][data-number="${n}"] button[aria-label^="ไม่อยากไปร้าน"]`;
 
 test.describe("โหวตร้าน", () => {
-  test("TC-VOTE-06 โหวต + ร้าน ร้านนั้นมีโอกาสมากขึ้น @P1", async ({ page }) => {
+  test("TC-VOTE-06 เห็นด้วยกับร้าน ร้านนั้นมีโอกาสมากขึ้น @P1", async ({ page }) => {
     await openHome(page);
-    await page.locator(up(5)).click();
-    await expect(row(page, 5).getByTestId("vote-net")).toHaveText("+1");
+    await vote(placeSwitch(page, 5), "เห็นด้วย");
+    await expect(chosen(placeSwitch(page, 5))).toHaveText("เห็นด้วย");
+    await expect(row(page, 5).getByTestId("vote-net")).toHaveCount(0); // the group total is for rooms only
     expect(await topRowNumber(page)).toBe(5);
     // ×1.5 for this place, ×1 for the other 236
     await expect.poll(() => rowPercent(page, 5)).toBe(pct(1.5 / (TOTAL - 1 + 1.5)));
   });
 
-  test("TC-VOTE-07 โหวต − ร้าน แล้วกดซ้ำเพื่อยกเลิก @P2", async ({ page }) => {
+  test("TC-VOTE-07 ไม่เห็นด้วยกับร้าน แล้วกลับมาเลือก ปกติ @P2", async ({ page }) => {
     await openHome(page);
-    await page.locator(down(1)).click();
+    await vote(placeSwitch(page, 1), "ไม่เห็นด้วย");
     await expect(page.locator(`[data-testid="odds-row"][data-number="1"]`)).toHaveCount(0); // dropped out of the top 15
     await page.getByRole("button", { name: /^แสดงทั้งหมด/ }).click();
-    await expect(row(page, 1).getByTestId("vote-net")).toHaveText("-1");
+    await expect(chosen(placeSwitch(page, 1))).toHaveText("ไม่เห็นด้วย");
     expect(await rowPercent(page, 1)).toBe(pct(0.5 / (TOTAL - 1 + 0.5)));
-    await page.locator(down(1)).click();
-    await expect(row(page, 1).getByTestId("vote-net")).toHaveText("0");
+    await vote(placeSwitch(page, 1), "ปกติ");
+    await expect(chosen(placeSwitch(page, 1))).toHaveText("ปกติ");
     expect(await rowPercent(page, 1)).toBe(pct(1 / TOTAL));
   });
 
-  test("TC-VOTE-08 โหวตร้านรวมกับโหวตแนวอาหาร @P2", async ({ page }) => {
+  test("TC-VOTE-08 โหวตร้านรวมกับโหวตประเภทอาหาร @P2", async ({ page }) => {
     // restaurant #5 is a noodle place: noodle +1 (×1.5) and the place itself +1 (×1.5) -> ×2.25
     await openHome(page);
-    await page.getByRole("button", { name: "อยากกินก๋วยเตี๋ยว / เส้น", exact: true }).click();
-    await page.locator(up(5)).click();
+    await vote(catSwitch(page, "ก๋วยเตี๋ยว / เมนูเส้น"), "เห็นด้วย");
+    await vote(placeSwitch(page, 5), "เห็นด้วย");
     expect(await topRowNumber(page)).toBe(5);
-    await expect(row(page, 5).getByTestId("vote-net")).toHaveText("+1");
+    await expect(chosen(placeSwitch(page, 5))).toHaveText("เห็นด้วย");
   });
 
   test("TC-ROOM-09 สมาชิกโหวตร้านในห้องแบบ realtime @P1", async ({ page, browser }) => {
@@ -40,10 +55,10 @@ test.describe("โหวตร้าน", () => {
     const b = await newMember(browser);
     await joinRoom(b, url, "มิว");
 
-    await page.locator(up(5)).click();
-    await expect(b.locator(`[data-testid="odds-row"][data-number="5"]`).getByTestId("vote-net")).toHaveText("+1", LIVE);
-    await b.locator(up(5)).click();
-    await expect(row(page, 5).getByTestId("vote-net")).toHaveText("+2", LIVE);
+    await vote(placeSwitch(page, 5), "เห็นด้วย");
+    await expect(b.locator(`[data-testid="odds-row"][data-number="5"]`).getByTestId("vote-net")).toHaveText("รวม +1", LIVE);
+    await vote(placeSwitch(b, 5), "เห็นด้วย");
+    await expect(row(page, 5).getByTestId("vote-net")).toHaveText("รวม +2", LIVE);
     // ×2 for this place
     await expect.poll(() => rowPercent(page, 5), LIVE).toBe(pct(2 / (TOTAL + 1)));
 

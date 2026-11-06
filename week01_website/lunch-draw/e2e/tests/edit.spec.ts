@@ -36,53 +36,53 @@ test.describe("แก้ข้อมูลร้าน", () => {
     await expect(row(page, 1).getByTestId("odds-name")).toHaveText(r.name);
   });
 
-  test("TC-EDIT-03 ปิดร้าน แล้วเปิดอีกครั้ง @P1", async ({ page }) => {
+  test("TC-EDIT-03 ปิดร้าน แล้วกลับมาสุ่ม @P1", async ({ page }) => {
     await openHome(page);
     await openEditor(page, 1);
-    await page.getByRole("button", { name: "ปิดร้านนี้" }).click();
+    await page.getByRole("button", { name: "ไม่สุ่มร้านนี้" }).click();
 
     await expect(page.getByTestId("pool-count")).toHaveText(String(TOTAL - 1));
     await expect(row(page, 1)).toHaveCount(0);
-    const closed = page.getByRole("button", { name: /ร้านที่ปิดไว้/ });
+    const closed = page.getByRole("button", { name: /ร้านที่ไม่สุ่ม/ });
     await expect(closed).toContainText("1");
     await closed.click();
     const item = page.locator('[data-testid="disabled-row"][data-number="1"]');
     await expect(item).toBeVisible();
 
-    await item.getByRole("button", { name: "เปิดอีกครั้ง" }).click();
+    await item.getByRole("button", { name: "กลับมาสุ่ม" }).click();
     await expect(page.getByTestId("pool-count")).toHaveText(String(TOTAL));
     await expect(row(page, 1)).toBeVisible();
   });
 
-  test("TC-EDIT-04 แก้แนวอาหารของร้าน @P2", async ({ page }) => {
+  test("TC-EDIT-04 แก้ประเภทอาหารของร้าน @P2", async ({ page }) => {
     const r = byNumber.get(3)!; // Mama Mia Bangkok
     const before = SEED.filter((x) => x.categories.includes("japanese")).length;
     test.skip(r.categories.includes("japanese"), "restaurant #3 is already japanese");
     await openHome(page);
     await expect(page.getByTestId("cat-japanese")).toContainText(`${before} ร้าน`);
     await openEditor(page, 3);
-    await page.getByRole("button", { name: "ญี่ปุ่น", exact: true }).click();
+    await page.getByRole("button", { name: "อาหารญี่ปุ่น", exact: true }).click();
     await page.getByRole("button", { name: "บันทึก" }).click();
-    await expect(row(page, 3)).toContainText("ญี่ปุ่น");
+    await expect(row(page, 3)).toContainText("อาหารญี่ปุ่น");
     await expect(page.getByTestId("cat-japanese")).toContainText(`${before + 1} ร้าน`);
   });
 
-  test("TC-EDIT-05 ต้องเลือกแนวอาหารอย่างน้อย 1 แนว @P3", async ({ page }) => {
+  test("TC-EDIT-05 ต้องเลือกประเภทอาหารอย่างน้อย 1 ประเภท @P3", async ({ page }) => {
     const r = byNumber.get(1)!;
     await openHome(page);
     await openEditor(page, 1);
-    const labels: Record<string, string> = { "rice-curry": "ข้าวแกง", thai: "อาหารไทยทั่วไป", "made-to-order": "อาหารตามสั่ง" };
+    const labels: Record<string, string> = { "rice-curry": "ข้าวแกง", thai: "อาหารไทย", "made-to-order": "อาหารตามสั่ง" };
     for (const c of r.categories) await page.getByRole("button", { name: labels[c] ?? c, exact: true }).click();
     await expect(page.getByRole("button", { name: "บันทึก" })).toBeDisabled();
   });
 
-  test("TC-EDIT-06 น้ำหนักพื้นฐาน ×2 ทำให้โอกาสเป็นสองเท่า @P2", async ({ page }) => {
+  test("TC-EDIT-06 ตัวคูณโอกาส ×2 ทำให้โอกาสเป็นสองเท่า @P2", async ({ page }) => {
     await openHome(page);
     await openEditor(page, 2);
-    await page.getByRole("button", { name: "เพิ่มน้ำหนัก" }).click();
-    await page.getByRole("button", { name: "เพิ่มน้ำหนัก" }).click();
+    await page.getByRole("button", { name: "เพิ่มตัวคูณ" }).click();
+    await page.getByRole("button", { name: "เพิ่มตัวคูณ" }).click();
     await page.getByRole("button", { name: "บันทึก" }).click();
-    await expect(row(page, 2)).toContainText("น้ำหนัก ×2");
+    await expect(row(page, 2)).toContainText("ตัวคูณ ×2");
     expect(await topRowNumber(page)).toBe(2);
     await expect.poll(() => rowPercent(page, 2)).toBe(pct(2 / (TOTAL + 1)));
   });
