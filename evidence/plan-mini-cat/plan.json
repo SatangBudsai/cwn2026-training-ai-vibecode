@@ -1,0 +1,148 @@
+{
+ "name": "mini-cat",
+ "goal": "ทำไฟล์ข้อความสั้น ๆ 3 ไฟล์สำหรับร้านขนมแมว: สโลแกน รายการสินค้า 3 อย่าง และ README รวมทั้งสอง",
+ "created": "2026-11-11T14:59:04+07:00",
+ "max_agents": 2,
+ "accounts": [
+  {
+   "account": "yolo1",
+   "kind": "yolo",
+   "logged_in": true,
+   "plan": "default",
+   "session_used": 28.0,
+   "session_reset": "2026-11-11T19:10:00+07:00",
+   "week_used": 12.0,
+   "week_reset": "2026-11-17T09:00:00+07:00",
+   "at": "2026-11-11T14:58:52+07:00",
+   "week_model_used": 0.0,
+   "cap_week": 100,
+   "headroom_session": 72.0,
+   "headroom_week": 88.0,
+   "headroom": 72.0,
+   "expires": "2026-11-17T09:00:00+07:00",
+   "hours_left": 138.0,
+   "use_first": 0.148,
+   "score": 37.7,
+   "slots": 3
+  },
+  {
+   "account": "yolo2",
+   "kind": "yolo",
+   "logged_in": true,
+   "plan": "default",
+   "session_used": 28.0,
+   "session_reset": "2026-11-11T19:10:00+07:00",
+   "week_used": 12.0,
+   "week_reset": "2026-11-17T09:00:00+07:00",
+   "at": "2026-11-11T14:58:58+07:00",
+   "week_model_used": 0.0,
+   "cap_week": 100,
+   "headroom_session": 72.0,
+   "headroom_week": 88.0,
+   "headroom": 72.0,
+   "expires": "2026-11-17T09:00:00+07:00",
+   "hours_left": 138.0,
+   "use_first": 0.148,
+   "score": 37.7,
+   "slots": 3
+  }
+ ],
+ "notes": [],
+ "calib_k": {},
+ "critical_path": [
+  "B01",
+  "B03"
+ ],
+ "rank": {
+  "B03": 0.6,
+  "B01": 1.2,
+  "B02": 1.2
+ },
+ "peak_agents": 2,
+ "rounds": [
+  {
+   "t_min": 0.0,
+   "start": [
+    "B01",
+    "B02"
+   ]
+  },
+  {
+   "t_min": 5.0,
+   "start": [
+    "B03"
+   ]
+  }
+ ],
+ "assign": {
+  "B01": {
+   "id": "B01",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo1",
+     "score": 31.5,
+     "need": 0.6,
+     "why": "yolo1 31.5 (U=0.148 F=0.002 S=0.704 S=1.0 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 yolo2 31.5",
+     "alts": [
+      "yolo2 31.5"
+     ]
+    }
+   ],
+   "account": "yolo1",
+   "start": 0.0,
+   "end": 0.08333333333333333,
+   "dur_base_h": 0.0833,
+   "k": 1.0,
+   "status": "planned",
+   "score": 31.5
+  },
+  "B02": {
+   "id": "B02",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo2",
+     "score": 31.5,
+     "need": 0.6,
+     "why": "yolo2 31.5 (U=0.148 F=0.002 S=0.704 S=1.0 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 yolo1 28.0",
+     "alts": [
+      "yolo1 28.0"
+     ]
+    }
+   ],
+   "account": "yolo2",
+   "start": 0.0,
+   "end": 0.08333333333333333,
+   "dur_base_h": 0.0833,
+   "k": 1.0,
+   "status": "planned",
+   "score": 31.5
+  },
+  "B03": {
+   "id": "B03",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo1",
+     "score": 23.8,
+     "need": 0.6,
+     "why": "yolo1 23.8 (U=0.148 F=0.002 S=0.689 S=0.5 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 yolo2 23.8",
+     "alts": [
+      "yolo2 23.8"
+     ]
+    }
+   ],
+   "account": "yolo1",
+   "start": 0.08333333333333333,
+   "end": 0.16666666666666666,
+   "dur_base_h": 0.0833,
+   "k": 1.0,
+   "status": "planned",
+   "score": 23.8
+  }
+ }
+}

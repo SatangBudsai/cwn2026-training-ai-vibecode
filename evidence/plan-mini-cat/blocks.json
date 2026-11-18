@@ -1,0 +1,10 @@
+{"goal": "ทำไฟล์ข้อความสั้น ๆ 3 ไฟล์สำหรับร้านขนมแมว: สโลแกน รายการสินค้า 3 อย่าง และ README รวมทั้งสอง",
+ "name": "mini-cat",
+ "blocks": [
+  {"id": "B01", "title": "สโลแกนร้าน", "size": "S", "depends_on": [], "skill": "yolo", "difficulty": 1,
+   "output": "slogan.txt", "done": "ไฟล์ slogan.txt มีสโลแกนไทย 1 บรรทัด ไม่เกิน 40 ตัวอักษร"},
+  {"id": "B02", "title": "รายการสินค้า 3 อย่าง", "size": "S", "depends_on": [], "skill": "yolo", "difficulty": 1,
+   "output": "products.json", "done": "JSON array 3 รายการ แต่ละรายการมี name และ price (ตัวเลข)"},
+  {"id": "B03", "title": "README รวม", "size": "S", "depends_on": ["B01", "B02"], "skill": "yolo", "difficulty": 1,
+   "output": "README.md", "done": "README.md ยกสโลแกนจาก slogan.txt และตารางสินค้าจาก products.json"}
+ ]}

@@ -1,0 +1,14 @@
+{
+ "history": [
+  {
+   "run_id": "mini-cat-20261111-145904",
+   "started": "2026-11-11T14:59:04+07:00",
+   "detach": false,
+   "accounts": [
+    "yolo1",
+    "yolo2"
+   ]
+  }
+ ],
+ "run_id": "mini-cat-20261111-145904"
+}

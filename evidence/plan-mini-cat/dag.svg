@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="640" viewBox="0 0 1500 640" font-family="Sarabun, Loma, Garuda, 'Noto Sans Thai', Tahoma, 'Noto Color Emoji', sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#9a9a9a"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e8590c"/></marker></defs>
+<rect width="1500" height="640" fill="#ffffff"/>
+<rect width="1500" height="64" fill="#1e3a5f"/>
+<text x="30" y="42" font-size="26" font-weight="700" fill="#fff">DAG + บัญชีที่ได้งาน · mini-cat · MAX_AGENTS=2</text>
+<text x="30" y="88" font-size="16" fill="#555">rank = ขนาด (ล้านโทเคน) + rank สูงสุดของบล็อกที่รอ · ป้ายสี = สกิลของบล็อก (รุ่น/effort จาก difficulty) · ป้ายล่าง = บัญชีที่ KC-QUEST แจก</text>
+<path d="M380,380.0 C414.0,380.0 414.0,287.5 448,287.5" fill="none" stroke="#c4c4c4" stroke-width="1.8" marker-end="url(#ag)"/>
+<path d="M380,195.0 C414.0,195.0 414.0,287.5 448,287.5" fill="none" stroke="#e8590c" stroke-width="4.5" marker-end="url(#ac)"/>
+<rect x="40" y="120.0" width="340" height="150" rx="10" fill="#fff4ec" stroke="#e8590c" stroke-width="3"/>
+<rect x="40" y="120.0" width="8" height="150" rx="4" fill="#7c3aed"/>
+<text x="60" y="148.0" font-size="20" font-weight="700" fill="#111">B01<tspan font-weight="400" fill="#555"> · S 0.6M</tspan></text>
+<text x="368" y="148.0" font-size="19" font-weight="700" text-anchor="end" fill="#e8590c">rank 1.2</text>
+<text x="60" y="175.0" font-size="16" fill="#333">สโลแกนร้าน</text>
+<rect x="58" y="188.0" width="308" height="28" rx="14" fill="#7c3aed"/><text x="70" y="208.0" font-size="14" font-weight="700" fill="#fff">🧠 yolo · d1 haiku/low</text>
+<text x="60" y="237.0" font-size="13" fill="#777">→ slogan.txt</text>
+<rect x="58" y="244.0" width="61.5" height="22" rx="11" fill="#1f6feb"/><text x="88.75" y="260.0" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">yolo1</text>
+<rect x="40" y="305.0" width="340" height="150" rx="10" fill="#fff" stroke="#bdbdbd" stroke-width="1.6"/>
+<rect x="40" y="305.0" width="8" height="150" rx="4" fill="#7c3aed"/>
+<text x="60" y="333.0" font-size="20" font-weight="700" fill="#111">B02<tspan font-weight="400" fill="#555"> · S 0.6M</tspan></text>
+<text x="368" y="333.0" font-size="19" font-weight="700" text-anchor="end" fill="#1f6feb">rank 1.2</text>
+<text x="60" y="360.0" font-size="16" fill="#333">รายการสินค้า 3 อย่าง</text>
+<rect x="58" y="373.0" width="308" height="28" rx="14" fill="#7c3aed"/><text x="70" y="393.0" font-size="14" font-weight="700" fill="#fff">🧠 yolo · d1 haiku/low</text>
+<text x="60" y="422.0" font-size="13" fill="#777">→ products.json</text>
+<rect x="58" y="429.0" width="61.5" height="22" rx="11" fill="#2da44e"/><text x="88.75" y="445.0" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">yolo2</text>
+<rect x="450" y="212.5" width="340" height="150" rx="10" fill="#fff4ec" stroke="#e8590c" stroke-width="3"/>
+<rect x="450" y="212.5" width="8" height="150" rx="4" fill="#7c3aed"/>
+<text x="470" y="240.5" font-size="20" font-weight="700" fill="#111">B03<tspan font-weight="400" fill="#555"> · S 0.6M</tspan></text>
+<text x="778" y="240.5" font-size="19" font-weight="700" text-anchor="end" fill="#e8590c">rank 0.6</text>
+<text x="470" y="267.5" font-size="16" fill="#333">README รวม</text>
+<rect x="468" y="280.5" width="308" height="28" rx="14" fill="#7c3aed"/><text x="480" y="300.5" font-size="14" font-weight="700" fill="#fff">🧠 yolo · d1 haiku/low</text>
+<text x="470" y="329.5" font-size="13" fill="#777">→ README.md</text>
+<rect x="468" y="336.5" width="61.5" height="22" rx="11" fill="#1f6feb"/><text x="498.75" y="352.5" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">yolo1</text>
+<rect x="40" y="531" width="24" height="24" rx="6" fill="#7c3aed"/><text x="52" y="549" font-size="14" text-anchor="middle">🧠</text><text x="72" y="548" font-size="16" fill="#333">yolo · Claude 1 บัญชี</text>
+<text x="40" y="616" font-size="17" fill="#e8590c" font-weight="700">━ สายวิกฤต: B01 → B03 (ยาว 1.2M tok)</text>
+<text x="1460" y="616" font-size="16" text-anchor="end" fill="#555">🔒 = exclusive (รันคนเดียว) · แถบสีซ้ายกล่อง = สกิล · กรอบส้ม = บนสายวิกฤต</text>
+</svg>

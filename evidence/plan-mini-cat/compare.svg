@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="378" viewBox="0 0 1500 378" font-family="Sarabun, Loma, Garuda, 'Noto Sans Thai', Tahoma, 'Noto Color Emoji', sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#9a9a9a"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e8590c"/></marker></defs>
+<rect width="1500" height="378" fill="#ffffff"/>
+<rect width="1500" height="64" fill="#1e3a5f"/>
+<text x="30" y="42" font-size="26" font-weight="700" fill="#fff">แผน vs จริง · mini-cat</text>
+<text x="30" y="88" font-size="16" fill="#555">run mini-cat-20261111-145904 · ซ้าย = แผน KC-QUEST · ขวา = ที่ agent-team รันจริง</text>
+<text x="487.5" y="116" font-size="18" text-anchor="middle" font-weight="700" fill="#333">แผน (KC-QUEST) · 10.0 นาที</text>
+<text x="1162.5" y="116" font-size="18" text-anchor="middle" font-weight="700" fill="#333">จริง (agent-team) · 0.3 นาที</text>
+<line x1="180.0" y1="130" x2="180.0" y2="268" stroke="#eee"/><text x="180.0" y="286" font-size="12" text-anchor="middle" fill="#777">0</text>
+<line x1="303.0" y1="130" x2="303.0" y2="268" stroke="#eee"/><text x="303.0" y="286" font-size="12" text-anchor="middle" fill="#777">2</text>
+<line x1="426.0" y1="130" x2="426.0" y2="268" stroke="#eee"/><text x="426.0" y="286" font-size="12" text-anchor="middle" fill="#777">4</text>
+<line x1="549.0" y1="130" x2="549.0" y2="268" stroke="#eee"/><text x="549.0" y="286" font-size="12" text-anchor="middle" fill="#777">6</text>
+<line x1="672.0" y1="130" x2="672.0" y2="268" stroke="#eee"/><text x="672.0" y="286" font-size="12" text-anchor="middle" fill="#777">8</text>
+<line x1="795.0" y1="130" x2="795.0" y2="268" stroke="#eee"/><text x="795.0" y="286" font-size="12" text-anchor="middle" fill="#777">10</text>
+<line x1="855.0" y1="130" x2="855.0" y2="268" stroke="#eee"/><text x="855.0" y="286" font-size="12" text-anchor="middle" fill="#777">0</text>
+<line x1="1431.5625" y1="130" x2="1431.5625" y2="268" stroke="#eee"/><text x="1431.5625" y="286" font-size="12" text-anchor="middle" fill="#777">0.25</text>
+<rect x="30" y="130" width="1440" height="46" fill="#fff"/>
+<text x="170" y="158" font-size="16" text-anchor="end" fill="#333">🧠 B01</text>
+<rect x="180.0" y="139" width="307.5" height="28" rx="4" fill="#7c3aed" fill-opacity="0.35" stroke="#7c3aed"/>
+<text x="493.5" y="158" font-size="12" fill="#555">5.0</text>
+<rect x="855.0" y="139" width="307.5" height="28" rx="4" fill="#7c3aed"/>
+<text x="1168.5" y="158" font-size="12" fill="#555">0.1</text>
+<rect x="30" y="176" width="1440" height="46" fill="#fafafa"/>
+<text x="170" y="204" font-size="16" text-anchor="end" fill="#333">🧠 B02</text>
+<rect x="180.0" y="185" width="307.5" height="28" rx="4" fill="#7c3aed" fill-opacity="0.35" stroke="#7c3aed"/>
+<text x="493.5" y="204" font-size="12" fill="#555">5.0</text>
+<rect x="855.0" y="185" width="269.0625" height="28" rx="4" fill="#7c3aed"/>
+<text x="1130.0625" y="204" font-size="12" fill="#555">0.1</text>
+<rect x="30" y="222" width="1440" height="46" fill="#fff"/>
+<text x="170" y="250" font-size="16" text-anchor="end" fill="#333">🧠 B03</text>
+<rect x="487.5" y="231" width="307.5" height="28" rx="4" fill="#7c3aed" fill-opacity="0.35" stroke="#7c3aed"/>
+<text x="801.0" y="250" font-size="12" fill="#555">5.0</text>
+<rect x="1200.9375" y="231" width="269.0625" height="28" rx="4" fill="#7c3aed"/>
+<text x="1476.0" y="250" font-size="12" fill="#555">0.1</text>
+<text x="30" y="348" font-size="15" fill="#555">แท่งจาง = เวลาตามแผน · แท่งทึบ = เวลาจริง · ตัวเลข = นาทีของบล็อก · ตัวปรับ k = จริง ÷ แผน (แยกตามสกิล) บันทึกใน calib.json</text>
+</svg>

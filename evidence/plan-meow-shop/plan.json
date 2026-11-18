@@ -1,0 +1,153 @@
+{
+ "name": "meow-shop",
+ "goal": "เว็บร้านอาหารแมว 'เหมียวช็อป' หน้าเดียว (HTML+CSS+JS ไม่มี server) มีสินค้า 6 รายการพร้อมรูป ตะกร้าสินค้าที่จำได้หลังรีเฟรช (localStorage) และสโลแกนหัวเว็บ พร้อมทดสอบว่าใช้งานได้จริง",
+ "created": "2026-11-11T14:20:10+07:00",
+ "max_agents": 1,
+ "accounts": [
+  {
+   "account": "yolo1",
+   "kind": "yolo",
+   "logged_in": true,
+   "plan": "default",
+   "session_used": 4.0,
+   "session_reset": "2026-11-11T19:10:00+07:00",
+   "week_used": 9.0,
+   "week_reset": "2026-11-17T09:00:00+07:00",
+   "at": "2026-11-11T14:20:07+07:00",
+   "week_model_used": 0.0,
+   "cap_week": 100,
+   "headroom_session": 96.0,
+   "headroom_week": 91.0,
+   "headroom": 91.0,
+   "expires": "2026-11-17T09:00:00+07:00",
+   "hours_left": 138.7,
+   "use_first": 0.148,
+   "score": 45.3,
+   "slots": 3
+  }
+ ],
+ "notes": [],
+ "calib_k": {},
+ "critical_path": [
+  "B01",
+  "B05",
+  "B08"
+ ],
+ "rank": {
+  "B08": 1.5,
+  "B05": 3.0,
+  "B07": 3.0,
+  "B01": 3.6,
+  "B06": 3.0,
+  "B02": 3.6,
+  "B03": 3.6,
+  "B04": 2.1
+ },
+ "peak_agents": 1,
+ "rounds": [
+  {
+   "t_min": 0.0,
+   "start": [
+    "B02"
+   ]
+  },
+  {
+   "t_min": 5.0,
+   "start": [
+    "B06"
+   ]
+  }
+ ],
+ "assign": {
+  "B02": {
+   "id": "B02",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo1",
+     "score": 35.1,
+     "need": 0.6,
+     "why": "yolo1 35.1 (U=0.148 F=0.002 S=0.944 S=1.0 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2%",
+     "alts": []
+    }
+   ],
+   "account": "yolo1",
+   "start": 0.0,
+   "end": 0.08333333333333333,
+   "dur_base_h": 0.0833,
+   "k": 1.0,
+   "status": "planned",
+   "score": 35.1
+  },
+  "B06": {
+   "id": "B06",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo1",
+     "score": 32.1,
+     "need": 1.5,
+     "why": "yolo1 32.1 (U=0.148 F=0.005 S=0.905 S=0.833 L=0.0) · 1.50M ≈ 5ชม. 3.9% / สัปดาห์ 0.49%",
+     "alts": []
+    }
+   ],
+   "account": "yolo1",
+   "start": 0.08333333333333333,
+   "end": 0.29166666666666663,
+   "dur_base_h": 0.2083,
+   "k": 1.0,
+   "status": "planned",
+   "score": 32.1
+  },
+  "B01": {
+   "id": "B01",
+   "skill": "cyolo",
+   "accounts": [],
+   "account": null,
+   "status": "unassigned",
+   "why": "ไม่มีบัญชีชุดไหนปิดบล็อกนี้ได้ (แบ่งให้เล็กลง / เพิ่มบัญชี / ลด n)"
+  },
+  "B03": {
+   "id": "B03",
+   "skill": "image",
+   "accounts": [],
+   "account": null,
+   "status": "unassigned",
+   "why": "ไม่มีบัญชีชุดไหนปิดบล็อกนี้ได้ (แบ่งให้เล็กลง / เพิ่มบัญชี / ลด n)"
+  },
+  "B04": {
+   "id": "B04",
+   "skill": "best_of",
+   "accounts": [],
+   "account": null,
+   "status": "unassigned",
+   "why": "ไม่มีบัญชีชุดไหนปิดบล็อกนี้ได้ (แบ่งให้เล็กลง / เพิ่มบัญชี / ลด n)"
+  },
+  "B05": {
+   "id": "B05",
+   "skill": "review",
+   "accounts": [],
+   "account": null,
+   "status": "blocked",
+   "why": "รอบล็อกที่ไม่มีบัญชีรับ"
+  },
+  "B07": {
+   "id": "B07",
+   "skill": "cyolo",
+   "accounts": [],
+   "account": null,
+   "status": "blocked",
+   "why": "รอบล็อกที่ไม่มีบัญชีรับ"
+  },
+  "B08": {
+   "id": "B08",
+   "skill": "yolo",
+   "accounts": [],
+   "account": null,
+   "status": "blocked",
+   "why": "รอบล็อกที่ไม่มีบัญชีรับ"
+  }
+ }
+}

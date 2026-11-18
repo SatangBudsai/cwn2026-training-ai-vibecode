@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="304" viewBox="0 0 1500 304" font-family="Sarabun, Loma, Garuda, 'Noto Sans Thai', Tahoma, 'Noto Color Emoji', sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#9a9a9a"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e8590c"/></marker></defs>
+<rect width="1500" height="304" fill="#ffffff"/>
+<rect width="1500" height="64" fill="#1e3a5f"/>
+<text x="30" y="42" font-size="26" font-weight="700" fill="#fff">Gantt แผน · meow-shop</text>
+<text x="30" y="88" font-size="16" fill="#555">แถว = บัญชี · แท่ง = บล็อก (สีตามสกิล) · เวลา = โทเคนประเมิน ÷ ความเร็ว CLI × k · KC-QUEST · MAX_AGENTS=1</text>
+<line x1="200.0" y1="104" x2="200.0" y2="154" stroke="#eee"/><text x="200.0" y="174" font-size="13" text-anchor="middle" fill="#777">0</text>
+<line x1="342.8571428571429" y1="104" x2="342.8571428571429" y2="154" stroke="#eee"/><text x="342.8571428571429" y="174" font-size="13" text-anchor="middle" fill="#777">2</text>
+<line x1="485.7142857142858" y1="104" x2="485.7142857142858" y2="154" stroke="#eee"/><text x="485.7142857142858" y="174" font-size="13" text-anchor="middle" fill="#777">4</text>
+<line x1="628.5714285714287" y1="104" x2="628.5714285714287" y2="154" stroke="#eee"/><text x="628.5714285714287" y="174" font-size="13" text-anchor="middle" fill="#777">6</text>
+<line x1="771.4285714285716" y1="104" x2="771.4285714285716" y2="154" stroke="#eee"/><text x="771.4285714285716" y="174" font-size="13" text-anchor="middle" fill="#777">8</text>
+<line x1="914.2857142857144" y1="104" x2="914.2857142857144" y2="154" stroke="#eee"/><text x="914.2857142857144" y="174" font-size="13" text-anchor="middle" fill="#777">10</text>
+<line x1="1057.1428571428573" y1="104" x2="1057.1428571428573" y2="154" stroke="#eee"/><text x="1057.1428571428573" y="174" font-size="13" text-anchor="middle" fill="#777">12</text>
+<line x1="1200.0000000000002" y1="104" x2="1200.0000000000002" y2="154" stroke="#eee"/><text x="1200.0000000000002" y="174" font-size="13" text-anchor="middle" fill="#777">14</text>
+<line x1="1342.8571428571431" y1="104" x2="1342.8571428571431" y2="154" stroke="#eee"/><text x="1342.8571428571431" y="174" font-size="13" text-anchor="middle" fill="#777">16</text>
+<text x="825.0" y="196" font-size="14" text-anchor="middle" fill="#555">นาที</text>
+<rect x="30" y="110" width="1440" height="44" fill="#fff"/>
+<text x="190" y="138" font-size="16" text-anchor="end" fill="#333">yolo1</text>
+<rect x="200.0" y="116" width="355.1428571428572" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="377.5714285714286" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">B02</text>
+<rect x="557.1428571428572" y="116" width="890.8571428571428" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="1002.5714285714287" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">B06</text>
+<rect x="30" y="225" width="24" height="24" rx="6" fill="#7c3aed"/><text x="42" y="243" font-size="14" text-anchor="middle">🧠</text><text x="62" y="242" font-size="16" fill="#333">yolo · Claude 1 บัญชี</text>
+<rect x="265" y="225" width="24" height="24" rx="6" fill="#059669"/><text x="277" y="243" font-size="14" text-anchor="middle">⚙️</text><text x="297" y="242" font-size="16" fill="#333">cyolo · Codex 1 บัญชี</text>
+<rect x="500" y="225" width="24" height="24" rx="6" fill="#db2777"/><text x="512" y="243" font-size="14" text-anchor="middle">🖼️</text><text x="532" y="242" font-size="16" fill="#333">image · Codex สร้างภาพ</text>
+<rect x="744" y="225" width="24" height="24" rx="6" fill="#2563eb"/><text x="756" y="243" font-size="14" text-anchor="middle">🔍</text><text x="776" y="242" font-size="16" fill="#333">review · ผู้ทำ + ผู้ตรวจคนละ CLI</text>
+<rect x="1078" y="225" width="24" height="24" rx="6" fill="#0891b2"/><text x="1090" y="243" font-size="14" text-anchor="middle">🏆</text><text x="1110" y="242" font-size="16" fill="#333">best_of · N ตัวเลือก + ผู้ตัดสิน</text>
+<text x="30" y="270" font-size="16" fill="#e8590c" font-weight="700">▭ ขอบส้ม = สายวิกฤต</text>
+<text x="1470" y="212"font-size="15" text-anchor="end" fill="#555">รวม ≈ 17.5 นาที · เส้นประ = บล็อกเดียวกันที่ใช้หลายบัญชี</text>
+</svg>
