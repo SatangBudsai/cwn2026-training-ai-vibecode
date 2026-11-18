@@ -1,0 +1,11 @@
+import{chromium}from'playwright';import{mkdir,writeFile,readFile}from'node:fs/promises';import{resolve}from'node:path';import{cases}from'./cases.mjs';import{route}from'./route.mjs';
+const [base,outArg]=process.argv.slice(2);if(!base||!outArg)throw Error('Usage: node run.mjs <BASE_URL> <output-folder>');
+const out=resolve(outArg);await mkdir(out,{recursive:true});const started=new Date();const browser=await chromium.launch({headless:true});const results=[];
+try{for(const t of cases.filter(t=>!process.env.ACCEPT_IDS||process.env.ACCEPT_IDS.split(',').includes(t.id))){const context=await browser.newContext({viewport:{width:1366,height:900},locale:'th-TH'});const p=await context.newPage();p.setDefaultTimeout(4500);const start=Date.now();let stage='standard-route';let upstreamError=false;
+// No retries, reloads, internal URL navigation, login or seller navigation.
+try{await route(p,base);upstreamError=await p.getByText('อ๊ะ มีบางอย่างผิดพลาด',{exact:true}).isVisible();stage='assertion';await t.fn(p);results.push({id:t.id,status:'ผ่าน',reason:'ตรวจผ่านหน้าจอจริง',durationMs:Date.now()-start,upstreamError});}
+catch(e){results.push({id:t.id,status:'ไม่ผ่าน',reason:(upstreamError?'Google แสดง อ๊ะ มีบางอย่างผิดพลาด; ':'')+e.message,stage,durationMs:Date.now()-start,upstreamError});}
+await p.screenshot({path:resolve(out,t.id+'.png'),fullPage:true}).catch(()=>{});await writeFile(resolve(out,t.id+'.yml'),await p.locator('body').ariaSnapshot().catch(()=>''));await context.close();await writeFile(resolve(out,'results.json'),JSON.stringify(results,null,2));console.log(t.id,results.at(-1).status,results.at(-1).reason.split('\n')[0]);}}
+finally{await browser.close();await writeFile(resolve(out,'timing.json'),JSON.stringify({baseURL:base,startedAt:started.toISOString(),endedAt:new Date().toISOString(),durationMs:Date.now()-started.getTime(),retries:0,tests:results.length},null,2));}
+
+try{const meta=JSON.parse(await readFile(new URL('./META.json',import.meta.url)));const eligible=results.filter(x=>meta.valid.includes(x.id));const failed=eligible.filter(x=>x.status!=='ผ่าน').map(x=>x.id);await writeFile(resolve(out,'gate.json'),JSON.stringify({validTested:eligible.length,excluded:results.length-eligible.length,failed,passed:failed.length===0},null,2));if(failed.length)process.exitCode=1;}catch(e){if(e.code!=='ENOENT')throw e;}

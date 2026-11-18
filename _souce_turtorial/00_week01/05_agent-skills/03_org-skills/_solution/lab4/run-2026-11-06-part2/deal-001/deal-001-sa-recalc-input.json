@@ -1,0 +1,63 @@
+{
+  "deal": "deal-001",
+  "customer": "ธนาคารนครหลวงพัฒนา จำกัด (มหาชน) — ฝ่ายพัฒนาช่องทางสาขา",
+  "project": "ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114)",
+  "prepared_by": "SA (sa-ton) — ขอให้ fin-joy คิดใหม่ตาม approval.md รอบ 4 ดูเหตุผลใน deal-001-sa-review.md และ deal-001-sa-round4-to-md.md",
+  "rounding_warning": "qty ใน lines เป็นค่าก่อน buffer · 50 × 1.1 ในทศนิยมของสคริปต์ปัดขึ้นเป็น 56 ได้ 338 วันและ 4,815,000 ซึ่งผิด ค่าที่ถูกดู expected_after_buffer",
+  "expected_after_buffer": {
+    "MD-SA": 22, "MD-PM": 47, "MD-DEV-SR": 55, "MD-DEV": 101, "MD-UX": 14, "MD-QA": 47, "MD-DEVOPS": 18, "MD-ML": 33,
+    "total_man_day": 337, "list_price_thb": 5850000, "cost_thb": 3784100, "margin_pct": 21.2
+  },
+  "date": "2026-11-06",
+  "fixed_price": true,
+  "budget_thb": 4800000,
+  "lines": [
+    {"code": "MD-SA", "qty": 20},
+    {"code": "MD-PM", "qty": 42},
+    {"code": "MD-DEV-SR", "qty": 50},
+    {"code": "MD-DEV", "qty": 91},
+    {"code": "MD-UX", "qty": 12},
+    {"code": "MD-QA", "qty": 42},
+    {"code": "MD-DEVOPS", "qty": 16},
+    {"code": "MD-ML", "qty": 30},
+    {"code": "CL-M", "qty": 12, "note": "production ปีแรก"},
+    {"code": "CL-S", "qty": 6, "note": "dev/UAT ระหว่างโครงการ"},
+    {"code": "LIC-LINE", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-APM", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "ปีแรก"}
+  ],
+  "external": [],
+  "discount_thb": 1050000,
+  "discount_reason": "ปิดส่วนต่างให้ราคาเท่าเพดานงบ 4,800,000 ตาม TOR ข้อ 6 — ยังไม่มีผู้อนุมัติ ใช้เพื่อคำนวณเท่านั้น",
+  "assumptions": [
+    "man-day ก่อน buffer ประเมินโดย SA จากเอกสาร ยังไม่เห็นโค้ดหรือ timesheet จริง",
+    "ใช้ได้เมื่อ reuse ลด Dev + Senior ได้ 45 วันและยืนยันสิทธิ์แล้ว ซึ่งตอนนี้ยังไม่ยืนยัน",
+    "ชุดหลักยังไม่รวม CL-M ก่อนนำร่อง ค่าเปลี่ยนจุดที่อยู่นอกไทย (ถ้ามี) ค่าผู้รับจ้าง (ถ้ามี) และ hosting/license ที่หมดก่อน MA ดูกรณีเพิ่มใน cases_to_check"
+  ],
+  "cases_to_check": [
+    {
+      "name": "CL-M ก่อนนำร่อง 2 เดือน",
+      "change": "CL-M จาก 12 เป็น 14 เดือน ราคารวมคง 4,800,000",
+      "sa_expected": {"discount_thb": 1140000, "cost_thb": 3848100, "margin_pct": 19.8}
+    },
+    {
+      "name": "CL-M ก่อนนำร่อง 2 เดือน + เรารับ hosting/license ช่วงหมดก่อน MA",
+      "change": "กรณีแรก + ต้นทุนช่วง 18 พ.ค.–23 มิ.ย. 2028 (37 วัน) ราว 62,100 ที่ 51,000/เดือน โดยไม่เก็บเงินธนาคาร",
+      "sa_expected": {"discount_thb": 1140000, "cost_thb": 3910200, "margin_pct": 18.5}
+    },
+    {
+      "name": "เปิดสาขาด้วยการตั้งค่า (SA เสนอ รอ ops-art ยืนยัน)",
+      "change": "MD-DEVOPS ก่อน buffer จาก 16 เป็น 18 หลัง buffer 20 รวม 339 วัน ราคารวมคง 4,800,000 ฐานคิดงวดคง 3,438,000",
+      "sa_expected": {"discount_thb": 1078000, "cost_thb": 3802100, "margin_pct": 20.8}
+    },
+    {
+      "name": "deploy เต็มทุกคืนเปิดสาขา (ถ้า ops-art ไม่รับการตั้งค่า)",
+      "change": "MD-DEVOPS ก่อน buffer จาก 16 เป็น 21 หลัง buffer 24 และ MD-QA ก่อน buffer จาก 42 เป็น 43 หลัง buffer 48 รวม 344 วัน ราคารวมคง 4,800,000 ฐานคิดงวดคง 3,438,000",
+      "sa_expected": {"discount_thb": 1143000, "cost_thb": 3843900, "margin_pct": 19.9}
+    }
+  ],
+  "decisions": [
+    "ดูเหตุผลและกรณีอื่นใน deal-001-sa-review.md ข้อ 1–2"
+  ]
+}

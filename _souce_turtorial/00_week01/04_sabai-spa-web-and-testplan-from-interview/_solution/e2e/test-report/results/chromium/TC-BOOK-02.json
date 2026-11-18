@@ -1,0 +1,78 @@
+{
+  "id": "TC-BOOK-02",
+  "title": "TC-BOOK-02 รอบเริ่ม 10:00 ห่าง 30 นาที จบไม่เกิน 22:00 ทั้งรายการรอบและยิงตรง",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "S01: 09:30 ✗ · 10:00 ✓ · 10:15 ✗ · 10:30 ✓ · 20:30 ✓ · 21:00 ✓ (21:00 + 60 นาที = 22:00) · 21:30 ✗ (21:30 + 60 นาที = 22:30)\nS02: 20:00 ✓ · 20:30 ✓ (20:30 + 90 นาที = 22:00) · 21:00 ✗ (21:00 + 90 นาที = 22:30)\nP01: 19:30 ✓ · 20:00 ✓ (20:00 + 120 นาที = 22:00) · 20:30 ✗ (20:30 + 120 นาที = 22:30)\nS04: 20:30 ✓ · 21:00 ✗\nK01: 21:00 ✓ · 21:30 ✗\nS03, S05, S06, S07: 21:00 ✓ · 21:30 ✗\nรอบ ✗ ไม่อยู่ในรายการรอบ · ยิงตรง 3 ค่าถูกปฏิเสธด้วยสถานะ 4xx\nค่าควบคุม 10:00 สำเร็จ 2xx · หลังร้านมีการจอง 17 มิ.ย. 1 รายการ คือ 10:00",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 288,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.9 · [D] §1 นาที · [R] E05–E18",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 288,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-02, BR-01, BR-02",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 288,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R01, R03",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 288,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 288,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 288,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 49035,
+  "at": "2026-11-06T02:51:20.051Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. ในฐานะแขก เลือกแต่ละบริการและวันที่ 17 มิ.ย. แล้วจดรายการรอบ",
+    "2. เข้าสู่ระบบ U01 เลือก K01 ด้วย C01 แล้วจดรอบ 21:00 และ 21:30",
+    "3. ออกจากระบบ U01 แล้วจอง S01 10:00 แบบแขก เพื่อดึงคำขอจาก Network แล้วล็อกและรีเซ็ตใหม่",
+    "4. ยิงแบบแขก: S01 รอบ 09:30, 10:15, 21:30 แล้วปิดด้วยค่าควบคุม 10:00",
+    "5. เข้า /th/admin นับการจองวันที่ 17 มิ.ย. แล้วรีโหลด"
+  ]
+}

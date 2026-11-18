@@ -1,0 +1,40 @@
+{
+ "note": "สถานการณ์โควตาของบทเรียน KC-QUEST (ค่าสมมติ ตั้งใจให้แต่ละบัญชีมีจุดเด่นจุดด้อยต่างกัน)",
+ "accounts": [
+  {
+   "account": "yolo1",
+   "session_left": 6,
+   "week_left": 80,
+   "week_reset_h": 130,
+   "note": "ถัง 5 ชม. ใกล้หมด"
+  },
+  {
+   "account": "yolo2",
+   "session_left": 90,
+   "week_left": 45,
+   "week_reset_h": 20,
+   "note": "ถังสัปดาห์จะรีเซ็ตใน 20 ชม."
+  },
+  {
+   "account": "yolo3",
+   "session_left": 100,
+   "week_left": 95,
+   "week_reset_h": 150,
+   "note": "เต็มทุกถัง"
+  },
+  {
+   "account": "cyolo1",
+   "session_left": 100,
+   "week_left": 95,
+   "week_reset_h": 150,
+   "note": "เต็มทุกถัง"
+  },
+  {
+   "account": "cyolo2",
+   "session_left": 100,
+   "week_left": 7,
+   "week_reset_h": 100,
+   "note": "ถังสัปดาห์เหลือน้อย"
+  }
+ ]
+}

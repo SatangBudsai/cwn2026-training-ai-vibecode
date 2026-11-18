@@ -1,0 +1,11 @@
+{
+  "name": "product",
+  "version": "1.0.0",
+  "description": "แผนก Product: เขียน PRD และแผนเลิกให้บริการ",
+  "author": {
+    "name": "pm-beam"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

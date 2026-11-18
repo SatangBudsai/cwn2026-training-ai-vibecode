@@ -1,0 +1,21 @@
+﻿### Result
+"calc 5p fee=฿600; change party to 4 without submit -> shows undefined
+calc changed to 5.0 without submit -> shows undefined
+shuttle-book-link -> http://localhost:3000/th/booking pressed party=1
+S01 15.1: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-too-far\"],\"dis\":true,\"modeD\":true,\"dVal\":\"15.1\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}
+S01 15.1 then untick: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"errs\":[],\"dis\":false,\"tog\":false}
+re-tick: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-required\"],\"dis\":true,\"modeD\":true,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}
+switch hotel mode no hotel: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-required\"],\"dis\":true,\"modeD\":false,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}
+H06: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-too-far\"],\"dis\":true,\"modeD\":false,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"H06\",\"hDis\":false,\"tog\":true}
+back to distance with 15.1 kept: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-required\"],\"dis\":true,\"modeD\":true,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}
+distance 1.0 after H06: {\"trans\":\"ค่ารถรับส่ง1 คัน฿0\",\"amt\":\"฿1,000\",\"errs\":[],\"dis\":false,\"modeD\":true,\"dVal\":\"1.0\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}
+hotel mode H06 after 1.0: {\"trans\":\"ค่ารถรับส่ง1 คัน฿0\",\"amt\":\"฿1,000\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-required\"],\"dis\":true,\"modeD\":false,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}
+H04: {\"trans\":\"ค่ารถรับส่ง1 คัน฿300\",\"amt\":\"฿1,300\",\"errs\":[],\"dis\":false,\"modeD\":false,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"H04\",\"hDis\":false,\"tog\":true}
+after back+next: {\"trans\":\"ค่ารถรับส่ง1 คัน฿300\",\"amt\":\"฿1,300\",\"errs\":[],\"dis\":false}
+switch to P01 screen: 2 recap=undefined
+real: H04: {\"trans\":\"ค่ารถรับส่ง1 คัน฿300\",\"amt\":\"฿1,300\",\"errs\":[],\"dis\":false,\"modeD\":false,\"dVal\":\"\",\"dDis\":false,\"hVal\":\"H04\",\"hDis\":false,\"tog\":true}
+real: untick: {\"trans\":\"ค่ารถรับส่ง฿0\",\"amt\":\"฿1,000\",\"errs\":[],\"dis\":false,\"tog\":false}
+real req={\"serviceId\":\"S01\",\"partySize\":1,\"date\":\"2026-07-09\",\"time\":\"20:00\",\"therapistId\":\"ANY\",\"guest\":{\"name\":\"ทดสอบ C4 8\",\"phone\":\"0894000008\"},\"expectedPayAtShop\":1000} -> {\"code\":\"A3LNVWB8\",\"pay\":\"จ่ายหน้าร้าน฿1,000\"}
+stale evidence: {\"trans\":\"ค่ารถรับส่ง1 คัน฿0\",\"amt\":\"฿2,900\",\"stale\":\"ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน\",\"errs\":[\"error-distance-too-far\"],\"dis\":true,\"modeD\":true,\"dVal\":\"15.1\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false}
+guest S01x4 12: {\"trans\":\"ค่ารถรับส่ง1 คัน฿300\",\"amt\":\"฿3,900\",\"errs\":[],\"dis\":false,\"modeD\":true,\"dVal\":\"12\",\"dDis\":false,\"hVal\":\"\",\"hDis\":false,\"tog\":true}"
+

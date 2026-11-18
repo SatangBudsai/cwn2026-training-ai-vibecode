@@ -1,0 +1,37 @@
+# docker-compose.yml — รัน devtools container (JupyterLab + Docker-in-Docker · ไม่มี SSH)
+#
+#   docker compose up -d          # ใช้ image จาก Docker Hub (multi-account:1.0)
+#   docker compose up -d --build  # build จาก Dockerfile ในโฟลเดอร์นี้แทน
+#   docker compose down           # หยุดและลบ container (ข้อมูลใน ./workspace ยังอยู่)
+#
+# ปรับค่าได้ผ่าน environment หรือไฟล์ .env ข้าง ๆ (ทุกค่ามี default):
+#   JUPYTER_PORT=8888  JUPYTER_PASSWORD=   (ว่าง = ไม่มีรหัสผ่าน)
+#
+# env_file: /root/workspace/DGX_2024/.env ถูกโหลดเป็น environment ของ container
+# (เห็นใน terminal / kernel ของ JupyterLab และ docker exec)
+
+services:
+  multi-account:
+    image: multi-account:1.0
+    build: .
+    container_name: multi-account
+    hostname: multi-account
+    privileged: true            # จำเป็นสำหรับ Docker-in-Docker (dockerd ข้างใน)
+    stdin_open: true            # -i
+    tty: true                   # -t  → start.sh จะเปิด bash ให้เมื่อ attach
+    restart: unless-stopped
+    env_file:                   # โหลด credential ส่วนตัว (HF_TOKEN, GITHUB_TOKEN, DOCKER_*, ...) เข้า container
+      - path: /root/workspace/DGX_2024/.env
+        required: false         # ไม่มีไฟล์ก็รันได้ (เช่นบนเครื่องอื่น)
+    environment:
+      JUPYTER_PASSWORD: ${JUPYTER_PASSWORD:-}   # ว่าง = JupyterLab ไม่ถามรหัสผ่าน
+    ports:
+      - "${JUPYTER_PORT:-8888}:8888"  # JupyterLab → http://localhost:8888  (ไม่มีรหัสผ่าน)
+    volumes:
+      - ./workspace:/workspace        # งานของนักศึกษาอยู่บน host ไม่หายเมื่อลบ container
+      - devtools-dind:/var/lib/docker # image/container ของ Docker-in-Docker
+      - ai-accounts:/root/ai-accounts # บัญชี AI (credential/config/session) อยู่รอดเมื่อลบ container
+
+volumes:
+  devtools-dind:
+  ai-accounts:

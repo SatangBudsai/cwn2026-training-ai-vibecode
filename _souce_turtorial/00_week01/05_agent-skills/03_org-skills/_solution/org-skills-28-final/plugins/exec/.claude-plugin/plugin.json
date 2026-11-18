@@ -1,0 +1,11 @@
+{
+  "name": "exec",
+  "version": "1.0.0",
+  "description": "แผนก MD / ผู้บริหาร: อนุมัติดีล สไลด์ผู้บริหาร และรีวิวของผู้บริหารสาย",
+  "author": {
+    "name": "exec-ploy"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

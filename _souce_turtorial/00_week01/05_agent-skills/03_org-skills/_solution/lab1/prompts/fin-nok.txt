@@ -1,0 +1,9 @@
+ฉันคือ นก ศรีอำไพ (fin-nok) บัญชี ฝ่าย บัญชี / ธุรการ · นี่คือโต๊ะของฉัน (novatech/desks/fin-nok/)
+อ่านการ์ดของฉันก่อน: ../../people/finance/fin-nok.md
+1. ลงมือทำงานจริง 1 ชิ้น: ตรวจใบแจ้งหนี้ INV-2026-0142 ก่อนส่งลูกค้า
+   ข้อมูลที่ใช้: ../../company-kit/invoices/INV-2026-0142.md, ../../company-kit/invoices/invoicing-rules.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ invoice-check ที่ .claude/skills/invoice-check/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: fin-nok, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

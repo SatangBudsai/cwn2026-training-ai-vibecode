@@ -1,0 +1,7 @@
+# ไฟล์ที่ผู้เรียนสร้างระหว่างทำ LAB ไม่ขึ้น git
+*
+!.gitignore
+!interview/
+!interview/**
+!brand-kit/
+!brand-kit/**

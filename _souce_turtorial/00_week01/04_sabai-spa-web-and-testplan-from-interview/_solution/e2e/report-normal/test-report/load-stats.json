@@ -1,0 +1,146 @@
+[
+  {
+    "label": "4 ชุดพร้อมกัน (ไม่ได้จด CPU เครื่อง)",
+    "at": "2026-11-06T02:16:44.550Z",
+    "containers": 8,
+    "containerCpuPercent": 28.2,
+    "containerMemMiB": 693,
+    "hostLogicalCpus": 32,
+    "hostLoadedMemGiB": 58.4,
+    "hostTotalMemGiB": 125.4,
+    "rows": [
+      {
+        "name": "sabai-web-4",
+        "cpu": "0.01%",
+        "mem": "90.49MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-4",
+        "cpu": "0.05%",
+        "mem": "36.69MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-3",
+        "cpu": "14.09%",
+        "mem": "133.6MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-3",
+        "cpu": "0.69%",
+        "mem": "51.9MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-2",
+        "cpu": "10.63%",
+        "mem": "126.1MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-2",
+        "cpu": "0.03%",
+        "mem": "51.1MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-1",
+        "cpu": "2.11%",
+        "mem": "138MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-1",
+        "cpu": "0.62%",
+        "mem": "64.77MiB / 61.5GiB"
+      }
+    ]
+  },
+  {
+    "label": "8 ชุดพร้อมกัน (CPU เครื่อง 66% · Chromium ราว 8 GiB)",
+    "at": "2026-11-06T02:18:28.600Z",
+    "containers": 16,
+    "containerCpuPercent": 89.6,
+    "containerMemMiB": 1726,
+    "hostLogicalCpus": 32,
+    "hostLoadedMemGiB": 62.4,
+    "hostTotalMemGiB": 125.4,
+    "rows": [
+      {
+        "name": "sabai-web-8",
+        "cpu": "0.00%",
+        "mem": "128MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-8",
+        "cpu": "0.04%",
+        "mem": "50.15MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-7",
+        "cpu": "2.05%",
+        "mem": "176.5MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-7",
+        "cpu": "2.74%",
+        "mem": "52.34MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-6",
+        "cpu": "5.88%",
+        "mem": "152.2MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-6",
+        "cpu": "12.14%",
+        "mem": "45.59MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-5",
+        "cpu": "44.72%",
+        "mem": "130.8MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-5",
+        "cpu": "0.91%",
+        "mem": "53.55MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-4",
+        "cpu": "7.79%",
+        "mem": "173.6MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-4",
+        "cpu": "0.54%",
+        "mem": "49.12MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-3",
+        "cpu": "0.01%",
+        "mem": "130.8MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-3",
+        "cpu": "0.03%",
+        "mem": "56.12MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-2",
+        "cpu": "12.15%",
+        "mem": "224.1MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-2",
+        "cpu": "0.53%",
+        "mem": "55.09MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-1",
+        "cpu": "0.00%",
+        "mem": "184.9MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-1",
+        "cpu": "0.02%",
+        "mem": "62.88MiB / 61.5GiB"
+      }
+    ]
+  }
+]

@@ -1,0 +1,75 @@
+{
+ "score": 0.714,
+ "checks": [
+  {
+   "id": "fixed_A5",
+   "pass": true,
+   "note": "TC-CHK-04 ผ่านแล้ว"
+  },
+  {
+   "id": "fixed_B5",
+   "pass": false,
+   "note": "TC-CHK-01 ยังล้ม: getByRole('heading', { name: 'ชำระเงิน', level: 1 }) element(s) not found · expected visible"
+  },
+  {
+   "id": "fixed_C5",
+   "pass": true,
+   "note": "TC-CART-04 ผ่านแล้ว"
+  },
+  {
+   "id": "no_regression",
+   "pass": true,
+   "note": "TC อื่นผ่านครบ 38 เทสต์"
+  },
+  {
+   "id": "tests_green",
+   "pass": true,
+   "note": "ผ่านครบ 3 เทสต์"
+  },
+  {
+   "id": "caught_A5",
+   "pass": true,
+   "note": "เทสต์ TC-CHK-04 ล้มบนเว็บที่มีบั๊ก"
+  },
+  {
+   "id": "caught_B5",
+   "pass": false,
+   "note": "ไม่มีเทสต์ที่ชื่อมี TC-CHK-01"
+  },
+  {
+   "id": "caught_C5",
+   "pass": true,
+   "note": "เทสต์ TC-CART-04 ล้มบนเว็บที่มีบั๊ก"
+  },
+  {
+   "id": "reported_A5",
+   "pass": true,
+   "note": "รายงาน TC-CHK-04 แล้ว"
+  },
+  {
+   "id": "reported_B5",
+   "pass": false,
+   "note": "ไม่มีแถวที่คอลัมน์แรกเป็น TC-CHK-01"
+  },
+  {
+   "id": "reported_C5",
+   "pass": true,
+   "note": "รายงาน TC-CART-04 แล้ว"
+  },
+  {
+   "id": "no_false_alarm",
+   "pass": true,
+   "note": "ทุกแถวตรงกับบั๊กที่ฝัง (3 แถว)"
+  },
+  {
+   "id": "evidence",
+   "pass": false,
+   "note": "ไม่มี evidence/*<TC>*.png (>5KB) ของ TC-CHK-01"
+  },
+  {
+   "id": "plan_untouched",
+   "pass": true,
+   "note": "ตรงกับต้นฉบับ"
+  }
+ ]
+}

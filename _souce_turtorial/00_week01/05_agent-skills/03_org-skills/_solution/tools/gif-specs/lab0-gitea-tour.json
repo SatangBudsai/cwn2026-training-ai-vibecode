@@ -1,0 +1,140 @@
+{
+ "w": 1280,
+ "h": 720,
+ "fps": 6,
+ "outW": 1000,
+ "scenes": [
+  {
+   "img": "lab0-gif-gitea.png",
+   "dur": 4
+  },
+  {
+   "img": "login.png",
+   "dur": 4,
+   "browser": "http://localhost:3300/user/login",
+   "step": "Gitea จริง",
+   "title": "⑦ เปิดเว็บ http://localhost:3300",
+   "sub": "ล็อกอินแอดมินด้วย ADMIN_USER / ADMIN_PASSWORD ในไฟล์ .env.example"
+  },
+  {
+   "img": "org.png",
+   "dur": 7,
+   "browser": "http://localhost:3300/novatech",
+   "hl": [
+    [
+     548,
+     262,
+     180,
+     40
+    ],
+    [
+     758,
+     262,
+     150,
+     40
+    ],
+    [
+     40,
+     430,
+     280,
+     36
+    ]
+   ],
+   "step": "Gitea จริง",
+   "title": "⑧ องค์กรโนวาเทค: Members 29 · Teams 13 · ยังไม่มี repo",
+   "sub": "29 = พนักงาน 28 + แอดมิน · 13 = 11 แผนก + leads + Owners (Gitea สร้างเอง) · repo แรกมาใน LAB 2"
+  },
+  {
+   "img": "teams.png",
+   "dur": 6,
+   "browser": "http://localhost:3300/org/novatech/teams",
+   "hl": [
+    [
+     980,
+     428,
+     893,
+     218
+    ],
+    [
+     980,
+     690,
+     893,
+     218
+    ]
+   ],
+   "step": "Gitea จริง",
+   "title": "⑨ Teams: 1 แผนก = 1 ทีม",
+   "sub": "dev 3 คน · devops 2 คน · exec 5 คน (MD · ผู้บริหารสาย 3 คน · ผู้ช่วยผู้บริหาร) · ทุกทีมยังมี 0 repositories"
+  },
+  {
+   "img": "team-sales.png",
+   "dur": 6,
+   "browser": "http://localhost:3300/org/novatech/teams/sales",
+   "hl": [
+    [
+     750,
+     515,
+     1120,
+     272
+    ],
+    [
+     70,
+     585,
+     615,
+     200
+    ]
+   ],
+   "step": "Gitea จริง",
+   "title": "⑩ ทีม sales: นิดา (หัวหน้า) · กฤต · มุก (น้องใหม่)",
+   "sub": "ทีมได้สิทธิ์เขียนทุก repo ของบริษัท (Code · Pull Requests = Write) → ใช้เปิด PR ใน LAB 5"
+  },
+  {
+   "img": "team-leads.png",
+   "dur": 6,
+   "browser": "http://localhost:3300/org/novatech/teams/leads",
+   "hl": [
+    [
+     40,
+     410,
+     670,
+     50
+    ],
+    [
+     750,
+     340,
+     380,
+     50
+    ]
+   ],
+   "step": "Gitea จริง",
+   "title": "⑪ ทีม leads: หัวหน้าแผนก 11 คน = ผู้ดูแล skill",
+   "sub": "เป็น CODEOWNER รีวิว PR ของแผนกตัวเอง (LAB 2 และ LAB 5)"
+  },
+  {
+   "img": "members.png",
+   "dur": 5,
+   "browser": "http://localhost:3300/org/novatech/members",
+   "hl": [
+    [
+     130,
+     355,
+     360,
+     30
+    ],
+    [
+     130,
+     725,
+     390,
+     30
+    ]
+   ],
+   "step": "Gitea จริง",
+   "title": "⑫ Members: 1 บัญชี = 1 พนักงาน",
+   "sub": "ชื่อ user ตรงกับการ์ดใน people/ เช่น cco-wit, dev-mew · ล็อกอินเป็นพนักงานด้วยรหัส LAB_PASSWORD"
+  },
+  {
+   "img": "lab0-gif-outro.png",
+   "dur": 4.5
+  }
+ ]
+}

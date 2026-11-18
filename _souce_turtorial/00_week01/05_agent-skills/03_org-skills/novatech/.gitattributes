@@ -1,0 +1,2 @@
+# init.sh runs inside a Linux container: CRLF from Windows clones (core.autocrlf=true) makes it fail with "set: illegal option -"
+*.sh text eol=lf

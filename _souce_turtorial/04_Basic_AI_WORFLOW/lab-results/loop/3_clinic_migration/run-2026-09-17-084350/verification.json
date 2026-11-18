@@ -1,0 +1,86 @@
+{
+  "phase": "phase2",
+  "timestamp_utc": "2026-09-17T08:50:20.995702+00:00",
+  "method": "New Playwright Chromium run; semantic review recorded separately in trace.md",
+  "diagrams": [
+    {
+      "index": 1,
+      "rendered": true
+    },
+    {
+      "index": 2,
+      "rendered": true
+    },
+    {
+      "index": 3,
+      "rendered": true
+    },
+    {
+      "index": 4,
+      "rendered": true
+    },
+    {
+      "index": 5,
+      "rendered": true
+    }
+  ],
+  "mockup": {
+    "1440": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "consent": true,
+        "line-booking": true,
+        "no_page_overflow": true,
+        "simulation_label": true,
+        "raw_dates_preserved": true,
+        "all_review_rows": true,
+        "identity_not_merged": true,
+        "no_console_page_errors": true,
+        "consent_unchecked": true,
+        "line_label": true
+      },
+      "errors": []
+    },
+    "390": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "consent": true,
+        "line-booking": true,
+        "no_page_overflow": true,
+        "simulation_label": true,
+        "raw_dates_preserved": true,
+        "all_review_rows": true,
+        "identity_not_merged": true,
+        "no_console_page_errors": true,
+        "consent_unchecked": true,
+        "line_label": true
+      },
+      "errors": []
+    }
+  },
+  "weekday_evidence": {
+    "2026-03-09": "Monday",
+    "2026-09-03": "Thursday"
+  },
+  "phone_normalization": {
+    "081-234-5678": "0812345678",
+    "0812345678": "0812345678",
+    "081 234 5678": "0812345678"
+  },
+  "automated_checks_pass": true,
+  "artifact_sha256": {
+    "output.md": "dd1077976439abdb9b58d44bdb7e3b0ffdb795ea3eea03efe7c06dc0edba5e4c",
+    "mockup.html": "928d39ef8e8db1580f2f504dfbf8e2de5624058290891b98816e8becdb35e4ba",
+    "prompt-used.md": "f4c68ff01b2731e6eb11562525a30d906b058a664080dfecfdbc5899a3064572"
+  },
+  "criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS"
+  },
+  "semantic_review": "trace.md; Codex in same conversation, not independent review"
+}

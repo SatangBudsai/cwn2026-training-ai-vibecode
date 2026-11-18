@@ -1,0 +1,11 @@
+{
+  "name": "shared",
+  "version": "1.0.1",
+  "description": "งานข้ามแผนกที่ไม่มีแผนกไหนเป็นเจ้าของ เช่น บันทึกประชุม",
+  "author": {
+    "name": "plat-ken"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

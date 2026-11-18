@@ -1,0 +1,47 @@
+{
+  "wall_secs": 1143.2,
+  "ok": 2,
+  "failed": 1,
+  "jobs": [
+    {
+      "id": "g1-airline",
+      "account": "yolo2",
+      "model": "opus",
+      "effort": "high",
+      "effort_from": "difficulty 3",
+      "ok": true,
+      "result": "I've filled in `FlightView.airlineLabel` in my group's files and committed it as `6ee9a52` on branch g1. With it, the differential test now scores **8/8**, up from 4/8 in v3. Those scores were measured with a temporary edit to `FlightRow.tsx` that made the row's aria-label and airline line use `f.airlineLabel`. I reverted that file before committing, so group 3 still needs to make that change in their own code.\n\n**Files changed**\n- `scripts/v4/extract_airline_labels.py` (new): reads the 3 GetShoppingResults responses in the HAR and writes `data/airline-labels.json`.\n  - Each label is the airline names joined by \", \", then \" · \" and the partners when there are any.\n  - Keys match `flights-all.json`: all flight numbers on the trip, plus `#2` when two trips share the same flight numbers (one GA trip has this).\n  - It doesn't read anything from the original site's UI.\n- `data/airline-labels.json` (new): 300 labels, one for every flight in `flights-all.json`.\n- `src/lib/flights.ts`: `getFlights()` sets `airlineLabel` from the JSON file. A flight with no entry falls back to its real airline names; a \"multi\" flight uses the names of the airlines on its legs. `f.airlines` is unchanged, and I didn't touch the DB schema or seed.\n\n**Something not in the brief:** the original also shows \"· ดำเนินการโดย Air Japan / ANA Wings\" on 11 ANA rows. That text isn't in the partner array; it comes from the \"operated by\" field of each leg in the HAR, so the script reads it from there too.\n\n**Results**\n- **Answer key** (`diff-results.json` → `original.S3.data.rows`): 300/300 rows match on dep, price and airline, in order (checked offline).\n- **Acceptance: 74/82.** The failures are F05, F08, F14, F16, B20, B22, C13 and C31, the same set as v3, so nothing went backwards. C15 and B17 pass.\n- **Differential: 8/8.** S1 to S8 all match; the raw results are in `/tmp/diff-g1/diff-results.json`.\n\n**Not done:** nothing left within this group's task. The containers are shut down (`down -v`).",
+      "error": "",
+      "cost_usd": 1.4502333999999997,
+      "model_used": "claude-opus-5-5",
+      "secs": 684.3
+    },
+    {
+      "id": "g2-shell",
+      "account": "yolo3",
+      "model": "opus",
+      "effort": "high",
+      "effort_from": "difficulty 3",
+      "ok": true,
+      "result": "Group 2 is done and committed on branch g2 as `85058dd`. Visual diff dropped from 8.32% to **6.54%** (target was under 7%), acceptance holds at 74/82, and the search landmark now exists on both pages. The container has been shut down with `down -v`.\n\n**Files changed**\n- `src/components/SearchForm.tsx`: the form is now `role=\"search\"` with aria-label \"การค้นหาเที่ยวบิน\", on both the home page and the results page. Names and roles of all controls inside are unchanged. I added a `compact` variant for the results page: no card, and the search button sits on the ticket-type row via CSS. In the DOM it is still last, so tab order is unchanged.\n- `src/app/search/page.tsx`:\n  - The content column is now 1024px wide, matching the reference.\n  - The h1 route title and summary line are now a one-line strip above the form.\n- `src/components/Insights.tsx`: the price-insights box is now a single-line banner like the reference. The price range, reference price, price bar and chart appear when you click \"ดูประวัติราคา\".\n- `src/app/globals.css`: I added a v4 section that only uses selectors already in the file (no Results/FlightRow changes). It sets:\n  - the heights and positions of the form, filter chips and tabs to match the reference;\n  - 75px flight rows with columns at the reference x positions;\n  - flatter track and tools rows;\n  - the sort control on the same line as the list heading;\n  - the toast card position;\n  - narrow-screen rules for the compact form.\n\n**Things to check**\n- **Mock-data notice moved down:** the long \"ข้อมูลจำลอง\" disclaimer is now below the results list instead of at the top. The \"ข้อมูลจำลอง · ไม่ชำระเงินจริง\" badge in the sticky header is still always visible, and the text stays inside `main`, so C10 still passes. Please confirm this placement is acceptable.\n- **Price range behind a click:** the range and reference price only show after clicking \"ดูประวัติราคา\", the same as the reference. B26 and F07 pass with this.\n- **Filter chips overflow:** at 1366px wide the last chip, \"ระยะเวลา\", sticks out past the right edge of the column, as in the reference. Below 1100px the chips wrap to a second row.\n\n**Results**\n- **Acceptance: 74/82.** The failures are the same 8 as v3: F08 F14 F16 F05 B20 C13 B22 C31.\n  - One intermediate build broke B26, C12 and F07: the CSS `::after` chevron was being added to the \"ดูประวัติราคา\" button's accessible name. I replaced it with a chevron drawn by a CSS border, and the final build passes again.\n- **Differential: 4/8.** Same as v3. S1, S3, S4 and S7 still fail because airline labels in the list don't match, e.g. \"เจเอแอล\" where the reference shows \"เจเอแอล · บางกอกแอร์เวย์ส\", and \"หลายสายการบิน\". That is the list and data code, outside my files.\n- **Structure:** an aria snapshot of both pages shows `search \"การค้นหาเที่ยวบิน\"`. I did not run `structure/capture.mjs`, because it overwrites the shared snapshots.\n\n**Not done**\n- **Results order:** the reference shows the top 3 flights first, then the price banner and price tracking. Our order is still tabs, then price tracking, the price banner and tools, and then the list, because that order is set in `Results.tsx` (group 3). Most of the remaining visual diff comes from this. Reordering it to match the reference should lower the score further.\n- **Filters in the landmark:** the filter chips are not inside the search landmark the way they are in the reference, also because they live in `Results.tsx`.\n- **Mobile header:** the header wraps badly on narrow screens. This was already the case in v3, and I didn't fix it.",
+      "error": "",
+      "cost_usd": 2.979496400000001,
+      "model_used": "claude-opus-5-5",
+      "secs": 1143.2
+    },
+    {
+      "id": "g3-results",
+      "account": "cyolo1",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "effort_from": "difficulty 3",
+      "ok": false,
+      "result": "",
+      "error": "empty -o answer file",
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_reasoning": null,
+      "secs": 21.7
+    }
+  ]
+}

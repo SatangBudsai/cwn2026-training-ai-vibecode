@@ -1,0 +1,14 @@
+{
+  "name": "sa",
+  "version": "1.0.0",
+  "description": "งาน SA: แปลง TOR เป็น SPEC + TEST-PLAN และวาด architecture ตามมาตรฐาน",
+  "author": {
+    "name": "sa-ton"
+  },
+  "keywords": [
+    "department",
+    "sa",
+    "arch-template",
+    "req-to-spec"
+  ]
+}

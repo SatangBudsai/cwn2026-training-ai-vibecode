@@ -1,0 +1,79 @@
+﻿BEFORE {"U02":{"spend":30000,"pts":0,"tier":"Platinum"},"U03":{"spend":9999,"pts":250,"tier":"Silver"},"U05":{"spend":29999,"pts":100,"tier":"Gold"},"U08":{"spend":10000,"pts":101,"tier":"Gold"},"U09":{"spend":10001,"pts":199,"tier":"Gold"},"U10":{"spend":30001,"pts":200,"tier":"Platinum"},"U11":{"spend":500,"pts":1700,"tier":"Silver"}} {"GIFT-500":"{\"giftCard\":{\"code\":\"GIFT-500\",\"design\":\"ORCHID\",\"imagePath\":\"/brand/giftcard/gc-orchid.jpg\",\"initialValue\":500,\"balance\":500,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}","GIFT-2199":"{\"giftCard\":{\"code\":\"GIFT-2199\",\"design\":\"GOLD\",\"imagePath\":\"/brand/giftcard/gc-gold.jpg\",\"initialValue\":2199,\"balance\":2199,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}","GIFT-2200":"{\"giftCard\":{\"code\":\"GIFT-2200\",\"design\":\"GOLD\",\"imagePath\":\"/brand/giftcard/gc-gold.jpg\",\"initialValue\":2200,\"balance\":2200,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}","GIFT-2201":"{\"giftCard\":{\"code\":\"GIFT-2201\",\"design\":\"GOLD\",\"imagePath\":\"/brand/giftcard/gc-gold.jpg\",\"initialValue\":2201,\"balance\":2201,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}"}
+E104 [U03]: HTTP 200 tier=Silver full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-0 pay=1000 | bal=250 maxSets=2 earn=10 bday=true/false/false/not-birthday-month card=-
+E105 [U08]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=0/-0 net=950 car=0/0 before=950 gc=-0 pay=950 | bal=101 maxSets=1 earn=9 bday=true/false/false/not-birthday-month card=-
+E106 [U09]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=0/-0 net=950 car=0/0 before=950 gc=-0 pay=950 | bal=199 maxSets=1 earn=9 bday=true/false/false/not-birthday-month card=-
+E107 [U05]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=0/-0 net=950 car=0/0 before=950 gc=-0 pay=950 | bal=100 maxSets=1 earn=9 bday=true/false/false/not-birthday-month card=-
+E108 [U02]: HTTP 200 tier=Platinum full=1000 10%TIER=-100 pts=0/-0 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=0 maxSets=0 earn=9 bday=true/false/false/not-birthday-month card=-
+E109 [U10]: HTTP 200 tier=Platinum full=1000 10%TIER=-100 pts=0/-0 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=200 maxSets=2 earn=9 bday=true/false/false/not-birthday-month card=-
+E94 [U05]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=100/-50 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=100 maxSets=1 earn=9 bday=true/false/false/not-birthday-month card=-
+E95 E151 [U08]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=100/-50 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=101 maxSets=1 earn=9 bday=true/false/false/not-birthday-month card=-
+E96 [U09]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=100/-50 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=199 maxSets=1 earn=9 bday=true/false/false/not-birthday-month card=-
+E96+ 199 ask200 [U09]: HTTP 422 points-not-enough: แต้มไม่พอ ต้องมีอย่างน้อย 100 แต้ม
+E97 [U10]: HTTP 200 tier=Platinum full=1000 10%TIER=-100 pts=200/-100 net=800 car=0/0 before=800 gc=-0 pay=800 | bal=200 maxSets=2 earn=8 bday=true/false/false/not-birthday-month card=-
+E98 [U03]: HTTP 200 tier=Silver full=1000 0%NONE=-0 pts=200/-100 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=250 maxSets=2 earn=9 bday=true/false/false/not-birthday-month card=-
+E99 150 [U03]: HTTP 422 points-not-multiple: แลกแต้มได้เป็นชุดละ 100 แต้มเท่านั้น
+E99 ask300 of250 [U03]: HTTP 422 points-not-enough: แต้มไม่พอ ต้องมีอย่างน้อย 100 แต้ม
+pts U02 0pts ask100 [U02]: HTTP 422 points-not-enough: แต้มไม่พอ ต้องมีอย่างน้อย 100 แต้ม
+pts anon [guest]: HTTP 401 points-login-required: กรุณาเข้าสู่ระบบเพื่อแลกแต้ม
+pts 0 [U03]: HTTP 200 tier=Silver full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-0 pay=1000 | bal=250 maxSets=2 earn=10 bday=true/false/false/not-birthday-month card=-
+pts -100 [U03]: HTTP 400 validation: ข้อมูลไม่ถูกต้อง
+pts 100.5 [U03]: HTTP 422 points-not-multiple: แลกแต้มได้เป็นชุดละ 100 แต้มเท่านั้น
+pts "100" [U03]: HTTP 400 validation: ข้อมูลไม่ถูกต้อง
+pts null [U03]: HTTP 200 tier=Silver full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-0 pay=1000 | bal=250 maxSets=2 earn=10 bday=true/false/false/not-birthday-month card=-
+pts 1e9 [U03]: HTTP 422 points-not-enough: แต้มไม่พอ ต้องมีอย่างน้อย 100 แต้ม
+E100 [U11]: HTTP 200 tier=Silver full=800 0%NONE=-0 pts=1500/-750 net=50 car=0/0 before=50 gc=-0 pay=50 | bal=1700 maxSets=16 earn=0 bday=true/false/false/not-birthday-month card=-
+E101 [U11]: HTTP 200 tier=Silver full=800 0%NONE=-0 pts=1600/-800 net=0 car=0/0 before=0 gc=-0 pay=0 | bal=1700 maxSets=16 earn=0 bday=true/false/false/not-birthday-month card=-
+E102 [U11]: HTTP 422 points-exceed-service: ส่วนลดจากแต้มเกินค่าบริการ
+E103 [U11]: HTTP 200 tier=Silver full=800 0%NONE=-0 pts=1600/-800 net=0 car=1/300 before=300 gc=-0 pay=300 | bal=1700 maxSets=16 earn=0 bday=true/false/false/not-birthday-month card=-
+E102+รถ 17ชุด [U11]: HTTP 422 points-exceed-service: ส่วนลดจากแต้มเกินค่าบริการ
+U11 S05 base [U11]: HTTP 200 tier=Silver full=800 0%NONE=-0 pts=0/-0 net=800 car=0/0 before=800 gc=-0 pay=800 | bal=1700 maxSets=16 earn=8 bday=true/false/false/not-birthday-month card=-
+U11 S05 x3 17ชุด [U11]: HTTP 200 tier=Silver full=2400 0%NONE=-0 pts=1700/-850 net=1550 car=0/0 before=1550 gc=-0 pay=1550 | bal=1700 maxSets=17 earn=15 bday=true/false/false/not-birthday-month card=-
+U11 bday S05 12ชุด [U11]: HTTP 200 tier=Silver full=800 20%BIRTHDAY=-160 pts=1200/-600 net=40 car=0/0 before=40 gc=-0 pay=40 | bal=1700 maxSets=12 earn=0 bday=true/true/true/null card=-
+U11 bday S05 13ชุด [U11]: HTTP 422 points-exceed-service: ส่วนลดจากแต้มเกินค่าบริการ
+U09 Gold S05 15ชุด [U09]: HTTP 200 tier=Gold full=800 5%TIER=-40 pts=100/-50 net=710 car=0/0 before=710 gc=-0 pay=710 | bal=199 maxSets=1 earn=7 bday=true/false/false/not-birthday-month card=-
+E129 [U02]: HTTP 200 tier=Platinum full=1000 20%BIRTHDAY=-200 pts=0/-0 net=800 car=0/0 before=800 gc=-0 pay=800 | bal=0 maxSets=0 earn=8 bday=true/true/true/null card=-
+E132 [U02]: HTTP 200 tier=Platinum full=1400 20%BIRTHDAY=-280 pts=0/-0 net=1120 car=0/0 before=1120 gc=-0 pay=1120 | bal=0 maxSets=0 earn=11 bday=true/true/true/null card=-
+E133 [U02]: HTTP 200 tier=Platinum full=1200 20%BIRTHDAY=-240 pts=0/-0 net=960 car=0/0 before=960 gc=-0 pay=960 | bal=0 maxSets=0 earn=9 bday=true/true/true/null card=-
+E134 [U02]: HTTP 200 tier=Platinum full=2000 20%BIRTHDAY=-400 pts=0/-0 net=1600 car=0/0 before=1600 gc=-0 pay=1600 | bal=0 maxSets=0 earn=16 bday=true/true/true/null card=-
+E135 [U02]: HTTP 200 tier=Platinum full=800 20%BIRTHDAY=-160 pts=0/-0 net=640 car=0/0 before=640 gc=-0 pay=640 | bal=0 maxSets=0 earn=6 bday=true/true/true/null card=-
+E136 [U02]: HTTP 200 tier=Platinum full=1500 20%BIRTHDAY=-300 pts=0/-0 net=1200 car=0/0 before=1200 gc=-0 pay=1200 | bal=0 maxSets=0 earn=12 bday=true/true/true/null card=-
+E137 [U02]: HTTP 200 tier=Platinum full=1800 20%BIRTHDAY=-360 pts=0/-0 net=1440 car=0/0 before=1440 gc=-0 pay=1440 | bal=0 maxSets=0 earn=14 bday=true/true/true/null card=-
+E130 [U02]: HTTP 200 tier=Platinum full=2900 0%NONE=-0 pts=0/-0 net=2900 car=1/0 before=2900 gc=-0 pay=2900 | bal=0 maxSets=0 earn=29 bday=false/false/false/service-not-eligible card=-
+E130 nobday [U02]: HTTP 200 tier=Platinum full=2900 0%NONE=-0 pts=0/-0 net=2900 car=1/0 before=2900 gc=-0 pay=2900 | bal=0 maxSets=0 earn=29 bday=false/false/false/service-not-eligible card=-
+E131 K01 [U02]: HTTP 422 course-required: บริการนี้จองได้ด้วยคอร์สเท่านั้น
+bday นอกเดือน U02 1ก.ค. [U02]: HTTP 200 tier=Platinum full=1000 10%TIER=-100 pts=0/-0 net=900 car=0/0 before=900 gc=-0 pay=900 | bal=0 maxSets=0 earn=9 bday=true/false/false/not-birthday-month card=-
+bday U05 ใช้แล้ว [U05]: HTTP 200 tier=Gold full=1000 5%TIER=-50 pts=0/-0 net=950 car=0/0 before=950 gc=-0 pay=950 | bal=100 maxSets=1 earn=9 bday=true/false/false/already-used card=-
+bday U03 ไม่ใช่เดือน [U03]: HTTP 200 tier=Silver full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-0 pay=1000 | bal=250 maxSets=2 earn=10 bday=true/false/false/not-birthday-month card=-
+bday anon [guest]: HTTP 200 tier=null full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-0 pay=1000 | bal=0 maxSets=0 earn=0 bday=false/false/false/guest card=-
+E138 [U08]: HTTP 200 tier=Gold full=3000 5%TIER=-150 pts=0/-0 net=2850 car=0/0 before=2850 gc=-0 pay=2850 | bal=101 maxSets=1 earn=28 bday=true/false/false/not-birthday-month card=-
+E139 [U02]: HTTP 200 tier=Platinum full=4000 10%TIER=-400 pts=0/-0 net=3600 car=0/0 before=3600 gc=-0 pay=3600 | bal=0 maxSets=0 earn=36 bday=true/true/false/null card=-
+E140 [U02]: HTTP 200 tier=Platinum full=4000 20%BIRTHDAY=-800 pts=0/-0 net=3200 car=0/0 before=3200 gc=-0 pay=3200 | bal=0 maxSets=0 earn=32 bday=true/true/true/null card=-
+E141 [U08]: HTTP 200 tier=Gold full=4000 10%GROUP=-400 pts=0/-0 net=3600 car=0/0 before=3600 gc=-0 pay=3600 | bal=101 maxSets=1 earn=36 bday=true/false/false/not-birthday-month card=-
+E142 [U02]: HTTP 200 tier=Platinum full=4000 10%TIER=-400 pts=0/-0 net=3600 car=0/0 before=3600 gc=-0 pay=3600 | bal=0 maxSets=0 earn=36 bday=true/true/false/null card=-
+E143 [guest]: HTTP 200 tier=null full=4000 0%NONE=-0 pts=0/-0 net=4000 car=0/0 before=4000 gc=-0 pay=4000 | bal=0 maxSets=0 earn=0 bday=false/false/false/guest card=-
+E150 [guest]: HTTP 200 tier=null full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-0 pay=1000 | bal=0 maxSets=0 earn=0 bday=false/false/false/guest card=-
+E67 [guest]: HTTP 200 tier=null full=3000 0%NONE=-0 pts=0/-0 net=3000 car=0/0 before=3000 gc=-0 pay=3000 | bal=0 maxSets=0 earn=0 bday=false/false/false/guest card=-
+E68 [guest]: HTTP 200 tier=null full=4000 10%GROUP=-400 pts=0/-0 net=3600 car=0/0 before=3600 gc=-0 pay=3600 | bal=0 maxSets=0 earn=0 bday=false/false/false/guest card=-
+Silver U03 3คน [U03]: HTTP 200 tier=Silver full=3000 0%NONE=-0 pts=0/-0 net=3000 car=0/0 before=3000 gc=-0 pay=3000 | bal=250 maxSets=2 earn=30 bday=true/false/false/not-birthday-month card=-
+U10 กลุ่ม6 [U10]: HTTP 200 tier=Platinum full=6000 10%TIER=-600 pts=0/-0 net=5400 car=0/0 before=5400 gc=-0 pay=5400 | bal=200 maxSets=2 earn=54 bday=true/false/false/not-birthday-month card=-
+กลุ่ม 7 [guest]: HTTP 422 party-too-large-call: จอง 7 คนขึ้นไปในเว็บไม่ได้ กรุณาโทร 02-123-4567
+P01 Plat แต้ม [U10]: HTTP 422 distance-required: กรุณาเลือกโรงแรมหรือกรอกระยะทาง
+P01 Gold [U08]: HTTP 422 distance-required: กรุณาเลือกโรงแรมหรือกรอกระยะทาง
+P01 x3 แขก [guest]: HTTP 422 distance-required: กรุณาเลือกโรงแรมหรือกรอกระยะทาง
+P01 x4 [guest]: HTTP 409 not-enough-therapists: นักบำบัดที่ทำบริการนี้ว่างไม่ครบจำนวนคน
+E157 [U03]: HTTP 200 tier=Silver full=2000 0%NONE=-0 pts=200/-100 net=1900 car=1/300 before=2200 gc=-2199 pay=1 | bal=250 maxSets=2 earn=0 bday=true/false/false/not-birthday-month card=2199>0
+E158 [U03]: HTTP 200 tier=Silver full=2000 0%NONE=-0 pts=200/-100 net=1900 car=1/300 before=2200 gc=-2200 pay=0 | bal=250 maxSets=2 earn=0 bday=true/false/false/not-birthday-month card=2200>0
+E159 [U03]: HTTP 200 tier=Silver full=2000 0%NONE=-0 pts=200/-100 net=1900 car=1/300 before=2200 gc=-2200 pay=0 | bal=250 maxSets=2 earn=0 bday=true/false/false/not-birthday-month card=2201>1
+gc ตัวเล็ก [U03]: HTTP 404 giftcard-not-found: ไม่พบ Gift Card นี้
+gc เว้นวรรค [U03]: HTTP 200 tier=Silver full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-1000 pay=0 | bal=250 maxSets=2 earn=0 bday=true/false/false/not-birthday-month card=2199>1199
+gc ไม่มี [U03]: HTTP 404 giftcard-not-found: ไม่พบ Gift Card นี้
+gc แขก [guest]: HTTP 200 tier=null full=1000 0%NONE=-0 pts=0/-0 net=1000 car=0/0 before=1000 gc=-1000 pay=0 | bal=0 maxSets=0 earn=0 bday=false/false/false/guest card=2199>1199
+วันนี้ [U03]: HTTP 422 same-day-call: จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567
+เกินช่วง [U03]: HTTP 422 date-out-of-range: จองได้ตั้งแต่พรุ่งนี้ถึง 30 วันข้างหน้า
+เปล่า [guest]: HTTP 400 validation: ข้อมูลไม่ถูกต้อง
+service ผิด [guest]: HTTP 404 service-not-found: ไม่พบบริการนี้
+party 0 [guest]: HTTP 400 validation: ข้อมูลไม่ถูกต้อง
+party 1.5 [guest]: HTTP 400 validation: ข้อมูลไม่ถูกต้อง
+AFTER {"U02":{"spend":30000,"pts":0,"tier":"Platinum"},"U03":{"spend":9999,"pts":250,"tier":"Silver"},"U05":{"spend":29999,"pts":100,"tier":"Gold"},"U08":{"spend":10000,"pts":101,"tier":"Gold"},"U09":{"spend":10001,"pts":199,"tier":"Gold"},"U10":{"spend":30001,"pts":200,"tier":"Platinum"},"U11":{"spend":500,"pts":1700,"tier":"Silver"}} {"GIFT-500":"{\"giftCard\":{\"code\":\"GIFT-500\",\"design\":\"ORCHID\",\"imagePath\":\"/brand/giftcard/gc-orchid.jpg\",\"initialValue\":500,\"balance\":500,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}","GIFT-2199":"{\"giftCard\":{\"code\":\"GIFT-2199\",\"design\":\"GOLD\",\"imagePath\":\"/brand/giftcard/gc-gold.jpg\",\"initialValue\":2199,\"balance\":2199,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}","GIFT-2200":"{\"giftCard\":{\"code\":\"GIFT-2200\",\"design\":\"GOLD\",\"imagePath\":\"/brand/giftcard/gc-gold.jpg\",\"initialValue\":2200,\"balance\":2200,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}","GIFT-2201":"{\"giftCard\":{\"code\":\"GIFT-2201\",\"design\":\"GOLD\",\"imagePath\":\"/brand/giftcard/gc-gold.jpg\",\"initialValue\":2201,\"balance\":2201,\"purchasedOn\":\"2026-06-05\",\"expiresOn\":\"2027-06-05\",\"expired\":false,\"usable\":true,\"channel\":\"LINE\",\"paymentStatus\":\"SIMULATED\"}}"}
+SAME true true
+clock {"now":"2026-06-15T10:00:00+07:00","today":"2026-06-15","minBookingDate":"2026-06-16","maxBookingDate":"2026-07-15","locked":true}

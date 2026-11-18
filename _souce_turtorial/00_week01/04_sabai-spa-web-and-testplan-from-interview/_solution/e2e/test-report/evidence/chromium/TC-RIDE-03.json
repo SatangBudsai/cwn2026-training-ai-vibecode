@@ -1,0 +1,175 @@
+{
+  "id": "TC-RIDE-03",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ราคา ฿2,900/คน",
+      "pass": true,
+      "actual": "฿2,900/คน",
+      "shot": "shots/chromium/TC-RIDE-03/001.jpg",
+      "actor": "main",
+      "t": 1865
+    },
+    {
+      "n": 2,
+      "label": "รวม นวดไทย ประคบสมุนไพร รถรับส่ง",
+      "pass": true,
+      "actual": "สิ่งที่รวมในแพ็กเกจ ครบทั้งสามอย่าง 01 นวดไทย นวดไทยแบบดั้งเดิมโดยนักบำบัดของร้าน 02 ประคบสมุนไพร ลูกประคบอุ่นห่อสมุนไพรต่อจากการนวด 03 รถรับส่ง รับส่งระหว่างโรงแรมกับร้าน",
+      "shot": "shots/chromium/TC-RIDE-03/002.jpg",
+      "actor": "main",
+      "t": 2884
+    },
+    {
+      "n": 3,
+      "label": "U05 ส่วนลด ฿0",
+      "pass": true,
+      "actual": "ส่วนลด 0% ไม่มีส่วนลด ฿0",
+      "shot": "shots/chromium/TC-RIDE-03/003.jpg",
+      "actor": "main",
+      "t": 9863
+    },
+    {
+      "n": 4,
+      "label": "U05 Gold · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-03/004.jpg",
+      "actor": "main",
+      "t": 12354
+    },
+    {
+      "n": 5,
+      "label": "U05 Gold · ยอด ฿2,900",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,900",
+      "shot": "shots/chromium/TC-RIDE-03/005.jpg",
+      "actor": "main",
+      "t": 13446
+    },
+    {
+      "n": 6,
+      "label": "U10 ส่วนลด ฿0",
+      "pass": true,
+      "actual": "ส่วนลด 0% ไม่มีส่วนลด ฿0",
+      "shot": "shots/chromium/TC-RIDE-03/006.jpg",
+      "actor": "main",
+      "t": 20301
+    },
+    {
+      "n": 7,
+      "label": "U10 Platinum · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-03/007.jpg",
+      "actor": "main",
+      "t": 22756
+    },
+    {
+      "n": 8,
+      "label": "U10 Platinum · ยอด ฿2,900",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,900",
+      "shot": "shots/chromium/TC-RIDE-03/008.jpg",
+      "actor": "main",
+      "t": 23840
+    },
+    {
+      "n": 9,
+      "label": "U03 Silver · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-03/009.jpg",
+      "actor": "main",
+      "t": 31253
+    },
+    {
+      "n": 10,
+      "label": "U03 Silver · ยอด ฿2,900",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,900",
+      "shot": "shots/chromium/TC-RIDE-03/010.jpg",
+      "actor": "main",
+      "t": 32263
+    },
+    {
+      "n": 11,
+      "label": "U03 แลก 200 แต้ม + GIFT-500 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-03/011.jpg",
+      "actor": "main",
+      "t": 37586
+    },
+    {
+      "n": 12,
+      "label": "U03 แลก 200 แต้ม + GIFT-500 · ยอด ฿2,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,300",
+      "shot": "shots/chromium/TC-RIDE-03/012.jpg",
+      "actor": "main",
+      "t": 38623
+    },
+    {
+      "n": 13,
+      "label": "U03 ยืนยันการจอง",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"BH94N5FD\"}",
+      "shot": "shots/chromium/TC-RIDE-03/013.jpg",
+      "actor": "main",
+      "t": 40793
+    },
+    {
+      "n": 14,
+      "label": "กดใช้บริการเสร็จสำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-RIDE-03/014.jpg",
+      "actor": "owner",
+      "t": 3163
+    },
+    {
+      "n": 15,
+      "label": "GIFT-500 เหลือ ฿0",
+      "pass": true,
+      "actual": "ตรวจยอดบัตร บัตรของคุณเหลือเท่าไร กรอกรหัสบัตรเพื่อดูยอดคงเหลือ วันหมดอายุ และสถานะ รหัสบัตร ตรวจยอด สบายใจ สปา ฿500 GIFT-500 ยอดคงเหลือ ฿0 มูลค่าเริ่มต้น ฿500 ใช้ได้ถึง 5 มิ.ย. 2027 สถานะ มูลค่าหมดแล้ว",
+      "shot": "shots/chromium/TC-RIDE-03/015.jpg",
+      "actor": "main",
+      "t": 48619
+    },
+    {
+      "n": 16,
+      "label": "ยอดสะสม ฿12,299",
+      "pass": false,
+      "actual": "฿12,799",
+      "shot": "shots/chromium/TC-RIDE-03/016.jpg",
+      "actor": "main",
+      "t": 50228
+    },
+    {
+      "n": 17,
+      "label": "ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-RIDE-03/017.jpg",
+      "actor": "main",
+      "t": 51219
+    },
+    {
+      "n": 18,
+      "label": "เหลือ 73 แต้ม",
+      "pass": true,
+      "actual": "73",
+      "shot": "shots/chromium/TC-RIDE-03/018.jpg",
+      "actor": "main",
+      "t": 52238
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-RIDE-03/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-RIDE-03/owner.webm"
+    }
+  }
+}

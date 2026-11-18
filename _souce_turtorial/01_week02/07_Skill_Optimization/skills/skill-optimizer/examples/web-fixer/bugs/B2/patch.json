@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/validation.ts",
+    "find": "  if (!isValidPassword(input.password)) errors.password = MSG.password;\n  if (input.confirm !== input.password) errors.confirm = MSG.confirm;",
+    "replace": "  if (!isValidPassword(input.password)) errors.password = MSG.password;\n  else if (input.confirm !== input.password) errors.confirm = MSG.confirm;"
+  }
+]

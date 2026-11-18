@@ -1,0 +1,138 @@
+{
+ "goal": "API อ่านใบเสร็จภาษาไทย (OCR) ด้วย FastAPI มีคิวงาน รันใน Docker และมีรายงานความแม่นยำจากชุดทดสอบ",
+ "name": "hw05-receipt-ocr-api",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์และสัญญา API",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "docs/api.md",
+   "done": "มีโครงโฟลเดอร์ และ docs/api.md ระบุ API อัปโหลด ดูสถานะ และรูปแบบผลลัพธ์"
+  },
+  {
+   "id": "B02",
+   "title": "เลือก OCR engine",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 3,
+   "output": "docs/ocr-decision.md",
+   "done": "ระบุ engine 1 ตัวที่อ่านภาษาไทยได้ พร้อมเหตุผล 2 ข้อ"
+  },
+  {
+   "id": "B03",
+   "title": "ภาพใบเสร็จตัวอย่าง",
+   "size": "S",
+   "depends_on": [],
+   "skill": "image",
+   "difficulty": 1,
+   "output": "tests/receipts.png",
+   "done": "PNG ใบเสร็จไทย 6 ใบในภาพเดียว เห็นชื่อร้าน วันที่ และยอดรวมชัด"
+  },
+  {
+   "id": "B04",
+   "title": "เฉลยของชุดทดสอบ",
+   "size": "S",
+   "depends_on": [
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "tests/ground_truth.json",
+   "done": "JSON 6 รายการ ตรงกับใบเสร็จแต่ละใบใน receipts.png"
+  },
+  {
+   "id": "B05",
+   "title": "โมดูล OCR และปรับภาพ",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "ocr/engine.py",
+   "done": "รับภาพแล้วคืนข้อความ ใช้ engine ตาม ocr-decision.md"
+  },
+  {
+   "id": "B06",
+   "title": "แยกชื่อร้าน วันที่ ยอดรวม และ VAT",
+   "size": "L",
+   "depends_on": [
+    "B05"
+   ],
+   "skill": "review",
+   "difficulty": 4,
+   "output": "ocr/parse.py",
+   "done": "คืนผลตามรูปแบบใน docs/api.md และคืนค่าว่างเมื่ออ่านไม่ได้ ไม่เดา"
+  },
+  {
+   "id": "B07",
+   "title": "API อัปโหลดและดูสถานะ",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "api/main.py",
+   "done": "อัปโหลดแล้วได้เลขงาน และดูสถานะงานได้ ตาม docs/api.md"
+  },
+  {
+   "id": "B08",
+   "title": "คิวงานและ worker",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B06"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "worker/tasks.py",
+   "done": "งานเข้าคิวแล้ว worker เรียก parse และบันทึกผล"
+  },
+  {
+   "id": "B09",
+   "title": "Docker Compose",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "docker-compose.yml",
+   "done": "docker compose up แล้ว API worker และคิว ขึ้นครบ"
+  },
+  {
+   "id": "B10",
+   "title": "สคริปต์วัดความแม่น",
+   "size": "M",
+   "depends_on": [
+    "B04",
+    "B06"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "eval/accuracy.py",
+   "done": "รายงานร้อยละที่อ่านถูกแยกตามฟิลด์ เทียบกับ ground_truth.json"
+  },
+  {
+   "id": "B11",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B07",
+    "B08",
+    "B09",
+    "B10"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "อัปโหลดใบเสร็จผ่าน API ใน Docker ได้ผลครบ และมีตัวเลขความแม่นใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

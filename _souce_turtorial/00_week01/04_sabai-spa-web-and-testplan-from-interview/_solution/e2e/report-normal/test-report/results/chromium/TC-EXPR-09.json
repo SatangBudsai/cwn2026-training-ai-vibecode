@@ -1,0 +1,78 @@
+{
+  "id": "TC-EXPR-09",
+  "title": "TC-EXPR-09 จอกว้าง 375px ไม่ต้องเลื่อนซ้ายขวาในทุกหน้าและทุกขั้นจอง",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.8",
+    "@mobile"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "0 หน้าที่ล้น: ทุกหน้า ทุกภาษา ทุกขั้นจอง `scrollWidth` ≤ `clientWidth` (375)\nค่าขอบ: 375 ผ่าน · 376 ไม่ผ่าน\n(R114 ลองเฉพาะ `/zh` บางหน้า ข้อความไทยหรือจีนที่ยาวกว่าอาจล้นเฉพาะภาษา จึงต้องครบ 3 ภาษา)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 870,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-22 · [R] ⚠️A-41",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 870,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "NFR-01, FR-56",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 870,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R114",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 870,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 870,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 870,
+        "column": 3
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 54880,
+  "at": "2026-11-06T02:25:01.593Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. ตั้ง viewport 375×812",
+    "2–3. เปิดทุกหน้าทีละภาษา วัดความกว้าง และเปิดแชตที่หน้าแรกแล้ววัดซ้ำ",
+    "4. จองจาก /booking ทั้ง 3 หน้าจอถึงหน้ายืนยัน แล้ววัดทุกหน้าจอ ใน 3 ภาษา",
+    "5. จดหน้าที่ scrollWidth มากกว่า clientWidth พร้อมค่าทั้งสอง"
+  ]
+}

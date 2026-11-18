@@ -1,0 +1,26 @@
+{
+  "_comment": "แหล่งเดียวของรายชื่อ plugin, หัวหน้าแผนก (CODEOWNER) และคำอธิบาย — scripts/build.py สร้าง marketplace.json, plugin.json, CODEOWNERS, catalog จากไฟล์นี้ + header ของ SKILL.md",
+  "marketplace": "novatech-skills",
+  "repo": "novatech/org-skills",
+  "maintainer": "plat-ken",
+  "platform_team": ["plat-ken", "plat-may"],
+  "_platform_team": "ทีมกลาง — approve แทนได้เมื่อ CODEOWNER ของ path มีแค่ผู้เปิด PR เอง และรัน skill-eval ได้ทุก PR (scripts/merge_gate.py)",
+  "plugins": [
+    { "name": "core",    "layer": "core",       "team": "platform", "codeowner": "plat-ken",   "department": "ทีมกลาง (platform)", "description": "กติกาที่ทุกคนต้องใช้: นโยบายข้อมูลลูกค้า (PDPA), แบรนด์, ราคาและกฎกำไร, หา skill — ติดตั้งให้พนักงานทุกคน" },
+    { "name": "shared",  "layer": "shared",     "team": "platform", "codeowner": "plat-ken",   "department": "ข้ามแผนก",           "description": "งานข้ามแผนกที่ทุกแผนกทำแบบเดียวกัน เช่น บันทึกการประชุม" },
+    { "name": "exec",    "layer": "department", "team": "exec",     "codeowner": "exec-ploy",  "department": "MD / ผู้บริหาร",     "description": "งานผู้บริหาร: พิจารณาอนุมัติดีล และสไลด์ประชุมผู้บริหารต้นเดือน" },
+    { "name": "sales",   "layer": "department", "team": "sales",    "codeowner": "sales-nida", "department": "Sales",              "description": "งานขาย: proposal ลูกค้าธนาคารจาก TOR และอีเมลติดตามลูกค้า" },
+    { "name": "sa",      "layer": "department", "team": "sa",       "codeowner": "sa-ton",     "department": "Presales / SA",      "description": "งาน SA: แปลง TOR เป็น SPEC + TEST-PLAN และวาด architecture ตามมาตรฐาน" },
+    { "name": "dev",     "layer": "department", "team": "dev",      "codeowner": "dev-pond",   "department": "Dev",                "description": "งาน Dev: รีวิวโค้ดตาม coding-rules 10 ข้อ และขึ้นโปรเจกต์สมาชิก + ชำระเงิน" },
+    { "name": "qa",      "layer": "department", "team": "qa",       "codeowner": "qa-mint",    "department": "QA",                 "description": "งาน QA: ทดสอบเว็บ black-box ตาม TEST-PLAN และเขียนรายงานบั๊กที่ทำซ้ำได้" },
+    { "name": "devops",  "layer": "department", "team": "devops",   "codeowner": "ops-art",    "department": "DevOps",             "description": "งาน DevOps: checklist ขึ้น production และ postmortem แบบไม่โทษคน" },
+    { "name": "mlops",   "layer": "department", "team": "mlops",    "codeowner": "ml-jay",     "department": "ML / MLOps",         "description": "งาน ML: บันทึกการทดลองให้เทียบกันได้ และปล่อยโมเดลพร้อมเกณฑ์ rollback" },
+    { "name": "hr",      "layer": "department", "team": "hr",       "codeowner": "hr-fah",     "department": "HR",                 "description": "งาน HR: ประกาศรับสมัคร (JD) และชุดต้อนรับพนักงานใหม่" },
+    { "name": "finance", "layer": "department", "team": "finance",  "codeowner": "fin-joy",    "department": "บัญชี / ธุรการ",     "description": "งานบัญชี: คิดราคาและกำไรโปรเจกต์ และตรวจใบแจ้งหนี้ก่อนส่งลูกค้า" }
+  ],
+  "extra_owners": {
+    "plugins/core/skills/pricing-rules/": ["fin-joy"],
+    "plugins/core/skills/customer-data-policy/": ["plat-may"],
+    "plugins/core/skills/brand-guide/": ["plat-may"]
+  }
+}

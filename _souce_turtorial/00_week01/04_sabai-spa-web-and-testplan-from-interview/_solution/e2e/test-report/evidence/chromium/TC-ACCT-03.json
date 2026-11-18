@@ -1,0 +1,163 @@
+{
+  "id": "TC-ACCT-03",
+  "checks": [
+    {
+      "n": 1,
+      "label": "B10 เบอร์ผิด เห็น \"ไม่พบการจอง\"",
+      "pass": true,
+      "actual": "รหัสการจอง เบอร์โทร ไม่พบการจอง ยกเลิกการจอง ยกเลิกได้เมื่อเหลืออย่างน้อย 24 ชม. และยกเลิกได้ทั้งการจองเท่านั้น หากต้องการเปลี่ยนเวลาให้ยกเลิกแล้วจองใหม่ เป็นสมาชิกอยู่? ยกเลิกได้จากหน้าบัญชี ไปหน้าบัญชี",
+      "shot": "shots/chromium/TC-ACCT-03/001.jpg",
+      "actor": "main",
+      "t": 2246
+    },
+    {
+      "n": 2,
+      "label": "B10 เบอร์ผิดถูกปฏิเสธ 4xx",
+      "pass": true,
+      "actual": "404",
+      "shot": "shots/chromium/TC-ACCT-03/002.jpg",
+      "actor": "main",
+      "t": 3214
+    },
+    {
+      "n": 3,
+      "label": "B10 เบอร์ผิด T01 22 มิ.ย. 14:00 ยังถูกจอง",
+      "pass": true,
+      "actual": "เลือกวันและเวลา นวดไทย 60 นาที 60 นาที 1 คน วันนัด จองได้ตั้งแต่ 16 มิ.ย. 2026 ถึง 16 ก.ค. 2026 อังคาร 16 พุธ 17 พฤหัส 18 ศุกร์ 19 เสาร์ 20 อาทิตย์ 21 จันทร์ 22 เลือกนักบำบัด ✦ ใครก็ได้ ระบบเลือกคนที่ว่างและคะแนนสูงสุด พี่ศรี ★ 5.0 · 3 รีวิว พี่มาลี ★ 4.5 · 2 รีวิว พี่ภูมิ ★ 4.4 · 5 รีวิว น้องฟ้า ยังไม่มีรีวิว พี่ทิว ★ 4.6 · 5 รีวิว น้องแก้ว ★ 4.0 · 2 รีวิว รอบที่ว่าง ช่วงเช้า 10:00 10:30 11:00 11:30 ช่วงบ่าย 12:00 12:30 13:00 15:00 15:30 16:00 16:30 ช่วงเย็น 17:00 17:30 18:00 18:30 19:00 19:30 ",
+      "shot": "shots/chromium/TC-ACCT-03/003.jpg",
+      "actor": "main",
+      "t": 6080
+    },
+    {
+      "n": 4,
+      "label": "B10 เบอร์ถูก ยกเลิกสำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-03/004.jpg",
+      "actor": "main",
+      "t": 8049
+    },
+    {
+      "n": 5,
+      "label": "B10 เห็นผลยกเลิกสำเร็จ",
+      "pass": true,
+      "actual": "ยกเลิกการจองแล้ว รหัสการจอง SJTEST10 บริการ นวดไทย 60 นาที วันเวลา 22 มิ.ย. 2026 · 14:00 จองเวลาใหม่",
+      "shot": "shots/chromium/TC-ACCT-03/005.jpg",
+      "actor": "main",
+      "t": 9059
+    },
+    {
+      "n": 6,
+      "label": "B10 ยกเลิกแล้ว T01 22 มิ.ย. 14:00 ว่าง",
+      "pass": true,
+      "actual": "14:00",
+      "shot": "shots/chromium/TC-ACCT-03/006.jpg",
+      "actor": "main",
+      "t": 11844
+    },
+    {
+      "n": 7,
+      "label": "B16 ไม่มีตัวเลือกยกเลิก 1 คน",
+      "pass": true,
+      "actual": "รหัสการจอง เบอร์โทร ยกเลิกการจอง ยกเลิกได้เมื่อเหลืออย่างน้อย 24 ชม. และยกเลิกได้ทั้งการจองเท่านั้น หากต้องการเปลี่ยนเวลาให้ยกเลิกแล้วจองใหม่ เป็นสมาชิกอยู่? ยกเลิกได้จากหน้าบัญชี ไปหน้าบัญชี",
+      "shot": "shots/chromium/TC-ACCT-03/007.jpg",
+      "actor": "main",
+      "t": 13664
+    },
+    {
+      "n": 8,
+      "label": "B16 ยกเลิกทั้งการจองสำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-03/008.jpg",
+      "actor": "main",
+      "t": 15072
+    },
+    {
+      "n": 9,
+      "label": "T01–T06 ว่างครบ 6 คน ที่ 26 มิ.ย. 12:00",
+      "pass": true,
+      "actual": "[\"T01\",\"T02\",\"T03\",\"T04\",\"T05\",\"T06\"]",
+      "shot": "shots/chromium/TC-ACCT-03/009.jpg",
+      "actor": "main",
+      "t": 20209
+    },
+    {
+      "n": 10,
+      "label": "GIFT-EXPREF ก่อนยกเลิก ฿200",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-ACCT-03/010.jpg",
+      "actor": "main",
+      "t": 23048
+    },
+    {
+      "n": 11,
+      "label": "B19 ยกเลิกสำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-03/011.jpg",
+      "actor": "main",
+      "t": 24951
+    },
+    {
+      "n": 12,
+      "label": "GIFT-EXPREF หลังยกเลิก ฿500",
+      "pass": true,
+      "actual": "฿500",
+      "shot": "shots/chromium/TC-ACCT-03/012.jpg",
+      "actor": "main",
+      "t": 27794
+    },
+    {
+      "n": 13,
+      "label": "GIFT-EXPREF สถานะยังหมดอายุ",
+      "pass": true,
+      "actual": "หมดอายุแล้ว",
+      "shot": "shots/chromium/TC-ACCT-03/013.jpg",
+      "actor": "main",
+      "t": 28822
+    },
+    {
+      "n": 14,
+      "label": "GIFT-EXPREF หมดอายุ 14 มิ.ย. 2026",
+      "pass": true,
+      "actual": "14 มิ.ย. 2026",
+      "shot": "shots/chromium/TC-ACCT-03/014.jpg",
+      "actor": "main",
+      "t": 29880
+    },
+    {
+      "n": 15,
+      "label": "มีข้อความแจ้งว่าใช้บัตรไม่ได้",
+      "pass": true,
+      "actual": "Gift Card เลือกแล้ว รหัส Gift Card (ใช้ได้ 1 ใบ) ใช้บัตร Gift Card หมดอายุแล้ว เอาออก",
+      "shot": "shots/chromium/TC-ACCT-03/015.jpg",
+      "actor": "main",
+      "t": 35737
+    },
+    {
+      "n": 16,
+      "label": "ยอดจ่าย S01 แขกยัง ฿1,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,000",
+      "shot": "shots/chromium/TC-ACCT-03/016.jpg",
+      "actor": "main",
+      "t": 37462
+    },
+    {
+      "n": 17,
+      "label": "GIFT-EXPREF ยัง ฿500",
+      "pass": true,
+      "actual": "฿500",
+      "shot": "shots/chromium/TC-ACCT-03/017.jpg",
+      "actor": "main",
+      "t": 40340
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-ACCT-03/main.webm"
+    }
+  }
+}

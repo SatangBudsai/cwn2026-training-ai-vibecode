@@ -1,0 +1,251 @@
+- generic [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button "ย้อนกลับ" [ref=e176233] [cursor=pointer]
+        - link "Google" [ref=e167925] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e13]:
+        - generic:
+          - generic:
+            - generic:
+              - button "ข้ามไปที่เนื้อหาหลัก" [ref=e167926]
+              - button "ความคิดเห็นเกี่ยวกับการช่วยเหลือพิเศษ" [ref=e167927]
+        - generic [ref=e70]:
+          - button "เปลี่ยนธีมเว็บไซต์" [ref=e167932]
+          - tooltip [aria-hidden] [ref=e75]: เปลี่ยนธีมเว็บไซต์
+      - generic [ref=e77]:
+        - button "แอป Google" [ref=e167933] [cursor=pointer]
+        - link "เข้าสู่ระบบ" [ref=e167934] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=searchandassistant&passive=1209600&continue=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%2Fbooking%3Ftfs%3DCBwQAhpJEgoyMDI2LTExLTE1Ih8KA0JLSxIKMjAyNi0xMS0xNRoDTlJUKgJWWjIDODMyagwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC%26tfu%3DCmxDalJJZFhaMFJsUkxXVW81TldOQlRWRkNXa0ZDUnkwdExTMHRMUzB0TFhOdGNHUXhNa0ZCUVVGQlIzSnRSUzFaUkVSZmFFdEJFZ1ZXV2pnek1ob0tDT3cvRUFBYUExUklRamdjY0t1OUFRPT0SBggBIAEoAiIA%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26utm_source%3Dsign_in_ogb&followup=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%2Fbooking%3Ftfs%3DCBwQAhpJEgoyMDI2LTExLTE1Ih8KA0JLSxIKMjAyNi0xMS0xNRoDTlJUKgJWWjIDODMyagwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC%26tfu%3DCmxDalJJZFhaMFJsUkxXVW81TldOQlRWRkNXa0ZDUnkwdExTMHRMUzB0TFhOdGNHUXhNa0ZCUVVGQlIzSnRSUzFaUkVSZmFFdEJFZ1ZXV2pnek1ob0tDT3cvRUFBYUExUklRamdjY0t1OUFRPT0SBggBIAEoAiIA%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26utm_source%3Dsign_in_ogb&hl=th&ec=GAZAlQM
+  - generic [ref=e176237]:
+    - generic [aria-hidden] [ref=e176239]:
+      - generic [ref=e176240]: กำลังโหลดผลลัพธ์
+      - progressbar [aria-hidden] [ref=e176241]
+    - generic [ref=e176246]:
+      - main [ref=e176247]:
+        - heading "สรุปแผนการเดินทาง" [active] [level=1] [ref=e176248]
+        - button "แชร์เที่ยวบินนี้" [ref=e176253]:
+          - generic [ref=e176258]: แชร์
+        - generic [ref=e176261]:
+          - generic [ref=e176262]:
+            - generic "กรุงเทพมหานคร ไปยัง โตเกียว" [ref=e176263]:
+              - generic [ref=e176264]: กรุงเทพมหานคร
+              - generic [ref=e176267]: โตเกียว
+            - generic [ref=e176268]:
+              - generic [ref=e176269]:
+                - text: เที่ยวเดียว
+                - generic [ref=e176270]: ·
+                - text: ชั้นประหยัด
+                - generic [ref=e176271]: ·
+              - button "ผู้โดยสาร 1 คน เปลี่ยนจำนวนผู้โดยสาร" [ref=e176277]:
+                - generic [ref=e176280]: ผู้โดยสาร 1 คน
+          - generic [ref=e176287]:
+            - generic [ref=e176288]: ฿8,172
+            - generic [ref=e176289]: ราคารวมที่ต่ำที่สุด
+        - generic [ref=e176291]:
+          - generic [ref=e176292]:
+            - heading "เที่ยวบินที่เลือก" [level=2] [ref=e176293]
+            - generic [ref=e176294]:
+              - heading "ติดตามราคา" [level=2] [ref=e176297]
+              - button [ref=e176301] [cursor=pointer]:
+                - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับราคาที่ติดตาม" [ref=e176302]
+              - switch "ติดตามราคาเที่ยวบินที่เลือก จาก กรุงเทพมหานคร ไป โตเกียว ออกเดินทางวันที่ 2026-11-15" [ref=e176307] [cursor=pointer]
+          - generic [ref=e176318]:
+            - list [ref=e176322]:
+              - listitem [ref=e176323]:
+                - text: ·
+                - generic [ref=e176325]:
+                  - generic [ref=e176327] [cursor=pointer]:
+                    - generic [ref=e176329]:
+                      - generic [ref=e176331]:
+                        - generic "เที่ยวบินขาไปในวันวันอาทิตย์, พฤศจิกายน 15 ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:35 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 17:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15" [ref=e176333]:
+                          - text: อาทิตย์ 15 พ.ย.
+                          - generic [ref=e176334]: ·
+                          - 'generic "เวลาออกเดินทาง: 09:35" [ref=e176337]': 09:35
+                          - text: –
+                          - 'generic "เวลาถึง: 17:30" [ref=e176340]': 17:30
+                        - generic [ref=e176341]: ไทยเวียดเจ๊ทแอร์
+                      - generic [ref=e176342]:
+                        - generic "ระยะเวลารวม 5 ชม. 55 นาที" [ref=e176343]: 5 ชม. 55 นาที
+                        - generic [aria-hidden] [ref=e176344]:
+                          - generic [ref=e176345]: BKK
+                          - text: –
+                          - generic [ref=e176348]: NRT
+                      - generic "เที่ยวบินตรง" [ref=e176353]: บินตรง
+                      - generic [ref=e176356]:
+                        - generic [ref=e176358]: CO2e 396กก.
+                        - generic [ref=e176359]:
+                          - generic [aria-hidden] [ref=e176360]: ปริมาณการปล่อยก๊าซ +7%
+                          - 'button "ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 396 กิโลกรัม. ปริมาณการปล่อยก๊าซ +7%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้" [ref=e176361]'
+                    - text: ··
+                  - button "รายละเอียดเที่ยวบิน เที่ยวบินขาไปในวันวันอาทิตย์, พฤศจิกายน 15 ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:35 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 17:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15" [ref=e176367]
+                  - text: · · · · ·
+            - generic [ref=e176372]:
+              - generic [ref=e176374]:
+                - list [ref=e176377]:
+                  - listitem [ref=e176378]: กระเป๋านำขึ้นเครื่องฟรี 1 ใบ
+                  - listitem [ref=e176382]: มีค่าธรรมเนียมสำหรับสัมภาระที่โหลดใต้ท้องเครื่องใบแรก
+                - generic [ref=e176386]:
+                  - text: เงื่อนไขสัมภาระมีผลตลอดการเดินทาง ค่าธรรมเนียมสัมภาระอาจสูงขึ้นหากชำระเงินที่สนามบิน
+                  - link "นโยบายสัมภาระของ ไทยเวียดเจ๊ทแอร์ (เปิดในแท็บใหม่)" [ref=e176387] [cursor=pointer]:
+                    - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vietjetair.com%2Fen%2Fpages%2Fto-have-a-good-flight-1599448842652%2Fbaggage-service-1608369253127&psig=AOvVaw2sb_UqDdUJUc6QBT1eK5Gv&ust=1793549110562000&rct=j&opi=77919732&ved=0CA8Q2OIDahgKEwjwrouf0eSXAxUAAAAAHQAAAAAQ8gM
+                    - text: นโยบายสัมภาระของ ไทยเวียดเจ๊ทแอร์
+              - generic [ref=e176389]:
+                - generic [ref=e176390]:
+                  - heading "ตัวเลือกการจอง" [level=2] [ref=e176391]
+                  - generic [ref=e176393]:
+                    - text: วิธีจัดอันดับตัวเลือก
+                    - generic [ref=e176397]:
+                      - button "ดูข้อมูลเพิ่มเติมเกี่ยวกับตัวเลือกการจอง" [ref=e176398]
+                      - tooltip [aria-hidden] [ref=e176401]: ดูข้อมูลเพิ่มเติมเกี่ยวกับตัวเลือกการจอง
+                - generic [ref=e176402]:
+                  - generic [ref=e176405]:
+                    - generic [ref=e176406]:
+                      - generic [ref=e176410]:
+                        - text: จองกับ ไทยเวียดเจ๊ทแอร์
+                        - generic [ref=e176411]: สายการบิน
+                      - generic [ref=e176412]:
+                        - generic [ref=e176413]: รวมค่าธรรมเนียมเพิ่มเติม ฿81
+                        - button "ข้อมูลเพิ่มเติมเกี่ยวกับค่าอำนวยความสะดวก" [ref=e176417] [cursor=pointer]
+                      - generic [ref=e176421]: ฿8,172
+                    - generic [ref=e176424]:
+                      - button "ดำเนินการต่อเพื่อจองกับสายการบิน ไทยเวียดเจ๊ทแอร์ ในราคา 8172 บาทไทย. รวมค่าธรรมเนียมเพิ่มเติม 81 บาทไทย" [ref=e176428]:
+                        - generic [ref=e176431]: ดำเนินการต่อ
+                      - button [ref=e176434]:
+                        - generic [ref=e176439]: ดูตัวเลือก
+                  - generic [ref=e176442]:
+                    - generic [ref=e176443]:
+                      - generic [ref=e176445]: จองกับ Gotogate
+                      - generic [ref=e176448]: ฿8,847
+                    - generic [ref=e176451]:
+                      - button "ดำเนินการต่อเพื่อจองกับ Gotogate ในราคา 8847 บาทไทย" [ref=e176455]:
+                        - generic [ref=e176458]: ดำเนินการต่อ
+                      - button [ref=e176461]:
+                        - generic [ref=e176466]: ดูตัวเลือก
+              - generic [ref=e176467]:
+                - text: ราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและ
+                - button "ค่าธรรมเนียมสัมภาระ" [ref=e176468] [cursor=pointer]
+          - generic [ref=e176473]:
+            - heading "ข้อมูลเชิงลึกด้านราคา" [level=3] [ref=e176474]
+            - heading "฿8,172 อยู่ในช่วงราคาปกติสำหรับชั้นประหยัด" [level=4] [ref=e176477]
+            - generic [ref=e176480]:
+              - generic [ref=e176481]:
+                - text: โดยปกติแล้ว ราคาขั้นต่ำของเที่ยวบินสำหรับทริปที่คล้ายคลึงกันซึ่งเดินทางสู่โตเกียวจะอยู่ระหว่าง ฿8,100–11,500
+                - button [ref=e176485] [cursor=pointer]:
+                  - button "ดูข้อมูลเพิ่มเติมเกี่ยวกับข้อมูลเชิงลึกด้านราคา" [ref=e176486]
+              - generic [ref=e176489]:
+                - generic [ref=e176492]:
+                  - text: ฿8,172 อยู่ในช่วงราคา
+                  - strong [ref=e176493]: ปกติ
+                - generic [aria-hidden] [ref=e176500]:
+                  - generic [ref=e176501]: ฿8,100
+                  - generic [ref=e176502]: ฿11,500
+              - generic [ref=e176505]:
+                - heading "ประวัติราคาสำหรับเที่ยวบินเหล่านี้" [level=4] [ref=e176506]
+                - application "กราฟประวัติราคา" [ref=e176511]:
+                  - img [ref=e176512]:
+                    - generic [ref=e176513]:
+                      - generic [aria-hidden] [ref=e176514]:
+                        - generic [ref=e176515]: 55 วัน...
+                        - generic [ref=e176517]: 48 วันที่ผ่านมา
+                        - generic [ref=e176519]: 41 วันที่ผ่านมา
+                        - generic [ref=e176521]: 34 วันที่ผ่านมา
+                        - generic [ref=e176523]: 27 วันที่ผ่านมา
+                        - generic [ref=e176525]: 20 วันที่ผ่านมา
+                        - generic [ref=e176527]: 13 วันที่ผ่านมา
+                        - generic [ref=e176529]: 6 วันที่...
+                      - generic [aria-hidden] [ref=e176531]:
+                        - generic [ref=e176532]: ฿9,000
+                        - generic [ref=e176534]: ฿8,250
+                        - generic [ref=e176536]: ฿7,500
+                        - generic [ref=e176538]: ฿6,750
+                        - generic [ref=e176540]: ฿6,000
+                      - generic [ref=e176551]:
+                        - button "60 วันที่ผ่านมา - ฿7,091" [ref=e176553]
+                        - button "59 วันที่ผ่านมา - ฿8,171" [ref=e176556]
+                        - button "58 วันที่ผ่านมา - ฿8,171" [ref=e176559]
+                        - button "57 วันที่ผ่านมา - ฿8,171" [ref=e176562]
+                        - button "56 วันที่ผ่านมา - ฿8,171" [ref=e176565]
+                        - button "55 วันที่ผ่านมา - ฿8,171" [ref=e176568]
+                        - button "54 วันที่ผ่านมา - ฿8,171" [ref=e176571]
+                        - button "53 วันที่ผ่านมา - ฿8,171" [ref=e176574]
+                        - button "52 วันที่ผ่านมา - ฿8,171" [ref=e176577]
+                        - button "51 วันที่ผ่านมา - ฿8,171" [ref=e176580]
+                        - button "50 วันที่ผ่านมา - ฿8,171" [ref=e176583]
+                        - button "49 วันที่ผ่านมา - ฿8,171" [ref=e176586]
+                        - button "48 วันที่ผ่านมา - ฿8,171" [ref=e176589]
+                        - button "47 วันที่ผ่านมา - ฿8,171" [ref=e176592]
+                        - button "46 วันที่ผ่านมา - ฿8,171" [ref=e176595]
+                        - button "45 วันที่ผ่านมา - ฿8,171" [ref=e176598]
+                        - button "44 วันที่ผ่านมา - ฿8,171" [ref=e176601]
+                        - button "43 วันที่ผ่านมา - ฿8,171" [ref=e176604]
+                        - button "42 วันที่ผ่านมา - ฿8,171" [ref=e176607]
+                        - button "41 วันที่ผ่านมา - ฿8,171" [ref=e176610]
+                        - button "40 วันที่ผ่านมา - ฿8,171" [ref=e176613]
+                        - button "39 วันที่ผ่านมา - ฿8,171" [ref=e176616]
+                        - button "38 วันที่ผ่านมา - ฿8,802" [ref=e176619]
+                        - button "37 วันที่ผ่านมา - ฿8,172" [ref=e176622]
+                        - button "36 วันที่ผ่านมา - ฿8,172" [ref=e176625]
+                        - button "35 วันที่ผ่านมา - ฿8,172" [ref=e176628]
+                        - button "34 วันที่ผ่านมา - ฿8,172" [ref=e176631]
+                        - button "33 วันที่ผ่านมา - ฿8,172" [ref=e176634]
+                        - button "32 วันที่ผ่านมา - ฿8,802" [ref=e176637]
+                        - button "31 วันที่ผ่านมา - ฿8,802" [ref=e176640]
+                        - button "30 วันที่ผ่านมา - ฿8,802" [ref=e176643]
+                        - button "29 วันที่ผ่านมา - ฿8,802" [ref=e176646]
+                        - button "28 วันที่ผ่านมา - ฿8,802" [ref=e176649]
+                        - button "27 วันที่ผ่านมา - ฿8,802" [ref=e176652]
+                        - button "26 วันที่ผ่านมา - ฿8,802" [ref=e176655]
+                        - button "25 วันที่ผ่านมา - ฿8,802" [ref=e176658]
+                        - button "24 วันที่ผ่านมา - ฿7,092" [ref=e176661]
+                        - button "23 วันที่ผ่านมา - ฿7,092" [ref=e176664]
+                        - button "22 วันที่ผ่านมา - ฿7,092" [ref=e176667]
+                        - button "21 วันที่ผ่านมา - ฿7,092" [ref=e176670]
+                        - button "20 วันที่ผ่านมา - ฿7,092" [ref=e176673]
+                        - button "19 วันที่ผ่านมา - ฿7,092" [ref=e176676]
+                        - button "18 วันที่ผ่านมา - ฿7,092" [ref=e176679]
+                        - button "17 วันที่ผ่านมา - ฿6,661" [ref=e176682]
+                        - button "16 วันที่ผ่านมา - ฿6,661" [ref=e176685]
+                        - button "15 วันที่ผ่านมา - ฿6,661" [ref=e176688]
+                        - button "14 วันที่ผ่านมา - ฿7,092" [ref=e176691]
+                        - button "13 วันที่ผ่านมา - ฿7,092" [ref=e176694]
+                        - button "12 วันที่ผ่านมา - ฿7,092" [ref=e176697]
+                        - button "11 วันที่ผ่านมา - ฿7,092" [ref=e176700]
+                        - button "10 วันที่ผ่านมา - ฿7,092" [ref=e176703]
+                        - button "9 วันที่ผ่านมา - ฿7,092" [ref=e176706]
+                        - button "8 วันที่ผ่านมา - ฿8,172" [ref=e176709]
+                        - button "7 วันที่ผ่านมา - ฿8,172" [ref=e176712]
+                        - button "6 วันที่ผ่านมา - ฿8,172" [ref=e176715]
+                        - button "5 วันที่ผ่านมา - ฿8,172" [ref=e176718]
+                        - button "4 วันที่ผ่านมา - ฿8,172" [ref=e176721]
+                        - button "3 วันที่ผ่านมา - ฿8,172" [ref=e176724]
+                        - button "2 วันที่ผ่านมา - ฿7,602" [ref=e176727]
+                        - button "1 วันที่ผ่านมา - ฿7,602" [ref=e176730]
+                        - button "วันนี้ - ฿8,172" [ref=e176733]
+      - contentinfo [ref=e176738]:
+        - generic [ref=e176740]:
+          - button "ภาษา·ไทย" [ref=e176741]
+          - button "สถานที่ตั้ง·ไทย" [ref=e176747]
+          - button "สกุลเงิน THB" [ref=e176754]:
+            - generic [aria-hidden] [ref=e176767]: สกุลเงิน·THB
+        - generic [ref=e176768]:
+          - link "เกี่ยวกับ Google Travel" [ref=e176769] [cursor=pointer]:
+            - /url: https://about.google/?hl=th
+            - text: เกี่ยวกับ
+          - link "ความเป็นส่วนตัว" [ref=e176770] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=th
+          - link "ข้อกำหนด" [ref=e176771] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=th
+          - link "ความคิดเห็น" [ref=e176772] [cursor=pointer]:
+            - /url: ./#0
+          - link "ศูนย์ช่วยเหลือ" [ref=e176773] [cursor=pointer]:
+            - /url: https://support.google.com/travel/?hl=th#topic=2475360
+        - generic [ref=e176774]:
+          - paragraph [ref=e176775]:
+            - text: สกุลเงินที่แสดงอาจแตกต่างจากสกุลเงินที่ใช้ในการซื้อเที่ยวบิน
+            - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับสกุลเงิน" [ref=e176776] [cursor=pointer]:
+              - /url: https://www.google.com/googlefinance/disclaimer?hl=th&gl=TH
+              - text: ดูข้อมูลเพิ่มเติม
+          - paragraph [ref=e176777]: ราคานี้เป็นราคาสุดท้ายซึ่งรวมภาษีและค่าธรรมเนียมทั้งหมดแล้ว โดยคิดรวมค่าธรรมเนียมการชำระเงินสำหรับวิธีการชำระเงินแบบทั่วไปที่ถูกที่สุด (ซึ่งอาจแตกต่างกันตามผู้ให้บริการ) ทั้งนี้ อาจมีการเรียกเก็บเงินเพิ่มเติมสำหรับการชำระเงินประเภทอื่นๆ ค่าสัมภาระ อาหาร WLAN หรือบริการเพิ่มเติมอื่นๆ ระบบจะแสดงรายละเอียดราคา ที่นั่งว่าง และการเดินทางโดยอิงตามข้อมูลล่าสุดที่ได้รับจากพาร์ทเนอร์ ข้อมูลดังกล่าวจะแสดงในผลการค้นหาภายในระยะเวลาไม่เกิน 24 ชั่วโมง และอาจมีเงื่อนไขเพิ่มเติมจากพาร์ทเนอร์ ดังนั้นโปรดตรวจสอบราคาและเงื่อนไขกับผู้ให้บริการก่อนทำการจอง
+  - generic [ref=e5312]: โหลดหน้านี้แล้ว

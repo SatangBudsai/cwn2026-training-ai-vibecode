@@ -1,0 +1,94 @@
+[
+  {
+    "label": "8 ชุดพร้อมกัน รอบฝังบั๊ก",
+    "at": "2026-11-06T02:50:23.037Z",
+    "containers": 16,
+    "containerCpuPercent": 57.2,
+    "containerMemMiB": 1486,
+    "hostLogicalCpus": 32,
+    "hostLoadedMemGiB": 62.3,
+    "hostTotalMemGiB": 125.4,
+    "rows": [
+      {
+        "name": "sabai-web-8",
+        "cpu": "2.42%",
+        "mem": "133.3MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-8",
+        "cpu": "0.04%",
+        "mem": "57.22MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-7",
+        "cpu": "0.09%",
+        "mem": "149.6MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-7",
+        "cpu": "0.04%",
+        "mem": "53.56MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-6",
+        "cpu": "3.26%",
+        "mem": "151.6MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-6",
+        "cpu": "0.25%",
+        "mem": "49.71MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-5",
+        "cpu": "21.51%",
+        "mem": "163MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-5",
+        "cpu": "5.89%",
+        "mem": "59.88MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-4",
+        "cpu": "0.03%",
+        "mem": "102.6MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-4",
+        "cpu": "0.06%",
+        "mem": "36.57MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-3",
+        "cpu": "0.14%",
+        "mem": "151.7MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-3",
+        "cpu": "0.06%",
+        "mem": "49.98MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-2",
+        "cpu": "8.14%",
+        "mem": "109.4MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-2",
+        "cpu": "0.08%",
+        "mem": "54.7MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-web-1",
+        "cpu": "14.66%",
+        "mem": "109.1MiB / 61.5GiB"
+      },
+      {
+        "name": "sabai-db-1",
+        "cpu": "0.50%",
+        "mem": "53.72MiB / 61.5GiB"
+      }
+    ]
+  }
+]

@@ -1,0 +1,417 @@
+{
+  "base": "http://localhost:5096",
+  "at": "2026-11-01T13:34:11.064Z",
+  "status": "measured",
+  "scores": {
+    "acceptance": "22/22",
+    "acceptanceAll": "34/37 (รวม invalid)",
+    "differential": "7/8",
+    "differentialValid": "7/7",
+    "structurePct": 94.67,
+    "visualDiffPct": 4.7749,
+    "flights": "21 → 300"
+  },
+  "Score": 89.9,
+  "gate": {
+    "acceptance": {
+      "passed": 22,
+      "valid": 22,
+      "need": 20,
+      "ratioPct": 100,
+      "pass": true
+    },
+    "differential": {
+      "matched": 7,
+      "valid": 7,
+      "pass": true
+    },
+    "flights": {
+      "initial": 21,
+      "all": 300,
+      "target": {
+        "initial": 21,
+        "all": 300
+      },
+      "pass": true
+    },
+    "pass": true,
+    "itemsPassed": 31,
+    "itemsTotal": 31
+  },
+  "issues": {
+    "acceptanceFailed": [],
+    "acceptanceInvalid": [
+      {
+        "id": "B27",
+        "status": "ไม่ผ่าน",
+        "reason": "Expected values to be strictly equal:",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "B28",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "B29",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "B30",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "B31",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "B33",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "B34",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "B37",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "B38",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "B40",
+        "status": "ไม่ผ่าน",
+        "reason": "locator.waitFor: Timeout 4500ms exceeded.",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "C2",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "C4",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "C23",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดค้างโหลด/ไม่แสดงผลตามเส้นทางมาตรฐานภายในเวลาที่กำหนด"
+      },
+      {
+        "id": "C25",
+        "status": "ไม่ผ่าน",
+        "reason": "Expected values to be strictly deep-equal:",
+        "metaReason": "ข้อมูล Google สดเปลี่ยน: ราคาห้าใบแรก [7635,9062,11580,9335,9842] ต่างจาก fixture [7635,9062,11580,9335,9335]"
+      },
+      {
+        "id": "C49",
+        "status": "ผ่าน",
+        "reason": "ตรวจผ่านหน้าจอจริง",
+        "metaReason": "Google สดแสดง “อ๊ะ มีบางอย่างผิดพลาด” ทำให้ตรวจข้อนี้ไม่สำเร็จ"
+      },
+      {
+        "id": "B12",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ปุ่มไอคอนเลื่อนวันไม่มีข้อความหรือ accessible name ตามสเปก จับโดย role + ชื่อไม่ได้ภายใต้ข้อจำกัดนี้"
+      },
+      {
+        "id": "F1",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F2",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F3",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F4",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F5",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F6",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F7",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F8",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      },
+      {
+        "id": "F9",
+        "status": "ไม่ได้รัน",
+        "reason": "ไม่มีใน cases.mjs (ข้อยกเว้น)",
+        "metaReason": "ข้อมูลเครือข่าย E-net ไม่ใช่พฤติกรรมหน้าจอ จึงไม่ใช้ RPC/payload เป็น acceptance gate"
+      }
+    ],
+    "differentialMismatch": [
+      {
+        "id": "depart-23-24",
+        "valid": false,
+        "result": "ไม่ตรง",
+        "count": [
+          34,
+          35
+        ],
+        "diffs": [
+          {
+            "field": "count",
+            "expected": 33,
+            "actual": 35
+          },
+          {
+            "field": "prices",
+            "index": 18,
+            "expected": 27190,
+            "actual": 23590,
+            "lengths": [
+              33,
+              35
+            ]
+          },
+          {
+            "field": "airlines",
+            "index": 18,
+            "expected": "โคเรียนแอร์ไลน์ และเอเชียนาแอร์ไลน์",
+            "actual": "เอเชียนาแอร์ไลน์",
+            "lengths": [
+              33,
+              35
+            ]
+          },
+          {
+            "field": "deps",
+            "index": 18,
+            "expected": "23:15",
+            "actual": "23:55",
+            "lengths": [
+              33,
+              35
+            ]
+          },
+          {
+            "field": "stops",
+            "index": 33,
+            "expected": null,
+            "actual": 1,
+            "lengths": [
+              33,
+              35
+            ]
+          }
+        ]
+      }
+    ],
+    "structureMissingKeys": [],
+    "structureMissingItems": [
+      "navigation|",
+      "img|",
+      "text|#",
+      "text|ตัวกรองทั้งหมด",
+      "text|จัดเรียงตามเที่ยวบินยอดนิยม",
+      "text|ตารางวันที่",
+      "text|กราฟราคา",
+      "text|ภาษา·ไทย",
+      "text|สถานที่ตั้ง·ไทย",
+      "text|ใช้ลูกศรซ้ายหรือขวาเพื่อสลับคำแนะนำสถานที่ใกล้เคียง"
+    ],
+    "structureExtraItems": [
+      "alert|",
+      "link|SkyThai",
+      "paragraph|SkyThai Zero (v#) · ข้อมูลเที่ยวบินบันทึกเมื่อ # พ.ย. #"
+    ],
+    "visual": {
+      "diffPng": "visual/diff.png",
+      "appPng": "capture/app.png",
+      "redPx": 58703,
+      "bandHeight": 75,
+      "bands": [
+        {
+          "band": "0-74",
+          "redPx": 6579,
+          "redPct": 6.42
+        },
+        {
+          "band": "75-149",
+          "redPx": 2276,
+          "redPct": 2.22
+        },
+        {
+          "band": "150-224",
+          "redPx": 6378,
+          "redPct": 6.23
+        },
+        {
+          "band": "225-299",
+          "redPx": 4846,
+          "redPct": 4.73
+        },
+        {
+          "band": "300-374",
+          "redPx": 5336,
+          "redPct": 5.21
+        },
+        {
+          "band": "375-449",
+          "redPx": 4783,
+          "redPct": 4.67
+        },
+        {
+          "band": "450-524",
+          "redPx": 6450,
+          "redPct": 6.3
+        },
+        {
+          "band": "525-599",
+          "redPx": 7377,
+          "redPct": 7.2
+        },
+        {
+          "band": "600-674",
+          "redPx": 3056,
+          "redPct": 2.98
+        },
+        {
+          "band": "675-749",
+          "redPx": 3784,
+          "redPct": 3.69
+        },
+        {
+          "band": "750-824",
+          "redPx": 2671,
+          "redPct": 2.61
+        },
+        {
+          "band": "825-899",
+          "redPx": 5167,
+          "redPct": 5.04
+        }
+      ],
+      "worstBands": [
+        {
+          "band": "525-599",
+          "redPx": 7377,
+          "redPct": 7.2
+        },
+        {
+          "band": "0-74",
+          "redPx": 6579,
+          "redPct": 6.42
+        },
+        {
+          "band": "450-524",
+          "redPx": 6450,
+          "redPct": 6.3
+        },
+        {
+          "band": "150-224",
+          "redPx": 6378,
+          "redPct": 6.23
+        },
+        {
+          "band": "300-374",
+          "redPx": 5336,
+          "redPct": 5.21
+        }
+      ]
+    },
+    "flights": {
+      "initial": [
+        21,
+        21
+      ],
+      "all": [
+        300,
+        300
+      ],
+      "clicks": 1
+    },
+    "rulerErrors": [],
+    "capture": {
+      "base": "http://localhost:5096",
+      "routeError": null,
+      "rows": 21,
+      "url": "http://localhost:5096/search?trip=oneway&cabin=economy&from=%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3&to=%E0%B9%82%E0%B8%95%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A7&date=2026-11-15"
+    }
+  },
+  "timings": {
+    "capture": {
+      "seconds": 9.8,
+      "exit": 0
+    },
+    "visual": {
+      "seconds": 0.1,
+      "exit": 0
+    },
+    "structure": {
+      "seconds": 0,
+      "exit": 0
+    },
+    "flights": {
+      "seconds": 13.8,
+      "exit": 0
+    },
+    "accept": {
+      "seconds": 36.7,
+      "exit": 0
+    },
+    "diff": {
+      "seconds": 169,
+      "exit": 1
+    }
+  },
+  "rulersUnchanged": {
+    "before": "2e4f6c86afab3551",
+    "after": "2e4f6c86afab3551",
+    "same": true
+  },
+  "exit": 0
+}

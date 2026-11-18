@@ -1,0 +1,49 @@
+{
+  "run": "2026-11-02 · full run 13:52–13:58, step-by-step run 14:03–14:14 (เวลาไทย)",
+  "browser": "Google Chrome ของผู้เรียน ผ่าน Playwright MCP --extension (@playwright/mcp 0.0.84, Playwright Extension 0.4.0)",
+  "precheck": {
+    "logged_in": true,
+    "login_button_visible": false,
+    "cart_badge": 138
+  },
+  "captcha": {
+    "seen": true,
+    "when": "เปิด https://shopee.co.th/ รอบแรกของวัน → /verify/captcha · รอบหลังไม่ขึ้น",
+    "handled_by": "คน (ผู้เรียนเลื่อนยืนยันเอง) ประมาณ 9 วินาที",
+    "ai_touched": false
+  },
+  "cases": [
+    {
+      "id": "TC-SRCH-01", "priority": "P1", "result": "pass",
+      "keyword": "อาหารแมว", "results_page1": 60, "pages": 7,
+      "titles_loaded_before_scroll": 15,
+      "first20_with_cat_word": 20, "ratio": 1.0, "threshold": 0.8,
+      "note": "นับทันทีหลังเลื่อนได้ 15/20 เพราะการ์ด 16–20 ยังไม่โหลด เลื่อนไปโหลดแล้วนับใหม่ได้ 20/20"
+    },
+    {
+      "id": "TC-SRCH-02", "priority": "P1", "result": "pass",
+      "keyword": "อาหารสุนัข", "results_page1": 60, "pages": 7,
+      "first20_with_dog_word": 20, "ratio": 1.0, "threshold": 0.8,
+      "discarded_attempt": "ค้นหาเป็น อาหารสุนัขอาหารแมว เพราะลบคำเดิมไม่หมด ผลรอบนั้นไม่นับ"
+    },
+    {
+      "id": "TC-SORT-01", "priority": "P2", "result": "pass",
+      "keyword": "อาหารสุนัข", "sort": "ราคา: จากน้อยไปมาก (sortBy=price&order=asc)",
+      "first10_prices": [6, 8, 8, 8, 10, 12, 12, 12, 13, 13],
+      "ascending": true, "ads_skipped": 0, "first10_dog_food": 10
+    },
+    {
+      "id": "TC-CART-01", "priority": "P1", "result": "pass",
+      "keyword": "ของเล่นแมว",
+      "first_product": "ของเล่นเเมวซ่อนหาอัตโนมัติ สิ่งประดิษฐ์แมวตลก ชาร์จไฟได้ (สีฟ้า ฿209 ในรถเข็น)",
+      "cart_badge": { "before": 138, "after_add": 139, "after_remove": 138 },
+      "cart_page_select_all": { "with_item": 13, "after_remove": 12 },
+      "bought": false
+    }
+  ],
+  "summary": {
+    "total": 4, "pass": 4, "fail": 0, "blocked": 0,
+    "p1": { "total": 3, "pass": 3 }, "p2": { "total": 1, "pass": 1 },
+    "exit_criteria_met": true
+  }
+}

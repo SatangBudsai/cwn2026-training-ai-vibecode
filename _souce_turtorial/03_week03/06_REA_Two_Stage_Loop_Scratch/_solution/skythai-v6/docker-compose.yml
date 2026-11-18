@@ -1,0 +1,21 @@
+name: skythai-v6
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: skythai
+      POSTGRES_PASSWORD: skythai
+      POSTGRES_DB: skythai
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skythai"]
+      interval: 2s
+      retries: 30
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgres://skythai:skythai@db:5432/skythai
+    ports:
+      - "5095:3000"
+    depends_on:
+      db:
+        condition: service_healthy

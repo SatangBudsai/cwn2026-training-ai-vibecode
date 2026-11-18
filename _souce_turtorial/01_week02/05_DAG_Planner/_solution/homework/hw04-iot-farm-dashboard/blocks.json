@@ -1,0 +1,127 @@
+{
+ "goal": "ระบบ IoT ฟาร์มผัก เซนเซอร์ส่งค่าผ่าน MQTT เก็บลงฐานข้อมูล time series แสดงผลบน Grafana และแจ้งเตือนเมื่อค่าเกินเกณฑ์ ทั้งหมดรันด้วย Docker Compose",
+ "name": "hw04-iot-farm-dashboard",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "รูปแบบข้อความและ topic ของ MQTT",
+   "size": "S",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "docs/mqtt-schema.md",
+   "done": "ระบุ topic และ JSON ของเซนเซอร์ อุณหภูมิ ความชื้น และ pH พร้อมตัวอย่าง"
+  },
+  {
+   "id": "B02",
+   "title": "เลือกฐานข้อมูล time series",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 3,
+   "output": "docs/db-decision.md",
+   "done": "ระบุฐานข้อมูล 1 ตัว พร้อมเหตุผล 2 ข้อ และ image ของ Docker ที่ใช้"
+  },
+  {
+   "id": "B03",
+   "title": "ผังระบบ",
+   "size": "S",
+   "depends_on": [],
+   "skill": "image",
+   "difficulty": 1,
+   "output": "docs/architecture.png",
+   "done": "PNG แสดงเซนเซอร์ MQTT ฐานข้อมูล Grafana และการแจ้งเตือน"
+  },
+  {
+   "id": "B04",
+   "title": "Docker Compose ของทั้งระบบ",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "docker-compose.yml",
+   "done": "docker compose up แล้ว broker ฐานข้อมูล และ Grafana ขึ้นครบ"
+  },
+  {
+   "id": "B05",
+   "title": "ตารางและอายุข้อมูล",
+   "size": "S",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "db/init.sql",
+   "done": "สร้างตารางค่าที่วัด และตั้งให้ลบข้อมูลเก่ากว่า 90 วัน"
+  },
+  {
+   "id": "B06",
+   "title": "ตัวจำลองเซนเซอร์",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "sim/sensor_sim.py",
+   "done": "ส่งค่า 3 ชนิดทุก 5 วินาทีตาม mqtt-schema.md และสั่งให้ค่าเกินเกณฑ์ได้"
+  },
+  {
+   "id": "B07",
+   "title": "ตัวรับ MQTT เขียนลงฐานข้อมูล",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B05"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "ingest/consumer.py",
+   "done": "รับข้อความตาม mqtt-schema.md เขียนลงตาราง และข้ามข้อความที่ผิดรูปแบบ"
+  },
+  {
+   "id": "B08",
+   "title": "Grafana dashboard",
+   "size": "M",
+   "depends_on": [
+    "B05"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "grafana/dashboard.json",
+   "done": "มีกราฟ 3 ค่า และตัวเลขค่าล่าสุด อ่านจากตารางใน init.sql"
+  },
+  {
+   "id": "B09",
+   "title": "กฎแจ้งเตือนเมื่อค่าเกินเกณฑ์",
+   "size": "M",
+   "depends_on": [
+    "B05"
+   ],
+   "skill": "review",
+   "difficulty": 3,
+   "output": "alert/rules.yaml",
+   "done": "ค่าเกินเกณฑ์ต่อเนื่อง 1 นาทีจึงแจ้ง และไม่แจ้งซ้ำภายใน 10 นาที"
+  },
+  {
+   "id": "B10",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B03",
+    "B04",
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "เปิดตัวจำลองแล้วเห็นกราฟ และได้แจ้งเตือนเมื่อสั่งให้ค่าเกิน บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+npm notice run npx
+npm notice run playwright test tests/5.8- --project=mobile-chrome
+
+Running 2 tests using 1 worker
+
+  ok 1 [mobile-chrome] › tests\5.8-experience.spec.ts:870:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-09 จอกว้าง 375px ไม่ต้องเลื่อนซ้ายขวาในทุกหน้าและทุกขั้นจอง @P2 @5.8 @mobile (54.9s)
+  x  2 [mobile-chrome] › tests\5.8-experience.spec.ts:961:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile (32.5s)
+
+
+  1) [mobile-chrome] › tests\5.8-experience.spec.ts:961:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile › 5. ที่ viewport 375 ลากแนวนอนทีละช่วงจนภาพวนกลับมาตรงภาพเริ่ม 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 10
+    Received:    14.571014287674522
+
+      1014 |       });
+      1015 |       await app.check(page.getByTestId('tour-viewport'), `จอ ${width}px ภาพกลับมาตรงภาพเริ่ม (ต่างเฉลี่ย ${r.finalDiff.toFixed(2)})`, async () => {
+    > 1016 |         expect.soft(r.finalDiff).toBeLessThanOrEqual(SAME_IMAGE_MAX_DIFF);
+           |                                  ^
+      1017 |       });
+      1018 |     };
+      1019 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1016:34)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at verifyTurn (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1015:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1021:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1020:5
+
+    Error Context: test-results\5.8-mobile-chrome\5.8-experience-5-8-ตัวช่วย-0e926-องศาทั้งจอ-375px-และ-1280px-mobile-chrome\error-context.md
+
+  1 failed
+    [mobile-chrome] › tests\5.8-experience.spec.ts:961:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile 
+  1 passed (1.5m)
+npm notice run npx
+npm notice run playwright test tests/5.8- --grep TC-EXPR-04 |TC-EXPR-07 |TC-EXPR-10  --project=mobile-chrome
+
+Running 1 test using 1 worker
+
+  x  1 [mobile-chrome] › tests\5.8-experience.spec.ts:961:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile (32.0s)
+
+
+  1) [mobile-chrome] › tests\5.8-experience.spec.ts:961:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile › 5. ที่ viewport 375 ลากแนวนอนทีละช่วงจนภาพวนกลับมาตรงภาพเริ่ม 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 10
+    Received:    14.571014287674522
+
+      1014 |       });
+      1015 |       await app.check(page.getByTestId('tour-viewport'), `จอ ${width}px ภาพกลับมาตรงภาพเริ่ม (ต่างเฉลี่ย ${r.finalDiff.toFixed(2)})`, async () => {
+    > 1016 |         expect.soft(r.finalDiff).toBeLessThanOrEqual(SAME_IMAGE_MAX_DIFF);
+           |                                  ^
+      1017 |       });
+      1018 |     };
+      1019 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1016:34)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at verifyTurn (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1015:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1021:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1020:5
+
+    Error Context: test-results\5.8-mobile-chrome\5.8-experience-5-8-ตัวช่วย-0e926-องศาทั้งจอ-375px-และ-1280px-mobile-chrome\error-context.md
+
+  1 failed
+    [mobile-chrome] › tests\5.8-experience.spec.ts:961:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile 
+npm notice run npx
+npm notice run playwright test tests/5.8- --grep TC-EXPR-04 |TC-EXPR-07 |TC-EXPR-10  --project=mobile-chrome
+
+Running 1 test using 1 worker
+
+  x  1 [mobile-chrome] › tests\5.8-experience.spec.ts:966:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile (34.3s)
+
+
+  1) [mobile-chrome] › tests\5.8-experience.spec.ts:966:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile › 5. ที่ viewport 375 ลากแนวนอนทีละช่วงจนภาพวนกลับมาตรงภาพเริ่ม 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 10
+    Received:    14.571014287674522
+
+      1019 |       });
+      1020 |       await app.check(page.getByTestId('tour-viewport'), `จอ ${width}px ภาพกลับมาตรงภาพเริ่ม (ต่างเฉลี่ย ${r.finalDiff.toFixed(2)})`, async () => {
+    > 1021 |         expect.soft(r.finalDiff).toBeLessThanOrEqual(SAME_IMAGE_MAX_DIFF);
+           |                                  ^
+      1022 |       });
+      1023 |     };
+      1024 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1021:34)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at verifyTurn (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1020:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1026:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:1025:5
+
+    Error Context: test-results\5.8-mobile-chrome\5.8-experience-5-8-ตัวช่วย-0e926-องศาทั้งจอ-375px-และ-1280px-mobile-chrome\error-context.md
+
+  1 failed
+    [mobile-chrome] › tests\5.8-experience.spec.ts:966:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile 

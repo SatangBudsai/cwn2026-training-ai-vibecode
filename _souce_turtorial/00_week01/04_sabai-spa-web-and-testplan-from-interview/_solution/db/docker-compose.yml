@@ -1,0 +1,36 @@
+name: sabai-db
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: sabai-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sabai
+      POSTGRES_PASSWORD: sabai
+      POSTGRES_DB: sabai
+      TZ: Asia/Bangkok
+      PGTZ: Asia/Bangkok
+      PGCLIENTENCODING: UTF8
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - sabai-net
+    healthcheck:
+      # -h บังคับให้ตอบผ่าน TCP: ระหว่างรัน init เซิร์ฟเวอร์ชั่วคราวรับเฉพาะ socket จึงไม่ healthy ก่อน seed เสร็จ
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U sabai -d sabai"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+      start_period: 5s
+
+volumes:
+  pgdata:
+    name: sabai-pgdata
+
+networks:
+  sabai-net:
+    external: true

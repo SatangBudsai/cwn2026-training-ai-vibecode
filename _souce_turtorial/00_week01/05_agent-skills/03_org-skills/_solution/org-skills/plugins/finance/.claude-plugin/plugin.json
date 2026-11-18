@@ -1,0 +1,14 @@
+{
+  "name": "finance",
+  "version": "1.0.0",
+  "description": "งานบัญชี: คิดราคาและกำไรโปรเจกต์ และตรวจใบแจ้งหนี้ก่อนส่งลูกค้า",
+  "author": {
+    "name": "fin-joy"
+  },
+  "keywords": [
+    "department",
+    "finance",
+    "invoice-check",
+    "pricing-calc"
+  ]
+}

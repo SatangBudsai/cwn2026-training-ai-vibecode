@@ -1,0 +1,11 @@
+# captured 2026-11-01T10:51:55.207Z
+- dialog "ลงชื่อเข้าใช้เพื่อติดตามราคา":
+  - heading "ลงชื่อเข้าใช้เพื่อติดตามราคา" [level=2]
+  - text: เราจะติดตามราคาเที่ยวบินและข้อมูลอื่นๆ ให้ คุณจะได้ไม่ต้องคอยติดตามด้วยตนเอง
+  - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับการติดตามเที่ยวบิน":
+    - /url: https://support.google.com/travel/answer/6235879?hl=th&ved=0CAEQ2dAHahcKEwiwjNbvzOaXAxUAAAAAHQAAAAAQTg
+    - text: ดูข้อมูลเพิ่มเติม
+  - text: ค้นหาเที่ยวบินที่ดีที่สุด รับการแจ้งเตือนเมื่อราคามีการเปลี่ยนแปลง รับการแจ้งเตือนก่อนที่ค่าโดยสารจะเปลี่ยนแปลง
+  - button "ปิด"
+  - link "ลงชื่อเข้าใช้":
+    - /url: https://accounts.google.com/ServiceLogin?service=searchandassistant&hl=th&continue=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%3Fq%3DFlights%2520from%2520Bangkok%2520to%2520Tokyo%2520on%25202026-11-15%2520one%2520way%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26tor&ved=0CAMQiMEHahcKEwiwjNbvzOaXAxUAAAAAHQAAAAAQTg

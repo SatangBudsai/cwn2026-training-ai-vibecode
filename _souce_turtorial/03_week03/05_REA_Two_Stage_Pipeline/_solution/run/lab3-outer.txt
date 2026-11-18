@@ -1,0 +1,1 @@
+ใน container multi-account-devtool ที่ /workspace/arena ส่งงานในไฟล์ _solution/run/s2.txt ของบทนี้ให้ yolo1 ทำ (yolo1 -p) ระหว่างรอให้บอกความคืบหน้าเป็นระยะ แล้วแสดงคำตอบของ yolo1 ให้ฉันดู

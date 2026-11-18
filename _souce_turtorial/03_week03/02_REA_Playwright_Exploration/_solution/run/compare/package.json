@@ -1,0 +1,1 @@
+{"name":"skythai-compare","private":true,"scripts":{"test:v1":"BASE_URL=http://localhost:5081 APP=v1 playwright test","test:v2":"BASE_URL=http://localhost:5082 APP=v2 playwright test"},"devDependencies":{"@playwright/test":"^1.64.1"}}

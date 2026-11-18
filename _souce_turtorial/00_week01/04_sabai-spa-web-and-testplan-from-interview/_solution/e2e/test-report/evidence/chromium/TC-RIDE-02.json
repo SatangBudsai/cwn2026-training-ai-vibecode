@@ -1,0 +1,148 @@
+{
+  "id": "TC-RIDE-02",
+  "checks": [
+    {
+      "n": 1,
+      "label": "3 คน H04 · ค่ารถ ฿300 1 คัน",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿300",
+      "shot": "shots/chromium/TC-RIDE-02/001.jpg",
+      "actor": "main",
+      "t": 6191
+    },
+    {
+      "n": 2,
+      "label": "3 คน H04 · ยอด ฿3,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿3,300",
+      "shot": "shots/chromium/TC-RIDE-02/002.jpg",
+      "actor": "main",
+      "t": 7275
+    },
+    {
+      "n": 3,
+      "label": "4 คน H04 · ค่ารถ ฿300 1 คัน",
+      "pass": true,
+      "actual": "接送费 1 辆车 300 泰铢",
+      "shot": "shots/chromium/TC-RIDE-02/003.jpg",
+      "actor": "main",
+      "t": 14950
+    },
+    {
+      "n": 4,
+      "label": "4 คน H04 · ยอด ฿3,900",
+      "pass": true,
+      "actual": "到店支付 3,900 泰铢",
+      "shot": "shots/chromium/TC-RIDE-02/004.jpg",
+      "actor": "main",
+      "t": 16018
+    },
+    {
+      "n": 5,
+      "label": "5 คน H04 · ค่ารถ ฿600 2 คัน",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 2 คัน ฿600",
+      "shot": "shots/chromium/TC-RIDE-02/005.jpg",
+      "actor": "main",
+      "t": 22017
+    },
+    {
+      "n": 6,
+      "label": "5 คน H04 · ยอด ฿5,100",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿5,100",
+      "shot": "shots/chromium/TC-RIDE-02/006.jpg",
+      "actor": "main",
+      "t": 23018
+    },
+    {
+      "n": 7,
+      "label": "5 คน H02 · ค่ารถ ฿0 2 คัน",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 2 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-02/007.jpg",
+      "actor": "main",
+      "t": 29090
+    },
+    {
+      "n": 8,
+      "label": "5 คน H02 · ยอด ฿4,500",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿4,500",
+      "shot": "shots/chromium/TC-RIDE-02/008.jpg",
+      "actor": "main",
+      "t": 30167
+    },
+    {
+      "n": 9,
+      "label": "6 คน H04 หน้าสรุป · ค่ารถ ฿600 2 คัน",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 2 คัน ฿600",
+      "shot": "shots/chromium/TC-RIDE-02/009.jpg",
+      "actor": "main",
+      "t": 36412
+    },
+    {
+      "n": 10,
+      "label": "6 คน H04 หน้าสรุป · ยอด ฿6,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿6,000",
+      "shot": "shots/chromium/TC-RIDE-02/010.jpg",
+      "actor": "main",
+      "t": 37433
+    },
+    {
+      "n": 11,
+      "label": "ยืนยันแถว 6 คน H04",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"HKJK6X3T\"}",
+      "shot": "shots/chromium/TC-RIDE-02/011.jpg",
+      "actor": "main",
+      "t": 40373
+    },
+    {
+      "n": 12,
+      "label": "หน้ายืนยัน 6 คน ยอด ฿6,000",
+      "pass": true,
+      "actual": "จองสำเร็จ เราเตรียมเวลานี้ไว้ให้คุณแล้ว รหัสการจอง HKJK6X3T เก็บรหัสนี้ไว้ ใช้คู่กับเบอร์โทรเมื่อต้องการยกเลิก บริการ นวดไทย 60 นาที วันเวลา 17 มิ.ย. 2026 · 12:00–13:00 นักบำบัด · 6 คน พี่ศรี พี่ทิว พี่มาลี พี่ภูมิ น้องแก้ว น้องฟ้า ผู้จอง คุณทดสอบ · 0895400002 รับจาก โรงแรมกล้วยไม้ พาเลซ ยกเลิกการจองนี้ ยกเลิกได้ทั้งการจองเท่านั้น หากต้องการเปลี่ยนเวลาให้ยกเลิกแล้วจองใหม่ สรุปราคา ราคาเต็ม 6 คน ฿6,000 ส่วนลด 10% ส่วนลดกลุ่ม −฿600 แลกแต้ม 0 แต้ม ฿0 ค่ารถรับส่ง 2 คัน ฿600 Gift Card ฿0 จ่ายหน้าร้าน",
+      "shot": "shots/chromium/TC-RIDE-02/012.jpg",
+      "actor": "main",
+      "t": 41396
+    },
+    {
+      "n": 13,
+      "label": "หน้ายืนยันหายเมื่อรีโหลด อ่านยอดจากหลังร้านแทน",
+      "pass": true,
+      "actual": "http://localhost:3140/th/booking",
+      "shot": "shots/chromium/TC-RIDE-02/013.jpg",
+      "actor": "main",
+      "t": 42772
+    },
+    {
+      "n": 14,
+      "label": "หลังร้าน ยอด ฿6,000",
+      "pass": true,
+      "actual": "฿6,000",
+      "shot": "shots/chromium/TC-RIDE-02/014.jpg",
+      "actor": "owner",
+      "t": 2686
+    },
+    {
+      "n": 15,
+      "label": "แถว 6 คน: ยอดหลังร้าน ฿6,000",
+      "pass": true,
+      "actual": "6000",
+      "shot": "shots/chromium/TC-RIDE-02/015.jpg",
+      "actor": "main",
+      "t": 46928
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-RIDE-02/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-RIDE-02/main.webm"
+    }
+  }
+}

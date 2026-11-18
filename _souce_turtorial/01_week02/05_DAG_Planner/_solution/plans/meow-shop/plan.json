@@ -1,0 +1,373 @@
+{
+ "name": "meow-shop",
+ "goal": "เว็บร้านอาหารแมว 'เหมียวช็อป' หน้าเดียว (HTML+CSS+JS ไม่มี server) มีสินค้า 6 รายการพร้อมรูป ตะกร้าสินค้าที่จำได้หลังรีเฟรช (localStorage) และสโลแกนหัวเว็บ พร้อมทดสอบว่าใช้งานได้จริง",
+ "created": "2026-11-08T10:22:11+07:00",
+ "max_agents": 4,
+ "accounts": [
+  {
+   "account": "cyolo1",
+   "kind": "cyolo",
+   "logged_in": true,
+   "plan": "prolite",
+   "session_used": 0,
+   "session_reset": null,
+   "week_used": 2.0,
+   "week_reset": "2026-11-14T12:21:00+07:00",
+   "at": "2026-11-08T10:12:34+07:00",
+   "cap_week": 100,
+   "headroom_session": 100,
+   "headroom_week": 98.0,
+   "headroom": 98.0,
+   "expires": "2026-11-14T12:21:00+07:00",
+   "hours_left": 146.0,
+   "use_first": 0.141,
+   "score": 47.7,
+   "slots": 3
+  },
+  {
+   "account": "cyolo2",
+   "kind": "cyolo",
+   "logged_in": true,
+   "plan": "prolite",
+   "session_used": 0,
+   "session_reset": null,
+   "week_used": 2.0,
+   "week_reset": "2026-11-14T12:21:00+07:00",
+   "at": "2026-11-08T10:12:34+07:00",
+   "cap_week": 100,
+   "headroom_session": 100,
+   "headroom_week": 98.0,
+   "headroom": 98.0,
+   "expires": "2026-11-14T12:21:00+07:00",
+   "hours_left": 146.0,
+   "use_first": 0.141,
+   "score": 47.7,
+   "slots": 3
+  },
+  {
+   "account": "yolo1",
+   "kind": "yolo",
+   "logged_in": true,
+   "plan": "max",
+   "session_used": 0,
+   "session_reset": null,
+   "week_used": 22.0,
+   "week_reset": "2026-11-12T06:00:00+07:00",
+   "at": "2026-11-08T10:22:11+07:00",
+   "week_model_used": 0,
+   "cap_week": 100,
+   "headroom_session": 100,
+   "headroom_week": 78.0,
+   "headroom": 78.0,
+   "expires": "2026-11-12T06:00:00+07:00",
+   "hours_left": 91.6,
+   "use_first": 0.208,
+   "score": 43.7,
+   "slots": 3
+  },
+  {
+   "account": "yolo2",
+   "kind": "yolo",
+   "logged_in": true,
+   "plan": "team",
+   "session_used": 2.0,
+   "session_reset": "2026-11-08T11:10:00+07:00",
+   "week_used": 2.0,
+   "week_reset": "2026-11-09T13:00:00+07:00",
+   "at": "2026-11-08T10:22:11+07:00",
+   "week_model_used": 1.0,
+   "cap_week": 100,
+   "headroom_session": 98.0,
+   "headroom_week": 98.0,
+   "headroom": 98.0,
+   "expires": "2026-11-09T13:00:00+07:00",
+   "hours_left": 26.6,
+   "use_first": 0.474,
+   "score": 67.6,
+   "slots": 3
+  }
+ ],
+ "notes": [],
+ "calib_k": {
+  "cyolo": 0.0333,
+  "image": 0.0689,
+  "review": 0.0391,
+  "yolo": 0.03,
+  "*": 0.044
+ },
+ "critical_path": [
+  "B01",
+  "B05",
+  "B08"
+ ],
+ "rank": {
+  "B08": 1.5,
+  "B05": 3.0,
+  "B07": 3.0,
+  "B01": 3.6,
+  "B06": 3.0,
+  "B02": 3.6,
+  "B03": 3.6,
+  "B04": 2.1
+ },
+ "peak_agents": 4,
+ "rounds": [
+  {
+   "t_min": 0.0,
+   "start": [
+    "B01",
+    "B02",
+    "B03"
+   ]
+  },
+  {
+   "t_min": 0.1,
+   "start": [
+    "B06"
+   ]
+  },
+  {
+   "t_min": 0.2,
+   "start": [
+    "B05"
+   ]
+  },
+  {
+   "t_min": 0.5,
+   "start": [
+    "B07"
+   ]
+  },
+  {
+   "t_min": 1.0,
+   "start": [
+    "B04"
+   ]
+  },
+  {
+   "t_min": 1.3,
+   "start": [
+    "B08"
+   ]
+  }
+ ],
+ "assign": {
+  "B01": {
+   "id": "B01",
+   "skill": "cyolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "cyolo1",
+     "score": 30.9,
+     "need": 0.6,
+     "why": "cyolo1 30.9 (U=0.141 F=0.002 S=0.984 S=0.7 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 cyolo2 30.9",
+     "alts": [
+      "cyolo2 30.9"
+     ]
+    }
+   ],
+   "account": "cyolo1",
+   "start": 0.0,
+   "end": 0.0041625,
+   "dur_base_h": 0.125,
+   "k": 0.0333,
+   "status": "planned",
+   "score": 30.9
+  },
+  "B02": {
+   "id": "B02",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo2",
+     "score": 48.5,
+     "need": 0.6,
+     "why": "yolo2 48.5 (U=0.474 F=0.002 S=0.964 S=1.0 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 yolo1 38.2",
+     "alts": [
+      "yolo1 38.2"
+     ]
+    }
+   ],
+   "account": "yolo2",
+   "start": 0.0,
+   "end": 0.0024999999999999996,
+   "dur_base_h": 0.0833,
+   "k": 0.03,
+   "status": "planned",
+   "score": 48.5
+  },
+  "B03": {
+   "id": "B03",
+   "skill": "image",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "cyolo2",
+     "score": 30.9,
+     "need": 0.6,
+     "why": "cyolo2 30.9 (U=0.141 F=0.002 S=0.984 S=0.7 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 cyolo1 27.4",
+     "alts": [
+      "cyolo1 27.4"
+     ]
+    }
+   ],
+   "account": "cyolo2",
+   "start": 0.0,
+   "end": 0.0086125,
+   "dur_base_h": 0.125,
+   "k": 0.0689,
+   "status": "planned",
+   "score": 30.9
+  },
+  "B06": {
+   "id": "B06",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo2",
+     "score": 45.4,
+     "need": 1.5,
+     "why": "yolo2 45.4 (U=0.474 F=0.005 S=0.925 S=0.833 L=0.0) · 1.50M ≈ 5ชม. 3.9% / สัปดาห์ 0.49% · อันดับ 2 yolo1 35.6",
+     "alts": [
+      "yolo1 35.6"
+     ]
+    }
+   ],
+   "account": "yolo2",
+   "start": 0.0024999999999999996,
+   "end": 0.008749999999999999,
+   "dur_base_h": 0.2083,
+   "k": 0.03,
+   "status": "planned",
+   "score": 45.4
+  },
+  "B05": {
+   "id": "B05",
+   "skill": "review",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo2",
+     "score": 41.5,
+     "need": 1.5,
+     "why": "yolo2 41.5 (U=0.474 F=0.005 S=0.886 S=0.833 L=0.333) · 1.50M ≈ 5ชม. 3.9% / สัปดาห์ 0.49% · อันดับ 2 yolo1 35.6",
+     "alts": [
+      "yolo1 35.6",
+      "cyolo1 28.7"
+     ]
+    },
+    {
+     "role": "reviewer",
+     "account": "cyolo1",
+     "score": 29.0,
+     "need": 0.45,
+     "why": "cyolo1 29.0 (U=0.141 F=0.001 S=0.973 S=0.583 L=0.0) · 0.45M ≈ 5ชม. 1.17% / สัปดาห์ 0.15% · อันดับ 2 cyolo2 25.7",
+     "alts": [
+      "cyolo2 25.7"
+     ]
+    }
+   ],
+   "account": "yolo2",
+   "start": 0.0041625,
+   "end": 0.015973958333333333,
+   "dur_base_h": 0.3021,
+   "k": 0.0391,
+   "status": "planned",
+   "score": 41.5
+  },
+  "B07": {
+   "id": "B07",
+   "skill": "cyolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "cyolo2",
+     "score": 28.7,
+     "need": 1.5,
+     "why": "cyolo2 28.7 (U=0.141 F=0.005 S=0.945 S=0.583 L=0.0) · 1.50M ≈ 5ชม. 3.9% / สัปดาห์ 0.49% · อันดับ 2 cyolo1 25.2",
+     "alts": [
+      "cyolo1 25.2"
+     ]
+    }
+   ],
+   "account": "cyolo2",
+   "start": 0.0086125,
+   "end": 0.01901875,
+   "dur_base_h": 0.3125,
+   "k": 0.0333,
+   "status": "planned",
+   "score": 28.7
+  },
+  "B04": {
+   "id": "B04",
+   "skill": "best_of",
+   "accounts": [
+    {
+     "role": "candidate",
+     "account": "yolo2",
+     "score": 40.8,
+     "need": 0.6,
+     "why": "yolo2 40.8 (U=0.474 F=0.002 S=0.871 S=0.583 L=0.0) · 0.60M ≈ 5ชม. 1.56% / สัปดาห์ 0.2% · อันดับ 2 yolo1 32.0",
+     "alts": [
+      "yolo1 32.0",
+      "cyolo1 26.2"
+     ]
+    },
+    {
+     "role": "candidate",
+     "account": "yolo1",
+     "score": 32.0,
+     "need": 0.6,
+     "why": "yolo1 32.0 (U=0.208 F=0.001 S=0.992 S=0.583 L=0.0) · 0.60M ≈ 5ชม. 0.78% / สัปดาห์ 0.09% · อันดับ 2 cyolo1 26.2",
+     "alts": [
+      "cyolo1 26.2",
+      "cyolo2 22.4"
+     ]
+    },
+    {
+     "role": "judge",
+     "account": "cyolo1",
+     "score": 26.3,
+     "need": 0.18,
+     "why": "cyolo1 26.3 (U=0.141 F=0.001 S=0.968 S=0.408 L=0.0) · 0.18M ≈ 5ชม. 0.47% / สัปดาห์ 0.06% · อันดับ 2 cyolo2 22.6",
+     "alts": [
+      "cyolo2 22.6"
+     ]
+    }
+   ],
+   "account": "yolo2",
+   "start": 0.015973958333333333,
+   "end": 0.021290625,
+   "dur_base_h": 0.1208,
+   "k": 0.044,
+   "status": "planned",
+   "score": 40.8
+  },
+  "B08": {
+   "id": "B08",
+   "skill": "yolo",
+   "accounts": [
+    {
+     "role": "worker",
+     "account": "yolo2",
+     "score": 37.8,
+     "need": 1.5,
+     "why": "yolo2 37.8 (U=0.474 F=0.005 S=0.832 S=0.417 L=0.0) · 1.50M ≈ 5ชม. 3.9% / สัปดาห์ 0.49% · อันดับ 2 yolo1 29.2",
+     "alts": [
+      "yolo1 29.2"
+     ]
+    }
+   ],
+   "account": "yolo2",
+   "start": 0.021290625,
+   "end": 0.027540625,
+   "dur_base_h": 0.2083,
+   "k": 0.03,
+   "status": "planned",
+   "score": 37.8
+  }
+ }
+}

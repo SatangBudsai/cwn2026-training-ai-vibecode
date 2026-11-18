@@ -1,0 +1,63 @@
+{
+  "best": {
+    "pixels": 58703,
+    "pct": 4.7749
+  },
+  "values": {
+    "--font-family": "\"Garuda\", \"Loma\", sans-serif",
+    "--space-6": "27px",
+    "--space-8": "48px",
+    "--space-3": "11px",
+    "--font-size-md": "17px",
+    "--font-size-lg": "17px",
+    "--font-size-xl": "17px",
+    "--font-size-xs": "12px",
+    "--font-weight-medium": "400",
+    "--color-primary": "#1a6ddf",
+    "--row-padding-x": "38px",
+    "--list-heading-margin": "var(--space-2) 0 0",
+    "--col-logo-width": "65px",
+    "--col-times-width": "235px",
+    "--col-co2-width": "168px",
+    "--row-time-size": "13px",
+    "--row-sub-size": "12px",
+    "--form-field-border": "1px solid var(--color-divider)",
+    "--form-shadow": "0 1px 3px rgba(60, 64, 67, 0.3)",
+    "--form-field-padding-x": "23px",
+    "--chips-margin-top": "21px",
+    "--header-padding-x": "21px",
+    "--list-note-size": "12px",
+    "--sort-font-size": "12px"
+  },
+  "guards": {
+    "ok": true,
+    "fails": [],
+    "info": {
+      "checked": 217,
+      "firstRow": {
+        "x": 178,
+        "y": 602,
+        "bottom": 694
+      },
+      "mainContrast": 16.1,
+      "textVars": {
+        "--color-text": "#202124",
+        "--color-text-secondary": "#5f6368",
+        "--color-text-on-primary": "#fff"
+      },
+      "inputs": 5
+    }
+  },
+  "stats": {
+    "tried": 247,
+    "improved": 34,
+    "rejected": {
+      "structure": 0,
+      "legibility": 0,
+      "exploit": 0
+    },
+    "rejectedSets": 0,
+    "examples": []
+  },
+  "seconds": 32
+}

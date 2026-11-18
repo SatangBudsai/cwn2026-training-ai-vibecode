@@ -1,0 +1,80 @@
+{
+  "id": "TC-PRICE-04",
+  "title": "TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "15 ชุด: ฿800 − ฿750 = ฿50 · แต้ม 1,700 − 1,500 = 200\n16 ชุด: ฿800 − ฿800 = ฿0 · แต้ม 100 · `+` เพิ่มต่อไม่ได้\n17 ชุด: ถูกปฏิเสธด้วยสถานะ 4xx เพราะส่วนลด ฿850 เกินค่าบริการ ฿800 ไม่ใช่เพราะยอดไม่ตรง (`price-changed`) · แต้มยัง 1,700 · ไม่มีนัดใหม่ (ถ้าไม่กันเพดานจะได้ −฿50)\n16 ชุด รถ H04: ฿0 + ค่ารถ ฿300 = จ่าย ฿300 · แต้ม 100 · `+` เพิ่มต่อไม่ได้ (ถ้าแต้มจ่ายค่ารถได้ `+` จะไปถึง 17 ชุด = ฿1,100 − ฿850 = ฿250 · แต้ม 0)\nย้อนคน: 3 คน 17 ชุด = ฿2,400 − ฿850 = ฿1,550 · ย้อนเป็น 1 คนแล้วเว็บปรับลงเป็น 16 ชุดหรือบอกให้ลด โดยไม่บอกว่าแลกแต้มไม่ได้เลย เพราะมี 1,700 แต้ม · จองจบที่ ฿0 · แต้ม 100",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 400,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-32 · F-ร้าน 9",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 400,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-32, BR-20",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 400,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R35",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 400,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 400,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 400,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 141933,
+  "at": "2026-11-06T02:55:56.122Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).not.toContainText(expected) failed\n\nLocator: getByTestId('booking-extra-points')\nExpected substring: not \"แลกแต้มไม่ได้\"\nReceived string: \"แลกแต้มเลือกแล้วยอดนี้ยังแลกแต้มไม่ได้−17 ชุด (1700 แต้ม)+แลกสูงสุดส่วนลดจากแต้มเกินค่าบริการ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft not toContainText\" getByTestId('booking-extra-points') with timeout 6000ms\n  - waiting for getByTestId('booking-extra-points')\n    16 × locator resolved to <div class=\"nv8LGq_extra\" data-e2e-prev-outline=\"\" data-testid=\"booking-extra-points\">…</div>\n       - unexpected value \"แลกแต้มเลือกแล้วยอดนี้ยังแลกแต้มไม่ได้−17 ชุด (1700 แต้ม)+แลกสูงสุดส่วนลดจากแต้มเกินค่าบริการ\"\n"
+  ],
+  "steps": [
+    "1. แถว 15 ชุด: ตั้งชุด ยืนยัน รีโหลด อ่านแต้ม",
+    "2. แถว 16 ชุด: ตั้งชุด ลองกด + ต่อ ยืนยัน รีโหลด",
+    "3. แถว 17 ชุด: ดึงคำขอจาก 16 ชุด รีเซ็ต แล้วยิงเป็น 17 ชุด",
+    "4. แถวรถ: เลือก H04 แลก 16 ชุด ลองกด + ต่อ ยืนยัน",
+    "5-6. แถวย้อน: 3 คน 17 ชุด ย้อนเป็น 1 คน แล้วจองจบ ✗"
+  ]
+}

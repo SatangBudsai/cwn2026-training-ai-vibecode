@@ -1,0 +1,7 @@
+- dialog "ราคา":
+  - heading "ราคา" [level=2]
+  - button "ปิดกล่องโต้ตอบ":
+    - img
+  - text: ทุกราคา
+  - slider "ราคาสูงสุด": "310000"
+  - button "ล้าง ราคา" [disabled]: ล้าง

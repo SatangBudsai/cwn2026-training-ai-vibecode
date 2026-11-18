@@ -1,0 +1,77 @@
+{
+  "id": "TC-RIDE-05",
+  "title": "TC-RIDE-05 Bangkok Relax จองได้สูงสุด 3 คน และนับนักบำบัดที่ถูกจองไปแล้ว",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "2 คน → ฿5,800 (฿2,900 × 2 · ถ้าเก็บรถจะได้ ฿6,100) ห้องเป็น Couple Suite\n3 คน → ฿8,700 (฿2,900 × 3 · ถ้าลดกลุ่ม 10% จะได้ ฿7,830 ถ้าเก็บรถจะได้ ฿9,000) นักบำบัดคือ T01, T02, T06\n4 คน → จองไม่ได้ มีข้อความแจ้ง (ถ้าปล่อยผ่านจะได้ ฿11,600) · ข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. ก่อนรีเซ็ต 0 รายการ\n3 คน 24 มิ.ย. 10:00 → จองไม่ได้ เหลือ 3 − 1 = 2 คน (ถ้าไม่นับ B13 จะได้ ฿8,700) · ข้อมูลไม่เปลี่ยน: คิว 24 มิ.ย. 2 รายการ คือ `SJTEST13` (T02 10:00–12:00) และ `SJTEST14` (T03 12:00–13:00)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 453,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §2 นักบำบัด · [R] ⚠️A-34 · [R] ⚠️D-01 · F-ร้าน 6",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 453,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-52, BR-12",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 453,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R18",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 453,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 453,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 453,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 46325,
+  "at": "2026-11-06T02:19:52.188Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. แถว 2 คน: จองและยืนยัน อ่านยอดและห้อง",
+    "2. รีเซ็ต แถว 3 คน: จองและยืนยัน ดูนักบำบัดในหลังร้าน",
+    "3. รีเซ็ต U06 ลองจอง 4 คน แล้วเปิดคิว 17 มิ.ย.",
+    "4. รีเซ็ต แขกลองจอง 3 คน รอบ 24 มิ.ย. 10:00 แล้วเปิดคิว 24 มิ.ย."
+  ]
+}

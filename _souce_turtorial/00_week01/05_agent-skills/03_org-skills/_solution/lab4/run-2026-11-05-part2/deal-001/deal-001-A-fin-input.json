@@ -1,0 +1,37 @@
+{
+  "deal": "deal-001-A",
+  "customer": "ธนาคารนครหลวงพัฒนา จำกัด (มหาชน) — ฝ่ายพัฒนาช่องทางสาขา",
+  "project": "ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114) — ฉบับ A ของ Sales (ตรวจซ้ำตามที่ยื่น)",
+  "prepared_by": "จอย พัฒนสิน (fin-joy) — ตรวจซ้ำ deal-001-pricing-input.json ของ sales-nida",
+  "date": "2026-11-05",
+  "fixed_price": true,
+  "budget_thb": 4800000,
+  "lines": [
+    {"code": "MD-SA", "qty": 15, "note": "ตามตัวเลข Sales"},
+    {"code": "MD-PM", "qty": 30, "note": "ต่ำกว่าเกณฑ์ ~ครึ่งเวลา 6 เดือน (ดีลที่ชนะ 5 เดือน = 40)"},
+    {"code": "MD-DEV-SR", "qty": 35, "note": "ต่ำกว่าเกษตรไทย (40 สาขา = 40) ทั้งที่ขอบเขตใหญ่กว่า"},
+    {"code": "MD-DEV", "qty": 70, "note": "ต่ำกว่าเกษตรไทย (80) · 120 สาขา + core mTLS + Q-Matic + SSO"},
+    {"code": "MD-UX", "qty": 10, "note": "ตามตัวเลข Sales"},
+    {"code": "MD-QA", "qty": 30, "note": "28.6% ของ Dev+Dev-Sr — อยู่ในช่วง 25–35%"},
+    {"code": "MD-DEVOPS", "qty": 12, "note": "3 env + observability ธนาคาร — ต่ำ"},
+    {"code": "MD-ML", "qty": 35, "note": "ปลายบนของช่วง 20–35 — สมเหตุสมผล"},
+    {"code": "CL-M", "qty": 12, "note": "ปีแรก นับจากลงนาม"},
+    {"code": "LIC-LINE", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-APM", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "8x5 — TOR ต้องการ Sev 1 ตอบรับ 30 นาที"}
+  ],
+  "external": [],
+  "discount_thb": 0,
+  "discount_reason": "",
+  "assumptions": [
+    "แปลงจาก deal-001-pricing-input.json ของ Sales โดยไม่เปลี่ยนจำนวน (เปลี่ยนชื่อ field budget→budget_thb, discount→discount_thb ให้ตรงรูปแบบ pricing-calc)",
+    "price-list ของ pricing-rules (core) ตรงกับ company-kit/price-list.csv ทุกบรรทัด · self-test ตาม margin-rules ได้ 755,000 / 477,000 / 36.8% ตรง",
+    "ค่า SMS/OTP และ pen test ธนาคารจ่าย (Sales D7, D8) — ถ้าไม่ใช่ต้องเพิ่ม external"
+  ],
+  "decisions": [
+    "เลขคำนวณถูก แต่ผู้อนุมัติผิด: ลูกค้าธนาคารและมูลค่า ≥ 1M ต้องผ่าน MD (deal-approval) เสมอ — หัวหน้าทีมขายอนุมัติเองไม่ได้",
+    "man-day 237 (ก่อน buffer) ถูกลดลงเพื่อให้เข้างบ ไม่ใช่ประเมินจากขอบเขต — ต่ำกว่าฉบับบัญชีวันที่ 3 พ.ย. (286) และต่ำกว่าดีลเกษตรไทยที่ขอบเขตเล็กกว่า",
+    "ไม่แนะนำให้ยื่นฉบับนี้จนกว่า SA ยืนยัน man-day เป็นลายลักษณ์อักษร"
+  ]
+}

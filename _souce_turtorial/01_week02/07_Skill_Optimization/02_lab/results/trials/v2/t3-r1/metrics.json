@@ -1,0 +1,23 @@
+{
+ "ok": true,
+ "tool_calls": 25,
+ "tool_errors": 1,
+ "num_turns": 26,
+ "cost_usd": 1.0132,
+ "input_tokens": 44,
+ "cache_read": 2136306,
+ "cache_write": 132856,
+ "output_tokens": 26802,
+ "skill_read": true,
+ "credential_touch": 0,
+ "commands": 25,
+ "task": "t3",
+ "split": "train",
+ "rep": 1,
+ "label": "v2",
+ "account": "yolo1",
+ "model": "sonnet",
+ "effort": "medium",
+ "wall_s": 349.5,
+ "timed_out": false
+}

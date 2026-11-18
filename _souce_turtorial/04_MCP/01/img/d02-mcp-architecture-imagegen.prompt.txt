@@ -1,0 +1,18 @@
+Create a clean professional Thai educational infographic on white background, landscape 1536x1024. Crisp typography, readable large labels, restrained blue and purple, no handwriting, no decorative clutter. Heading: "โครงสร้างการทำงานของ MCP". Subtitle: "Host · MCP Client · MCP Server · Tools / Resources / Prompts".
+
+Illustrate ONLY ONE MCP Client and ONLY ONE MCP Server. Two main large containers side-by-side, with empty space between them. No Excalidraw, no Playwright, no additional clients or servers.
+
+LEFT CONTAINER, blue, title "Host (แอป AI)" and "Claude Code / Codex CLI". Note "จัดการ LLM · คุมสิทธิ์ · รวมผลลัพธ์". Inside the Host there are two vertically stacked boxes: an upper box labeled "LLM" with "เลือก tool และ arguments"; and a lower box labeled "MCP Client" with "ส่งคำขอ · รับผลลัพธ์". A vertical double-headed blue arrow links LLM and MCP Client. Both boxes are entirely inside the Host. A tiny user symbol outside the Host can send a prompt to Host but omit it if space is tight.
+
+RIGHT CONTAINER, purple, title "MCP Server" and "ตัวอย่าง: hello-lab". Inside this ONE server container, show THREE capability cards stacked vertically. They are capabilities of the server, NOT separate servers. Card text verbatim:
+1. "Tools" / "ฟังก์ชันให้เรียก" / "add(a, b)"
+2. "Resources" / "ข้อมูลให้อ่านผ่าน URI" / "lab://info"
+3. "Prompts" / "แม่แบบข้อความ" / "explain_mcp(topic)"
+
+EXACTLY ONE horizontal purple double-headed arrow crosses the empty gap: its LEFT endpoint must touch the MCP Client box, and its RIGHT endpoint must touch the OUTER boundary of the MCP Server container. Label this arrow "MCP · JSON-RPC 2.0" with short second line "stdio / Streamable HTTP". No arrow originates at the LLM toward the server. No crossing wires. Server receives requests and returns results along that same bidirectional arrow. Do not connect the arrow to an individual capability card.
+
+Bottom rule in a prominent simple band: "1 MCP Client ↔ 1 MCP Server".
+Small footer: "Host มีหลาย Client ได้ โดยแยก Client สำหรับแต่ละ Server".
+Small server note: "Server อาจมีหนึ่งหรือหลาย capability".
+
+This image should teach the containment relationship (Host contains Client, Server contains Tools/Resources/Prompts) and the single bidirectional Client-Server protocol connection. Keep labels accurate and avoid all extra connections.

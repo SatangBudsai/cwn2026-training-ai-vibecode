@@ -1,0 +1,83 @@
+{
+  "id": "TC-PRICE-05",
+  "title": "TC-PRICE-05 แลกเต็มเพดานแล้วเลือกเดือนเกิด เพดานลดตามค่าบริการใหม่",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ก่อนเลือก: ฿800 − ฿800 = ฿0\nหลังเลือก: ค่าบริการ ฿800 − 20% (฿160) = ฿640 · เพดาน ฿640 ÷ ฿50 = 12 ชุด · ไม่ผูกว่าเว็บลดชุดเองหรือให้ลูกค้าลด (F-ร้าน 8)\n`birthday-result` ต้องไม่ขึ้นว่าส่วนลดอื่นมากกว่า เพราะ U11 Silver มีส่วนลดอื่น 0% (F-สร้าง 10)\n\"แลกสูงสุด\" ได้ 12 ชุด\nยอดสุดท้าย: ฿640 − ฿600 = ฿40 (ถ้าไม่ได้ส่วนลดเดือนเกิด 12 ชุดจะได้ ฿800 − ฿600 = ฿200) · ถ้าต้องกด `−` เองหลังกด \"แลกสูงสุด\" ให้บันทึกข้อ \"แลกสูงสุด ได้ 12 ชุด\" เป็นไม่ผ่าน\nแต้ม 1,700 − 1,200 = 500 · หน้ายืนยันและหลังร้านแสดง ฿40",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 505,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] · F-ร้าน 8 · F-สร้าง 10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 505,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-32, FR-33, BR-20, BR-25",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 505,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R34",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 505,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Boundary, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 505,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 505,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 43985,
+  "at": "2026-11-06T02:22:47.487Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).not.toMatch(expected)\n\nExpected pattern: not /มากกว่า/\nReceived string:      \"สิทธิ์เดือนเกิด\nเลือกแล้ว\nใช้สิทธิ์เดือนเกิดกับการจองนี้\n\nราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า\"",
+    "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 2\n+ Received  + 2\n\n  Object {\n-   \"discount\": 160,\n+   \"discount\": 0,\n    \"full\": 800,\n-   \"pct\": 20,\n+   \"pct\": 0,\n  }",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 12\nReceived: 16"
+  ],
+  "steps": [
+    "1. ไปถึงหน้าสรุป แลก 16 ชุด อ่านยอด",
+    "2. เลือกเดือนเกิด อ่านผล บรรทัดส่วนลด และจำนวนชุด ✗",
+    "3. กด \"แลกสูงสุด\" ✗",
+    "4. ถ้าจำนวนชุดยังเกิน 12 ให้กด − จนเหลือ 12",
+    "5. กดยืนยัน อ่านหน้ายืนยัน แล้วรีโหลด อ่านแต้ม",
+    "6. ดูยอดของนัดในหลังร้าน"
+  ]
+}

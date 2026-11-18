@@ -1,0 +1,19 @@
+# 22-origin-multiselect-added @ 2026-11-01 17:10:09 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- dialog "ป้อนต้นทาง":
+  - listbox:
+    - option "กรุงเทพมหานคร"
+    - button "ลบ":
+      - img
+    - option "ภูเก็ต"
+    - button "ลบ":
+      - img
+    - combobox "มีต้นทางอื่นอีกไหม" [expanded]
+  - img
+  - button "เสร็จ":
+    - img
+  - listbox:
+    - checkbox "ภูเก็ต" [checked]
+    - button "สลับปุ่มเพื่อแสดงรายการสนามบินที่อยู่ใกล้เคียงกับภูเก็ต" [expanded]:
+      - img
+    - checkbox "ท่าอากาศยานนานาชาติภูเก็ต (HKT)" [checked]: ท่าอากาศยานนานาชาติภูเก็ต HKT

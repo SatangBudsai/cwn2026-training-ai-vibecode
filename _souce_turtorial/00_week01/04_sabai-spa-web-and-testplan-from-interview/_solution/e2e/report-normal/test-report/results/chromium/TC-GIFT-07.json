@@ -1,0 +1,93 @@
+{
+  "id": "TC-GIFT-07",
+  "title": "TC-GIFT-07 รหัสพิมพ์เล็กใช้ได้ทั้งจองและตรวจยอด กรอกรหัสผิดแล้วลบจนว่าง error ต้องหาย",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: เห็นยอด ฿2,000 ของบัตรเดียวกับ GIFT-ACTIVE (ถ้าขึ้นว่าไม่พบบัตร ถือว่าไม่ผ่าน)\nขั้น 2: มี error ว่าไม่พบบัตร · ยอดจ่ายยัง ฿800\nขั้น 3: error หายทันที · ปุ่มยืนยันกดได้ · ยอดจ่าย ฿800 (ถ้า error ค้าง ปุ่มยืนยันจะปิด)\nขั้น 4: ฿800 − ฿800 = จ่าย ฿0\nขั้น 5: บัตร ฿2,000 − ฿800 = ฿1,200",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 521,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] · F-ร้าน 7",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 521,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-29, FR-49",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 521,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R52, R53",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 521,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 521,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 521,
+        "column": 1
+      }
+    },
+    {
+      "type": "pending-answer",
+      "description": "TC-GIFT-07 ขั้น 1 ตรวจยอดรหัสพิมพ์เล็ก: ไม่พบบัตร: บัตรเพื่อดูยอดคงเหลือ วันหมดอายุ และสถานะ\n\nรหัสบัตร\nตรวจยอด\n\nไม่พบ Gift Card นี้"
+    },
+    {
+      "type": "pending-answer",
+      "description": "TC-GIFT-07 ขั้น 4 จองด้วยรหัสพิมพ์เล็ก: ยอดจ่าย ฿800"
+    },
+    {
+      "type": "pending-answer",
+      "description": "TC-GIFT-07 ขั้น 5 ไม่ได้จองเพราะรหัสพิมพ์เล็กไม่ถูกรับ: GIFT-ACTIVE ยอด ฿2000"
+    }
+  ],
+  "status": "failed",
+  "durationMs": 21607,
+  "at": "2026-11-06T02:28:43.744Z",
+  "attempts": [],
+  "errors": [
+    "Error: error ต้องหายเมื่อลบช่องจนว่าง\n\nexpect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('booking-screen-3').locator('[data-testid^=\"error-\"]')\nExpected: 0\nReceived: 1\nTimeout:  1000ms\n\nCall log:\n  - error ต้องหายเมื่อลบช่องจนว่าง getByTestId('booking-screen-3').locator('[data-testid^=\"error-\"]') with timeout 1000ms\n  - waiting for getByTestId('booking-screen-3').locator('[data-testid^=\"error-\"]')\n    11 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toBeEnabled() failed\n\nLocator:  getByTestId('booking-confirm')\nExpected: enabled\nReceived: disabled\nTimeout:  1000ms\n\nCall log:\n  - Expect \"soft toBeEnabled\" getByTestId('booking-confirm') with timeout 1000ms\n  - waiting for getByTestId('booking-confirm')\n    11 × locator resolved to <button disabled type=\"button\" data-e2e-prev-outline=\"\" data-testid=\"booking-confirm\" class=\"Hi2WXW_btn Hi2WXW_btn-gold Hi2WXW_btn-lg nv8LGq_actionMain\">ยืนยันการจอง</button>\n       - unexpected value \"disabled\"\n"
+  ],
+  "steps": [
+    "1. ตรวจยอดด้วย gift-active (รอคำตอบร้าน F-ร้าน 7)",
+    "2. กรอก GIFT-NOPE แล้วกดใช้ ดู error และปุ่มยืนยัน",
+    "3. ลบช่องจนว่าง ดู error ปุ่มยืนยัน และยอดจ่าย ✗",
+    "4. กรอก gift-active แล้วกดใช้ ดูยอดจ่าย (รอคำตอบร้าน F-ร้าน 7)",
+    "5. ยืนยันการจอง แล้วตรวจยอดด้วยรหัส GIFT-ACTIVE และรีโหลด"
+  ]
+}

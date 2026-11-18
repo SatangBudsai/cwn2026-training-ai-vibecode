@@ -1,0 +1,4 @@
+ใน container multi-account-devtool ช่วยเตรียมพื้นที่ทำงานที่ /workspace/arena จากโฟลเดอร์ inputs/ ของบทนี้ (ไม่ต้องใช้ไฟล์จากบทอื่น)
+1. คัดลอก inputs/skythai-v4 ไปเป็น /workspace/arena/base-v4 แล้วรัน docker compose up -d --build (แอป v4 ที่พอร์ต 5084 จุดเริ่มต้นที่เราจะต่อยอด)
+2. คัดลอก inputs/oracle ไปเป็น /workspace/arena/kit/src และ inputs/exploration ไปเป็น /workspace/arena/docs
+3. ส่งงานในไฟล์ _solution/run/k0.txt ของบทนี้ให้ yolo1 ทำ (yolo1 -p) แล้วแสดงคำตอบของ yolo1 ให้ฉันดู

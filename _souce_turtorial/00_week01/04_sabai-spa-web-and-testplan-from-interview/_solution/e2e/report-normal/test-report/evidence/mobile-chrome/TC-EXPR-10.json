@@ -1,0 +1,114 @@
+{
+  "id": "TC-EXPR-10",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ขั้น 1 /th audio.paused = true",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/001.jpg",
+      "actor": "main",
+      "t": 1422
+    },
+    {
+      "n": 2,
+      "label": "ขั้น 2 /th/tour audio.paused = true",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/002.jpg",
+      "actor": "main",
+      "t": 2833
+    },
+    {
+      "n": 3,
+      "label": "ขั้น 3 กดครั้งแรก audio.paused = false",
+      "pass": true,
+      "actual": "false",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/003.jpg",
+      "actor": "main",
+      "t": 4265
+    },
+    {
+      "n": 4,
+      "label": "ขั้น 3 กดครั้งที่สอง audio.paused = true",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/004.jpg",
+      "actor": "main",
+      "t": 5703
+    },
+    {
+      "n": 5,
+      "label": "ขั้น 4 หลังรีโหลด audio.paused = true",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/005.jpg",
+      "actor": "main",
+      "t": 7089
+    },
+    {
+      "n": 6,
+      "label": "จอ 375px ภาพเปลี่ยนระหว่างลาก",
+      "pass": true,
+      "actual": "{\"angles\":[0,52,103,155,206,258,309,0],\"maxDiff\":57.35610313539844}",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/006.jpg",
+      "actor": "main",
+      "t": 14520
+    },
+    {
+      "n": 7,
+      "label": "จอ 375px ลากครบ 360° มุมกลับมาที่จุดเริ่ม",
+      "pass": true,
+      "actual": "{\"angles\":[0,52,103,155,206,258,309,0],\"fromStart\":0}",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/007.jpg",
+      "actor": "main",
+      "t": 15500
+    },
+    {
+      "n": 8,
+      "label": "จอ 375px ภาพกลับมาตรงภาพเริ่ม (ต่างเฉลี่ย 14.57)",
+      "pass": false,
+      "actual": "",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/008.jpg",
+      "actor": "main",
+      "t": 16515
+    },
+    {
+      "n": 9,
+      "label": "จอ 1280px ภาพเปลี่ยนระหว่างลาก",
+      "pass": true,
+      "actual": "{\"angles\":[0,79,158,236,315,0],\"maxDiff\":55.11726478680562}",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/009.jpg",
+      "actor": "main",
+      "t": 30650
+    },
+    {
+      "n": 10,
+      "label": "จอ 1280px ลากครบ 360° มุมกลับมาที่จุดเริ่ม",
+      "pass": true,
+      "actual": "{\"angles\":[0,79,158,236,315,0],\"fromStart\":0}",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/010.jpg",
+      "actor": "main",
+      "t": 31698
+    },
+    {
+      "n": 11,
+      "label": "จอ 1280px ภาพกลับมาตรงภาพเริ่ม (ต่างเฉลี่ย 0.00)",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/011.jpg",
+      "actor": "main",
+      "t": 32756
+    },
+    {
+      "n": 12,
+      "label": "ขั้น 7 error ใน console 0 รายการ",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/mobile-chrome/TC-EXPR-10/012.jpg",
+      "actor": "main",
+      "t": 33808
+    }
+  ],
+  "videos": {}
+}

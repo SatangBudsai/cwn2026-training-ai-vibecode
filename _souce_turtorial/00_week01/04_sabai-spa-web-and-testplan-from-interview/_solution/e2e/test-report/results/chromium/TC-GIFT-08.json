@@ -1,0 +1,83 @@
+{
+  "id": "TC-GIFT-08",
+  "title": "TC-GIFT-08 มูลค่าบัตร ฿500–฿10,000 จำนวนเต็ม บังคับทั้งหน้าจอและ API",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "฿499, ฿10,001, ฿2,149.99, ฿2,150.50: หน้าเว็บไม่ออกบัตร · API ถูกปฏิเสธด้วยสถานะ 4xx · ไม่มีรหัสบัตรใหม่ · ยอด ฿9,999 · แต้ม 250\n฿500, ฿501, ฿2,150, ฿9,999, ฿10,000: ได้รหัสบัตรใหม่ · ตรวจยอดได้เท่ามูลค่าที่ซื้อตรงทุกค่า\nไม่มี session: บันทึกผล ไม่นับเป็น P1 จนกว่าร้านจะตอบข้อ 8.3 · ถ้าร้านตอบว่าต้องเป็นสมาชิก ต้องได้ 401/403 และไม่มีรหัสบัตรใหม่\nหลังซื้อครบ U03 ยอด ฿9,999 ระดับ Silver (฿9,999 + ฿0 · ถ้านับยอดซื้อบัตรจะได้ ฿33,149 และกลายเป็น Platinum)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 580,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.18 · [D] §4 Gift Card · [D] §4 แต้มและระดับ · [D][R] E196–E204, E110",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 580,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "BR-41, BR-42, BR-43, BR-23, FR-47",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 580,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R73",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 580,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Security",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 580,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 580,
+        "column": 1
+      }
+    },
+    {
+      "type": "pending-answer",
+      "description": "TC-GIFT-08 ซื้อโดยไม่มี session: สถานะ 201 รหัส GIFT-9PAPJFRGKB"
+    }
+  ],
+  "status": "passed",
+  "durationMs": 61491,
+  "at": "2026-11-06T03:01:39.134Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U03 ซื้อด้วย ฿500 เพื่อดึง URL จาก Network แล้วรีเซ็ต",
+    "2. กรอกค่าที่ต้องถูกปฏิเสธบนหน้าเว็บทีละค่า",
+    "3. ยิงค่าเดียวกันซ้ำด้วย Playwright request",
+    "4. ซื้อค่าที่ต้องผ่านบนหน้าเว็บทีละค่า ตรวจยอดบัตรใหม่",
+    "5. ยิงซ้ำค่า ฿500 โดยไม่มี session (รอคำตอบร้านข้อ 8.3)",
+    "6. ดูยอดสะสม U03 แล้วรีโหลด"
+  ]
+}

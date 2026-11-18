@@ -1,0 +1,35 @@
+{
+  "deal": "deal-001",
+  "customer": "ธนาคารนครหลวงพัฒนา จำกัด (มหาชน) — ฝ่ายพัฒนาช่องทางสาขา",
+  "project": "ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114)",
+  "prepared_by": "บัญชี (fin-joy) — ตรวจจาก deal-001-pricing-input.json ของ sales-nida",
+  "date": "2026-11-06",
+  "fixed_price": true,
+  "budget_thb": 4800000,
+  "lines": [
+    {"code": "MD-SA", "qty": 15},
+    {"code": "MD-PM", "qty": 35},
+    {"code": "MD-DEV-SR", "qty": 45},
+    {"code": "MD-DEV", "qty": 80},
+    {"code": "MD-UX", "qty": 12},
+    {"code": "MD-QA", "qty": 38},
+    {"code": "MD-DEVOPS", "qty": 14},
+    {"code": "MD-ML", "qty": 28},
+    {"code": "CL-M", "qty": 12, "note": "production ปีแรก"},
+    {"code": "CL-S", "qty": 6, "note": "dev/UAT ระหว่างโครงการ"},
+    {"code": "LIC-LINE", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-APM", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "ปีแรก"}
+  ],
+  "external": [],
+  "discount_thb": 507000,
+  "discount_reason": "ปิดส่วนต่างให้ราคาเท่าเพดานงบ 4,800,000 ตาม TOR ข้อ 6",
+  "assumptions": [
+    "man-day เป็นการประเมินฝั่งขาย ยังไม่ผ่าน SA และพึ่งการ reuse ที่ยังไม่ยืนยันสิทธิ์โค้ด",
+    "ค่า pentest, SMS OTP และอุปกรณ์สาขาไม่รวมในราคา ตาม proposal ข้อ 7"
+  ],
+  "decisions": [
+    "ดูผลตรวจและข้อที่ต้องตัดสินใน deal-001-finance-check.md"
+  ]
+}

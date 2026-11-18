@@ -1,0 +1,4 @@
+# ข้อยกเว้นของด่านสแกนความปลอดภัย (scripts/security-scan.py) · แก้ไฟล์นี้ต้องให้ทีม platform รีวิว
+# รูปแบบ: <กฎ> <glob ของ path>  # เหตุผลที่ปลอดภัย
+
+secret-env plugins/dev/skills/project-scaffold/templates/tests/e2e/helpers.ts  # เทมเพลต e2e ของโปรเจกต์ใหม่ อ่าน webhook secret ของระบบทดสอบ ไม่ได้ส่งออก

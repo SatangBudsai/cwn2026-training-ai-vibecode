@@ -1,0 +1,390 @@
+{
+"lab": "LAB 4 (ต่อ) · ดีลวิ่งต่อ",
+"steps": [
+{
+"id": "lab4b-run2-step01",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "MD ตีกลับดีล deal-001 (เหตุผลใน ../../deals/deal-001/approval.md) ตอนนี้ skill ของบริษัทอัปเดตแล้ว ช่วยแก้ proposal ของดีลนี้ให้ครบตามที่ MD ขอ แล้วส่งกลับให้ MD พิจารณาใหม่ในโฟลเดอร์ดีล",
+"reads": [
+"approval.md ที่ MD ตีกลับ",
+"ต้นฉบับภาคผนวกใน core 1.1.0 (อ่านจาก cache)"
+],
+"skill": "sales:sales-proposal",
+"skillNote": "Claude หยิบเอง (+ core:pricing-rules, core:customer-data-policy)",
+"time": "3 นาที 41 วินาที",
+"outputs": [
+{
+"file": "proposal",
+"note": "ภาคผนวก PDPA 3 ข้อ ตรงต้นฉบับทุกตัวอักษร"
+},
+{
+"file": "ผู้อนุมัติ",
+"note": "แก้เป็น MD · ส่วนลด 11.9% ของยอดที่ลดได้"
+},
+{
+"file": "ราคา",
+"note": "ยัง 4,800,000 บาท · margin 28.3%"
+}
+],
+"verdict": {
+"kind": "info",
+"text": "ส่งกลับให้ MD รอบ 2",
+"sub": "ยังยื่นไม่ได้: SA หรือ DevOps ยังไม่ยืนยัน data residency"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab4b-run2-step02",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "ดีล ../../deals/deal-001/ ส่งกลับมาให้พิจารณาใหม่แล้ว อนุมัติได้ไหม เขียนผลไว้ในโฟลเดอร์ดีล",
+"reads": [
+"deal-rules.md ของ MD",
+"ไฟล์ทั้งหมดในโฟลเดอร์ดีล"
+],
+"skill": "exec:deal-approval",
+"skillNote": "Claude หยิบเอง",
+"time": "3 นาที 51 วินาที",
+"outputs": [
+{
+"file": "ข้อ 5 ภาคผนวก",
+"note": "ครบ 3 ข้อแล้ว แต่ยังไม่มีผู้ยืนยัน data residency"
+},
+{
+"file": "ข้อ 1 กำไร",
+"note": "margin พึ่ง reuse ที่ยังไม่ยืนยันสิทธิ์"
+},
+{
+"file": "ข้อ 2 แผนงาน + ข้อ 6 ทีม",
+"note": "ไม่ผ่าน · SA ยังไม่ตรวจ man-day"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "ตีกลับครั้งที่ 1 ของตอนนี้",
+"sub": "ภาคผนวกผ่านด่านแรก จึงตรวจข้ออื่นต่อได้"
+},
+"next": "➜ sa-ton"
+},
+{
+"id": "lab4b-run2-step03",
+"who": "sa-ton",
+"role": "SA",
+"color": "#fde68a",
+"portrait": "../../../img/people/sa-ton.jpg",
+"prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+"reads": [
+"ผลล่าสุดของ MD",
+"TOR + ไฟล์ราคา"
+],
+"skill": "core:pricing-rules",
+"skillNote": "Claude หยิบเอง (+ core:customer-data-policy)",
+"time": "9 นาที",
+"outputs": [
+{
+"file": "man-day",
+"note": "297 วันไม่พอ เสนอ 337 วัน"
+},
+{
+"file": "margin",
+"note": "ลดจาก 28.3% เหลือ 21.2%"
+},
+{
+"file": "ไม่ยอมลงชื่อ",
+"note": "data residency และสิทธิ์ reuse ต้องให้คนอื่นยืนยัน"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "งบเท่าเดิม แต่กำไรหายไป 7%",
+"sub": "SA เป็นคนแรกที่ตรวจว่าแรงงานพอไหม"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab4b-run2-step04",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+"reads": [
+"ผลล่าสุดของ MD",
+"แผนของ SA"
+],
+"skill": "sales:sales-proposal",
+"skillNote": "Claude หยิบเอง (+ follow-up-email ใช้ร่างคำขอ)",
+"time": "7 นาที 22 วินาที",
+"outputs": [
+{
+"file": "proposal",
+"note": "ใส่แผนใหม่ งวดเงิน นิยาม go-live"
+},
+{
+"file": "ร่างคำขอ 10 ฉบับ",
+"note": "ถึงคนอื่นในบริษัท ยังไม่ได้ส่ง"
+},
+{
+"file": "ตัวเลข",
+"note": "ตารางราคายังเป็นชุด 297 วัน"
+}
+],
+"verdict": {
+"kind": "info",
+"text": "ส่งกลับให้ MD",
+"sub": "เอกสารแก้แล้ว แต่คำตอบจากคนอื่นยังไม่มา"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab4b-run2-step05",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "ดีล ../../deals/deal-001/ แก้ตามที่ขอแล้ว ช่วยพิจารณาอีกรอบ เขียนผลไว้ในโฟลเดอร์ดีล",
+"reads": [
+"ผลตรวจของ SA",
+"proposal ฉบับแก้"
+],
+"skill": "exec:deal-approval",
+"skillNote": "Claude หยิบเอง",
+"time": "5 นาที 3 วินาที",
+"outputs": [
+{
+"file": "Margin ที่ใช้ตัดสิน",
+"note": "21.2% ไม่ใช่ 28.3% · รันสคริปต์ซ้ำแล้วตรงกับ SA"
+},
+{
+"file": "ข้อ 1 กำไร",
+"note": "ต่ำกว่า 25% ต้องมี LOI, MOU หรืออีเมลลูกค้า ยังไม่พบ"
+},
+{
+"file": "ข้อ 6 ทีม",
+"note": "ยังไม่มีชื่อ SA และ tech lead"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "ตีกลับครั้งที่ 2",
+"sub": "จาก 11 รายการที่ขอ ปิดแล้ว 4 รายการ"
+},
+"next": "➜ sa-ton"
+},
+{
+"id": "lab4b-run2-step06",
+"who": "sa-ton",
+"role": "SA",
+"color": "#fde68a",
+"portrait": "../../../img/people/sa-ton.jpg",
+"prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+"reads": [
+"ผลล่าสุดของ MD",
+"ปฏิทินวันหยุด 2027"
+],
+"skill": "",
+"skillNote": "ไม่ได้เรียก skill · งานนี้คือทวนแผน",
+"time": "7 นาที 53 วินาที",
+"outputs": [
+{
+"file": "337 วัน",
+"note": "ยืนยันตามเดิม ต้นทุน 3,784,100"
+},
+{
+"file": "QA เดือนที่ 4",
+"note": "ย้ายงาน ภาระลดจาก 88% เหลือ 75%"
+},
+{
+"file": "วันหยุด",
+"note": "พบวันที่แผนเดิมยังไม่หัก 2 วัน"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "แก้แผนแล้ว แต่ยังไม่ลงชื่อ",
+"sub": "มี 3 เรื่องที่เจ้าของโต๊ะต้องทำเอง"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab4b-run2-step07",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+"reads": [
+"ผลล่าสุดของ MD",
+"ผลของ SA"
+],
+"skill": "sales:sales-proposal",
+"skillNote": "Claude หยิบเอง (+ follow-up-email)",
+"time": "8 นาที 8 วินาที",
+"outputs": [
+{
+"file": "ตัดข้อความผลงาน",
+"note": "ไม่พบหลักฐาน จึงเอาออกจาก proposal"
+},
+{
+"file": "ร่างคำขอ",
+"note": "เพิ่มเป็น 14 ฉบับ ยังไม่ได้ส่ง"
+},
+{
+"file": "หลักฐานเชิงกลยุทธ์",
+"note": "ค้นแล้วไม่พบ LOI, MOU หรืออีเมลลูกค้า"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "งานยังไม่ครบ และบอกตรง ๆ",
+"sub": "ดีลเข้าเกณฑ์ \"ไม่ยื่น\" ของ MD"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab4b-run2-step08",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "ดีล ../../deals/deal-001/ แก้ตามที่ขอแล้ว ช่วยพิจารณาอีกรอบ เขียนผลไว้ในโฟลเดอร์ดีล",
+"reads": [
+"เอกสารของ Sales และ SA",
+"สคริปต์ตรวจกำไร"
+],
+"skill": "exec:deal-approval",
+"skillNote": "Claude หยิบเอง",
+"time": "6 นาที 13 วินาที",
+"outputs": [
+{
+"file": "ตัวเลข",
+"note": "21.2% · เหลือ 18.5% หรือ 10.8% ถ้าเจอกรณีเสี่ยง"
+},
+{
+"file": "ข้อ 1 และ 6",
+"note": "ไม่ผ่านเหมือนเดิม"
+},
+{
+"file": "เอกสาร",
+"note": "ยังเป็นร่าง ไม่มีลายเซ็น คำขอยังไม่ได้ส่ง"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "ตีกลับครั้งที่ 3",
+"sub": "แก้เอกสารถูกแล้ว แต่สิ่งที่ตัดสินดีลยังไม่เปลี่ยน"
+},
+"next": "➜ sa-ton"
+},
+{
+"id": "lab4b-run2-step09",
+"who": "sa-ton",
+"role": "SA",
+"color": "#fde68a",
+"portrait": "../../../img/people/sa-ton.jpg",
+"prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+"reads": [
+"คำถามล่าสุดของ MD",
+"runbook ช่วงห้าม deploy"
+],
+"skill": "",
+"skillNote": "ไม่ได้เรียก skill",
+"time": "9 นาที 14 วินาที",
+"outputs": [
+{
+"file": "ทางเลือกใหม่",
+"note": "339 วัน · margin 20.8%"
+},
+{
+"file": "ระลอกเปิดสาขา",
+"note": "เลื่อนให้พ้นช่วงห้าม deploy"
+},
+{
+"file": "สถานะ",
+"note": "รอ ops-art ยืนยัน และเจ้าของโต๊ะลงชื่อ"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "ตอบคำถามแผนครบ แต่ยังเป็นร่าง",
+"sub": "รอบแก้ครบเพดาน 3 รอบแล้ว"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab4b-run2-step10",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+"reads": [
+"ผลล่าสุดของ MD",
+"ผลของ SA"
+],
+"skill": "sales:sales-proposal",
+"skillNote": "Claude หยิบเอง",
+"time": "7 นาที 1 วินาที",
+"outputs": [
+{
+"file": "แก้ข้อความ",
+"note": "ส่วนลดเป็นความเห็นชอบในหลักการของชุด 297 วัน"
+},
+{
+"file": "ร่างคำขอ",
+"note": "เพิ่มเป็น 15 ฉบับ ยังไม่ได้ส่ง"
+},
+{
+"file": "งานที่ Claude ทำไม่ได้",
+"note": "เจ้าของโต๊ะต้องตรวจอีเมลและ CRM เอง"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "เอกสารครบ แต่ตอบ MD ไม่ได้",
+"sub": "ไม่มีหลักฐานจากลูกค้าในพื้นที่ที่ Claude อ่านได้"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab4b-run2-step11",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "ดีล ../../deals/deal-001/ แก้ตามที่ขอแล้ว ช่วยพิจารณาอีกรอบ เขียนผลไว้ในโฟลเดอร์ดีล",
+"reads": [
+"เอกสารรอบล่าสุด",
+"สคริปต์ตรวจกำไร"
+],
+"skill": "exec:deal-approval",
+"skillNote": "Claude หยิบเอง",
+"time": "5 นาที 38 วินาที",
+"outputs": [
+{
+"file": "Margin",
+"note": "21.2% ที่ 337 วัน · 20.8% ที่ 339 วัน"
+},
+{
+"file": "ข้อ 1 และ 6",
+"note": "ยังไม่ผ่าน · ข้อ 5 ยังไม่มีผู้ลงชื่อ"
+},
+{
+"file": "กำหนดตัดสินจริง",
+"note": "พฤ. 12 พ.ย. · ไม่ยื่นเป็นผลที่ยอมรับได้"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "ตีกลับครั้งที่ 4 · ดีลจบที่ \"ยังไม่อนุมัติ\"",
+"sub": "5 แผนกจึงไม่ได้เริ่มงาน"
+},
+"next": "✖ หยุดตามเพดาน 3 รอบ"
+}
+]
+}

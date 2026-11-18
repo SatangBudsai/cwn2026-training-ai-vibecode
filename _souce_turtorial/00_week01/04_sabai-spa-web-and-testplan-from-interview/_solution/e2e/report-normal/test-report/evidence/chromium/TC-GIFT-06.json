@@ -1,0 +1,163 @@
+{
+  "id": "TC-GIFT-06",
+  "checks": [
+    {
+      "n": 1,
+      "label": "GIFT-EXP364 นัด 17 มิ.ย. ใช้ได้ จ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-06/001.jpg",
+      "actor": "main",
+      "t": 6334
+    },
+    {
+      "n": 2,
+      "label": "GIFT-EXP364 นัด 17 มิ.ย.: ได้รหัสจอง",
+      "pass": true,
+      "actual": "S7TH97UX",
+      "shot": "shots/chromium/TC-GIFT-06/002.jpg",
+      "actor": "main",
+      "t": 7702
+    },
+    {
+      "n": 3,
+      "label": "GIFT-EXP364 นัด 17 มิ.ย. บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-06/003.jpg",
+      "actor": "main",
+      "t": 10400
+    },
+    {
+      "n": 4,
+      "label": "GIFT-EXP364 นัด 17 มิ.ย. บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-06/004.jpg",
+      "actor": "main",
+      "t": 13081
+    },
+    {
+      "n": 5,
+      "label": "GIFT-EXP365 นัด 17 มิ.ย. ใช้ได้ จ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-06/005.jpg",
+      "actor": "main",
+      "t": 19786
+    },
+    {
+      "n": 6,
+      "label": "GIFT-EXP365 นัด 17 มิ.ย.: ได้รหัสจอง",
+      "pass": true,
+      "actual": "XUEWMU83",
+      "shot": "shots/chromium/TC-GIFT-06/006.jpg",
+      "actor": "main",
+      "t": 21132
+    },
+    {
+      "n": 7,
+      "label": "GIFT-EXP365 นัด 17 มิ.ย. บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-06/007.jpg",
+      "actor": "main",
+      "t": 23832
+    },
+    {
+      "n": 8,
+      "label": "GIFT-EXP365 นัด 17 มิ.ย. บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-06/008.jpg",
+      "actor": "main",
+      "t": 26533
+    },
+    {
+      "n": 9,
+      "label": "GIFT-EXP366 นัด 17 มิ.ย. มีข้อความว่าหมดอายุ",
+      "pass": true,
+      "actual": "Gift Card หมดอายุแล้ว",
+      "shot": "shots/chromium/TC-GIFT-06/009.jpg",
+      "actor": "main",
+      "t": 32966
+    },
+    {
+      "n": 10,
+      "label": "GIFT-EXP366 นัด 17 มิ.ย. ยอดจ่ายยัง ฿1,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,000",
+      "shot": "shots/chromium/TC-GIFT-06/010.jpg",
+      "actor": "main",
+      "t": 34631
+    },
+    {
+      "n": 11,
+      "label": "GIFT-EXP366 นัด 17 มิ.ย. ไม่เกิดการหักบัตร",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-06/011.jpg",
+      "actor": "main",
+      "t": 36299
+    },
+    {
+      "n": 12,
+      "label": "GIFT-EXP366 นัด 17 มิ.ย. บัตรเหลือ ฿1,000",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-GIFT-06/012.jpg",
+      "actor": "main",
+      "t": 38980
+    },
+    {
+      "n": 13,
+      "label": "GIFT-EXP366 นัด 17 มิ.ย. บัตรเหลือ ฿1,000 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-GIFT-06/013.jpg",
+      "actor": "main",
+      "t": 41682
+    },
+    {
+      "n": 14,
+      "label": "GIFT-EXP365 นัด 15 ก.ค. ใช้ได้ จ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-06/014.jpg",
+      "actor": "main",
+      "t": 48198
+    },
+    {
+      "n": 15,
+      "label": "GIFT-EXP365 นัด 15 ก.ค.: ได้รหัสจอง",
+      "pass": true,
+      "actual": "DX9UEEAJ",
+      "shot": "shots/chromium/TC-GIFT-06/015.jpg",
+      "actor": "main",
+      "t": 49565
+    },
+    {
+      "n": 16,
+      "label": "GIFT-EXP365 นัด 15 ก.ค. บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-06/016.jpg",
+      "actor": "main",
+      "t": 52262
+    },
+    {
+      "n": 17,
+      "label": "GIFT-EXP365 นัด 15 ก.ค. บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-06/017.jpg",
+      "actor": "main",
+      "t": 54980
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GIFT-06/main.webm"
+    }
+  }
+}

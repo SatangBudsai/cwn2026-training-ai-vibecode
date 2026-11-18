@@ -1,0 +1,8 @@
+{
+  "baseURL": "https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB",
+  "startedAt": "2026-11-01T11:17:00.405Z",
+  "endedAt": "2026-11-01T11:17:28.468Z",
+  "durationMs": 28063,
+  "retries": 0,
+  "tests": 2
+}

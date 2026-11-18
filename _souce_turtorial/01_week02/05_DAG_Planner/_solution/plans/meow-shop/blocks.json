@@ -1,0 +1,23 @@
+{"goal": "เว็บร้านอาหารแมว 'เหมียวช็อป' หน้าเดียว (HTML+CSS+JS ไม่มี server) มีสินค้า 6 รายการพร้อมรูป ตะกร้าสินค้าที่จำได้หลังรีเฟรช (localStorage) และสโลแกนหัวเว็บ พร้อมทดสอบว่าใช้งานได้จริง",
+ "name": "meow-shop",
+ "blocks": [
+  {"id": "B01", "title": "โครงโปรเจกต์ + index.html", "size": "S", "depends_on": [], "skill": "cyolo", "difficulty": 1,
+   "output": "index.html", "done": "index.html มี header(#slogan)/main(#products)/aside(#cart)/footer ลิงก์ style.css, shop.js, cart.js"},
+  {"id": "B02", "title": "ข้อมูลสินค้า 6 รายการ", "size": "S", "depends_on": [], "skill": "yolo", "difficulty": 2,
+   "output": "products.js", "done": "const PRODUCTS 6 รายการ มี id ชื่อ ราคา คำอธิบาย และตำแหน่งรูปใน products.png (แถว/คอลัมน์)"},
+  {"id": "B03", "title": "ภาพสินค้า (sprite 3x2)", "size": "S", "depends_on": [], "skill": "image", "difficulty": 1,
+   "output": "products.png", "detail": "ภาพเดียวแบ่ง 3 คอลัมน์ x 2 แถว เป็นอาหารแมว 6 แบบ: อาหารเม็ด ปลาทูน่ากระป๋อง ขนมแมวเลีย ปลาแห้ง อาหารเปียกซอง ไก่อบ",
+   "done": "PNG แบ่ง 6 ช่องเท่ากัน 3x2 แต่ละช่องเป็นอาหารแมวคนละแบบ ไม่มีตัวอักษร"},
+  {"id": "B04", "title": "สโลแกนหัวเว็บ", "size": "S", "depends_on": [], "skill": "best_of", "n": 2, "difficulty": 1,
+   "output": "slogan.txt", "done": "ภาษาไทยไม่เกิน 8 คำ เกี่ยวกับแมวและอาหาร จำง่าย"},
+  {"id": "B05", "title": "สไตล์ CSS", "size": "M", "depends_on": ["B01"], "skill": "review", "difficulty": 2,
+   "output": "style.css", "done": "ธีมแมวโทนอบอุ่น grid การ์ดสินค้า responsive 2 breakpoint และ class sprite ตัดรูป 6 ช่องจาก products.png"},
+  {"id": "B06", "title": "ตะกร้า + localStorage", "size": "M", "depends_on": ["B02"], "skill": "yolo", "difficulty": 3,
+   "output": "cart.js", "done": "เพิ่ม/ลด/ลบสินค้า คำนวณยอดรวม บันทึก localStorage key 'meow-cart' และโหลดคืนหลังรีเฟรช"},
+  {"id": "B07", "title": "แสดงการ์ดสินค้า", "size": "M", "depends_on": ["B01", "B02", "B03"], "skill": "cyolo", "difficulty": 2,
+   "output": "shop.js", "done": "อ่าน PRODUCTS แล้ว render การ์ด 6 ใบใน #products มีรูปจาก sprite ราคา และปุ่มใส่ตะกร้าเรียก addToCart(id)"},
+  {"id": "B08", "title": "รวม + ทดสอบจริง", "size": "M", "depends_on": ["B04", "B05", "B06", "B07"], "skill": "yolo", "difficulty": 3,
+   "output": "TEST.md", "exclusive": true,
+   "detail": "ใส่สโลแกนจาก slogan.txt ใน header เปิด index.html ผ่าน file:// ด้วย Playwright headless: เห็นสินค้า 6 ใบพร้อมรูป กดใส่ตะกร้า 2 รายการ รีเฟรชแล้วตะกร้ายังอยู่ ไม่มี console error",
+   "done": "TEST.md บันทึกผลทุกข้อ PASS พร้อมภาพหน้าจอ screenshot.png"}
+ ]}

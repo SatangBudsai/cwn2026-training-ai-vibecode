@@ -1,0 +1,11 @@
+# captured 2026-11-01 17:08:02 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=EgoIABAAGAAgAigB&hl=th&gl=TH&curr=THB
+- menu "เลือกลำดับการจัดเรียง":
+  - menuitemradio "เที่ยวบินยอดนิยม" [checked]:
+    - img
+    - text: เที่ยวบินยอดนิยม
+  - menuitemradio "ราคา"
+  - menuitemradio "เวลาออกเดินทาง"
+  - menuitemradio "เวลาถึง"
+  - menuitemradio "ระยะเวลา"
+  - menuitemradio "การปล่อยก๊าซ"

@@ -1,0 +1,21 @@
+{
+  "fixed_price": true,
+  "budget": 4800000,
+  "discount": 507000,
+  "lines": [
+    {"code": "MD-SA", "qty": 15},
+    {"code": "MD-PM", "qty": 35},
+    {"code": "MD-DEV-SR", "qty": 45},
+    {"code": "MD-DEV", "qty": 80},
+    {"code": "MD-UX", "qty": 12},
+    {"code": "MD-QA", "qty": 38},
+    {"code": "MD-DEVOPS", "qty": 14},
+    {"code": "MD-ML", "qty": 28},
+    {"code": "CL-M", "qty": 12, "note": "production ปีแรก"},
+    {"code": "CL-S", "qty": 6, "note": "dev/UAT ระหว่างโครงการ"},
+    {"code": "LIC-LINE", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-APM", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "ปีแรก"}
+  ]
+}

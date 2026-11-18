@@ -1,0 +1,407 @@
+- dialog "ตัวกรอง":
+  - document:
+    - heading "ตัวกรอง" [level=1]
+    - button "ปิดกล่องโต้ตอบ":
+      - img
+    - heading "จำนวนครั้งที่แวะพัก" [level=2]
+    - radiogroup "จำนวนครั้งที่แวะพัก":
+      - radio "ไม่จำกัดจำนวนครั้งที่แวะพัก" [checked]
+      - text: ไม่จำกัดจำนวนครั้งที่แวะพัก
+      - radio "บินตรงเท่านั้น"
+      - text: บินตรงเท่านั้น
+      - radio "แวะพัก 1 ครั้งหรือน้อยกว่า"
+      - text: แวะพัก 1 ครั้งหรือน้อยกว่า
+      - radio "แวะพัก 2 ครั้งหรือน้อยกว่า"
+      - text: แวะพัก 2 ครั้งหรือน้อยกว่า
+    - heading "สายการบิน" [level=2]
+    - text: เลือกสายการบินทั้งหมด
+    - switch "เลือกสายการบินทั้งหมด" [checked]:
+      - img
+      - img
+    - text: สายการบินที่เป็นพาร์ทเนอร์
+    - list "สายการบินที่เป็นพาร์ทเนอร์":
+      - listitem:
+        - checkbox "Oneworld"
+        - text: Oneworld
+      - listitem:
+        - checkbox "SkyTeam"
+        - text: SkyTeam
+      - listitem:
+        - checkbox "Star Alliance"
+        - text: Star Alliance
+    - text: สายการบิน
+    - list "สายการบิน":
+      - listitem:
+        - checkbox "กาตาร์แอร์เวย์" [checked]
+        - text: กาตาร์แอร์เวย์
+      - listitem:
+        - checkbox "การบินไทย" [checked]
+        - text: การบินไทย
+      - listitem:
+        - checkbox "การูดาอินโดนีเซีย" [checked]
+        - text: การูดาอินโดนีเซีย
+      - listitem:
+        - checkbox "คาเธ่ย์แปซิฟิคแอร์เวย์" [checked]
+        - text: คาเธ่ย์แปซิฟิคแอร์เวย์
+      - listitem:
+        - checkbox "โคเรียนแอร์ไลน์" [checked]
+        - text: โคเรียนแอร์ไลน์
+      - listitem:
+        - checkbox "จินแอร์" [checked]
+        - text: จินแอร์
+      - listitem:
+        - checkbox "จูนเยาแอร์ไลน์" [checked]
+        - text: จูนเยาแอร์ไลน์
+      - listitem:
+        - checkbox "เจจูแอร์" [checked]
+        - text: เจจูแอร์
+      - listitem:
+        - checkbox "เจเอแอล" [checked]
+        - text: เจเอแอล
+      - listitem:
+        - checkbox "ไชนาเซาเทิร์นแอร์ไลน์" [checked]
+        - text: ไชนาเซาเทิร์นแอร์ไลน์
+      - listitem:
+        - checkbox "ไชนาอีสเทิร์นแอร์ไลน์" [checked]
+        - text: ไชนาอีสเทิร์นแอร์ไลน์
+      - listitem:
+        - checkbox "ไชนาแอร์ไลน์" [checked]
+        - text: ไชนาแอร์ไลน์
+      - listitem:
+        - checkbox "ซานตง แอร์ไลน์" [checked]
+        - text: ซานตง แอร์ไลน์
+      - listitem:
+        - checkbox "เซบูแอร์" [checked]
+        - text: เซบูแอร์
+      - listitem:
+        - checkbox "เซินเจิ้นแอร์ไลน์" [checked]
+        - text: เซินเจิ้นแอร์ไลน์
+      - listitem:
+        - checkbox "เซี่ยงไฮ้แอร์ไลน์" [checked]
+        - text: เซี่ยงไฮ้แอร์ไลน์
+      - listitem:
+        - checkbox "เซียะเหมินแอร์" [checked]
+        - text: เซียะเหมินแอร์
+      - listitem:
+        - checkbox "เตอร์กิชแอร์ไลน์" [checked]
+        - text: เตอร์กิชแอร์ไลน์
+      - listitem:
+        - checkbox "ทรินิตี้ แอร์เวย์ส" [checked]
+        - text: ทรินิตี้ แอร์เวย์ส
+      - listitem:
+        - checkbox "ไทยไลอ้อนแอร์" [checked]
+        - text: ไทยไลอ้อนแอร์
+      - listitem:
+        - checkbox "ไทยเวียดเจ๊ทแอร์" [checked]
+        - text: ไทยเวียดเจ๊ทแอร์
+      - listitem:
+        - checkbox "เนปาลแอร์ไลน์" [checked]
+        - text: เนปาลแอร์ไลน์
+      - listitem:
+        - checkbox "บางกอกแอร์เวย์ส" [checked]
+        - text: บางกอกแอร์เวย์ส
+      - listitem:
+        - checkbox "ไบแมนบังคลาเทศแอร์ไลน์" [checked]
+        - text: ไบแมนบังคลาเทศแอร์ไลน์
+      - listitem:
+        - checkbox "พีชเอวิเอชัน" [checked]
+        - text: พีชเอวิเอชัน
+      - listitem:
+        - checkbox "ฟลายไฟร์ฟลาย" [checked]
+        - text: ฟลายไฟร์ฟลาย
+      - listitem:
+        - checkbox "ฟิจิแอร์เวย์" [checked]
+        - text: ฟิจิแอร์เวย์
+      - listitem:
+        - checkbox "ฟิลิปปินส์แอร์ไลน์" [checked]
+        - text: ฟิลิปปินส์แอร์ไลน์
+      - listitem:
+        - checkbox "มาเลเซียแอร์ไลน์" [checked]
+        - text: มาเลเซียแอร์ไลน์
+      - listitem:
+        - checkbox "ยูไนเต็ดแอร์ไลน์" [checked]
+        - text: ยูไนเต็ดแอร์ไลน์
+      - listitem:
+        - checkbox "รอยัลบรูไนแอร์ไลน์" [checked]
+        - text: รอยัลบรูไนแอร์ไลน์
+      - listitem:
+        - checkbox "เวียดเจ็ทแอร์" [checked]
+        - text: เวียดเจ็ทแอร์
+      - listitem:
+        - checkbox "เวียดนามแอร์ไลน์" [checked]
+        - text: เวียดนามแอร์ไลน์
+      - listitem:
+        - checkbox "ศรีลังกันแอร์ไลน์" [checked]
+        - text: ศรีลังกันแอร์ไลน์
+      - listitem:
+        - checkbox "สกู๊ต" [checked]
+        - text: สกู๊ต
+      - listitem:
+        - checkbox "สปริงแอร์ไลน์" [checked]
+        - text: สปริงแอร์ไลน์
+      - listitem:
+        - checkbox "สิงคโปร์แอร์ไลน์" [checked]
+        - text: สิงคโปร์แอร์ไลน์
+      - listitem:
+        - checkbox "เสฉวนแอร์ไลน์" [checked]
+        - text: เสฉวนแอร์ไลน์
+      - listitem:
+        - checkbox "ไห่หนานแอร์ไลน์" [checked]
+        - text: ไห่หนานแอร์ไลน์
+      - listitem:
+        - checkbox "อินดิโก" [checked]
+        - text: อินดิโก
+      - listitem:
+        - checkbox "อีวีเอแอร์" [checked]
+        - text: อีวีเอแอร์
+      - listitem:
+        - checkbox "อุซเบกิสถานแอร์เวย์" [checked]
+        - text: อุซเบกิสถานแอร์เวย์
+      - listitem:
+        - checkbox "เอเชียนาแอร์ไลน์" [checked]
+        - text: เอเชียนาแอร์ไลน์
+      - listitem:
+        - checkbox "เอธิโอเปียแอร์ไลน์" [checked]
+        - text: เอธิโอเปียแอร์ไลน์
+      - listitem:
+        - checkbox "เอ็มไอเอที - มองโกเลียนแอร์ไลน์" [checked]
+        - text: เอ็มไอเอที - มองโกเลียนแอร์ไลน์
+      - listitem:
+        - checkbox "เอเอ็นเอ" [checked]
+        - text: เอเอ็นเอ
+      - listitem:
+        - checkbox "แอร์ไชนาลิมิเต็ด" [checked]
+        - text: แอร์ไชนาลิมิเต็ด
+      - listitem:
+        - checkbox "แอร์นิวซีแลนด์" [checked]
+        - text: แอร์นิวซีแลนด์
+      - listitem:
+        - checkbox "แอร์ปูซาน" [checked]
+        - text: แอร์ปูซาน
+      - listitem:
+        - checkbox "แอร์มาเก๊า" [checked]
+        - text: แอร์มาเก๊า
+      - listitem:
+        - checkbox "แอร์อินเดีย" [checked]
+        - text: แอร์อินเดีย
+      - listitem:
+        - checkbox "แอร์เอเชีย" [checked]
+        - text: แอร์เอเชีย
+      - listitem:
+        - checkbox "แอร์เอเชีย เอ็กซ์" [checked]
+        - text: แอร์เอเชีย เอ็กซ์
+      - listitem:
+        - checkbox "แอร์แอสตานา" [checked]
+        - text: แอร์แอสตานา
+      - listitem:
+        - checkbox "ฮ่องกงเอ็กซ์เพรส" [checked]
+        - text: ฮ่องกงเอ็กซ์เพรส
+      - listitem:
+        - checkbox "ฮ่องกงแอร์ไลน์" [checked]
+        - text: ฮ่องกงแอร์ไลน์
+      - listitem:
+        - checkbox "Air Cambodia" [checked]
+        - text: Air Cambodia
+      - listitem:
+        - checkbox "Air Premia" [checked]
+        - text: Air Premia
+      - listitem:
+        - checkbox "Batik Air" [checked]
+        - text: Batik Air
+      - listitem:
+        - checkbox "Greater Bay Airlines" [checked]
+        - text: Greater Bay Airlines
+      - listitem:
+        - checkbox "STARLUX Airlines" [checked]
+        - text: STARLUX Airlines
+      - listitem:
+        - checkbox "ZIPAIR Tokyo" [checked]
+        - text: ZIPAIR Tokyo
+    - heading "สัมภาระ" [level=2]
+    - text: กระเป๋าถือขึ้นเครื่อง
+    - button "นำกระเป๋าถือขึ้นเครื่องออก" [disabled]:
+      - img
+    - text: เลือกกระเป๋าถือขึ้นเครื่องแล้ว 0 ใบ
+    - button "เพิ่มกระเป๋าถือขึ้นเครื่อง":
+      - img
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับตัวเลือกสัมภาระ":
+      - /url: https://support.google.com/travel/answer/9074247?hl=th
+      - text: ดูข้อมูลเพิ่มเติมเกี่ยวกับตัวเลือกสัมภาระ
+      - img
+    - heading "ราคา" [level=2]
+    - text: ทุกราคา
+    - slider "ราคาสูงสุด": "310000"
+    - heading "เวลา" [level=2]
+    - text: กรุงเทพมหานคร ไปยัง โตเกียว เวลาออกเดินทาง · ทุกเวลา
+    - slider "เวลาออกเดินทางที่เร็วที่สุด": "0"
+    - slider "เวลาออกเดินทางที่ช้าที่สุด": "24"
+    - text: เวลามาถึง · ทุกเวลา
+    - slider "เวลาถึงที่เร็วที่สุด": "0"
+    - slider "เวลาถึงที่ช้าที่สุด": "24"
+    - heading "การปล่อยก๊าซ" [level=2]
+    - radiogroup "การปล่อยก๊าซ":
+      - radio "การปล่อยก๊าซทุกระดับ" [checked]
+      - text: การปล่อยก๊าซทุกระดับ
+      - radio "การปล่อยก๊าซต่ำเท่านั้น"
+      - text: การปล่อยก๊าซต่ำเท่านั้น
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับการปล่อยก๊าซคาร์บอน":
+      - /url: https://support.google.com/travel/answer/9671620?ref_topic=2475360&hl=th
+      - text: ดูข้อมูลเพิ่มเติมเกี่ยวกับการปล่อยก๊าซคาร์บอน
+      - img
+    - heading "สนามบินสำหรับต่อเครื่อง" [level=2]
+    - text: ระยะเวลาแวะพัก ทั้งหมด
+    - slider "ระยะเวลาแวะพักขั้นต่ำ": "30"
+    - slider "ระยะเวลาแวะพักสูงสุด": "2010"
+    - separator
+    - text: สนามบินทั้งหมดสำหรับต่อเครื่อง
+    - switch "สนามบินทั้งหมดสำหรับต่อเครื่อง" [checked]:
+      - img
+      - img
+    - text: สนามบิน
+    - list "สนามบิน":
+      - listitem:
+        - checkbox "กว่างโจว (CAN)" [checked]
+        - text: กว่างโจว (CAN)
+        - button "กว่างโจว (CAN) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เก้าสุยง (KHH)" [checked]
+        - text: เก้าสุยง (KHH)
+        - button "เก้าสุยง (KHH) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เขตบริหารพิเศษฮ่องกง (HKG)" [checked]
+        - text: เขตบริหารพิเศษฮ่องกง (HKG)
+        - button "เขตบริหารพิเศษฮ่องกง (HKG) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เขตสหพันธรัฐกัวลาลัมเปอร์ (KUL)" [checked]
+        - text: เขตสหพันธรัฐกัวลาลัมเปอร์ (KUL)
+        - button "เขตสหพันธรัฐกัวลาลัมเปอร์ (KUL) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "โคเบะ (UKB)" [checked]
+        - text: โคเบะ (UKB)
+        - button "โคเบะ (UKB) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "จาการ์ตา (CGK)" [checked]
+        - text: จาการ์ตา (CGK)
+        - button "จาการ์ตา (CGK) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เฉิงตู (TFU)" [checked]
+        - text: เฉิงตู (TFU)
+        - button "เฉิงตู (TFU) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ชิงเต่า (TAO)" [checked]
+        - text: ชิงเต่า (TAO)
+        - button "ชิงเต่า (TAO) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ซัปโปะโระ (CTS)" [checked]
+        - text: ซัปโปะโระ (CTS)
+        - button "ซัปโปะโระ (CTS) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เซินเจิ้น (SZX)" [checked]
+        - text: เซินเจิ้น (SZX)
+        - button "เซินเจิ้น (SZX) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เซี่ยงไฮ (PVG)" [checked]
+        - text: เซี่ยงไฮ (PVG)
+        - button "เซี่ยงไฮ (PVG) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เซี่ยงไฮ (SHA)" [checked]
+        - text: เซี่ยงไฮ (SHA)
+        - button "เซี่ยงไฮ (SHA) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เซี่ยเหมิน (XMN)" [checked]
+        - text: เซี่ยเหมิน (XMN)
+        - button "เซี่ยเหมิน (XMN) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "โซล (GMP)" [checked]
+        - text: โซล (GMP)
+        - button "โซล (GMP) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "โซล (ICN)" [checked]
+        - text: โซล (ICN)
+        - button "โซล (ICN) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ดานัง (DAD)" [checked]
+        - text: ดานัง (DAD)
+        - button "ดานัง (DAD) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "เทศบาลนครภูเก็ต (HKT)" [checked]
+        - text: เทศบาลนครภูเก็ต (HKT)
+        - button "เทศบาลนครภูเก็ต (HKT) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "แทกู (TAE)" [checked]
+        - text: แทกู (TAE)
+        - button "แทกู (TAE) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ไทเป (TPE)" [checked]
+        - text: ไทเป (TPE)
+        - button "ไทเป (TPE) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ไทเป (TSA)" [checked]
+        - text: ไทเป (TSA)
+        - button "ไทเป (TSA) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ธากา (DAC)" [checked]
+        - text: ธากา (DAC)
+        - button "ธากา (DAC) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "นครโฮจิมินห์ (SGN)" [checked]
+        - text: นครโฮจิมินห์ (SGN)
+        - button "นครโฮจิมินห์ (SGN) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "นาโงยะ (NGO)" [checked]
+        - text: นาโงยะ (NGO)
+        - button "นาโงยะ (NGO) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ปักกิ่ง (PEK)" [checked]
+        - text: ปักกิ่ง (PEK)
+        - button "ปักกิ่ง (PEK) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ปักกิ่ง (PKX)" [checked]
+        - text: ปักกิ่ง (PKX)
+        - button "ปักกิ่ง (PKX) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ฟุกุโอะกะ (FUK)" [checked]
+        - text: ฟุกุโอะกะ (FUK)
+        - button "ฟุกุโอะกะ (FUK) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "มะนิลา (MNL)" [checked]
+        - text: มะนิลา (MNL)
+        - button "มะนิลา (MNL) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "สิงคโปร์ (SIN)" [checked]
+        - text: สิงคโปร์ (SIN)
+        - button "สิงคโปร์ (SIN) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "อำเภอเกาะสมุย (USM)" [checked]
+        - text: อำเภอเกาะสมุย (USM)
+        - button "อำเภอเกาะสมุย (USM) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "โอซากะ (ITM)" [checked]
+        - text: โอซากะ (ITM)
+        - button "โอซากะ (ITM) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "โอซากะ (KIX)" [checked]
+        - text: โอซากะ (KIX)
+        - button "โอซากะ (KIX) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "ฮานอย (HAN)" [checked]
+        - text: ฮานอย (HAN)
+        - button "ฮานอย (HAN) เท่านั้น": เท่านั้น
+      - listitem:
+        - checkbox "Haikou (HAK)" [checked]
+        - text: Haikou (HAK)
+        - button "Haikou (HAK) เท่านั้น": เท่านั้น
+    - heading "ระยะเวลา" [level=2]
+    - text: ระยะเวลาบิน · ไม่จำกัด
+    - slider "ระยะเวลา": "41"
+    - heading "ตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง" [level=2]
+    - text: การซื้อเที่ยวบินแบบจองตั๋วแยกหรือตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเองจากพาร์ทเนอร์ 1 รายหรือหลายรายอาจทำให้ได้ตั๋วราคาถูกกว่า โดยอาจต้องจองตั๋วดังกล่าวแยกกันหรือพร้อมกัน ทั้งนี้ขึ้นอยู่กับพาร์ทเนอร์
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง":
+      - /url: https://support.google.com/travel/answer/2475306?hl=th#septickets
+      - text: ดูข้อมูลเพิ่มเติม
+    - radiogroup "ตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง":
+      - radio "แสดงตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง" [checked]
+      - text: แสดงตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง
+      - radio "ซ่อนตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง"
+      - text: ซ่อนตั๋วแยกและตั๋วที่มีการเปลี่ยนเครื่องด้วยตนเอง
+    - button "ล้างทั้งหมด" [disabled]

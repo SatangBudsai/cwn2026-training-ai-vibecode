@@ -1,0 +1,161 @@
+{
+ "seeds": 200,
+ "result": {
+  "A โควตาเหลือเยอะทุกบัญชี": {
+   "KC-QUEST": {
+    "minutes": 102.8,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "most-headroom": {
+    "minutes": 122.6,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "round-robin": {
+    "minutes": 124.5,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "random": {
+    "minutes": 117.1,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   }
+  },
+  "B มีบัญชีใกล้รีเซ็ต": {
+   "KC-QUEST": {
+    "minutes": 102.2,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": 69.1
+   },
+   "most-headroom": {
+    "minutes": 132.6,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": 0.0
+   },
+   "round-robin": {
+    "minutes": 124.5,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": 22.9
+   },
+   "random": {
+    "minutes": 117.1,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": 23.8
+   }
+  },
+  "C โควตาตึงทุกบัญชี": {
+   "KC-QUEST": {
+    "minutes": 114.9,
+    "limit_hits": 0.01,
+    "unfinished_runs": 0,
+    "expiring_share": 54.0
+   },
+   "most-headroom": {
+    "minutes": 131.4,
+    "limit_hits": 0.08,
+    "unfinished_runs": 0,
+    "expiring_share": 35.2
+   },
+   "round-robin": {
+    "minutes": 122.5,
+    "limit_hits": 0.36,
+    "unfinished_runs": 0,
+    "expiring_share": 41.3
+   },
+   "random": {
+    "minutes": 122.5,
+    "limit_hits": 0.17,
+    "unfinished_runs": 0,
+    "expiring_share": 44.3
+   }
+  },
+  "D ถัง 5 ชม. ใกล้เต็ม": {
+   "KC-QUEST": {
+    "minutes": 121.9,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "most-headroom": {
+    "minutes": 144.3,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "round-robin": {
+    "minutes": 124.8,
+    "limit_hits": 0.04,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "random": {
+    "minutes": 118.9,
+    "limit_hits": 0.06,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   }
+  },
+  "E โปรเจกต์ใหญ่ 3 เท่า": {
+   "KC-QUEST": {
+    "minutes": 325.5,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "most-headroom": {
+    "minutes": 364.2,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "round-robin": {
+    "minutes": 368.5,
+    "limit_hits": 0.01,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "random": {
+    "minutes": 347.0,
+    "limit_hits": 0.06,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   }
+  },
+  "F ถัง 5 ชม. เกือบเต็มแต่ใกล้รีเซ็ต": {
+   "KC-QUEST": {
+    "minutes": 108.5,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "most-headroom": {
+    "minutes": 113.5,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "round-robin": {
+    "minutes": 125.8,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   },
+   "random": {
+    "minutes": 119.9,
+    "limit_hits": 0.0,
+    "unfinished_runs": 0,
+    "expiring_share": null
+   }
+  }
+ }
+}

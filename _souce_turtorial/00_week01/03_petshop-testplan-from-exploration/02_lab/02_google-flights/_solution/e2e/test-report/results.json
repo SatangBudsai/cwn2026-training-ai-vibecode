@@ -1,0 +1,861 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\t\\gf03v2\\e2e\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--list",
+      "--grep",
+      "TC-FLT-03 |TC-FLT-05 |TC-FLT-06 |TC-PRC-02 |TC-PRC-04 |TC-LOC-04 "
+    ],
+    "configFile": "C:\\t\\gf03v2\\e2e\\playwright.config.ts",
+    "rootDir": "C:/t/gf03v2/e2e/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/t/gf03v2/e2e/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/t/gf03v2/e2e/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 900000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\t\\gf03v2\\e2e\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "name": "chromium",
+        "testDir": "C:\\t\\gf03v2\\e2e\\tests",
+        "snapshotDir": "C:\\t\\gf03v2\\e2e\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 900000,
+        "use": {
+          "baseURL": "https://www.google.com",
+          "headless": false,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "locale": "th-TH",
+          "timezoneId": "Asia/Bangkok",
+          "actionTimeout": 20000,
+          "navigationTimeout": 60000,
+          "video": {
+            "mode": "on",
+            "size": {
+              "width": 1280,
+              "height": 800
+            }
+          },
+          "screenshot": "on",
+          "trace": "off",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "./test-report/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "5.3-filters.spec.ts",
+      "file": "5.3-filters.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-FLT-03 · สายการบิน \"เท่านั้น\" รวม codeshare + ✕ บนชิป",
+          "ok": true,
+          "tags": [
+            "P2",
+            "5.3"
+          ],
+          "tests": [
+            {
+              "timeout": 900000,
+              "annotations": [
+                {
+                  "type": "คาดหวัง",
+                  "description": "E1: (ขั้น 1) หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค.",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E2: (ขั้น 2) รายการโหลดใหม่ขณะป๊อปอัปยังเปิด · ชิปแสดงชื่อสายการบินที่เลือกแทนชื่อหมวด พร้อม ✕ (R64)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E3: (ขั้น 2) ทุกแถวใน A มี \"เอเอ็นเอ\" ในข้อความสายการบินของแถวสรุปหรือแถวขยาย ทั้งแบบบินเองและแบบ codeshare (R71)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E4: (ขั้น 2) ทุกแถวใน B_ANA อยู่ใน A (เทียบคีย์แถวเท่านั้น ไม่เทียบราคาและป้ายชั้น) (R71) · ตรวจเมื่อ A ครบ ถ้า A มีปุ่มดูเพิ่ม = N/A ข้อนี้",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E5: (ขั้น 2) ถ้า B_ANA มีแถว codeshare ที่ผู้ให้บริการจริงไม่ใช่เอเอ็นเอ A ต้องมีแถวแบบนี้อย่างน้อย 1 แถว (R71)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E6: (ขั้น 2) PA = ราคาต่ำสุดของแถวใน A (ถ้า A ไม่ครบ: PA ≤ ราคาต่ำสุดที่แสดง) และ PA ≥ P0 (R65)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E7: (ขั้น 3) ชิปกลับเป็นชื่อหมวด \"สายการบิน\" ไม่มี ✕ · C = B ทุกแถว (คีย์แถว) ราคาแต่ละแถวเท่าเดิม และแท็บ \"ถูกที่สุด\" = P0 (R73)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "ที่มา",
+                  "description": "plan/5.3-ตัวกรอง.md · TC-FLT-03 · R64 R65 R71 R73 · Invariant/Metamorphic · Equivalence partition (บินเอง / codeshare) · State · [R]",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "งบค้นหา",
+                  "description": "3",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 646,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "10ac2d80f8a955f461b5-6f8f69c60dad6e25a58c",
+          "file": "5.3-filters.spec.ts",
+          "line": 646,
+          "column": 5
+        },
+        {
+          "title": "TC-FLT-05 · เวลาถึง / เวลาออก ตามเวลาท้องถิ่น จนไม่พบผล",
+          "ok": true,
+          "tags": [
+            "P2",
+            "5.3"
+          ],
+          "tests": [
+            {
+              "timeout": 900000,
+              "annotations": [
+                {
+                  "type": "คาดหวัง",
+                  "description": "E1: (ขั้น 1) หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค.",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E2: (ขั้น 2) ทุกแถวใน A มีเวลาถึงที่แสดงในแถว (เวลาท้องถิ่นโตเกียว ตาม R40) อยู่ใน 00:00–08:00 ไม่ว่ามี +1 หรือไม่ (R80) · แถวที่ถึง 08:00 พอดีไม่นับในข้อนี้ (ขอบ ตรวจใน TC-FLT-07)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E3: (ขั้น 2) แถวใน B ที่ถึง 08:01–10:00 ตามเวลาโตเกียว (ซึ่งเท่ากับไม่เกิน 08:00 ถ้าอ่านเป็นเวลาไทย) ไม่อยู่ใน A = ตัวกรองใช้เวลาโตเกียว ไม่ใช่เวลาไทย (R80 · K-TZ)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E4: (ขั้น 2) ทุกแถวใน B ที่ถึง 00:00–07:59 อยู่ใน A (ตรวจเมื่อ A ครบ) (R80)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E5: (ขั้น 3) ทุกแถวใน T มีเวลาออกที่แสดง (เวลาไทย) อยู่ใน 06:00–12:00 และเวลาถึงยังอยู่ใน 00:00–08:00 · T ⊆ A (ตรวจเมื่อ A ครบ) · ปุ่มยังเป็น \"ตัวกรองทั้งหมด (1)\" เพราะเวลาออกกับเวลาถึงเป็นหมวดเดียวกัน (R69 R70)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E6: (ขั้น 3) ตามตรรกะ K-TZ ทุกแถวใน T ต้อง (ก) ถึงวันถัดไปขึ้นไป (มี +1 หรือ +2) (ข) ระยะเวลา ≥ 10 ชม. (ค) แวะพัก ≥ 1 ครั้ง · เหตุผล: ออกช้าสุด 12:00 เวลาไทย = 14:00 เวลาโตเกียว และถึงเร็วสุด 00:00 ของวันถัดไป จึงต้องบิน ≥ 10 ชม. ซึ่งบินตรงกรุงเทพ–โตเกียวทำไม่ได้ (R69 R80 R40)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E7: (ขั้น 4) ไม่มีแถวเที่ยวบิน · มีข้อความบอกว่าไม่พบตัวเลือกที่ตรงกับ **ตัวกรอง** (บอกสาเหตุว่าเป็นตัวกรอง ไม่ใช่แค่ชวนเปลี่ยนวันที่) · มีปุ่ม \"ล้างตัวกรองทั้งหมด\" · ชิปยังแสดงตัวกรองที่ตั้งไว้ · ปุ่มเป็น \"ตัวกรองทั้งหมด (2)\" (R81 R70 R75)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E8: (ขั้น 4) มีการ์ด \"ลองวันที่อื่นๆ\" [O-ยังไม่ยืนยัน] · ข้อความตอนสำรวจ \"ไม่พบตัวเลือกที่ตรงกับตัวกรองของคุณ\" ใช้เป็นตัวอย่าง ไม่ต้องตรงทุกคำ (R81)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "ที่มา",
+                  "description": "plan/5.3-ตัวกรอง.md · TC-FLT-05 · R69 R70 R80 R81 (R75 เฉพาะการมีปุ่ม) · Invariant/Metamorphic · Negative (เงื่อนไขที่ไม่มีแถวไหนผ่านได้) · [O-ยังไม่ยืนยัน] (E8)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "งบค้นหา",
+                  "description": "4",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 924,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "10ac2d80f8a955f461b5-6aedf02557d125593dab",
+          "file": "5.3-filters.spec.ts",
+          "line": 924,
+          "column": 5
+        },
+        {
+          "title": "TC-FLT-06 · ตัวเลือกแวะพัก + ตัดสนามบินต่อเครื่อง + slider ระยะเวลา",
+          "ok": true,
+          "tags": [
+            "P2",
+            "5.3"
+          ],
+          "tests": [
+            {
+              "timeout": 900000,
+              "annotations": [
+                {
+                  "type": "คาดหวัง",
+                  "description": "E1: (ขั้น 1) หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. · ตัวเลือกแวะพักมี ไม่จำกัด / บินตรงเท่านั้น / ≤1 / ≤2 และไม่มีตัวเลือกสำหรับ ≥3 ครั้ง (แถวแวะ 3 ครั้งจึงเห็นได้เฉพาะตอน \"ไม่จำกัด\") [O-ยังไม่ยืนยัน] (R84) · ป้าย slider ระยะเวลาที่ค่าเริ่มต้น = \"ไม่จำกัด\" [O-ยังไม่ยืนยัน] (R88)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E2: (ขั้น 3) ไม่มีแถวใดใน H ที่แวะพักที่ H0 (R86)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E3: (ขั้น 3) H = แถวใน A ที่ไม่แวะ H0 ทุกแถว (คีย์แถว เท่ากันทั้งสองทิศ ตรวจเมื่อ A และ H ครบ) · โดยเฉพาะทุกแถวบินตรงใน A ต้องอยู่ใน H (R86 R69)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E4: (ขั้น 3) ชิปบอกเป็นรายการที่ไม่รวม โดยมีชื่อ H0 เช่น \"ไม่รวม: <ชื่อ H0>\" [O-ยังไม่ยืนยัน: คำว่า \"ไม่รวม:\" มาจากผลสำรวจ] (R87)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E5: (ขั้น 4) ป้าย slider เปลี่ยนจาก \"ไม่จำกัด\" เป็นไม่เกิน 40 ชม. (เลื่อน 1 ขั้น = 1 ชม.) [O-ยังไม่ยืนยัน: ค่าสูงสุด 41 = ไม่จำกัด มาจากผลสำรวจ] (R88)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E6: (ขั้น 4) ทุกแถวใน L มีระยะเวลา ≤ 40 ชม. · L ⊆ H (ตรวจเมื่อ H ครบ) และทุกแถวใน H ที่ระยะเวลา ≤ 40 ชม. อยู่ใน L (R88 R69)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E7: (ขั้น 4) ปุ่มเป็น \"ตัวกรองทั้งหมด (3)\" (เวลา + สนามบินต่อเครื่อง + ระยะเวลา) (R70)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "ที่มา",
+                  "description": "plan/5.3-ตัวกรอง.md · TC-FLT-06 · R69 R70 R84 R86 R87 R88 · Invariant/Metamorphic · Boundary (ค่าสูงสุดของ slider − 1 ขั้น) · [O-ยังไม่ยืนยัน] (E1 E4 E5)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "งบค้นหา",
+                  "description": "4",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.3-filters.spec.ts",
+                    "line": 1051,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "10ac2d80f8a955f461b5-0591052b36de70721b14",
+          "file": "5.3-filters.spec.ts",
+          "line": 1051,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "5.4-price-date-tools.spec.ts",
+      "file": "5.4-price-date-tools.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-PRC-02 · ตารางวันที่และกราฟราคา: ราคา ไฮไลต์ ✦ ยกเลิก/ตกลง",
+          "ok": true,
+          "tags": [
+            "P2",
+            "5.4"
+          ],
+          "tests": [
+            {
+              "timeout": 900000,
+              "annotations": [
+                {
+                  "type": "คาดหวัง",
+                  "description": "E1: (ขั้น 3) ตารางมีแถววันที่เพียงแถวเดียว (ไม่มีแกนวันกลับ) ช่องเป็นวันออกเดินทางติดกันเรียงจากเก่าไปใหม่ไม่ข้ามวัน (R93)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E2: (ขั้น 3) ช่อง 15 ธ.ค. อยู่ในสถานะเลือกแล้ว (เพียงช่องเดียว) และสรุปท้ายป๊อปอัป = 15 ธ.ค. · ราคา X · เที่ยวเดียว (R97)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E3: (ขั้น 2–3) ราคาทุกช่องในตาราง = ราคาปฏิทินของวันเดียวกัน ที่ความละเอียดของช่องปฏิทิน และช่อง 15 ธ.ค. = X (R94)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E4: (ขั้น 3–4) ทุกช่องที่มี ✦ มีราคา = ค่าต่ำสุดของช่องที่แสดงในขณะนั้น และไม่มีช่องใดถูกกว่าช่อง ✦ · หลังกด > ตำแหน่ง ✦ ยังเป็นไปตามกฎนี้กับชุดช่องใหม่ (R96)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E5: (ขั้น 5) คลิก D-PRC-ALT แล้วสรุปท้ายป๊อปอัปเปลี่ยนเป็นวัน D-PRC-ALT และราคาของช่องนั้น (R95)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E6: (ขั้น 6) หลัง \"ยกเลิก\": ช่อง \"ขาไป\" = อังคาร 15 ธ.ค. · ราคาแท็บ = X · สวิตช์ = 15 ธ.ค. · tfs ใน URL = U1 (ไม่มีการค้นหาเกิดขึ้น) (R95)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E7: (ขั้น 7) แท่ง 15 ธ.ค. ไฮไลต์ต่างจากแท่งอื่น และ tooltip ที่ค้างระบุ 15 ธ.ค. กับราคา X (R97)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E8: (ขั้น 7) tooltip ทุกแท่งที่ hover มีราคา = ราคาในตารางของวันเดียวกัน (R94)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E9: (ขั้น 9) หลัง \"ตกลง\": หัวผลลัพธ์ยังเป็น เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว และวันที่ = D-PRC-ALT · ช่อง \"ขาไป\" = D-PRC-ALT · tfs ใน URL ต่างจาก U1 · Y = ราคาของ D-PRC-ALT ในตาราง/กราฟ (R95 R94 · จุดเทียบ R43)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E10: (ขั้น 9) ป้ายสวิตช์ติดตามราคา = D-PRC-ALT และ aria มีวันที่ ISO ของ D-PRC-ALT (R102) · ราคาในกล่องข้อมูลเชิงลึก = Y (R89)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E11: (ขั้น 10) ช่องที่เลือกแล้วในตาราง = D-PRC-ALT และสรุปท้าย = D-PRC-ALT · Y (R97)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "ที่มา",
+                  "description": "plan/5.4-เครื่องมือราคาและวันที่.md · TC-PRC-02 · R93 R94 R95 R96 R97 R89 R102 (+R43 จุดเทียบ) · Invariant/Metamorphic · State · [R]",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "งบค้นหา",
+                  "description": "2",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 689,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ed45227d76d6a987ad72-21c69d6b3cbfe7ad1eeb",
+          "file": "5.4-price-date-tools.spec.ts",
+          "line": 689,
+          "column": 5
+        },
+        {
+          "title": "TC-PRC-04 · ราคาบนการ์ดวันที่ถูกกว่า ป้าย \"สูง\" และช่วงราคาปกติ",
+          "ok": true,
+          "tags": [
+            "P2",
+            "5.4"
+          ],
+          "tests": [
+            {
+              "timeout": 900000,
+              "annotations": [
+                {
+                  "type": "คาดหวัง",
+                  "description": "E1: (ขั้น 4) ราคาในประโยคของกล่องขยาย = P (R89) และคำป้ายสอดคล้องกับ P เทียบ Lo31–Hi31: Lo ≤ P ≤ Hi → \"ปกติ\" · P > Hi → \"สูง\" · P < Lo → ไม่ใช่ \"ปกติ\" และไม่ใช่ \"สูง\" (R90)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E2: (ขั้น 2) ประโยคใต้หัวระบุว่าช่วงราคาปกติอ้างอิงทริปที่คล้ายกันที่เดินทางสู่โตเกียว ไม่ใช่ประวัติของการค้นหานี้ [O-ยังไม่ยืนยัน] (R91)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E3: (ขั้น 2, 4) Lo31–Hi31 = Lo15–Hi15 (ช่วงปกติไม่เปลี่ยนตามวันที่ค้นหา) [O-ยังไม่ยืนยัน] (R92) — ถ้าไม่เท่า บันทึกเป็นข้อสังเกตว่าพฤติกรรมเปลี่ยนจากวันสำรวจ ไม่ใช่ข้อบกพร่อง",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E4: (ขั้น 5) Pc < P (R98)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E5: (ขั้น 5) Dc ห่างจาก 31 ธ.ค. ไม่เกิน 3 วัน [O-ยังไม่ยืนยัน] (R100)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E6: (ขั้น 6–7) ราคาปฏิทินของ Dc = Pc ที่ความละเอียดของช่องปฏิทิน และราคาช่อง Dc ในตาราง = Pc (R98) · ทุกช่อง ✦ มีราคา = ค่าต่ำสุดของช่องที่แสดง แม้ค่านั้นจะ > Hi31 (R96)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E7: (ขั้น 9) หัวผลลัพธ์และช่อง \"ขาไป\" = Dc (ส่วนอื่นเหมือนโจทย์) และ Q = Pc (R98)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "คาดหวัง",
+                  "description": "E8: (ขั้น 10) ราคาในประโยคของกล่องขยาย = Q (R89) · คำป้ายสอดคล้องกับ Q เทียบ LoC–HiC ตามกฎ E1 (R90) · LoC–HiC = Lo15–Hi15 [O-ยังไม่ยืนยัน] (R92)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "ที่มา",
+                  "description": "plan/5.4-เครื่องมือราคาและวันที่.md · TC-PRC-04 · R98 R100 R90 R91 R92 R96 R89 · Invariant/Metamorphic · Equivalence partition · State · [O-ยังไม่ยืนยัน] (E2 E3 E5 E8 บางส่วน)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "งบค้นหา",
+                  "description": "3 (2 ถ้าไม่มีการ์ด)",
+                  "location": {
+                    "file": "C:\\t\\gf03v2\\e2e\\tests\\5.4-price-date-tools.spec.ts",
+                    "line": 1107,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ed45227d76d6a987ad72-160f9432ba8d62949b5c",
+          "file": "5.4-price-date-tools.spec.ts",
+          "line": 1107,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "5.6-locale-home.spec.ts",
+      "file": "5.6-locale-home.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "5.6 ภาษา สกุลเงิน และหน้าแรก",
+          "file": "5.6-locale-home.spec.ts",
+          "line": 521,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore",
+              "ok": true,
+              "tags": [
+                "P3",
+                "5.6"
+              ],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E1: (ข้อ 1) ไม่มีสิ่งใดบังฟอร์มค้นหาจนต้องปิดก่อนใช้งาน",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E2: [O-ยังไม่ยืนยัน] (ข้อ 1) R134: ไม่มี dialog/banner คุกกี้หรือความยินยอมในหน้า",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E3: [O-ยังไม่ยืนยัน] (ข้อ 1, 3) R132: หน้าแรกเป็นแบบใดแบบหนึ่งใน 2 แบบ (\"ค้นหาเที่ยวบินราคาถูกทั่วโลกและจองตั๋ว\" หรือ \"ค้นหาเที่ยวบินราคาถูกจากกรุงเทพมหานคร\") และทั้งสองแบบมีฟอร์มค้นหาครบทุกช่อง · จดว่าข้อ 1 และข้อ 3 ได้แบบไหน (ข้อมูลตอบ Q36)",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E4: (ข้อ 3) R129: ทุกช่องในฟอร์มที่มีค่า ต้องเป็นค่าเดียวกับการค้นหาล่าสุด (เที่ยวเดียว / กรุงเทพมหานคร / อังคาร 15 ธ.ค. / 1 / ชั้นประหยัด) ไม่มีช่องใดแสดงค่าที่ไม่ได้ค้น",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E5: [O-ยังไม่ยืนยัน] (ข้อ 3) R129: ประเภทตั๋ว ต้นทาง และวันที่ถูกจำไว้ ส่วนช่องปลายทางว่าง",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E6: [O-ยังไม่ยืนยัน] (ข้อ 3) R02: ขณะปลายทางว่าง ปุ่มหลักใต้ฟอร์มเป็น \"สำรวจ\" ไม่ใช่ \"ค้นหา\"",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E7: (ข้อ 4) R02: กด \"สำรวจ\" แล้วไปหน้า Explore (URL มี `/travel/explore`) ไม่ใช่หน้าผลลัพธ์เที่ยวบิน",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E8: (ข้อ 4–5) R131: ฟอร์มใน Explore มีต้นทาง กรุงเทพมหานคร · เที่ยวเดียว · 15 ธ.ค. และผู้โดยสาร/ชั้นเท่าที่แสดงตรงกับ 1 / ชั้นประหยัด · URL มี `hl=th` และ `curr=THB` · ราคาทุกปลายทางมีหน่วยบาท และป้ายในหน้าเป็นภาษาไทย",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "คาดหวัง",
+                      "description": "E9: (ข้อ 4) R130: PX = Pref (ราคาโตเกียวใน Explore เท่ากับราคาต่ำสุดในหน้าผลลัพธ์ของเงื่อนไขเดียวกัน) · ถ้าไม่มีแถวโตเกียวในรายการ = E9 N/A",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "ที่มา",
+                      "description": "plan/5.6-ภาษาสกุลเงินและหน้าแรก.md · TC-LOC-04 · R134 R132 R129 R02 R131 R130 · State · Invariant/Metamorphic · Happy path · [O-ยังไม่ยืนยัน] (E2 E3 E5 E6 · E1 E4 E7 E8 E9 เป็น [R])",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    },
+                    {
+                      "type": "งบค้นหา",
+                      "description": "2",
+                      "location": {
+                        "file": "C:\\t\\gf03v2\\e2e\\tests\\5.6-locale-home.spec.ts",
+                        "line": 1058,
+                        "column": 7
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a5d442cc8b3b05209b85-aa78a5a844bd408d8f30",
+              "file": "5.6-locale-home.spec.ts",
+              "line": 1058,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T03:43:03.039Z",
+    "duration": 100.30000000000001,
+    "expected": 0,
+    "skipped": 6,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "id": "TC-PRICE-02",
+  "checks": [
+    {
+      "n": 1,
+      "label": "แขก ไม่มีบรรทัดส่วนลด",
+      "pass": false,
+      "actual": "สรุปและยืนยัน นวดไทย 60 นาที 60 นาที 1 คน 17 มิ.ย. 2026 · 12:00 นักบำบัด: ใครก็ได้ สรุปราคา ราคาเต็ม 1 คน ฿1,000 ส่วนลด 0% ไม่มีส่วนลด ฿0 แลกแต้ม 0 แต้ม ฿0 ค่ารถรับส่ง ฿0 Gift Card ฿0 จ่ายหน้าร้าน ฿1,000 ไม่รับชำระเงินออนไลน์ ยอดที่เหลือชำระที่หน้าร้าน ส่วนเสริม ไม่บังคับ กดเปิดเฉพาะที่ต้องการ รถรับส่ง Gift Card ข้อมูลผู้จอง ชื่อ เบอร์โทร จองโดยไม่เข้าสู่ระบบ จะไม่ได้รับแต้มและส่วนลดสมาชิก เข้าสู่ระบบเพื่อรับสิทธิ์สมาชิก ยอดจ่ายหน้าร้าน ฿1,000 แก้ไขวันเวลา ยืนยันการจอง ยกเลิกได้ทั้งการจองเท่านั้",
+      "shot": "shots/chromium/TC-PRICE-02/001.jpg",
+      "actor": "main",
+      "t": 10202
+    },
+    {
+      "n": 2,
+      "label": "แขก จ่าย ฿1,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-02/002.jpg",
+      "actor": "main",
+      "t": 11885
+    },
+    {
+      "n": 3,
+      "label": "U08 หน้าสรุป ฿1,000 − ฿50 − ฿50 = ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-02/003.jpg",
+      "actor": "main",
+      "t": 18183
+    },
+    {
+      "n": 4,
+      "label": "U08 ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"RLAPWCYB\"}",
+      "shot": "shots/chromium/TC-PRICE-02/004.jpg",
+      "actor": "main",
+      "t": 19554
+    },
+    {
+      "n": 5,
+      "label": "U08 หน้ายืนยัน ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-02/005.jpg",
+      "actor": "main",
+      "t": 21233
+    },
+    {
+      "n": 6,
+      "label": "U03 หน้าสรุป จ่าย ฿1,700",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿2,000",
+      "shot": "shots/chromium/TC-PRICE-02/006.jpg",
+      "actor": "main",
+      "t": 29867
+    },
+    {
+      "n": 7,
+      "label": "บรรทัดราคาเรียงตามลำดับคำนวณ",
+      "pass": true,
+      "actual": "[\"booking-line-full-price\",\"booking-line-discount\",\"booking-line-points\",\"booking-line-transport\",\"booking-line-giftcard\",\"booking-pay-at-shop\"]",
+      "shot": "shots/chromium/TC-PRICE-02/007.jpg",
+      "actor": "main",
+      "t": 30834
+    },
+    {
+      "n": 8,
+      "label": "U03 ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"5UYJPUPY\"}",
+      "shot": "shots/chromium/TC-PRICE-02/008.jpg",
+      "actor": "main",
+      "t": 32216
+    },
+    {
+      "n": 9,
+      "label": "U03 หน้ายืนยัน จ่าย ฿1,700",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿2,000",
+      "shot": "shots/chromium/TC-PRICE-02/009.jpg",
+      "actor": "main",
+      "t": 33916
+    },
+    {
+      "n": 10,
+      "label": "U03 แต้ม 250 − 200 = 50",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-PRICE-02/010.jpg",
+      "actor": "main",
+      "t": 35448
+    },
+    {
+      "n": 11,
+      "label": "U03 ยอดนัด ฿1,700 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿1,700",
+      "shot": "shots/chromium/TC-PRICE-02/011.jpg",
+      "actor": "main",
+      "t": 37080
+    },
+    {
+      "n": 12,
+      "label": "U08 แต้ม 101 − 100 = 1",
+      "pass": true,
+      "actual": "1",
+      "shot": "shots/chromium/TC-PRICE-02/012.jpg",
+      "actor": "main",
+      "t": 40297
+    },
+    {
+      "n": 13,
+      "label": "U08 ยอดนัด ฿900 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿900",
+      "shot": "shots/chromium/TC-PRICE-02/013.jpg",
+      "actor": "main",
+      "t": 41895
+    },
+    {
+      "n": 14,
+      "label": "หลังร้าน นัด U08 ฿900",
+      "pass": true,
+      "actual": "฿900",
+      "shot": "shots/chromium/TC-PRICE-02/014.jpg",
+      "actor": "owner",
+      "t": 2331
+    },
+    {
+      "n": 15,
+      "label": "หลังร้าน นัด U03 ฿1,700",
+      "pass": true,
+      "actual": "฿1,700",
+      "shot": "shots/chromium/TC-PRICE-02/015.jpg",
+      "actor": "owner",
+      "t": 4045
+    },
+    {
+      "n": 16,
+      "label": "มีข้อความแจ้งว่าใช้บัตรไม่ได้",
+      "pass": true,
+      "actual": "Gift Card เลือกแล้ว รหัส Gift Card (ใช้ได้ 1 ใบ) ใช้บัตร Gift Card ไม่มีมูลค่าเหลือ เอาออก",
+      "shot": "shots/chromium/TC-PRICE-02/016.jpg",
+      "actor": "main",
+      "t": 53412
+    },
+    {
+      "n": 17,
+      "label": "ยอดจ่ายของการจองใหม่ไม่ลด คงเดิม ฿2,000 (ก่อนใส่บัตร ฿2000)",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,000",
+      "shot": "shots/chromium/TC-PRICE-02/017.jpg",
+      "actor": "main",
+      "t": 55113
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-PRICE-02/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-PRICE-02/owner.webm"
+    }
+  }
+}

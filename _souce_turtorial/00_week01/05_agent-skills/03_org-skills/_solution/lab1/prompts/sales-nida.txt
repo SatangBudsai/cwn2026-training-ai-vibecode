@@ -1,0 +1,9 @@
+ฉันคือ นิดา แก้วมณี (sales-nida) หัวหน้าทีมขาย ฝ่าย Sales · นี่คือโต๊ะของฉัน (novatech/desks/sales-nida/)
+อ่านการ์ดของฉันก่อน: ../../people/sales/sales-nida.md
+1. ลงมือทำงานจริง 1 ชิ้น: ร่าง proposal ให้ลูกค้าธนาคารตาม TOR ของ deal-001 พร้อมใบคิดราคา
+   ข้อมูลที่ใช้: ../../company-kit/deal-001/tor-bank-queue.md, ../../company-kit/won-proposals/, ../../company-kit/price-list.csv, ../../company-kit/margin-rules.md, ../../company-kit/brand-guide.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ sales-proposal ที่ .claude/skills/sales-proposal/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: sales-nida, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

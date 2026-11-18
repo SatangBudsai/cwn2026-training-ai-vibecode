@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/pricing.ts",
+    "find": "return Math.max(0, FREE_SHIPPING_MIN - subtotal);",
+    "replace": "return FREE_SHIPPING_MIN - subtotal;"
+  }
+]

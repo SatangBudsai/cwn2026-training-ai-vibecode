@@ -1,0 +1,78 @@
+{
+  "id": "TC-GIFT-04",
+  "title": "TC-GIFT-04 บัตรใบเดียวใช้ได้หลายครั้งจนหมด ยอดตรงทุกครั้ง บัตรเหลือ ฿0 ใช้ไม่ได้",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "GIFT-ACTIVE เริ่ม ฿2,000\nครั้งที่ 1: ฿800 − ฿800 = จ่าย ฿0 · บัตร ฿2,000 − ฿800 = ฿1,200\nครั้งที่ 2: ฿800 − ฿800 = จ่าย ฿0 · บัตร ฿1,200 − ฿800 = ฿400 (ถ้าใช้ได้ครั้งเดียวหรือไม่หักซ้ำ จะไม่ใช่ ฿400)\nGIFT-BAL-1: ฿1,000 − ฿1 = จ่าย ฿999 · บัตรเหลือ ฿0 · ร้านกดเสร็จแล้ว ฐาน ฿999 → 9 แต้ม (ถ้าไม่หักบัตรจากฐานจะได้ 10)\nGIFT-BAL-0: มีข้อความแจ้งว่าบัตรไม่มีมูลค่าเหลือ · ยอดจ่ายยัง ฿1,000 · บัตรยัง ฿0 · ไม่เกิดการหักบัตร",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 318,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 Gift Card · [D][R] E160–E163",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 318,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-49, FR-29, BR-17",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 318,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R50",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 318,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 318,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 318,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 59396,
+  "at": "2026-11-06T02:23:06.270Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. ตรวจยอด GIFT-ACTIVE ที่ /gift-cards",
+    "2. U04 จอง S05 รอบ 12:00 ใช้ GIFT-ACTIVE แล้วตรวจยอด",
+    "3. U04 จอง S05 รอบ 14:00 ใช้บัตรเดิม แล้วตรวจยอดและรีโหลด",
+    "4. รีเซ็ต จอง S01 ด้วย GIFT-BAL-1 ตรวจยอด ร้านกดเสร็จ ดูแต้ม U04",
+    "5. รีเซ็ต จอง S01 กรอก GIFT-BAL-0 ดูข้อความและยอดจ่าย แล้วตรวจยอดบัตร"
+  ]
+}

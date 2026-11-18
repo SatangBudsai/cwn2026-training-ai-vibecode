@@ -1,0 +1,11 @@
+{
+  "name": "hr",
+  "version": "1.0.0",
+  "description": "แผนก HR: ประกาศรับสมัคร และชุดต้อนรับพนักงานใหม่",
+  "author": {
+    "name": "hr-fah"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

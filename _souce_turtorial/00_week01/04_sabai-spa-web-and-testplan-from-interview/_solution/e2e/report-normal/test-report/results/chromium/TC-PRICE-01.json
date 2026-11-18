@@ -1,0 +1,77 @@
+{
+  "id": "TC-PRICE-01",
+  "title": "TC-PRICE-01 ค่าขอบยอดสะสมของระดับ Gold และ Platinum",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "฿9,999 U03: ลด 0% จ่าย ฿1,000 (ถ้าปัดยอดขึ้นเป็น Gold จะได้ ฿950)\n฿10,000 U08: ลด 5% (฿50) จ่าย ฿950 (ถ้าใช้เงื่อนไขมากกว่าแทนตั้งแต่จะได้ ฿1,000)\n฿10,001 U09: ลด 5% (฿50) จ่าย ฿950\n฿29,999 U05: ลด 5% (฿50) จ่าย ฿950 (ถ้าปัดยอดขึ้นเป็น Platinum จะได้ ฿900)\n฿30,000 U02: ลด 10% (฿100) จ่าย ฿900 (ถ้าใช้เงื่อนไขมากกว่าแทนตั้งแต่จะได้ ฿950)\n฿30,001 U10: ลด 10% (฿100) จ่าย ฿900\nนัดของ U08 ยังเป็น ฿950 และ U02 ยังเป็น ฿900 ทั้งหลังรีโหลดและในหลังร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 173,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.15 · [D] §5 ยอดสะสม · [R] ⚠️TD-05",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 173,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-27, FR-28, BR-21, BR-22",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 173,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "—",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 173,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 173,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 173,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 56463,
+  "at": "2026-11-06T02:17:03.730Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1-2. เข้าระบบทีละคน ไปหน้าสรุป S01 12:00 แล้วอ่านส่วนลดและยอด",
+    "3. U08 ยืนยันรอบ 12:00 และ U02 ยืนยันรอบ 14:00",
+    "4. รีโหลดแล้วอ่านยอดนัดของ U08 และ U02",
+    "5. ดูยอดของ 2 นัดในหลังร้าน"
+  ]
+}

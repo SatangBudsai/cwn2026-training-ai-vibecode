@@ -1,0 +1,6 @@
+{
+  "r2": {
+    "url": "http://localhost:5088/search?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0",
+    "rows": 22
+  }
+}

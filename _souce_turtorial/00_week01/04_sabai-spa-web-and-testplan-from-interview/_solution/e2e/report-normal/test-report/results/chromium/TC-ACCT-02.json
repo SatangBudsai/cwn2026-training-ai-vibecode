@@ -1,0 +1,80 @@
+{
+  "id": "TC-ACCT-02",
+  "title": "TC-ACCT-02 ยกเลิกทันเวลาแล้วคืนแต้ม บัตร สิทธิ์เดือนเกิด ครั้งคอร์ส และรอบนักบำบัดครบ ยกเลิกซ้ำพร้อมกันคืนครั้งเดียว",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ส่วน ก:\nแต้ม 300 + 200 = 500\nบัตร ฿500 + ฿500 = ฿1,000\nT03 25 มิ.ย. 14:00 ว่าง\nสิทธิ์เดือนเกิดคืน: S01 ฿1,000 − 20% (฿200) = ฿800 (U12 Silver ถ้าสิทธิ์ไม่คืนจะได้ ฿1,000)\nC06 7 + 1 = เหลือ 8 ครั้ง จาก 11 ครั้ง\nส่วน ข:\nสำเร็จ 1 ครั้ง อีกครั้งถูกปฏิเสธด้วยสถานะ 4xx\nแต้ม 500 (ถ้าคืนซ้ำจะได้ 700)\nบัตร ฿1,000 (ถ้าคืนซ้ำจะได้ ฿1,500)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 218,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 ยกเลิก · [D] §4 แต้มและระดับ · [D][R] E75, E76 · [R] R22",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 218,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-22, FR-38",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 218,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R22",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 218,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, State, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 218,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 218,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 39630,
+  "at": "2026-11-06T02:19:24.621Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U12 อ่านแต้ม ยอดบัตร และดูว่า T03 25 มิ.ย. 14:00 ไม่ว่าง",
+    "2. ยกเลิก B15 ยืนยัน เก็บ URL",
+    "3. อ่านแต้ม ยอดบัตร และรอบ T03 อีกครั้ง",
+    "4. เริ่มจอง S01 17 มิ.ย. 12:00 ติ๊กเดือนเกิด อ่านยอด",
+    "5. ยกเลิก B08 แล้วอ่านครั้งคงเหลือของ C06 ใน Wallet",
+    "6. ส่วน ข รีเซ็ต U12 login อ่านรหัส B15 จาก Network ยิงพร้อมกัน 2 ครั้ง",
+    "7. อ่านแต้มและยอดบัตร"
+  ]
+}

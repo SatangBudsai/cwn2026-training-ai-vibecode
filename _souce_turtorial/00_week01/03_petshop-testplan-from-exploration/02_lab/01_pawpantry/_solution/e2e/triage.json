@@ -1,0 +1,977 @@
+{
+ "_meta": {
+  "note": "การจำแนกข้อที่ล้มของรอบโหมดฝังบั๊ก (BUG_MODE=1) · key = ID (chromium และ api) · การจำแนกรอบปกติเก็บไว้ที่ report-normal/triage.json",
+  "scope": "chromium (http://localhost:3000, data-bug-mode=\"1\") + api · ไม่ได้รัน mobile-chrome",
+  "basis": "เทียบกับรอบปกติ: ข้อที่ผ่านในรอบปกติแต่ล้มรอบนี้ ดูภาพจุดตรวจ (กรอบแดง), GIF และค่าจริงทีละข้อ แล้วยิง API ซ้ำด้วย curl · ข้อที่ล้มทั้งสองรอบที่จุดตรวจเดิม ยกการจำแนกของรอบปกติมา (sameAsNormal) · ไม่ได้เปิดโค้ดของ petshop",
+  "updated": "2026-11-03T06:58:36.495Z"
+ },
+ "_bugs": [
+  {
+   "id": "BUG-01",
+   "title": "คูปอง PAW10 ลดแค่ 1% (ปัดลง) แทน 10% ทั้งตะกร้า checkout หน้ายืนยัน และ API ของ server",
+   "severity": "Critical",
+   "tests": [
+    "TC-CPN-001",
+    "TC-CPN-002",
+    "TC-CPN-015",
+    "TC-CPN-019",
+    "TC-CPN-021",
+    "TC-CPN-024",
+    "TC-SHIP-013",
+    "TC-CONF-001"
+   ],
+   "alsoChanged": [
+    "TC-CPN-003",
+    "TC-CPN-004",
+    "TC-CPN-016",
+    "TC-CPN-017",
+    "TC-CPN-020",
+    "TC-SHIP-008",
+    "TC-SHIP-012"
+   ],
+   "predicted": "ทายไว้ (แถว 2 \"PAW10 คิดเปอร์เซ็นต์ผิด\") — CPN-001, CPN-002, SHIP-013 ล้มตามที่ทาย ตัวคุม CPN-005/006 ยังผ่าน"
+  },
+  {
+   "id": "BUG-02",
+   "title": "เบอร์โทร 9 หลัก (081234567) ผ่านทั้งฟอร์ม checkout และ POST /api/orders สร้างคำสั่งซื้อได้",
+   "severity": "High",
+   "tests": [
+    "TC-CHK-006",
+    "TC-CHK-016"
+   ],
+   "alsoChanged": [],
+   "predicted": "ไม่ได้ทาย (ไม่มีแถวเรื่องตรวจเบอร์โทร) แต่ TC Boundary + Security ในหัวข้อ 5.5 จับได้"
+  },
+  {
+   "id": "BUG-03",
+   "title": "ตัวนับ ♥ บนหัวเว็บไม่ลดเมื่อเอาของออกจากรายการโปรด (กด ♥ ซ้ำ / ลบ / ย้ายไปตะกร้า) จนกว่าจะ reload",
+   "severity": "Medium",
+   "tests": [
+    "TC-WISH-001",
+    "TC-WISH-003",
+    "TC-WISH-004",
+    "TC-WISH-008",
+    "TC-WISH-009",
+    "TC-WISH-010",
+    "TC-WISH-012"
+   ],
+   "alsoChanged": [
+    "TC-WISH-014"
+   ],
+   "predicted": "ไม่ได้ทาย (แถว 16 พูดถึง 2 แท็บเขียนทับ ไม่ใช่ตัวนับ) แต่ TC ใน 5.7 ที่ตรวจตัวนับคู่กับ pp-wishlist จับได้"
+  }
+ ],
+ "TC-REG-015": {
+  "category": "เว็บผิด",
+  "reason": "ชุด (ก)(ข)(ค) ได้ 400 ตามคาด แต่ชุด (ง) รหัส `Paw1234␠` ได้ 201 ไม่ใช่ 400, ไม่มี errors.password, ได้ Set-Cookie pp_session และล็อกอินได้ 200 แทน 401 แปลว่า server นับช่องว่างเป็นตัวที่ 8 ไม่ trim ก่อนตรวจ ตรงกับที่แผนคาดไว้ (R134/Q30)",
+  "evidence": "project api: จุดตรวจ (ง) status 201 body {user:{id:2,...}} · Set-Cookie pp_session=2400b2… · ล็อกอิน status 200",
+  "section": "5.6",
+  "project": "api",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-001": {
+  "category": "แผนผิด",
+  "reason": "ลิงก์ข้ามเนื้อหาทำงานตาม R206: hash = #main และ Tab ถัดไป = \"🐾 ทั้งหมด\" (ผ่าน) แต่ activeElement = body เพราะ main ไม่มี tabindex ตามสเปก HTML การกดลิงก์ไปยัง fragment ที่โฟกัสไม่ได้ย้ายแค่จุดเริ่มต้นของ Tab ถัดไป ไม่ได้ย้าย activeElement เกณฑ์ \"activeElement อยู่ที่/ใน main\" จึงเข้มกว่ากฎ R206 ที่แผนอ้าง (บันทึกการสำรวจระบุว่าผ่าน)",
+  "evidence": "จุดตรวจ 02 (hash \"#main\", active \"(body)\") · จุดตรวจ 03 ผ่าน (Tab ถัดไป = filter-pet-all)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-005": {
+  "category": "เว็บผิด",
+  "reason": "หน้า /products/kitten-salmon-dry ช่องจำนวน (qty-input) ตอนได้โฟกัสมี outline none 0px และ box-shadow none ตัวกรอบ .qty ก็ไม่เปลี่ยนสไตล์ตอนโฟกัส (ตรวจซ้ำด้วย playwright-cli: border/box-shadow ก่อนและหลังโฟกัสเท่าเดิม) จึงไม่ผ่านนิยามกรอบโฟกัสของหัวข้อ 5.8 ส่วนอีก 99 จุดผ่าน และหน้า / ผ่านทั้งหมด",
+  "evidence": "จุดตรวจ 03 (\"17. input[qty-input] outline=none 0px box-shadow=none\") · ตรวจเพิ่มด้วย playwright-cli -s=5.8",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-006": {
+  "category": "เว็บผิด",
+  "reason": "ทั้ง /products และ ?pet=cat มีระดับหัวข้อ 1 → 3 (H1 \"สินค้าทั้งหมด\" → H3 ชื่อสินค้า) ไม่มี H2 คั่น และ axe heading-order ได้ 1 violation ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R211)",
+  "evidence": "จุดตรวจ 01–04 (levels \"1 3 3 3…\", axe heading-order)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-007": {
+  "category": "เว็บผิด",
+  "reason": "ในโหมด forced colors ปุ่มทั้ง 6 ปุ่ม (ช้อปอาหารแมว/หมา, เพิ่มลงตะกร้า, เพิ่มทั้งชุด, −, +) มี border none 0px และ outline-style none ส่วน \"400 g\" ตอนเลือกกับไม่เลือกมี computed style เหมือนกันทุกค่า (solid 2px, font-weight 400) และภาพเหมือนกัน (sameImage true) ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R212) กรอบหนาในภาพ 09 เป็นกรอบไฮไลต์ของ check() ซึ่งเกิดหลังถ่ายภาพเปรียบเทียบแล้ว จึงไม่กระทบผล",
+  "evidence": "จุดตรวจ 01–06, 09 · shots/chromium/TC-A11Y-007/09.png",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-010": {
+  "category": "เว็บผิด",
+  "reason": "axe color-contrast มี violation ทุกหน้า และค่าที่คำนวณเองต่ำกว่าเกณฑ์ตรงกับแผน: ปุ่ม \"ทั้งหมด\" และลิงก์ \"สมัครสมาชิก\" 2.82, ★ 3.64, 🐶 3.68, 🐱 4.23, PAW10 4.0, ราคาใต้ปุ่มขนาด 4.32 แต่ค่าของตัวนับ ♥/🛒 (1.0 = #fff บน #fff) ผิดเพราะ test ไม่นับพื้นหลังแบบ gradient (badge ใช้ background-image linear-gradient #ff6b4a→#f472b6) และ \"บัญชีทดลอง\" วัดที่ <p> ได้ 4.37 ไม่ใช่ที่ <code> (axe ได้ 3.82 ตรงกับแผน) แม้วัดใหม่ทุกจุดก็ยังต่ำกว่าเกณฑ์",
+  "evidence": "จุดตรวจ 01–04 (axe), 06–16 (ratio/fg/bg) · ตรวจ computed style ของ .count-badge ด้วย playwright-cli",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-013": {
+  "category": "เว็บผิด",
+  "reason": "ที่ / ไม่มี <link rel~=\"icon\"> (0 อัน) และ GET /favicon.ico = 404 (text/html) ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R217) แต่ console error ตัวเดียวที่จับได้คือ \"Failed to load resource 404\" ของเอกสาร /nope เอง ซึ่งแผนยกเว้นไว้แล้ว test ควรยกเว้นด้วย (ส่วนนั้นเป็น test เขียนผิด แต่ข้อนี้ยังล้มเพราะ favicon)",
+  "evidence": "จุดตรวจ 01 (consoleErr มีแค่ /nope 404), 02 (icons []), 03 (favicon 404)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-A11Y-014": {
+  "category": "แผนผิด",
+  "reason": "จำนวน violation โหมดมืดเท่ากับโหมดสว่าง (14/29/7/4) และ scrollWidth เท่ากัน (ผ่าน) แต่ \"ข้อความสีเดียวกับพื้นหลัง\" จับได้แค่ข้อความขาวบนปุ่ม/การ์ดที่พื้นเป็น background-image แบบ gradient หรือรูป (เช่น \"ใส่ตะกร้า\" .btn-primary, \"PawPantry Club\", ปุ่ม \"สมัคร\" .btn-sun) ซึ่งในภาพอ่านได้ชัด และเป็นเหมือนกันในโหมดสว่าง นิยามในแผน \"background-color ของ ancestor ตัวแรกที่ไม่โปร่งใส\" ไม่นับ background-image จึงฟ้องผิด ทั้งที่เว็บไม่มีธีมมืด (เหมือนโหมดสว่าง 100%) ซึ่งแผนบอกว่าต้องผ่าน",
+  "evidence": "จุดตรวจ 01–04 (sameColor list) · shots/chromium/TC-A11Y-014/04.png · computed style .btn-primary bgc transparent + bgi linear-gradient",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-008": {
+  "category": "เว็บผิด",
+  "reason": "ผิด 5 ครั้งได้ 401 ถูกต้อง แต่ครั้งที่ 6 ที่ใส่รหัสถูกได้ 200 พร้อม Set-Cookie pp_session และล็อกอินสำเร็จ (คาด 429 หรือ 4xx) ลิงก์ \"เข้าสู่ระบบ\" จึงหายจากหัวเว็บด้วย คือไม่มี rate limit ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R148/Q31) หลังจบ reset แล้ว demo ล็อกอินได้ 200",
+  "evidence": "จุดตรวจครั้งที่ 6: status 200 body user qa-reg-101 · Set-Cookie pp_session=cdd4bc… · shots/chromium/TC-AUTH-008/08.png",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-011": {
+  "category": "เว็บผิด",
+  "reason": "next=/%5Cevil.example: หลังล็อกอิน location.origin = http://evil.example (คาด http://localhost:3000) และมี request ไป http://evil.example/?_rsc=… กับ http://evil.example/ คือ open redirect ที่แผนยืนยันไว้แล้ว (R151)",
+  "evidence": "shots/chromium/TC-AUTH-011/01.png · จุดตรวจ hits [evil.example/?_rsc=…, evil.example/]",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-012": {
+  "category": "เว็บผิด",
+  "reason": "next=/%09/evil.example: origin = http://evil.example และมี request ไป evil.example คือ open redirect ที่แผนยืนยันไว้แล้ว (R151)",
+  "evidence": "จุดตรวจ location {origin:http://evil.example, pathname:/} · hits 2 รายการ",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-013": {
+  "category": "เว็บผิด",
+  "reason": "4 จาก 5 payload (/%0A/, /%0D/, /%5C/, %2F%5C) พาไป origin http://evil.example ล้มหมด ส่วน /%2F%2Fevil.example ถูกกันไป localhost / ได้ถูก เป็นทางเลี่ยงตัวกรอง next เพิ่มเติม (R150/R151)",
+  "evidence": "จุดตรวจ 01,03,05,07 origin=http://evil.example · 09 origin=http://localhost:3000 · hits 8 รายการ",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-014": {
+  "category": "เว็บผิด",
+  "reason": "origin เป็น localhost ทุกขั้นและไม่มี request ไป evil.example (ส่วน security ผ่าน) ขั้น 4 pathname=/ ผ่าน ล้มแค่ขั้น 2 ที่สมัครแล้วไป /account?welcome=1 (คาด / ตามสมมติฐาน Q33) ซึ่งแผนให้บันทึกเป็นบั๊ก Q33 และเขียนไว้แล้วว่าตอนนี้ล้ม",
+  "evidence": "จุดตรวจขั้น 2 location {origin:http://localhost:3000, pathname:/account}",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-016": {
+  "category": "เว็บผิด",
+  "reason": "label ครบ ลำดับ Tab ถูก (อีเมล→รหัส→👁️→ปุ่ม) Enter ส่งได้ 401 แต่หลังล็อกอินผิดไม่มีช่องไหนมี aria-invalid เลย (คาด ≥1) จึงไม่มี aria-describedby ผูกข้อความด้วย หนักกว่าที่แผนคาดว่าจะขาดแค่ aria-describedby (R153)",
+  "evidence": "จุดตรวจขั้น 3: login-email invalid=null, login-password invalid=null, describedBy=null",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-AUTH-017": {
+  "category": "แผนผิด",
+  "reason": "ขั้น 1–2 ผ่าน (หน้าแสดง \"บัญชีทดลอง: demo@pawpantry.test / Paw12345\" และล็อกอินได้) ที่ล้มเพราะขั้น 3 blocked: แผนต้องการ build production (NODE_ENV=production) ซึ่งสภาพแวดล้อมนี้ไม่มี (Q37) หัวข้อ 6.2 จึงนับเป็นไม่ผ่าน ไม่ได้เกิดจากเว็บหรือ test ต้องรอทีมให้ build production",
+  "evidence": "shots/chromium/TC-AUTH-017/fail-0.png ล็อกอินสำเร็จ หัวเว็บมี \"ออกจากระบบ\" · error = BLOCKED Q37",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-BNDL-005": {
+  "category": "เว็บผิด",
+  "reason": "ยอดชุดใน /cart = ฿297 เท่าผลรวมรายชิ้นพอดี แต่หัวข้อกล่องยังเขียนว่า \"🎁 ซื้อคู่กันคุ้มกว่า\" ไม่เข้าเงื่อนไขทั้งสองข้อ ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R58/Q14)",
+  "evidence": "จุดตรวจ 02 ค่าจริง {subtotal:297, heading:\"🎁 ซื้อคู่กันคุ้มกว่ามักซื้อคู่กัน\"}",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-BNDL-007": {
+  "category": "เว็บผิด",
+  "reason": "ตะกร้าถูกต้อง (ก้อนขน ×3 + ขนมแมวเลีย ×1 ยอด ฿1,629) และ toast มีเลข 1 (จุดตรวจผ่าน) แต่ toast เขียนแค่ \"✅เพิ่มชุดสินค้า 1 รายการลงตะกร้าแล้ว 🎁\" ไม่บอกว่าข้ามสูตรลดก้อนขนเพราะสต็อกไม่พอ แผนระบุไว้ตรง ๆ ว่ากรณีนี้ถือว่าล้ม (R57/Q15/Q51)",
+  "evidence": "shots/chromium/TC-BNDL-007/02.png กรอบแดงที่ toast \"เพิ่มชุดสินค้า 1 รายการลงตะกร้าแล้ว\" · error log มี unexpected value เป็นข้อความเดียวกัน",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-009": {
+  "category": "เว็บผิด",
+  "reason": "พิมพ์ 0 แล้ว 5 ทีละตัวได้ช่องจำนวน 7 ยอด ฿6,230 🛒 7 (คาด 5 · ฿4,450) และพิมพ์ 0 0 3 ยังเป็น 7 (คาด 3 · ฿2,670) ตรงกับที่แผนเขียนว่า \"ตอนนี้ล้ม\" (R44/Q11)",
+  "evidence": "shots/chromium/TC-CART-009/01–09.png · error: item-qty Received \"7\", line total ฿6,230, cart-count 7 (ค่าจริงของช่องจำนวนในไฟล์แนบเป็นค่าว่างเพราะ pp.ts อ่าน innerText ของ input แต่ error ระบุว่าได้ 7)",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-011": {
+  "category": "เว็บผิด",
+  "reason": "หน้าตะกร้าแสดงถูก (1 บรรทัด ฿359 ยอด ฿409 🛒 1 จุดตรวจ UI ผ่านหมด) แต่ pp-cart หลังโหลดยังเก็บรายการเสียไว้ทั้งหมด (tuna qty -2, 99 kg, qty 0, no-such) ทั้งที่คาดว่าเหลือรายการเดียว ตาม R65",
+  "evidence": "shots/chromium/TC-CART-011/10.png · actual pp-cart มี 5 รายการ",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-012": {
+  "category": "เว็บผิด",
+  "reason": "ช่องจำนวน 1 ยอด ฿359/฿409 🛒 1 ถูก แต่ qty ใน pp-cart ยังเป็น 1.5 (คาด 1) ข้อมูลในเครื่องจึงไม่ตรงกับที่แสดงและที่ server ปัด (R65/R119)",
+  "evidence": "shots/chromium/TC-CART-012/04.png · actual [{\"slug\":\"adult-chicken-dry\",\"qty\":1.5}]",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-013": {
+  "category": "เว็บผิด",
+  "reason": "ตะกร้าเชื่อ pp-cart: ไก่ฟรีซดรายไม่มีป้าย \"สินค้าหมด\" และถูกนับ, สูตรลดก้อนขนจำนวน 10 ไม่มีคำเตือน ยอด ฿5,518 🛒 12 ปุ่มชำระเงินกดได้และพาไป /login?next=/checkout หลังลบไก่ฟรีซดรายยอด ฿5,200 (คาด ฿1,560) ตรงกับ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "shots/chromium/TC-CART-013/01–11.png · error: item-qty Received \"10\", subtotal ฿5,518, cart-count 12, URL /login",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-014": {
+  "category": "เว็บผิด",
+  "reason": "แก้ pp-cart เป็น 500 แล้วเว็บแสดงช่องจำนวน 500 ยอด ฿17,500 🛒 500 ไม่มีคำเตือน และ pp-cart ยัง 500 (คาด 60 · ฿2,100) ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R66)",
+  "evidence": "shots/chromium/TC-CART-014/01–05.png · error: item-qty Received \"500\", summary-total ฿17,500",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-017": {
+  "category": "เว็บผิด",
+  "reason": "หลัง B สั่ง 3 ชิ้น (สต็อกเหลือ 22) แล้ว reload ที่ A ยังเห็น ×25 ฿4,725 🛒 25 ไม่มีคำเตือน (คาด 22 · ฿4,158 พร้อมคำเตือน) พอกด + จำนวนกลับลดเป็น 22 ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R67)",
+  "evidence": "shots/chromium/TC-CART-017/03.png (×25 ฿4,725 หลัง reload) · เฟรมสุดท้ายของ gifs/TC-CART-017.gif (หลังกด + เป็น 22 ฿4,158)",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-018": {
+  "category": "เว็บผิด",
+  "reason": "หลังสูตรลดก้อนขนถูกซื้อหมด ที่ A ยังแสดง \"ชิ้นละ ฿520\" ไม่มีป้ายหมด ยอดรวมสินค้า ฿590 ยอดชำระ ฿640 ปุ่มชำระเงินกดได้ (คาด ฿70/฿120 และปุ่มปิด) ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R66/Q9)",
+  "evidence": "shots/chromium/TC-CART-018/02–06.png · ข้อ 4 (หลังลบ) ผ่าน",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-021": {
+  "category": "เว็บผิด",
+  "reason": "แท็บ B ใส่ทูน่าแล้ว pp-cart มี 2 รายการ แต่พอแท็บ A กด + ก็เขียนทับเหลือ [ลูกแมว qty 2] ทูน่าหาย หลัง reload 1 บรรทัด ฿428 🛒 2 (คาด 2 บรรทัด ฿463 🛒 3) ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R69) · ลองซ้ำด้วย playwright-cli ได้ผลเหมือนกัน แปลว่าไม่ใช่ปัญหาจังหวะรอของ test",
+  "evidence": "shots/chromium/TC-CART-021/01–09.png · ลองซ้ำด้วย playwright-cli: afterB = kitten+tuna, afterA = [kitten qty 2]",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CART-022": {
+  "category": "เว็บผิด",
+  "reason": "แท็บ B ใส่แมวโต 1.2 kg แล้ว pp-cart มี 3 รายการ แต่พอแท็บ A กด ✕ ที่ทูน่า ก็เขียนทับเหลือแค่ลูกแมว ×1 แมวโตหายไปด้วย ยอด ฿239 🛒 1 (คาด 2 รายการ ฿598 🛒 2) ตาม R69/Q24",
+  "evidence": "shots/chromium/TC-CART-022/01–11.png · ลองซ้ำด้วย playwright-cli: afterB มี 3 รายการ, afterA = [kitten qty 1]",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CHK-006": {
+  "category": "เว็บผิด",
+  "bug": "BUG-02",
+  "newInBugMode": true,
+  "reason": "กรอกเบอร์ 9 หลัก 081234567 แล้วกดยืนยัน → ไม่มี error ที่ช่องเบอร์ ระบบสั่งซื้อสำเร็จ PP-100001 และพาไปหน้ายืนยัน · ขั้น 2–3 (11 / 10 หลัก) จึงหาช่องเบอร์ไม่เจอ (timeout ship-phone) เป็นผลต่อเนื่อง ไม่ใช่ test เขียนผิด · ยิง API ซ้ำพบ 8 และ 11 หลักยังถูกปฏิเสธ → ผิดที่ขอบล่าง (9 หลักผ่าน)",
+  "evidence": "test-report/shots/chromium/TC-CHK-006/01.png และ fail-0.png (หน้า \"สั่งซื้อสำเร็จ!\" PP-100001) · test-report/gifs/TC-CHK-006.gif",
+  "section": "5.5",
+  "project": "chromium"
+ },
+ "TC-CHK-007": {
+  "category": "เว็บผิด",
+  "reason": "หน้าเว็บรับ \" 0812345678 \" และสั่งได้ 201 ตามที่คาด แต่ API เก็บเบอร์เป็น \" 0812345678 \" (มีช่องว่างหัวท้าย) แทนที่จะเป็น \"0812345678\" ตามผลที่คาดหวัง — ฟอร์ม trim เฉพาะตอนตรวจ แต่ส่งค่าดิบไปเก็บ ส่วน 4 ค่าที่ผิดรูปแบบถูกปฏิเสธครบและ POST = 0",
+  "evidence": "จุดตรวจ 'ข้อ 3: เบอร์ที่เก็บ' actual address.phone = \" 0812345678 \" (GET /api/orders/PP-100001) · จุดตรวจ 01–06 ok · เฟรมสุดท้ายของ GIF = หน้าสั่งซื้อสำเร็จ PP-100001",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CHK-009": {
+  "category": "เว็บผิด",
+  "reason": "รหัสไปรษณีย์ \"10110 \" สั่งผ่าน 201 แต่ API เก็บเป็น \"10110 \" (มีช่องว่างท้าย) ไม่ใช่ \"10110\" ตามที่คาด ส่วน abcde / 10 110 / เลขเต็มความกว้าง / เลขไทย ถูกปฏิเสธครบ",
+  "evidence": "จุดตรวจ 'ข้อ 3: รหัสที่เก็บ = \"10110\"' actual address.postcode = \"10110 \" · จุดตรวจข้อ 1–2 ok · เฟรมสุดท้ายของ GIF",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CHK-011": {
+  "category": "เว็บผิด",
+  "reason": "select จังหวัดมีแค่ 10 ตัวเลือก (กรุงเทพมหานคร…อุดรธานี) ไม่ใช่ 77 และไม่มีแม่ฮ่องสอน/นราธิวาส/บึงกาฬ จึงเลือกบึงกาฬสั่งซื้อไม่ได้ (POST ไม่เกิด status null, URL ค้างที่ /checkout) ตรงกับ \"(ตอนนี้ล้ม: มีแค่ 10 จังหวัด)\" ในแผน",
+  "evidence": "ภาพ shots/chromium/TC-CHK-011/01.png (กรอบแดงที่ select จังหวัด) · actual รายชื่อ 10 จังหวัด · 03.png, 05.png (ยังอยู่ /checkout)",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CHK-012": {
+  "category": "เว็บผิด",
+  "reason": "กรุงเทพมหานคร + 50200 สั่งผ่านได้ 201 ไปหน้า /orders/PP-100001 ที่แสดง \"ไปที่ กรุงเทพมหานคร 50200\" แทนที่จะขึ้น error ที่รหัสไปรษณีย์/จังหวัด ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน · ข้อ 2–3 (เชียงใหม่ + 50200) ผ่าน",
+  "evidence": "ภาพ shots/chromium/TC-CHK-012/01.png (หน้าสั่งซื้อสำเร็จ PP-100001 'กรุงเทพมหานคร 50200') · จุดตรวจ 02 status ข้อ 1 = 201 · 03 URL /orders/PP-100001",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CHK-013": {
+  "category": "เว็บผิด",
+  "reason": "ช่องชื่อและที่อยู่ไม่มี maxlength (null ทั้งคู่) และ API รับชื่อ \"ก\"×220 ได้ 201 สร้าง PP-100002 (จำนวนคำสั่ง 1 → 2) แทน HTTP 400 ตามที่คาด · scrollWidth ของ /checkout และ /orders/<id> = 1280 ผ่าน (ดีกว่าที่แผนบันทึกไว้ว่า 2035)",
+  "evidence": "ภาพ shots/chromium/TC-CHK-013/01.png (กรอบแดงช่องชื่อ/ที่อยู่) actual maxlength=null · จุดตรวจข้อ 4 status 201 body มี PP-100002 · 05.png ก่อน 1 หลัง 2",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CHK-016": {
+  "category": "เว็บผิด",
+  "bug": "BUG-02",
+  "newInBugMode": true,
+  "reason": "POST /api/orders ด้วยเบอร์ 081234567 ได้ HTTP 201 สร้าง PP-100001 · /account เพิ่ม 1 คำสั่ง สต็อกลูกแมวลดเป็น 24 · อีก 5 กรณี (ชื่อว่าง, ชื่อเว้นวรรค, เบอร์ 12, รหัส 1011, ที่อยู่สั้น) ยังได้ 400 → server ก็ตรวจเบอร์ผิดที่ 9 หลัก",
+  "evidence": "จุดตรวจ 04 (status 201), 07 (ก่อน 0 หลัง 1), 08 (สต็อก 24) · test-report/shots/chromium/TC-CHK-016/07.png",
+  "section": "5.5",
+  "project": "chromium"
+ },
+ "TC-CHK-017": {
+  "category": "เว็บผิด",
+  "reason": "API รับ กรุงเทพมหานคร+50200 และ เชียงใหม่+10110 ได้ 201 ทั้งคู่ (PP-100001, PP-100002) จำนวนคำสั่ง 0 → 2 แทน HTTP 400 ตามที่คาด ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน",
+  "evidence": "จุดตรวจ 2 ข้อ status 201 body มีเลขคำสั่ง · ภาพ shots/chromium/TC-CHK-017/03.png (/account ก่อน 0 หลัง 2)",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CONF-001": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "หน้ายืนยันคำสั่งซื้อแสดงส่วนลด −฿5 ยอดชำระ ฿565 (ควร −฿52 ฿518) · เลขคำสั่ง รายการ จังหวัด รหัสไปรษณีย์ วิธีส่ง/จ่าย ยังถูก",
+  "evidence": "จุดตรวจ 04, 06 · test-report/shots/chromium/TC-CONF-001/04.png · test-report/gifs/TC-CONF-001.gif",
+  "section": "5.5",
+  "project": "chromium"
+ },
+ "TC-CONF-002": {
+  "category": "เว็บผิด",
+  "reason": "หน้ายืนยันแสดงชื่อ \"สมใจ ใจดี\" และ \"กรุงเทพมหานคร 10110\" แต่ไม่แสดงเบอร์ \"0812345678\" และที่อยู่ \"99/1 ถนนสุขุมวิท แขวงคลองเตย\" ตามที่คาด (API เก็บครบ ข้อ 3 ผ่าน) ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน",
+  "evidence": "ภาพ shots/chromium/TC-CONF-002/02.png, 03.png (ข้อความใน main มีแค่ 'ไปที่ กรุงเทพมหานคร 10110') · จุดตรวจชื่อ/จังหวัด/รหัส และ API ok",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CPN-001": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "ตะกร้า ฿1,110 + PAW10 ได้ส่วนลด −฿11 (1%) แทน −฿111 ยอดชำระ ฿1,099 แทน ฿999 ปุ่ม checkout \"ยืนยันสั่งซื้อ ฿1,099\" · ยอดสินค้า/ค่าส่งฟรียังถูก (จุดตรวจ 01, 03 ผ่าน) จึงผิดที่การคิดส่วนลดจุดเดียว",
+  "evidence": "จุดตรวจ 02 (−฿11) 04 (฿1,099) 07 (ปุ่ม ฿1,099) · test-report/shots/chromium/TC-CPN-001/02.png · test-report/gifs/TC-CPN-001.gif",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-CPN-002": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "฿520 + PAW10 ได้ −฿5 แทน −฿52 ยอดชำระ ฿565 แทน ฿518 (520 − 5 + 50) ทั้งตะกร้าและปุ่ม checkout",
+  "evidence": "จุดตรวจ 02, 04, 05 · test-report/shots/chromium/TC-CPN-002/02.png · test-report/gifs/TC-CPN-002.gif",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-CPN-003": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: ค่าเปลี่ยนจาก −฿56/฿561 (บั๊กปัดเศษเดิม) เป็น −฿5/฿612 เพราะ BUG-01] ตะกร้า ฿567 ถูกต้อง แต่ PAW10 ให้ส่วนลด -฿56 ยอด ฿561 และปุ่ม \"ยืนยันสั่งซื้อ ฿561\" ขณะที่แผนคาด −฿57 / ฿560 (56.7 ปัดครึ่งขึ้นตามสมมติฐาน Q20) เว็บปัดลงเสมอ ตรงกับที่แผนระบุไว้ว่า \"ตอนนี้ล้ม\"",
+  "evidence": "จุดตรวจ 02 (summary-discount = -฿56), 04 (summary-total = ฿561), 05 (place-order = ยืนยันสั่งซื้อ ฿561) · ภาพ 02.png และ 05.png แสดงยอดรวมสินค้า ฿567 ถูก (ลูกแมว 400 g ×3)",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-CPN-004": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: ค่าเปลี่ยน เช่น ฿189 → −฿1 ฿238 (เดิม −฿18 ฿221) และกรณี ฿1,110 ที่เคยผ่าน (จุดตรวจ 07) ตอนนี้ได้ −฿11 เพราะ BUG-01] ทุกชุดเติมตะกร้าถูก (฿189 / ฿998 / ฿105) แต่ส่วนลดถูกปัดลง: ก -฿18 ยอด ฿221 (คาด −฿19 ฿220) · ข -฿99 ยอด ฿949 (คาด −฿100 ฿948) · ง -฿10 ยอด ฿145 (คาด −฿11 ฿144) ส่วนชุด ค ผ่าน ตรงกับ \"ตอนนี้ล้ม\" ในแผน (Q20)",
+  "evidence": "จุดตรวจ 01–06, 11, 13, 14 · ภาพ 01.png (฿189 → -฿18 / ฿221), 04.png (฿998 → -฿99 / ฿949), 11.png (฿105 → -฿10 / ฿145)",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-CPN-014": {
+  "category": "เว็บผิด",
+  "reason": "กด \"ใช้โค้ด\" ตอนช่องว่าง (ก) และตอนมีแต่เว้นวรรค 3 ตัว (ข) เว็บขึ้น \"ไม่พบคูปองนี้\" แทน \"กรุณากรอกโค้ด\" ตามสมมติฐาน Q21 ส่วนส่วนลด ฿0 ยอด ฿239 และ pp-coupon = null ผ่าน ตรงกับ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01 และ 05 (coupon-message = ไม่พบคูปองนี้) · ภาพ 01.png (ช่องว่าง) และ 05.png (ช่องมีเว้นวรรค) · ตอนสำรวจยืนยันแล้วว่าเว็บยิง validate ด้วย code \"\" แล้ว server ตอบ \"ไม่พบคูปองนี้\"",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-CPN-015": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "โค้ดตัวเล็ก/มีเว้นวรรคหน้า-หลัง ถูกรับเป็น PAW10 ถูกต้อง แต่ส่วนลดได้ −฿5 ยอด ฿565 แทน −฿52 ฿518 · กรณี ค (NEWCAT50) และ ง (เว้นวรรคกลางโค้ด) ยังผ่าน — ล้มเพราะอัตรา PAW10 ไม่ใช่การตัดช่องว่าง",
+  "evidence": "จุดตรวจ 01, 02, 04, 05 · test-report/shots/chromium/TC-CPN-015/01.png · test-report/gifs/TC-CPN-015.gif",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-CPN-016": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: จุดตรวจตั้งต้น ยอด PAW10 ฿518 กลายเป็น ฿565 เพราะ BUG-01 (ซ้อนบั๊กเดิม)] หลังใช้ PAW10 แล้ว (ยอด ฿518 ผ่าน) พิมพ์ SUMMER20 หรือ XXX ข้อความถูก แต่ PAW10 หายไปด้วย: ส่วนลด ฿0 ยอด ฿570 pp-coupon = null และ checkout ปุ่ม ฿570 แทนที่จะเป็น −฿52 / ฿518 / \"PAW10\" ตรงกับ R79 และ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01 ok (฿518), 02 ok (คูปองนี้หมดอายุแล้ว), 03–05 fail (฿0 / ฿570 / null), 07–09 fail แบบเดียวกันหลังใส่ XXX, 10 fail (ปุ่ม ฿570) · ภาพ 03.png, 10.png · GIF เฟรมสุดท้าย",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-CPN-017": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: จุดตรวจตั้งต้น ยอด PAW10 ฿518 กลายเป็น ฿565 เพราะ BUG-01 (ซ้อนบั๊กเดิม)] ใส่ FREESHIP ทับ PAW10 แล้วการคำนวณถูกทั้งหมด (ส่วนลด ฿0, ส่ง ฟรี, ยอด ฿520, pp-coupon = FREESHIP, ปุ่ม ฿520) แต่ข้อความมีแค่ \"ใช้คูปอง FREESHIP แล้ว\" ไม่บอกว่า PAW10 ถูกแทนที่ ตามสมมติฐาน Q21 / R75 ตรงกับ \"ตอนนี้ล้ม: แทนที่เงียบ ๆ\"",
+  "evidence": "จุดตรวจ 02 (ค่าจริง \"ใช้คูปอง FREESHIP แล้ว\") · ภาพ 02.png ทั้งกล่องสรุปไม่มีคำว่า PAW10 · จุดตรวจอื่นผ่านหมด",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-CPN-019": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "ล้มที่จุดตรวจตั้งต้นก่อนกดนำคูปองออก: ใส่ PAW10 กับ ฿1,110 แล้วยอดชำระเป็น ฿1,099 แทน ฿999 · ส่วนการนำคูปองออก (ยอดกลับเป็น ฿1,110, ล้าง pp-coupon) ยังผ่าน",
+  "evidence": "จุดตรวจ 01 · test-report/shots/chromium/TC-CPN-019/01.png · test-report/gifs/TC-CPN-019.gif",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-CPN-020": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: ส่วนลดที่ค้างเปลี่ยนจาก −฿18 เป็น −฿1 เพราะ BUG-01 (บั๊กเดิม: ตะกร้าว่างแล้วคูปองไม่ถูกล้าง ยังอยู่)] ลบสินค้าบรรทัดเดียวจนตะกร้าว่างแล้ว pp-coupon ยังเป็น \"PAW10\" (คาดว่าไม่มี key) แล้วติดไปกับตะกร้าใหม่ ลูกแมว 400 g ได้ส่วนลด -฿18 ยอด ฿221 แทนที่จะไม่มีส่วนลด ยอด ฿239 ตรงกับ R87 / Q21 และ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01 (pp-coupon = PAW10 ขณะหน้าแสดง \"ตะกร้าของคุณยังว่างอยู่\"), 02 (-฿18), 03 (฿221) · ภาพ 01.png, 02.png · GIF เฟรมสุดท้ายแสดง \"ใช้คูปอง PAW10 แล้ว\" ในตะกร้าใหม่",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-CPN-021": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "ทั้ง 2 คำสั่งที่ใช้ PAW10 ถูกบันทึกเป็นยอด ฿565 (ส่วนลด −฿5) ทั้งปุ่ม หน้ายืนยัน และ /account — ยอดผิดถูกเก็บลงคำสั่งซื้อจริง ไม่ใช่แค่หน้าจอ",
+  "evidence": "จุดตรวจ 01, 04–06, 09–10, 12–13 (/account PP-100001/100002 ฿565) · test-report/shots/chromium/TC-CPN-021/12.png · test-report/gifs/TC-CPN-021.gif",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-CPN-024": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "POST /api/coupons/validate กับ PAW10 + ฿1,110 ตอบ discount 11 แทน 111 → server คิดผิดเองด้วย (ไม่ใช่แค่หน้าเว็บ) · กรณีหมดอายุ/ไม่มีจริง/ยอดปลอม (ก–จ) ยังถูกปฏิเสธถูกต้อง",
+  "evidence": "จุดตรวจ 06 (ฉ ตัวคุม: Expected 111 Received 11) · ยิงซ้ำด้วย curl ได้ discount 5 สำหรับ ฿520",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-ERR-004": {
+  "category": "เว็บผิด",
+  "reason": "/nope และ /a/b/c ได้ title หน้าแรก \"PawPantry — อาหารแมวและสุนัขคัดพิเศษ\" ทั้ง HTML ดิบและ document.title ส่วน 404 สินค้า document.title = \"ไม่พบสินค้า · PawPantry\" แต่ HTML ดิบยังเป็น title หน้าแรก ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R205)",
+  "evidence": "จุดตรวจ 01–04 (rawTitle / documentTitle)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FLT-005": {
+  "category": "เว็บผิด",
+  "reason": "ของเล่น+ของใช้ใน ?life=adult มี 8 ใบ แต่ใน baby และ senior มี 0 ใบ ไม่เท่ากันตามที่คาดว่าทุกวัยต้องจัดการเหมือนกัน (ตรงกับหมายเหตุ \"ตอนนี้ล้ม\" ในแผน และ R05) ข้อนี้ยังขึ้นกับคำตอบ Q1",
+  "evidence": "จุดตรวจ 04 ค่าจริง {baby:0, adult:8, senior:0}, shots/chromium/TC-FLT-005/04.png · จุดตรวจ \"พบ N = จำนวนการ์ด\" ทั้ง 3 หน้าผ่าน",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FLT-015": {
+  "category": "เว็บผิด",
+  "reason": "H1 เปลี่ยนตาม pet อย่างเดียว: ?type=toy และ ?type=treat ได้ \"สินค้าทั้งหมด\", ?pet=dog&type=toy ได้ \"อาหารสุนัข\" และปลายทาง breadcrumb \"ของเล่นแมว\" (/products?pet=cat&type=toy) ได้ \"อาหารแมว\" ซึ่งไม่มีคำว่า \"ของเล่น\"/\"ขนม\" ตามที่คาด (ตรงกับ \"ตอนนี้ล้ม\" ในแผน, R14)",
+  "evidence": "จุดตรวจ 01–04, shots/chromium/TC-FLT-015/01.png–04.png · URL ปลายทาง breadcrumb ถูกต้อง (/products?pet=cat&type=toy) แสดงว่าคลิกถึงที่หมาย",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FLT-016": {
+  "category": "เว็บผิด",
+  "reason": "document.title เป็น \"สินค้าทั้งหมด · PawPantry\" ทั้งที่ H1 เป็น \"อาหารแมว\"/\"อาหารสุนัข\" จึงไม่เท่ากับที่คาด \"อาหารแมว · PawPantry\"/\"อาหารสุนัข · PawPantry\" (ตรงกับ \"ตอนนี้ล้ม\" ในแผน, R15 / WCAG 2.4.2) ส่วน <title> จาก server เท่ากับในเบราว์เซอร์ จึงผ่าน",
+  "evidence": "จุดตรวจ 01–02 ค่าจริง {title:\"สินค้าทั้งหมด · PawPantry\", h1:\"อาหารแมว\"/\"อาหารสุนัข\"}, shots/chromium/TC-FLT-016/01.png–02.png",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-008": {
+  "category": "แผนผิด",
+  "reason": "จุดตรวจด้านเกรนฟรีผ่านครบ (ทุกการ์ดมีป้ายเกรนฟรี ทุก slug อยู่ใน grainFree=1 ชิ้นไม่ใช่เกรนฟรี = 0) แต่หน้ารายละเอียดของอาหาร/ขนมไม่มีช่อง \"สูตรเกรนฟรี\" เลย (มีแค่ ประเภท/โปรตีนหลัก/ช่วงวัย และบอกเกรนฟรีด้วยป้าย \"🌾 เกรนฟรี\") ช่องนี้มีเฉพาะของเล่น/ของใช้ที่แสดง \"—\" (EXPLORATION R11, Q48) แผนจึงอ้างช่องที่ชิ้นอ้างอิง lickable-salmon-treat ไม่มีตั้งแต่ต้น",
+  "evidence": "จุดตรวจ 04–11: ref(lickable-salmon-treat) = (ไม่มีช่อง) · ทุกชิ้น = (ไม่มีช่อง) · ภาพ shots/chromium/TC-FND-008/05.png กรอบแดงที่ .pd-facts มีแค่ ประเภท ขนม / โปรตีนหลัก แซลมอน / ช่วงวัย แมวโต และป้าย 🌾 เกรนฟรี บนรูป",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-010": {
+  "category": "เว็บผิด",
+  "reason": "Finder เติมของวัยอื่นให้ครบ: ลูกแมว ได้ lickable-salmon-treat/duck-grainfree-dry 49% (แมวโต) · ลูกแมว+เม็ด ได้ adult-chicken-dry, urinary-care-dry · แมวโต+เปียก ได้ kitten-chicken-mousse 46% ขณะที่คาดว่าทุก slug ต้องอยู่ใน life= ของวัยที่เลือก ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R165)",
+  "evidence": "จุดตรวจ 01–05 (shots/chromium/TC-FND-010/01–05.png): ผล A/B/C เทียบ pet=cat&life=baby = kitten-salmon-dry, kitten-chicken-mousse",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-011": {
+  "category": "เว็บผิด",
+  "reason": "ลูกสุนัขได้ senior-salmon-dry ทั้งชุด A (49%) และชุด B (ชิ้นเดียวพร้อม 🏆 ที่ 49%) ทั้งที่ ?pet=dog&life=baby&grainFree=1&type=dry ได้ \"พบ 0 รายการ\" ซึ่งคาดว่าต้องเป็นการ์ด 0 ใบพร้อมข้อความ \"ไม่พบ\" ตรงกับ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01–04 (shots/chromium/TC-FND-011/01–04.png): ชุด B = senior-salmon-dry 49% 🏆 · ข้อความหน้าผลไม่มีคำว่า \"ไม่พบ\"",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-012": {
+  "category": "เว็บผิด",
+  "reason": "สุนัขสูงวัย+เม็ด ได้ puppy-chicken-dry 48% (คาดว่าโผล่ 0 ครั้ง) และทั้งสองชุดมีของวัยอื่น (adult-lamb-dry, small-breed-chicken-dry, duck-jerky-treat, dental-chew-treat) ที่ไม่อยู่ใน pet=dog&life=senior (salmon-skin-treat, senior-salmon-dry) ตรงกับ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01–02 (shots/chromium/TC-FND-012/01–02.png)",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-013": {
+  "category": "เว็บผิด",
+  "reason": "query เทียบทั้ง 3 ชุดได้ \"พบ 0 รายการ\" แต่ Finder ยังแสดงการ์ด (แมวสูงวัย+GF 4 ใบ, สุนัขโต+GF+เม็ด senior-salmon-dry, สุนัขสูงวัย+เปียก beef-stew-can/puppy-lamb-wet) ไม่มีคำว่า \"ไม่พบ\" และให้ 🏆 กับชิ้น 47–49% ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R166)",
+  "evidence": "จุดตรวจ 01–04 (shots/chromium/TC-FND-013/01–04.png)",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-015": {
+  "category": "เว็บผิด",
+  "reason": "อันดับ 1 ของ \"แบบไหนก็ได้\" เป็นขนมทั้งสองชุด: แมวโต = lickable-salmon-treat 99% (ประเภท ขนม) · สุนัขโต = duck-jerky-treat 99% (ประเภท ขนม) คาดว่าต้องเป็นอาหารเม็ด/เปียก ตามสมมติฐาน Q40/R168 ที่แผนระบุ \"ตอนนี้ล้ม\" ไว้แล้ว",
+  "evidence": "จุดตรวจ 01–04 (shots/chromium/TC-FND-015/01–04.png): หน้ารายละเอียดอ่านช่องประเภท = ขนม",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-018": {
+  "category": "เว็บผิด",
+  "reason": "reload ที่ขั้น 3 กลับไปขั้น 1 (data-step=1) ไม่มีอะไรถูกเลือก ปุ่ม \"น้องแมว\" aria-pressed=false และ reload ที่หน้าผลได้การ์ด 0 ใบ (ก่อน reload มี 4 ใบ) คาดว่าคำตอบต้องคงอยู่ ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R170/Q41)",
+  "evidence": "จุดตรวจ 01–05 · ภาพ shots/chromium/TC-FND-018/01.png แสดงขั้น 1 สัตว์เลี้ยง ไม่มีตัวเลือกถูกเลือก ปุ่มถัดไปปิด",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-FND-019": {
+  "category": "เว็บผิด",
+  "reason": "หลัง back แล้ว forward กลับมา /finder ได้การ์ดผล 0 ใบ (Finder เริ่มใหม่) แทนที่จะได้ duck-jerky-treat, dental-chew-treat, adult-lamb-dry, beef-stew-can ชุดเดิม ตรงกับ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01 (shots/chromium/TC-FND-019/01.png): URL /finder · หลัง forward: (0 การ์ด)",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NAV-002": {
+  "category": "เว็บผิด",
+  "reason": "ทุก URL ลิงก์เมนูหลักที่ตรงหน้าไม่มี class active และไม่มี aria-current (เช่น /products?pet=cat ได้ class \"nav-link nav-cat\", aria-current=null) มีแค่ /finder ที่ได้ active แต่ก็ไม่มี aria-current จำนวน aria-current=\"page\" = 0 แทนที่จะเป็น 1 ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R187/R188)",
+  "evidence": "จุดตรวจ 01,03,04,06,07,09,10,12 (actual = classList/aria-current ของ 4 ลิงก์) · shots/chromium/TC-NAV-002/01.png",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NAV-005": {
+  "category": "เว็บผิด",
+  "reason": "ตัวนับแสดง \"1\" ถูกต้อง แต่ accessible name ถูก aria-label ทับเป็น \"ตะกร้าสินค้า\" / \"รายการโปรด\" ไม่มีเลข 1 (ข้อความในลิงก์คือ \"🛒 1\" / \"♥ 1\") ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R189)",
+  "evidence": "จุดตรวจ 02, 03 (actual aria-label=\"ตะกร้าสินค้า\" · ข้อความ \"🛒 1\")",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NAV-006": {
+  "category": "เว็บผิด",
+  "reason": "\"ช้อปเลย\", \"บัญชีของฉัน\", \"รับข่าวสารและโปรโมชัน\" เป็น <p> ทั้ง 3 อัน (heading ที่พบ = 0 จากที่คาด 3) และ footer ไม่มี nav เลย (navCount 0) ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R190)",
+  "evidence": "จุดตรวจ 01–05 (actual \"<p role=null>\", navCount 0)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NEWS-001": {
+  "category": "เว็บผิด",
+  "reason": "กด \"สมัคร\" ด้วยอีเมลถูกแล้วไม่มี live region ใดมีข้อความ (live=[]) ทั้งที่หน้ามี .toast-zone[aria-live=polite] อยู่ ช่องไม่มี aria-invalid ตรงกับ \"(ตอนนี้ล้ม: ไม่มีข้อความ…)\" (R200)",
+  "evidence": "จุดตรวจ 01 (live: [], validityValid: true)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NEWS-002": {
+  "category": "เว็บผิด",
+  "reason": "ทั้ง 7 ค่า (ว่าง, ช่องว่าง, abc, abc@, @pawpantry.test, payload 2 ค่า) ไม่มีข้อความ error ใน live region ไม่มี aria-invalid/aria-describedby แม้ abc ทำให้ validity.valid=false ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน (R200)",
+  "evidence": "จุดตรวจ 01–14 (live: [], ariaInvalid: null, describedby: null, validityValid: false สำหรับ abc)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NEWS-003": {
+  "category": "เว็บผิด",
+  "reason": "Enter ด้วยอีเมลถูกไม่ได้ข้อความ (live=[]) และ abc + Enter ไม่ได้ error/aria-invalid ฝั่งคลิกก็ไม่มีข้อความเช่นกัน ฟอร์มไม่ตอบสนองเลย ตรงกับ \"(ตอนนี้ล้ม: Enter ไม่มีผล)\" (R201)",
+  "evidence": "จุดตรวจ 01 (enter.live [], click []) · 02 (abc: live [], ariaInvalid null)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NEWS-004": {
+  "category": "เว็บผิด",
+  "reason": "ช่องไม่มี maxlength (maxLength = -1) รับครบ 255 และ 315 ตัวโดย validity.valid=true และไม่มี error/aria-invalid ส่วน 254 ตัวก็ไม่ได้ข้อความสำเร็จ (live=[]) ตรงกับ \"(ตอนนี้ล้ม: ไม่มี maxlength รับครบ 315 ตัว)\" (R202)",
+  "evidence": "จุดตรวจ 01–03 (len 254/255/315, maxLength -1, live [])",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-NEWS-005": {
+  "category": "เว็บผิด",
+  "reason": "dblclick + click แล้วไม่มีข้อความสำเร็จเลย (live=[], shown 0 จากที่คาด 1) ตรงกับ \"(ตอนนี้ล้ม: ไม่มีข้อความใดเลย)\" ส่วนเงื่อนไข aria-invalid และจำนวน request ผ่าน",
+  "evidence": "จุดตรวจ 01 (live [], shown 0, occurrences 0)",
+  "section": "5.8",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-ORD-008": {
+  "category": "เว็บผิด",
+  "reason": "รอบ (ก) dblclick ได้ 1 คำสั่งถูกต้อง แต่รอบ (ข) btn.click() 3 ครั้งในจังหวะเดียวได้ response 201 ×3 เกิด 3 คำสั่ง ยอดสะสม ฿1,560 (คาด ฿520) สต็อกเหลือ 0 (คาด 2) ตรงกับ \"(ตอนนี้ล้ม)\" ในแผน",
+  "evidence": "จุดตรวจรอบ (ข) response201 = 3 · ภาพ shots/chromium/TC-ORD-008/06.png, 07.png และเฟรมสุดท้าย GIF (/account มี PP-100001..3 แถวละ ฿520 ยอดสะสม ฿1,560) · สต็อก 0",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-ORD-011": {
+  "category": "เว็บผิด",
+  "reason": "qty 1.5 ได้ 201 (ปัดเป็น 1) และ qty \"2\" ได้ 201 (qty 2) แทน 400 ตามที่คาด ทำให้คำสั่งเพิ่ม 2 และสต็อกลดเป็น 22 (คาด 25) · qty \"abc\" ได้ 400 ถูกต้อง",
+  "evidence": "จุดตรวจ qty 1.5 / qty \"2\" status 201 body มี PP-100001/PP-100002 · ภาพ shots/chromium/TC-ORD-011/04.png (ก่อน 0 หลัง 2) · สต็อก kitten-salmon-dry 22",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-ORD-012": {
+  "category": "เว็บผิด",
+  "reason": "API coupon SUMMER20 และ FAKE99 ได้ 201 (coupon ถูกเปลี่ยนเป็น null จ่ายเต็ม ฿239) แทน 400 · ฝั่งหน้าเว็บ (ค) ไม่มีข้อความเตือนคูปองก่อนกด กดแล้วได้ 201 ไป /orders/PP-100003 ยอด ฿239 ส่วนลด ฿0 (จุดตรวจ order-error 'ไม่พบ element' เป็นผลจากหน้าเปลี่ยนไปหน้าสั่งสำเร็จ ไม่ใช่ locator ผิด) จำนวนคำสั่ง 0 → 3",
+  "evidence": "ภาพ shots/chromium/TC-ORD-012/04.png (หน้าสั่งซื้อสำเร็จ PP-100003 ส่วนลด ฿0 ยอด ฿239) · จุดตรวจข้อ 1 status 201 ×2 · 05.png ก่อน 0 หลัง 3",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-ORD-013": {
+  "category": "เว็บผิด",
+  "reason": "province \"ดาวอังคาร\" / shipping \"free\" / payment \"credit\" ได้ 201 ทั้ง 3 ครั้ง โดย server เปลี่ยนเป็น กรุงเทพมหานคร / standard / cod เงียบ ๆ แทน 400 ตามที่คาด จำนวนคำสั่ง 0 → 3",
+  "evidence": "จุดตรวจ 3 ข้อ status 201 body แสดง province กรุงเทพมหานคร, shippingMethod standard, payment cod · ภาพ shots/chromium/TC-ORD-013/04.png (ก่อน 0 หลัง 3)",
+  "section": "5.5",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-PDP-002": {
+  "category": "เว็บผิด",
+  "reason": "บริเวณราคาแสดงแค่ \"฿189/ 400 g\", \"฿590/ 1.5 kg\", \"฿69/ 4 ซอง\", \"฿299/ 20 ซอง\" ไม่มีราคาต่อหน่วย (/kg หรือ /ซอง) เลย ขณะที่แผนคาดว่าจะมีราว ฿472.5/kg, ฿393.3/kg, ฿17.25/ซอง, ฿14.95/ซอง ซึ่งตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R34/Q16)",
+  "evidence": "ข้อความ error ของจุดตรวจ 1–4 แสดงข้อความในบริเวณราคาที่อ่านได้จริง (เช่น \"400 g฿189 | ฿189/ 400 g\") จึงไม่ใช่ปัญหา locator · จุดตรวจที่ 5 (เทียบขนาดใหญ่กับขนาดเล็ก) ล้มตามไปด้วยเพราะไม่มีตัวเลขให้เทียบ",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-PDP-003": {
+  "category": "เว็บผิด",
+  "reason": "ตะกร้าถูกตัดเหลือ 1.5 kg ×5 + 400 g ×20 และยอดเงินตรงตามแผน (จุดตรวจเหล่านี้ผ่าน) แต่ toast ตอนถูกตัดเป็นข้อความสำเร็จปกติ \"✅เพิ่ม ลูกแมว สูตรแซลมอน (400 g) ลงตะกร้าแล้ว 🛒\" ไม่มีเลข 20 ขัดกับที่แผนคาด (R46/Q10)",
+  "evidence": "shots/chromium/TC-PDP-003/03.png มีกรอบแดงที่ toast สำเร็จปกติ · ใน error log มี unexpected value เป็นข้อความ toast นี้ · ค่าจริงที่บันทึกขึ้นว่า \"(ไม่พบ element)\" เพราะ toast หายไปเองใน 3 วินาทีระหว่างที่ expect รอครบ 5 วินาที ไม่ได้แปลว่าไม่มี toast",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-PDP-004": {
+  "category": "เว็บผิด",
+  "reason": "สั่งซื้อ ฿617 ผ่าน ข้อความสต็อก \"มีสินค้า 22 ชิ้น\" ผ่าน และตะกร้าถูกตัดเป็น 5 + 17 ตามแผน แต่ toast ครั้งที่สองเป็นข้อความสำเร็จปกติ \"✅เพิ่ม ลูกแมว สูตรแซลมอน (400 g) ลงตะกร้าแล้ว 🛒\" ไม่มีเลข 17 (Q10)",
+  "evidence": "shots/chromium/TC-PDP-004/05.png · error log มี unexpected value เป็น toast สำเร็จปกติ · ค่าจริง \"(ไม่พบ element)\" เกิดจาก toast หายไปเองหลัง 3 วินาที",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-QTY-007": {
+  "category": "เว็บผิด",
+  "reason": "พิมพ์ทีละตัว \"05\" ช่องกลายเป็น 15 (pp-cart qty 15 ยอด ฿2,835) และพิมพ์ \"003\" ได้ 25 (฿4,725) แทนที่จะได้ 5 (฿945) และ 3 (฿567) ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R44/Q11) · ค่าส่งขึ้นว่า \"ฟรี\" แทน ฿50 เป็นผลต่อเนื่องจากยอดที่เพี้ยน",
+  "evidence": "จุดตรวจ 01 (ค่าจริง 15) และ 06 (ค่าจริง 25) · pp-cart ที่จับได้คือ [{qty:15}] และ [{qty:25}] · จุดตรวจ 03–05 และ 08–10 ที่หน้า /cart",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-QTY-013": {
+  "category": "เว็บผิด",
+  "reason": "ตะกร้าถูกตัดเหลือ 3 และยอด ฿1,560 ถูกต้อง (จุดตรวจผ่าน) แต่ toast ครั้งที่สองเป็นข้อความสำเร็จปกติ \"✅เพิ่ม สูตรลดก้อนขน (1.5 kg) ลงตะกร้าแล้ว 🛒\" ไม่บอกว่าใส่ได้จริงแค่ 1 ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R46/Q10)",
+  "evidence": "shots/chromium/TC-QTY-013/01.png · error log มี unexpected value เป็น toast สำเร็จปกติ · ค่าจริง \"(ไม่พบ element)\" เกิดจาก toast หายไปเองระหว่างรอ",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-QTY-014": {
+  "category": "เว็บผิด",
+  "reason": "pp-cart ถูกตัดเป็น 25 และยอด ฿4,725 ถูกต้อง แต่ toast ครั้งที่สองเป็นข้อความสำเร็จปกติ \"✅เพิ่ม ลูกแมว สูตรแซลมอน (400 g) ลงตะกร้าแล้ว 🛒\" ไม่มีเลข 20 ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R46/Q10)",
+  "evidence": "shots/chromium/TC-QTY-014/01.png · error log มี unexpected value เป็น toast สำเร็จปกติ · ค่าจริง \"(ไม่พบ element)\" เกิดจาก toast หายไปเองระหว่างรอ",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-QTY-017": {
+  "category": "เว็บผิด",
+  "reason": "ดับเบิลคลิกตอนตั้งจำนวน 7 ได้ qty 7 ถูกต้อง แต่ดับเบิลคลิกตอนตั้งจำนวน 1 ได้ qty 2, 🛒 = 2, ยอด ฿1,780 (ค่าส่ง \"ฟรี\") แทน qty 1 ยอด ฿940 ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: qty 2 ยอดสินค้า ฿1,780)\" (R51/Q50)",
+  "evidence": "จุดตรวจ 03 pp-cart [{cat-fountain, qty:2}] · จุดตรวจ 04 ตัวนับ = 2 · จุดตรวจ 05–07 ที่หน้า /cart",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-QTY-021": {
+  "category": "เว็บผิด",
+  "reason": "หน้าของ A ที่เปิดค้างไว้ใส่ได้ 25 ชิ้น ทั้งที่สต็อกจริงเหลือ 22 · /cart แสดง qty 25 ยอด ฿4,725 \"ได้ส่งฟรีแล้ว!\" ไม่มีคำเตือน และปุ่ม \"ดำเนินการชำระเงิน →\" ยังกดได้ ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R54/Q9)",
+  "evidence": "shots/chromium/TC-QTY-021/05.png กรอบแดงที่บรรทัด 25 ชิ้นและปุ่มชำระเงินที่ยังเปิดใช้ ไม่มีข้อความเตือน · ค่าจริง {qty:25, subtotal:4725, warnings:0, checkoutDisabled:false} · คำสั่งซื้อของ B ฿617 ผ่าน",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REC-003": {
+  "category": "เว็บผิด",
+  "reason": "kitten-salmon-dry ที่หลุดจาก pp-recent กลับมาอยู่ในกล่อง \"แนะนำสำหรับคุณ\" (แนะนำ: kitten-salmon-dry, duck-grainfree-dry, hairball-control-dry) ตามสมมติฐาน Q42 ที่แผนกำหนดว่าไม่ควรแนะนำ และระบุ \"ตอนนี้ล้ม: กลับมาโผล่ตาม R175\" ไว้แล้ว จุดตรวจอื่น (เพดาน 6, ลำดับ, ไม่ซ้ำ) ผ่าน",
+  "evidence": "จุดตรวจ 05 (shots/chromium/TC-REC-003/05.png)",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REC-006": {
+  "category": "เว็บผิด",
+  "reason": "กล่องแนะนำมี senior-tuna-dry และ urinary-care-dry ซึ่งอยู่ใน pp-wishlist (หัวใจทึบบนการ์ด) และหลังเอา ♥ senior-tuna-dry ออก urinary-care-dry ก็ยังถูกแนะนำ คาดว่าต้องเป็น 0 (R178/Q42 ที่แผนบันทึก \"ตอนนี้ล้ม\" ไว้)",
+  "evidence": "จุดตรวจ 01 และ 04 · ภาพ shots/chromium/TC-REC-006/01.png กล่องแนะนำแสดงแมวสูงวัย สูตรทูน่า และสูตรดูแลทางเดินปัสสาวะ พร้อม ♥ ทึบ",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-003": {
+  "category": "เว็บผิด",
+  "reason": "ช่องอีเมลว่างขึ้น \"อีเมลไม่ถูกต้อง\" ไม่ใช่ \"กรุณากรอกอีเมล\" ตามที่คาด ส่วนช่องอื่นผ่านหมด ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R130/Q36)",
+  "evidence": "shots/chromium/TC-REG-003/04.png กรอบแดงที่ error-email = \"อีเมลไม่ถูกต้อง\"",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-009": {
+  "category": "เว็บผิด",
+  "reason": "รหัส `Paw1234␠` และ `␠Paw1234` สมัครผ่านทั้งคู่ (201 ไป /account?welcome=1) ไม่มีข้อความรหัสผ่าน ขั้น 3 จึงได้ 409 \"อีเมลนี้ถูกใช้แล้ว\" แทน 201 แปลว่าเว็บนับช่องว่างเป็นตัวอักษร ไม่นับหลัง trim ตามแผน (R134/Q30)",
+  "evidence": "จุดตรวจ 01–06: error-password ไม่พบ, URL /account?welcome=1, status 201 · จุด 07: status 409 errors.email · shots/chromium/TC-REG-009/02.png, 08.png",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-012": {
+  "category": "เว็บผิด",
+  "reason": "ตั้ง checked=false ให้ radio สัตว์เลี้ยงทุกตัวแล้วส่ง เว็บยังส่ง pet=cat ได้ 201 และไป /account?welcome=1 แทนการอยู่ที่ /register พร้อมข้อความ error ที่กลุ่มสัตว์เลี้ยง ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R137/Q35)",
+  "evidence": "จุดตรวจ: URL http://localhost:3000/account?welcome=1 · status 201 body user.pet=cat",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-013": {
+  "category": "เว็บผิด",
+  "reason": "API ส่ง pet:\"fish\" และไม่ส่ง pet ได้ 201 พร้อม Set-Cookie (คาด 400 และไม่มีคุกกี้) บัญชีจึงถูกสร้างจริง ขั้น 3 เลยได้ 409 แทน 201 ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R138)",
+  "evidence": "จุดตรวจ (ก) status 201 pet=cat · (ข) status 201 · ขั้น 3 status 409 errors.email=\"อีเมลนี้ถูกใช้แล้ว\"",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-016": {
+  "category": "เว็บผิด",
+  "reason": "ชุด (ก)–(ง) และ (ฉ) ผ่านหมด ล้มแค่ชุด (จ) อีเมลว่างที่ได้ errors.email = \"อีเมลไม่ถูกต้อง\" แทน \"กรุณากรอกอีเมล\" ตามสมมติฐาน Q36 แผนเขียนไว้แล้วว่าตอนนี้ล้ม (R130)",
+  "evidence": "จุดตรวจ (จ): body {errors:{email:\"อีเมลไม่ถูกต้อง\"}}",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-019": {
+  "category": "เว็บผิด",
+  "reason": "หลังสมัคร เว็บไม่ทำตาม next: ทั้ง next=/wishlist และเส้นทางจาก checkout ไปจบที่ /account?welcome=1 (คาด /wishlist และ /checkout) ปุ่ม \"ยืนยันสั่งซื้อ ฿239\" จึงไม่อยู่ในหน้า ส่วนขั้น 3 (/login?next=/checkout) ผ่าน ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R141/Q33)",
+  "evidence": "จุดตรวจขั้น 1 และขั้น 5 URL = /account?welcome=1 · place-order ไม่พบ (ผลต่อเนื่องจากไปผิดหน้า)",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-020": {
+  "category": "เว็บผิด",
+  "reason": "ทั้ง 3 payload: origin = http://localhost:3000 ผ่าน (ไม่เกิด open redirect) และไม่มี request ไป evil.example แต่ pathname = /account (คาด / ตามสมมติฐาน Q33) ล้มเฉพาะ pathname ซึ่งแผนบอกให้บันทึกเป็นบั๊ก Q33 ไม่ใช่ open redirect",
+  "evidence": "จุดตรวจ (ก)(ข)(ค) location {origin:http://localhost:3000, pathname:/account}",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-021": {
+  "category": "เว็บผิด",
+  "reason": "ลิงก์ \"เข้าสู่ระบบ\" ในหน้า /register?next=%2Faccount มี href = \"/login\" ไม่ส่ง next ต่อ ล็อกอินแล้วจึงไปที่ / แทน /account และไม่มี profile-card (ผลต่อเนื่อง) ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R142)",
+  "evidence": "shots/chromium/TC-REG-021/01.png href=/login · 02.png URL http://localhost:3000/ · 03.png profile-card ไม่พบ",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REG-024": {
+  "category": "เว็บผิด",
+  "reason": "label ครบ ลำดับ Tab ถูก และ Enter สมัครได้ 201 แต่ช่องที่ error ไม่ผูกข้อความ: reg-name และ reg-email มี aria-invalid=\"true\" แต่ไม่มี aria-describedby ส่วน reg-password ชี้ไปแค่ pw-hint ไม่ใช่ข้อความ error ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R153)",
+  "evidence": "จุดตรวจขั้น 3: reg-name describedBy=null, reg-email describedBy=null, reg-password describedBy=pw-hint",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-REL-002": {
+  "category": "เว็บผิด",
+  "reason": "กล่อง \"สินค้าที่คล้ายกัน\" ในหน้าขนมแมวเลียมีการ์ดเดียวคือไก่ฟรีซดรายที่มีป้าย \"หมด\" (มีลิงก์ไป /products/freeze-dried-chicken-cat 2 ลิงก์ คือรูปและชื่อ) ขัดกับที่แผนคาดว่าไม่แนะนำของหมด ตรงกับที่แผนเขียนไว้ว่า \"(ตอนนี้ล้ม: …)\" (R60/Q17)",
+  "evidence": "shots/chromium/TC-REL-002/01.png กรอบแดงที่การ์ดไก่ฟรีซดรายที่มีป้าย \"หมด\" ราคา ฿159 · พบลิงก์ 2 อัน (คาดว่า 0) และพบป้ายหมด 1 อัน (คาดว่า 0)",
+  "section": "5.2",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SESS-007": {
+  "category": "เว็บผิด",
+  "reason": "หลังออกจากระบบ localStorage ยังมีค่าครบ: pp-cart (ลูกแมว ×1 + ทูน่า ×2), pp-coupon=FREESHIP, pp-wishlist=[tuna-pouch], pp-recent ตัวนับ 🛒 = 3 และ ♥ = 1 /cart /wishlist และกล่อง \"สินค้าที่คุณเพิ่งดู\" ยังแสดงของเดิม ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R71/Q24) ส่วนขั้น 2 ยอด ฿259 และขั้น 3 ผ่าน",
+  "evidence": "จุดตรวจ lsDump หลังออกจากระบบ · GIF เฟรมสุดท้าย (gifs/TC-SESS-007.gif) หัวเว็บเป็น \"เข้าสู่ระบบ\" แต่ ♥1 🛒3",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SESS-008": {
+  "category": "เว็บผิด",
+  "reason": "บัญชี qa-reg-201 ที่ล็อกอินต่อในเครื่องเดียวกันเห็นตัวนับ 🛒 = 1 ♥ = 1 และ /cart ยังมีลูกแมวแซลมอนพร้อม PAW10 ส่วน /wishlist มีทูน่า และ / ยังมีกล่อง \"สินค้าที่คุณเพิ่งดู\" (คาดว่าว่างทั้งหมด) ตรงกับ \"(ตอนนี้ล้ม…)\" ในแผน (R71/Q24)",
+  "evidence": "จุดตรวจขั้น 4: cart-count=1, wishlist-count=1, main /cart มีรายการสินค้าและ PAW10, /wishlist มี เพาช์ทูน่าในเยลลี่",
+  "section": "5.6",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SHIP-008": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: ส่วนลดเปลี่ยนจาก −฿100 เป็น −฿10 ยอด ฿990 (เดิม ฿900) เพราะ BUG-01 ซ้อนบั๊กเดิม R92] ตะกร้า ฿1,000 ใส่ PAW10 แล้วส่วนลด -฿100 ถูก แต่เว็บคิดเกณฑ์ส่งฟรีจากยอดก่อนลด: ค่าส่ง \"ฟรี\" แถบ \"ได้ส่งฟรีแล้ว!\" ยอด ฿900 ปุ่ม ฿900 ขณะที่แผนคาด ฿50 / \"ซื้อเพิ่มอีก ฿99 เพื่อส่งฟรี\" / ฿950 ตามสมมติฐาน Q19 (เกณฑ์หลังหักส่วนลด ซึ่งสอดคล้องกับ CPN-001) ส่วนส่งด่วน ฿1,020 ผ่าน ตรงกับ \"ตอนนี้ล้ม\" ในแผน · ถ้าทีมตอบ Q19 ว่าใช้ยอดก่อนลด ต้องแก้ผลที่คาดหวังตามหัวข้อ 8.3",
+  "evidence": "จุดตรวจ 02 (ฟรี), 03 (ได้ส่งฟรีแล้ว!), 04 (฿900), 05 (ปุ่ม ฿900) · ภาพ 03.png แสดงยอดรวมสินค้า ฿1,000 · ส่วนลด -฿100 · ค่าจัดส่ง ฟรี · ยอดชำระ ฿900",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-SHIP-009": {
+  "category": "เว็บผิด",
+  "reason": "ตะกร้า ฿1,048 ใส่ NEWCAT50 แล้วส่วนลด -฿50 ถูก ยอดหลังลด ฿998 ซึ่งต่ำกว่า ฿999 แต่เว็บให้ส่งฟรี ยอด ฿998 ปุ่ม ฿998 ขณะที่แผนคาด ค่าส่ง ฿50 / \"ซื้อเพิ่มอีก ฿1 เพื่อส่งฟรี\" / ฿1,048 ตาม Q19 ตรงกับ \"ตอนนี้ล้ม\" ในแผน (สาเหตุเดียวกับ SHIP-008)",
+  "evidence": "จุดตรวจ 02 (ฟรี), 03 (ได้ส่งฟรีแล้ว!), 04 (฿998), 05 (ปุ่ม ฿998) · ภาพ 04.png แสดงสินค้า 4 บรรทัดถูก (ทูน่า ×10) ยอดรวมสินค้า ฿1,048 · ส่วนลด -฿50 · ค่าจัดส่ง ฟรี",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SHIP-012": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: ปุ่มเปลี่ยนจาก ฿949/฿1,019 เป็น ฿1,039/฿1,109 เพราะ BUG-01 ซ้อนบั๊กปัดเศษเดิม] ตะกร้า ฿998 ใส่ PAW10 แล้วส่วนลดเป็น -฿99 (ปัดลงจาก 99.8) ทำให้ปุ่มเป็น ฿949 (ส่งธรรมดา) และ ฿1,019 (ส่งด่วน) แทน ฿948 / ฿1,018 ส่วนค่าส่งด่วน ฿120 คิดถูก สาเหตุเดียวกับ CPN-003/004 (Q20) ตรงกับ \"ตอนนี้ล้ม\" ในแผน",
+  "evidence": "จุดตรวจ 01 (ยืนยันสั่งซื้อ ฿949), 02 (ยืนยันสั่งซื้อ ฿1,019) · ภาพ 02.png: ยอดรวมสินค้า ฿998 · ส่วนลด -฿99 · ค่าจัดส่ง ฿120 · radio ส่งด่วนถูกเลือก",
+  "section": "5.4",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-01"
+ },
+ "TC-SHIP-013": {
+  "category": "เว็บผิด",
+  "bug": "BUG-01",
+  "newInBugMode": true,
+  "reason": "PAW10 + ฿1,110: ส่งธรรมดา ปุ่ม ฿1,099 (ควร ฿999) · ส่งด่วน ฿1,219 (ควร ฿1,119) — ต่างกัน ฿100 = ส่วนลดที่หายไป ค่าส่งด่วน ฿120 ยังถูก",
+  "evidence": "จุดตรวจ 01, 02 · test-report/shots/chromium/TC-SHIP-013/01.png · test-report/gifs/TC-SHIP-013.gif",
+  "section": "5.4",
+  "project": "chromium"
+ },
+ "TC-SRCH-001": {
+  "category": "แผนผิด",
+  "reason": "ผลที่คาดหวังในแผนขัดกันเอง: ใน GET /api/products มีสินค้าที่ชื่อไทยหรืออังกฤษมี salmon/แซลมอน แค่ 4 ชิ้น แต่แผนอ้างอิง N = 5 เว็บคืน 5 รายการ ชิ้นที่ 5 คือ hairball-control-dry (\"สูตรลดก้อนขน / Hairball Control\") ซึ่งตรงเพราะ protein = salmon ไม่ใช่เพราะชื่อ ดังนั้นเกณฑ์ \"N = 5\" กับ \"ทุกการ์ดชื่อมี salmon\" เป็นจริงพร้อมกันไม่ได้ (เลข 5 มาจากผลสำรวจ R23 ที่นับชิ้นนี้ด้วย) ส่วนเกณฑ์อื่นผ่านหมด (URL, บรรทัดผลการค้นหา, N = จำนวนการ์ด, ผล Enter = ผลปุ่มค้นหา)",
+  "evidence": "จุดตรวจ 03 และ 06 (N 5 = การ์ด 5, การ์ดที่ชื่อไม่มี salmon = [hairball-control-dry]) · curl /api/products: hairball-control-dry protein \"salmon\", ชื่อที่มี salmon = lickable-salmon-treat, kitten-salmon-dry, salmon-skin-treat, senior-salmon-dry",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SRCH-002": {
+  "category": "แผนผิด",
+  "reason": "แผนคาดว่า \"แซลมอน\" ได้การ์ดที่ชื่อไทยมี \"แซลมอน\" และอ้างอิง 5 ชิ้น แต่สินค้าที่ชื่อไทยมี \"แซลมอน\" มีแค่ 4 ชิ้น ชิ้นที่ 5 ที่เว็บคืนคือ hairball-control-dry \"สูตรลดก้อนขน\" ซึ่งตรงจาก protein salmon เกณฑ์สองข้อในแผนจึงขัดกันเอง ส่วนอื่นผ่าน (salmon = SALMON = Salmon, \" kitten \" = kitten = 2, Kitten Salmon = 1)",
+  "evidence": "จุดตรวจ 09 ค่าจริง slugs [lickable-salmon-treat, kitten-salmon-dry, salmon-skin-treat, senior-salmon-dry, hairball-control-dry] · ข้อมูลจาก /api/products",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SRCH-009": {
+  "category": "เว็บผิด",
+  "reason": "ช่องค้นหา .value = \"\" ทั้งตอนเปิด ?q=salmon ตรง ๆ, หลัง reload และหลังกด \"สุนัข\" ขณะที่หน้าแสดง \"ผลการค้นหา “salmon”\" (ผ่าน) แต่ที่คาดคือ \"salmon\" (ตรงกับ \"ตอนนี้ล้ม\" ในแผน, R27) ค่าว่างนี้คือค่าจริงของเว็บ ไม่ใช่ปัญหา locator เพราะ data-testid=search-input ถูกต้องและสำรวจแล้วว่า value=\"\"",
+  "evidence": "จุดตรวจ 01/03/05, shots/chromium/TC-SRCH-009/05.png (ช่องค้นหาว่างที่มีกรอบแดง ในขณะที่ hero แสดงผลการค้นหา “salmon”)",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-SRCH-012": {
+  "category": "เว็บผิด",
+  "reason": "ที่ ?q=salmon (5 รายการ) ไม่มีปุ่มหรือลิงก์ล้างคำค้นที่มองเห็นได้เลย (found 0) จึงยกเลิกคำค้นไม่ได้ URL ยังมี q=salmon บรรทัด \"ผลการค้นหา\" ยังอยู่ และ N = 5 ไม่ใช่ 28 (ตรงกับ \"ตอนนี้ล้ม\" ในแผน, R30: ปุ่ม \"ล้างตัวกรองทั้งหมด\" โผล่เฉพาะตอนได้ 0 รายการ) จุดตรวจ 02–04 ล้มต่อเนื่องจากข้อนี้",
+  "evidence": "จุดตรวจ 01 {found:0}, 02–04 · ตอนสำรวจ locator เดียวกันนับได้ 0 ที่ ?q=salmon และ 1 ที่ ?q=zzzz (ปุ่ม \"ล้างตัวกรองทั้งหมด\") แสดงว่า locator หาปุ่มนี้เจอได้จริง",
+  "section": "5.1",
+  "project": "chromium",
+  "sameAsNormal": true
+ },
+ "TC-WISH-001": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "กด ♥ ครั้งที่ 2 (เอาออก): aria-pressed=\"false\", pp-wishlist = [] และมี toast \"นำ…ออกจากรายการโปรดแล้ว\" แต่ตัวนับ ♥ บนหัวเว็บยังเป็น 1",
+  "evidence": "จุดตรวจ 07 (♥ 1) ขณะที่ 08, 09 ผ่าน · test-report/shots/chromium/TC-WISH-001/07.png · test-report/gifs/TC-WISH-001.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-003": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "กด ♥ 7 ครั้ง: pp-wishlist มี tuna-pouch 1 ตัว (ถูก) แต่ตัวนับ ♥ = 4 (นับเฉพาะครั้งที่เพิ่ม ไม่ลดตอนเอาออก) → dblclick ได้ 5 → อีก 8 ครั้งได้ 9",
+  "evidence": "จุดตรวจ 01 (4), 03 (5), 05 (9) · test-report/shots/chromium/TC-WISH-003/01.png · test-report/gifs/TC-WISH-003.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-004": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "กด \"ลบ\" ไก่ฟรีซดรายใน /wishlist: แถวหายทันที pp-wishlist เหลือ 3 แต่ตัวนับ ♥ ยัง 4 · หลัง reload ได้ ♥ 3 ถูกต้อง (จุดตรวจ 07 ผ่าน) → ตัวนับไม่อัปเดตตอนลบ",
+  "evidence": "จุดตรวจ 04 (♥ 4) · test-report/shots/chromium/TC-WISH-004/04.png · test-report/gifs/TC-WISH-004.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-008": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "\"ย้ายไปตะกร้า\": 🛒 เพิ่มเป็น 1 และ pp-wishlist ไม่มีสินค้าแล้ว แต่ ♥ ยัง 3 (ควร 2) · เรื่อง toast (Q18) ไม่ใช่สาเหตุรอบนี้ เพราะผ่านในรอบปกติ",
+  "evidence": "จุดตรวจ 03 (♥ 3) · test-report/shots/chromium/TC-WISH-008/03.png · test-report/gifs/TC-WISH-008.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-009": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "ย้ายลูกแมวที่มีในตะกร้าอยู่แล้ว: รวมบรรทัดถูก (qty 3, ฿617) แต่ ♥ ยัง 1 (ควร 0)",
+  "evidence": "จุดตรวจ 03 (♥ 1) · test-report/shots/chromium/TC-WISH-009/03.png · test-report/gifs/TC-WISH-009.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-010": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "ดับเบิลคลิก \"ย้ายไปตะกร้า\": ได้ +1 ชิ้นครั้งเดียวถูกต้อง แต่ ♥ ยัง 1 (ควร 0)",
+  "evidence": "จุดตรวจ 02 (♥ 1) · test-report/shots/chromium/TC-WISH-010/02.png · test-report/gifs/TC-WISH-010.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-012": {
+  "category": "เว็บผิด",
+  "bug": "BUG-03",
+  "newInBugMode": true,
+  "reason": "pp-wishlist ที่มีของซ้ำ/slug ปลอมถูกกรองถูกต้อง (♥ 2, 2 แถว) แต่หลังย้าย tuna-pouch ไปตะกร้า ♥ ยัง 2 (ควร 1)",
+  "evidence": "จุดตรวจ 07 (♥ 2) · test-report/shots/chromium/TC-WISH-012/07.png · test-report/gifs/TC-WISH-012.gif",
+  "section": "5.7",
+  "project": "chromium"
+ },
+ "TC-WISH-014": {
+  "category": "เว็บผิด",
+  "reason": "[รอบฝังบั๊ก: ตัวนับ ♥ แท็บ A ก่อน reload เปลี่ยนจาก 0 เป็น 1 เพราะ BUG-03 (บั๊กเดิม 2 แท็บเขียนทับ ยังอยู่)] แท็บ A ที่ไม่ reload กด \"ลบ\" แล้วเขียน pp-wishlist ทับด้วยข้อมูลเก่าเป็น [] ทำให้ tuna-pouch ที่เพิ่มจากแท็บ B หายไป หลัง reload ทั้งสองแท็บ ♥ 0 และ /wishlist 0 แถว คาดว่า pp-wishlist = [\"tuna-pouch\"] และ ♥ 1 ตรงกับ \"ตอนนี้ล้ม\" ในแผน (R69)",
+  "evidence": "จุดตรวจ 02–05: pp-wishlist: [] · ♥ A 0 / B 0 · (0 แถว) · จุดตรวจ 01 ผ่าน (แท็บ A เห็น 1 แถว) · เฟรมสุดท้ายของ GIF แท็บ B หน้าเพาช์ทูน่า ♥ 0 หัวใจไม่ทึบ",
+  "section": "5.7",
+  "project": "chromium",
+  "sameAsNormal": true,
+  "bug": "BUG-03"
+ },
+ "TC-XSELL-002": {
+  "category": "เว็บผิด",
+  "reason": "หัวกล่องเขียน \"🎁 ซื้อคู่กันคุ้มกว่า\" แต่ราคาในกล่องไม่ต่ำกว่าหน้าสินค้า (ขนมแมวเลีย ฿69 = ฿69) จึงอ้างว่าคุ้มกว่าโดยไม่มีส่วนลด (R58) · เป็น [O-ยังไม่ยืนยัน] รอทีมตอบ Q14 ถ้าตั้งใจไม่มีส่วนลดและคงหัวข้อไว้ แผนให้ปิดข้อนี้",
+  "evidence": "shots/chromium/TC-XSELL-002/01.png · actual boxText มี \"ซื้อคู่กันคุ้มกว่า\", cards [{lickable-salmon-treat, boxPrice 69, pdpPrice 69}]",
+  "section": "5.3",
+  "project": "chromium",
+  "sameAsNormal": true
+ }
+}

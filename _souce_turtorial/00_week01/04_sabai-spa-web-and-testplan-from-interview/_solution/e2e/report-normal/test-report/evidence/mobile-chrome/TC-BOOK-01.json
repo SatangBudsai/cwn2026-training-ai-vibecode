@@ -1,0 +1,168 @@
+{
+  "id": "TC-BOOK-01",
+  "checks": [
+    {
+      "n": 1,
+      "label": "เมนู S01 60 นาที ฿1,000",
+      "pass": true,
+      "actual": "นวดไทย 60 นาที 60 นาที ฿1,000 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/001.jpg",
+      "actor": "main",
+      "t": 2431
+    },
+    {
+      "n": 2,
+      "label": "เมนู S02 90 นาที ฿1,400",
+      "pass": true,
+      "actual": "นวดไทย 90 นาที 90 นาที ฿1,400 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/002.jpg",
+      "actor": "main",
+      "t": 3447
+    },
+    {
+      "n": 3,
+      "label": "เมนู S03 60 นาที ฿1,200",
+      "pass": true,
+      "actual": "ประคบสมุนไพร 60 นาที ฿1,200 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/003.jpg",
+      "actor": "main",
+      "t": 4474
+    },
+    {
+      "n": 4,
+      "label": "เมนู S04 90 นาที ฿2,000",
+      "pass": true,
+      "actual": "นวดน้ำมันอโรมา 90 นาที ฿2,000 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/004.jpg",
+      "actor": "main",
+      "t": 5508
+    },
+    {
+      "n": 5,
+      "label": "เมนู S05 60 นาที ฿800",
+      "pass": true,
+      "actual": "นวดเท้า 60 นาที ฿800 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/005.jpg",
+      "actor": "main",
+      "t": 6567
+    },
+    {
+      "n": 6,
+      "label": "เมนู S06 60 นาที ฿1,500",
+      "pass": true,
+      "actual": "ขัดผิวสมุนไพร 60 นาที ฿1,500 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/006.jpg",
+      "actor": "main",
+      "t": 7657
+    },
+    {
+      "n": 7,
+      "label": "เมนู S07 60 นาที ฿1,800",
+      "pass": true,
+      "actual": "ทรีตเมนต์หน้า 60 นาที ฿1,800 ต่อคน",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/007.jpg",
+      "actor": "main",
+      "t": 8787
+    },
+    {
+      "n": 8,
+      "label": "เมนู P01 120 นาที ฿2,900",
+      "pass": true,
+      "actual": "แพ็กเกจ Bangkok Relax 120 นาที ฿2,900 ต่อคน แพ็กเกจ",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/008.jpg",
+      "actor": "main",
+      "t": 9905
+    },
+    {
+      "n": 9,
+      "label": "หน้าสรุป ราคาเต็ม ฿1,000 ส่วนลด ฿50 ยอด ฿950",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿950",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/009.jpg",
+      "actor": "main",
+      "t": 15148
+    },
+    {
+      "n": 10,
+      "label": "หน้ายืนยันมีรหัสจอง",
+      "pass": true,
+      "actual": "LNVYWWTZ",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/010.jpg",
+      "actor": "main",
+      "t": 16636
+    },
+    {
+      "n": 11,
+      "label": "ยอดหน้ายืนยัน ฿950",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿950",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/011.jpg",
+      "actor": "main",
+      "t": 19080
+    },
+    {
+      "n": 12,
+      "label": "นับหน้าจอจากเลือกบริการถึงยืนยัน ไม่เกิน 3",
+      "pass": true,
+      "actual": "[\"booking-screen-1\",\"booking-screen-2\",\"booking-screen-3\"]",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/012.jpg",
+      "actor": "main",
+      "t": 20226
+    },
+    {
+      "n": 13,
+      "label": "ทันที หลังร้าน S01 · T01 · 17 มิ.ย. 20:00–21:00 ยอด ฿950 รหัส LNVYWWTZ",
+      "pass": true,
+      "actual": "20:00–21:00 LNVYWWTZ นวดไทย 60 นาที 1 คน คุณกานต์ สมาชิก 0810000008 พี่ศรี ฿950 รอรับบริการ ใช้บริการเสร็จ",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/013.jpg",
+      "actor": "owner",
+      "t": 2561
+    },
+    {
+      "n": 14,
+      "label": "หลังรีโหลด หลังร้าน S01 · T01 · 17 มิ.ย. 20:00–21:00 ยอด ฿950 รหัส LNVYWWTZ",
+      "pass": true,
+      "actual": "20:00–21:00 LNVYWWTZ นวดไทย 60 นาที 1 คน คุณกานต์ สมาชิก 0810000008 พี่ศรี ฿950 รอรับบริการ ใช้บริการเสร็จ",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/014.jpg",
+      "actor": "owner",
+      "t": 4436
+    },
+    {
+      "n": 15,
+      "label": "แต้ม U08 ยังเป็น 101",
+      "pass": true,
+      "actual": "101",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/015.jpg",
+      "actor": "main",
+      "t": 26688
+    },
+    {
+      "n": 16,
+      "label": "มีลิงก์ประวัติ",
+      "pass": true,
+      "actual": "ประวัติทรีตเมนต์",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/016.jpg",
+      "actor": "main",
+      "t": 27719
+    },
+    {
+      "n": 17,
+      "label": "เปิดหน้าประวัติได้",
+      "pass": true,
+      "actual": "สมาชิกสบายใจ ประวัติทรีตเมนต์ ทรีตเมนต์ที่ใช้บริการแล้ว เรียงจากล่าสุด กลับไปบัญชีของฉัน ยังไม่มีประวัติทรีตเมนต์ เมื่อใช้บริการเสร็จแล้ว รายการจะมาแสดงที่นี่ จองคิว",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/017.jpg",
+      "actor": "main",
+      "t": 29181
+    },
+    {
+      "n": 18,
+      "label": "ยอด หน้าสรุป = หน้ายืนยัน = หลังร้าน = ฿950",
+      "pass": true,
+      "actual": "{\"summaryPay\":950,\"confirmPay\":950,\"adminPay\":950}",
+      "shot": "shots/mobile-chrome/TC-BOOK-01/018.jpg",
+      "actor": "main",
+      "t": 30175
+    }
+  ],
+  "videos": {}
+}

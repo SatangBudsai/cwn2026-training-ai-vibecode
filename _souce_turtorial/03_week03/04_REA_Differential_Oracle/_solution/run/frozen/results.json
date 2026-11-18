@@ -1,0 +1,181 @@
+{
+  "expect": {
+    "initial": 22,
+    "more": 300,
+    "nonstop": 18
+  },
+  "identical": true,
+  "rounds": [
+    {
+      "round": 1,
+      "ms": 9776,
+      "initial": {
+        "count": 22,
+        "top5": [
+          "฿7,635",
+          "฿8,432",
+          "฿11,580",
+          "฿9,062",
+          "฿9,335"
+        ]
+      },
+      "more": {
+        "count": 300,
+        "top5": [
+          "฿7,635",
+          "฿8,432",
+          "฿11,580",
+          "฿8,835",
+          "฿9,062"
+        ]
+      },
+      "nonstop": {
+        "count": 18,
+        "top5": [
+          "฿8,432",
+          "฿9,062",
+          "฿11,580",
+          "฿12,660",
+          "฿15,320"
+        ]
+      },
+      "pass": true,
+      "network": {
+        "fromHar": 48,
+        "customJs": 20,
+        "customGsr": 3,
+        "aborted": 18,
+        "gsrMiss": 0,
+        "missingModules": [
+          "q92Jgb",
+          "NzGZOb",
+          "kWli7b",
+          "Blobff",
+          "pYZnWe",
+          "Qk5pb",
+          "qy1KOb"
+        ]
+      },
+      "abortedSample": [
+        "GET https://www.google.com/gen_204",
+        "POST https://www.google.com/log",
+        "POST https://www.google.com/_/FlightsFrontendUi/browserinfo"
+      ],
+      "pageErrors": []
+    },
+    {
+      "round": 2,
+      "ms": 9274,
+      "initial": {
+        "count": 22,
+        "top5": [
+          "฿7,635",
+          "฿8,432",
+          "฿11,580",
+          "฿9,062",
+          "฿9,335"
+        ]
+      },
+      "more": {
+        "count": 300,
+        "top5": [
+          "฿7,635",
+          "฿8,432",
+          "฿11,580",
+          "฿8,835",
+          "฿9,062"
+        ]
+      },
+      "nonstop": {
+        "count": 18,
+        "top5": [
+          "฿8,432",
+          "฿9,062",
+          "฿11,580",
+          "฿12,660",
+          "฿15,320"
+        ]
+      },
+      "pass": true,
+      "network": {
+        "fromHar": 48,
+        "customJs": 20,
+        "customGsr": 3,
+        "aborted": 18,
+        "gsrMiss": 0,
+        "missingModules": [
+          "q92Jgb",
+          "NzGZOb",
+          "kWli7b",
+          "Blobff",
+          "pYZnWe",
+          "Qk5pb",
+          "qy1KOb"
+        ]
+      },
+      "abortedSample": [
+        "GET https://www.google.com/gen_204",
+        "POST https://www.google.com/log",
+        "POST https://www.google.com/_/FlightsFrontendUi/browserinfo"
+      ],
+      "pageErrors": []
+    },
+    {
+      "round": 3,
+      "ms": 9329,
+      "initial": {
+        "count": 22,
+        "top5": [
+          "฿7,635",
+          "฿8,432",
+          "฿11,580",
+          "฿9,062",
+          "฿9,335"
+        ]
+      },
+      "more": {
+        "count": 300,
+        "top5": [
+          "฿7,635",
+          "฿8,432",
+          "฿11,580",
+          "฿8,835",
+          "฿9,062"
+        ]
+      },
+      "nonstop": {
+        "count": 18,
+        "top5": [
+          "฿8,432",
+          "฿9,062",
+          "฿11,580",
+          "฿12,660",
+          "฿15,320"
+        ]
+      },
+      "pass": true,
+      "network": {
+        "fromHar": 48,
+        "customJs": 20,
+        "customGsr": 3,
+        "aborted": 18,
+        "gsrMiss": 0,
+        "missingModules": [
+          "q92Jgb",
+          "NzGZOb",
+          "kWli7b",
+          "Blobff",
+          "pYZnWe",
+          "Qk5pb",
+          "qy1KOb"
+        ]
+      },
+      "abortedSample": [
+        "GET https://www.google.com/gen_204",
+        "POST https://www.google.com/log",
+        "POST https://www.google.com/_/FlightsFrontendUi/browserinfo"
+      ],
+      "pageErrors": []
+    }
+  ]
+}

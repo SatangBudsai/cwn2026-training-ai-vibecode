@@ -1,0 +1,7 @@
+# 03-class-open @ 2026-11-01 17:06:29 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- listbox "เลือกชั้นโดยสารที่ต้องการ":
+  - option "ชั้นประหยัด" [selected]
+  - option "ประหยัดพรีเมียม"
+  - option "ชั้นธุรกิจ"
+  - option "ชั้นหนึ่ง"

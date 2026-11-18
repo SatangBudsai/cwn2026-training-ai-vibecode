@@ -1,0 +1,33 @@
+{
+  "id": "TC-EXPR-09",
+  "checks": [
+    {
+      "n": 1,
+      "label": "จำนวนจุดที่วัดครบ 90 จุด",
+      "pass": true,
+      "actual": "90",
+      "shot": "shots/mobile-chrome/TC-EXPR-09/001.jpg",
+      "actor": "main",
+      "t": 52443
+    },
+    {
+      "n": 2,
+      "label": "หน้าที่เปิดหรือจองไม่สำเร็จ 0 รายการ",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/mobile-chrome/TC-EXPR-09/002.jpg",
+      "actor": "main",
+      "t": 53430
+    },
+    {
+      "n": 3,
+      "label": "หน้าที่ล้นจอ 375px 0 หน้า",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/mobile-chrome/TC-EXPR-09/003.jpg",
+      "actor": "main",
+      "t": 54431
+    }
+  ],
+  "videos": {}
+}

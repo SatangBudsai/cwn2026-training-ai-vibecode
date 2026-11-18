@@ -1,0 +1,17 @@
+code,item,unit,unit_price_thb,cost_thb
+MD-SA,Solution Architect (SA),man-day,18000,11000
+MD-PM,Project Manager,man-day,16000,10000
+MD-DEV-SR,Senior Developer / Tech Lead,man-day,15000,9500
+MD-DEV,Developer,man-day,11000,7000
+MD-UX,UX/UI Designer,man-day,12000,7500
+MD-QA,QA Engineer,man-day,9000,5800
+MD-DEVOPS,DevOps Engineer,man-day,14000,9000
+MD-ML,ML Engineer / Data Scientist,man-day,17000,11000
+CL-S,Cloud hosting Small (Thailand region) 2 vCPU x2 + managed PostgreSQL,month,25000,18000
+CL-M,Cloud hosting Medium (Thailand region) 4 vCPU x3 + managed PostgreSQL HA + Redis,month,45000,32000
+CL-L,Cloud hosting Large (Thailand region) 8 vCPU x4 + PostgreSQL HA + Redis + queue,month,85000,62000
+LIC-LINE,LINE OA Messaging API (plan + push quota),month,6000,4500
+LIC-APM,Monitoring / APM + log management license,month,8000,5500
+LIC-WAF,Web Application Firewall + DDoS protection,month,12000,9000
+MA-STD,Maintenance Standard 8x5 (per system),year,360000,220000
+MA-PREM,Maintenance Premium 24x7 (per system),year,720000,450000

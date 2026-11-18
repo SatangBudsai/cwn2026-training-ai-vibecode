@@ -1,0 +1,86 @@
+{
+ "evidence_id": "ev_3a822931af0a8b2599a507940a7641b31e8b96a57f704e6c7ebadbbc55c3cac3",
+ "subject": null,
+ "provider": {
+  "id": "rea-cdp-browser",
+  "name": "REA Chrome DevTools Protocol observation provider",
+  "version": "2"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.web-screenshot",
+ "operation": "capture_web_screenshot",
+ "parameters": {
+  "cdp_endpoint": "http://127.0.0.1:9222",
+  "allowed_origins": [
+   "https://www.google.com"
+  ],
+  "target_id": "A4C056B802BF14B09D2695173957DEE9"
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "browser": {
+   "product": "Chrome/155.0.8059.12",
+   "protocol_version": "1.3",
+   "revision": "537.36 (@384c82079f60e0b79cdca6e49efd5cfceefa5b74)",
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+   "js_version": "15.5.35.7"
+  },
+  "target": {
+   "target_id": "A4C056B802BF14B09D2695173957DEE9",
+   "url": "https://www.google.com/travel/flights?q=Flights+from+Bangkok+to+Tokyo+on+2026-11-15+one+way&hl=th&gl=TH&curr=THB",
+   "origin": "https://www.google.com"
+  },
+  "captured_at": "2026-10-31T16:23:34.150Z",
+  "viewport": {
+   "width": 1366,
+   "height": 857
+  },
+  "artifact": {
+   "sha256": "2a5d57d870a0bdf2d623c4eb82c4087272c7f5eb165efa8d50aae7d94050aa60",
+   "bytes": 132503,
+   "media_type": "image/png"
+  },
+  "completeness": {
+   "status": "complete_within_window",
+   "conditions": [
+    "complete_within_window"
+   ],
+   "policy_filtered_sections": [],
+   "attach_limited_sections": [],
+   "truncated_sections": [],
+   "unavailable_sections": [],
+   "excluded": [],
+   "dropped_events": {
+    "scripts": 0,
+    "network_requests": 0,
+    "console_events": 0,
+    "websocket_connections": 0,
+    "websocket_frames": 0,
+    "webmcp_tools": 0,
+    "timeline_events": 0,
+    "total": 0
+   }
+  },
+  "limitations": [
+   "The screenshot contains the visible viewport, including on-screen content.",
+   "REA does not scroll, evaluate JavaScript, or capture beyond the current viewport."
+  ]
+ },
+ "confidence": "observed",
+ "authority": "external-service",
+ "environment": {
+  "id": "Chrome/155.0.8059.12@537.36 (@384c82079f60e0b79cdca6e49efd5cfceefa5b74)",
+  "platform": "unknown",
+  "architecture": "unknown",
+  "isolation": "none"
+ },
+ "limitations": [
+  "Artifact identity is unavailable for this observation.",
+  "The screenshot contains the visible viewport, including on-screen content.",
+  "REA does not scroll, evaluate JavaScript, or capture beyond the current viewport.",
+  "Browser host platform and architecture were not observed."
+ ],
+ "relationship_coverage": null,
+ "locations": [],
+ "evidence_links": []
+}

@@ -1,0 +1,143 @@
+/* B05: สไตล์เหมียวช็อป — ธีมแมวโทนอบอุ่น */
+:root {
+  --cream: #fff6e8;
+  --peach: #ffd9b3;
+  --orange: #f08a24;
+  --orange-dark: #c76a10;
+  --brown: #5a3a22;
+  --card: #fffdf8;
+  --line: #f0d9bc;
+  --radius: 16px;
+  --shadow: 0 4px 14px rgba(120, 70, 20, .12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans Thai", "Sarabun", system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+  line-height: 1.6;
+}
+
+/* ส่วนหัว */
+.site-header {
+  background: linear-gradient(135deg, var(--orange), #f6b25a);
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px 16px;
+  border-bottom: 6px solid var(--orange-dark);
+}
+.site-header .brand { color: #fff; font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+.site-header h1 { margin: 8px 0 4px; font-size: 1.8rem; }
+#slogan { margin: 0 0 12px; font-size: 1.1rem; font-style: italic; }
+.site-header nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.site-header nav a {
+  color: var(--brown);
+  background: var(--cream);
+  padding: 6px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-header nav a:hover { background: var(--peach); }
+
+/* เลย์เอาต์หลัก */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+  align-items: start;
+}
+
+/* กริดการ์ดสินค้า */
+#products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.product-card, .card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .15s;
+}
+.product-card:hover, .card:hover { transform: translateY(-3px); }
+.product-card h2, .product-card h3, .card h3 { margin: 0; font-size: 1.05rem; }
+.product-card p, .card p { margin: 0; font-size: .9rem; flex: 1; }
+.price { color: var(--orange-dark); font-weight: 700; font-size: 1.15rem; }
+
+button {
+  font: inherit;
+  background: var(--orange);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover { background: var(--orange-dark); }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--brown); outline-offset: 2px; }
+
+/* sprite: ตัดรูป 6 ช่อง (3 คอลัมน์ x 2 แถว) จาก products.png */
+.sprite {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background-color: var(--peach);
+  background-image: url("products.png");
+  background-repeat: no-repeat;
+  background-size: 300% 200%;
+}
+.sprite-1, .sprite-r0c0 { background-position: 0% 0%; }
+.sprite-2, .sprite-r0c1 { background-position: 50% 0%; }
+.sprite-3, .sprite-r0c2 { background-position: 100% 0%; }
+.sprite-4, .sprite-r1c0 { background-position: 0% 100%; }
+.sprite-5, .sprite-r1c1 { background-position: 50% 100%; }
+.sprite-6, .sprite-r1c2 { background-position: 100% 100%; }
+
+/* ตะกร้า */
+#cart {
+  background: var(--card);
+  border: 2px dashed var(--orange);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: sticky;
+  top: 16px;
+}
+#cart h2 { margin-top: 0; }
+#cart ul { list-style: none; margin: 0; padding: 0; }
+#cart li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+
+/* ท้ายเว็บ */
+.site-footer { text-align: center; padding: 16px; font-size: .9rem; background: var(--peach); }
+.site-footer p { margin: 2px 0; }
+
+/* Breakpoint 1: แท็บเล็ต */
+@media (max-width: 900px) {
+  .shop-layout { grid-template-columns: 1fr; }
+  #products { grid-template-columns: repeat(2, 1fr); }
+  #cart { position: static; }
+}
+
+/* Breakpoint 2: มือถือ */
+@media (max-width: 560px) {
+  #products { grid-template-columns: 1fr; }
+  .site-header h1 { font-size: 1.4rem; }
+}
+
+/* B08: ตะกร้า UI (cart-ui.js) */
+.cart-total { font-weight: 700; font-size: 1.15rem; color: var(--orange-dark); margin: 12px 0 8px; }
+.cart-empty { opacity: .7; }
+.cart-remove { padding: 2px 10px; }

@@ -1,0 +1,24 @@
+diff -ruN -x node_modules -x .next -x public petshop/components/ProductDetail.tsx petshop/components/ProductDetail.tsx
+--- petshop/components/ProductDetail.tsx	2026-11-11 06:04:17.820142538 +0700
++++ petshop/components/ProductDetail.tsx	2026-11-11 06:09:09.329970531 +0700
+@@ -59,7 +59,7 @@
+     if (ready) addRecent(product.slug);
+   }, [ready, product.slug, addRecent]);
+ 
+-  const clamp = (n: number) => Math.min(Math.max(1, Math.floor(n) || 1), Math.max(1, stock + 1));
++  const clamp = (n: number) => Math.min(Math.max(1, Math.floor(n) || 1), Math.max(1, stock));
+   const qty = clamp(Number(qtyText));
+ 
+   const onQtyChange = (v: string) => {
+diff -ruN -x node_modules -x .next -x public petshop/lib/pricing.ts petshop/lib/pricing.ts
+--- petshop/lib/pricing.ts	2026-11-11 06:04:17.820142538 +0700
++++ petshop/lib/pricing.ts	2026-11-11 06:09:09.325970273 +0700
+@@ -112,7 +112,7 @@
+   switch (code) {
+     case "PAW10": {
+       const percent = 10;
+-      return success(Math.round((subtotal * percent) / 100));
++      return success(Math.floor((subtotal * percent) / 100));
+     }
+     case "FREESHIP":
+       return success(0, true);

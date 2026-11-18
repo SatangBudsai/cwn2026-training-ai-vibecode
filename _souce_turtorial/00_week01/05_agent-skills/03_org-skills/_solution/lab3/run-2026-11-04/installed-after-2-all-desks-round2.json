@@ -1,0 +1,111 @@
+{
+ "cco-wit": [
+  "core",
+  "exec"
+ ],
+ "cfo-ying": [
+  "core",
+  "exec"
+ ],
+ "cto-nat": [
+  "core",
+  "exec"
+ ],
+ "dev-mew": [
+  "core",
+  "dev"
+ ],
+ "dev-new": [
+  "core",
+  "dev"
+ ],
+ "dev-pond": [
+  "core",
+  "dev"
+ ],
+ "exec-ploy": [
+  "core",
+  "exec"
+ ],
+ "fin-joy": [
+  "core",
+  "finance"
+ ],
+ "fin-nok": [
+  "core",
+  "finance"
+ ],
+ "hr-fah": [
+  "core",
+  "hr"
+ ],
+ "hr-namtan": [
+  "core",
+  "hr"
+ ],
+ "hr-oat": [
+  "core",
+  "hr"
+ ],
+ "md-somchai": [
+  "core",
+  "exec"
+ ],
+ "ml-jay": [
+  "core",
+  "mlops"
+ ],
+ "ml-pim": [
+  "core",
+  "mlops"
+ ],
+ "ops-art": [
+  "core",
+  "devops"
+ ],
+ "ops-fon": [
+  "core",
+  "devops"
+ ],
+ "plat-ken": [
+  "core",
+  "shared"
+ ],
+ "plat-may": [
+  "core"
+ ],
+ "pm-beam": [
+  "core"
+ ],
+ "pm-gift": [
+  "core"
+ ],
+ "qa-bank": [
+  "core",
+  "qa"
+ ],
+ "qa-mint": [
+  "core",
+  "qa"
+ ],
+ "sa-ice": [
+  "core",
+  "sa"
+ ],
+ "sa-ton": [
+  "core",
+  "sa"
+ ],
+ "sales-krit": [
+  "core",
+  "sales"
+ ],
+ "sales-mook": [
+  "core",
+  "sales"
+ ],
+ "sales-nida": [
+  "core",
+  "sales"
+ ]
+}

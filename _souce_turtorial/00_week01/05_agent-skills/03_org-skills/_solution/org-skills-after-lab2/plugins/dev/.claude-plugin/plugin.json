@@ -1,0 +1,14 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "งาน Dev: รีวิวโค้ดตาม coding-rules 10 ข้อ และขึ้นโปรเจกต์สมาชิก + ชำระเงิน",
+  "author": {
+    "name": "dev-pond"
+  },
+  "keywords": [
+    "department",
+    "dev",
+    "coding-standard",
+    "project-scaffold"
+  ]
+}

@@ -1,0 +1,237 @@
+- generic [active] [ref=e1]:
+  - link "ข้ามไปยังเนื้อหา" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "สบายใจ สปา" [ref=e5] [cursor=pointer]:
+        - /url: /th
+      - navigation "เปิดเมนู" [ref=e12]:
+        - link "บริการ" [ref=e13] [cursor=pointer]:
+          - /url: /th/services
+        - link "Bangkok Relax" [ref=e14] [cursor=pointer]:
+          - /url: /th/packages/bangkok-relax
+        - link "นักบำบัด" [ref=e15] [cursor=pointer]:
+          - /url: /th/therapists
+        - link "Gift Card" [ref=e16] [cursor=pointer]:
+          - /url: /th/gift-cards
+        - link "เรื่องราวของเรา" [ref=e17] [cursor=pointer]:
+          - /url: /th/about
+        - link "เข้าสู่ระบบ" [ref=e18] [cursor=pointer]:
+          - /url: /th/login
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - button "เพลงสปา เปิดหรือปิดเสียง (เสียงชั่วคราว)" [ref=e21] [cursor=pointer]
+          - generic: เสียงชั่วคราว
+        - group "เลือกภาษา" [ref=e26]:
+          - link "ไทย" [ref=e27] [cursor=pointer]:
+            - /url: /th/shuttle
+            - text: TH
+          - link "English" [ref=e28] [cursor=pointer]:
+            - /url: /en/shuttle
+            - text: EN
+          - link "中文" [ref=e29] [cursor=pointer]:
+            - /url: /zh/shuttle
+        - link "จองคิว" [ref=e30] [cursor=pointer]:
+          - /url: /th/booking
+  - main [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - img "ทางเข้าร้านสบายใจ สปา เรือนไม้สักท่ามกลางสวนและสระบัวยามกลางวัน" [ref=e35]
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: รถรับส่งโรงแรม
+          - heading "จากโรงแรมของคุณ สู่ความสงบของเรา" [level=1] [ref=e40]
+          - paragraph [ref=e41]: พักที่ไหนในกรุงเทพฯ เราไปรับและส่งกลับถึงโรงแรม ให้วันพักผ่อนเริ่มตั้งแต่ก้าวขึ้นรถ
+          - link "คำนวณค่ารถ" [ref=e42] [cursor=pointer]:
+            - /url: "#calculator"
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: กฎค่ารถ
+          - heading "ชัดเจนตั้งแต่ก่อนจอง" [level=2] [ref=e47]
+        - generic [ref=e49]:
+          - generic [ref=e51]:
+            - paragraph [ref=e52]: ไม่เกิน 5.0 กม.
+            - paragraph [ref=e53]: ฟรี
+            - paragraph [ref=e54]: ไม่มีค่ารถ ไม่ว่าจะมากี่คัน
+          - generic [ref=e56]:
+            - paragraph [ref=e57]: ถึง 15.0 กม.
+            - paragraph [ref=e58]: ฿300 ต่อคัน
+            - paragraph [ref=e59]: รวมไป-กลับแล้ว
+          - generic [ref=e61]:
+            - paragraph [ref=e62]: เกิน 15.0 กม.
+            - paragraph [ref=e63]: ไม่รับ
+            - paragraph [ref=e64]: ขออภัย ระยะนี้อยู่นอกพื้นที่รับส่ง
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: รถ 1 คัน
+            - paragraph [ref=e68]: ไม่เกิน 4 คน
+            - paragraph [ref=e69]: ไม่จำกัดจำนวนรถต่อรอบ
+        - generic [ref=e70]:
+          - paragraph [ref=e71]: แพ็กเกจ Bangkok Relax รวมค่ารถแล้ว เมื่อไม่เกิน 15.0 กม.
+          - link "ดูแพ็กเกจ Bangkok Relax" [ref=e72] [cursor=pointer]:
+            - /url: /th/packages/bangkok-relax
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - paragraph [ref=e76]: โรงแรมที่แนะนำ
+          - heading "โรงแรม 6 แห่งใกล้เรา" [level=2] [ref=e77]
+        - table [ref=e178]:
+          - rowgroup [ref=e179]:
+            - row [ref=e180]:
+              - columnheader "โรงแรม" [ref=e181]
+              - columnheader "ระยะทาง" [ref=e182]
+              - columnheader "ค่ารถ รวมไป-กลับ" [ref=e183]
+          - rowgroup [ref=e184]:
+            - row [ref=e185]:
+              - rowheader "โรงแรมเรือนไทย ริเวอร์ไซด์" [ref=e186]:
+                - generic [ref=e187]: โรงแรมเรือนไทย
+                - generic [ref=e188]: ริเวอร์ไซด์
+              - cell "2.0 กม." [ref=e189]
+              - cell "ฟรี" [ref=e190]
+            - row [ref=e191]:
+              - rowheader "โรงแรมบ้านสบาย สุขุมวิท" [ref=e192]:
+                - generic [ref=e193]: โรงแรมบ้านสบาย
+                - generic [ref=e194]: สุขุมวิท
+              - cell "5.0 กม." [ref=e195]
+              - cell "ฟรี" [ref=e196]
+            - row [ref=e197]:
+              - rowheader "โรงแรมดอกบัว สีลม" [ref=e198]:
+                - generic [ref=e199]: โรงแรมดอกบัว
+                - generic [ref=e200]: สีลม
+              - cell "5.1 กม." [ref=e201]
+              - cell "฿300 ต่อคัน" [ref=e202]
+            - row [ref=e203]:
+              - rowheader "โรงแรมกล้วยไม้ พาเลซ" [ref=e204]:
+                - generic [ref=e205]: โรงแรมกล้วยไม้
+                - generic [ref=e206]: พาเลซ
+              - cell "12.0 กม." [ref=e207]
+              - cell "฿300 ต่อคัน" [ref=e208]
+            - row [ref=e209]:
+              - rowheader "โรงแรมทองคำ แกรนด์" [ref=e210]:
+                - generic [ref=e211]: โรงแรมทองคำ
+                - generic [ref=e212]: แกรนด์
+              - cell "15.0 กม." [ref=e213]
+              - cell "฿300 ต่อคัน" [ref=e214]
+            - row [ref=e215]:
+              - rowheader "โรงแรมสวนมะลิ บางนา" [ref=e216]:
+                - generic [ref=e217]: โรงแรมสวนมะลิ
+                - generic [ref=e218]: บางนา
+              - cell "15.1 กม." [ref=e219]
+              - cell "ไม่รับ" [ref=e220]
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: เครื่องคำนวณ
+          - heading "ค่ารถของคุณเท่าไร" [level=2] [ref=e84]
+          - paragraph [ref=e85]: เลือกโรงแรมหรือพิมพ์ระยะ พร้อมจำนวนคน ระบบจะคำนวณด้วยกฎเดียวกับตอนจองจริง
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - group "รถรับส่งโรงแรม" [ref=e89]:
+              - generic [ref=e91]:
+                - generic [ref=e92]:
+                  - generic [ref=e93] [cursor=pointer]:
+                    - radio "เลือกโรงแรม" [checked] [ref=e94]
+                    - generic [ref=e95]: เลือกโรงแรม
+                  - combobox "เลือกโรงแรม" [ref=e96]:
+                    - option "เลือกโรงแรมของคุณ" [selected]
+                    - option "โรงแรมเรือนไทย ริเวอร์ไซด์ · 2.0 กม."
+                    - option "โรงแรมบ้านสบาย สุขุมวิท · 5.0 กม."
+                    - option "โรงแรมดอกบัว สีลม · 5.1 กม."
+                    - option "โรงแรมกล้วยไม้ พาเลซ · 12.0 กม."
+                    - option "โรงแรมทองคำ แกรนด์ · 15.0 กม."
+                    - option "โรงแรมสวนมะลิ บางนา · 15.1 กม."
+                - generic [ref=e97]:
+                  - generic [ref=e98] [cursor=pointer]:
+                    - radio "พิมพ์ระยะเอง" [ref=e99]
+                    - generic [ref=e100]: พิมพ์ระยะเอง
+                  - textbox "พิมพ์ระยะเอง" [ref=e101]:
+                    - /placeholder: เช่น 7.5
+                  - generic [ref=e102]: กิโลเมตร ทศนิยมไม่เกิน 1 ตำแหน่ง
+              - paragraph [ref=e103]: ใช้รถรับส่งต้องเลือกโรงแรมหรือกรอกระยะทาง
+              - list [ref=e104]:
+                - listitem [ref=e105]: ไม่เกิน 5.0 กม. ฟรี
+                - listitem [ref=e106]: ถึง 15.0 กม. ฿300 ต่อคัน รวมไป-กลับ
+                - listitem [ref=e107]: เกิน 15.0 กม. ไม่รับ
+                - listitem [ref=e108]: รถ 1 คันไม่เกิน 4 คน
+                - listitem [ref=e109]: ไม่จำกัดจำนวนรถต่อรอบ
+                - listitem [ref=e110]: แพ็กเกจ Bangkok Relax รวมค่ารถแล้ว เมื่อไม่เกิน 15.0 กม.
+            - generic [ref=e111]:
+              - generic [ref=e112]: จำนวนคน
+              - spinbutton "จำนวนคน" [ref=e113]: "1"
+            - button "คำนวณค่ารถ" [ref=e114] [cursor=pointer]
+          - complementary [ref=e115]:
+            - paragraph [ref=e116]: ผลการคำนวณจะแสดงที่นี่
+  - contentinfo [ref=e117]:
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - paragraph [ref=e120]: สบายใจ สปา
+        - paragraph [ref=e121]: Sabai Jai Wellness Spa
+        - paragraph [ref=e122]: สปาไทยสาขาเดียวในกรุงเทพฯ ดูแลด้วยสมุนไพรไทยและทีมบำบัดของเราเอง
+      - generic [ref=e123]:
+        - paragraph [ref=e124]: เวลาเปิดทำการ
+        - paragraph [ref=e125]: เปิดทุกวัน 10:00–22:00 รวมวันหยุดนักขัตฤกษ์
+        - paragraph [ref=e126]: ติดต่อร้าน
+        - link "02-123-4567" [ref=e127] [cursor=pointer]:
+          - /url: tel:021234567
+      - navigation "สำรวจ" [ref=e128]:
+        - paragraph [ref=e129]: สำรวจ
+        - list [ref=e130]:
+          - listitem [ref=e131]:
+            - link "บริการ" [ref=e132] [cursor=pointer]:
+              - /url: /th/services
+          - listitem [ref=e133]:
+            - link "สมุนไพร" [ref=e134] [cursor=pointer]:
+              - /url: /th/herbs
+          - listitem [ref=e135]:
+            - link "Bangkok Relax" [ref=e136] [cursor=pointer]:
+              - /url: /th/packages/bangkok-relax
+          - listitem [ref=e137]:
+            - link "นักบำบัด" [ref=e138] [cursor=pointer]:
+              - /url: /th/therapists
+          - listitem [ref=e139]:
+            - link "ทีมงาน" [ref=e140] [cursor=pointer]:
+              - /url: /th/team
+          - listitem [ref=e141]:
+            - link "รีวิว" [ref=e142] [cursor=pointer]:
+              - /url: /th/reviews
+          - listitem [ref=e143]:
+            - link "แกลเลอรี" [ref=e144] [cursor=pointer]:
+              - /url: /th/gallery
+          - listitem [ref=e145]:
+            - link "เรื่องราวของเรา" [ref=e146] [cursor=pointer]:
+              - /url: /th/about
+      - navigation "สมาชิก" [ref=e147]:
+        - paragraph [ref=e148]: สมาชิก
+        - list [ref=e149]:
+          - listitem [ref=e150]:
+            - link "ทัวร์ 360°" [ref=e151] [cursor=pointer]:
+              - /url: /th/tour
+          - listitem [ref=e152]:
+            - link "แบบทดสอบ" [ref=e153] [cursor=pointer]:
+              - /url: /th/quiz
+          - listitem [ref=e154]:
+            - link "วิเคราะห์ผิว" [ref=e155] [cursor=pointer]:
+              - /url: /th/skin
+          - listitem [ref=e156]:
+            - link "รถรับส่ง" [ref=e157] [cursor=pointer]:
+              - /url: /th/shuttle
+          - listitem [ref=e158]:
+            - link "Gift Card" [ref=e159] [cursor=pointer]:
+              - /url: /th/gift-cards
+          - listitem [ref=e160]:
+            - link "บัญชีของฉัน" [ref=e161] [cursor=pointer]:
+              - /url: /th/account
+          - listitem [ref=e162]:
+            - link "ยกเลิกการจองด้วยรหัส" [ref=e163] [cursor=pointer]:
+              - /url: /th/booking/cancel
+    - generic [ref=e164]:
+      - paragraph [ref=e165]: © สบายใจ สปา
+      - paragraph [ref=e166]: รูปในเว็บนี้เป็นภาพจำลองเพื่อการเรียนการสอน
+  - complementary "แผงทดสอบ" [ref=e167]:
+    - generic [ref=e168]:
+      - generic [ref=e169]:
+        - text: "วันนี้ของเว็บ:"
+        - code [ref=e221]: 2026-06-15T10:00:00+07:00
+      - generic [ref=e170]:
+        - text: ล็อกวันนี้เป็น
+        - textbox "ล็อกวันนี้เป็น" [ref=e171]: 2026-06-15T10:00
+      - button "ล็อก" [ref=e172] [cursor=pointer]
+      - button "รีเซ็ตข้อมูลทดสอบ" [ref=e173] [cursor=pointer]
+  - button "เปิดแชตกับสบายใจ สปา" [ref=e174] [cursor=pointer]
+  - alert [ref=e222]

@@ -1,0 +1,130 @@
+{
+  "id": "TC-ACCT-05",
+  "checks": [
+    {
+      "n": 1,
+      "label": "U01 ก่อนออกจากระบบเห็นยอด ฿12,400",
+      "pass": true,
+      "actual": "฿12,400",
+      "shot": "shots/chromium/TC-ACCT-05/001.jpg",
+      "actor": "main",
+      "t": 3386
+    },
+    {
+      "n": 2,
+      "label": "กดย้อนกลับ ไม่เห็น คุณนิดา ฿12,400 หรือ 99 แต้ม",
+      "pass": true,
+      "actual": "ข้ามไปยังเนื้อหา สบายใจ สปา บริการ Bangkok Relax นักบำบัด Gift Card เรื่องราวของเรา เข้าสู่ระบบ เสียงชั่วคราว TH EN 中文 จองคิว กลับมาพักใจ ในที่ที่จำคุณได้ สมาชิกสบายใจ เข้าสู่ระบบ ดูนัด แต้ม และคอร์สของคุณได้ในที่เดียว อีเมล รหัสผ่าน เข้าสู่ระบบ ยังไม่เป็นสมาชิกสมัครสมาชิก สบายใจ สปา Sabai Jai Wellness Spa สปาไทยสาขาเดียวในกรุงเทพฯ ดูแลด้วยสมุนไพรไทยและทีมบำบัดของเราเอง เวลาเปิดทำการ เปิดทุกวัน 10:00–22:00 รวมวันหยุดนักขัตฤกษ์ ติดต่อร้าน 02-123-4567 สำรวจ บริการ สมุนไพร Bangkok Relax นักบำบัด ที",
+      "shot": "shots/chromium/TC-ACCT-05/002.jpg",
+      "actor": "main",
+      "t": 5567
+    },
+    {
+      "n": 3,
+      "label": "กดย้อนกลับแล้วรีโหลด ไม่เห็นข้อมูลเดิม",
+      "pass": true,
+      "actual": "ข้ามไปยังเนื้อหา สบายใจ สปา บริการ Bangkok Relax นักบำบัด Gift Card เรื่องราวของเรา เข้าสู่ระบบ เสียงชั่วคราว TH EN 中文 จองคิว กลับมาพักใจ ในที่ที่จำคุณได้ สมาชิกสบายใจ เข้าสู่ระบบ ดูนัด แต้ม และคอร์สของคุณได้ในที่เดียว อีเมล รหัสผ่าน เข้าสู่ระบบ ยังไม่เป็นสมาชิกสมัครสมาชิก สบายใจ สปา Sabai Jai Wellness Spa สปาไทยสาขาเดียวในกรุงเทพฯ ดูแลด้วยสมุนไพรไทยและทีมบำบัดของเราเอง เวลาเปิดทำการ เปิดทุกวัน 10:00–22:00 รวมวันหยุดนักขัตฤกษ์ ติดต่อร้าน 02-123-4567 สำรวจ บริการ สมุนไพร Bangkok Relax นักบำบัด ที",
+      "shot": "shots/chromium/TC-ACCT-05/003.jpg",
+      "actor": "main",
+      "t": 7198
+    },
+    {
+      "n": 4,
+      "label": "/api/wallet ไม่ login ได้สถานะ 401",
+      "pass": true,
+      "actual": "401",
+      "shot": "shots/chromium/TC-ACCT-05/004.jpg",
+      "actor": "main",
+      "t": 8224
+    },
+    {
+      "n": 5,
+      "label": "/api/wallet เนื้อหาไม่มีข้อมูล U01",
+      "pass": true,
+      "actual": "{\"error\":{\"code\":\"unauthorized\",\"message\":\"กรุณาเข้าสู่ระบบ\"}}",
+      "shot": "shots/chromium/TC-ACCT-05/005.jpg",
+      "actor": "main",
+      "t": 9218
+    },
+    {
+      "n": 6,
+      "label": "/api/me ไม่ login ได้สถานะ 401",
+      "pass": true,
+      "actual": "401",
+      "shot": "shots/chromium/TC-ACCT-05/006.jpg",
+      "actor": "main",
+      "t": 10233
+    },
+    {
+      "n": 7,
+      "label": "/api/me เนื้อหาไม่มีข้อมูล U01",
+      "pass": true,
+      "actual": "{\"error\":{\"code\":\"unauthorized\",\"message\":\"กรุณาเข้าสู่ระบบ\"}}",
+      "shot": "shots/chromium/TC-ACCT-05/007.jpg",
+      "actor": "main",
+      "t": 11209
+    },
+    {
+      "n": 8,
+      "label": "/api/me/bookings ไม่ login ได้สถานะ 401",
+      "pass": true,
+      "actual": "401",
+      "shot": "shots/chromium/TC-ACCT-05/008.jpg",
+      "actor": "main",
+      "t": 12157
+    },
+    {
+      "n": 9,
+      "label": "/api/me/bookings เนื้อหาไม่มีข้อมูล U01",
+      "pass": true,
+      "actual": "{\"error\":{\"code\":\"unauthorized\",\"message\":\"กรุณาเข้าสู่ระบบ\"}}",
+      "shot": "shots/chromium/TC-ACCT-05/009.jpg",
+      "actor": "main",
+      "t": 13110
+    },
+    {
+      "n": 10,
+      "label": "API คิวหลังร้าน ไม่ login ได้สถานะ 401",
+      "pass": true,
+      "actual": "401",
+      "shot": "shots/chromium/TC-ACCT-05/010.jpg",
+      "actor": "main",
+      "t": 18776
+    },
+    {
+      "n": 11,
+      "label": "API คิวหลังร้าน เนื้อหาไม่มี SJTEST05 และ SJTEST06",
+      "pass": true,
+      "actual": "{\"error\":{\"code\":\"unauthorized\",\"message\":\"กรุณาเข้าสู่ระบบ\"}}",
+      "shot": "shots/chromium/TC-ACCT-05/011.jpg",
+      "actor": "main",
+      "t": 19771
+    },
+    {
+      "n": 12,
+      "label": "API กดเสร็จ B05 ไม่ login ได้สถานะ 401",
+      "pass": true,
+      "actual": "401",
+      "shot": "shots/chromium/TC-ACCT-05/012.jpg",
+      "actor": "main",
+      "t": 20760
+    },
+    {
+      "n": 13,
+      "label": "U09 หลังยิงกดเสร็จโดยไม่ login: แต้ม 199",
+      "pass": true,
+      "actual": "199",
+      "shot": "shots/chromium/TC-ACCT-05/013.jpg",
+      "actor": "main",
+      "t": 24374
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-ACCT-05/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-ACCT-05/main.webm"
+    }
+  }
+}

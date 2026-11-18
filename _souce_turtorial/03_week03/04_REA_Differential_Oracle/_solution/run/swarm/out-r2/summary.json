@@ -1,0 +1,20 @@
+{
+  "wall_secs": 529.5,
+  "ok": 1,
+  "failed": 0,
+  "jobs": [
+    {
+      "id": "r2-visual",
+      "account": "yolo3",
+      "model": "opus",
+      "effort": "high",
+      "effort_from": "difficulty 3",
+      "ok": true,
+      "result": "Visual diff is down from 6.55% to **5.12%**, under the 5.5% target, and none of the other metrics got worse. Committed on branch r2 as `78fa9cc` (not merged or pushed), and the r2 stack is shut down with `down -v`.\n\n**Files changed**\n- `src/components/Results.tsx`\n  - Changed the order to match the reference: heading \"เที่ยวบินยอดนิยม\" → the first 3 popular flight cards → price banner → price tracking (left) and date grid/price graph (right) on one row → \"เที่ยวบินอื่นๆ\".\n  - The \"มีผลลัพธ์ N รายการ\" count now sits at the end of the price-note line. It's still visible.\n  - The cheaper-date card is now a popover under the date tools, as in the reference, instead of being pinned to the bottom of the screen. The mock-data note and the close button are still there.\n  - When there are no results, or the list isn't sorted by popularity, the price tools still show above the list.\n- `src/components/ui.tsx`: the airline badge is now outlined (white background, border and code in the airline's colour) instead of a solid square.\n- `src/app/globals.css`: tuned spacing so headings and cards line up with the reference to within 0–1px, styled the popover, and added a wrap rule for small screens.\n\n**Results**\n- Visual: **5.12%** (62,922 px)\n- Differential: **8/8**\n- Structure: **38/38 (78.6%)**\n- Acceptance: **74/82**. Same 8 failures as before: B20 B22 C13 C31 F05 F08 F14 F16.\n\n**Worth knowing**\n- **Scroll behaviour changed:** the cheaper-date card now scrolls with the page and can overlap the first card of \"เที่ยวบินอื่นๆ\", as in the reference.\n- **What's left in the diff:** mostly letter shapes (our font isn't the original's), the header logo and the airline logos. I left those alone because the brief rules out copying Google's branding, icons and logos.\n- **Shared file:** running structure-compare with only r2 rewrote `final/structure/metrics.json` so it now holds only r2's results. A copy of the previous file is at `/tmp/r2-metrics-before.json`.",
+      "error": "",
+      "cost_usd": 1.5509122000000002,
+      "model_used": "claude-opus-5-5",
+      "secs": 529.5
+    }
+  ]
+}

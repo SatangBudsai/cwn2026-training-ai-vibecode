@@ -1,0 +1,54 @@
+npm notice run npx
+npm notice run playwright test tests/5.5- --project=chromium
+
+Running 10 tests using 1 worker
+
+(node:114896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [chromium] › tests\5.5-course.spec.ts:222:1 › TC-COURSE-01 จองด้วยคอร์สแล้วกันครั้งทันที และยกเลิกทันเวลาแล้วคืนครั้ง @P1 @5.5 (22.7s)
+  ok  2 [chromium] › tests\5.5-course.spec.ts:276:1 › TC-COURSE-02 ร้านกดใช้บริการเสร็จแล้วตัดครั้งจริงครั้งเดียว ได้ 0 แต้ม และยอดสะสมไม่เพิ่ม @P1 @5.5 (27.6s)
+  ok  3 [chromium] › tests\5.5-course.spec.ts:362:1 › TC-COURSE-03 ซื้อคอร์ส K01 ราคาเท่ากันทุกระดับ ได้ 11 ครั้ง ยอดสะสมไม่เพิ่ม และวันหมดอายุนับวันซื้อเป็นวันที่ 0 @P1 @5.5 (1.1m)
+  ok  4 [chromium] › tests\5.5-course.spec.ts:415:1 › TC-COURSE-04 Gift Card ใช้ซื้อคอร์สไม่ได้ แต่ใช้จ่ายค่ารถของการจองด้วยคอร์สได้ @P1 @5.5 (35.6s)
+  ok  5 [chromium] › tests\5.5-course.spec.ts:524:1 › TC-COURSE-05 ขอบคอร์สเหลือ 0, 1, 2 และครั้งที่ถูกกันไว้นับรวมจนยกเลิกแล้วคืน @P1 @5.5 (56.3s)
+  ok  6 [chromium] › tests\5.5-course.spec.ts:618:1 › TC-COURSE-06 คอร์สใช้ได้ถึงวันที่ 180 โดยดูจากวันนัด ไม่ใช่วันนี้ และคอร์สหมดอายุใช้ครั้งที่เหลือไม่ได้ ทั้งหน้าจอและ API @P1 @5.5 (44.9s)
+  ok  7 [chromium] › tests\5.5-course.spec.ts:720:1 › TC-COURSE-07 จองด้วยคอร์สได้ครั้งละ 1 คน กับ T01 หรือ T05 ครั้งละ 60 นาทีเท่านั้น @P1 @5.5 (26.2s)
+  x   8 [chromium] › tests\5.5-course.spec.ts:811:1 › TC-COURSE-08 ลูกค้าที่ไม่มีคอร์สเปิดจอง K01 ต้องรู้เหตุผลว่าใช้คอร์สเท่านั้น และจองไม่ได้ @P2 @5.5 (22.6s)
+(node:80712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 [chromium] › tests\5.5-course.spec.ts:880:1 › TC-COURSE-09 ใช้คอร์สของคนอื่นจองจริงไม่ได้ และแขกใช้คอร์สไม่ได้ @P1 @5.5 (29.8s)
+  ok 10 [chromium] › tests\5.5-course.spec.ts:978:1 › TC-COURSE-10 กราฟรอบเอวและประวัติทรีตเมนต์แสดงตัวเลขและลำดับตรง เฉพาะของเจ้าของบัญชี @P1 @5.5 (31.9s)
+
+
+  1) [chromium] › tests\5.5-course.spec.ts:811:1 › TC-COURSE-08 ลูกค้าที่ไม่มีคอร์สเปิดจอง K01 ต้องรู้เหตุผลว่าใช้คอร์สเท่านั้น และจองไม่ได้ @P2 @5.5 › 1-2. เปิด /th/booking?service=K01 อ่านข้อความบนหน้าและปุ่มที่กดต่อได้ 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('booking-flow')
+    Expected substring: "ด้วยคอร์สเท่านั้น"
+    Received string:    "1บริการ2วันและเวลา3สรุปและยืนยันเลือกบริการนวดไทย 60 นาที60 นาที฿1,000 ต่อคนนวดไทย 90 นาที90 นาที฿1,400 ต่อคนประคบสมุนไพร60 นาที฿1,200 ต่อคนนวดน้ำมันอโรมา90 นาที฿2,000 ต่อคนนวดเท้า60 นาที฿800 ต่อคนขัดผิวสมุนไพร60 นาที฿1,500 ต่อคนทรีตเมนต์หน้า60 นาที฿1,800 ต่อคนแพ็กเกจ Bangkok Relax120 นาที฿2,900 ต่อคนแพ็กเกจจำนวนคน1234567+จอง 1 คน เลือกนักบำบัดเองได้ในหน้าถัดไปเลือกบริการก่อนไปหน้าถัดไปถัดไป"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('booking-flow') with timeout 6000ms
+      - waiting for getByTestId('booking-flow')
+        16 × locator resolved to <div tabindex="-1" data-screen="1" data-e2e-prev-outline="" data-testid="booking-flow" class="container nv8LGq_flow">…</div>
+           - unexpected value "1บริการ2วันและเวลา3สรุปและยืนยันเลือกบริการนวดไทย 60 นาที60 นาที฿1,000 ต่อคนนวดไทย 90 นาที90 นาที฿1,400 ต่อคนประคบสมุนไพร60 นาที฿1,200 ต่อคนนวดน้ำมันอโรมา90 นาที฿2,000 ต่อคนนวดเท้า60 นาที฿800 ต่อคนขัดผิวสมุนไพร60 นาที฿1,500 ต่อคนทรีตเมนต์หน้า60 นาที฿1,800 ต่อคนแพ็กเกจ Bangkok Relax120 นาที฿2,900 ต่อคนแพ็กเกจจำนวนคน1234567+จอง 1 คน เลือกนักบำบัดเองได้ในหน้าถัดไปเลือกบริการก่อนไปหน้าถัดไปถัดไป"
+
+
+      829 |     await booking.open('th', '?service=K01');
+      830 |     await app.check(page.getByTestId('booking-flow'), 'มีข้อความแจ้งว่า K01 จองได้ด้วยคอร์สเท่านั้น', async (el) => {
+    > 831 |       await expect.soft(el).toContainText('ด้วยคอร์สเท่านั้น');
+          |                             ^
+      832 |     });
+      833 |     const actions = await page.getByTestId('booking-flow').locator('a:visible, button:not([disabled]):visible').allInnerTexts();
+      834 |     const summary = actions.map((t) => t.replace(/\s+/g, ' ').trim()).filter(Boolean).slice(0, 20).join(' | ');
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.5-course.spec.ts:831:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.5-course.spec.ts:830:5
+        at C:\t\spa04\sabai\e2e\tests\5.5-course.spec.ts:828:3
+
+    Error Context: test-results\5.5-chromium\5.5-course-TC-COURSE-08-ลู-0154a-้คอร์สเท่านั้น-และจองไม่ได้-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\5.5-course.spec.ts:811:1 › TC-COURSE-08 ลูกค้าที่ไม่มีคอร์สเปิดจอง K01 ต้องรู้เหตุผลว่าใช้คอร์สเท่านั้น และจองไม่ได้ @P2 @5.5 
+  9 passed (6.1m)

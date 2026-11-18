@@ -1,0 +1,10 @@
+{
+  "executor": "Codex in current conversation, alternating GENERATOR and CRITIC",
+  "new_generation": true,
+  "used_prior_outputs": false,
+  "iteration_count": 1,
+  "prompt": "prompt-used.md",
+  "checks": "verification.json",
+  "screenshots": "captured using Python Playwright on remote",
+  "independent_model_review": false
+}

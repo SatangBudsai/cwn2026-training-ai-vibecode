@@ -1,0 +1,72 @@
+<html lang="th"><meta charset="utf-8"><style>body{font:19px/1.7 "Noto Sans Thai",sans-serif;color:#243e4a;padding:36px;background:#f5f8fa}main{background:white;border-radius:16px;padding:30px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d5e3e7;padding:12px;text-align:left}th{background:#e3f1eb}h1{color:#126455}</style><main><h1>Plan v2</h1>
+<p>เหตุผล: NEW INFORMATION: เพิ่มความยินยอมและการจองเองผ่าน LINE OA หลังเฟสแรกผ่าน</p>
+<p>สิ่งที่เปลี่ยน: เพิ่ม T1-v2, T3-v2, T4-v2, T5-v2; เก็บ T1–T5 เฟสแรกและใช้ T2 เดิม</p>
+<p>Impact: contract/To-Be/Data Model/Mockup/Mapping/ผลตรวจรวม</p>
+<p>Reuse: T2 As-Is, CSV และ Findings, normalization, Mockup สามส่วนเดิม</p>
+<table>
+<thead>
+<tr>
+  <th>งาน</th>
+  <th>คำอธิบาย</th>
+  <th>Dependency</th>
+  <th>สถานะ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>T1</td>
+  <td>ตรวจคุณภาพข้อมูลและระบุรายการรอยืนยัน</td>
+  <td>-</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T2</td>
+  <td>อธิบาย As-Is</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T3</td>
+  <td>ออกแบบ To-Be/Data Model/Mockup</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T4</td>
+  <td>ทำ Data Mapping และแผน Migration</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T5</td>
+  <td>รวม Gap/Roll-out และตรวจ C1–C3</td>
+  <td>T2, T3, T4</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T1-v2</td>
+  <td>เพิ่มข้อกำหนดและข้อมูลความยินยอม/LINE</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T3-v2</td>
+  <td>ปรับ To-Be/แบบจำลอง/Mockup เพิ่มสองส่วน</td>
+  <td>T1-v2</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T4-v2</td>
+  <td>เพิ่ม Mapping และเงื่อนไขย้ายข้อมูลใหม่</td>
+  <td>T1-v2</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T5-v2</td>
+  <td>รวมผล ตรวจ C1–C3 และขอบเขตใหม่</td>
+  <td>T2, T3-v2, T4-v2</td>
+  <td>DONE</td>
+</tr>
+</tbody>
+</table>
+</main></html>

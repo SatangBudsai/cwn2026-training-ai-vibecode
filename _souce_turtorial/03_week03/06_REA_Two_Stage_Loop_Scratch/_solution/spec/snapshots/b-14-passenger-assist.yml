@@ -1,0 +1,45 @@
+- dialog "ความช่วยเหลือสำหรับผู้โดยสาร":
+  - heading "ความช่วยเหลือสำหรับผู้โดยสาร" [level=1]
+  - list:
+    - listitem:
+      - link "การบินไทย (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thaiairways.com%2Fen%2Fhelp%2Fspecial_request_assistance%2Findex.page&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAEQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: การบินไทย
+        - img
+    - listitem:
+      - link "เจเอแอล (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jal.co.jp%2Fen%2Fjalpri%2F&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAIQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: เจเอแอล
+        - img
+    - listitem:
+      - link "ไทยไลอ้อนแอร์ (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lionairthai.com%2Fth%2FThaiLionAir-Experience%2FSpecial-Needs&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAMQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: ไทยไลอ้อนแอร์
+        - img
+    - listitem:
+      - link "ไทยเวียดเจ๊ทแอร์ (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vietjetair.com%2Fth%2Fpages%2F%25E0%25B8%259C%25E0%25B8%25B9%25E0%25B9%2589%25E0%25B9%2582%25E0%25B8%2594%25E0%25B8%25A2%25E0%25B8%25AA%25E0%25B8%25B2%25E0%25B8%25A3%25E0%25B8%2597%25E0%25B8%25B5%25E0%25B9%2588%25E0%25B8%2595%25E0%25B9%2589%25E0%25B8%25AD%25E0%25B8%2587%25E0%25B8%2581%25E0%25B8%25B2%25E0%25B8%25A3%25E0%25B8%2584%25E0%25B8%25A7%25E0%25B8%25B2%25E0%25B8%25A1%25E0%25B8%258A%25E0%25B9%2588%25E0%25B8%25A7%25E0%25B8%25A2%25E0%25B9%2580%25E0%25B8%25AB%25E0%25B8%25A5%25E0%25B8%25B7%25E0%25B8%25AD%25E0%25B8%259E%25E0%25B8%25B4%25E0%25B9%2580%25E0%25B8%25A8%25E0%25B8%25A9-1602004149036&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAQQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: ไทยเวียดเจ๊ทแอร์
+        - img
+    - listitem:
+      - link "ไห่หนานแอร์ไลน์ (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hainanairlines.com%2FHUPortal%2Fdyn%2Fportal%2FDisplayPage%3FLANGUAGE%3DGB%26COUNTRY_SITE%3DCN%26SITE%3DCBHZCBHZ%26PAGE%3DCMOR&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAUQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: ไห่หนานแอร์ไลน์
+        - img
+    - listitem:
+      - link "เอเอ็นเอ (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ana.co.jp%2Fth%2Fth%2Ftravel-information%2Fcustomers-with-disabilities%2F&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAYQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: เอเอ็นเอ
+        - img
+    - listitem:
+      - link "ฮ่องกงเอ็กซ์เพรส (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hkexpress.com%2Fen-HK%2FPlan%2FTravel%2FSpecial-Assistance&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAcQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: ฮ่องกงเอ็กซ์เพรส
+        - img
+    - listitem:
+      - link "ZIPAIR Tokyo (เปิดในแท็บใหม่)":
+        - /url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zipair.net%2Fth%2Fboarding%2Fsupport&psig=AOvVaw0auV8ru829HU6fZVYFgFvm&ust=1793616876183000&rct=j&opi=77919732&ved=0CAgQ85cKahcKEwjwjIDYzeaXAxUAAAAAHQAAAAAQDQ
+        - text: ZIPAIR Tokyo
+        - img
+  - button "ปิดกล่องโต้ตอบ":
+    - img

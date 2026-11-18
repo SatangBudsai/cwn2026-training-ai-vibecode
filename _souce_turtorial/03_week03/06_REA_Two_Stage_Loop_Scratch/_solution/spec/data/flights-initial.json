@@ -1,0 +1,8079 @@
+{
+  "observedAt": "2026-11-01T11:32:00.000Z",
+  "count": 21,
+  "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+  "scope": "Initial result list shown before \"ดูเที่ยวบินเพิ่มเติม\" (first search response), in on-screen order: 3 popular + 18. Same schema as flights-all.json.",
+  "flights": [
+    {
+      "id": 1,
+      "popular": true,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "DMK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T06:20:00",
+      "arrivalLocal": "2026-11-15T16:25:00",
+      "airlineCodes": "SL",
+      "airlineNames": [
+        "ไทยไลอ้อนแอร์"
+      ],
+      "durationMinutes": 485,
+      "stopCount": 1,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "DMK",
+            "name": "ท่าอากาศยานดอนเมือง"
+          },
+          "arrivalAirport": {
+            "code": "TPE",
+            "name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน"
+          },
+          "departureLocal": "2026-11-15T06:20:00",
+          "arrivalLocal": "2026-11-15T11:10:00",
+          "flightNumber": "SL 394",
+          "airlineCode": "SL",
+          "airlineName": "ไทยไลอ้อนแอร์",
+          "aircraft": "Boeing 737",
+          "durationMinutes": 230,
+          "co2eGramsRaw": 191959,
+          "raw": [
+            null,
+            null,
+            null,
+            "DMK",
+            "ท่าอากาศยานดอนเมือง",
+            "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+            "TPE",
+            null,
+            [
+              6,
+              20
+            ],
+            null,
+            [
+              11,
+              10
+            ],
+            230,
+            [],
+            2,
+            "74 ซม.",
+            null,
+            1,
+            "Boeing 737",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "SL",
+              "394",
+              null,
+              "ไทยไลอ้อนแอร์"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "74 เซนติเมตร",
+            191959,
+            1
+          ]
+        },
+        {
+          "departureAirport": {
+            "code": "TPE",
+            "name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T12:10:00",
+          "arrivalLocal": "2026-11-15T16:25:00",
+          "flightNumber": "SL 394",
+          "airlineCode": "SL",
+          "airlineName": "ไทยไลอ้อนแอร์",
+          "aircraft": "Boeing 737",
+          "durationMinutes": 195,
+          "co2eGramsRaw": 171427,
+          "raw": [
+            null,
+            null,
+            null,
+            "TPE",
+            "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              12,
+              10
+            ],
+            null,
+            [
+              16,
+              25
+            ],
+            195,
+            [],
+            2,
+            "74 ซม.",
+            null,
+            1,
+            "Boeing 737",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "SL",
+              "394",
+              null,
+              "ไทยไลอ้อนแอร์"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "74 เซนติเมตร",
+            171427,
+            1
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "durationMinutes": 60,
+          "arrivalAirport": "TPE",
+          "departureAirport": "TPE",
+          "arrivalAirportName": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "arrivalCity": "ไทเป",
+          "departureAirportName": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "departureCity": "ไทเป",
+          "airportChange": false,
+          "raw": [
+            60,
+            "TPE",
+            "TPE",
+            null,
+            "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+            "ไทเป",
+            "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+            "ไทเป"
+          ]
+        }
+      ],
+      "co2e": {
+        "kg": 363,
+        "comparisonPercent": -2,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          2,
+          -2,
+          null,
+          true,
+          true,
+          363000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          2
+        ]
+      },
+      "price": {
+        "amount": 7635,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 7635 บาทไทย เดินทางด้วยเที่ยวบินแบบแวะพัก 1 ครั้งกับ ไทยไลอ้อนแอร์ ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 06:20 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 16:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 8 ชม. 5 นาที การแวะพัก (ครั้งที่ 1 จาก 1) ใช้เวลาแวะพัก 1 ชม. ที่สนามบิน ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน ในไทเป เลือกเที่ยวบิน\"\n        - text: 06:20 – 16:25 ไทยไลอ้อนแอร์ 8 ชม. 5 นาที หยุดพัก 1 ครั้ง 1 ชม. TPE\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 363 กิโลกรัม. การปล่อยก๊าซโดยเฉลี่ย. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿7,635\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 06:20 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 16:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            true,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            [
+              [
+                60,
+                "TPE",
+                "TPE",
+                null,
+                "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+                "ไทเป",
+                "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+                "ไทเป"
+              ]
+            ],
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "SL",
+          [
+            "ไทยไลอ้อนแอร์"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "DMK",
+              "ท่าอากาศยานดอนเมือง",
+              "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+              "TPE",
+              null,
+              [
+                6,
+                20
+              ],
+              null,
+              [
+                11,
+                10
+              ],
+              230,
+              [],
+              2,
+              "74 ซม.",
+              null,
+              1,
+              "Boeing 737",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "SL",
+                "394",
+                null,
+                "ไทยไลอ้อนแอร์"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "74 เซนติเมตร",
+              191959,
+              1
+            ],
+            [
+              null,
+              null,
+              null,
+              "TPE",
+              "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                12,
+                10
+              ],
+              null,
+              [
+                16,
+                25
+              ],
+              195,
+              [],
+              2,
+              "74 ซม.",
+              null,
+              1,
+              "Boeing 737",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "SL",
+                "394",
+                null,
+                "ไทยไลอ้อนแอร์"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "74 เซนติเมตร",
+              171427,
+              1
+            ]
+          ],
+          "DMK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            6,
+            20
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            16,
+            25
+          ],
+          485,
+          null,
+          null,
+          false,
+          [
+            [
+              60,
+              "TPE",
+              "TPE",
+              null,
+              "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+              "ไทเป",
+              "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+              "ไทเป"
+            ]
+          ],
+          null,
+          null,
+          null,
+          "IO6Q2c",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                2
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            2,
+            -2,
+            null,
+            true,
+            true,
+            363000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "SL",
+              "ไทยไลอ้อนแอร์",
+              "https://www.lionairthai.com/th/ThaiLionAir-Experience/Special-Needs"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            7635
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgtTTDM5NHxTTDM5NBoKCNM7EAAaA1RIQjgccPKwAQ=="
+        ],
+        null,
+        true,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCNM7Iu4BCrYBClkKA0RNSxIZMjAyNi0xMS0xNVQwNjoyMDowMCswNzowMBoDVFBFIhkyMDI2LTExLTE1VDExOjEwOjAwKzA4OjAwKgJTTDIDMzk0OgJTTEIDMzk0SAFSAzczOQpZCgNUUEUSGTIwMjYtMTEtMTVUMTI6MTA6MDArMDg6MDAaA05SVCIZMjAyNi0xMS0xNVQxNjoyNTowMCswOTowMCoCU0wyAzM5NDoCU0xCAzM5NEgBUgM3MzkSBAgDEAEYASgAMikKJ+C5hOC4l+C4ouC5hOC4peC4reC5ieC4reC4meC5geC4reC4o+C5jCoOSGVhZGxlc3NDaHJvbWU\\u003d\"]",
+        null,
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "popular": true,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T23:50:00",
+      "arrivalLocal": "2026-11-16T07:55:00",
+      "airlineCodes": "VZ",
+      "airlineNames": [
+        "ไทยเวียดเจ๊ทแอร์"
+      ],
+      "durationMinutes": 365,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T23:50:00",
+          "arrivalLocal": "2026-11-16T07:55:00",
+          "flightNumber": "VZ 830",
+          "airlineCode": "VZ",
+          "airlineName": "ไทยเวียดเจ๊ทแอร์",
+          "aircraft": "Boeing 737",
+          "durationMinutes": 365,
+          "co2eGramsRaw": 396434,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              23,
+              50
+            ],
+            1,
+            [
+              7,
+              55
+            ],
+            365,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            2,
+            "74 ซม.",
+            null,
+            1,
+            "Boeing 737",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "VZ",
+              "830",
+              null,
+              "ไทยเวียดเจ๊ทแอร์"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "74 เซนติเมตร",
+            396434,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 396,
+        "comparisonPercent": 7,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          3,
+          7,
+          null,
+          true,
+          true,
+          396000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          3
+        ]
+      },
+      "price": {
+        "amount": 9062,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 9062 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ ไทยเวียดเจ๊ทแอร์ ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 07:55 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 6 ชม. 5 นาที เลือกเที่ยวบิน\"\n        - text: 23:50 – 07:55+1 ไทยเวียดเจ๊ทแอร์ 6 ชม. 5 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 396 กิโลกรัม. ปริมาณการปล่อยก๊าซ +7%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿9,062\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 07:55 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "VZ",
+          [
+            "ไทยเวียดเจ๊ทแอร์"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                23,
+                50
+              ],
+              1,
+              [
+                7,
+                55
+              ],
+              365,
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              2,
+              "74 ซม.",
+              null,
+              1,
+              "Boeing 737",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "VZ",
+                "830",
+                null,
+                "ไทยเวียดเจ๊ทแอร์"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "74 เซนติเมตร",
+              396434,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            23,
+            50
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            7,
+            55
+          ],
+          365,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "f0Ahp",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                3
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            3,
+            7,
+            null,
+            true,
+            true,
+            396000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "VZ",
+              "ไทยเวียดเจ๊ทแอร์",
+              "https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            9062
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVWWjgzMBoKCOZGEAAaA1RIQjgccPrRAQ=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCOZGIpsBClsKWQoDQktLEhkyMDI2LTExLTE1VDIzOjUwOjAwKzA3OjAwGgNOUlQiGTIwMjYtMTEtMTZUMDc6NTU6MDArMDk6MDAqAlZaMgM4MzA6AlZaQgM4MzBIAVIDNzM3EgQIAxABGAEoADIyCjDguYTguJfguKLguYDguKfguLXguKLguJTguYDguIjguYrguJfguYHguK3guKPguYwqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            2
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 3,
+      "popular": true,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T23:45:00",
+      "arrivalLocal": "2026-11-16T07:30:00",
+      "airlineCodes": "ZG",
+      "airlineNames": [
+        "ZIPAIR Tokyo"
+      ],
+      "durationMinutes": 345,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T23:45:00",
+          "arrivalLocal": "2026-11-16T07:30:00",
+          "flightNumber": "ZG 52",
+          "airlineCode": "ZG",
+          "airlineName": "ZIPAIR Tokyo",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 345,
+          "co2eGramsRaw": 310154,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              23,
+              45
+            ],
+            1,
+            [
+              7,
+              30
+            ],
+            345,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              2
+            ],
+            1,
+            "79 ซม.",
+            null,
+            1,
+            "Boeing 787",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "ZG",
+              "52",
+              null,
+              "ZIPAIR Tokyo"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "79 เซนติเมตร",
+            310154,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 310,
+        "comparisonPercent": -16,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -16,
+          null,
+          true,
+          true,
+          310000,
+          371000,
+          [
+            true
+          ],
+          338000,
+          1,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 11580,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 11580 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ ZIPAIR Tokyo ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:45 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 07:30 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 5 ชม. 45 นาที เลือกเที่ยวบิน\"\n        - text: 23:45 – 07:30+1 ZIPAIR Tokyo 5 ชม. 45 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 310 กิโลกรัม. ปริมาณการปล่อยก๊าซ -16%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿11,580\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:45 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 07:30 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img\n    - heading \"ข้อมูลเชิงลึกด้านราคา\" [level=3]\n    - heading \"ขณะนี้เที่ยวบินมีราคาสูง\" [level=4]\n    - button \"ดูประวัติราคา\":\n      - img\n    - region \"หาราคาที่ดีที่สุด\":\n      - img\n      - heading \"ติดตามราคา\" [level=2]\n      - button \"ดูข้อมูลเพิ่มเติมเกี่ยวกับราคาที่ติดตาม\":\n        - link \"ดูข้อมูลเพิ่มเติมเกี่ยวกับราคาที่ติดตาม\":\n          - img\n      - text: ติดตามราคาเที่ยวบินจาก กรุงเทพมหานคร ไป โตเกียว ออกเดินทางวันที่ 2026-11-15\n      - switch \"ติดตามราคาเที่ยวบินจาก กรุงเทพมหานคร ไป โตเกียว ออกเดินทางวันที่ 2026-11-15\":\n        - img\n        - img\n      - text: ติดตามราคาเที่ยวบินจาก กรุงเทพมหานคร ไป โตเกียว - วันใดก็ได้\n      - switch \"ติดตามราคาเที่ยวบินจาก กรุงเทพมหานคร ไป โตเกียว - วันใดก็ได้\":\n        - img\n        - img\n      - button \"ตารางวันที่\":\n        - img\n        - text: ตารางวันที่\n      - button \"กราฟราคา\":\n        - img\n        - text: กราฟราคา\n    - heading \"เที่ยวบินอื่นๆ\" [level=3]\n    - list:",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "ZG",
+          [
+            "ZIPAIR Tokyo"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                23,
+                45
+              ],
+              1,
+              [
+                7,
+                30
+              ],
+              345,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                2
+              ],
+              1,
+              "79 ซม.",
+              null,
+              1,
+              "Boeing 787",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "ZG",
+                "52",
+                null,
+                "ZIPAIR Tokyo"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "79 เซนติเมตร",
+              310154,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            23,
+            45
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            7,
+            30
+          ],
+          345,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "hcU6Xb",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                4
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -16,
+            null,
+            true,
+            true,
+            310000,
+            371000,
+            [
+              true
+            ],
+            338000,
+            1,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "ZG",
+              "ZIPAIR Tokyo",
+              "https://www.zipair.net/th/boarding/support"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            11580
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgRaRzUyGgoIvFoQABoDVEhCOBxwpowC"
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCLxaInUKWQpXCgNCS0sSGTIwMjYtMTEtMTVUMjM6NDU6MDArMDc6MDAaA05SVCIZMjAyNi0xMS0xNlQwNzozMDowMCswOTowMCoCWkcyAjUyOgJaR0ICNTJIAVIDNzg4EgQIAxABGAEoADIOCgxaSVBBSVIgVG9reW8qDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 4,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T19:30:00",
+      "arrivalLocal": "2026-11-16T13:30:00",
+      "airlineCodes": "HU",
+      "airlineNames": [
+        "ไห่หนานแอร์ไลน์"
+      ],
+      "durationMinutes": 960,
+      "stopCount": 1,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HAK",
+            "name": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน"
+          },
+          "departureLocal": "2026-11-15T19:30:00",
+          "arrivalLocal": "2026-11-15T23:00:00",
+          "flightNumber": "HU 722",
+          "airlineCode": "HU",
+          "airlineName": "ไห่หนานแอร์ไลน์",
+          "aircraft": "Airbus A320neo",
+          "durationMinutes": 150,
+          "co2eGramsRaw": 107338,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+            "HAK",
+            null,
+            [
+              19,
+              30
+            ],
+            null,
+            [
+              23
+            ],
+            150,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            2,
+            "74 ซม.",
+            null,
+            1,
+            "Airbus A320neo",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "HU",
+              "722",
+              null,
+              "ไห่หนานแอร์ไลน์"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "74 เซนติเมตร",
+            107338,
+            2
+          ]
+        },
+        {
+          "departureAirport": {
+            "code": "HAK",
+            "name": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-16T07:40:00",
+          "arrivalLocal": "2026-11-16T13:30:00",
+          "flightNumber": "HU 791",
+          "airlineCode": "HU",
+          "airlineName": "ไห่หนานแอร์ไลน์",
+          "aircraft": "Boeing 737",
+          "durationMinutes": 290,
+          "co2eGramsRaw": 311743,
+          "raw": [
+            null,
+            null,
+            null,
+            "HAK",
+            "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            1,
+            [
+              7,
+              40
+            ],
+            1,
+            [
+              13,
+              30
+            ],
+            290,
+            [],
+            2,
+            "74 ซม.",
+            null,
+            1,
+            "Boeing 737",
+            null,
+            false,
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "HU",
+              "791",
+              null,
+              "ไห่หนานแอร์ไลน์"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "74 เซนติเมตร",
+            311743,
+            1
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "durationMinutes": 520,
+          "arrivalAirport": "HAK",
+          "departureAirport": "HAK",
+          "arrivalAirportName": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+          "arrivalCity": "Haikou",
+          "departureAirportName": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+          "departureCity": "Haikou",
+          "airportChange": false,
+          "raw": [
+            520,
+            "HAK",
+            "HAK",
+            [
+              3
+            ],
+            "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+            "Haikou",
+            "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+            "Haikou"
+          ]
+        }
+      ],
+      "co2e": {
+        "kg": 419,
+        "comparisonPercent": 13,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          3,
+          13,
+          null,
+          true,
+          true,
+          419000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          2,
+          null,
+          6
+        ]
+      },
+      "price": {
+        "amount": 9335,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 9335 บาทไทย เดินทางด้วยเที่ยวบินแบบแวะพัก 1 ครั้งกับ ไห่หนานแอร์ไลน์ ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 19:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 13:30 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 16 ชม. การแวะพัก (ครั้งที่ 1 จาก 1) ใช้เวลาแวะพัก 8 ชม. 40 นาที ที่สนามบิน ท่าอากาศยานนานาชาติไหโข่ว เมลัน ในHaikou เลือกเที่ยวบิน\"\n        - text: 19:30 – 13:30+1 ไห่หนานแอร์ไลน์ 16 ชม. หยุดพัก 1 ครั้ง 8 ชม. 40 นาที HAK\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 419 กิโลกรัม. ปริมาณการปล่อยก๊าซ +13%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿9,335\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 19:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 13:30 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            [
+              [
+                520,
+                "HAK",
+                "HAK",
+                [
+                  3
+                ],
+                "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+                "Haikou",
+                "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+                "Haikou"
+              ]
+            ],
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "HU",
+          [
+            "ไห่หนานแอร์ไลน์"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+              "HAK",
+              null,
+              [
+                19,
+                30
+              ],
+              null,
+              [
+                23
+              ],
+              150,
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              2,
+              "74 ซม.",
+              null,
+              1,
+              "Airbus A320neo",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "HU",
+                "722",
+                null,
+                "ไห่หนานแอร์ไลน์"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "74 เซนติเมตร",
+              107338,
+              2
+            ],
+            [
+              null,
+              null,
+              null,
+              "HAK",
+              "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              1,
+              [
+                7,
+                40
+              ],
+              1,
+              [
+                13,
+                30
+              ],
+              290,
+              [],
+              2,
+              "74 ซม.",
+              null,
+              1,
+              "Boeing 737",
+              null,
+              false,
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "HU",
+                "791",
+                null,
+                "ไห่หนานแอร์ไลน์"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "74 เซนติเมตร",
+              311743,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            19,
+            30
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            13,
+            30
+          ],
+          960,
+          1,
+          null,
+          false,
+          [
+            [
+              520,
+              "HAK",
+              "HAK",
+              [
+                3
+              ],
+              "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+              "Haikou",
+              "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+              "Haikou"
+            ]
+          ],
+          null,
+          null,
+          null,
+          "YEeq9",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                5
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            3,
+            13,
+            null,
+            true,
+            true,
+            419000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            2,
+            null,
+            6
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "HU",
+              "ไห่หนานแอร์ไลน์",
+              "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=CN&SITE=CBHZCBHZ&PAGE=CMOR"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            9335
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgtIVTcyMnxIVTc5MRoKCPdIEAAaA1RIQjgccKTYAQ=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCPdIIvQBCrYBClkKA0JLSxIZMjAyNi0xMS0xNVQxOTozMDowMCswNzowMBoDSEFLIhkyMDI2LTExLTE1VDIzOjAwOjAwKzA4OjAwKgJIVTIDNzIyOgJIVUIDNzIySAFSAzMyTgpZCgNIQUsSGTIwMjYtMTEtMTZUMDc6NDA6MDArMDg6MDAaA05SVCIZMjAyNi0xMS0xNlQxMzozMDowMCswOTowMCoCSFUyAzc5MToCSFVCAzc5MUgBUgM3M0gSBAgDEAEYASgAMi8KLeC5hOC4q+C5iOC4q+C4meC4suC4meC5geC4reC4o+C5jOC5hOC4peC4meC5jCoOSGVhZGxlc3NDaHJvbWU\\u003d\"]",
+        [
+          [
+            2
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 5,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T09:35:00",
+      "arrivalLocal": "2026-11-15T17:30:00",
+      "airlineCodes": "VZ",
+      "airlineNames": [
+        "ไทยเวียดเจ๊ทแอร์"
+      ],
+      "durationMinutes": 355,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T09:35:00",
+          "arrivalLocal": "2026-11-15T17:30:00",
+          "flightNumber": "VZ 832",
+          "airlineCode": "VZ",
+          "airlineName": "ไทยเวียดเจ๊ทแอร์",
+          "aircraft": "Boeing 737",
+          "durationMinutes": 355,
+          "co2eGramsRaw": 396434,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              9,
+              35
+            ],
+            null,
+            [
+              17,
+              30
+            ],
+            355,
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            2,
+            "74 ซม.",
+            null,
+            1,
+            "Boeing 737",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "VZ",
+              "832",
+              null,
+              "ไทยเวียดเจ๊ทแอร์"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "74 เซนติเมตร",
+            396434,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 396,
+        "comparisonPercent": 7,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          3,
+          7,
+          null,
+          true,
+          true,
+          396000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          3
+        ]
+      },
+      "price": {
+        "amount": 9842,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 9842 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ ไทยเวียดเจ๊ทแอร์ ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:35 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 17:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 55 นาที เลือกเที่ยวบิน\"\n        - text: 09:35 – 17:30 ไทยเวียดเจ๊ทแอร์ 5 ชม. 55 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 396 กิโลกรัม. ปริมาณการปล่อยก๊าซ +7%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿9,842\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:35 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 17:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "VZ",
+          [
+            "ไทยเวียดเจ๊ทแอร์"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                9,
+                35
+              ],
+              null,
+              [
+                17,
+                30
+              ],
+              355,
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              2,
+              "74 ซม.",
+              null,
+              1,
+              "Boeing 737",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "VZ",
+                "832",
+                null,
+                "ไทยเวียดเจ๊ทแอร์"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "74 เซนติเมตร",
+              396434,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            9,
+            35
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            17,
+            30
+          ],
+          355,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "rB7hcf",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                6
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            3,
+            7,
+            null,
+            true,
+            true,
+            396000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "VZ",
+              "ไทยเวียดเจ๊ทแอร์",
+              "https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            9842
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVWWjgzMhoKCPJMEAAaA1RIQjgccIPkAQ=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCPJMIpsBClsKWQoDQktLEhkyMDI2LTExLTE1VDA5OjM1OjAwKzA3OjAwGgNOUlQiGTIwMjYtMTEtMTVUMTc6MzA6MDArMDk6MDAqAlZaMgM4MzI6AlZaQgM4MzJIAVIDNzM3EgQIAxABGAEoADIyCjDguYTguJfguKLguYDguKfguLXguKLguJTguYDguIjguYrguJfguYHguK3guKPguYwqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            2
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 6,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T12:00:00",
+      "arrivalLocal": "2026-11-16T00:45:00",
+      "airlineCodes": "UO",
+      "airlineNames": [
+        "ฮ่องกงเอ็กซ์เพรส"
+      ],
+      "durationMinutes": 645,
+      "stopCount": 1,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HKG",
+            "name": "ท่าอากาศยานนานาชาติฮ่องกง"
+          },
+          "departureLocal": "2026-11-15T12:00:00",
+          "arrivalLocal": "2026-11-15T15:55:00",
+          "flightNumber": "UO 713",
+          "airlineCode": "UO",
+          "airlineName": "ฮ่องกงเอ็กซ์เพรส",
+          "aircraft": "Airbus A320neo",
+          "durationMinutes": 175,
+          "co2eGramsRaw": 121517,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติฮ่องกง",
+            "HKG",
+            null,
+            [
+              12
+            ],
+            null,
+            [
+              15,
+              55
+            ],
+            175,
+            [],
+            2,
+            "71 ซม.",
+            null,
+            1,
+            "Airbus A320neo",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "UO",
+              "713",
+              null,
+              "ฮ่องกงเอ็กซ์เพรส"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "71 เซนติเมตร",
+            121517,
+            1
+          ]
+        },
+        {
+          "departureAirport": {
+            "code": "HKG",
+            "name": "ท่าอากาศยานนานาชาติฮ่องกง"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T19:55:00",
+          "arrivalLocal": "2026-11-16T00:45:00",
+          "flightNumber": "UO 628",
+          "airlineCode": "UO",
+          "airlineName": "ฮ่องกงเอ็กซ์เพรส",
+          "aircraft": "Airbus A321neo",
+          "durationMinutes": 230,
+          "co2eGramsRaw": 186006,
+          "raw": [
+            null,
+            null,
+            null,
+            "HKG",
+            "ท่าอากาศยานนานาชาติฮ่องกง",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              19,
+              55
+            ],
+            1,
+            [
+              null,
+              45
+            ],
+            230,
+            [],
+            2,
+            "71 ซม.",
+            null,
+            1,
+            "Airbus A321neo",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "UO",
+              "628",
+              null,
+              "ฮ่องกงเอ็กซ์เพรส"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "71 เซนติเมตร",
+            186006,
+            2
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "durationMinutes": 240,
+          "arrivalAirport": "HKG",
+          "departureAirport": "HKG",
+          "arrivalAirportName": "ท่าอากาศยานนานาชาติฮ่องกง",
+          "arrivalCity": "เขตบริหารพิเศษฮ่องกง",
+          "departureAirportName": "ท่าอากาศยานนานาชาติฮ่องกง",
+          "departureCity": "เขตบริหารพิเศษฮ่องกง",
+          "airportChange": false,
+          "raw": [
+            240,
+            "HKG",
+            "HKG",
+            null,
+            "ท่าอากาศยานนานาชาติฮ่องกง",
+            "เขตบริหารพิเศษฮ่องกง",
+            "ท่าอากาศยานนานาชาติฮ่องกง",
+            "เขตบริหารพิเศษฮ่องกง"
+          ]
+        }
+      ],
+      "co2e": {
+        "kg": 308,
+        "comparisonPercent": -17,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -17,
+          null,
+          true,
+          true,
+          308000,
+          371000,
+          [
+            true
+          ],
+          338000,
+          1,
+          false,
+          null,
+          null,
+          2,
+          null,
+          4
+        ]
+      },
+      "price": {
+        "amount": 9952,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 9952 บาทไทย เดินทางด้วยเที่ยวบินแบบแวะพัก 1 ครั้งกับ ฮ่องกงเอ็กซ์เพรส ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 12:00 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 00:45 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 10 ชม. 45 นาที การแวะพัก (ครั้งที่ 1 จาก 1) ใช้เวลาแวะพัก 4 ชม. ที่สนามบิน ท่าอากาศยานนานาชาติฮ่องกง ในเขตบริหารพิเศษฮ่องกง เลือกเที่ยวบิน\"\n        - text: 12:00 – 00:45+1 ฮ่องกงเอ็กซ์เพรส 10 ชม. 45 นาที หยุดพัก 1 ครั้ง 4 ชม. HKG\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 308 กิโลกรัม. ปริมาณการปล่อยก๊าซ -17%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿9,952\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 12:00 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 00:45 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            [
+              [
+                240,
+                "HKG",
+                "HKG",
+                null,
+                "ท่าอากาศยานนานาชาติฮ่องกง",
+                "เขตบริหารพิเศษฮ่องกง",
+                "ท่าอากาศยานนานาชาติฮ่องกง",
+                "เขตบริหารพิเศษฮ่องกง"
+              ]
+            ],
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "UO",
+          [
+            "ฮ่องกงเอ็กซ์เพรส"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติฮ่องกง",
+              "HKG",
+              null,
+              [
+                12
+              ],
+              null,
+              [
+                15,
+                55
+              ],
+              175,
+              [],
+              2,
+              "71 ซม.",
+              null,
+              1,
+              "Airbus A320neo",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "UO",
+                "713",
+                null,
+                "ฮ่องกงเอ็กซ์เพรส"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "71 เซนติเมตร",
+              121517,
+              1
+            ],
+            [
+              null,
+              null,
+              null,
+              "HKG",
+              "ท่าอากาศยานนานาชาติฮ่องกง",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                19,
+                55
+              ],
+              1,
+              [
+                null,
+                45
+              ],
+              230,
+              [],
+              2,
+              "71 ซม.",
+              null,
+              1,
+              "Airbus A321neo",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "UO",
+                "628",
+                null,
+                "ฮ่องกงเอ็กซ์เพรส"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "71 เซนติเมตร",
+              186006,
+              2
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            12
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            null,
+            45
+          ],
+          645,
+          1,
+          null,
+          false,
+          [
+            [
+              240,
+              "HKG",
+              "HKG",
+              null,
+              "ท่าอากาศยานนานาชาติฮ่องกง",
+              "เขตบริหารพิเศษฮ่องกง",
+              "ท่าอากาศยานนานาชาติฮ่องกง",
+              "เขตบริหารพิเศษฮ่องกง"
+            ]
+          ],
+          null,
+          null,
+          null,
+          "Cn4Chf",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                7
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -17,
+            null,
+            true,
+            true,
+            308000,
+            371000,
+            [
+              true
+            ],
+            338000,
+            1,
+            false,
+            null,
+            null,
+            2,
+            null,
+            4
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "UO",
+              "ฮ่องกงเอ็กซ์เพรส",
+              "https://www.hkexpress.com/en-HK/Plan/Travel/Special-Assistance"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            9952
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgtVTzcxM3xVTzYyOBoKCOBNEAAaA1RIQjgccMrmAQ=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCOBNIvcBCrYBClkKA0JLSxIZMjAyNi0xMS0xNVQxMjowMDowMCswNzowMBoDSEtHIhkyMDI2LTExLTE1VDE1OjU1OjAwKzA4OjAwKgJVTzIDNzEzOgJVT0IDNzEzSAFSAzMyTgpZCgNIS0cSGTIwMjYtMTEtMTVUMTk6NTU6MDArMDg6MDAaA0hORCIZMjAyNi0xMS0xNlQwMDo0NTowMCswOTowMCoCVU8yAzYyODoCVU9CAzYyOEgBUgMzMlESBAgDEAEYASgAMjIKMOC4ruC5iOC4reC4h+C4geC4h+C5gOC4reC5h+C4geC4i+C5jOC5gOC4nuC4o+C4qioOSGVhZGxlc3NDaHJvbWU\\u003d\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 7,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "DMK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T23:55:00",
+      "arrivalLocal": "2026-11-16T08:00:00",
+      "airlineCodes": "XJ",
+      "airlineNames": [
+        "แอร์เอเชีย"
+      ],
+      "durationMinutes": 365,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "DMK",
+            "name": "ท่าอากาศยานดอนเมือง"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T23:55:00",
+          "arrivalLocal": "2026-11-16T08:00:00",
+          "flightNumber": "XJ 600",
+          "airlineCode": "XJ",
+          "airlineName": "แอร์เอเชีย",
+          "aircraft": "Airbus A330",
+          "durationMinutes": 365,
+          "co2eGramsRaw": 296156,
+          "raw": [
+            null,
+            null,
+            null,
+            "DMK",
+            "ท่าอากาศยานดอนเมือง",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              23,
+              55
+            ],
+            1,
+            [
+              8
+            ],
+            365,
+            [],
+            1,
+            "76 ซม.",
+            null,
+            1,
+            "Airbus A330",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "XJ",
+              "600",
+              null,
+              "แอร์เอเชีย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "76 เซนติเมตร",
+            296156,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 296,
+        "comparisonPercent": -20,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -20,
+          null,
+          true,
+          true,
+          296000,
+          371000,
+          [
+            true
+          ],
+          338000,
+          1,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 11660,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 11660 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ แอร์เอเชีย ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 23:55 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 08:00 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 6 ชม. 5 นาที เลือกเที่ยวบิน\"\n        - text: 23:55 – 08:00+1 แอร์เอเชีย 6 ชม. 5 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 296 กิโลกรัม. ปริมาณการปล่อยก๊าซ -20%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿11,660\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 23:55 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 08:00 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "XJ",
+          [
+            "แอร์เอเชีย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "DMK",
+              "ท่าอากาศยานดอนเมือง",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                23,
+                55
+              ],
+              1,
+              [
+                8
+              ],
+              365,
+              [],
+              1,
+              "76 ซม.",
+              null,
+              1,
+              "Airbus A330",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "XJ",
+                "600",
+                null,
+                "แอร์เอเชีย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "76 เซนติเมตร",
+              296156,
+              1
+            ]
+          ],
+          "DMK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            23,
+            55
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            8
+          ],
+          365,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "b7Wnbc",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                8
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -20,
+            null,
+            true,
+            true,
+            296000,
+            371000,
+            [
+              true
+            ],
+            338000,
+            1,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          [
+            null,
+            11660
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVYSjYwMBoKCIxbEAAaA1RIQjgccJOOAg=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCIxbIokBClsKWQoDRE1LEhkyMDI2LTExLTE1VDIzOjU1OjAwKzA3OjAwGgNOUlQiGTIwMjYtMTEtMTZUMDg6MDA6MDArMDk6MDAqAlhKMgM2MDA6AlhKQgM2MDBIAVIDMzMzEgQIAxABGAEoADIgCh7guYHguK3guKPguYzguYDguK3guYDguIrguLXguKIqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 8,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T14:25:00",
+      "arrivalLocal": "2026-11-15T22:05:00",
+      "airlineCodes": "TG",
+      "airlineNames": [
+        "การบินไทย"
+      ],
+      "durationMinutes": 340,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T14:25:00",
+          "arrivalLocal": "2026-11-15T22:05:00",
+          "flightNumber": "TG 660",
+          "airlineCode": "TG",
+          "airlineName": "การบินไทย",
+          "aircraft": "Airbus A350",
+          "durationMinutes": 340,
+          "co2eGramsRaw": 331262,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              14,
+              25
+            ],
+            null,
+            [
+              22,
+              5
+            ],
+            340,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            3,
+            "81 ซม.",
+            null,
+            1,
+            "Airbus A350",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "TG",
+              "660",
+              null,
+              "การบินไทย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "81 เซนติเมตร",
+            331262,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 331,
+        "comparisonPercent": -11,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -11,
+          null,
+          true,
+          true,
+          331000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 15320,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 15320 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ การบินไทย ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 14:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 22:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 40 นาที เลือกเที่ยวบิน\"\n        - text: 14:25 – 22:05 การบินไทย 5 ชม. 40 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 331 กิโลกรัม. ปริมาณการปล่อยก๊าซ -11%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿15,320\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 14:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 22:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "TG",
+          [
+            "การบินไทย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                14,
+                25
+              ],
+              null,
+              [
+                22,
+                5
+              ],
+              340,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              3,
+              "81 ซม.",
+              null,
+              1,
+              "Airbus A350",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "TG",
+                "660",
+                null,
+                "การบินไทย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "81 เซนติเมตร",
+              331262,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            14,
+            25
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            22,
+            5
+          ],
+          340,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "cGic0b",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                9
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -11,
+            null,
+            true,
+            true,
+            331000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "TG",
+              "การบินไทย",
+              "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            15320
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVURzY2MBoKCNh3EAAaA1RIQjgccPniAg=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCNh3IoYBClsKWQoDQktLEhkyMDI2LTExLTE1VDE0OjI1OjAwKzA3OjAwGgNITkQiGTIwMjYtMTEtMTVUMjI6MDU6MDArMDk6MDAqAlRHMgM2NjA6AlRHQgM2NjBIAVIDMzU5EgQIAxABGAEoADIdChvguIHguLLguKPguJrguLTguJnguYTguJfguKIqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 9,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T22:30:00",
+      "arrivalLocal": "2026-11-16T06:20:00",
+      "airlineCodes": "TG",
+      "airlineNames": [
+        "การบินไทย"
+      ],
+      "durationMinutes": 350,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T22:30:00",
+          "arrivalLocal": "2026-11-16T06:20:00",
+          "flightNumber": "TG 640",
+          "airlineCode": "TG",
+          "airlineName": "การบินไทย",
+          "aircraft": "Airbus A350",
+          "durationMinutes": 350,
+          "co2eGramsRaw": 337648,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              22,
+              30
+            ],
+            1,
+            [
+              6,
+              20
+            ],
+            350,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            3,
+            "81 ซม.",
+            null,
+            1,
+            "Airbus A350",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "TG",
+              "640",
+              null,
+              "การบินไทย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "81 เซนติเมตร",
+            337648,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 338,
+        "comparisonPercent": -9,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -9,
+          null,
+          true,
+          true,
+          338000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 15320,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 15320 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ การบินไทย ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 22:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 06:20 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 5 ชม. 50 นาที เลือกเที่ยวบิน\"\n        - text: 22:30 – 06:20+1 การบินไทย 5 ชม. 50 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 338 กิโลกรัม. ปริมาณการปล่อยก๊าซ -9%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿15,320\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 22:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 06:20 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "TG",
+          [
+            "การบินไทย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                22,
+                30
+              ],
+              1,
+              [
+                6,
+                20
+              ],
+              350,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              3,
+              "81 ซม.",
+              null,
+              1,
+              "Airbus A350",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "TG",
+                "640",
+                null,
+                "การบินไทย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "81 เซนติเมตร",
+              337648,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            22,
+            30
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            6,
+            20
+          ],
+          350,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "zDw1ub",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                10
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -9,
+            null,
+            true,
+            true,
+            338000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "TG",
+              "การบินไทย",
+              "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            15320
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVURzY0MBoKCNh3EAAaA1RIQjgccPniAg=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCNh3IoYBClsKWQoDQktLEhkyMDI2LTExLTE1VDIyOjMwOjAwKzA3OjAwGgNOUlQiGTIwMjYtMTEtMTZUMDY6MjA6MDArMDk6MDAqAlRHMgM2NDA6AlRHQgM2NDBIAVIDMzU5EgQIAxABGAEoADIdChvguIHguLLguKPguJrguLTguJnguYTguJfguKIqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 10,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T23:15:00",
+      "arrivalLocal": "2026-11-16T06:55:00",
+      "airlineCodes": "TG",
+      "airlineNames": [
+        "การบินไทย"
+      ],
+      "durationMinutes": 340,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T23:15:00",
+          "arrivalLocal": "2026-11-16T06:55:00",
+          "flightNumber": "TG 682",
+          "airlineCode": "TG",
+          "airlineName": "การบินไทย",
+          "aircraft": "Boeing 777",
+          "durationMinutes": 340,
+          "co2eGramsRaw": 401206,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              23,
+              15
+            ],
+            1,
+            [
+              6,
+              55
+            ],
+            340,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            3,
+            "81 ซม.",
+            null,
+            1,
+            "Boeing 777",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "TG",
+              "682",
+              null,
+              "การบินไทย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "81 เซนติเมตร",
+            401206,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 401,
+        "comparisonPercent": 8,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          3,
+          8,
+          null,
+          true,
+          true,
+          401000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          3
+        ]
+      },
+      "price": {
+        "amount": 15320,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 15320 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ การบินไทย ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:15 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 06:55 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 5 ชม. 40 นาที เลือกเที่ยวบิน\"\n        - text: 23:15 – 06:55+1 การบินไทย 5 ชม. 40 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 401 กิโลกรัม. ปริมาณการปล่อยก๊าซ +8%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿15,320\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:15 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 06:55 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "TG",
+          [
+            "การบินไทย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                23,
+                15
+              ],
+              1,
+              [
+                6,
+                55
+              ],
+              340,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              3,
+              "81 ซม.",
+              null,
+              1,
+              "Boeing 777",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "TG",
+                "682",
+                null,
+                "การบินไทย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "81 เซนติเมตร",
+              401206,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            23,
+            15
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            6,
+            55
+          ],
+          340,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "Ui5IKc",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                11
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            3,
+            8,
+            null,
+            true,
+            true,
+            401000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "TG",
+              "การบินไทย",
+              "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            15320
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVURzY4MhoKCNh3EAAaA1RIQjgccPniAg=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCNh3IoYBClsKWQoDQktLEhkyMDI2LTExLTE1VDIzOjE1OjAwKzA3OjAwGgNITkQiGTIwMjYtMTEtMTZUMDY6NTU6MDArMDk6MDAqAlRHMgM2ODI6AlRHQgM2ODJIAVIDNzdXEgQIAxABGAEoADIdChvguIHguLLguKPguJrguLTguJnguYTguJfguKIqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            2
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 11,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T23:45:00",
+      "arrivalLocal": "2026-11-16T07:40:00",
+      "airlineCodes": "TG",
+      "airlineNames": [
+        "การบินไทย"
+      ],
+      "durationMinutes": 355,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T23:45:00",
+          "arrivalLocal": "2026-11-16T07:40:00",
+          "flightNumber": "TG 642",
+          "airlineCode": "TG",
+          "airlineName": "การบินไทย",
+          "aircraft": "Airbus A350",
+          "durationMinutes": 355,
+          "co2eGramsRaw": 337648,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              23,
+              45
+            ],
+            1,
+            [
+              7,
+              40
+            ],
+            355,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true
+            ],
+            3,
+            "81 ซม.",
+            null,
+            1,
+            "Airbus A350",
+            [
+              true,
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "TG",
+              "642",
+              null,
+              "การบินไทย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "81 เซนติเมตร",
+            337648,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 338,
+        "comparisonPercent": -9,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -9,
+          null,
+          true,
+          true,
+          338000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 15320,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 15320 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ การบินไทย ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:45 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 07:40 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 5 ชม. 55 นาที เลือกเที่ยวบิน\"\n        - text: 23:45 – 07:40+1 การบินไทย 5 ชม. 55 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 338 กิโลกรัม. ปริมาณการปล่อยก๊าซ -9%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿15,320\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 23:45 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 07:40 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "TG",
+          [
+            "การบินไทย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                23,
+                45
+              ],
+              1,
+              [
+                7,
+                40
+              ],
+              355,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true
+              ],
+              3,
+              "81 ซม.",
+              null,
+              1,
+              "Airbus A350",
+              [
+                true,
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "TG",
+                "642",
+                null,
+                "การบินไทย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "81 เซนติเมตร",
+              337648,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            23,
+            45
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            7,
+            40
+          ],
+          355,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "XZj3Oc",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                12
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -9,
+            null,
+            true,
+            true,
+            338000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "TG",
+              "การบินไทย",
+              "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            15320
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVURzY0MhoKCNh3EAAaA1RIQjgccPniAg=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoDCNh3IoYBClsKWQoDQktLEhkyMDI2LTExLTE1VDIzOjQ1OjAwKzA3OjAwGgNOUlQiGTIwMjYtMTEtMTZUMDc6NDA6MDArMDk6MDAqAlRHMgM2NDI6AlRHQgM2NDJIAVIDMzU5EgQIAxABGAEoADIdChvguIHguLLguKPguJrguLTguJnguYTguJfguKIqDkhlYWRsZXNzQ2hyb21l\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 12,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T07:55:00",
+      "arrivalLocal": "2026-11-15T15:50:00",
+      "airlineCodes": "JL",
+      "airlineNames": [
+        "เจเอแอล"
+      ],
+      "durationMinutes": 355,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T07:55:00",
+          "arrivalLocal": "2026-11-15T15:50:00",
+          "flightNumber": "JL 708",
+          "airlineCode": "JL",
+          "airlineName": "เจเอแอล",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 355,
+          "co2eGramsRaw": 381088,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              7,
+              55
+            ],
+            null,
+            [
+              15,
+              50
+            ],
+            355,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            1,
+            "79 ซม.",
+            [
+              [
+                "PG",
+                "4161",
+                null,
+                "บางกอกแอร์เวย์ส"
+              ]
+            ],
+            1,
+            "Boeing 787",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "JL",
+              "708",
+              null,
+              "เจเอแอล"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "79 เซนติเมตร",
+            381088,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 381,
+        "comparisonPercent": 3,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          2,
+          3,
+          null,
+          true,
+          true,
+          381000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          2
+        ]
+      },
+      "price": {
+        "amount": 16390,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 16390 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เจเอแอล ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 07:55 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 15:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 55 นาที เลือกเที่ยวบิน\"\n        - text: 07:55 – 15:50 เจเอแอล·บางกอกแอร์เวย์ส 5 ชม. 55 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 381 กิโลกรัม. การปล่อยก๊าซโดยเฉลี่ย. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿16,390\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 07:55 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 15:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            [
+              "บางกอกแอร์เวย์ส"
+            ]
+          ]
+        }
+      },
+      "raw": [
+        [
+          "JL",
+          [
+            "เจเอแอล"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                7,
+                55
+              ],
+              null,
+              [
+                15,
+                50
+              ],
+              355,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              1,
+              "79 ซม.",
+              [
+                [
+                  "PG",
+                  "4161",
+                  null,
+                  "บางกอกแอร์เวย์ส"
+                ]
+              ],
+              1,
+              "Boeing 787",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "JL",
+                "708",
+                null,
+                "เจเอแอล"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "79 เซนติเมตร",
+              381088,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            7,
+            55
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            15,
+            50
+          ],
+          355,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          [
+            "บางกอกแอร์เวย์ส"
+          ],
+          "KFRjJc",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                13
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            2,
+            3,
+            null,
+            true,
+            true,
+            381000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "JL",
+              "เจเอแอล",
+              "https://www.jal.co.jp/en/jalpri/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            16390
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVKTDcwOBoLCIaAARAAGgNUSEI4HHDe+wI="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECIaAASKwAQpcCloKA0JLSxIZMjAyNi0xMS0xNVQwNzo1NTowMCswNzowMBoDTlJUIhkyMDI2LTExLTE1VDE1OjUwOjAwKzA5OjAwKgJKTDIDNzA4OgJQR0IENDE2MUgBUgM3ODgSBAgDEAEYASgAMkYKLeC4muC4suC4h+C4geC4reC4geC5geC4reC4o+C5jOC5gOC4p+C4ouC5jOC4qgoV4LmA4LiI4LmA4Lit4LmB4Lit4LilKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        null,
+        false
+      ]
+    },
+    {
+      "id": 13,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "DMK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T01:40:00",
+      "arrivalLocal": "2026-11-15T09:45:00",
+      "airlineCodes": "XJ",
+      "airlineNames": [
+        "แอร์เอเชีย"
+      ],
+      "durationMinutes": 365,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "DMK",
+            "name": "ท่าอากาศยานดอนเมือง"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T01:40:00",
+          "arrivalLocal": "2026-11-15T09:45:00",
+          "flightNumber": "XJ 602",
+          "airlineCode": "XJ",
+          "airlineName": "แอร์เอเชีย",
+          "aircraft": "Airbus A330",
+          "durationMinutes": 365,
+          "co2eGramsRaw": 355899,
+          "raw": [
+            null,
+            null,
+            null,
+            "DMK",
+            "ท่าอากาศยานดอนเมือง",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              1,
+              40
+            ],
+            null,
+            [
+              9,
+              45
+            ],
+            365,
+            [],
+            3,
+            "81 ซม.",
+            null,
+            1,
+            "Airbus A330",
+            [
+              true,
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "XJ",
+              "602",
+              null,
+              "แอร์เอเชีย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "81 เซนติเมตร",
+            355899,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 356,
+        "comparisonPercent": -4,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          2,
+          -4,
+          null,
+          true,
+          true,
+          356000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          2
+        ]
+      },
+      "price": {
+        "amount": 17660,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 17660 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ แอร์เอเชีย ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 01:40 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 09:45 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 6 ชม. 5 นาที เลือกเที่ยวบิน\"\n        - text: 01:40 – 09:45 แอร์เอเชีย 6 ชม. 5 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 356 กิโลกรัม. การปล่อยก๊าซโดยเฉลี่ย. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿17,660\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 01:40 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 09:45 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "XJ",
+          [
+            "แอร์เอเชีย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "DMK",
+              "ท่าอากาศยานดอนเมือง",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                1,
+                40
+              ],
+              null,
+              [
+                9,
+                45
+              ],
+              365,
+              [],
+              3,
+              "81 ซม.",
+              null,
+              1,
+              "Airbus A330",
+              [
+                true,
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "XJ",
+                "602",
+                null,
+                "แอร์เอเชีย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "81 เซนติเมตร",
+              355899,
+              1
+            ]
+          ],
+          "DMK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            1,
+            40
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            9,
+            45
+          ],
+          365,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "kGH3re",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                14
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            2,
+            -4,
+            null,
+            true,
+            true,
+            356000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            2
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          [
+            null,
+            17660
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVYSjYwMhoLCPyJARAAGgNUSEI4HHCUmQM="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECPyJASKJAQpbClkKA0RNSxIZMjAyNi0xMS0xNVQwMTo0MDowMCswNzowMBoDTlJUIhkyMDI2LTExLTE1VDA5OjQ1OjAwKzA5OjAwKgJYSjIDNjAyOgJYSkIDNjAySAFSAzMzMxIECAMQARgBKAAyIAoe4LmB4Lit4Lij4LmM4LmA4Lit4LmA4LiK4Li14LiiKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        null,
+        false
+      ]
+    },
+    {
+      "id": 14,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T08:00:00",
+      "arrivalLocal": "2026-11-15T15:50:00",
+      "airlineCodes": "TG",
+      "airlineNames": [
+        "การบินไทย"
+      ],
+      "durationMinutes": 350,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T08:00:00",
+          "arrivalLocal": "2026-11-15T15:50:00",
+          "flightNumber": "TG 676",
+          "airlineCode": "TG",
+          "airlineName": "การบินไทย",
+          "aircraft": "Boeing 777",
+          "durationMinutes": 350,
+          "co2eGramsRaw": 426076,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              8
+            ],
+            null,
+            [
+              15,
+              50
+            ],
+            350,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            3,
+            "81 ซม.",
+            null,
+            1,
+            "Boeing 777",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "TG",
+              "676",
+              null,
+              "การบินไทย"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "81 เซนติเมตร",
+            426076,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 426,
+        "comparisonPercent": 15,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          3,
+          15,
+          null,
+          true,
+          true,
+          426000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          3
+        ]
+      },
+      "price": {
+        "amount": 19365,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 19365 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ การบินไทย ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 08:00 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 15:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 50 นาที เลือกเที่ยวบิน\"\n        - text: 08:00 – 15:50 การบินไทย 5 ชม. 50 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 426 กิโลกรัม. ปริมาณการปล่อยก๊าซ +15%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿19,365\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 08:00 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 15:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "TG",
+          [
+            "การบินไทย"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                8
+              ],
+              null,
+              [
+                15,
+                50
+              ],
+              350,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              3,
+              "81 ซม.",
+              null,
+              1,
+              "Boeing 777",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "TG",
+                "676",
+                null,
+                "การบินไทย"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "81 เซนติเมตร",
+              426076,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            8
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            15,
+            50
+          ],
+          350,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "Y5VO9d",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                15
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            3,
+            15,
+            null,
+            true,
+            true,
+            426000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "TG",
+              "การบินไทย",
+              "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            19365
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVURzY3NhoLCKWXARAAGgNUSEI4HHDVwAM="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECKWXASKGAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQwODowMDowMCswNzowMBoDTlJUIhkyMDI2LTExLTE1VDE1OjUwOjAwKzA5OjAwKgJURzIDNjc2OgJUR0IDNjc2SAFSAzc3VxIECAMQARgBKAAyHQob4LiB4Liy4Lij4Lia4Li04LiZ4LmE4LiX4LiiKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        [
+          [
+            2
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 15,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T09:50:00",
+      "arrivalLocal": "2026-11-15T17:30:00",
+      "airlineCodes": "JL",
+      "airlineNames": [
+        "เจเอแอล"
+      ],
+      "durationMinutes": 340,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T09:50:00",
+          "arrivalLocal": "2026-11-15T17:30:00",
+          "flightNumber": "JL 32",
+          "airlineCode": "JL",
+          "airlineName": "เจเอแอล",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 340,
+          "co2eGramsRaw": 352915,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              9,
+              50
+            ],
+            null,
+            [
+              17,
+              30
+            ],
+            340,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            3,
+            "84 ซม.",
+            [
+              [
+                "PG",
+                "4155",
+                null,
+                "บางกอกแอร์เวย์ส"
+              ]
+            ],
+            1,
+            "Boeing 787",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "JL",
+              "32",
+              null,
+              "เจเอแอล"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "84 เซนติเมตร",
+            352915,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 353,
+        "comparisonPercent": -5,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          2,
+          -5,
+          null,
+          true,
+          true,
+          353000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          2
+        ]
+      },
+      "price": {
+        "amount": 22990,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 22990 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เจเอแอล ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 17:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 40 นาที เลือกเที่ยวบิน\"\n        - text: 09:50 – 17:30 เจเอแอล·บางกอกแอร์เวย์ส 5 ชม. 40 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 353 กิโลกรัม. การปล่อยก๊าซโดยเฉลี่ย. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿22,990\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:50 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 17:30 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            [
+              "บางกอกแอร์เวย์ส"
+            ]
+          ]
+        }
+      },
+      "raw": [
+        [
+          "JL",
+          [
+            "เจเอแอล"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                9,
+                50
+              ],
+              null,
+              [
+                17,
+                30
+              ],
+              340,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              3,
+              "84 ซม.",
+              [
+                [
+                  "PG",
+                  "4155",
+                  null,
+                  "บางกอกแอร์เวย์ส"
+                ]
+              ],
+              1,
+              "Boeing 787",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "JL",
+                "32",
+                null,
+                "เจเอแอล"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "84 เซนติเมตร",
+              352915,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            9,
+            50
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            17,
+            30
+          ],
+          340,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          [
+            "บางกอกแอร์เวย์ส"
+          ],
+          "k21vEf",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                16
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            2,
+            -5,
+            null,
+            true,
+            true,
+            353000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "JL",
+              "เจเอแอล",
+              "https://www.jal.co.jp/en/jalpri/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            22990
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgRKTDMyGgsIzrMBEAAaA1RIQjgccNOUBA=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECM6zASKvAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQwOTo1MDowMCswNzowMBoDSE5EIhkyMDI2LTExLTE1VDE3OjMwOjAwKzA5OjAwKgJKTDICMzI6AlBHQgQ0MTU1SAFSAzc4ORIECAMQARgBKAAyRgot4Lia4Liy4LiH4LiB4Lit4LiB4LmB4Lit4Lij4LmM4LmA4Lin4Lii4LmM4LiqChXguYDguIjguYDguK3guYHguK3guKUqDkhlYWRsZXNzQ2hyb21l\"]",
+        null,
+        false
+      ]
+    },
+    {
+      "id": 16,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T22:05:00",
+      "arrivalLocal": "2026-11-16T05:45:00",
+      "airlineCodes": "JL",
+      "airlineNames": [
+        "เจเอแอล"
+      ],
+      "durationMinutes": 340,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T22:05:00",
+          "arrivalLocal": "2026-11-16T05:45:00",
+          "flightNumber": "JL 34",
+          "airlineCode": "JL",
+          "airlineName": "เจเอแอล",
+          "aircraft": "Boeing 777",
+          "durationMinutes": 340,
+          "co2eGramsRaw": 387174,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              22,
+              5
+            ],
+            1,
+            [
+              5,
+              45
+            ],
+            340,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            3,
+            "84 ซม.",
+            [
+              [
+                "PG",
+                "4153",
+                null,
+                "บางกอกแอร์เวย์ส"
+              ]
+            ],
+            1,
+            "Boeing 777",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "JL",
+              "34",
+              null,
+              "เจเอแอล"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "84 เซนติเมตร",
+            387174,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 387,
+        "comparisonPercent": 4,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          2,
+          4,
+          null,
+          true,
+          true,
+          387000,
+          371000,
+          null,
+          338000,
+          3,
+          false,
+          null,
+          null,
+          1,
+          null,
+          2
+        ]
+      },
+      "price": {
+        "amount": 24990,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 24990 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เจเอแอล ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 22:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 05:45 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 5 ชม. 40 นาที เลือกเที่ยวบิน\"\n        - text: 22:05 – 05:45+1 เจเอแอล·บางกอกแอร์เวย์ส 5 ชม. 40 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 387 กิโลกรัม. การปล่อยก๊าซโดยเฉลี่ย. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿24,990\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 22:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 05:45 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            [
+              "บางกอกแอร์เวย์ส"
+            ]
+          ]
+        }
+      },
+      "raw": [
+        [
+          "JL",
+          [
+            "เจเอแอล"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                22,
+                5
+              ],
+              1,
+              [
+                5,
+                45
+              ],
+              340,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              3,
+              "84 ซม.",
+              [
+                [
+                  "PG",
+                  "4153",
+                  null,
+                  "บางกอกแอร์เวย์ส"
+                ]
+              ],
+              1,
+              "Boeing 777",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "JL",
+                "34",
+                null,
+                "เจเอแอล"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "84 เซนติเมตร",
+              387174,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            22,
+            5
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            5,
+            45
+          ],
+          340,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          [
+            "บางกอกแอร์เวย์ส"
+          ],
+          "gBEyyb",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                17
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            2,
+            4,
+            null,
+            true,
+            true,
+            387000,
+            371000,
+            null,
+            338000,
+            3,
+            false,
+            null,
+            null,
+            1,
+            null,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "JL",
+              "เจเอแอล",
+              "https://www.jal.co.jp/en/jalpri/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            24990
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgRKTDM0GgsInsMBEAAaA1RIQjgccP7CBA=="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECJ7DASKvAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQyMjowNTowMCswNzowMBoDSE5EIhkyMDI2LTExLTE2VDA1OjQ1OjAwKzA5OjAwKgJKTDICMzQ6AlBHQgQ0MTUzSAFSAzc3MxIECAMQARgBKAAyRgot4Lia4Liy4LiH4LiB4Lit4LiB4LmB4Lit4Lij4LmM4LmA4Lin4Lii4LmM4LiqChXguYDguIjguYDguK3guYHguK3guKUqDkhlYWRsZXNzQ2hyb21l\"]",
+        null,
+        false
+      ]
+    },
+    {
+      "id": 17,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T14:20:00",
+      "arrivalLocal": "2026-11-15T22:10:00",
+      "airlineCodes": "NH",
+      "airlineNames": [
+        "เอเอ็นเอ"
+      ],
+      "durationMinutes": 350,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T14:20:00",
+          "arrivalLocal": "2026-11-15T22:10:00",
+          "flightNumber": "NH 878",
+          "airlineCode": "NH",
+          "airlineName": "เอเอ็นเอ",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 350,
+          "co2eGramsRaw": 312802,
+          "raw": [
+            null,
+            null,
+            "Air Japan",
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              14,
+              20
+            ],
+            null,
+            [
+              22,
+              10
+            ],
+            350,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            1,
+            "79 ซม.",
+            null,
+            1,
+            "Boeing 787",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "NH",
+              "878",
+              null,
+              "เอเอ็นเอ"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "79 เซนติเมตร",
+            312802,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 313,
+        "comparisonPercent": -16,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -16,
+          null,
+          true,
+          true,
+          313000,
+          371000,
+          null,
+          338000,
+          1,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 29425,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 29425 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เอเอ็นเอ ดำเนินการโดย Air Japan. ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 14:20 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 22:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 50 นาที เลือกเที่ยวบิน\"\n        - text: 14:20 – 22:10 เอเอ็นเอ·ดำเนินการโดย Air Japan 5 ชม. 50 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 313 กิโลกรัม. ปริมาณการปล่อยก๊าซ -16%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿29,425\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 14:20 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 22:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "NH",
+          [
+            "เอเอ็นเอ"
+          ],
+          [
+            [
+              null,
+              null,
+              "Air Japan",
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                14,
+                20
+              ],
+              null,
+              [
+                22,
+                10
+              ],
+              350,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              1,
+              "79 ซม.",
+              null,
+              1,
+              "Boeing 787",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "NH",
+                "878",
+                null,
+                "เอเอ็นเอ"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "79 เซนติเมตร",
+              312802,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            14,
+            20
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            22,
+            10
+          ],
+          350,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "icegfd",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                18
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -16,
+            null,
+            true,
+            true,
+            313000,
+            371000,
+            null,
+            338000,
+            1,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "NH",
+              "เอเอ็นเอ",
+              "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            29425
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVOSDg3OBoLCPHlARAAGgNUSEI4HHDfqQU="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECPHlASKDAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQxNDoyMDowMCswNzowMBoDSE5EIhkyMDI2LTExLTE1VDIyOjEwOjAwKzA5OjAwKgJOSDIDODc4OgJOSEIDODc4SAFSAzc4OBIECAMQARgBKAAyGgoY4LmA4Lit4LmA4Lit4LmH4LiZ4LmA4LitKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 18,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T00:10:00",
+      "arrivalLocal": "2026-11-15T08:05:00",
+      "airlineCodes": "NH",
+      "airlineNames": [
+        "เอเอ็นเอ"
+      ],
+      "durationMinutes": 355,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T00:10:00",
+          "arrivalLocal": "2026-11-15T08:05:00",
+          "flightNumber": "NH 808",
+          "airlineCode": "NH",
+          "airlineName": "เอเอ็นเอ",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 355,
+          "co2eGramsRaw": 318864,
+          "raw": [
+            null,
+            null,
+            "Air Japan",
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              null,
+              10
+            ],
+            null,
+            [
+              8,
+              5
+            ],
+            355,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            1,
+            "79 ซม.",
+            null,
+            1,
+            "Boeing 787",
+            [
+              true,
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "NH",
+              "808",
+              null,
+              "เอเอ็นเอ"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "79 เซนติเมตร",
+            318864,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 319,
+        "comparisonPercent": -14,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -14,
+          null,
+          true,
+          true,
+          319000,
+          371000,
+          null,
+          338000,
+          1,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 29925,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 29925 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เอเอ็นเอ ดำเนินการโดย Air Japan. ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 00:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 08:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 55 นาที เลือกเที่ยวบิน\"\n        - text: 00:10 – 08:05 เอเอ็นเอ·ดำเนินการโดย Air Japan 5 ชม. 55 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 319 กิโลกรัม. ปริมาณการปล่อยก๊าซ -14%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿29,925\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 00:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 08:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "NH",
+          [
+            "เอเอ็นเอ"
+          ],
+          [
+            [
+              null,
+              null,
+              "Air Japan",
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                null,
+                10
+              ],
+              null,
+              [
+                8,
+                5
+              ],
+              355,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              1,
+              "79 ซม.",
+              null,
+              1,
+              "Boeing 787",
+              [
+                true,
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "NH",
+                "808",
+                null,
+                "เอเอ็นเอ"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "79 เซนติเมตร",
+              318864,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            null,
+            10
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            8,
+            5
+          ],
+          355,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "MKMdbe",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                19
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -14,
+            null,
+            true,
+            true,
+            319000,
+            371000,
+            null,
+            338000,
+            1,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "NH",
+              "เอเอ็นเอ",
+              "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            29925
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVOSDgwOBoLCOXpARAAGgNUSEI4HHCqtQU="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECOXpASKDAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQwMDoxMDowMCswNzowMBoDTlJUIhkyMDI2LTExLTE1VDA4OjA1OjAwKzA5OjAwKgJOSDIDODA4OgJOSEIDODA4SAFSAzc4OBIECAMQARgBKAAyGgoY4LmA4Lit4LmA4Lit4LmH4LiZ4LmA4LitKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 19,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "NRT",
+      "departureLocal": "2026-11-15T07:10:00",
+      "arrivalLocal": "2026-11-15T15:05:00",
+      "airlineCodes": "NH",
+      "airlineNames": [
+        "เอเอ็นเอ"
+      ],
+      "durationMinutes": 355,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "NRT",
+            "name": "ท่าอากาศยานนานาชาตินะริตะ"
+          },
+          "departureLocal": "2026-11-15T07:10:00",
+          "arrivalLocal": "2026-11-15T15:05:00",
+          "flightNumber": "NH 806",
+          "airlineCode": "NH",
+          "airlineName": "เอเอ็นเอ",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 355,
+          "co2eGramsRaw": 332804,
+          "raw": [
+            null,
+            null,
+            "Air Japan",
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาตินะริตะ",
+            "NRT",
+            null,
+            [
+              7,
+              10
+            ],
+            null,
+            [
+              15,
+              5
+            ],
+            355,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            3,
+            "86 ซม.",
+            null,
+            1,
+            "Boeing 787",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "NH",
+              "806",
+              null,
+              "เอเอ็นเอ"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "86 เซนติเมตร",
+            332804,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 333,
+        "comparisonPercent": -10,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -10,
+          null,
+          true,
+          true,
+          333000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 29925,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 29925 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เอเอ็นเอ ดำเนินการโดย Air Japan. ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 07:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 15:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 55 นาที เลือกเที่ยวบิน\"\n        - text: 07:10 – 15:05 เอเอ็นเอ·ดำเนินการโดย Air Japan 5 ชม. 55 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 333 กิโลกรัม. ปริมาณการปล่อยก๊าซ -10%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿29,925\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 07:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 15:05 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "NH",
+          [
+            "เอเอ็นเอ"
+          ],
+          [
+            [
+              null,
+              null,
+              "Air Japan",
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาตินะริตะ",
+              "NRT",
+              null,
+              [
+                7,
+                10
+              ],
+              null,
+              [
+                15,
+                5
+              ],
+              355,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              3,
+              "86 ซม.",
+              null,
+              1,
+              "Boeing 787",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "NH",
+                "806",
+                null,
+                "เอเอ็นเอ"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "86 เซนติเมตร",
+              332804,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            7,
+            10
+          ],
+          "NRT",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            15,
+            5
+          ],
+          355,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "h7ebJc",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                20
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -10,
+            null,
+            true,
+            true,
+            333000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "NH",
+              "เอเอ็นเอ",
+              "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            29925
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVOSDgwNhoLCOXpARAAGgNUSEI4HHCqtQU="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECOXpASKDAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQwNzoxMDowMCswNzowMBoDTlJUIhkyMDI2LTExLTE1VDE1OjA1OjAwKzA5OjAwKgJOSDIDODA2OgJOSEIDODA2SAFSAzc4ORIECAMQARgBKAAyGgoY4LmA4Lit4LmA4Lit4LmH4LiZ4LmA4LitKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 20,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T09:10:00",
+      "arrivalLocal": "2026-11-15T16:55:00",
+      "airlineCodes": "NH",
+      "airlineNames": [
+        "เอเอ็นเอ"
+      ],
+      "durationMinutes": 345,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T09:10:00",
+          "arrivalLocal": "2026-11-15T16:55:00",
+          "flightNumber": "NH 848",
+          "airlineCode": "NH",
+          "airlineName": "เอเอ็นเอ",
+          "aircraft": "Boeing 787",
+          "durationMinutes": 345,
+          "co2eGramsRaw": 326457,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              9,
+              10
+            ],
+            null,
+            [
+              16,
+              55
+            ],
+            345,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            3,
+            "86 ซม.",
+            null,
+            1,
+            "Boeing 787",
+            null,
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              "NH",
+              "848",
+              null,
+              "เอเอ็นเอ"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "86 เซนติเมตร",
+            326457,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 326,
+        "comparisonPercent": -12,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -12,
+          null,
+          true,
+          true,
+          326000,
+          371000,
+          null,
+          338000,
+          2,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 30425,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 30425 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เอเอ็นเอ ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 16:55 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 5 ชม. 45 นาที เลือกเที่ยวบิน\"\n        - text: 09:10 – 16:55 เอเอ็นเอ 5 ชม. 45 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 326 กิโลกรัม. ปริมาณการปล่อยก๊าซ -12%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿30,425\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 09:10 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 16:55 ในวันที่ วันอาทิตย์, พฤศจิกายน 15\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": false,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            null,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "NH",
+          [
+            "เอเอ็นเอ"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                9,
+                10
+              ],
+              null,
+              [
+                16,
+                55
+              ],
+              345,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              3,
+              "86 ซม.",
+              null,
+              1,
+              "Boeing 787",
+              null,
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                "NH",
+                "848",
+                null,
+                "เอเอ็นเอ"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "86 เซนติเมตร",
+              326457,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            16,
+            55
+          ],
+          345,
+          null,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "zmlobd",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                21
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -12,
+            null,
+            true,
+            true,
+            326000,
+            371000,
+            null,
+            338000,
+            2,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "NH",
+              "เอเอ็นเอ",
+              "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            30425
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVOSDg0OBoLCNntARAAGgNUSEI4HHD0wAU="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECNntASKDAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQwOToxMDowMCswNzowMBoDSE5EIhkyMDI2LTExLTE1VDE2OjU1OjAwKzA5OjAwKgJOSDIDODQ4OgJOSEIDODQ4SAFSAzc4ORIECAMQARgBKAAyGgoY4LmA4Lit4LmA4Lit4LmH4LiZ4LmA4LitKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    },
+    {
+      "id": 21,
+      "popular": false,
+      "observedAt": "2026-11-01T11:32:00.000Z",
+      "sourceHarEntry": null,
+      "sourceFile": "rulers/diff/live/rpc-1829-030.txt",
+      "departureAirport": "BKK",
+      "arrivalAirport": "HND",
+      "departureLocal": "2026-11-15T22:25:00",
+      "arrivalLocal": "2026-11-16T06:05:00",
+      "airlineCodes": "NH",
+      "airlineNames": [
+        "เอเอ็นเอ"
+      ],
+      "durationMinutes": 340,
+      "stopCount": 0,
+      "legs": [
+        {
+          "departureAirport": {
+            "code": "BKK",
+            "name": "ท่าอากาศยานสุวรรณภูมิ"
+          },
+          "arrivalAirport": {
+            "code": "HND",
+            "name": "ท่าอากาศยานนานาชาติโตเกียว"
+          },
+          "departureLocal": "2026-11-15T22:25:00",
+          "arrivalLocal": "2026-11-16T06:05:00",
+          "flightNumber": "NH 850",
+          "airlineCode": "NH",
+          "airlineName": "เอเอ็นเอ",
+          "aircraft": "Boeing 787-10",
+          "durationMinutes": 340,
+          "co2eGramsRaw": 308771,
+          "raw": [
+            null,
+            null,
+            null,
+            "BKK",
+            "ท่าอากาศยานสุวรรณภูมิ",
+            "ท่าอากาศยานนานาชาติโตเกียว",
+            "HND",
+            null,
+            [
+              22,
+              25
+            ],
+            1,
+            [
+              6,
+              5
+            ],
+            340,
+            [
+              null,
+              true,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              true,
+              null,
+              3
+            ],
+            3,
+            "86 ซม.",
+            null,
+            1,
+            "Boeing 787-10",
+            [
+              true
+            ],
+            false,
+            [
+              2026,
+              11,
+              15
+            ],
+            [
+              2026,
+              11,
+              16
+            ],
+            [
+              "NH",
+              "850",
+              null,
+              "เอเอ็นเอ"
+            ],
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            "86 เซนติเมตร",
+            308771,
+            1
+          ]
+        }
+      ],
+      "layovers": [],
+      "co2e": {
+        "kg": 309,
+        "comparisonPercent": -17,
+        "typicalKg": 371,
+        "raw": [
+          null,
+          null,
+          1,
+          -17,
+          null,
+          true,
+          true,
+          309000,
+          371000,
+          [
+            true
+          ],
+          338000,
+          1,
+          false,
+          null,
+          null,
+          1,
+          null,
+          1
+        ]
+      },
+      "price": {
+        "amount": 30425,
+        "currency": "THB"
+      },
+      "specialLabels": {
+        "screenText": "\n        - link \"ราคาเริ่มต้นที่ 30425 บาทไทย เดินทางด้วยเที่ยวบินตรงกับ เอเอ็นเอ ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 22:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 06:05 ในวันที่ วันจันทร์, พฤศจิกายน 16 ระยะเวลารวม 5 ชม. 40 นาที เลือกเที่ยวบิน\"\n        - text: 22:25 – 06:05+1 เอเอ็นเอ 5 ชม. 40 นาที บินตรง\n        - 'button \"ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 309 กิโลกรัม. ปริมาณการปล่อยก๊าซ -17%. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้\"':\n          - img\n        - text: ฿30,425\n        - button \"รายละเอียดเที่ยวบิน ออกเดินทางจาก ท่าอากาศยานสุวรรณภูมิ เวลา 22:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาติโตเกียว เวลา 06:05 ในวันที่ วันจันทร์, พฤศจิกายน 16\":\n          - img",
+        "airportChange": false,
+        "overnightArrival": true,
+        "unmappedRawFlags": {
+          "row": [
+            null,
+            false,
+            [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              [
+                null,
+                1
+              ]
+            ],
+            [
+              false,
+              false,
+              false
+            ],
+            false,
+            []
+          ],
+          "itinerary": [
+            1,
+            null,
+            false,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "raw": [
+        [
+          "NH",
+          [
+            "เอเอ็นเอ"
+          ],
+          [
+            [
+              null,
+              null,
+              null,
+              "BKK",
+              "ท่าอากาศยานสุวรรณภูมิ",
+              "ท่าอากาศยานนานาชาติโตเกียว",
+              "HND",
+              null,
+              [
+                22,
+                25
+              ],
+              1,
+              [
+                6,
+                5
+              ],
+              340,
+              [
+                null,
+                true,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                true,
+                null,
+                3
+              ],
+              3,
+              "86 ซม.",
+              null,
+              1,
+              "Boeing 787-10",
+              [
+                true
+              ],
+              false,
+              [
+                2026,
+                11,
+                15
+              ],
+              [
+                2026,
+                11,
+                16
+              ],
+              [
+                "NH",
+                "850",
+                null,
+                "เอเอ็นเอ"
+              ],
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              "86 เซนติเมตร",
+              308771,
+              1
+            ]
+          ],
+          "BKK",
+          [
+            2026,
+            11,
+            15
+          ],
+          [
+            22,
+            25
+          ],
+          "HND",
+          [
+            2026,
+            11,
+            16
+          ],
+          [
+            6,
+            5
+          ],
+          340,
+          1,
+          null,
+          false,
+          null,
+          null,
+          null,
+          null,
+          "dsH3Hd",
+          [
+            [
+              1793532719795740,
+              137923726,
+              739192562
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              [
+                22
+              ]
+            ]
+          ],
+          1,
+          null,
+          null,
+          [
+            null,
+            null,
+            1,
+            -17,
+            null,
+            true,
+            true,
+            309000,
+            371000,
+            [
+              true
+            ],
+            338000,
+            1,
+            false,
+            null,
+            null,
+            1,
+            null,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            [
+              "NH",
+              "เอเอ็นเอ",
+              "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+            ]
+          ]
+        ],
+        [
+          [
+            null,
+            30425
+          ],
+          "CjRIbTdfazFudnFaMnNBU1E1a0FCRy0tLS0tLXNlYm4yMC1uMkFBQUFBR3JuSXk4TDlWUXlBEgVOSDg1MBoLCNntARAAGgNUSEI4HHD0wAU="
+        ],
+        null,
+        false,
+        [
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          [
+            null,
+            1
+          ]
+        ],
+        [
+          false,
+          false,
+          false
+        ],
+        false,
+        [],
+        "[\"CAASA1RIQhoECNntASKDAQpbClkKA0JLSxIZMjAyNi0xMS0xNVQyMjoyNTowMCswNzowMBoDSE5EIhkyMDI2LTExLTE2VDA2OjA1OjAwKzA5OjAwKgJOSDIDODUwOgJOSEIDODUwSAFSAzc4MRIECAMQARgBKAAyGgoY4LmA4Lit4LmA4Lit4LmH4LiZ4LmA4LitKg5IZWFkbGVzc0Nocm9tZQ\\u003d\\u003d\"]",
+        [
+          [
+            1
+          ]
+        ],
+        false
+      ]
+    }
+  ]
+}

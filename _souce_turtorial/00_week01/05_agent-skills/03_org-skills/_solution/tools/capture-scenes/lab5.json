@@ -1,0 +1,10 @@
+[{"name":"lab5-pr1","user":"sales-krit","steps":[
+  {"goto":"/novatech/org-skills/pulls/1","hold":3000,"shot":"lab5-pr1-top"},
+  {"scroll":900,"hold":2500},{"scroll":900,"hold":2500,"shot":"lab5-pr1-mid"},{"scroll":1200,"hold":2500},{"scroll":1200,"hold":3000,"shot":"lab5-pr1-end"}]},
+ {"name":"lab5-pr1-files","user":"sales-krit","steps":[
+  {"goto":"/novatech/org-skills/pulls/1/files","hold":3500,"shot":"lab5-pr1-files"},{"scroll":700,"hold":3000}]},
+ {"name":"lab5-pr2","user":"sales-krit","steps":[
+  {"goto":"/novatech/org-skills/pulls/2","hold":3000,"shot":"lab5-pr2-top"},{"scroll":1000,"hold":2500},{"scroll":1000,"hold":2500,"shot":"lab5-pr2-mid"}]},
+ {"name":"lab5-pulls","user":"sales-krit","video":false,"steps":[
+  {"goto":"/novatech/org-skills/pulls?state=closed","hold":2000,"shot":"lab5-pulls"},
+  {"goto":"/novatech/org-skills/pulls/1","hold":2000,"shot":"lab5-pr1-full","full":true}]}]

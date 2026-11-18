@@ -1,0 +1,382 @@
+npm notice run npx
+npm notice run playwright test tests/5.3- --project=chromium
+
+Running 10 tests using 1 worker
+
+  ok  1 [chromium] › tests\5.3-price.spec.ts:173:1 › TC-PRICE-01 ค่าขอบยอดสะสมของระดับ Gold และ Platinum @P1 @5.3 (56.5s)
+  ok  2 [chromium] › tests\5.3-price.spec.ts:235:1 › TC-PRICE-02 ลำดับคำนวณ 5 ขั้น ตรงกันทุกหน้า @P1 @5.3 (49.8s)
+  x   3 [chromium] › tests\5.3-price.spec.ts:317:1 › TC-PRICE-03 ค่าขอบการแลกแต้มชุดละ 100 แต้ม ฿50 @P1 @5.3 (1.5m)
+  x   4 [chromium] › tests\5.3-price.spec.ts:401:1 › TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้ @P1 @5.3 (2.6m)
+  x   5 [chromium] › tests\5.3-price.spec.ts:505:1 › TC-PRICE-05 แลกเต็มเพดานแล้วเลือกเดือนเกิด เพดานลดตามค่าบริการใหม่ @P1 @5.3 (44.0s)
+  x   6 [chromium] › tests\5.3-price.spec.ts:567:1 › TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01 @P1 @5.3 (2.6m)
+  ok  7 [chromium] › tests\5.3-price.spec.ts:655:1 › TC-PRICE-07 สิทธิ์เดือนเกิดใช้เมื่อกดเอง 1 ครั้งต่อปี และได้คืนเมื่อยกเลิกทัน @P1 @5.3 (41.0s)
+  ok  8 [chromium] › tests\5.3-price.spec.ts:741:1 › TC-PRICE-08 ปีของสิทธิ์เดือนเกิดนับตามปีปฏิทินของวันนัด @P1 @5.3 (26.5s)
+  ok  9 [chromium] › tests\5.3-price.spec.ts:809:1 › TC-PRICE-09 ใช้ส่วนลด % ที่มากที่สุดอันเดียว และยอดเป็นบาทเต็ม @P1 @5.3 (1.2m)
+  x  10 [chromium] › tests\5.3-price.spec.ts:876:1 › TC-PRICE-10 ยอดจากผู้ส่งไม่ตรงและแต้มที่ถูกใช้จากแท็บอื่น @P1 @5.3 (50.0s)
+
+
+  1) [chromium] › tests\5.3-price.spec.ts:317:1 › TC-PRICE-03 ค่าขอบการแลกแต้มชุดละ 100 แต้ม ฿50 @P1 @5.3 › 5-6. U03 ยิงซ้ำ 150 และ 300 แต้ม โดยตัด expectedPayAtShop แล้วอ่านแต้มและนัด 
+
+    Error: expect(received).not.toMatch(expected)
+
+    Expected pattern: not /อย่างน้อย\s*100/
+    Received string:      "{\"error\":{\"code\":\"points-not-enough\",\"message\":\"แต้มไม่พอ ต้องมีอย่างน้อย 100 แต้ม\"}}"
+
+      391 |     await app.checkValue(page, 'ข้อความกรณี 300 บอกว่าแต้มไม่พอกับที่ขอ ไม่ใช่ต้องมีอย่างน้อย 100 แต้ม', r300.text.slice(0, 400), (v) => {
+      392 |       expect.soft(v).toMatch(/แต้มไม่พอ/);
+    > 393 |       expect.soft(v).not.toMatch(/อย่างน้อย\s*100/);
+          |                          ^
+      394 |     });
+      395 |
+      396 |     await checkAdminRowCount(app, DATE, 'หลังร้าน จำนวนนัดเท่าเดิม', rowsBefore);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:393:26)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:391:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:380:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-03-ค่าขอบการแลกแต้มชุดละ-100-แต้ม-฿50-chromium\error-context.md
+
+  2) [chromium] › tests\5.3-price.spec.ts:401:1 › TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้ @P1 @5.3 › 5-6. แถวย้อน: 3 คน 17 ชุด ย้อนเป็น 1 คน แล้วจองจบ 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: getByTestId('booking-extra-points')
+    Expected substring: not "แลกแต้มไม่ได้"
+    Received string: "แลกแต้มเลือกแล้วยอดนี้ยังแลกแต้มไม่ได้−17 ชุด (1700 แต้ม)+แลกสูงสุดส่วนลดจากแต้มเกินค่าบริการ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toContainText" getByTestId('booking-extra-points') with timeout 6000ms
+      - waiting for getByTestId('booking-extra-points')
+        16 × locator resolved to <div class="nv8LGq_extra" data-e2e-prev-outline="" data-testid="booking-extra-points">…</div>
+           - unexpected value "แลกแต้มเลือกแล้วยอดนี้ยังแลกแต้มไม่ได้−17 ชุด (1700 แต้ม)+แลกสูงสุดส่วนลดจากแต้มเกินค่าบริการ"
+
+
+      492 |     });
+      493 |     await app.check(booking.el('booking-extra-points'), 'ไม่บอกว่าแลกแต้มไม่ได้เลย', async (el) => {
+    > 494 |       await expect.soft(el).not.toContainText('แลกแต้มไม่ได้');
+          |                                 ^
+      495 |     });
+      496 |
+      497 |     await reduceSetsTo(booking, 16);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:494:33)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:493:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:469:3
+
+    TimeoutError: locator.innerText: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByTestId('booking-points-value')
+
+
+      40 | async function readSets(booking: BookingHelper): Promise<number> {
+      41 |   await booking.quoteReady();
+    > 42 |   return money(await booking.pointsValue().innerText());
+         |                                            ^
+      43 | }
+      44 |
+      45 | async function checkSets(app: App, booking: BookingHelper, label: string, want: number) {
+        at readSets (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:42:44)
+        at reduceSetsTo (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:162:18)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:497:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:469:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-04-เพดา-c5cc4-อ-฿0-และแต้มจ่ายค่ารถไม่ได้-chromium\error-context.md
+
+  3) [chromium] › tests\5.3-price.spec.ts:505:1 › TC-PRICE-05 แลกเต็มเพดานแล้วเลือกเดือนเกิด เพดานลดตามค่าบริการใหม่ @P1 @5.3 
+
+    Error: expect(received).not.toMatch(expected)
+
+    Expected pattern: not /มากกว่า/
+    Received string:      "สิทธิ์เดือนเกิด
+    เลือกแล้ว
+    ใช้สิทธิ์เดือนเกิดกับการจองนี้
+    
+    ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า"
+
+      537 |     const texts = await page.locator('[data-testid="booking-birthday-result"], [data-testid="booking-extra-birthday"]').allInnerTexts();
+      538 |     await app.check(booking.el('booking-extra-birthday'), 'ผลเดือนเกิดไม่ขึ้นว่าส่วนลดอื่นมากกว่า', async () => {
+    > 539 |       expect.soft(texts.join(' ')).not.toMatch(/มากกว่า/);
+          |                                        ^
+      540 |     });
+      541 |     await checkLines(app, booking, 'ค่าบริการ ฿800 − 20% (฿160)', { full: 800, pct: 20, discount: 160 });
+      542 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:539:40)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:538:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:532:3
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "discount": 160,
+    +   "discount": 0,
+        "full": 800,
+    -   "pct": 20,
+    +   "pct": 0,
+      }
+
+      27 |   for (const k of Object.keys(want) as (keyof Want)[]) actual[k] = all[k];
+      28 |   await app.check(booking.page.locator(LINE_SELECTOR), label, async () => {
+    > 29 |     expect.soft(actual).toEqual(want);
+         |                         ^
+      30 |   });
+      31 | }
+      32 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:29:25)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkLines (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:28:3)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:541:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:532:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 12
+    Received: 16
+
+      46 |   const sets = await readSets(booking);
+      47 |   await app.check(booking.pointsValue(), label, async () => {
+    > 48 |     expect.soft(sets).toBe(want);
+         |                       ^
+      49 |   });
+      50 | }
+      51 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:48:23)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkSets (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:47:3)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:546:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:544:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-05-แลกเ-e2e48-กิด-เพดานลดตามค่าบริการใหม่-chromium\error-context.md
+
+  4) [chromium] › tests\5.3-price.spec.ts:567:1 › TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01 @P1 @5.3 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 5
+    + Received  + 5
+
+      Object {
+    -   "discount": 0,
+    -   "full": 2900,
+    -   "pay": 2900,
+    -   "pct": 0,
+    -   "transport": 0,
+    +   "discount": NaN,
+    +   "full": NaN,
+    +   "pay": NaN,
+    +   "pct": NaN,
+    +   "transport": NaN,
+      }
+
+      27 |   for (const k of Object.keys(want) as (keyof Want)[]) actual[k] = all[k];
+      28 |   await app.check(booking.page.locator(LINE_SELECTOR), label, async () => {
+    > 29 |     expect.soft(actual).toEqual(want);
+         |                         ^
+      30 |   });
+      31 | }
+      32 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:29:25)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkLines (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:28:3)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:611:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:604:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      616 |     const selected = await attemptBirthday(booking);
+      617 |     await app.check(booking.birthdayBox(), 'U02 1 ก.ค. เลือกเดือนเกิดไม่ได้', async () => {
+    > 618 |       expect.soft(selected).toBe(false);
+          |                             ^
+      619 |     });
+      620 |     await checkLines(app, booking, 'U02 1 ก.ค. ฿1,000 − 10% = ฿900', { pct: 10, discount: 100, pay: 900 });
+      621 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:618:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:617:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:614:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      638 |     const selected = await attemptBirthday(booking);
+      639 |     await app.check(booking.birthdayBox(), 'U11 31 พ.ค. เลือกเดือนเกิดไม่ได้', async () => {
+    > 640 |       expect.soft(selected).toBe(false);
+          |                             ^
+      641 |     });
+      642 |     await checkLines(app, booking, 'U11 31 พ.ค. ฿1,000 − 0% = ฿1,000', { pct: 0, discount: 0, pay: 1000 });
+      643 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:640:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:639:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:634:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-06-ตัวเ-c0e2b-งวันนัด-และไม่มีกับ-P01-K01-chromium\error-context.md
+
+  5) [chromium] › tests\5.3-price.spec.ts:876:1 › TC-PRICE-10 ยอดจากผู้ส่งไม่ตรงและแต้มที่ถูกใช้จากแท็บอื่น @P1 @5.3 › 6. กลับแท็บ A กดยืนยัน อ่านข้อความและยอด แล้วรีโหลดแต้มและประวัติ 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      46 |   const sets = await readSets(booking);
+      47 |   await app.check(booking.pointsValue(), label, async () => {
+    > 48 |     expect.soft(sets).toBe(want);
+         |                       ^
+      49 |   });
+      50 | }
+      51 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:48:23)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkSets (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:47:3)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:972:7
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:960:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 950
+    Received: 900
+
+      34 |   const pay = await booking.pay();
+      35 |   await app.check(booking.el('booking-pay-at-shop'), label, async () => {
+    > 36 |     expect.soft(pay).toBe(want);
+         |                      ^
+      37 |   });
+      38 | }
+      39 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:36:22)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkPay (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:35:3)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:978:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:960:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-10-ยอดจ-d64e4-และแต้มที่ถูกใช้จากแท็บอื่น-chromium\error-context.md
+
+  5 failed
+    [chromium] › tests\5.3-price.spec.ts:317:1 › TC-PRICE-03 ค่าขอบการแลกแต้มชุดละ 100 แต้ม ฿50 @P1 @5.3 
+    [chromium] › tests\5.3-price.spec.ts:401:1 › TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้ @P1 @5.3 
+    [chromium] › tests\5.3-price.spec.ts:505:1 › TC-PRICE-05 แลกเต็มเพดานแล้วเลือกเดือนเกิด เพดานลดตามค่าบริการใหม่ @P1 @5.3 
+    [chromium] › tests\5.3-price.spec.ts:567:1 › TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01 @P1 @5.3 
+    [chromium] › tests\5.3-price.spec.ts:876:1 › TC-PRICE-10 ยอดจากผู้ส่งไม่ตรงและแต้มที่ถูกใช้จากแท็บอื่น @P1 @5.3 
+  5 passed (12.4m)
+npm notice run npx
+npm notice run playwright test tests/5.3- --grep TC-PRICE-02 |TC-PRICE-04 |TC-PRICE-06  --project=chromium
+
+Running 3 tests using 1 worker
+
+  x  1 [chromium] › tests\5.3-price.spec.ts:237:1 › TC-PRICE-02 ลำดับคำนวณ 5 ขั้น ตรงกันทุกหน้า @P1 @5.3 (56.2s)
+  x  2 [chromium] › tests\5.3-price.spec.ts:400:1 › TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้ @P1 @5.3 (2.2m)
+  x  3 [chromium] › tests\5.3-price.spec.ts:566:1 › TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01 @P1 @5.3 (45.8s)
+
+
+  1) [chromium] › tests\5.3-price.spec.ts:237:1 › TC-PRICE-02 ลำดับคำนวณ 5 ขั้น ตรงกันทุกหน้า @P1 @5.3 › 1. แขกเลือก S01 1 คน 12:00 อ่านยอด ไม่ยืนยัน 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('booking-line-discount')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('booking-line-discount') with timeout 6000ms
+      - waiting for getByTestId('booking-line-discount')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      257 |     await booking.toSummary({ service: 'S01', date: DATE, time: '12:00' });
+      258 |     await app.check(booking.el('booking-screen-3'), 'แขก ไม่มีบรรทัดส่วนลด', async () => {
+    > 259 |       await expect.soft(booking.el('booking-line-discount')).toHaveCount(0);
+          |                                                              ^
+      260 |     });
+      261 |     await checkPay(app, booking, 'แขก จ่าย ฿1,000', 1000);
+      262 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:259:62)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:258:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:256:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-02-ลำดับคำนวณ-5-ขั้น-ตรงกันทุกหน้า-chromium\error-context.md
+
+  2) [chromium] › tests\5.3-price.spec.ts:400:1 › TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้ @P1 @5.3 › 5-6. แถวย้อน: 3 คน 17 ชุด ย้อนเป็น 1 คน แล้วจองจบ 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: getByTestId('booking-extra-points')
+    Expected substring: not "แลกแต้มไม่ได้"
+    Received string: "แลกแต้มเลือกแล้วยอดนี้ยังแลกแต้มไม่ได้−17 ชุด (1700 แต้ม)+แลกสูงสุดส่วนลดจากแต้มเกินค่าบริการ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toContainText" getByTestId('booking-extra-points') with timeout 6000ms
+      - waiting for getByTestId('booking-extra-points')
+        16 × locator resolved to <div class="nv8LGq_extra" data-e2e-prev-outline="" data-testid="booking-extra-points">…</div>
+           - unexpected value "แลกแต้มเลือกแล้วยอดนี้ยังแลกแต้มไม่ได้−17 ชุด (1700 แต้ม)+แลกสูงสุดส่วนลดจากแต้มเกินค่าบริการ"
+
+
+      491 |     });
+      492 |     await app.check(booking.el('booking-extra-points'), 'ไม่บอกว่าแลกแต้มไม่ได้เลย', async (el) => {
+    > 493 |       await expect.soft(el).not.toContainText('แลกแต้มไม่ได้');
+          |                                 ^
+      494 |     });
+      495 |
+      496 |     await reduceSetsTo(booking, 16);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:493:33)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:492:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:468:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-04-เพดา-c5cc4-อ-฿0-และแต้มจ่ายค่ารถไม่ได้-chromium\error-context.md
+
+  3) [chromium] › tests\5.3-price.spec.ts:566:1 › TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01 @P1 @5.3 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      618 |     const selected = await attemptBirthday(booking);
+      619 |     await app.check(booking.birthdayBox(), 'U02 1 ก.ค. เลือกเดือนเกิดไม่ได้', async () => {
+    > 620 |       expect.soft(selected).toBe(false);
+          |                             ^
+      621 |     });
+      622 |     await checkLines(app, booking, 'U02 1 ก.ค. ฿1,000 − 10% = ฿900', { pct: 10, discount: 100, pay: 900 });
+      623 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:620:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:619:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:616:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      640 |     const selected = await attemptBirthday(booking);
+      641 |     await app.check(booking.birthdayBox(), 'U11 31 พ.ค. เลือกเดือนเกิดไม่ได้', async () => {
+    > 642 |       expect.soft(selected).toBe(false);
+          |                             ^
+      643 |     });
+      644 |     await checkLines(app, booking, 'U11 31 พ.ค. ฿1,000 − 0% = ฿1,000', { pct: 0, discount: 0, pay: 1000 });
+      645 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:642:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:641:5
+        at C:\t\spa04\sabai\e2e\tests\5.3-price.spec.ts:636:3
+
+    Error Context: test-results\5.3-chromium\5.3-price-TC-PRICE-06-ตัวเ-c0e2b-งวันนัด-และไม่มีกับ-P01-K01-chromium\error-context.md
+
+  3 failed
+    [chromium] › tests\5.3-price.spec.ts:237:1 › TC-PRICE-02 ลำดับคำนวณ 5 ขั้น ตรงกันทุกหน้า @P1 @5.3 
+    [chromium] › tests\5.3-price.spec.ts:400:1 › TC-PRICE-04 เพดานแต้มจนค่าบริการเหลือ ฿0 และแต้มจ่ายค่ารถไม่ได้ @P1 @5.3 
+    [chromium] › tests\5.3-price.spec.ts:566:1 › TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01 @P1 @5.3 

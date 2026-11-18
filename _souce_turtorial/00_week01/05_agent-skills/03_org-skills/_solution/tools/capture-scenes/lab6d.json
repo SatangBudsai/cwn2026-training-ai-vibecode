@@ -1,0 +1,4 @@
+[{"name":"lab6-releases","user":"plat-ken","steps":[
+  {"goto":"/novatech/org-skills/releases","hold":3500,"shot":"lab6-releases"},{"scroll":700,"hold":3000}]},
+ {"name":"lab6-pulls-final","user":"plat-ken","video":false,"steps":[
+  {"goto":"/novatech/org-skills/pulls?state=all","hold":2500,"shot":"lab6-pulls-all"}]}]

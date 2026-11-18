@@ -1,0 +1,1 @@
+ใน container multi-account-devtool ที่ /workspace/arena6 ส่งงานในไฟล์ _solution/run/o2.txt ของบทนี้ให้ yolo2 ทำ (yolo2 -p) ในโฟลเดอร์ rulers แล้วแสดงคำตอบของ yolo2 ให้ฉันดู

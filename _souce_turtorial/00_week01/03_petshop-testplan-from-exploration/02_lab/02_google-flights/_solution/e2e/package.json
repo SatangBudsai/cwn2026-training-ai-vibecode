@@ -1,0 +1,16 @@
+{
+  "name": "gf-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright e2e suite for Google Flights BKK -> TYO (TEST-PLAN.md section 5)",
+  "scripts": {
+    "test": "playwright test",
+    "postrun": "node scripts/postrun.mjs",
+    "report": "node scripts/build-report.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2"
+  }
+}

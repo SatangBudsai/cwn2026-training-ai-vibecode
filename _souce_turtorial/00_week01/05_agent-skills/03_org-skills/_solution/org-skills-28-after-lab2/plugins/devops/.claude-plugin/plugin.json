@@ -1,0 +1,11 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "แผนก DevOps: checklist ขึ้นระบบจริง และ postmortem",
+  "author": {
+    "name": "ops-art"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

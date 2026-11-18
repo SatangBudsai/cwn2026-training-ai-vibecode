@@ -1,0 +1,83 @@
+{
+  "id": "TC-COURSE-08",
+  "title": "TC-COURSE-08 ลูกค้าที่ไม่มีคอร์สเปิดจอง K01 ต้องรู้เหตุผลว่าใช้คอร์สเท่านั้น และจองไม่ได้",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 2: มีข้อความแจ้งว่า K01 จองได้ด้วยคอร์สเท่านั้น (ถ้าไม่มีข้อความใดเลย ถือว่าไม่ผ่าน) · ตอนนี้คำถาม F-สร้าง 19 ยังไม่มีคำตอบว่าควรพาไปซื้อด้วยหรือไม่ จึงไม่ตรวจปลายทางของปุ่ม\nขั้น 4: ถูกปฏิเสธด้วยสถานะ 4xx โดยเหตุคือต้องมีคอร์ส (R81 `course-required`) · เหตุอื่นถือว่ายังไม่ได้พิสูจน์กฎนี้\nขั้น 5: U04 มีนัดเดียวคือ S01 17 มิ.ย. ไม่มีนัด K01 · Wallet ไม่มีคอร์ส (ถ้าจองผ่านจะได้ K01 ฟรีโดยไม่มีคอร์ส)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] ตามแถว R81 ใน EXPLORATION ส่วน C · F-สร้าง 19",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-39",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R81",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "pending-answer",
+      "description": "F-สร้าง 19 ปุ่มที่กดต่อได้บนหน้า K01: นวดไทย 60 นาที 60 นาที ฿1,000 ต่อคน | นวดไทย 90 นาที 90 นาที ฿1,400 ต่อคน | ประคบสมุนไพร 60 นาที ฿1,200 ต่อคน | นวดน้ำมันอโรมา 90 นาที ฿2,000 ต่อคน | นวดเท้า 60 นาที ฿800 ต่อคน | ขัดผิวสมุนไพร 60 นาที ฿1,500 ต่อคน | ทรีตเมนต์หน้า 60 นาที ฿1,800 ต่อคน | แพ็กเกจ Bangkok Relax 120 นาที ฿2,900 ต่อคน แพ็กเกจ | 1 | 2 | 3 | 4 | 5 | 6 | 7+"
+    }
+  ],
+  "status": "failed",
+  "durationMs": 22100,
+  "at": "2026-11-06T02:23:17.388Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('booking-flow')\nExpected substring: \"ด้วยคอร์สเท่านั้น\"\nReceived string:    \"1บริการ2วันและเวลา3สรุปและยืนยันเลือกบริการนวดไทย 60 นาที60 นาที฿1,000 ต่อคนนวดไทย 90 นาที90 นาที฿1,400 ต่อคนประคบสมุนไพร60 นาที฿1,200 ต่อคนนวดน้ำมันอโรมา90 นาที฿2,000 ต่อคนนวดเท้า60 นาที฿800 ต่อคนขัดผิวสมุนไพร60 นาที฿1,500 ต่อคนทรีตเมนต์หน้า60 นาที฿1,800 ต่อคนแพ็กเกจ Bangkok Relax120 นาที฿2,900 ต่อคนแพ็กเกจจำนวนคน1234567+จอง 1 คน เลือกนักบำบัดเองได้ในหน้าถัดไปเลือกบริการก่อนไปหน้าถัดไปถัดไป\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('booking-flow') with timeout 6000ms\n  - waiting for getByTestId('booking-flow')\n    16 × locator resolved to <div tabindex=\"-1\" data-screen=\"1\" data-e2e-prev-outline=\"\" data-testid=\"booking-flow\" class=\"container nv8LGq_flow\">…</div>\n       - unexpected value \"1บริการ2วันและเวลา3สรุปและยืนยันเลือกบริการนวดไทย 60 นาที60 นาที฿1,000 ต่อคนนวดไทย 90 นาที90 นาที฿1,400 ต่อคนประคบสมุนไพร60 นาที฿1,200 ต่อคนนวดน้ำมันอโรมา90 นาที฿2,000 ต่อคนนวดเท้า60 นาที฿800 ต่อคนขัดผิวสมุนไพร60 นาที฿1,500 ต่อคนทรีตเมนต์หน้า60 นาที฿1,800 ต่อคนแพ็กเกจ Bangkok Relax120 นาที฿2,900 ต่อคนแพ็กเกจจำนวนคน1234567+จอง 1 คน เลือกนักบำบัดเองได้ในหน้าถัดไปเลือกบริการก่อนไปหน้าถัดไปถัดไป\"\n"
+  ],
+  "steps": [
+    "1-2. เปิด /th/booking?service=K01 อ่านข้อความบนหน้าและปุ่มที่กดต่อได้ ✗",
+    "3. จอง S01 17 มิ.ย. 12:00 กับ T01 จนเสร็จ จับ URL และคำขอจาก Network",
+    "4. ยิงคำขอซ้ำโดยแก้บริการเป็น K01 วัน 18 มิ.ย. 12:00 คง T01 และลบ expectedPayAtShop",
+    "5. เปิดรายการนัดของ U04 แล้วรีโหลด"
+  ]
+}

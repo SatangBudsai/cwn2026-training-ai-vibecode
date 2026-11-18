@@ -1,0 +1,7 @@
+[
+  {
+    "file": "app/api/auth/login/route.ts",
+    "find": "  if (!user || !verifyPassword(password, user.passwordHash)) {\n    return NextResponse.json({ error: MSG.login }, { status: 401 });\n  }",
+    "replace": "  if (!user) return NextResponse.json({ error: MSG.login }, { status: 401 });\n  if (!verifyPassword(password, user.passwordHash)) {\n    return NextResponse.json({ error: MSG.password }, { status: 401 });\n  }"
+  }
+]

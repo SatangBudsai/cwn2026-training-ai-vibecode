@@ -1,0 +1,75 @@
+{
+ "score": 0.5,
+ "checks": [
+  {
+   "id": "fixed_A2",
+   "pass": false,
+   "note": "TC-CART-03 ยังล้ม: expected \"ได้ส่งฟรีแล้ว\" received \"ซื้อเพิ่มอีก -฿1,681 เพื่อส่งฟรี\""
+  },
+  {
+   "id": "fixed_B2",
+   "pass": false,
+   "note": "TC-AUTH-03 ยังล้ม: getByTestId('error-confirm') element(s) not found · expected \"รหัสผ่านไม่ตรงกัน\""
+  },
+  {
+   "id": "fixed_C2",
+   "pass": true,
+   "note": "TC-CAT-03 ผ่านแล้ว"
+  },
+  {
+   "id": "no_regression",
+   "pass": true,
+   "note": "TC อื่นผ่านครบ 38 เทสต์"
+  },
+  {
+   "id": "tests_green",
+   "pass": true,
+   "note": "ผ่านครบ 1 เทสต์"
+  },
+  {
+   "id": "caught_A2",
+   "pass": false,
+   "note": "ไม่มีเทสต์ที่ชื่อมี TC-CART-03"
+  },
+  {
+   "id": "caught_B2",
+   "pass": false,
+   "note": "ไม่มีเทสต์ที่ชื่อมี TC-AUTH-03"
+  },
+  {
+   "id": "caught_C2",
+   "pass": true,
+   "note": "เทสต์ TC-CAT-03 ล้มบนเว็บที่มีบั๊ก"
+  },
+  {
+   "id": "reported_A2",
+   "pass": false,
+   "note": "ไม่มีแถวที่คอลัมน์แรกเป็น TC-CART-03"
+  },
+  {
+   "id": "reported_B2",
+   "pass": false,
+   "note": "ไม่มีแถวที่คอลัมน์แรกเป็น TC-AUTH-03"
+  },
+  {
+   "id": "reported_C2",
+   "pass": true,
+   "note": "รายงาน TC-CAT-03 แล้ว"
+  },
+  {
+   "id": "no_false_alarm",
+   "pass": true,
+   "note": "ทุกแถวตรงกับบั๊กที่ฝัง (1 แถว)"
+  },
+  {
+   "id": "evidence",
+   "pass": false,
+   "note": "ไม่มี evidence/*<TC>*.png (>5KB) ของ TC-CART-03, TC-AUTH-03"
+  },
+  {
+   "id": "plan_untouched",
+   "pass": true,
+   "note": "ตรงกับต้นฉบับ"
+  }
+ ]
+}

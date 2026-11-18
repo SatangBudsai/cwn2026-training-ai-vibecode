@@ -1,0 +1,109 @@
+.viewer {
+  background: var(--c-forest-950);
+  color: var(--c-cream-100);
+  padding-bottom: clamp(20px, 3vw, 32px);
+}
+.viewport {
+  position: relative;
+  max-width: 1680px;
+  height: clamp(300px, 46vw, 640px);
+  margin-inline: auto;
+  overflow: hidden;
+  background: #1a0e06;
+  cursor: grab;
+  /* แกนนอนเป็นของทัวร์ แกนตั้งให้เลื่อนหน้าได้ตามปกติ */
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.viewportDragging { cursor: grabbing; }
+.viewport:focus-visible { outline-offset: -4px; outline-color: var(--c-gold-300); }
+
+.track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* ความกว้างรวมตามอัตราส่วนภาพ 3 ชุด จึงรู้ขนาดก่อนรูปโหลดเสร็จ */
+  aspect-ratio: 5742 / 822;
+  display: flex;
+  background: #1a0e06;
+  will-change: transform;
+}
+.tile { position: relative; flex: 0 0 calc(100% / 3); height: 100%; }
+.tileImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+/* ขอบซ้ายและขวาของภาพไม่ใช่ภาพเดียวกัน จึงให้เงามุมห้องกลืนรอยต่อทั้งสองด้าน */
+.tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(26, 14, 6, 0.96) 0,
+    rgba(26, 14, 6, 0) 5%,
+    rgba(26, 14, 6, 0) 95%,
+    rgba(26, 14, 6, 0.96) 100%
+  );
+  pointer-events: none;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 -60px 70px -40px rgba(15, 32, 24, 0.75), inset 0 40px 60px -40px rgba(15, 32, 24, 0.55);
+  border-block: 1px solid rgba(226, 205, 155, 0.35);
+}
+.dragHint {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: rgba(15, 32, 24, 0.72);
+  border: 1px solid rgba(226, 205, 155, 0.45);
+  color: var(--c-cream-50);
+  font-size: 0.88rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 40px);
+  padding: 18px var(--gutter) 10px;
+}
+.rotate.rotate { width: 52px; min-height: 52px; padding: 0; }
+.dial { display: flex; align-items: center; gap: 10px; min-width: 132px; color: var(--c-gold-300); }
+.compass { flex-shrink: 0; }
+.angleText { display: grid; line-height: 1.25; }
+.angleLabel { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--c-forest-200); }
+.angleText strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--c-cream-50);
+  font-variant-numeric: tabular-nums;
+}
+.hint { text-align: center; color: var(--c-forest-200); font-size: 0.95rem; }
+
+.book {
+  background: var(--c-cream-100);
+  padding-block: clamp(40px, 6vw, 72px);
+}
+.bookInner { display: grid; gap: 12px; justify-items: center; text-align: center; }
+.bookInner p { max-width: 36em; color: var(--text-soft); }
+.bookRule { display: block; width: 64px; height: 1px; background: var(--c-gold-500); }

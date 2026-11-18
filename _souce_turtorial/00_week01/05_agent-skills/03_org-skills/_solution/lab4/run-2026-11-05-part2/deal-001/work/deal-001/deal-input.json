@@ -1,0 +1,8 @@
+{
+  "_note": "ฉบับ A ตาม proposal หัวข้อ 7 (man-day หลัง buffer 10% แล้ว) · ทีม 9 คน × ~125 วันทำงาน (ม.ค.–มิ.ย. 2027)",
+  "lines": [{"code":"MD-SA","qty":17},{"code":"MD-PM","qty":33},{"code":"MD-DEV-SR","qty":39},{"code":"MD-DEV","qty":77},{"code":"MD-UX","qty":11},{"code":"MD-QA","qty":33},{"code":"MD-DEVOPS","qty":14},{"code":"MD-ML","qty":39},{"code":"CL-M","qty":12},{"code":"LIC-LINE","qty":12},{"code":"LIC-WAF","qty":12},{"code":"LIC-APM","qty":12},{"code":"MA-STD","qty":1}],
+  "external": [], "discount": 0,
+  "claimed": {"price": 4766000, "cost": 3087400},
+  "team_size": 9, "working_days": 125,
+  "buffer_included": true
+}

@@ -1,0 +1,12 @@
+{
+  "lines": [
+    {"code": "MD-SA", "qty": 15}, {"code": "MD-PM", "qty": 30}, {"code": "MD-DEV-SR", "qty": 45},
+    {"code": "MD-DEV", "qty": 110}, {"code": "MD-UX", "qty": 20}, {"code": "MD-QA", "qty": 23},
+    {"code": "MD-DEVOPS", "qty": 12}, {"code": "CL-M", "qty": 12}, {"code": "LIC-LINE", "qty": 12},
+    {"code": "MA-STD", "qty": 1}
+  ],
+  "discount": 915000,
+  "claimed": {"price": 3307000, "cost": 2711900},
+  "team_size": 6, "working_days": 60,
+  "buffer_included": false
+}

@@ -1,0 +1,30 @@
+{
+  "A": {
+    "1": {"pass": false, "why": "ใช้ src/shared และ Fastify ไม่มีโครง index/service/repository/schema/errors/__tests__ ต่อโมดูล ไม่มี src/app"},
+    "2": {"pass": false, "why": "ไม่ระบุกฎการตั้งชื่อไฟล์ ตัวแปร type ค่าคงที่ หรือตาราง snake_case พหูพจน์"},
+    "3": {"pass": false, "why": "มีแค่ zod ตรวจ env ไม่ระบุ strict ห้าม any หรือตรวจ request body/API ภายนอกด้วย Zod"},
+    "4": {"pass": false, "why": "มี AppError กลาง แต่ไม่มี errors.ts ต่อโมดูล ไม่ห้าม catch เงียบ ตอบแบบ RFC 9457 เกิน code+message"},
+    "5": {"pass": false, "why": "มี .env.example และ zod config แต่ไม่ระบุ src/config/env.ts และ .env ใน .gitignore"},
+    "6": {"pass": true, "why": "Vitest unit, coverage ทั้งโปรเจกต์ ≥80%, E2E flow สมัคร-login-ซื้อด้วย Playwright"},
+    "7": {"pass": false, "why": "มีโฟลเดอร์ migrations แต่ไม่ระบุ prisma migrate dev ห้ามแก้มือ หรือ expand→contract"},
+    "8": {"pass": false, "why": "ใช้ pino ซ่อนข้อมูลลับ แต่ไม่ผ่าน src/lib/logger.ts ไม่ห้าม console.log ไม่ระบุฟิลด์บังคับ"},
+    "9": {"pass": false, "why": "access 10–15 นาที, cookie SameSite=Strict ไม่ใช่ Lax, ไม่มี refresh ล่วงหน้า 60 วิ/ก่อนจ่ายเงิน"},
+    "10": {"pass": false, "why": "ตอบแบบ RFC 9457 ไม่ใช่ { data } / { error: { code, message } } แม้ webhook ตรวจลายเซ็นและเก็บ event_id"},
+    "11": {"pass": false, "why": "ไม่กล่าวถึงบั๊ก ShopDee ไม่มี refresh ก่อนไป gateway, callback อ่านจาก order_id, E2E token 5 วิ"},
+    "12": {"pass": false, "why": "กันซ้ำด้วย event_id แบบทั่วไป ไม่มี payment_events UNIQUE insert ก่อน, HMAC THAIPAY, 200 ใน 3 วิ"}
+  },
+  "B": {
+    "1": {"pass": true, "why": "src/modules/<m>/ ครบ index/service/repository/schema/errors/__tests__ หน้าเว็บใน src/app เรียกผ่าน index.ts"},
+    "2": {"pass": true, "why": "ระบุ kebab-case, camelCase, PascalCase, UPPER_SNAKE, ตาราง snake_case พหูพจน์, ฟังก์ชันขึ้นต้นกริยา"},
+    "3": {"pass": true, "why": "tsconfig strict และทุก input body/query/API ภายนอก/env ผ่าน Zod (ไม่ได้เขียนห้าม any ตรง ๆ)"},
+    "4": {"pass": true, "why": "AppError {code, httpStatus, message}, errors.ts ต่อโมดูล, ห้าม throw Error ลอย/catch เงียบ, ไม่ส่ง stack"},
+    "5": {"pass": true, "why": "config/env.ts ตรวจ Zod, .env ใน .gitignore, .env.example ครบทุกตัวแปรค่าตัวอย่าง"},
+    "6": {"pass": true, "why": "Vitest service.ts ≥80% ตั้ง threshold, Playwright E2E login และ checkout"},
+    "7": {"pass": true, "why": "ใช้ prisma migrate dev และ commit prisma/migrations (ไม่ได้ระบุ expand→contract)"},
+    "8": {"pass": true, "why": "pino ผ่าน lib/logger.ts ห้าม console.log มี level/time/module/requestId/msg และ redact ครบ"},
+    "9": {"pass": true, "why": "access 15 นาที, หมุนทุกครั้ง, hash, reuse revoke family, cookie Lax, refresh ล่วงหน้าและก่อนไป gateway"},
+    "10": {"pass": true, "why": "ตอบ { data }/{ error: { code, message } }, Zod ทุก input, requireUser ก่อน service, webhook HMAC + event_id"},
+    "11": {"pass": true, "why": "ครบตามโน้ต: 15 นาที+หมุน, refresh ก่อน gateway, callback อ่าน order_id ไม่ใช้ session, E2E TTL 5 วิ"},
+    "12": {"pass": true, "why": "HMAC-SHA256 ก่อน, INSERT payment_events UNIQUE ก่อน ชน=200, สถานะทางเดียว, ตอบ 200 ใน 3 วิ+คิว"}
+  }
+}

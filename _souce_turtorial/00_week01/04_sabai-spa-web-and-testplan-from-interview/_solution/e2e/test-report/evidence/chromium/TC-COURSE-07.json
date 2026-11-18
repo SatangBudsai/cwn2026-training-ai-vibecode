@@ -1,0 +1,136 @@
+{
+  "id": "TC-COURSE-07",
+  "checks": [
+    {
+      "n": 1,
+      "label": "รายชื่อมีเฉพาะ T01, T05 รวม 2 คน",
+      "pass": true,
+      "actual": "พี่ศรี ★ 5.0 · 3 รีวิว",
+      "shot": "shots/chromium/TC-COURSE-07/001.jpg",
+      "actor": "main",
+      "t": 4144
+    },
+    {
+      "n": 2,
+      "label": "เลือก 2 คนไม่ได้ หรือมีข้อความแจ้งว่าจองด้วยคอร์สได้ครั้งละ 1 คน",
+      "pass": true,
+      "actual": "2",
+      "shot": "shots/chromium/TC-COURSE-07/002.jpg",
+      "actor": "main",
+      "t": 5561
+    },
+    {
+      "n": 3,
+      "label": "เวลานัด 12:00–13:00 (60 นาที)",
+      "pass": true,
+      "actual": "17 มิ.ย. 2026 · 12:00–13:00",
+      "shot": "shots/chromium/TC-COURSE-07/003.jpg",
+      "actor": "main",
+      "t": 9189
+    },
+    {
+      "n": 4,
+      "label": "C01 เหลือ 6 ทันที: เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-07/004.jpg",
+      "actor": "main",
+      "t": 10837
+    },
+    {
+      "n": 5,
+      "label": "C01 เหลือ 6 หลังรีโหลด: เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-07/005.jpg",
+      "actor": "main",
+      "t": 12425
+    },
+    {
+      "n": 6,
+      "label": "มีปุ่มยกเลิกนัด D66VYMHD",
+      "pass": true,
+      "actual": "1",
+      "shot": "shots/chromium/TC-COURSE-07/006.jpg",
+      "actor": "main",
+      "t": 13841
+    },
+    {
+      "n": 7,
+      "label": "ยกเลิกนัด D66VYMHD สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-COURSE-07/007.jpg",
+      "actor": "main",
+      "t": 15275
+    },
+    {
+      "n": 8,
+      "label": "หลังยกเลิก C01 เหลือ 7 ทันที: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-07/008.jpg",
+      "actor": "main",
+      "t": 16915
+    },
+    {
+      "n": 9,
+      "label": "หลังยกเลิก C01 เหลือ 7 หลังรีโหลด: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-07/009.jpg",
+      "actor": "main",
+      "t": 18479
+    },
+    {
+      "n": 10,
+      "label": "ยิง 2 คนถูกปฏิเสธ เหตุจองด้วยคอร์สได้ครั้งละ 1 คน",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"course-one-person\",\"message\":\"จองด้วยคอร์สได้ครั้งละ 1 คน\"}}",
+      "shot": "shots/chromium/TC-COURSE-07/010.jpg",
+      "actor": "main",
+      "t": 19919
+    },
+    {
+      "n": 11,
+      "label": "ยิงด้วย T02 ถูกปฏิเสธ เหตุนักบำบัดไม่ได้ทำบริการนี้",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"therapist-cannot-perform\",\"message\":\"นักบำบัดคนนี้ไม่ได้ทำบริการนี้\"}}",
+      "shot": "shots/chromium/TC-COURSE-07/011.jpg",
+      "actor": "main",
+      "t": 20893
+    },
+    {
+      "n": 12,
+      "label": "ไม่มีนัดใหม่: รายการนัดตรงตามที่คาด SJTEST07",
+      "pass": true,
+      "actual": "สมาชิกสบายใจ บัญชีของฉัน ระดับสมาชิก แต้ม และนัดของคุณ ระดับสมาชิก Gold ยอดสะสม ฿12,400 แต้มสะสม 99 อีก ฿17,600 ถึง Platinum แต้มไม่หมดอายุ ยอดสะสมไม่เริ่มนับใหม่ และระดับไม่ลดลง นัดที่จะมาถึง 16 มิ.ย. 2026 10:00–11:00 นวดไทย 60 นาที รหัสการจอง SJTEST07 1 คน พี่มาลี จ่ายหน้าร้าน ฿950 ยกเลิกนัดนี้ ไม่มีปุ่มเปลี่ยนเวลานัด หากต้องการเปลี่ยนต้องยกเลิกแล้วจองใหม่ ข้อมูลของฉัน ชื่อ คุณนิดา อีเมล nida@sabai.test เบอร์โทร 0810000001 วันเกิด 1 มี.ค. 1985แก้เองไม่ได้ ประวัติทรีตเมนต์ Wallet และคอร์ส ออกจา",
+      "shot": "shots/chromium/TC-COURSE-07/012.jpg",
+      "actor": "main",
+      "t": 22421
+    },
+    {
+      "n": 13,
+      "label": "C01 ยังเหลือ ทันที: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-07/013.jpg",
+      "actor": "main",
+      "t": 23995
+    },
+    {
+      "n": 14,
+      "label": "C01 ยังเหลือ หลังรีโหลด: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-07/014.jpg",
+      "actor": "main",
+      "t": 25558
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-COURSE-07/main.webm"
+    }
+  }
+}

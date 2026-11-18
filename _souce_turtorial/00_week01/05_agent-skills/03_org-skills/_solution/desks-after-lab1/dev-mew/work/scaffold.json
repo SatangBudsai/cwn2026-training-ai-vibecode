@@ -1,0 +1,18 @@
+{
+  "name": "sukjai-spa",
+  "title": "SukJai Spa Member",
+  "client": "สุขใจสปาแอนด์เวลเนส (12 สาขา) — สมมติเป็นลูกค้ารอบที่ 5 ของปี",
+  "consentVersion": "2026-11-v1",
+  "packages": [
+    { "id": "annual-member", "description": "สมาชิกรายปี (ส่วนลด 10% ทุกบริการ)", "amountSatang": 150000 },
+    { "id": "massage-10", "description": "คอร์สนวดไทย 10 ครั้ง", "amountSatang": 390000 },
+    { "id": "deposit-booking", "description": "มัดจำจองคิว", "amountSatang": 30000 }
+  ],
+  "todos": [
+    "login ด้วย OTP มือถือ + reset password (โมดูล auth) — รอ spec ผู้ให้บริการ SMS",
+    "เรียก refund API ของ ThaiPay GW ใน payment.refund()",
+    "เพิ่มแต้ม/เปิดสิทธิ์แพ็กเกจใน worker payment.paid (idempotent ด้วย eventId)",
+    "ผูก provider อีเมล/SMS/LINE จริงใน notification worker",
+    "ปรับแพ็กเกจ/ราคาใน src/modules/payment/catalog.ts ตาม spec ที่ลูกค้ายืนยัน"
+  ]
+}

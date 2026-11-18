@@ -1,0 +1,21 @@
+{
+  "deal": "deal-001 ธนาคารนครหลวงพัฒนา — ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114)",
+  "fixed_price": true,
+  "budget": 4800000,
+  "discount": 0,
+  "lines": [
+    {"code": "MD-SA", "qty": 15},
+    {"code": "MD-PM", "qty": 30},
+    {"code": "MD-DEV-SR", "qty": 35},
+    {"code": "MD-DEV", "qty": 70},
+    {"code": "MD-UX", "qty": 10},
+    {"code": "MD-QA", "qty": 30},
+    {"code": "MD-DEVOPS", "qty": 12},
+    {"code": "MD-ML", "qty": 35},
+    {"code": "CL-M", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-LINE", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-APM", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "ปีแรก"}
+  ]
+}

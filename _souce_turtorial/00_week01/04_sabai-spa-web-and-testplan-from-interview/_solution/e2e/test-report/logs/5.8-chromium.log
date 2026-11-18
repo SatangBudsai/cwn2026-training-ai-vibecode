@@ -1,0 +1,570 @@
+npm notice run npx
+npm notice run playwright test tests/5.8- --project=chromium
+
+Running 10 tests using 1 worker
+
+(node:112912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [chromium] › tests\5.8-experience.spec.ts:255:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-01 ตัวกรอง 4.5 ดาวขึ้นไปแสดงเฉพาะคนที่ถึงขอบและคงอยู่หลังรีโหลดและจากลิงก์ตรง @P2 @5.8 (10.4s)
+  ok  2 [chromium] › tests\5.8-experience.spec.ts:307:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-02 คะแนนเฉลี่ยบนการ์ดตรงกับค่าที่คิดจากรีวิวเก่า @P2 @5.8 (8.1s)
+  ok  3 [chromium] › tests\5.8-experience.spec.ts:351:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-03 แบบทดสอบ 4 ข้อแสดงผลเมื่อครบ ตารางอารมณ์ 3 แบบ และถามซ้ำได้ผลเดิม @P3 @5.8 (1.2m)
+  x   4 [chromium] › tests\5.8-experience.spec.ts:467:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-04 แชตตอบเวลา ราคา และนอกเรื่องตามภาษาที่ถาม ข้อความไม่มีตัวอักษรภาษาตอบภาษาหน้าเว็บ @P1 @5.8 (37.5s)
+(node:124948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   5 [chromium] › tests\5.8-experience.spec.ts:540:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-05 จองผ่านแชตปฏิเสธรอบผิดทันที รายการบริการมี P01 และจองจริงได้ยอดกับนักบำบัดถูกต้อง @P1 @5.8 (1.1m)
+(node:69116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [chromium] › tests\5.8-experience.spec.ts:636:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-06 วิเคราะห์เซลฟี่ในเครื่อง รูปไม่ออกจากเครื่องและไม่เหลือในเครื่อง @P1 @5.8 (40.2s)
+  x   7 [chromium] › tests\5.8-experience.spec.ts:722:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-07 ภาพจำลองก่อนและหลังยังไม่เปิดใช้ที่ /th/skin @P1 @5.8 (1.3m)
+(node:63224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  8 [chromium] › tests\5.8-experience.spec.ts:761:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-08 โหมด /zh เหลือข้อความไทย 0 จุดตั้งแต่เริ่มจองถึงหน้ายืนยัน รวมแชตและ error @P2 @5.8 (42.0s)
+  ok  9 [chromium] › tests\5.8-experience.spec.ts:875:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-09 จอกว้าง 375px ไม่ต้องเลื่อนซ้ายขวาในทุกหน้าและทุกขั้นจอง @P2 @5.8 @mobile (57.9s)
+  ok 10 [chromium] › tests\5.8-experience.spec.ts:966:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px @P3 @5.8 @mobile (24.9s)
+
+
+  1) [chromium] › tests\5.8-experience.spec.ts:467:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-04 แชตตอบเวลา ราคา และนอกเรื่องตามภาษาที่ถาม ข้อความไม่มีตัวอักษรภาษาตอบภาษาหน้าเว็บ @P1 @5.8 › 2. ค้นตัวอักษรไทยในคำตอบของข้อความอังกฤษและจีน 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "How much is Aroma Oil Massage? → S04 Aroma Oil Massage: ฿2,000 per person (90 min)",
+    + ]
+
+      515 |       // ใช้ regex ตามแผนตรงตัว [฀-๿] ซึ่งครอบ ฿ (U+0E3F) ด้วย
+      516 |       const withThai = foreign.filter((r) => THAI_BLOCK.test(r.text)).map((r) => `${r.q} → ${r.text}`);
+    > 517 |       await app.checkValue(page, 'คำตอบอังกฤษและจีนตาม regex ของแผน 0 จุด', withThai, (v) => { expect.soft(v).toEqual([]); });
+          |                                                                                                               ^
+      518 |     });
+      519 |
+      520 |     await test.step('3. ส่ง 12345 และ ??? จากหน้า /th', async () => {
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:517:111)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:517:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:513:5
+
+    Error Context: test-results\5.8-chromium\5.8-experience-5-8-ตัวช่วย-ee4ba-ตัวอักษรภาษาตอบภาษาหน้าเว็บ-chromium\error-context.md
+
+  2) [chromium] › tests\5.8-experience.spec.ts:540:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-05 จองผ่านแชตปฏิเสธรอบผิดทันที รายการบริการมี P01 และจองจริงได้ยอดกับนักบำบัดถูกต้อง @P1 @5.8 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+    @@ -1,7 +1,6 @@
+      Array [
+    -   "P01",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+
+      567 |         const text = await el.innerText().catch(() => '');
+      568 |         const ids = text.match(/\b[SPK]\d\d\b/g) ?? [];
+    > 569 |         expect.soft([...new Set(ids)].sort()).toEqual(['P01', 'S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07']);
+          |                                               ^
+      570 |         expect.soft(text).not.toMatch(/\bK01\b/);
+      571 |       });
+      572 |     });
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:569:47
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:566:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:562:5
+
+    Error: expect(locator).not.toHaveText(expected) failed
+
+    Locator: locator('[data-testid^="chat-message-"][data-role="bot"]').nth(3)
+    Expected pattern: not /กี่คน|How many|几位|多少人/i
+    Received string: "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toHaveText" locator('[data-testid^="chat-message-"][data-role="bot"]').nth(3) with timeout 6000ms
+      - waiting for locator('[data-testid^="chat-message-"][data-role="bot"]').nth(3)
+        16 × locator resolved to <div lang="th" data-role="bot" class="raiqoq_bubbleBot" data-e2e-prev-outline="" data-testid="chat-message-7">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>
+           - unexpected value "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+
+
+      583 |         const reply = await chatSay(page, time);
+      584 |         await app.check(reply.el, `รอบ ${time} ถูกปฏิเสธทันที (${why}) ยังไม่ถามจำนวนคน`, async (el) => {
+    > 585 |           await expect.soft(el).not.toHaveText(ASK_PARTY);
+          |                                     ^
+      586 |           await expect.soft(el).toHaveText(reason);
+      587 |         });
+      588 |       }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:585:37)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:584:9
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:574:5
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('[data-testid^="chat-message-"][data-role="bot"]').nth(3)
+    Expected pattern: /30\s*นาที|ครึ่งชั่วโมง/
+    Received string:  "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toHaveText" locator('[data-testid^="chat-message-"][data-role="bot"]').nth(3) with timeout 6000ms
+      - waiting for locator('[data-testid^="chat-message-"][data-role="bot"]').nth(3)
+        15 × locator resolved to <div lang="th" data-role="bot" class="raiqoq_bubbleBot" data-e2e-prev-outline="" data-testid="chat-message-7">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>
+           - unexpected value "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+
+
+      584 |         await app.check(reply.el, `รอบ ${time} ถูกปฏิเสธทันที (${why}) ยังไม่ถามจำนวนคน`, async (el) => {
+      585 |           await expect.soft(el).not.toHaveText(ASK_PARTY);
+    > 586 |           await expect.soft(el).toHaveText(reason);
+          |                                 ^
+      587 |         });
+      588 |       }
+      589 |       await admin.open(OWNER_DATE);
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:586:33
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:584:9
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:574:5
+
+    Error: expect(locator).not.toHaveText(expected) failed
+
+    Locator: locator('[data-testid^="chat-message-"][data-role="bot"]').nth(4)
+    Expected pattern: not /กี่คน|How many|几位|多少人/i
+    Received string: "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toHaveText" locator('[data-testid^="chat-message-"][data-role="bot"]').nth(4) with timeout 6000ms
+      - waiting for locator('[data-testid^="chat-message-"][data-role="bot"]').nth(4)
+        16 × locator resolved to <div lang="th" data-role="bot" class="raiqoq_bubbleBot" data-e2e-prev-outline="" data-testid="chat-message-9">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>
+           - unexpected value "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+
+
+      583 |         const reply = await chatSay(page, time);
+      584 |         await app.check(reply.el, `รอบ ${time} ถูกปฏิเสธทันที (${why}) ยังไม่ถามจำนวนคน`, async (el) => {
+    > 585 |           await expect.soft(el).not.toHaveText(ASK_PARTY);
+          |                                     ^
+      586 |           await expect.soft(el).toHaveText(reason);
+      587 |         });
+      588 |       }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:585:37)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:584:9
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:574:5
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('[data-testid^="chat-message-"][data-role="bot"]').nth(4)
+    Expected pattern: /22:00|21:00|จบ|เกิน|ปิด/
+    Received string:  "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toHaveText" locator('[data-testid^="chat-message-"][data-role="bot"]').nth(4) with timeout 6000ms
+      - waiting for locator('[data-testid^="chat-message-"][data-role="bot"]').nth(4)
+        16 × locator resolved to <div lang="th" data-role="bot" class="raiqoq_bubbleBot" data-e2e-prev-outline="" data-testid="chat-message-9">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>
+           - unexpected value "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+
+
+      584 |         await app.check(reply.el, `รอบ ${time} ถูกปฏิเสธทันที (${why}) ยังไม่ถามจำนวนคน`, async (el) => {
+      585 |           await expect.soft(el).not.toHaveText(ASK_PARTY);
+    > 586 |           await expect.soft(el).toHaveText(reason);
+          |                                 ^
+      587 |         });
+      588 |       }
+      589 |       await admin.open(OWNER_DATE);
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:586:33
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:584:9
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:574:5
+
+    Error: expect(locator).not.toHaveText(expected) failed
+
+    Locator: locator('[data-testid^="chat-message-"][data-role="bot"]').nth(5)
+    Expected pattern: not /กี่คน|How many|几位|多少人/i
+    Received string: "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toHaveText" locator('[data-testid^="chat-message-"][data-role="bot"]').nth(5) with timeout 6000ms
+      - waiting for locator('[data-testid^="chat-message-"][data-role="bot"]').nth(5)
+        16 × locator resolved to <div lang="th" data-role="bot" class="raiqoq_bubbleBot" data-e2e-prev-outline="" data-testid="chat-message-11">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>
+           - unexpected value "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+
+
+      583 |         const reply = await chatSay(page, time);
+      584 |         await app.check(reply.el, `รอบ ${time} ถูกปฏิเสธทันที (${why}) ยังไม่ถามจำนวนคน`, async (el) => {
+    > 585 |           await expect.soft(el).not.toHaveText(ASK_PARTY);
+          |                                     ^
+      586 |           await expect.soft(el).toHaveText(reason);
+      587 |         });
+      588 |       }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:585:37)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:584:9
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:574:5
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('[data-testid^="chat-message-"][data-role="bot"]').nth(5)
+    Expected pattern: /10:00|ก่อน/
+    Received string:  "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toHaveText" locator('[data-testid^="chat-message-"][data-role="bot"]').nth(5) with timeout 6000ms
+      - waiting for locator('[data-testid^="chat-message-"][data-role="bot"]').nth(5)
+        16 × locator resolved to <div lang="th" data-role="bot" class="raiqoq_bubbleBot" data-e2e-prev-outline="" data-testid="chat-message-11">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>
+           - unexpected value "มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)"
+
+
+      584 |         await app.check(reply.el, `รอบ ${time} ถูกปฏิเสธทันที (${why}) ยังไม่ถามจำนวนคน`, async (el) => {
+      585 |           await expect.soft(el).not.toHaveText(ASK_PARTY);
+    > 586 |           await expect.soft(el).toHaveText(reason);
+          |                                 ^
+      587 |         });
+      588 |       }
+      589 |       await admin.open(OWNER_DATE);
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:586:33
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:584:9
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:574:5
+
+    Error Context: test-results\5.8-chromium\5.8-experience-5-8-ตัวช่วย-6da96-ริงได้ยอดกับนักบำบัดถูกต้อง-chromium\error-context.md
+
+  3) [chromium] › tests\5.8-experience.spec.ts:722:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-07 ภาพจำลองก่อนและหลังยังไม่เปิดใช้ที่ /th/skin @P1 @5.8 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview') with timeout 6000ms
+      - waiting for getByTestId('skin-preview')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      735 |       const preview = page.getByTestId('skin-preview');
+      736 |       await app.check((await preview.count()) > 0 ? preview : page.getByTestId('skin-intro'), `${label} ภาพก่อน/หลัง 0 ภาพ และข้อความกำกับ 0 จุด`, async () => {
+    > 737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+          |                                                             ^
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:737:61)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:746:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:744:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview-before')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview-before') with timeout 6000ms
+      - waiting for getByTestId('skin-preview-before')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      736 |       await app.check((await preview.count()) > 0 ? preview : page.getByTestId('skin-intro'), `${label} ภาพก่อน/หลัง 0 ภาพ และข้อความกำกับ 0 จุด`, async () => {
+      737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+    > 738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+          |                                                                    ^
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+      741 |       });
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:738:68
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:746:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:744:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview-after')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview-after') with timeout 6000ms
+      - waiting for getByTestId('skin-preview-after')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+    > 739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+          |                                                                   ^
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+      741 |       });
+      742 |     };
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:739:67
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:746:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:744:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByText('ภาพจำลอง ผลจริงอาจต่างกัน')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByText('ภาพจำลอง ผลจริงอาจต่างกัน') with timeout 6000ms
+      - waiting for getByText('ภาพจำลอง ผลจริงอาจต่างกัน')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+    > 740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+          |                                                                        ^
+      741 |       });
+      742 |     };
+      743 |
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:740:72
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:746:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:744:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview') with timeout 6000ms
+      - waiting for getByTestId('skin-preview')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      735 |       const preview = page.getByTestId('skin-preview');
+      736 |       await app.check((await preview.count()) > 0 ? preview : page.getByTestId('skin-intro'), `${label} ภาพก่อน/หลัง 0 ภาพ และข้อความกำกับ 0 จุด`, async () => {
+    > 737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+          |                                                             ^
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:737:61)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:752:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:749:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview-before')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview-before') with timeout 6000ms
+      - waiting for getByTestId('skin-preview-before')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      736 |       await app.check((await preview.count()) > 0 ? preview : page.getByTestId('skin-intro'), `${label} ภาพก่อน/หลัง 0 ภาพ และข้อความกำกับ 0 จุด`, async () => {
+      737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+    > 738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+          |                                                                    ^
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+      741 |       });
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:738:68
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:752:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:749:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview-after')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview-after') with timeout 6000ms
+      - waiting for getByTestId('skin-preview-after')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+    > 739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+          |                                                                   ^
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+      741 |       });
+      742 |     };
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:739:67
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:752:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:749:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByText('ภาพจำลอง ผลจริงอาจต่างกัน')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByText('ภาพจำลอง ผลจริงอาจต่างกัน') with timeout 6000ms
+      - waiting for getByText('ภาพจำลอง ผลจริงอาจต่างกัน')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+    > 740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+          |                                                                        ^
+      741 |       });
+      742 |     };
+      743 |
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:740:72
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:752:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:749:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview') with timeout 6000ms
+      - waiting for getByTestId('skin-preview')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      735 |       const preview = page.getByTestId('skin-preview');
+      736 |       await app.check((await preview.count()) > 0 ? preview : page.getByTestId('skin-intro'), `${label} ภาพก่อน/หลัง 0 ภาพ และข้อความกำกับ 0 จุด`, async () => {
+    > 737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+          |                                                             ^
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:737:61)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:757:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:755:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview-before')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview-before') with timeout 6000ms
+      - waiting for getByTestId('skin-preview-before')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      736 |       await app.check((await preview.count()) > 0 ? preview : page.getByTestId('skin-intro'), `${label} ภาพก่อน/หลัง 0 ภาพ และข้อความกำกับ 0 จุด`, async () => {
+      737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+    > 738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+          |                                                                    ^
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+      741 |       });
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:738:68
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:757:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:755:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('skin-preview-after')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByTestId('skin-preview-after') with timeout 6000ms
+      - waiting for getByTestId('skin-preview-after')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      737 |         await expect.soft(page.getByTestId('skin-preview')).toHaveCount(0);
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+    > 739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+          |                                                                   ^
+      740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+      741 |       });
+      742 |     };
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:739:67
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:757:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:755:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByText('ภาพจำลอง ผลจริงอาจต่างกัน')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" getByText('ภาพจำลอง ผลจริงอาจต่างกัน') with timeout 6000ms
+      - waiting for getByText('ภาพจำลอง ผลจริงอาจต่างกัน')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      738 |         await expect.soft(page.getByTestId('skin-preview-before')).toHaveCount(0);
+      739 |         await expect.soft(page.getByTestId('skin-preview-after')).toHaveCount(0);
+    > 740 |         await expect.soft(page.getByText('ภาพจำลอง ผลจริงอาจต่างกัน')).toHaveCount(0);
+          |                                                                        ^
+      741 |       });
+      742 |     };
+      743 |
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:740:72
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at verifyNoPreview (C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:736:7)
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:757:7
+        at C:\t\spa04\sabai\e2e\tests\5.8-experience.spec.ts:755:5
+
+    Error Context: test-results\5.8-chromium\5.8-experience-5-8-ตัวช่วย-a138a-ลังยังไม่เปิดใช้ที่-th-skin-chromium\error-context.md
+
+  3 failed
+    [chromium] › tests\5.8-experience.spec.ts:467:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-04 แชตตอบเวลา ราคา และนอกเรื่องตามภาษาที่ถาม ข้อความไม่มีตัวอักษรภาษาตอบภาษาหน้าเว็บ @P1 @5.8 
+    [chromium] › tests\5.8-experience.spec.ts:540:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-05 จองผ่านแชตปฏิเสธรอบผิดทันที รายการบริการมี P01 และจองจริงได้ยอดกับนักบำบัดถูกต้อง @P1 @5.8 
+    [chromium] › tests\5.8-experience.spec.ts:722:3 › 5.8 ตัวช่วยเลือก แชต ภาษา และบรรยากาศ › TC-EXPR-07 ภาพจำลองก่อนและหลังยังไม่เปิดใช้ที่ /th/skin @P1 @5.8 
+  7 passed (7.4m)

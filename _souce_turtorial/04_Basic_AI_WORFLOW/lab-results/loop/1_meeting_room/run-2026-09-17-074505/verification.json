@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-09-17T07:56:03.364964+00:00",
+  "tests": {
+    "rooms_visible": true,
+    "availability_open": true,
+    "booking_created": true,
+    "availability_after_booking": true,
+    "overlap_rejected": true,
+    "cancelled_status": true,
+    "availability_after_cancel": true,
+    "invalid_interval_rejected": true,
+    "initial_cancel_available": true,
+    "no_console_or_page_errors": true
+  },
+  "console_page_errors": [],
+  "feature_access_routes": {
+    "แสดงห้องประชุม": {
+      "clicks": 0,
+      "path": "หน้าแรก → รายการห้อง"
+    },
+    "ดูเวลาว่าง": {
+      "clicks": 1,
+      "path": "หน้าแรก → ดูเวลาว่าง River"
+    },
+    "จองห้อง": {
+      "clicks": 0,
+      "path": "หน้าแรก → ฟอร์มจองที่แสดงอยู่แล้ว; การส่งหลังกรอกใช้ปุ่มยืนยัน 1 คลิก"
+    },
+    "ยกเลิกการจอง": {
+      "clicks": 1,
+      "path": "หน้าแรก → ยกเลิกประชุมตัวอย่าง"
+    },
+    "แสดงสถานะ": {
+      "clicks": 0,
+      "path": "หน้าแรก → ตารางการจองและสถานะ"
+    }
+  },
+  "criteria": {
+    "C1": true,
+    "C2": true,
+    "C3": true
+  }
+}

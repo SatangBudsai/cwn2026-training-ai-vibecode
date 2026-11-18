@@ -1,0 +1,75 @@
+{
+ "score": 1.0,
+ "checks": [
+  {
+   "id": "fixed_A2",
+   "pass": true,
+   "note": "TC-CART-03 ผ่านแล้ว"
+  },
+  {
+   "id": "fixed_B2",
+   "pass": true,
+   "note": "TC-AUTH-03 ผ่านแล้ว"
+  },
+  {
+   "id": "fixed_C2",
+   "pass": true,
+   "note": "TC-CAT-03 ผ่านแล้ว"
+  },
+  {
+   "id": "no_regression",
+   "pass": true,
+   "note": "TC อื่นผ่านครบ 38 เทสต์"
+  },
+  {
+   "id": "tests_green",
+   "pass": true,
+   "note": "ผ่านครบ 3 เทสต์"
+  },
+  {
+   "id": "caught_A2",
+   "pass": true,
+   "note": "เทสต์ TC-CART-03 ล้มบนเว็บที่มีบั๊ก"
+  },
+  {
+   "id": "caught_B2",
+   "pass": true,
+   "note": "เทสต์ TC-AUTH-03 ล้มบนเว็บที่มีบั๊ก"
+  },
+  {
+   "id": "caught_C2",
+   "pass": true,
+   "note": "เทสต์ TC-CAT-03 ล้มบนเว็บที่มีบั๊ก"
+  },
+  {
+   "id": "reported_A2",
+   "pass": true,
+   "note": "รายงาน TC-CART-03 แล้ว"
+  },
+  {
+   "id": "reported_B2",
+   "pass": true,
+   "note": "รายงาน TC-AUTH-03 แล้ว"
+  },
+  {
+   "id": "reported_C2",
+   "pass": true,
+   "note": "รายงาน TC-CAT-03 แล้ว"
+  },
+  {
+   "id": "no_false_alarm",
+   "pass": true,
+   "note": "ทุกแถวตรงกับบั๊กที่ฝัง (3 แถว)"
+  },
+  {
+   "id": "evidence",
+   "pass": true,
+   "note": "มีภาพหลักฐานครบ 3 บั๊ก"
+  },
+  {
+   "id": "plan_untouched",
+   "pass": true,
+   "note": "ตรงกับต้นฉบับ"
+  }
+ ]
+}

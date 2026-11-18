@@ -1,0 +1,29 @@
+{
+  "deal": "deal-001",
+  "customer": "ธนาคารนครหลวงพัฒนา จำกัด (มหาชน) — ฝ่ายพัฒนาช่องทางสาขา",
+  "project": "ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114) — ตรวจราคาที่ Sales เสนอ",
+  "prepared_by": "จอย พัฒนสิน (fin-joy)",
+  "date": "2026-11-03",
+  "fixed_price": true,
+  "budget_thb": 4800000,
+  "lines": [
+    {"code": "MD-SA", "qty": 16, "note": "ตาม deal-001-pricing-input.json (ก่อน buffer)"},
+    {"code": "MD-PM", "qty": 36, "note": ""},
+    {"code": "MD-DEV-SR", "qty": 48, "note": "reuse booking engine/slot lock จากงานเกษตรไทย"},
+    {"code": "MD-DEV", "qty": 85, "note": "2 คน 120 สาขา + 3 integration"},
+    {"code": "MD-UX", "qty": 10, "note": ""},
+    {"code": "MD-QA", "qty": 36, "note": "27% ของ Dev+Dev-Sr (เกณฑ์ 25–35%)"},
+    {"code": "MD-DEVOPS", "qty": 14, "note": ""},
+    {"code": "MD-ML", "qty": 28, "note": "อยู่ในช่วง benchmark 20–35"},
+    {"code": "CL-M", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "ปีแรก · 8x5"}
+  ],
+  "external": [],
+  "discount_thb": 300000,
+  "discount_reason": "ส่วนลดพิเศษตามที่ Sales เสนอ",
+  "assumptions": [
+    "แปลงจาก deal-001-pricing-input.json ของ Sales (คีย์ budget/discount เปลี่ยนเป็น budget_thb/discount_thb ตามรูปแบบ pricing-calc) · man-day เป็นตัวเลขก่อน buffer เพราะตารางในข้อเสนอ = ค่านี้ × 1.1 ปัดขึ้น",
+    "ไม่รวม LINE OA (ใช้ของธนาคาร), SMS/OTP, pen test อิสระ, การแก้ระบบฝั่งธนาคาร — ตามหัวข้อ 7 ของข้อเสนอ"
+  ]
+}

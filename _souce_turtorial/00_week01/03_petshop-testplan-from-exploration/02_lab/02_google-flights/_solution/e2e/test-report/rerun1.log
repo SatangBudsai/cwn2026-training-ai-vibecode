@@ -1,0 +1,290 @@
+npm notice run gf-e2e@1.0.0 npx
+npm notice run playwright test --grep TC-BKG-01 |TC-LOC-01 |TC-LOC-02 |TC-LOC-03
+
+Running 4 tests using 1 worker
+
+(node:104264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [chromium] › tests\5.5-booking.spec.ts:492:5 › TC-BKG-01 · เลือกด้วยปุ่ม "เลือกเที่ยวบิน" + คัดลอก UB + เปิดซ้ำในแท็บใหม่ @P1 @5.5 (47.3s)
+(node:113132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [chromium] › tests\5.6-locale-home.spec.ts:523:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-01 · เปลี่ยนสกุลเงิน THB → JPY → THB และรีเฟรช @P1 @5.6 (1.9m)
+  ok 3 [chromium] › tests\5.6-locale-home.spec.ts:699:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-02 · เปลี่ยนประเทศและภาษาแล้วเงื่อนไขกับสกุลเงินคงเดิม @P1 @5.6 (1.9m)
+  x  4 [chromium] › tests\5.6-locale-home.spec.ts:838:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-03 · ⚠️ ชื่อสายการบินข้ามภาษา ป้ายท้ายหน้า และการ์ดหน้าแรก @P1 @5.6 @known-defect (4.1m)
+
+
+  1) [chromium] › tests\5.5-booking.spec.ts:492:5 › TC-BKG-01 · เลือกด้วยปุ่ม "เลือกเที่ยวบิน" + คัดลอก UB + เปิดซ้ำในแท็บใหม่ @P1 @5.5 › 1. เปิด U1 ตรง รอ ≥ 10 วินาที อ่านหัวผลลัพธ์และนับจำนวนแท็บ 
+
+    Error: ไม่พบแถวผลลัพธ์ในหน้า (หน้าผลลัพธ์ไม่โหลด)
+
+      181 | async function waitRows(page: Page) {
+      182 |   const ok = await until(async () => (await rowLink(page).count()) > 0, 30_000);
+    > 183 |   if (!ok) throw new Error('ไม่พบแถวผลลัพธ์ในหน้า (หน้าผลลัพธ์ไม่โหลด)');
+          |                  ^
+      184 | }
+      185 |
+      186 | function identFromLabel(label: string): Ident {
+        at waitRows (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:183:18)
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:525:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:523:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results-rerun1\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-rerun1\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-rerun1\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\error-context.md
+
+  2) [chromium] › tests\5.6-locale-home.spec.ts:838:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-03 · ⚠️ ชื่อสายการบินข้ามภาษา ป้ายท้ายหน้า และการ์ดหน้าแรก @P1 @5.6 @known-defect 
+
+    Error: E3: คู่ชื่อที่สะกดต่างกันแค่วรรณยุกต์/สระ
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "\"เวียดเจ็ทแอร์\" (เวียดเจ็ทแอร์) ≠ \"ไทยเวียดเจ๊ทแอร์\" (เวียดเจ๊ทแอร์)",
+    + ]
+
+      923 |           if (c) bad.push(c);
+      924 |         }
+    > 925 |         expect.soft(bad, 'E3: คู่ชื่อที่สะกดต่างกันแค่วรรณยุกต์/สระ').toEqual([]);
+          |                                                                       ^
+      926 |       });
+      927 |     });
+      928 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:925:71)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:919:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:895:5
+
+    Error: E4 (ja): ป้ายปุ่ม "地図" หมายถึง ประเทศ/ภูมิภาค/สถานที่ตั้ง
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /国|地域|所在地|ロケーション|場所/
+    Received string:  "地図"
+
+      873 |       await gf.check(`E4 (${lang}) ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน`, [heading, footerBtn(page, 1)], async () => {
+      874 |         const btn = labelKey(footers[lang]![1]);
+    > 875 |         expect.soft(btn, `E4 (${lang}): ป้ายปุ่ม "${btn}" หมายถึง ประเทศ/ภูมิภาค/สถานที่ตั้ง`).toMatch(CONCEPT.loc[lang]);
+          |                                                                                                ^
+      876 |         expect.soft(title, `E4 (${lang}): หัวข้อป๊อปอัป "${title}" หมายถึง ประเทศ/ภูมิภาค/สถานที่ตั้ง`).toMatch(CONCEPT.loc[lang]);
+      877 |       });
+      878 |       await gf.click(dlg.getByRole('button', { name: CANCEL_RE }));
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:875:96)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at locPopup (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:873:7)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:950:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:945:5
+
+    Error: E5 (ja): ปุ่มสถานที่ตั้ง (ห้ามเป็นคำที่หมายถึงสิ่งอื่น เช่น 地図 = แผนที่)
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /国|地域|所在地|ロケーション|場所/
+    Received string:  "地図"
+
+      952 |         const f = footers.ja!;
+      953 |         expect.soft(labelKey(f[0]), 'E5 (ja): ปุ่มภาษา').toMatch(CONCEPT.lang.ja);
+    > 954 |         expect.soft(labelKey(f[1]), 'E5 (ja): ปุ่มสถานที่ตั้ง (ห้ามเป็นคำที่หมายถึงสิ่งอื่น เช่น 地図 = แผนที่)').toMatch(CONCEPT.loc.ja);
+          |                                                                                                                 ^
+      955 |         expect.soft(labelKey(f[2]), 'E5 (ja): ปุ่มสกุลเงิน').toMatch(CONCEPT.cur.ja);
+      956 |       });
+      957 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:954:113)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:951:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:945:5
+
+    Error: E1: ชื่อที่ขาดส่วนของแบรนด์
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "XJ 606 th \"แอร์เอเชีย\" ขาดส่วน [thai, x] ของ \"Thai AirAsia X\"",
+    + ]
+
+      975 |           }
+      976 |           if (unk.length) note('E1 ส่วนแบรนด์ที่ตัดสินอัตโนมัติไม่ได้ (ตรวจด้วยตาจากภาพ)', unk);
+    > 977 |           expect.soft(bad, 'E1: ชื่อที่ขาดส่วนของแบรนด์').toEqual([]);
+          |                                                           ^
+      978 |         });
+      979 |         await gf.check('E2 (ไทย) ชื่อแถวสรุป = แถวขยาย · รหัส 2 ตัวเดียวกันชื่อเหมือนกันทุกตัวอักษร', rowsLoc(page), async () => {
+      980 |           const bad: string[] = [];
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:977:59)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:965:9
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:945:5
+
+    Error: E2: ความไม่ตรงกัน
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "XJ 606: แถวสรุป \"แอร์เอเชีย\" ≠ แถวขยาย \"XJ 606\"",
+    +   "VZ 830: แถวสรุป \"ไทยเวียดเจ๊ทแอร์\" ≠ แถวขยาย \"VZ 830\"",
+    +   "ZG 52: แถวสรุป \"ZIPAIR Tokyo\" ≠ แถวขยาย \"ZG 52\"",
+    + ]
+
+      989 |           }
+      990 |           for (const [code, set] of byCode) if (set.size > 1) bad.push(`รหัส ${code}: ชื่อไทยไม่ตรงกัน [${[...set].join(' / ')}]`);
+    > 991 |           expect.soft(bad, 'E2: ความไม่ตรงกัน').toEqual([]);
+          |                                                 ^
+      992 |         });
+      993 |       }
+      994 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:991:49)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:979:9
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:945:5
+
+    Error: E6: ชื่อที่มีคำนำหน้าเขตปกครอง (D-LOC-ADMIN)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 6
+
+    - Array []
+    + Array [
+    +   "เทศบาลนครเชียงใหม่",
+    +   "เทศบาลนครภูเก็ต",
+    +   "เขตบริหารพิเศษฮ่องกง",
+    +   "อำเภอเกาะสมุย",
+    + ]
+
+      1005 |       await gf.check('E6 ชื่อเมืองหน้าแรกไม่มีคำนำหน้าเขตปกครองและสะกดครบวรรณยุกต์', [cardsLoc(page), page.getByRole('main').getByRole('tab')], async () => {
+      1006 |         expect.soft(cities.length, 'E6: มีชื่อเมืองให้ตรวจ').toBeGreaterThan(0);
+    > 1007 |         expect.soft(cities.filter((c) => ADMIN_RE.test(c)), 'E6: ชื่อที่มีคำนำหน้าเขตปกครอง (D-LOC-ADMIN)').toEqual([]);
+           |                                                                                                             ^
+      1008 |         const sp: string[] = [];
+      1009 |         for (const c of cities) for (const m of MISSPELL) if (m.re.test(c)) sp.push(`"${c}" ควรเป็น "${m.right}"`);
+      1010 |         expect.soft(sp, 'E6: ชื่อที่สะกดขาดวรรณยุกต์').toEqual([]);
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1007:109)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1005:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:996:5
+
+    Error: E6: ชื่อที่สะกดขาดวรรณยุกต์
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "\"เซี่ยงไฮ\" ควรเป็น \"เซี่ยงไฮ้\"",
+    + ]
+
+      1008 |         const sp: string[] = [];
+      1009 |         for (const c of cities) for (const m of MISSPELL) if (m.re.test(c)) sp.push(`"${c}" ควรเป็น "${m.right}"`);
+    > 1010 |         expect.soft(sp, 'E6: ชื่อที่สะกดขาดวรรณยุกต์').toEqual([]);
+           |                                                        ^
+      1011 |       });
+      1012 |     });
+      1013 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1010:56)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1005:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:996:5
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม: หัวผลลัพธ์ตรงนิยาม U1 (image/png) ───────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์ตรงนิยาม-U1-7319db6e8d378fe08972f0f27fb0c4d02fafe6a9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-02-ก่อนเริ่ม-ท้ายหน้า-ภาษา·ไทย-สถานที่ตั้ง·ไทย-สกุลเงิน·THB-753f144749bddda6d0e0267237020b63d528b7f4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 ชื่อแบรนด์ภาษาไทยสะกดเหมือนกันทุกชื่อ (ไม่ต่างแค่วรรณยุกต์/สระ) (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-03-E3-ชื่อแบรนด์ภาษาไทยสะกดเหมือนกันทุกชื่อ-ไม่ต่างแค่วรรณยุกต์-สระ--5c728b91fb1c44cfb002d50556cf514a81067838.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E4 (th) ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-04-E4-th-ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน-afee81d5c5d964b3000b768a6bf4b05ae0abb6cc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E4 (en) ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-05-E4-en-ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน-81d9bd8510b5804fbdc1e590ed543b31480171ed.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 06: E5 (en) ป้ายปุ่มท้ายหน้าทั้ง 3 ปุ่มความหมายตรงกับภาษาไทย (image/png) ───
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-06-E5-en-ป้ายปุ่มท้ายหน้าทั้ง-3-ปุ่มความหมายตรงกับภาษาไทย-659aec8dfc6c0c495e31511a996d3ff4626dcce3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: step4-ja-footer (image/png) ─────────────────────────────────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\step4-ja-footer-d57020f9d07d2790783dd33317904e6ef80ff87c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: step4-ja-location-popup (image/png) ─────────────────────────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\step4-ja-location-popup-2bade5930881c63da88d73103654a585fde1d596.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: ตรวจ 07: E4 (ja) ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-07-E4-ja-ป้ายปุ่มสถานที่ตั้งกับหัวข้อป๊อปอัปหมายถึงสิ่งเดียวกัน-cb0d9dd86f6650ff05f08a8c2bd68bce174fe928.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: ตรวจ 08: E5 (ja) ป้ายปุ่มท้ายหน้าทั้ง 3 ปุ่มความหมายตรงกับภาษาไทย (image/png) ──
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-08-E5-ja-ป้ายปุ่มท้ายหน้าทั้ง-3-ปุ่มความหมายตรงกับภาษาไทย-58b88a1b4c61b2796423773a29a3b7d7f63c5cf5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #11: ตรวจ 09: E1 ชื่อสายการบินไทย/ญี่ปุ่นเป็นคำแปลครบทุกส่วนของแบรนด์อังกฤษ (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-09-E1-ชื่อสายการบินไทย-ญี่ปุ่นเป็นคำแปลครบทุกส่วนของแบรนด์อังกฤษ-0959695a6f9650c1a25c68180e107eae01908926.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #12: ตรวจ 10: E2 (ไทย) ชื่อแถวสรุป = แถวขยาย · รหัส 2 ตัวเดียวกันชื่อเหมือนกันทุกตัวอักษร (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-10-E2-ไทย-ชื่อแถวสรุป-แถวขยาย-·-รหัส-2-ตัวเดียวกันชื่อเหมือนกันทุกตัวอักษร-b8a357a6576e028dc7c01fc32cf8ab1f196c7220.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #13: step5-home-THB (image/png) ─────────────────────────────────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\step5-home-THB-7f35b67f7f365fc926c8238fb5e1b3e150b80644.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #14: ตรวจ 11: E6 ชื่อเมืองหน้าแรกไม่มีคำนำหน้าเขตปกครองและสะกดครบวรรณยุกต์ (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-11-E6-ชื่อเมืองหน้าแรกไม่มีคำนำหน้าเขตปกครองและสะกดครบวรรณยุกต์-9e4a1679a11d7b6b2283156ef71c95ca638787a6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #15: step6-home-USD (image/png) ─────────────────────────────────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\step6-home-USD-4d7329fc415698f33d7f769eb4ab6f4462b89d28.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #16: ตรวจ 12: E7 การ์ดที่จับคู่ได้: หน่วย USD ไม่มี ฿ · ตัวเลข USD < THB · |USD − THB ÷ m| ≤ 1 (image/png) 
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-12-E7-การ์ดที่จับคู่ได้-หน่วย-USD-ไม่มี-฿-·-ตัวเลข-USD-THB-·-USD-−-THB-÷-m-≤-1-c23b959325eb251d38770250faa38af7e5b2d495.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #17: ตรวจ 13: E8 ท้ายหน้า ภาษาไทย และ THB · ราคาการ์ดทุกใบมีหน่วยบาท (image/png) ────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-13-E8-ท้ายหน้า-ภาษาไทย-และ-THB-·-ราคาการ์ดทุกใบมีหน่วยบาท-46f31b91019ea6825dfe19a7cfd8d8a6236436bc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #18: screenshot (image/png) ─────────────────────────────────────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #19: video (video/webm) ─────────────────────────────────────────────────────────────
+    test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-rerun1\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\error-context.md
+
+  Slow test file: [chromium] › tests\5.6-locale-home.spec.ts (7.9m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  2 failed
+    [chromium] › tests\5.5-booking.spec.ts:492:5 › TC-BKG-01 · เลือกด้วยปุ่ม "เลือกเที่ยวบิน" + คัดลอก UB + เปิดซ้ำในแท็บใหม่ @P1 @5.5 
+    [chromium] › tests\5.6-locale-home.spec.ts:838:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-03 · ⚠️ ชื่อสายการบินข้ามภาษา ป้ายท้ายหน้า และการ์ดหน้าแรก @P1 @5.6 @known-defect 
+  2 passed (8.7m)

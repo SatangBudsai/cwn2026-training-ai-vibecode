@@ -1,0 +1,77 @@
+{
+  "id": "TC-BOOK-06",
+  "title": "TC-BOOK-06 ดับเบิลคลิกปุ่มยืนยันต้องเกิดการจองเดียว ทั้งเลือกนักบำบัดและใครก็ได้",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "แต่ละแถวมีคำขอจองที่สำเร็จ 1 ครั้ง และเห็นหน้ายืนยันพร้อมรหัสจอง 1 รหัส ไม่ขึ้น \"เวลานี้ถูกจองแล้ว\" จากคลิกที่ 2\nหลังร้าน: U08 วันที่ 17 มิ.ย. มี 2 รายการ คือ T01 12:00–13:00 ฿950 และ T01 13:00–14:00 ฿950 (฿1,000 − 5% (฿50) = ฿950 · ใครก็ได้ได้ T01 เพราะคะแนนสูงสุดและว่าง)\nถ้าเกิดคิวซ้ำจะเห็นรายการที่ 3 ของ T05 13:00 ยอดรวมของ U08 จะเพิ่มอีก ฿950",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 628,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] R93 · [D] บ.10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 628,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-05, FR-06, FR-08, BR-21",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 628,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R93",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 628,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 628,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 628,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 20276,
+  "at": "2026-11-06T02:20:07.403Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เข้าสู่ระบบ U08 ไปถึงหน้าสรุปของแถว A",
+    "2-3. ดับเบิลคลิกปุ่มยืนยันแถว A นับคำขอ จดข้อความและรหัสจอง",
+    "4. ทำซ้ำกับแถว B (ใครก็ได้ รอบ 13:00)",
+    "5. เข้า /th/admin นับการจองของ U08 วันที่ 17 มิ.ย. แล้วรีโหลด"
+  ]
+}

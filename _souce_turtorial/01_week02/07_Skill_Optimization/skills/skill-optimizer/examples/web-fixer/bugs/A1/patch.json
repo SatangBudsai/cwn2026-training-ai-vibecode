@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/pricing.ts",
+    "find": "return success(Math.floor((subtotal * percent) / 100));",
+    "replace": "return success(Math.round((subtotal * percent) / 100));"
+  }
+]

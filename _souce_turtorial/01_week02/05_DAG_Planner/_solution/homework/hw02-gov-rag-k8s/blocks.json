@@ -1,0 +1,152 @@
+{
+ "goal": "ระบบ RAG ถามตอบเอกสารภาครัฐ (ประกาศและระเบียบแบบ PDF) ตอบพร้อมอ้างอิงหน้าเอกสาร และ deployment ด้วย Kubernetes",
+ "name": "hw02-gov-rag-k8s",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์และสัญญา API",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "docs/api.md",
+   "done": "มีโครงโฟลเดอร์ และ docs/api.md ระบุ request/response ของ POST /ask"
+  },
+  {
+   "id": "B02",
+   "title": "เลือก vector DB และโมเดล embedding",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 3,
+   "output": "docs/stack-decision.md",
+   "done": "ระบุ vector DB 1 ตัว และโมเดล embedding ภาษาไทย 1 ตัว พร้อมเหตุผลอย่างละ 2 ข้อ"
+  },
+  {
+   "id": "B03",
+   "title": "ชุดคำถามทดสอบ 20 ข้อ",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "eval/questions.json",
+   "done": "JSON 20 ข้อ มีคำถาม คำตอบที่ถูก ชื่อไฟล์ และเลขหน้าอ้างอิง"
+  },
+  {
+   "id": "B04",
+   "title": "อ่าน PDF เป็นข้อความรายหน้า",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "rag/ingest.py",
+   "done": "รันแล้วได้ข้อความแยกรายหน้า พร้อมชื่อไฟล์และเลขหน้า"
+  },
+  {
+   "id": "B05",
+   "title": "ตัดข้อความ ทำ embedding และสร้างดัชนี",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B04"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "rag/index.py",
+   "done": "สร้างดัชนีตาม stack-decision.md และทุก chunk เก็บชื่อไฟล์กับเลขหน้า"
+  },
+  {
+   "id": "B06",
+   "title": "ค้นคืนและตอบพร้อมอ้างอิงหน้า",
+   "size": "L",
+   "depends_on": [
+    "B05"
+   ],
+   "skill": "review",
+   "difficulty": 4,
+   "output": "rag/answer.py",
+   "done": "ทุกคำตอบมีอ้างอิงชื่อไฟล์และเลขหน้า และตอบว่าไม่พบเมื่อเอกสารไม่มีข้อมูล"
+  },
+  {
+   "id": "B07",
+   "title": "API ถามตอบ",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B06"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "api/main.py",
+   "done": "POST /ask ตอบตามรูปแบบใน docs/api.md"
+  },
+  {
+   "id": "B08",
+   "title": "หน้าเว็บถามตอบ",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "web/index.html",
+   "done": "พิมพ์คำถามแล้วเรียก /ask ตาม docs/api.md และแสดงอ้างอิงหน้าเป็นลิงก์"
+  },
+  {
+   "id": "B09",
+   "title": "Dockerfile ของระบบ",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "Dockerfile",
+   "done": "docker build ผ่าน และ container เปิดพอร์ต 8000"
+  },
+  {
+   "id": "B10",
+   "title": "Kubernetes manifests",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B09"
+   ],
+   "skill": "review",
+   "difficulty": 3,
+   "output": "k8s/app.yaml",
+   "done": "มี Deployment Service Ingress PVC และ ConfigMap ครบ และ kubectl apply --dry-run=client ผ่าน"
+  },
+  {
+   "id": "B11",
+   "title": "ประเมินความแม่นด้วยชุดคำถาม",
+   "size": "M",
+   "depends_on": [
+    "B03",
+    "B06"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "eval/report.md",
+   "done": "รายงานร้อยละคำตอบถูก และร้อยละที่อ้างอิงหน้าถูก จาก 20 ข้อ"
+  },
+  {
+   "id": "B12",
+   "title": "รวมระบบและทดสอบบน kind",
+   "size": "L",
+   "depends_on": [
+    "B07",
+    "B08",
+    "B10",
+    "B11"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "deploy บน kind แล้วถามผ่านหน้าเว็บได้คำตอบพร้อมอ้างอิง บันทึกผลใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

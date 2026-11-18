@@ -1,0 +1,5 @@
+วัดว่า "ชุดทดสอบ" เก่งแค่ไหนด้วย mutation testing (ทำงานในโฟลเดอร์ /workspace/rea-flight-v4)
+1. ทำสำเนา v3 (/workspace/rea-flight-v3/skythai-pro) ไว้ที่ mutants/base แล้วสร้างบั๊กจงใจ 10 แบบ ทีละตัว (mutant) ในตรรกะสำคัญ เช่น เรียงราคากลับด้าน · ตัวกรองบินตรงไม่ทำงาน · นับเที่ยวบินขาด 1 ใบ · ดูเที่ยวบินเพิ่มเติมได้ 299 · ตัวกรองราคาใช้ < แทน ≤ · เวลาออกเลื่อน 1 ชม. · ซ่อนผู้ขายรายที่ 2 ฯลฯ (เลือกเองให้ครอบคลุม)
+2. รันทีละ mutant ด้วย docker compose ที่พอร์ต 5090 แล้วรันชุดทดสอบ 2 ชุด: acceptance ของกรรมการ (/workspace/rea-flight-v3/accept) และ differential (diff/) นับว่าชุดไหน "ฆ่า" mutant ได้ (มี test ล้มอย่างน้อย 1 ข้อ)
+3. เขียน MUTATION.md: mutant | บั๊กที่ใส่ | acceptance จับได้ไหม | differential จับได้ไหม และสรุป mutation score ของแต่ละชุด
+ห้ามแก้ test ทั้งสองชุด เสร็จแล้วปิด container ของ mutant ทั้งหมด ตอบเป็นตาราง

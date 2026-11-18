@@ -1,0 +1,278 @@
+[
+  {
+    "id": "B2",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4083,
+    "upstreamError": true
+  },
+  {
+    "id": "B3",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3650,
+    "upstreamError": false
+  },
+  {
+    "id": "B4",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3007,
+    "upstreamError": true
+  },
+  {
+    "id": "B7",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3605,
+    "upstreamError": false
+  },
+  {
+    "id": "B27",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('tab', { name: /^ถูกที่สุด/ })\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7618,
+    "upstreamError": true
+  },
+  {
+    "id": "B28",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ดูข้อมูลเพิ่มเติมเกี่ยวกับการจัดอันดับ/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7119,
+    "upstreamError": true
+  },
+  {
+    "id": "B29",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 23066,
+    "upstreamError": false
+  },
+  {
+    "id": "B30",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'ดูเที่ยวบินเพิ่มเติม', exact: true })\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7310,
+    "upstreamError": true
+  },
+  {
+    "id": "B31",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22412,
+    "upstreamError": false
+  },
+  {
+    "id": "B33",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22517,
+    "upstreamError": false
+  },
+  {
+    "id": "B34",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^รายละเอียดเที่ยวบิน/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7248,
+    "upstreamError": true
+  },
+  {
+    "id": "B37",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7920,
+    "upstreamError": true
+  },
+  {
+    "id": "B38",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22277,
+    "upstreamError": false
+  },
+  {
+    "id": "B39",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3771,
+    "upstreamError": false
+  },
+  {
+    "id": "B40",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.waitFor: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Oneworld', exact: true }).first() to be visible\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7461,
+    "upstreamError": true
+  },
+  {
+    "id": "B41",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3696,
+    "upstreamError": false
+  },
+  {
+    "id": "B42",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 2979,
+    "upstreamError": true
+  },
+  {
+    "id": "B43",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3601,
+    "upstreamError": false
+  },
+  {
+    "id": "B44",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4848,
+    "upstreamError": false
+  },
+  {
+    "id": "B45",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3865,
+    "upstreamError": false
+  },
+  {
+    "id": "B46",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3255,
+    "upstreamError": true
+  },
+  {
+    "id": "B47",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4607,
+    "upstreamError": false
+  },
+  {
+    "id": "C1",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4136,
+    "upstreamError": false
+  },
+  {
+    "id": "C2",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22598,
+    "upstreamError": false
+  },
+  {
+    "id": "C3",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3680,
+    "upstreamError": false
+  },
+  {
+    "id": "C4",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 23594,
+    "upstreamError": false
+  },
+  {
+    "id": "C5",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3371,
+    "upstreamError": false
+  },
+  {
+    "id": "C6",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3046,
+    "upstreamError": true
+  },
+  {
+    "id": "C23",
+    "status": "ไม่ผ่าน",
+    "reason": "Expected values to be strictly equal:\n\n21 !== 300\n",
+    "stage": "assertion",
+    "durationMs": 3512,
+    "upstreamError": false
+  },
+  {
+    "id": "C25",
+    "status": "ไม่ผ่าน",
+    "reason": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    7635,\n    9062,\n    11580,\n    9335,\n+   9842\n-   9335\n  ]\n",
+    "stage": "assertion",
+    "durationMs": 3302,
+    "upstreamError": false
+  },
+  {
+    "id": "C26",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4679,
+    "upstreamError": false
+  },
+  {
+    "id": "C29",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4647,
+    "upstreamError": false
+  },
+  {
+    "id": "C32",
+    "status": "ไม่ผ่าน",
+    "reason": "Expected values to be strictly equal:\n\n0 !== 18\n",
+    "stage": "assertion",
+    "durationMs": 4904,
+    "upstreamError": false
+  },
+  {
+    "id": "C42",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 5192,
+    "upstreamError": false
+  },
+  {
+    "id": "C49",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('switch', { name: /ติดตามราคา/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7249,
+    "upstreamError": true
+  },
+  {
+    "id": "C51",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3334,
+    "upstreamError": false
+  },
+  {
+    "id": "C55",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /^ราคาเริ่มต้นที่/ }).visible().first()\u001b[22m\n\u001b[2m    - locator resolved to <div role=\"link\" tabindex=\"0\" class=\"JMc5Xc\" jsaction=\"click:O1htCb\" aria-label=\"ราคาเริ่มต้นที่ 7635 บาทไทย เดินทางด้วยเที่ยวบินแบบแวะพัก 1 ครั้งกับ ไทยไลอ้อนแอร์ ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 06:20 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 16:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 ระยะเวลารวม 8 ชม. 5 นาที  การแวะพัก (ครั้งที่ 1 จาก 1) ใช้เวลาแวะพัก 1 ชม. ที่สนามบิน ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน ในไทเป เลือกเที่ยวบิน\"></div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"gvkrdb AdWm1c tPgKwe ogfYpf\" aria-label=\"ระยะเวลารวม 8 ชม. 5 นาที\">8 ชม. 5 นาที</div> from <div class=\"yR1fYc\" jsname=\"BXUrOb\" jsaction=\"click:O1htCb;gP4E0b:O1htCb;DIjhEc:YmNhJf\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"gvkrdb AdWm1c tPgKwe ogfYpf\" aria-label=\"ระยะเวลารวม 8 ชม. 5 นาที\">8 ชม. 5 นาที</div> from <div class=\"yR1fYc\" jsname=\"BXUrOb\" jsaction=\"click:O1htCb;gP4E0b:O1htCb;DIjhEc:YmNhJf\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"gb_4d gb_ce gb_Wd gb_We gb_9e gb_af gb_df\">…</div> from <c-wiz c-wiz=\"\" id=\"ow6\" jsshadow=\"\" jsname=\"d2Q2jb\" jsmodel=\"hc6Ubd\" __is_owner=\"true\" jsrenderer=\"eixcv\" jsdata=\"deferred-i2\" jscontroller=\"CWvKEd\" data-node-index=\"0;0\" jsaction=\"rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;\" data-p=\"%.@.[[[[\"สำรวจ\",18,null,null,null,null,\"/travel/explore?hl\\u003dth\\u0026gl\\u003dTH\\u0026authuser\",\"travel_explore\"],[\"เที่ยวบิน\",7,null,null,null,null,\"/travel/flights?hl\\u003dth\\u0026gl\\u003dTH\\u0026authuser\",\"flight\"],[\"โรงแรม\",8,null,null,null,null,\"/tra…>…</c-wiz> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"gvkrdb AdWm1c tPgKwe ogfYpf\" aria-label=\"ระยะเวลารวม 8 ชม. 5 นาที\">8 ชม. 5 นาที</div> from <div class=\"yR1fYc\" jsname=\"BXUrOb\" jsaction=\"click:O1htCb;gP4E0b:O1htCb;DIjhEc:YmNhJf\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"gb_4d gb_ce gb_Wd gb_We gb_9e gb_af gb_df\">…</div> from <c-wiz c-wiz=\"\" id=\"ow6\" jsshadow=\"\" jsname=\"d2Q2jb\" jsmodel=\"hc6Ubd\" __is_owner=\"true\" jsrenderer=\"eixcv\" jsdata=\"deferred-i2\" jscontroller=\"CWvKEd\" data-node-index=\"0;0\" jsaction=\"rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;\" data-p=\"%.@.[[[[\"สำรวจ\",18,null,null,null,null,\"/travel/explore?hl\\u003dth\\u0026gl\\u003dTH\\u0026authuser\",\"travel_explore\"],[\"เที่ยวบิน\",7,null,null,null,null,\"/travel/flights?hl\\u003dth\\u0026gl\\u003dTH\\u0026authuser\",\"flight\"],[\"โรงแรม\",8,null,null,null,null,\"/tra…>…</c-wiz> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"gvkrdb AdWm1c tPgKwe ogfYpf\" aria-label=\"ระยะเวลารวม 8 ชม. 5 นาที\">8 ชม. 5 นาที</div> from <div class=\"yR1fYc\" jsname=\"BXUrOb\" jsaction=\"click:O1htCb;gP4E0b:O1htCb;DIjhEc:YmNhJf\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"gb_4d gb_ce gb_Wd gb_We gb_9e gb_af gb_df\">…</div> from <c-wiz c-wiz=\"\" id=\"ow6\" jsshadow=\"\" jsname=\"d2Q2jb\" jsmodel=\"hc6Ubd\" __is_owner=\"true\" jsrenderer=\"eixcv\" jsdata=\"deferred-i2\" jscontroller=\"CWvKEd\" data-node-index=\"0;0\" jsaction=\"rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;\" data-p=\"%.@.[[[[\"สำรวจ\",18,null,null,null,null,\"/travel/explore?hl\\u003dth\\u0026gl\\u003dTH\\u0026authuser\",\"travel_explore\"],[\"เที่ยวบิน\",7,null,null,null,null,\"/travel/flights?hl\\u003dth\\u0026gl\\u003dTH\\u0026authuser\",\"flight\"],[\"โรงแรม\",8,null,null,null,null,\"/tra…>…</c-wiz> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7856,
+    "upstreamError": false
+  }
+]

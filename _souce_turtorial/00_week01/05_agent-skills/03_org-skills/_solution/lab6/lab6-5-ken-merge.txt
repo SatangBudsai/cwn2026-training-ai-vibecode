@@ -1,0 +1,1 @@
+PR #4 ของผมใน novatech/org-skills ได้ approve แล้วหรือยัง ถ้าครบทุกด่านให้ merge แล้วดูว่า release กับ CHANGELOG ทำงานไหม (token ของผมอยู่ใน .gitea-token)

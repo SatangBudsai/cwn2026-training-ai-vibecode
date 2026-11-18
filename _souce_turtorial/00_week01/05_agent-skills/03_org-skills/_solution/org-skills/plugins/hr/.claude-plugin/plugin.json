@@ -1,0 +1,14 @@
+{
+  "name": "hr",
+  "version": "1.0.0",
+  "description": "งาน HR: ประกาศรับสมัคร (JD) และชุดต้อนรับพนักงานใหม่",
+  "author": {
+    "name": "hr-fah"
+  },
+  "keywords": [
+    "department",
+    "hr",
+    "jd-writer",
+    "onboarding-pack"
+  ]
+}

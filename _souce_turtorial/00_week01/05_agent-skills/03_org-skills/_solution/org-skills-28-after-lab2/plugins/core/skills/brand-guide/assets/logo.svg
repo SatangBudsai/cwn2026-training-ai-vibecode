@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Novatech">
+  <rect x="4" y="8" width="48" height="48" rx="10" fill="#0B2545"/>
+  <path d="M16 46V18h6l12 17V18h6v28h-6L22 29v17z" fill="#FFFFFF"/>
+  <circle cx="46" cy="14" r="5" fill="#13A89E"/>
+  <text x="64" y="43" font-family="IBM Plex Sans Thai, sans-serif" font-size="28" font-weight="600" fill="#0B2545">Novatech</text>
+</svg>

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "B2",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4083,
+    "upstreamError": true
+  },
+  {
+    "id": "B3",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3650,
+    "upstreamError": false
+  },
+  {
+    "id": "B4",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3007,
+    "upstreamError": true
+  },
+  {
+    "id": "B7",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3605,
+    "upstreamError": false
+  },
+  {
+    "id": "B27",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('tab', { name: /^ถูกที่สุด/ })\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7618,
+    "upstreamError": true
+  },
+  {
+    "id": "B28",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ดูข้อมูลเพิ่มเติมเกี่ยวกับการจัดอันดับ/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7119,
+    "upstreamError": true
+  },
+  {
+    "id": "B29",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 23066,
+    "upstreamError": false
+  },
+  {
+    "id": "B30",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'ดูเที่ยวบินเพิ่มเติม', exact: true })\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7310,
+    "upstreamError": true
+  },
+  {
+    "id": "B31",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22412,
+    "upstreamError": false
+  },
+  {
+    "id": "B33",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22517,
+    "upstreamError": false
+  },
+  {
+    "id": "B34",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^รายละเอียดเที่ยวบิน/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7248,
+    "upstreamError": true
+  },
+  {
+    "id": "B37",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7920,
+    "upstreamError": true
+  },
+  {
+    "id": "B38",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22277,
+    "upstreamError": false
+  },
+  {
+    "id": "B39",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3771,
+    "upstreamError": false
+  },
+  {
+    "id": "B40",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.waitFor: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Oneworld', exact: true }).first() to be visible\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7461,
+    "upstreamError": true
+  },
+  {
+    "id": "B41",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3696,
+    "upstreamError": false
+  },
+  {
+    "id": "B42",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 2979,
+    "upstreamError": true
+  },
+  {
+    "id": "B43",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3601,
+    "upstreamError": false
+  },
+  {
+    "id": "B44",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4848,
+    "upstreamError": false
+  },
+  {
+    "id": "B45",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3865,
+    "upstreamError": false
+  },
+  {
+    "id": "B46",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3255,
+    "upstreamError": true
+  },
+  {
+    "id": "B47",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4607,
+    "upstreamError": false
+  },
+  {
+    "id": "C1",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4136,
+    "upstreamError": false
+  },
+  {
+    "id": "C2",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22598,
+    "upstreamError": false
+  },
+  {
+    "id": "C3",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3680,
+    "upstreamError": false
+  },
+  {
+    "id": "C4",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 23594,
+    "upstreamError": false
+  },
+  {
+    "id": "C5",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3371,
+    "upstreamError": false
+  },
+  {
+    "id": "C6",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3046,
+    "upstreamError": true
+  },
+  {
+    "id": "C23",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22643,
+    "upstreamError": false,
+    "initialStatus": "ไม่ผ่าน",
+    "correctionEvidence": "corrected"
+  },
+  {
+    "id": "C25",
+    "status": "ไม่ผ่าน",
+    "reason": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    7635,\n    9062,\n    11580,\n    9335,\n+   9842\n-   9335\n  ]\n",
+    "stage": "assertion",
+    "durationMs": 3302,
+    "upstreamError": false
+  },
+  {
+    "id": "C26",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4679,
+    "upstreamError": false
+  },
+  {
+    "id": "C29",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4647,
+    "upstreamError": false
+  },
+  {
+    "id": "C32",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4904,
+    "upstreamError": false,
+    "initialStatus": "ไม่ผ่าน",
+    "correctionEvidence": "corrected"
+  },
+  {
+    "id": "C42",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 5192,
+    "upstreamError": false
+  },
+  {
+    "id": "C49",
+    "status": "ไม่ผ่าน",
+    "reason": "Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('switch', { name: /ติดตามราคา/ }).first()\u001b[22m\n",
+    "stage": "assertion",
+    "durationMs": 7249,
+    "upstreamError": true
+  },
+  {
+    "id": "C51",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 3334,
+    "upstreamError": false
+  },
+  {
+    "id": "C55",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4695,
+    "upstreamError": false,
+    "initialStatus": "ไม่ผ่าน",
+    "correctionEvidence": "corrected-booking"
+  }
+]

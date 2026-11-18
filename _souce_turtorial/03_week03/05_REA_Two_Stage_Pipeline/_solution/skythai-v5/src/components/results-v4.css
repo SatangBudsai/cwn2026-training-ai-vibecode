@@ -1,0 +1,61 @@
+ul.flight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.results-info-button,
+.co2-info-button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.results-info-button {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.co2-info-button {
+  text-align: left;
+}
+
+.co2-info-button > span {
+  display: block;
+}
+
+.results-info-button:focus-visible,
+.co2-info-button:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.baggage-policies {
+  padding-left: 24px;
+}
+
+.baggage-policies li + li {
+  margin-top: 8px;
+}
+
+.co2-comparison > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.co2-comparison dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* pipe2 — legibility guard: text ≥ 12px, contrast ≥ 4.5:1 */
+.times sup { font-size: 12px; color: var(--red-dark); }
+.brand-text span { color: var(--red-dark); }
+.airline-badge::before { color: color-mix(in srgb, var(--badge, var(--navy)) 80%, #000); }

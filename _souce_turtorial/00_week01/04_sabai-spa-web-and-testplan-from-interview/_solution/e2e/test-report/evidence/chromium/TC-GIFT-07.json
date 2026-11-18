@@ -1,0 +1,82 @@
+{
+  "id": "TC-GIFT-07",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ขั้น 1 ตรวจยอดด้วย gift-active (รอคำตอบร้าน ไม่นับเป็นข้อล้ม)",
+      "pass": true,
+      "actual": "ไม่พบบัตร: บัตรเพื่อดูยอดคงเหลือ วันหมดอายุ และสถานะ\n\nรหัสบัตร\nตรวจยอด\n\nไม่พบ Gift Card นี้",
+      "shot": "shots/chromium/TC-GIFT-07/001.jpg",
+      "actor": "main",
+      "t": 2592
+    },
+    {
+      "n": 2,
+      "label": "ขั้น 2 มี error ว่าไม่พบบัตร",
+      "pass": true,
+      "actual": "ไม่พบ Gift Card นี้",
+      "shot": "shots/chromium/TC-GIFT-07/002.jpg",
+      "actor": "main",
+      "t": 9006
+    },
+    {
+      "n": 3,
+      "label": "ขั้น 2 ยอดจ่ายยัง ฿800",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿800",
+      "shot": "shots/chromium/TC-GIFT-07/003.jpg",
+      "actor": "main",
+      "t": 10693
+    },
+    {
+      "n": 4,
+      "label": "ขั้น 3 error หายทันที",
+      "pass": false,
+      "actual": "สรุปและยืนยัน นวดเท้า 60 นาที 1 คน 17 มิ.ย. 2026 · 12:00 นักบำบัด: ใครก็ได้ สรุปราคา ราคาเต็ม 1 คน ฿800 ส่วนลด 0% ไม่มีส่วนลด ฿0 แลกแต้ม 0 แต้ม ฿0 ค่ารถรับส่ง ฿0 Gift Card ฿0 จ่ายหน้าร้าน ฿800 ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน ไม่รับชำระเงินออนไลน์ ยอดที่เหลือชำระที่หน้าร้าน ส่วนเสริม ไม่บังคับ กดเปิดเฉพาะที่ต้องการ แลกแต้ม สิทธิ์เดือนเกิด รถรับส่ง Gift Card เลือกแล้ว รหัส Gift Card (ใช้ได้ 1 ใบ) ใช้บัตร ไม่พบ Gift Card นี้ เอาออก จองด้วยบัญชีสมาชิก ระดับ Silver เมื่",
+      "shot": "shots/chromium/TC-GIFT-07/004.jpg",
+      "actor": "main",
+      "t": 12693
+    },
+    {
+      "n": 5,
+      "label": "ขั้น 3 ปุ่มยืนยันกดได้",
+      "pass": false,
+      "actual": "ยืนยันการจอง",
+      "shot": "shots/chromium/TC-GIFT-07/005.jpg",
+      "actor": "main",
+      "t": 14691
+    },
+    {
+      "n": 6,
+      "label": "ขั้น 3 ยอดจ่าย ฿800",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿800",
+      "shot": "shots/chromium/TC-GIFT-07/006.jpg",
+      "actor": "main",
+      "t": 16361
+    },
+    {
+      "n": 7,
+      "label": "ขั้น 4 ยอดจ่ายหลังกรอก gift-active (รอคำตอบร้าน ไม่นับเป็นข้อล้ม)",
+      "pass": true,
+      "actual": "800",
+      "shot": "shots/chromium/TC-GIFT-07/007.jpg",
+      "actor": "main",
+      "t": 18745
+    },
+    {
+      "n": 8,
+      "label": "ขั้น 5 ยอด GIFT-ACTIVE (รอคำตอบร้าน ไม่นับเป็นข้อล้ม)",
+      "pass": true,
+      "actual": "2000",
+      "shot": "shots/chromium/TC-GIFT-07/008.jpg",
+      "actor": "main",
+      "t": 21393
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GIFT-07/main.webm"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+เปิด PR ฝั่ง core ตามที่ผมรับปากไว้ในคอมเมนต์ของ PR #1 (ย้ายกติกาภาคผนวก PDPA ลูกค้าธนาคารมาไว้ที่ customer-data-policy ให้ทุก skill อ้างที่เดียว) ใน novatech/org-skills (token ของผมอยู่ใน .gitea-token)

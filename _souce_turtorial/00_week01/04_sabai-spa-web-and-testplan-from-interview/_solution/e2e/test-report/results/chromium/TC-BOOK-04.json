@@ -1,0 +1,90 @@
+{
+  "id": "TC-BOOK-04",
+  "title": "TC-BOOK-04 /api/quote ไม่ให้ราคารอบที่ไม่มีจริง และวันอดีตไม่บอกว่าเป็น \"วันนี้\"",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "quote 10:00 (ค่าเปรียบเทียบ): ได้ราคา ฿1,000\nquote 09:30 และ 10:15: ถูกปฏิเสธด้วยสถานะ 4xx และคำตอบไม่มีราคา ฿1,000 (ถ้าไม่ตรวจรอบจะได้ 200 พร้อม ฿1,000)\n14 มิ.ย. บนหน้าจอ quote และคำขอจอง: ถูกปฏิเสธทั้ง 3 ทาง ด้วยสถานะ 4xx ในทาง API\nข้อความของ 14 มิ.ย. ทั้ง 3 ทางไม่มีคำว่า \"วันนี้\" (คำตอบผิดที่คาดไว้: \"จองวันนี้ในเว็บไม่ได้\")\nหลังร้านมีการจองวันที่ 14 มิ.ย. 0 รายการ และ 17 มิ.ย. 0 รายการ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 433,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] R02 · F-สร้าง 3 · [R] R05 · F-ร้าน 1 · F-สร้าง 1",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 433,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-02, FR-03, BR-01, BR-03",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 433,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R02, R05",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 433,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 433,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 433,
+        "column": 1
+      }
+    },
+    {
+      "type": "pending-answer",
+      "description": "F-ร้าน 1: ข้อความวันอดีตจะให้โทรร้านหรือไม่ รอคำตอบ · ผลจริงบนหน้าจอ: จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567"
+    }
+  ],
+  "status": "failed",
+  "durationMs": 38348,
+  "at": "2026-11-06T02:53:15.048Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).toBeGreaterThanOrEqual(expected)\n\nExpected: >= 400\nReceived:    200",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: false\nReceived: true",
+    "Error: expect(received).toBeGreaterThanOrEqual(expected)\n\nExpected: >= 400\nReceived:    200",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: false\nReceived: true",
+    "Error: expect(locator).not.toContainText(expected) failed\n\nLocator: locator('[data-testid^=\"error-\"]').first()\nExpected substring: not \"วันนี้\"\nReceived string: \"จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft not toContainText\" locator('[data-testid^=\"error-\"]').first() with timeout 6000ms\n  - waiting for locator('[data-testid^=\"error-\"]').first()\n    16 × locator resolved to <p role=\"alert\" class=\"Hi2WXW_error\" data-e2e-prev-outline=\"\" data-testid=\"error-same-day-call\">จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567</p>\n       - unexpected value \"จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567\"\n",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"วันนี้\"\nReceived string:        \"{\\\"error\\\":{\\\"code\\\":\\\"same-day-call\\\",\\\"message\\\":\\\"จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567\\\"}}\"",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"วันนี้\"\nReceived string:        \"{\\\"error\\\":{\\\"code\\\":\\\"same-day-call\\\",\\\"message\\\":\\\"จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567\\\"}}\""
+  ],
+  "steps": [
+    "1. จองแบบแขก 17 มิ.ย. 10:00 เพื่อดึงคำขอ quote และคำขอจอง ยืนยันว่าสำเร็จ 2xx แล้วล็อกและรีเซ็ตใหม่",
+    "2. ยิง /api/quote ที่ 17 มิ.ย. รอบ 10:00, 09:30, 10:15 ✗",
+    "3. บนหน้าจอพิมพ์วันที่ 14 มิ.ย. จดข้อความ ✗",
+    "4. ยิง /api/quote และคำขอจองที่ 14 มิ.ย. รอบ 12:00 โดยส่ง x-locale: th จดข้อความ ✗",
+    "5. เข้า /th/admin นับการจองวันที่ 14 และ 17 มิ.ย. แล้วรีโหลด"
+  ]
+}

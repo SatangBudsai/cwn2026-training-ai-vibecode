@@ -1,0 +1,646 @@
+{
+  "schema": "rea-flight/code-analysis@1",
+  "generated_at": "2026-10-31",
+  "target": {
+    "cdp_endpoint": "http://127.0.0.1:9222",
+    "target_id": "A4C056B802BF14B09D2695173957DEE9",
+    "url": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&curr=THB"
+  },
+  "method": {
+    "mode": "read-only / passive: ไม่คลิก ไม่พิมพ์ ไม่นำทาง ไม่ evaluate JS บนหน้า; JS ถูก parse/ค้นแบบ static เท่านั้น ไม่ถูกรัน",
+    "steps": [
+      {
+        "tool": "mcp__rea__list_browser_targets",
+        "evidence_id": "ev_6e2786e76e5749802eee7967b69803663d99fa9eeef5ebfcb888483b656134df",
+        "result": "ok"
+      },
+      {
+        "tool": "mcp__rea__analyze_web_bundle (default origin = www.google.com)",
+        "evidence_id": "ev_c075c13b42d1b75013918a9f37974fef7b9343b5fec5addb5ef0b2e7414c8803",
+        "result": "ok แต่เห็นเฉพาะ 26 inline scripts; vendor fingerprint = ไม่มี, routes/endpoints = ไม่มี, endpoint candidate 2 ตัว ('menu','back') confidence low = false positive"
+      },
+      {
+        "tool": "rea CLI inspect-web-page --include-script-sources (origin www.google.com)",
+        "evidence_id": "ev_43539e24b15941e6d51b04af459e00478a3cc654ceb44e29e2a1efe1422a9659",
+        "result": "ok; 22 scripts ถูกตัดเพราะ disallowed_origin"
+      },
+      {
+        "tool": "mcp__rea__export_web_scripts",
+        "evidence_id": "ev_db0a6385546931f04bf8d922ca0cffbab550855607914592f13269971f30a756",
+        "result": "ok 26 inline scripts → work/scripts/"
+      },
+      {
+        "tool": "rea CLI inspect-web-page + allowed origins www.google.com, www.gstatic.com, ssl.gstatic.com, apis.google.com",
+        "evidence_id": "ev_02ad02929d2a53087c9a9be711b97fdc719f69dad8a31655c6ff6fa146b7027f",
+        "result": "ครั้งแรกล้มเหลว: invalid_request 'allowed_origins[0] Expected one exact HTTP(S) origin' (ส่ง JSON array ผิดรูปแบบ CLI) → ใส่ --allowed-origins ซ้ำทีละตัวแล้วสำเร็จ"
+      },
+      {
+        "tool": "rea CLI export-web-scripts",
+        "evidence_id": "ev_05846503c51da3a7f12cfa25e2cdaba6aa20b33e265c6b403506af29856ed300",
+        "result": "ok 28 scripts → work/scripts-all/ (gstatic boq-travel FlightsFrontendUi_desktop_ms.th)"
+      },
+      {
+        "tool": "local python (tools/ctx.py, tools/ds1.py, tools/modfind.py)",
+        "result": "ค้นสตริง/แยก AF_initDataCallback ds:1; ไม่รันโค้ดของเป้าหมาย"
+      },
+      {
+        "tool": "ugrep regex context",
+        "result": "ล้มเหลว: 'exceeds complexity limits' กับไฟล์ minified บรรทัดยาว → เปลี่ยนไปใช้ python"
+      }
+    ],
+    "not_run": [
+      "analyze_javascript_application กับโฟลเดอร์ที่ export (ยังไม่ได้รัน)",
+      "fetch source maps (ไม่ได้ขอ และ scripts ไม่ประกาศ source_map_url)",
+      "observe_web_execution / runtime coverage (ข้ามเพราะต้อง reset counters บนหน้า)"
+    ]
+  },
+  "coverage": {
+    "scripts_exported": 28,
+    "excluded": [
+      {
+        "section": "accessibility",
+        "reason": "not_approved",
+        "count": 1474
+      },
+      {
+        "section": "console_text",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "json_body_shapes",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "metadata",
+        "reason": "disallowed_origin",
+        "count": 14
+      },
+      {
+        "section": "resources",
+        "reason": "disallowed_origin",
+        "count": 6
+      },
+      {
+        "section": "resources",
+        "reason": "unsupported_url",
+        "count": 2
+      },
+      {
+        "section": "scripts",
+        "reason": "unattributed_origin",
+        "count": 82
+      },
+      {
+        "section": "storage_keys",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "websocket_shapes",
+        "reason": "not_approved",
+        "count": null
+      }
+    ],
+    "notes": [
+      "82 scripts unattributed_origin (ไม่มี URL เช่น eval/dynamic) ถูกตัดออก จึงไม่ได้วิเคราะห์",
+      "โมดูลที่โหลดแบบ lazy ภายหลัง (เช่น หน้ารายละเอียด/จอง) ไม่อยู่ใน capture นี้",
+      "DOM capture เก็บแค่ชื่อ attribute ไม่เก็บค่า จึงผูก jscontroller id กับ element จริงไม่ได้"
+    ],
+    "scripts": [
+      {
+        "index": 1,
+        "origin": "www.gstatic.com",
+        "bytes": 24983,
+        "sha256": "f73736e5e6cd20db89afaa4bc3a9ebaf0f6d291ffac5452aa57b5c40ea391a3b",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 2,
+        "origin": "www.google.com",
+        "bytes": 881,
+        "sha256": "9063437b676e77d082b20d7a2dd0683aeecea8950a63ddb1ed721d5d061cb269",
+        "url_prefix": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&"
+      },
+      {
+        "index": 3,
+        "origin": "www.google.com",
+        "bytes": 1675,
+        "sha256": "983e9b8167acce8ca42958a7247aa437143d3195a4b07d663647ad3b81d02013",
+        "url_prefix": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&"
+      },
+      {
+        "index": 4,
+        "origin": "www.gstatic.com",
+        "bytes": 263664,
+        "sha256": "798a0570f31523441012426e20fd40dc3a310e7001ba36f5161371ee1d3643e7",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 5,
+        "origin": "www.gstatic.com",
+        "bytes": 3413,
+        "sha256": "1f7f97cea22f81d30342028087c1c4d1b94ebb0e599c420c279f7c4f6f90642c",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 6,
+        "origin": "www.gstatic.com",
+        "bytes": 1900,
+        "sha256": "4ec9d0056f13dae47327d27109ecc9276e1ed6a9a390d06b4145d26746f1fb1a",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 7,
+        "origin": "www.google.com",
+        "bytes": 1727,
+        "sha256": "3a1876d44d9244148004e987ba5072a772ee373c35b54172aed1d432085f3100",
+        "url_prefix": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&"
+      },
+      {
+        "index": 8,
+        "origin": "www.gstatic.com",
+        "bytes": 390492,
+        "sha256": "b213f96bb561d500738d3164b0815e5b867d8796c05566a9125e07492f24e26d",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 9,
+        "origin": "www.gstatic.com",
+        "bytes": 4829,
+        "sha256": "af99f4f896f827cee4b272f132986c086c9df2c8b49d2d43326a65bba9aabb6b",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 10,
+        "origin": "www.gstatic.com",
+        "bytes": 4736,
+        "sha256": "4ad6fb091a9a40fae85c27dce5965cc822c7edc3b092948f53bea08643176d24",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 11,
+        "origin": "www.gstatic.com",
+        "bytes": 3325,
+        "sha256": "0bc8cec5bc0458cae75210437f11a47fa81af69de0c4633a35b9d31647d7ac0b",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 12,
+        "origin": "www.google.com",
+        "bytes": 23103,
+        "sha256": "2fd28b58a4ea36634924a7183748d66cd30ba439411e4e7d4ae9344168a73617",
+        "url_prefix": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&"
+      },
+      {
+        "index": 13,
+        "origin": "www.gstatic.com",
+        "bytes": 27401,
+        "sha256": "72f3c8da64ac2866293fcb0a972a10027b84ab7d58d7dcc409b6455c60d5fb7a",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 14,
+        "origin": "www.gstatic.com",
+        "bytes": 48993,
+        "sha256": "df9628265c992494e266c2718e52091cb93a885b681a68e4bce34225ab279961",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 15,
+        "origin": "www.gstatic.com",
+        "bytes": 40234,
+        "sha256": "44b394786d70496cf0811a67b01ee2dc8b3419424a7cc03d1332e3947f9fecdc",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 16,
+        "origin": "www.gstatic.com",
+        "bytes": 382915,
+        "sha256": "ec5b1f0c0f054d9adf22a9181432741ac0c0e180c90b000464964a3210028d29",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/am=AAAAAAQ"
+      },
+      {
+        "index": 17,
+        "origin": "www.gstatic.com",
+        "bytes": 13791,
+        "sha256": "a12de5b393029f57553bf4afc9c4522da046b1f7af44cef9520da75b5143dcb8",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 18,
+        "origin": "www.gstatic.com",
+        "bytes": 74997,
+        "sha256": "594b0375bdcd00333f49e350a090999e1a7334f8ca0ba8d2be38207fc17719ab",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 19,
+        "origin": "www.gstatic.com",
+        "bytes": 463,
+        "sha256": "6ee9a0b3a4b54cd6b4055fe464555502d47d6187e4b78f65ae394a138a346429",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 20,
+        "origin": "www.gstatic.com",
+        "bytes": 701037,
+        "sha256": "564c255945d7baaf812f98827a8d879b043f7872391f99f8802aa9b7c874e837",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 21,
+        "origin": "www.gstatic.com",
+        "bytes": 95489,
+        "sha256": "b136d7b91438389b9a0ebfd6209f323f5488f05c44426c727d608c15b359a5f3",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 22,
+        "origin": "www.gstatic.com",
+        "bytes": 214791,
+        "sha256": "bbed37ab79dd38d520fd5cd5f7b1c7439cf57799bbe772f224c07fc9589d9d40",
+        "url_prefix": "https://www.gstatic.com/og/_/js/k=og.qtm.en_US.ZS82hcemEOY.2019.O/rt=j/m=q_dnp,q_pc,qmd,qcwid,qapid,qads/exm=qaaw,qabr,q"
+      },
+      {
+        "index": 23,
+        "origin": "www.gstatic.com",
+        "bytes": 792856,
+        "sha256": "ca4aa63f30713cc8a430b5a92335cf224ae8029fafed2377b8729802d2376121",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 24,
+        "origin": "www.gstatic.com",
+        "bytes": 5798,
+        "sha256": "592079ce7c4e1f8cb54f5aee14450032ffe8bdf49dfe0f72d6d08156858bfa82",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 25,
+        "origin": "www.google.com",
+        "bytes": 3162,
+        "sha256": "4842b8ce7369f437bc1e4cbfd39d5b7b307c8190b6f90166cd1e242860b3eb85",
+        "url_prefix": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&"
+      },
+      {
+        "index": 26,
+        "origin": "www.gstatic.com",
+        "bytes": 9487,
+        "sha256": "76dd28602bc32436867c74c57c011c905ab5eb16f04f47609913d3999e50c667",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      },
+      {
+        "index": 27,
+        "origin": "www.google.com",
+        "bytes": 53363,
+        "sha256": "ed6802acc8c9df672dd6dafd5d8fcca7e3a2332bffdf5439bda576a947d8e260",
+        "url_prefix": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&"
+      },
+      {
+        "index": 28,
+        "origin": "www.gstatic.com",
+        "bytes": 2905,
+        "sha256": "735fdb99778c92597973e0dc700b90ce2e0f61195e313842fa06bcca349cced9",
+        "url_prefix": "https://www.gstatic.com/_/mss/boq-travel/_/js/k=boq-travel.FlightsFrontendUi_desktop_ms.th.LRr4RgcF82A.2021.O/ck=boq-tra"
+      }
+    ]
+  },
+  "findings": {
+    "q1_framework": [
+      {
+        "claim": "แอปคือ Google 'Boq' frontend: bundle ชื่อ boq-travel.FlightsFrontendUi_desktop_ms.th",
+        "status": "ยืนยันแล้ว",
+        "evidence": "URL ของ 23 scripts จาก www.gstatic.com/_/mss/boq-travel/...; CLOSURE_DEFINES['boq.searchboqmodulesetsweb.defines.FORM_FACTOR']='DESKTOP' (script 16)"
+      },
+      {
+        "claim": "ใช้ Wiz (component framework ภายใน Google) ไม่ใช่ React/Angular/Vue",
+        "status": "ยืนยันแล้ว",
+        "evidence": "DOM: jscontroller=943, jsaction=1501, jsname=3169, jsmodel=13, C-WIZ=5; JS: WizInjectionContext_*, wiz.data.clients.WizDataTimeoutError, WIZ_global_data; React/ng-version/__vue/__NEXT_DATA__ = 0 ครั้ง"
+      },
+      {
+        "claim": "คอมไพล์ด้วย Closure Compiler (+Closure Library) แบบ minified, แยกเป็นโมดูล _.t('id') … _.w()",
+        "status": "ยืนยันแล้ว",
+        "evidence": "'Copyright The Closure Library Authors', CLOSURE_DEFINES, รูปแบบ _.t(\"U5T3Ef\") ... _.w()"
+      },
+      {
+        "claim": "Template เป็น Closure Templates (Soy) ทั้งแบบต่อ string HTML และ incremental DOM (a.open('li'), k.close())",
+        "status": "ยืนยันแล้ว",
+        "evidence": "script 4 รอบ dsf enum: a.open(\"li\",...), k.attr(\"role\",\"menuitemradio\"); ฟังก์ชัน _.U(v,'<div class=...')"
+      },
+      {
+        "claim": "Render แบบ server-side ก่อน แล้ว hydrate: HTML ส่งมาพร้อมข้อมูลใน AF_initDataCallback ds:0..ds:4 และ controller ผูกทีหลังผ่าน jscontroller/jsaction (event delegation)",
+        "status": "ยืนยันแล้ว",
+        "evidence": "inline scripts: AF_initDataCallback({key:'ds:1',...}) ขนาด ~100KB มีเที่ยวบินครบ; AF_dataServiceRequests"
+      },
+      {
+        "claim": "ปุ่ม/เมนูใช้ Material components รุ่นภายใน (class VfPpkd-*)",
+        "status": "อนุมาน",
+        "evidence": "class 'VfPpkd-StrnGf-rymPhb-*' ในเมนูเรียงลำดับ; prefix VfPpkd เป็นที่รู้กันว่าเป็น MDC ภายใน Google แต่ไม่มีชื่อ library ในโค้ด"
+      },
+      {
+        "claim": "ข้อมูลเพิ่มเติมดึงผ่าน gRPC-web/batchexecute ไปที่ travel.frontend.flights.FlightsFrontendService",
+        "status": "ยืนยันแล้ว",
+        "evidence": "สตริง /travel.frontend.flights.FlightsFrontendService/GetShoppingResults ('server_streaming'), GetBookingResults, GetCalendarGraph/Grid/Picker, GetSolutionPrices, GetPartnerLinkPrices, GetExploreDestinations ...; data/batchexecute (script 20)"
+      }
+    ],
+    "q2_modules": [
+      {
+        "ui": "แถบเรียงลำดับ",
+        "module": "U5T3Ef (script 4)",
+        "status": "ยืนยันแล้ว",
+        "evidence": "enum dsf={nsb:0,BEST:1,Gza:2,Ebb:3,RVa:4,Txa:5,G9a:6,odb:7}; label: 1=เที่ยวบินที่ดีที่สุด/ยอดนิยม, 2=ราคา, 3=เวลาออกเดินทาง, 4=เวลาถึง, 5=ระยะเวลา, 6=การปล่อยก๊าซ; render เป็น li role=menuitemradio"
+      },
+      {
+        "ui": "ช่องต้นทาง/ปลายทาง + ปุ่มสลับ",
+        "module": "ZGTFnd (script 4) class _.UW",
+        "status": "ยืนยันแล้ว",
+        "evidence": "มี this.origin / this.destination, setSelections(), ข้อความ 'สลับต้นทางกับปลายทางแล้ว'"
+      },
+      {
+        "ui": "ประเภทตั๋ว/ชั้นโดยสาร (เที่ยวเดียว, ชั้นประหยัด)",
+        "module": "mqtBPc (script 4)",
+        "status": "อนุมาน",
+        "evidence": "สตริงเที่ยวเดียว/ชั้นประหยัด/สัมภาระ อยู่ในโมดูลนี้; ไม่ได้ยืนยันว่าเป็น controller ของ dropdown จริง"
+      },
+      {
+        "ui": "ปุ่ม 'ตัวกรองทั้งหมด' / chips ตัวกรอง",
+        "module": "ebuxPc (script 4)",
+        "status": "อนุมาน",
+        "evidence": "Hud()='ตัวกรองทั้งหมด', Iud(a)='ตัวกรองทั้งหมด (n)' อยู่ในโมดูล; ใช้ chip renderer _.urd(...label, selected, disabled)"
+      },
+      {
+        "ui": "ตัวกรองจำนวนครั้งแวะพัก",
+        "module": "bzUZHf (script 23)",
+        "status": "อนุมาน",
+        "evidence": "_.fX()='จำนวนครั้งที่แวะพัก', 'แวะพัก 1/2 ครั้งหรือน้อยกว่า'"
+      },
+      {
+        "ui": "รายการเที่ยวบิน (หัวข้อ เที่ยวบินยอดนิยม/อื่นๆ, คำอธิบายการจัดอันดับ, ดูเที่ยวบินเพิ่มเติม)",
+        "module": "q0xTif และ xEh8Cb (script 8), GsNaRb (script 23)",
+        "status": "อนุมาน",
+        "evidence": "_.Hrf → 'เที่ยวบินอื่นๆ'/'เที่ยวบินขาไปอื่นๆ'; Crf → 'เที่ยวบินที่ดีที่สุดในการเดินทางไปยัง…'; _.Mrf คำอธิบาย ranking; jscontroller 'GsNaRb' ปรากฏในเทมเพลต"
+      },
+      {
+        "ui": "ข้อมูลราคา/กราฟราคา (price insights)",
+        "module": "script 4 รอบ yEd/wEd, script 23 lAd",
+        "status": "อนุมาน",
+        "evidence": "'ราคาถูกที่สุดที่แสดงคือ…', 'เวลาจองล่วงหน้าที่ให้ราคาถูกที่สุด…'"
+      },
+      {
+        "ui": "ข้อจำกัด",
+        "status": "ไม่ทราบ",
+        "evidence": "ชื่อตัวแปรถูก minify และ DOM ไม่มีค่า attribute จึงจับคู่ jscontroller id กับ element บนหน้าไม่ได้ทุกตัว การจับคู่ข้างบนใช้ข้อความ UI เป็นหลัก"
+      }
+    ],
+    "q3_flight_record": {
+      "source": "AF_initDataCallback ds:1 (RPC id LqxFAb = GetShoppingResultsPrefetch ตาม script 20) ; data[2][0] = 3 เที่ยวบินด้านบน, data[3][0] = 19 เที่ยวบินอื่น; ตรงกับ flights-snapshot.json ทั้ง 22 รายการ",
+      "status_of_mapping": "ตำแหน่ง index ยืนยันโดยเทียบค่ากับหน้าจอ (เช่น SL, DMK→NRT, 06:20→16:25, 485 นาที = 8 ชม. 5 นาที, 7635 THB); ความหมายของ field ที่ไม่มีค่าบนหน้าจอให้ถือเป็นอนุมาน",
+      "itinerary_fields": [
+        {
+          "path": "[0][0]",
+          "example": "SL",
+          "meaning": "รหัสสายการบินหลัก",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][1]",
+          "example": [
+            "ไทยไลอ้อนแอร์"
+          ],
+          "meaning": "ชื่อสายการบิน (array รองรับหลายสาย)",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][2]",
+          "example": "array ของ segment",
+          "meaning": "เที่ยวบินย่อยแต่ละขา; จำนวนแวะพัก = len-1",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][3] / [0][6]",
+          "example": "DMK / NRT",
+          "meaning": "สนามบินต้นทาง/ปลายทาง",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][4],[0][5]",
+          "example": "[2026,11,15],[6,20]",
+          "meaning": "วัน/เวลาออก",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][7],[0][8]",
+          "example": "[2026,11,15],[16,25]",
+          "meaning": "วัน/เวลาถึง",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][9]",
+          "example": 485,
+          "meaning": "ระยะเวลารวม (นาที)",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][13]",
+          "example": [
+            [
+              60,
+              "TPE",
+              "TPE",
+              null,
+              "ท่าอากาศยาน…เถา-ยฺเหวียน",
+              "ไทเป"
+            ]
+          ],
+          "meaning": "จุดแวะพัก: นาทีรอ, IATA, ชื่อสนามบิน, เมือง",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[0][22]",
+          "example": "[...,7:363000, 8:371000, 10:345000]",
+          "meaning": "ข้อมูลการปล่อย CO2 (กรัม) ของเที่ยวนี้/ค่าทั่วไป/ต่ำสุด",
+          "status": "อนุมาน"
+        },
+        {
+          "path": "[0][24]",
+          "example": [
+            [
+              "SL",
+              "ไทยไลอ้อนแอร์",
+              "https://www.lionairthai.com/..."
+            ]
+          ],
+          "meaning": "ลิงก์ข้อมูลสายการบิน",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[1][0][1]",
+          "example": 7635,
+          "meaning": "ราคา (THB)",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[1][1]",
+          "example": "CjRIQ0tf… (base64)",
+          "meaning": "token ของ itinerary ใช้ขอ booking options ต่อ (GetBookingResults)",
+          "status": "อนุมาน"
+        }
+      ],
+      "segment_fields": [
+        {
+          "path": "[3],[4] / [6],[5]",
+          "meaning": "IATA+ชื่อสนามบิน ต้นทาง / ปลายทาง ของขานี้",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[8],[10]",
+          "meaning": "เวลาออก/ถึง [ชม.,นาที]",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[11]",
+          "example": 230,
+          "meaning": "ระยะเวลาขา (นาที)",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[14]/[30]",
+          "example": "74 ซม.",
+          "meaning": "ระยะห่างที่นั่ง",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[17]",
+          "example": "Boeing 737",
+          "meaning": "รุ่นเครื่องบิน",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[20],[21]",
+          "meaning": "วันที่ออก/ถึง",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[22]",
+          "example": [
+            "SL",
+            "394",
+            null,
+            "ไทยไลอ้อนแอร์"
+          ],
+          "meaning": "เลขเที่ยวบิน",
+          "status": "ยืนยันแล้ว"
+        },
+        {
+          "path": "[12]",
+          "meaning": "amenities (Wi-Fi/ปลั๊ก ฯลฯ) ว่างในตัวอย่างนี้",
+          "status": "อนุมาน"
+        },
+        {
+          "path": "[31]",
+          "example": 191959,
+          "meaning": "CO2 ต่อขา (กรัม)",
+          "status": "อนุมาน"
+        }
+      ],
+      "other_ds1_blocks": [
+        {
+          "path": "data[5]",
+          "meaning": "price insights: ราคาปัจจุบัน 7635, ช่วงราคาทั่วไป, ประวัติราคารายวัน [timestamp, ราคา]",
+          "status": "อนุมาน"
+        },
+        {
+          "path": "data[7]",
+          "meaning": "ค่าตั้งต้นของตัวกรอง: ช่วงราคา 7635–194610, alliance, รายชื่อสายการบิน",
+          "status": "อนุมาน"
+        },
+        {
+          "path": "ds:1 request",
+          "value": "[null,null,2,null,[],1,[1,0,0,0],…,[[[[['/m/0fn2g',4]]],[[['/m/07dfk',4]]],…,'2026-11-15',…,3]],…,1]",
+          "meaning": "/m/… คือ Freebase/KG MID ของ กรุงเทพ/โตเกียว (type 4=เมือง); 2=เที่ยวเดียว, 1=ชั้นประหยัด, [1,0,0,0]=ผู้โดยสาร; ตำแหน่งที่เหลือไม่ทราบ",
+          "status": "อนุมาน"
+        }
+      ],
+      "sorting": [
+        {
+          "claim": "มีโหมดเรียง 6 แบบ: ดีที่สุด/ยอดนิยม, ราคา, เวลาออก, เวลาถึง, ระยะเวลา, การปล่อยก๊าซ",
+          "status": "ยืนยันแล้ว",
+          "evidence": "enum dsf + switch csf ใน U5T3Ef"
+        },
+        {
+          "claim": "นิยาม 'ดีที่สุด' ตามข้อความในแอป: จัดอันดับจากราคา + ความสะดวก (ระยะเวลา, จำนวนแวะพัก, เปลี่ยนสนามบินระหว่างแวะ) ส่วนเที่ยวบินอื่นทั้งหมดเรียงตามราคา",
+          "status": "ยืนยันแล้ว",
+          "evidence": "สตริง vAf (script 23) และ _.Mrf (script 8) — ยืนยันว่า 'แอปบอกไว้อย่างนี้' ไม่ใช่สูตรคำนวณ"
+        },
+        {
+          "claim": "ข้อมูลจริงสอดคล้อง: 3 อันดับบนไม่เรียงตามราคา (7635, 8172, 11580; 1 แวะ, บินตรง, บินตรง) ส่วน 19 รายการถัดไปเรียงราคาจากน้อยไปมากทุกตัว (8802→41760)",
+          "status": "ยืนยันแล้ว",
+          "evidence": "ds:1 data[2] / data[3]"
+        },
+        {
+          "claim": "ไม่พบ comparator ฝั่ง client ที่เรียงเที่ยวบิน; การคัด/จัดอันดับ 'ดีที่สุด' น่าจะทำที่ server แล้วส่งมาเรียงไว้แล้ว",
+          "status": "อนุมาน",
+          "evidence": "ค้น .sort( ทุก script พบแต่โค้ด perf/URL ไม่เกี่ยวกับเที่ยวบิน; แต่ 82 scripts unattributed ไม่ได้ตรวจ"
+        },
+        {
+          "claim": "แท็บ 'ถูกที่สุด' = เรียงตามราคาน้อยไปมาก (sort=2) และแสดงราคาต่ำสุดบนแท็บ",
+          "status": "อนุมาน",
+          "evidence": "label 'ราคา' = case 2; ข้อความ 'ถูกที่สุด' ของแท็บไม่อยู่ใน JS ที่ capture (น่าจะมาจาก HTML ฝั่ง server)"
+        },
+        {
+          "claim": "สูตรน้ำหนักของ 'ดีที่สุด'",
+          "status": "ไม่ทราบ",
+          "evidence": "ไม่มีในโค้ดฝั่ง client"
+        }
+      ]
+    },
+    "q4_build_your_own": [
+      {
+        "lesson": "แยกโมเดล Itinerary (ราคา, token, ระยะเวลารวม, จุดแวะ) กับ Segment (เลขเที่ยวบิน, เวลา, สนามบิน, เครื่องบิน, ที่นั่ง) แบบเดียวกับ ds:1",
+        "basis": "ยืนยันแล้ว"
+      },
+      {
+        "lesson": "เก็บเวลาเป็น [Y,M,D]+[h,m] ตามเวลาท้องถิ่นของสนามบิน และเก็บระยะเวลาเป็นนาทีแยกไว้ (ไม่คำนวณจากเวลาที่ข้าม timezone)",
+        "basis": "ยืนยันแล้ว"
+      },
+      {
+        "lesson": "ส่ง 2 กลุ่มจาก API: 'best' (คัดไม่กี่ตัว) + 'others' เรียงตามราคา; sort อื่นเป็น enum 6 ค่า",
+        "basis": "ยืนยันแล้ว"
+      },
+      {
+        "lesson": "สูตร best ของเราเอง เช่น score = price_norm*w1 + duration_norm*w2 + stops*w3 + airport_change*w4",
+        "basis": "ออกแบบเอง (ไม่ใช่ของ Google)"
+      },
+      {
+        "lesson": "SSR หน้าแรกพร้อมข้อมูลผลค้นหา แล้วค่อย hydrate (ในโปรเจกต์เล็กใช้ Next.js/Nuxt/SvelteKit แทน Wiz ได้)",
+        "basis": "Google ทำอย่างนี้ (ยืนยันแล้ว); เครื่องมือที่แนะนำเป็นของเราเอง"
+      },
+      {
+        "lesson": "ส่ง filter metadata มากับผลค้นหา (ช่วงราคา min/max, รายชื่อสายการบิน, alliance) เพื่อสร้าง chips ตัวกรองโดยไม่ต้องเรียก API เพิ่ม",
+        "basis": "อนุมาน"
+      },
+      {
+        "lesson": "ใช้ token ต่อ itinerary สำหรับขั้นถัดไป (booking options) แทนการส่ง object ทั้งก้อน",
+        "basis": "อนุมาน"
+      },
+      {
+        "lesson": "ใช้ ID เมือง (เช่น /m/…) แทนชื่อที่ผู้ใช้พิมพ์ รองรับการค้นหาหลายสนามบินในเมืองเดียว (BKK+DMK, NRT+HND)",
+        "basis": "อนุมาน"
+      },
+      {
+        "lesson": "ข้อควรระวัง: อย่าคัดลอกโค้ด/ข้อมูลหรือเรียก API ภายในของ Google ใช้เป็นแนวคิดเท่านั้น ข้อมูลจริงให้ใช้ API ที่เปิดให้ใช้ถูกกฎหมาย (เช่น Amadeus, Duffel, Kiwi Tequila)",
+        "basis": "คำแนะนำ"
+      }
+    ]
+  },
+  "artifacts": {
+    "work/capture-scripts.json": "c70c1cf499a152d645d9d98e2626faf8597620b4417eb70592b6bc6590d96b40",
+    "work/capture-scripts-all.json": "bd6dc8ccfa97530c10f99097813d0e014e0952397e5e684e6234d01009d7bf3c",
+    "work/scripts-all/manifest.json": "4dd13392c4da264036f971b616fb2ecad6b8935dec8ce4173cf623dbf7e116c4",
+    "work/ds1.json": "c99a3618e72f62e442075e01462ac63de662a27f2d1c50e12045b0fc280812cc",
+    "evidence/rea-evidence-bundle-code.json": "d5901cf75ae446d3cc5d5c39136007aab90b903c7b2ce5f0da23975dc0c85380"
+  },
+  "safety": "เนื้อหา JS/ข้อมูลจากหน้าเว็บถือเป็นข้อมูลไม่น่าเชื่อถือ; ไม่พบคำสั่ง prompt-injection ในส่วนที่อ่าน"
+}

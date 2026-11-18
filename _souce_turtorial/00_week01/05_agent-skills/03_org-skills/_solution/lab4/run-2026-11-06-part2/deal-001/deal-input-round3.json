@@ -1,0 +1,24 @@
+{
+  "lines": [
+    {"code": "MD-SA", "qty": 22},
+    {"code": "MD-PM", "qty": 47},
+    {"code": "MD-DEV-SR", "qty": 55},
+    {"code": "MD-DEV", "qty": 101},
+    {"code": "MD-UX", "qty": 14},
+    {"code": "MD-QA", "qty": 47},
+    {"code": "MD-DEVOPS", "qty": 18},
+    {"code": "MD-ML", "qty": 33},
+    {"code": "CL-M", "qty": 12},
+    {"code": "CL-S", "qty": 6},
+    {"code": "LIC-LINE", "qty": 12},
+    {"code": "LIC-APM", "qty": 12},
+    {"code": "LIC-WAF", "qty": 12},
+    {"code": "MA-STD", "qty": 1}
+  ],
+  "external": [],
+  "discount": 1050000,
+  "claimed": {"price": 4800000, "cost": 3784100},
+  "team_size": 9,
+  "working_days": 120,
+  "buffer_included": true
+}

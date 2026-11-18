@@ -1,0 +1,4 @@
+OK   g1-airline   yolo2    684.3s  I've filled in `FlightView.airlineLabel` in my group's files and commi
+OK   g2-shell     yolo3   1143.2s  Group 2 is done and committed on branch g2 as `85058dd`. Visual diff d
+FAIL g3-results   cyolo1    21.7s  empty -o answer file
+-- 2/3 ok, wall 1143.2s, details out-r1/summary.json

@@ -1,0 +1,248 @@
+[
+ {
+  "arm": "noskill",
+  "round": 1,
+  "wall_s": 332.6,
+  "commands": 41,
+  "failed": 9,
+  "cost_usd": 1.217,
+  "credential_touch": 1,
+  "hidden": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "train": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "used_team_run": false,
+  "other_accounts": [],
+  "accounts": {
+   "yolo1": {
+    "calls": 2,
+    "secs": 117.1,
+    "in": 652154,
+    "out": 11814,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   },
+   "yolo2": {
+    "calls": 1,
+    "secs": 48.7,
+    "in": 211907,
+    "out": 4818,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   },
+   "cyolo1": {
+    "calls": 1,
+    "secs": 71.2,
+    "in": 231047,
+    "out": 2981,
+    "models": [
+     "gpt-6.1-sol"
+    ]
+   }
+  },
+  "lines": {
+   "clean_time.py": 78,
+   "clean_order.py": 70,
+   "clean_code.py": 26,
+   "clean.py": 72
+  }
+ },
+ {
+  "arm": "noskill",
+  "round": 2,
+  "wall_s": 422.1,
+  "commands": 39,
+  "failed": 8,
+  "cost_usd": 1.364,
+  "credential_touch": 0,
+  "hidden": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "train": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "used_team_run": false,
+  "other_accounts": [],
+  "accounts": {
+   "yolo1": {
+    "calls": 2,
+    "secs": 116.3,
+    "in": 491577,
+    "out": 12258,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   },
+   "yolo2": {
+    "calls": 2,
+    "secs": 110.3,
+    "in": 301340,
+    "out": 10947,
+    "models": [
+     "claude-opus-5-5"
+    ]
+   },
+   "cyolo1": {
+    "calls": 2,
+    "secs": 100.7,
+    "in": 271148,
+    "out": 3974,
+    "models": [
+     "gpt-6.1-sol"
+    ]
+   }
+  },
+  "lines": {
+   "clean_time.py": 149,
+   "clean_order.py": 160,
+   "clean_code.py": 35,
+   "clean.py": 81
+  }
+ },
+ {
+  "arm": "skill",
+  "round": 1,
+  "wall_s": 287.5,
+  "commands": 25,
+  "failed": 3,
+  "cost_usd": 0.766,
+  "credential_touch": 0,
+  "hidden": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "train": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "used_team_run": true,
+  "other_accounts": [],
+  "accounts": {
+   "yolo1": {
+    "calls": 3,
+    "secs": 79.0,
+    "in": 344119,
+    "out": 8275,
+    "models": [
+     "haiku/low",
+     "opus/high"
+    ]
+   },
+   "yolo2": {
+    "calls": 2,
+    "secs": 94.1,
+    "in": 296620,
+    "out": 8687,
+    "models": [
+     "haiku/low",
+     "opus/high"
+    ]
+   },
+   "cyolo1": {
+    "calls": 2,
+    "secs": 91.9,
+    "in": 171849,
+    "out": 3254,
+    "models": [
+     "gpt-6.1-sol/low",
+     "gpt-6.1-sol/high"
+    ]
+   }
+  },
+  "lines": {
+   "clean_time.py": 102,
+   "clean_order.py": 129,
+   "clean_code.py": 34,
+   "clean.py": 56
+  }
+ },
+ {
+  "arm": "skill",
+  "round": 2,
+  "wall_s": 418.5,
+  "commands": 25,
+  "failed": 3,
+  "cost_usd": 0.841,
+  "credential_touch": 0,
+  "hidden": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "train": {
+   "time": 30.0,
+   "order_id": 30.0,
+   "error_code": 30.0,
+   "total": 90.0,
+   "missing_ids": 0
+  },
+  "used_team_run": true,
+  "other_accounts": [],
+  "accounts": {
+   "yolo1": {
+    "calls": 3,
+    "secs": 99.6,
+    "in": 432719,
+    "out": 10245,
+    "models": [
+     "haiku/low",
+     "opus/high"
+    ]
+   },
+   "yolo2": {
+    "calls": 2,
+    "secs": 93.5,
+    "in": 362516,
+    "out": 8799,
+    "models": [
+     "haiku/low",
+     "opus/high"
+    ]
+   },
+   "cyolo1": {
+    "calls": 2,
+    "secs": 201.3,
+    "in": 323797,
+    "out": 7161,
+    "models": [
+     "gpt-6.1-sol/low",
+     "gpt-6.1-sol/high"
+    ]
+   }
+  },
+  "lines": {
+   "clean_time.py": 76,
+   "clean_order.py": 119,
+   "clean_code.py": 56,
+   "clean.py": 57
+  }
+ }
+]

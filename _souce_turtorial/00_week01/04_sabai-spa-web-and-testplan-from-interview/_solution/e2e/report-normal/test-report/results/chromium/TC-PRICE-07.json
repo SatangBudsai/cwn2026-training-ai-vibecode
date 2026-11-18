@@ -1,0 +1,79 @@
+{
+  "id": "TC-PRICE-07",
+  "title": "TC-PRICE-07 สิทธิ์เดือนเกิดใช้เมื่อกดเอง 1 ครั้งต่อปี และได้คืนเมื่อยกเลิกทัน",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: ตัวเลือกกดได้และยังไม่ถูกเลือก · ฿1,000 − 10% = ฿900 (ถ้าใช้สิทธิ์เองจะได้ ฿800)\nขั้น 2: ยังใช้สิทธิ์ได้ · ฿1,000 − 20% (฿200) = ฿800 (ถ้าขั้น 1 กินสิทธิ์จะได้ ฿900)\nขั้น 3: ใช้ครั้งที่ 2 ไม่ได้ · ฿1,000 − 10% = ฿900\nขั้น 5: สิทธิ์คืนแล้ว · ฿1,000 − 20% = ฿800 (ถ้าไม่คืนจะได้ ฿900) · นัด 20 มิ.ย. ยัง ฿900 หลังรีโหลด\nขั้น 6: U05 ได้ระดับ ฿1,000 − 5% = ฿950 ไม่ใช่ ฿800 · ไม่ผูกว่าตัวเลือกยังติ๊กได้หรือไม่ (F-สร้าง 12) แต่ยอดต้องไม่ลด 20%",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 655,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 แต้มและระดับ · [D] §4 ยกเลิก · [D] §5 สถานะสิทธิ์ · [R] · F-สร้าง 12",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 655,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-22, FR-33, BR-26",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 655,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "—",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 655,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Happy path, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 655,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 655,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 41024,
+  "at": "2026-11-06T02:26:05.338Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U02 จอง S01 20 มิ.ย. อ่านตัวเลือก ยืนยันโดยไม่กดเลือก",
+    "2. U02 จอง S01 17 มิ.ย. เลือกเดือนเกิด ยืนยัน",
+    "3. U02 จอง S01 29 มิ.ย. พยายามเลือกเดือนเกิด ไม่ยืนยัน",
+    "4. เปิดประวัติ แล้วยกเลิกนัด 17 มิ.ย.",
+    "5. U02 จอง S01 29 มิ.ย. เลือกเดือนเกิด ยืนยัน รีโหลด",
+    "6. U05 จอง S01 17 มิ.ย. พยายามเลือกเดือนเกิด ไม่ยืนยัน"
+  ]
+}

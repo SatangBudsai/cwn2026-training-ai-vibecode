@@ -1,0 +1,26 @@
+import { open, URL, consent, shot, snap, log, waitResults, rows, summarize } from './lib.mjs';
+const { browser, page } = await open();
+const sortBtn = () => page.getByRole('button', { name: /เปลี่ยนลำดับการจัดเรียง/ }).filter({ visible: true });
+const st = async (tag) => { const r = await rows(page); log(tag, JSON.stringify({err: await page.getByText('มีบางอย่างผิดพลาด').count(), tabs: await page.getByRole('tab').evaluateAll(e => e.map(x => x.innerText.replace(/\s+/g,' ').trim() + (x.getAttribute('aria-selected')==='true'?'[sel]':''))), sort: await sortBtn().first().getAttribute('aria-label', {timeout:1500}).catch(()=>'NONE'), h3: await page.locator('[role=main] h3').evaluateAll(e => e.filter(x => x.offsetParent).map(x => x.innerText)), more: await page.getByRole('button', {name:'ดูเที่ยวบินเพิ่มเติม'}).count(), url: page.url().slice(-45)}), JSON.stringify(summarize(r)), JSON.stringify(r.slice(0,3).map(x=>x.text.match(/฿[\d,]+/)?.[0]))); return r; };
+await page.goto(URL); await consent(page); await waitResults(page);
+await sortBtn().first().click(); await page.waitForTimeout(1500);
+await page.getByRole('menuitemradio', { name: 'ราคา' }).click(); await page.waitForTimeout(6000);
+await st('[A sort=ราคา]'); await shot(page, '08-sorted-price'); await snap(page, '08-sorted-price', '[role=main]');
+await page.getByRole('button', {name:'ดูเที่ยวบินเพิ่มเติม'}).click().catch(()=>log('no more btn')); await page.waitForTimeout(6000);
+const r = await st('[B sort=ราคา + ดูเที่ยวบินเพิ่มเติม]');
+const p = r.map(x=>+x.name.match(/ราคาเริ่มต้นที่ (\d+)/)[1]); log('ascending?', p.every((v,i)=>!i||v>=p[i-1]), 'last price', p.at(-1));
+await page.getByRole('tab').nth(1).click({position:{x:40,y:20}}); await page.waitForTimeout(6000);
+await st('[C then tab ถูกที่สุด]'); await shot(page, '08-sorted-then-cheapest-tab');
+await page.getByRole('tab').nth(0).click({position:{x:40,y:20}}); await page.waitForTimeout(6000);
+await st('[D then tab ดีที่สุด]'); await shot(page,'08-D-after-best-tab'); await page.waitForTimeout(6000); 
+// sort by duration then filter nonstop
+await sortBtn().first().click(); await page.waitForTimeout(1500);
+await page.getByRole('menuitemradio', { name: 'ระยะเวลา' }).click(); await page.waitForTimeout(6000);
+await st('[E sort=ระยะเวลา]');
+await page.getByRole('button', { name: /^จำนวนครั้งที่แวะพัก/ }).click(); await page.waitForTimeout(1500);
+await page.getByRole('radio', { name: /บินตรงเท่านั้น/ }).click(); await page.waitForTimeout(5000);
+await page.keyboard.press('Escape'); await page.waitForTimeout(1500);
+await st('[F sort=ระยะเวลา + filter บินตรง]');
+await page.reload(); await page.waitForTimeout(9000);
+await st('[G after reload]');
+await browser.close();

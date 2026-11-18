@@ -1,0 +1,40 @@
+{
+  "base": "http://localhost:5095",
+  "url": "http://localhost:5095/search?trip=oneway&cabin=economy&from=%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3&to=%E0%B9%82%E0%B8%95%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A7&date=2026-11-15",
+  "at": "2026-11-01T13:17:22.998Z",
+  "firstRow": {
+    "x": 175,
+    "y": 623,
+    "w": 1016,
+    "h": 92,
+    "name": "ราคาเริ่มต้นที่ 7635 บาทไทย เดินทางด้วยเที่ยวบินแบบแวะพัก 1 "
+  },
+  "textColorVars": {
+    "--color-text": "#202124",
+    "--color-text-secondary": "#5f6368",
+    "--color-text-on-primary": "#fff"
+  },
+  "textColorVarsNote": "tokens.css ไม่มีตัวแปร --c-text* จึงเก็บ --color-text* (ตัวแปรสีข้อความที่มีจริง) ด้วยรูปแบบ /^--c(olor)?-text/",
+  "inputs": [
+    {
+      "name": "เปลี่ยนประเภทตั๋ว เที่ยวเดียว",
+      "value": ""
+    },
+    {
+      "name": "เปลี่ยนชั้นโดยสาร ชั้นประหยัด",
+      "value": ""
+    },
+    {
+      "name": "ต้นทาง",
+      "value": "กรุงเทพมหานคร"
+    },
+    {
+      "name": "ปลายทาง",
+      "value": "โตเกียว"
+    },
+    {
+      "name": "ขาไป",
+      "value": "อาทิตย์ 15 พ.ย."
+    }
+  ]
+}

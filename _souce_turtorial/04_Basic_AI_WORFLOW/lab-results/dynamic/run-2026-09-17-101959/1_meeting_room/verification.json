@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "three_rooms": true,
+    "form_on_first_page": true,
+    "status_on_first_page": true,
+    "availability": true,
+    "booking_created": true,
+    "busy_slot": true,
+    "reject_overlap": true,
+    "cancelled": true,
+    "released_slot": true,
+    "invalid_range": true,
+    "initial_cancel": true,
+    "no_errors": true,
+    "mobile_no_overflow": true
+  },
+  "console_page_errors": [],
+  "access_clicks": {
+    "แสดงห้อง": 0,
+    "ดูเวลาว่าง": 1,
+    "ฟอร์มจอง": 0,
+    "ยกเลิกรายการตัวอย่าง": 1,
+    "ดูสถานะ": 0
+  },
+  "click_definition": "เข้าถึงฟีเจอร์จากหน้าแรก ไม่รวมการกรอกและส่งฟอร์ม; อนุญาตเลื่อนหน้า",
+  "criteria": {
+    "C1": true,
+    "C2": true,
+    "C3": true
+  }
+}

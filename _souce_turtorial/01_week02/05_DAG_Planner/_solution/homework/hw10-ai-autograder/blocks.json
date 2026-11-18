@@ -1,0 +1,140 @@
+{
+ "goal": "ระบบส่งการบ้านเขียนโปรแกรม รันโค้ดนักศึกษาใน sandbox (Docker) ตรวจด้วย test case ให้ AI เขียนคำแนะนำ และสรุปคะแนนให้อาจารย์",
+ "name": "hw10-ai-autograder",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์และสัญญา API",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "docs/api.md",
+   "done": "มีโครงโฟลเดอร์ และ docs/api.md ระบุ API ส่งงาน ดูผล และสรุปคะแนน"
+  },
+  {
+   "id": "B02",
+   "title": "เลือกวิธีกั้น sandbox",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 4,
+   "output": "docs/sandbox-decision.md",
+   "done": "ระบุข้อจำกัด CPU RAM เวลา เครือข่าย และไฟล์ พร้อมรูปแบบการเรียกตัวรัน"
+  },
+  {
+   "id": "B03",
+   "title": "โครงฐานข้อมูลการบ้าน การส่ง และคะแนน",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "db/schema.sql",
+   "done": "สร้างตารางได้ และเก็บผลรายข้อของแต่ละการส่ง"
+  },
+  {
+   "id": "B04",
+   "title": "โจทย์ตัวอย่างและโค้ดอันตรายสำหรับทดสอบ",
+   "size": "S",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "samples/problems.json",
+   "done": "มีโจทย์ 3 ข้อพร้อม test case และโค้ดทดสอบ 3 แบบ วนไม่จบ ใช้ RAM เกิน และเปิดเครือข่าย"
+  },
+  {
+   "id": "B05",
+   "title": "ตัวรันโค้ดใน Docker",
+   "size": "L",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "review",
+   "difficulty": 5,
+   "output": "runner/sandbox.py",
+   "done": "บังคับข้อจำกัดครบตาม sandbox-decision.md และหยุดโค้ดที่เกินเวลา"
+  },
+  {
+   "id": "B06",
+   "title": "ตัวตรวจด้วย test case",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "grader/judge.py",
+   "done": "เรียกตัวรันตามรูปแบบใน sandbox-decision.md และบันทึกผลรายข้อ"
+  },
+  {
+   "id": "B07",
+   "title": "API ส่งงานและคิวตรวจ",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B03"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "api/submit.py",
+   "done": "ส่งงานแล้วได้เลขการส่ง และดูผลได้ ตาม docs/api.md"
+  },
+  {
+   "id": "B08",
+   "title": "AI เขียนคำแนะนำ",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "feedback/advisor.py",
+   "done": "ให้คำแนะนำจากผล test case โดยไม่เฉลยโค้ดคำตอบ"
+  },
+  {
+   "id": "B09",
+   "title": "หน้าของนักศึกษา",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "web/student.html",
+   "done": "ส่งไฟล์ ดูผลรายข้อ และอ่านคำแนะนำได้"
+  },
+  {
+   "id": "B10",
+   "title": "หน้าสรุปคะแนนของอาจารย์",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B03"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "web/teacher.html",
+   "done": "แสดงคะแนนรายคนรายข้อ และส่งออกเป็น CSV ได้"
+  },
+  {
+   "id": "B11",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10"
+   ],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "TEST.md",
+   "done": "ส่งโค้ดถูก โค้ดผิด และโค้ดอันตราย 3 แบบ ระบบตรวจถูกและไม่ล่ม บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

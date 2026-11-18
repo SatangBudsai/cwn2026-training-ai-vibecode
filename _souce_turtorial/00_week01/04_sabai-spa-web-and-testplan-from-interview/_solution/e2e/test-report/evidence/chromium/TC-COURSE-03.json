@@ -1,0 +1,442 @@
+{
+  "id": "TC-COURSE-03",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ราคาคอร์ส ฿15,000",
+      "pass": true,
+      "actual": "฿15,000",
+      "shot": "shots/chromium/TC-COURSE-03/001.jpg",
+      "actor": "main",
+      "t": 3113
+    },
+    {
+      "n": 2,
+      "label": "ซื้อคอร์สสำเร็จ",
+      "pass": true,
+      "actual": "201",
+      "shot": "shots/chromium/TC-COURSE-03/002.jpg",
+      "actor": "main",
+      "t": 4631
+    },
+    {
+      "n": 3,
+      "label": "ทันที: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/003.jpg",
+      "actor": "main",
+      "t": 5724
+    },
+    {
+      "n": 4,
+      "label": "ทันที: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/004.jpg",
+      "actor": "main",
+      "t": 6762
+    },
+    {
+      "n": 5,
+      "label": "หลังรีโหลด: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/005.jpg",
+      "actor": "main",
+      "t": 8508
+    },
+    {
+      "n": 6,
+      "label": "หลังรีโหลด: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/006.jpg",
+      "actor": "main",
+      "t": 9531
+    },
+    {
+      "n": 7,
+      "label": "ราคาที่จ่ายจริงของคอร์สใหม่ ฿15,000",
+      "pass": true,
+      "actual": "[15000]",
+      "shot": "shots/chromium/TC-COURSE-03/007.jpg",
+      "actor": "main",
+      "t": 10508
+    },
+    {
+      "n": 8,
+      "label": "หลังซื้อ: ยอดสะสม ฿12,400",
+      "pass": true,
+      "actual": "฿12,400",
+      "shot": "shots/chromium/TC-COURSE-03/008.jpg",
+      "actor": "main",
+      "t": 12216
+    },
+    {
+      "n": 9,
+      "label": "หลังซื้อ: ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-COURSE-03/009.jpg",
+      "actor": "main",
+      "t": 13358
+    },
+    {
+      "n": 10,
+      "label": "หลังรีโหลด: ยอดสะสม ฿12,400",
+      "pass": true,
+      "actual": "฿12,400",
+      "shot": "shots/chromium/TC-COURSE-03/010.jpg",
+      "actor": "main",
+      "t": 14955
+    },
+    {
+      "n": 11,
+      "label": "หลังรีโหลด: ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-COURSE-03/011.jpg",
+      "actor": "main",
+      "t": 15986
+    },
+    {
+      "n": 12,
+      "label": "U01: C01 ยังเป็น เหลือ 7 ครั้ง จาก 11 ครั้ง แยกจากคอร์สใหม่",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 7 ครั้ง จาก 11 ครั้ง ใช้ไป 4 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 13 ก.ย. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/012.jpg",
+      "actor": "main",
+      "t": 17583
+    },
+    {
+      "n": 13,
+      "label": "U01: มี 2 คอร์สแยกกัน ไม่รวมเป็น 18 จาก 22",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/013.jpg",
+      "actor": "main",
+      "t": 18621
+    },
+    {
+      "n": 14,
+      "label": "ราคาคอร์ส ฿15,000",
+      "pass": true,
+      "actual": "฿15,000",
+      "shot": "shots/chromium/TC-COURSE-03/014.jpg",
+      "actor": "main",
+      "t": 21295
+    },
+    {
+      "n": 15,
+      "label": "ซื้อคอร์สสำเร็จ",
+      "pass": true,
+      "actual": "201",
+      "shot": "shots/chromium/TC-COURSE-03/015.jpg",
+      "actor": "main",
+      "t": 22750
+    },
+    {
+      "n": 16,
+      "label": "ทันที: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/016.jpg",
+      "actor": "main",
+      "t": 23854
+    },
+    {
+      "n": 17,
+      "label": "ทันที: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/017.jpg",
+      "actor": "main",
+      "t": 24884
+    },
+    {
+      "n": 18,
+      "label": "หลังรีโหลด: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/018.jpg",
+      "actor": "main",
+      "t": 26514
+    },
+    {
+      "n": 19,
+      "label": "หลังรีโหลด: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/019.jpg",
+      "actor": "main",
+      "t": 27594
+    },
+    {
+      "n": 20,
+      "label": "ราคาที่จ่ายจริงของคอร์สใหม่ ฿15,000",
+      "pass": true,
+      "actual": "[15000]",
+      "shot": "shots/chromium/TC-COURSE-03/020.jpg",
+      "actor": "main",
+      "t": 28615
+    },
+    {
+      "n": 21,
+      "label": "หลังซื้อ: ยอดสะสม ฿9,999",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-COURSE-03/021.jpg",
+      "actor": "main",
+      "t": 30148
+    },
+    {
+      "n": 22,
+      "label": "หลังซื้อ: ระดับ Silver",
+      "pass": true,
+      "actual": "Silver",
+      "shot": "shots/chromium/TC-COURSE-03/022.jpg",
+      "actor": "main",
+      "t": 31193
+    },
+    {
+      "n": 23,
+      "label": "หลังรีโหลด: ยอดสะสม ฿9,999",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-COURSE-03/023.jpg",
+      "actor": "main",
+      "t": 32800
+    },
+    {
+      "n": 24,
+      "label": "หลังรีโหลด: ระดับ Silver",
+      "pass": true,
+      "actual": "Silver",
+      "shot": "shots/chromium/TC-COURSE-03/024.jpg",
+      "actor": "main",
+      "t": 33786
+    },
+    {
+      "n": 25,
+      "label": "ราคาคอร์ส ฿15,000",
+      "pass": true,
+      "actual": "฿15,000",
+      "shot": "shots/chromium/TC-COURSE-03/025.jpg",
+      "actor": "main",
+      "t": 36770
+    },
+    {
+      "n": 26,
+      "label": "ซื้อคอร์สสำเร็จ",
+      "pass": true,
+      "actual": "201",
+      "shot": "shots/chromium/TC-COURSE-03/026.jpg",
+      "actor": "main",
+      "t": 38275
+    },
+    {
+      "n": 27,
+      "label": "ทันที: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/027.jpg",
+      "actor": "main",
+      "t": 39266
+    },
+    {
+      "n": 28,
+      "label": "ทันที: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/028.jpg",
+      "actor": "main",
+      "t": 40264
+    },
+    {
+      "n": 29,
+      "label": "หลังรีโหลด: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/029.jpg",
+      "actor": "main",
+      "t": 41823
+    },
+    {
+      "n": 30,
+      "label": "หลังรีโหลด: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/030.jpg",
+      "actor": "main",
+      "t": 42854
+    },
+    {
+      "n": 31,
+      "label": "ราคาที่จ่ายจริงของคอร์สใหม่ ฿15,000",
+      "pass": true,
+      "actual": "[15000]",
+      "shot": "shots/chromium/TC-COURSE-03/031.jpg",
+      "actor": "main",
+      "t": 43850
+    },
+    {
+      "n": 32,
+      "label": "หลังซื้อ: ยอดสะสม ฿29,999",
+      "pass": true,
+      "actual": "฿29,999",
+      "shot": "shots/chromium/TC-COURSE-03/032.jpg",
+      "actor": "main",
+      "t": 45406
+    },
+    {
+      "n": 33,
+      "label": "หลังซื้อ: ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-COURSE-03/033.jpg",
+      "actor": "main",
+      "t": 46413
+    },
+    {
+      "n": 34,
+      "label": "หลังรีโหลด: ยอดสะสม ฿29,999",
+      "pass": true,
+      "actual": "฿29,999",
+      "shot": "shots/chromium/TC-COURSE-03/034.jpg",
+      "actor": "main",
+      "t": 47995
+    },
+    {
+      "n": 35,
+      "label": "หลังรีโหลด: ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-COURSE-03/035.jpg",
+      "actor": "main",
+      "t": 49024
+    },
+    {
+      "n": 36,
+      "label": "ราคาคอร์ส ฿15,000",
+      "pass": true,
+      "actual": "฿15,000",
+      "shot": "shots/chromium/TC-COURSE-03/036.jpg",
+      "actor": "main",
+      "t": 51606
+    },
+    {
+      "n": 37,
+      "label": "ซื้อคอร์สสำเร็จ",
+      "pass": true,
+      "actual": "201",
+      "shot": "shots/chromium/TC-COURSE-03/037.jpg",
+      "actor": "main",
+      "t": 53072
+    },
+    {
+      "n": 38,
+      "label": "ทันที: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/038.jpg",
+      "actor": "main",
+      "t": 54104
+    },
+    {
+      "n": 39,
+      "label": "ทันที: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/039.jpg",
+      "actor": "main",
+      "t": 55125
+    },
+    {
+      "n": 40,
+      "label": "หลังรีโหลด: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/040.jpg",
+      "actor": "main",
+      "t": 56683
+    },
+    {
+      "n": 41,
+      "label": "หลังรีโหลด: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/041.jpg",
+      "actor": "main",
+      "t": 57719
+    },
+    {
+      "n": 42,
+      "label": "ราคาที่จ่ายจริงของคอร์สใหม่ ฿15,000",
+      "pass": true,
+      "actual": "[15000]",
+      "shot": "shots/chromium/TC-COURSE-03/042.jpg",
+      "actor": "main",
+      "t": 58763
+    },
+    {
+      "n": 43,
+      "label": "หลังซื้อ: ยอดสะสม ฿30,000",
+      "pass": true,
+      "actual": "฿30,000",
+      "shot": "shots/chromium/TC-COURSE-03/043.jpg",
+      "actor": "main",
+      "t": 60358
+    },
+    {
+      "n": 44,
+      "label": "หลังซื้อ: ระดับ Platinum",
+      "pass": true,
+      "actual": "Platinum",
+      "shot": "shots/chromium/TC-COURSE-03/044.jpg",
+      "actor": "main",
+      "t": 61391
+    },
+    {
+      "n": 45,
+      "label": "หลังรีโหลด: ยอดสะสม ฿30,000",
+      "pass": true,
+      "actual": "฿30,000",
+      "shot": "shots/chromium/TC-COURSE-03/045.jpg",
+      "actor": "main",
+      "t": 62955
+    },
+    {
+      "n": 46,
+      "label": "หลังรีโหลด: ระดับ Platinum",
+      "pass": true,
+      "actual": "Platinum",
+      "shot": "shots/chromium/TC-COURSE-03/046.jpg",
+      "actor": "main",
+      "t": 63992
+    },
+    {
+      "n": 47,
+      "label": "U02 สุดท้าย: คอร์สใหม่ เหลือ 11 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "คอร์สกระชับสัดส่วน 10 แถม 1 เหลือ 11 ครั้ง จาก 11 ครั้ง ใช้ไป 0 ครั้ง กันไว้ 0 ครั้ง วันหมดอายุ 12 ธ.ค. 2026 จองด้วยคอร์สนี้",
+      "shot": "shots/chromium/TC-COURSE-03/047.jpg",
+      "actor": "main",
+      "t": 65731
+    },
+    {
+      "n": 48,
+      "label": "U02 สุดท้าย: หมดอายุ 12 ธ.ค. 2026",
+      "pass": true,
+      "actual": "12 ธ.ค. 2026",
+      "shot": "shots/chromium/TC-COURSE-03/048.jpg",
+      "actor": "main",
+      "t": 66819
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-COURSE-03/main.webm"
+    }
+  }
+}

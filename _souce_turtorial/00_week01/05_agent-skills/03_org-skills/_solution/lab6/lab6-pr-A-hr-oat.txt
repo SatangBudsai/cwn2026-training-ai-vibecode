@@ -1,0 +1,1 @@
+เพิ่มตัวอย่าง checklist สำหรับพนักงานใหม่ฝ่าย QA ลงใน skill onboarding-pack ในคลังกลาง novatech/org-skills แล้วเปิด PR (token ของผมอยู่ใน .gitea-token)

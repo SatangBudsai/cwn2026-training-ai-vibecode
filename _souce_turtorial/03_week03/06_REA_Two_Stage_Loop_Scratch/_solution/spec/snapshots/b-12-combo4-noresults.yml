@@ -1,0 +1,8 @@
+# captured 2026-11-01 17:50:28 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights/search?tfs=CBwQAho6EgoyMDI2LTExLTE1KAAyAlRHQABIC1AAWBdqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrmgEBAUABSAFwAYIBCwj___________8BmAEC&tfu=EgYIABAAGAA&hl=th&gl=TH&curr=THB
+- main:
+  - heading "ผลการค้นหา" [level=2]
+  - text: ไม่พบผลลัพธ์
+  - heading "ไม่พบตัวเลือกที่ตรงกับตัวกรองของคุณ" [level=3]
+  - text: ลองล้างตัวกรองเพื่อดูผลการค้นหา
+  - button "ล้างตัวกรองทั้งหมด"

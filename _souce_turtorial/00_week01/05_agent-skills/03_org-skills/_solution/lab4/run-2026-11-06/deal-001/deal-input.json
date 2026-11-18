@@ -1,0 +1,22 @@
+{
+  "lines": [
+    {"code": "MD-SA", "qty": 17},
+    {"code": "MD-PM", "qty": 39},
+    {"code": "MD-DEV-SR", "qty": 50},
+    {"code": "MD-DEV", "qty": 88},
+    {"code": "MD-UX", "qty": 14},
+    {"code": "MD-QA", "qty": 42},
+    {"code": "MD-DEVOPS", "qty": 16},
+    {"code": "MD-ML", "qty": 31},
+    {"code": "CL-M", "qty": 12},
+    {"code": "CL-S", "qty": 6},
+    {"code": "LIC-LINE", "qty": 12},
+    {"code": "LIC-APM", "qty": 12},
+    {"code": "LIC-WAF", "qty": 12},
+    {"code": "MA-STD", "qty": 1}
+  ],
+  "external": [],
+  "discount": 507000,
+  "claimed": {"price": 4800000, "cost": 3441600},
+  "buffer_included": true
+}

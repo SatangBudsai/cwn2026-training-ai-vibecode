@@ -1,0 +1,113 @@
+// __PROJECT_TITLE__ — 1 ฐานข้อมูล แยก schema ต่อโมดูล (arch-standards ข้อ 1)
+// ตาราง/คอลัมน์ snake_case พหูพจน์ (coding-rules ข้อ 2) · เปลี่ยนผ่าน `prisma migrate dev` เท่านั้น (ข้อ 7)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["auth", "member", "payment", "audit"]
+}
+
+// ---------- auth ----------
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  role         String   @default("member")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+  @@schema("auth")
+}
+
+/// refresh token หมุนทุกครั้ง: ใช้แล้ว = used_at, ใช้ซ้ำ = revoke ทั้ง family_id
+model RefreshToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  familyId  String    @map("family_id") @db.Uuid
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  revokedAt DateTime? @map("revoked_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@index([familyId])
+  @@map("refresh_tokens")
+  @@schema("auth")
+}
+
+// ---------- member ----------
+model Member {
+  id          String   @id @db.Uuid
+  displayName String   @map("display_name")
+  tier        String   @default("basic")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("members")
+  @@schema("member")
+}
+
+/// เก็บเวอร์ชันข้อความยินยอม PDPA ทุกครั้งที่ยินยอม
+model Consent {
+  id             String   @id @default(uuid()) @db.Uuid
+  memberId       String   @map("member_id") @db.Uuid
+  consentVersion String   @map("consent_version")
+  purpose        String
+  acceptedAt     DateTime @default(now()) @map("accepted_at")
+
+  @@index([memberId])
+  @@map("consents")
+  @@schema("member")
+}
+
+// ---------- payment ----------
+enum OrderStatus {
+  pending
+  paid
+  refunded
+
+  @@schema("payment")
+}
+
+model Order {
+  id           String      @id @default(uuid()) @db.Uuid
+  memberId     String      @map("member_id") @db.Uuid
+  amountSatang Int         @map("amount_satang")
+  currency     String      @default("THB")
+  description  String
+  status       OrderStatus @default(pending)
+  createdAt    DateTime    @default(now()) @map("created_at")
+  updatedAt    DateTime    @updatedAt @map("updated_at")
+
+  @@map("orders")
+  @@schema("payment")
+}
+
+/// webhook idempotency: insert ก่อน ชน unique = เคยรับแล้ว ตอบ 200 จบ
+model PaymentEvent {
+  eventId     String   @id @map("event_id")
+  orderId     String   @map("order_id") @db.Uuid
+  type        String
+  payloadHash String   @map("payload_hash")
+  receivedAt  DateTime @default(now()) @map("received_at")
+
+  @@map("payment_events")
+  @@schema("payment")
+}
+
+// ---------- audit ----------
+model AuditLog {
+  id        String   @id @default(uuid()) @db.Uuid
+  actorId   String?  @map("actor_id")
+  action    String
+  target    String
+  meta      Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([target])
+  @@map("audit_logs")
+  @@schema("audit")
+}

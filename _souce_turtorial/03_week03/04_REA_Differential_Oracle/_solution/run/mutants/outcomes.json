@@ -1,0 +1,280 @@
+{
+  "base": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B20",
+      "B22",
+      "C13",
+      "C31",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M01": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B12",
+      "B20",
+      "B22",
+      "C13",
+      "C31",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M02": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B16",
+      "B20",
+      "B22",
+      "C13",
+      "C14",
+      "C31",
+      "F04",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M03": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B09",
+      "B16",
+      "B17",
+      "B19",
+      "B20",
+      "B25",
+      "B33",
+      "C13",
+      "C31",
+      "F03",
+      "F04",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M04": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B15",
+      "B20",
+      "B22",
+      "C13",
+      "C26",
+      "C31",
+      "F01",
+      "F02",
+      "F05",
+      "F06",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M05": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B20",
+      "B22",
+      "C13",
+      "C31",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M06": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B13",
+      "B20",
+      "B22",
+      "B31",
+      "B32",
+      "B33",
+      "C13",
+      "C22",
+      "C23",
+      "C30",
+      "C31",
+      "F05",
+      "F08",
+      "F09",
+      "F12",
+      "F13",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8"
+    ],
+    "differential_total": 8
+  },
+  "M07": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B17",
+      "B20",
+      "B22",
+      "C13",
+      "C15",
+      "C31",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S5",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M08": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B20",
+      "B22",
+      "C13",
+      "C31",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M09": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B20",
+      "B22",
+      "B23",
+      "C13",
+      "C31",
+      "F05",
+      "F08",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7"
+    ],
+    "differential_total": 8
+  },
+  "M10": {
+    "acceptance_exit": 1,
+    "acceptance_failed": [
+      "B20",
+      "B22",
+      "C13",
+      "C31",
+      "F05",
+      "F08",
+      "F12",
+      "F14",
+      "F16"
+    ],
+    "acceptance_total": 82,
+    "differential_exit": 1,
+    "differential_failed": [
+      "S1",
+      "S3",
+      "S4",
+      "S7",
+      "S8"
+    ],
+    "differential_total": 8
+  }
+}

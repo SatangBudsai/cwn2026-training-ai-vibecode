@@ -1,0 +1,428 @@
+{
+  "pixels": 50655,
+  "pct": 4.1203,
+  "shotMs": 74,
+  "ariaLen": 13371,
+  "guard": {
+    "fontSize": [],
+    "contrast": [],
+    "opacity": [],
+    "size": [],
+    "midword": [],
+    "checkedText": 304,
+    "checkedSize": 297,
+    "ok": true
+  },
+  "bands": [
+    {
+      "y0": 0,
+      "red": 6700
+    },
+    {
+      "y0": 75,
+      "red": 2983
+    },
+    {
+      "y0": 150,
+      "red": 6399
+    },
+    {
+      "y0": 225,
+      "red": 2328
+    },
+    {
+      "y0": 300,
+      "red": 6326
+    },
+    {
+      "y0": 375,
+      "red": 4530
+    },
+    {
+      "y0": 450,
+      "red": 3740
+    },
+    {
+      "y0": 525,
+      "red": 3137
+    },
+    {
+      "y0": 600,
+      "red": 579
+    },
+    {
+      "y0": 675,
+      "red": 3479
+    },
+    {
+      "y0": 750,
+      "red": 4490
+    },
+    {
+      "y0": 825,
+      "red": 5964
+    }
+  ],
+  "regions": [
+    {
+      "id": 3,
+      "x0": 1259,
+      "y0": 9,
+      "x1": 1347,
+      "y1": 54,
+      "red": 2753,
+      "el": "header.site-header \"SkyThai Max ข้อมูลจำลอง · ไม่ช\""
+    },
+    {
+      "id": 141,
+      "x0": 829,
+      "y0": 810,
+      "x1": 1257,
+      "y1": 890,
+      "red": 2532,
+      "el": "div.results-root > div > section.track-tools > div.toast-card \"เดินทางวันที่ 13 พ.ย. ในราคา ฿\""
+    },
+    {
+      "id": 68,
+      "x0": 390,
+      "y0": 342,
+      "x1": 975,
+      "y1": 362,
+      "red": 2199,
+      "el": "div > div.list-head > div > div.list-sub \"จัดอันดับตามราคาและความสะดวก ·\""
+    },
+    {
+      "id": 70,
+      "x0": 168,
+      "y0": 364,
+      "x1": 524,
+      "y1": 383,
+      "red": 2122,
+      "el": "div.list-head > div > div.list-sub > button.results-info-button \"ความช่วยเหลือสำหรับผู้โดยสาร\""
+    },
+    {
+      "id": 2,
+      "x0": 359,
+      "y0": 9,
+      "x1": 594,
+      "y1": 54,
+      "red": 1557,
+      "el": "header.site-header > div.container > span.mock-pill \"ข้อมูลจำลอง · ไม่ชำระเงินจริง\""
+    },
+    {
+      "id": 120,
+      "x0": 235,
+      "y0": 654,
+      "x1": 422,
+      "y1": 695,
+      "red": 1444,
+      "el": "div.insight > div.insight-head > div.insight-title > h4 \"ขณะนี้เที่ยวบินมีราคาสูง\""
+    },
+    {
+      "id": 65,
+      "x0": 169,
+      "y0": 311,
+      "x1": 313,
+      "y1": 336,
+      "red": 1092,
+      "el": "div > div.list-head > div > h3 \"เที่ยวบินยอดนิยม\""
+    },
+    {
+      "id": 66,
+      "x0": 986,
+      "y0": 329,
+      "x1": 1184,
+      "y1": 363,
+      "red": 1055,
+      "el": "div > div.list-head > label.sub > select.sort-select \"เที่ยวบินยอดนิยม ราคา เวลาออกเ\""
+    },
+    {
+      "id": 1,
+      "x0": 141,
+      "y0": 9,
+      "x1": 293,
+      "y1": 54,
+      "red": 1023,
+      "el": "header.site-header > div.container > a.brand > span.brand-text \"SkyThai Max\""
+    },
+    {
+      "id": 50,
+      "x0": 1003,
+      "y0": 197,
+      "x1": 1215,
+      "y1": 234,
+      "red": 947,
+      "el": "div.filters-bar > div.chip-wrap > span.chip > button \"สนามบินสำหรับต่อเครื่อง ▾\""
+    },
+    {
+      "id": 63,
+      "x0": 849,
+      "y0": 259,
+      "x1": 1028,
+      "y1": 285,
+      "red": 914,
+      "el": "div.results-root > div.tabs > button.tab > small \"เริ่มต้น ฿7,635\""
+    },
+    {
+      "id": 136,
+      "x0": 169,
+      "y0": 794,
+      "x1": 291,
+      "y1": 823,
+      "red": 912,
+      "el": "div.container.results-container > div.results-root > div > h3.others-head \"เที่ยวบินอื่นๆ\""
+    },
+    {
+      "id": 129,
+      "x0": 429,
+      "y0": 737,
+      "x1": 541,
+      "y1": 765,
+      "red": 893,
+      "el": "div > section.track-tools > div.track-row > label \"วันใดก็ได้\""
+    },
+    {
+      "id": 98,
+      "x0": 195,
+      "y0": 491,
+      "x1": 231,
+      "y1": 527,
+      "red": 853,
+      "el": "ul.flight-list > li.flight > div.flight-row > div.airline-badge \"\""
+    },
+    {
+      "id": 149,
+      "x0": 195,
+      "y0": 853,
+      "x1": 231,
+      "y1": 889,
+      "red": 853,
+      "el": "ul.flight-list > li.flight > div.flight-row > div.airline-badge \"\""
+    },
+    {
+      "id": 128,
+      "x0": 306,
+      "y0": 737,
+      "x1": 414,
+      "y1": 765,
+      "red": 804,
+      "el": "div > section.track-tools > div.track-row > label \"15 พ.ย.\""
+    },
+    {
+      "id": 127,
+      "x0": 941,
+      "y0": 733,
+      "x1": 1043,
+      "y1": 764,
+      "red": 795,
+      "el": "div > section.track-tools > div.tools-row > button.btn-secondary \"📅 ตารางวันที่\""
+    },
+    {
+      "id": 126,
+      "x0": 1076,
+      "y0": 732,
+      "x1": 1181,
+      "y1": 765,
+      "red": 771,
+      "el": "div > section.track-tools > div.tools-row > button.btn-secondary \"📈 กราฟราคา\""
+    },
+    {
+      "id": 36,
+      "x0": 184,
+      "y0": 145,
+      "x1": 340,
+      "y1": 180,
+      "red": 755,
+      "el": "div.search-grid > div.field > button.field-btn > span.val \"กรุงเทพมหานคร\""
+    },
+    {
+      "id": 69,
+      "x0": 169,
+      "y0": 343,
+      "x1": 383,
+      "y1": 362,
+      "red": 713,
+      "el": "div > div.list-head > div > div.list-sub \"จัดอันดับตามราคาและความสะดวก ·\""
+    },
+    {
+      "id": 54,
+      "x0": 333,
+      "y0": 204,
+      "x1": 469,
+      "y1": 223,
+      "red": 658,
+      "el": "div.filters-bar > div.chip-wrap > span.chip > button \"จำนวนครั้งที่แวะพัก ▾\""
+    },
+    {
+      "id": 25,
+      "x0": 1053,
+      "y0": 92,
+      "x1": 1197,
+      "y1": 127,
+      "red": 632,
+      "el": "div.container.results-container > form.search-card.search-bar > div.search-actions > button.btn-primary \"🔍 ค้นหาเที่ยวบิน\""
+    },
+    {
+      "id": 61,
+      "x0": 168,
+      "y0": 245,
+      "x1": 686,
+      "y1": 301,
+      "red": 593,
+      "el": "div.container.results-container > div.results-root > div.tabs > button.tab.on \"ดีที่สุดⓘ\""
+    },
+    {
+      "id": 122,
+      "x0": 1054,
+      "y0": 667,
+      "x1": 1169,
+      "y1": 690,
+      "red": 576,
+      "el": "div > div.insight > div.insight-head > button.btn-link.insight-toggle \"ดูประวัติราคา\""
+    },
+    {
+      "id": 130,
+      "x0": 170,
+      "y0": 739,
+      "x1": 300,
+      "y1": 760,
+      "red": 572,
+      "el": "section.track-tools > div.track-row > span.track-title > h2 \"ติดตามราคา\""
+    },
+    {
+      "id": 37,
+      "x0": 468,
+      "y0": 146,
+      "x1": 608,
+      "y1": 178,
+      "red": 565,
+      "el": "div.search-grid > div.field > button.field-btn > span.val \"โตเกียว\""
+    },
+    {
+      "id": 49,
+      "x0": 871,
+      "y0": 197,
+      "x1": 1000,
+      "y1": 234,
+      "red": 534,
+      "el": "div.filters-bar > div.chip-wrap > span.chip > button \"การปล่อยก๊าซ ▾\""
+    },
+    {
+      "id": 115,
+      "x0": 830,
+      "y0": 587,
+      "x1": 958,
+      "y1": 602,
+      "red": 514,
+      "el": "div.flight-row > div.hide-sm > button.co2-info-button > span.sub.co2-low \"-16% การปล่อยก๊าซ\""
+    },
+    {
+      "id": 150,
+      "x0": 262,
+      "y0": 874,
+      "x1": 357,
+      "y1": 891,
+      "red": 459,
+      "el": "li.flight > div.flight-row > div > div.sub \"ไทยเวียดเจ๊ทแอร์\""
+    },
+    {
+      "id": 134,
+      "x0": 935,
+      "y0": 789,
+      "x1": 1062,
+      "y1": 808,
+      "red": 458,
+      "el": "div > section.track-tools > div.toast-card > p.toast-text \"เดินทางวันที่ 13 พ.ย. ในราคา ฿\""
+    },
+    {
+      "id": 102,
+      "x0": 829,
+      "y0": 511,
+      "x1": 960,
+      "y1": 526,
+      "red": 441,
+      "el": "div.flight-row > div.hide-sm > button.co2-info-button > span.sub.co2-high \"+7% การปล่อยก๊าซ\""
+    },
+    {
+      "id": 87,
+      "x0": 829,
+      "y0": 434,
+      "x1": 953,
+      "y1": 453,
+      "red": 437,
+      "el": "div.flight-row > div.hide-sm > button.co2-info-button > span.sub \"-2% การปล่อยก๊าซ\""
+    },
+    {
+      "id": 140,
+      "x0": 935,
+      "y0": 810,
+      "x1": 1068,
+      "y1": 830,
+      "red": 427,
+      "el": "section.track-tools > div.toast-card > p.toast-text > span.nowrap \"ในราคา ฿5,255\""
+    },
+    {
+      "id": 143,
+      "x0": 935,
+      "y0": 835,
+      "x1": 1010,
+      "y1": 857,
+      "red": 422,
+      "el": "div > section.track-tools > div.toast-card > button.btn-link \"เปลี่ยนวันที่\""
+    },
+    {
+      "id": 53,
+      "x0": 206,
+      "y0": 204,
+      "x1": 299,
+      "y1": 223,
+      "red": 408,
+      "el": "div.container.results-container > div.results-root > div.filters-bar > button.chip \"☰ ตัวกรองทั้งหมด\""
+    },
+    {
+      "id": 107,
+      "x0": 559,
+      "y0": 564,
+      "x1": 670,
+      "y1": 582,
+      "red": 389,
+      "el": "li.flight > div.flight-row > div > div \"5 ชม. 45 นาที\""
+    },
+    {
+      "id": 26,
+      "x0": 378,
+      "y0": 97,
+      "x1": 471,
+      "y1": 117,
+      "red": 381,
+      "el": "div.container.results-container > form.search-card.search-bar > div.search-top > select.select-pill \"ชั้นประหยัด ประหยัดพรีเมียม ชั\""
+    },
+    {
+      "id": 97,
+      "x0": 829,
+      "y0": 490,
+      "x1": 940,
+      "y1": 507,
+      "red": 379,
+      "el": "div.flight-row > div.hide-sm > button.co2-info-button > span \"396 กก. CO2e\""
+    },
+    {
+      "id": 81,
+      "x0": 829,
+      "y0": 415,
+      "x1": 940,
+      "y1": 432,
+      "red": 375,
+      "el": "div.flight-row > div.hide-sm > button.co2-info-button > span \"363 กก. CO2e\""
+    },
+    {
+      "id": 110,
+      "x0": 829,
+      "y0": 565,
+      "x1": 940,
+      "y1": 582,
+      "red": 364,
+      "el": "div.flight-row > div.hide-sm > button.co2-info-button > span \"310 กก. CO2e\""
+    }
+  ]
+}

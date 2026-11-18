@@ -1,0 +1,79 @@
+{
+  "id": "TC-ACCT-03",
+  "title": "TC-ACCT-03 แขกยกเลิกด้วยรหัสคู่เบอร์ กลุ่มยกเลิกได้ทั้งการจองเท่านั้น คืนเงินเข้าบัตรหมดอายุแต่บัตรยังใช้ไม่ได้",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "B10 เบอร์ผิด → ✗ \"ไม่พบการจอง\" · นัดยังอยู่ · T01 ยังถูกจอง\nB10 เบอร์ถูก → ✓ ยกเลิกสำเร็จ · T01 ว่าง\nB16 → ไม่มีตัวเลือกยกเลิก 1 คน · ยกเลิกทั้งการจองแล้ว T01–T06 ว่างครบ 6 คน (ถ้าคืนแค่คนเดียวจะว่าง 1 คน)\nB19 → บัตร ฿200 + ฿300 = ฿500 (ถ้าไม่คืนจะยัง ฿200) · สถานะยังหมดอายุ 14 มิ.ย. 2026\nใช้บัตรจองไม่ได้ · มีข้อความแจ้งว่าใช้บัตรไม่ได้ · ยอดจ่าย S01 แขกยัง ฿1,000 (ถ้าใช้ได้จะเหลือ ฿500) · บัตรยัง ฿500",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 320,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-17 E79, E80 · [R] ⚠️A-15 E78 · [R] ⚠️D-05 E77 · [R] R23",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 320,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-24, FR-26, FR-22",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 320,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R22, R23",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 320,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative, Equivalence partition, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 320,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 320,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 40939,
+  "at": "2026-11-06T02:51:50.032Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. SJTEST10 กับเบอร์ผิด แล้วดู T01 22 มิ.ย. 14:00",
+    "2. SJTEST10 กับเบอร์ถูก แล้วดู T01 อีกครั้ง",
+    "3. SJTEST16 ดูตัวเลือกบนหน้าจอ ก่อนยืนยันยกเลิกทั้งการจอง",
+    "4. เริ่มจอง S01 26 มิ.ย. 12:00 ดูรายชื่อนักบำบัดที่ว่าง",
+    "5. ตรวจยอด GIFT-EXPREF · ยกเลิก SJTEST19 · ตรวจยอดอีกครั้ง",
+    "6. จอง S01 17 มิ.ย. 12:00 แบบแขก กรอกบัตร GIFT-EXPREF แล้วดูยอด"
+  ]
+}

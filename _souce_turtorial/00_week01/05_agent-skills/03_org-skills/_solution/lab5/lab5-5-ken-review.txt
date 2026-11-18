@@ -1,0 +1,1 @@
+มี PR ฝั่ง core รอผมรีวิวอยู่ใน novatech/org-skills (token ของผมอยู่ใน .gitea-token) ช่วยรีวิวในฐานะหัวหน้าทีมกลาง ถ้าดีแล้วให้ approve แล้ว merge ถ้าไม่ดีให้ request changes พร้อมเหตุผล

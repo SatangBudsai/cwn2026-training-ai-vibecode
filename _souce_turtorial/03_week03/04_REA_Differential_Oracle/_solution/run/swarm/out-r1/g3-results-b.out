@@ -1,0 +1,7 @@
+Commit `bfc2a08` เรียบร้อย แก้เฉพาะ `Results.tsx`, `FlightRow.tsx`, `results-v4.css`
+
+- เพิ่ม tabpanel, ul/li, ปุ่มสัมภาระและ CO2 พร้อมรายละเอียด รองรับ `airlineLabel`
+- Structure **37/38** แก้ครบ 4 จุดของกลุ่มนี้
+- Acceptance **74/82** เท่าเดิม ไม่ผ่าน: B20 B22 C13 C31 F05 F08 F14 F16
+- Differential **4/8** ยังรอข้อมูลชื่อสายการบินจากกลุ่ม 1
+- ปิด container และลบ volume ของ g3 แล้ว

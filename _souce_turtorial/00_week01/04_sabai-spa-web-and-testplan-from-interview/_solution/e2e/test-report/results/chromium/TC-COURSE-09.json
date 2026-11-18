@@ -1,0 +1,78 @@
+{
+  "id": "TC-COURSE-09",
+  "title": "TC-COURSE-09 ใช้คอร์สของคนอื่นจองจริงไม่ได้ และแขกใช้คอร์สไม่ได้",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 3: ถูกปฏิเสธด้วยสถานะ 401/403/404\nขั้น 4: ยิงแบบแขกถูกปฏิเสธด้วยสถานะ 401/403/404 · Wallet ไม่แสดงคอร์สใด\nขั้น 5: C05 ยัง \"เหลือ 1 ครั้ง จาก 11 ครั้ง\" (ถ้าตัดคอร์สคนอื่นจะเหลือ 0) · C01 ยัง \"เหลือ 6 ครั้ง จาก 11 ครั้ง\" จากนัดขั้น 2 เท่านั้น (ถ้าตกไปตัดคอร์สตัวเองจะเหลือ 5) · U01 มีนัดคอร์สใหม่รายการเดียว ไม่มีนัด 18 มิ.ย. · Wallet ของ U01 ไม่เห็น C05",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 880,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ตามแถว R85 ใน EXPLORATION ส่วน C",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 880,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-38, FR-41",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 880,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R85",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 880,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Security, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 880,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 880,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 29811,
+  "at": "2026-11-06T02:55:31.645Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U11 กดจองจาก C05 อ่านรหัสคอร์สจาก URL โดยไม่กดยืนยัน แล้วออกจากระบบ",
+    "2. U01 จองด้วย C01 17 มิ.ย. 12:00 จับ URL และคำขอจาก Network",
+    "3. U01 ยิงคำขอซ้ำ แก้รหัสคอร์สเป็นของ U11 และแก้วันเป็น 18 มิ.ย. 12:00",
+    "4. ออกจากระบบ ยิงคำขอเดียวกันแบบแขก และเปิด Wallet แบบแขก",
+    "5. U11 และ U01 เปิด Wallet แล้วรีโหลด"
+  ]
+}

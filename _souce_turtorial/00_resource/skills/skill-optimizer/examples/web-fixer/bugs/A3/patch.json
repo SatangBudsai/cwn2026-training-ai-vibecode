@@ -1,0 +1,7 @@
+[
+  {
+    "file": "components/CartView.tsx",
+    "find": "body: JSON.stringify({ code, items: cart }),",
+    "replace": "body: JSON.stringify({ code, cart }),"
+  }
+]

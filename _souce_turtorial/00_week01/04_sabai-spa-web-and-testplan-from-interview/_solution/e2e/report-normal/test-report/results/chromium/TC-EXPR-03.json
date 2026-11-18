@@ -1,0 +1,78 @@
+{
+  "id": "TC-EXPR-03",
+  "title": "TC-EXPR-03 แบบทดสอบ 4 ข้อแสดงผลเมื่อครบ ตารางอารมณ์ 3 แบบ และถามซ้ำได้ผลเดิม",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P3",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ค่าเข้าและผลของแบบทดสอบ:\nตอบ 3 ข้อ → ยังไม่แสดงผล แนะนำ 0 รายการ ไม่มีปุ่มจอง\nตอบ 4 ข้อ → แนะนำ 1 รายการจาก S01–S07 หรือ P01 มีเหตุผล 1 ชุด และปุ่มจอง 1 ปุ่ม\nขอข้อที่ 5 → ไม่มีข้อที่ 5 จำนวนคำถามรวม 4 ข้อ\nขั้น 4: บริการในหน้าจองตรงกับรายการที่แนะนำ\nตารางอารมณ์: เหนื่อย → S02 · เครียด → S04 · ปวดเมื่อย → S03 (สลับกันหรือแนะนำ S01 ทุกอารมณ์ถือว่าผิด)\nขั้น 6: ผลทั้ง 20 รอบเหมือนกันทุกตัวอักษร · request ไปบริการ AI ภายนอก 0 ครั้ง",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 343,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-25 · [R] ⚠️A-24 · [D] §4 หลังร้านและข้อมูลส่วนตัว · F-ร้าน 21",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 343,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-67, FR-68, FR-69, FR-70, BR-50, NFR-14",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 343,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R101, R102, R103",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 343,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Equivalence partition, Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 343,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 343,
+        "column": 3
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 70330,
+  "at": "2026-11-06T02:19:42.006Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิด /th/quiz ตอบ 3 ข้อแล้วดูว่ามีผลหรือไม่",
+    "2–3. ตอบข้อที่ 4 นับรายการแนะนำ เหตุผล ปุ่มจอง และหาข้อที่ 5",
+    "4. กดปุ่มจองแล้วอ่านบริการที่ถูกเลือกในหน้าจอง",
+    "5. เปิด /th/mood เลือกอารมณ์ทีละแบบแล้วอ่านบริการที่แนะนำ",
+    "6. ทำแบบทดสอบชุดเดิม 20 รอบ เลือกอารมณ์แต่ละแบบ 20 รอบ แล้วเทียบข้อความผล"
+  ]
+}

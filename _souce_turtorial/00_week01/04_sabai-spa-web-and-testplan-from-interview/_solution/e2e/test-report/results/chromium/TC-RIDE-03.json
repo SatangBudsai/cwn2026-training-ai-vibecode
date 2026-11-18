@@ -1,0 +1,81 @@
+{
+  "id": "TC-RIDE-03",
+  "title": "TC-RIDE-03 Bangkok Relax ไม่ลด % ทุกระดับ ไม่เก็บค่ารถ และแต้มกับ Gift Card ถูก",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "หน้าแพ็กเกจ: ฿2,900/คน และบอกครบ นวดไทย ประคบสมุนไพร รถรับส่ง\nU05 Gold → ส่วนลด ฿0 ค่ารถ ฿0 ยอด ฿2,900 (ถ้าลด 5% จะได้ ฿2,755)\nU10 Platinum → ส่วนลด ฿0 ค่ารถ ฿0 ยอด ฿2,900 (ถ้าลด 10% จะได้ ฿2,610)\nU03 Silver → ค่ารถ ฿0 ยอด ฿2,900 (ถ้าเก็บค่ารถจะได้ ฿3,200)\nU03 แลกแต้มและใช้บัตร → จ่าย ฿2,300 (฿2,900 − ฿100 = ฿2,800 + ฿0 − ฿500 · ถ้าเก็บค่ารถจะได้ ฿2,600)\nหลังกดเสร็จ: ได้ 23 แต้ม เหลือ 73 แต้ม (250 − 200 + 23 · ฐาน ฿2,300 ÷ 100 · ถ้าฐาน ฿2,800 จะเหลือ 78 ถ้าฐาน ฿2,900 จะเหลือ 79) · บัตรเหลือ ฿0 (฿500 − ฿500) · ยอดสะสม ฿12,299 ระดับ Gold (฿9,999 + ฿2,300)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 Bangkok Relax · [D] บ.19 · [D][R] E145–E147 · [R] ⚠️A-33 · [R] ⚠️A-09 · [R] ⚠️A-10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-51, FR-52, BR-30, BR-37",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R47",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 53729,
+  "at": "2026-11-06T02:52:33.158Z",
+  "attempts": [],
+  "errors": [
+    "Error: ยอดสะสม\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 12299\nReceived: 12799"
+  ],
+  "steps": [
+    "1. เปิดหน้าแพ็กเกจ อ่านราคาและสิ่งที่รวม",
+    "2. U05 Gold จอง P01 ไม่แลกแต้ม อ่านหน้าสรุป",
+    "3. ทำซ้ำด้วย U10 และ U03",
+    "4. U03 แลก 200 แต้ม ใส่ GIFT-500 แล้วกดยืนยัน",
+    "5. ร้านกดใช้บริการเสร็จ",
+    "6. กลับบัญชี U03 รีโหลด อ่านยอดบัตร แต้ม ระดับ ✗"
+  ]
+}

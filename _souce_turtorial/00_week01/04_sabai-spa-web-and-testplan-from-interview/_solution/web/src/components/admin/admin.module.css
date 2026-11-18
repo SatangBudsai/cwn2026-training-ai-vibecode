@@ -1,0 +1,183 @@
+/* Hero */
+.hero {
+  position: relative;
+  overflow: clip;
+  padding-block: clamp(40px, 6vw, 72px);
+  background: linear-gradient(160deg, var(--c-forest-950), var(--c-forest-800));
+  color: var(--c-cream-100);
+}
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px 40px;
+}
+.heroText { display: grid; gap: 10px; flex: 1 1 320px; min-width: 0; }
+.heroText :global(.eyebrow) { color: var(--c-gold-300); }
+.heroText h1 { color: var(--c-cream-50); }
+.heroIntro { color: var(--c-forest-200); max-width: 520px; }
+
+.datePanel {
+  flex: 0 1 320px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-gold);
+  background: var(--c-cream-50);
+  color: var(--c-ink);
+  box-shadow: var(--shadow-float);
+}
+.datePanel input { min-width: 0; max-width: 100%; }
+.dateSummary { font-size: 0.95rem; color: var(--text-soft); }
+
+.status { padding-block: 40px; color: var(--text-soft); }
+
+/* ไม่มีสิทธิ์ */
+.denied { padding-block: clamp(40px, 7vw, 80px); }
+.deniedCard {
+  max-width: 560px;
+  margin-inline: auto;
+  padding: clamp(22px, 4vw, 36px);
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+.deniedCard > p[role='alert'] { width: 100%; }
+
+.compactSection.compactSection { padding-block: clamp(32px, 5vw, 56px); }
+
+/* นักบำบัดทุกคน */
+.therapists {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+.therapist {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-gold);
+  background: var(--bg-card);
+}
+.therapistPhoto { flex: none; width: 48px; border-radius: 50%; }
+.therapistText { min-width: 0; overflow-wrap: anywhere; line-height: 1.45; }
+.therapistName { font-weight: 500; }
+.therapistQueue { font-size: 0.88rem; color: var(--text-soft); }
+.therapistTimes { font-size: 0.88rem; color: var(--c-gold-700); }
+@media (min-width: 640px) {
+  .therapists { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+  .therapistPhoto { width: 56px; }
+}
+
+/* ตารางคิว: DOM ชุดเดียวทั้งจอใหญ่และมือถือ เพื่อไม่ให้ data-testid ซ้ำ */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+}
+.table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.86rem;
+  color: var(--c-cream-100);
+  background: var(--c-forest-800);
+}
+.table th:first-child { border-top-left-radius: var(--radius-md); }
+.table th:last-child { border-top-right-radius: var(--radius-md); }
+.table td {
+  padding: 14px;
+  vertical-align: top;
+  border-top: 1px solid var(--line-soft);
+  overflow-wrap: anywhere;
+}
+.rowDone { background: var(--c-cream-100); }
+
+.time { display: block; font-weight: 500; white-space: nowrap; }
+.code { display: block; font-size: 0.82rem; color: var(--text-soft); letter-spacing: 0.04em; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.tags:empty { display: none; }
+.tag {
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line-gold);
+  color: var(--c-gold-700);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.pay { font-family: var(--font-display); font-size: 1.05rem; color: var(--c-forest-800); white-space: nowrap; }
+
+.actionCell { min-width: 190px; }
+.statusOpen, .statusDone { display: block; font-weight: 500; margin-bottom: 8px; }
+.statusOpen { color: var(--c-gold-700); }
+.statusDone { color: var(--c-success); }
+.completeBtn { width: 100%; }
+.result { display: grid; gap: 2px; font-size: 0.88rem; color: var(--text-soft); }
+.result p:first-child { color: var(--c-success); font-weight: 500; }
+.actionCell > p[role='alert'] { margin-top: 8px; }
+
+/* มือถือและแท็บเล็ต: แต่ละนัดเป็นการ์ด */
+@media (max-width: 999px) {
+  .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
+  .table { background: none; box-shadow: none; font-size: 1rem; }
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .row {
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line-gold);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+  }
+  .rowDone { background: var(--c-cream-100); }
+  .table td {
+    position: relative;
+    padding: 10px 0 10px 104px;
+    min-height: 44px;
+  }
+  .table tr td:first-child { border-top: 0; }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 96px;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  .table td.actionCell { padding-left: 0; min-width: 0; }
+  .table td.actionCell::before { display: none; }
+  .time { white-space: normal; }
+}
+
+/* ไม่มีคิว */
+.empty { display: grid; }
+.emptyImage { min-width: 0; }
+.emptyBody { display: grid; gap: 10px; align-content: center; padding: clamp(20px, 3vw, 32px); }
+.emptyBody p { color: var(--text-soft); }
+@media (min-width: 720px) {
+  .empty { grid-template-columns: 320px minmax(0, 1fr); }
+}

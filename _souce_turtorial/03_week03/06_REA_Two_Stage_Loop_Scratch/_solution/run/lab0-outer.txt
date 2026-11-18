@@ -1,0 +1,5 @@
+ใน container multi-account-devtool ช่วยเช็กก่อนเริ่มบทที่ 6
+1. yolo1 yolo2 yolo3 และ cyolo1 ล็อกอินอยู่ (สั่งให้แต่ละบัญชีตอบคำว่า OK)
+2. เปิด https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB จากใน container ได้ (HTTP 200)
+3. สร้างโฟลเดอร์ /workspace/arena6 แล้วติดตั้ง playwright@1.64.0-alpha-1790635538000 pixelmatch@7.1.0 pngjs@7.0.0 ไว้ในโฟลเดอร์นั้น (ใช้ Chromium ที่มีอยู่ใน /ms-playwright)
+ตอบเป็นตาราง: สิ่งที่เช็ก | ผล

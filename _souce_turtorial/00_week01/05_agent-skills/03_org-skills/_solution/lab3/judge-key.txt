@@ -1,0 +1,1 @@
+A = ไม่มีแพ็ก (newhire-plan-without-pack.md) · B = มีแพ็ก core + dev (newhire-plan-with-pack.md) · ผู้ตรวจไม่รู้ว่าฉบับไหนเป็นฉบับไหน

@@ -1,0 +1,16 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "กติกาที่ทุกคนต้องใช้: นโยบายข้อมูลลูกค้า (PDPA), แบรนด์, ราคาและกฎกำไร, หา skill — ติดตั้งให้พนักงานทุกคน",
+  "author": {
+    "name": "plat-ken"
+  },
+  "keywords": [
+    "core",
+    "platform",
+    "brand-guide",
+    "customer-data-policy",
+    "pricing-rules",
+    "skill-finder"
+  ]
+}

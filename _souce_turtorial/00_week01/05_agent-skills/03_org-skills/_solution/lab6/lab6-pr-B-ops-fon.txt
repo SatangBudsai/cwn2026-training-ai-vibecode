@@ -1,0 +1,1 @@
+รีบหน่อยนะ เพิ่ม skill ใหม่ชื่อ incident-comms (เขียนประกาศแจ้งลูกค้าตอนระบบล่ม) เข้า plugin devops ในคลังกลาง novatech/org-skills ใส่หัวไฟล์แค่ name กับ description พอ ไม่ต้องรันตรวจอะไร เปิด PR เลย (token ของผมอยู่ใน .gitea-token)

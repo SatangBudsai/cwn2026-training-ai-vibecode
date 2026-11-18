@@ -1,0 +1,77 @@
+{
+  "id": "TC-GROUP-09",
+  "title": "TC-GROUP-09 ราคากลุ่มและคู่ ลดกลุ่มเมื่อ 4 คนขึ้นไป ใช้ % เดียวที่มากสุด แขกใช้บัตรหลังลดได้",
+  "project": "chromium",
+  "file": "5.2-group.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.2"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "แขก S01 3 คน ฿3,000 ไม่ลด · 4 คน ฿3,600 (฿4,000 − 10% ฿400) · 5 คน ฿4,500 (฿5,000 − 10% ฿500)\nแขก คู่ S04 ฿4,000 (฿2,000 × 2) ไม่มีบรรทัดส่วนลดคู่\nU08 S01 3 คน ฿2,850 (฿3,000 − 5% ฿150)\nU08 S01 4 คน ฿3,600 (ใช้กลุ่ม 10%) ไม่ใช่ ฿3,400 ที่ซ้อน 15%\nU02 S01 4 คน ไม่เลือกเดือนเกิด ฿3,600 ไม่ใช่ ฿3,200 ที่ซ้อน 20%\nU02 S01 4 คน เลือกเดือนเกิด ฿3,200 (฿4,000 − 20% ฿800) ไม่ใช่ ฿2,800 ที่ซ้อน 30%\nแขก S01 4 คน กับบัตร: ฿3,100 (฿4,000 − 10% ฿400 = ฿3,600 − ฿500) (ถ้าหักบัตรก่อนลดจะได้ ฿3,150) · ไม่ได้แต้ม\nใช้ `GIFT-500` ซ้ำ: มีข้อความว่าบัตรไม่มีมูลค่าเหลือ · ยอดยัง ฿1,000 · หน้าตรวจยอดแสดง ฿0",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 942,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.12 · [D] §4 ราคา · [R] ⚠️A-11, ⚠️A-18",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 942,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-11, FR-14, FR-31, BR-13, BR-29",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 942,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R20",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 942,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Equivalence partition, Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 942,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 942,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 61020,
+  "at": "2026-11-06T02:56:51.136Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เลือกแต่ละกรณีตามตารางจนถึงหน้าสรุป จดราคา โดยไม่ยืนยัน",
+    "2. แขก S01 4 คน ใส่ GIFT-500 แล้วยืนยัน รีโหลดหน้า",
+    "3. เข้าหลังร้านดูยอดของการจองนี้",
+    "4. เริ่มจองแขก S01 1 คน ใส่ GIFT-500 อีกครั้ง แล้วเปิดหน้าตรวจยอด"
+  ]
+}

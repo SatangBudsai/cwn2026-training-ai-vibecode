@@ -1,0 +1,88 @@
+{
+ "cco-wit": [
+  "core"
+ ],
+ "cfo-ying": [
+  "core"
+ ],
+ "cto-nat": [
+  "core"
+ ],
+ "dev-mew": [
+  "core"
+ ],
+ "dev-new": [
+  "core"
+ ],
+ "dev-pond": [
+  "core"
+ ],
+ "exec-ploy": [
+  "core"
+ ],
+ "fin-joy": [
+  "core"
+ ],
+ "fin-nok": [
+  "core"
+ ],
+ "hr-fah": [
+  "core"
+ ],
+ "hr-namtan": [
+  "core"
+ ],
+ "hr-oat": [
+  "core",
+  "hr"
+ ],
+ "md-somchai": [
+  "core"
+ ],
+ "ml-jay": [
+  "core",
+  "mlops"
+ ],
+ "ml-pim": [
+  "core"
+ ],
+ "ops-art": [
+  "core"
+ ],
+ "ops-fon": [
+  "core"
+ ],
+ "plat-ken": [
+  "core"
+ ],
+ "plat-may": [
+  "core"
+ ],
+ "pm-beam": [
+  "core"
+ ],
+ "pm-gift": [
+  "core"
+ ],
+ "qa-bank": [
+  "core"
+ ],
+ "qa-mint": [
+  "core"
+ ],
+ "sa-ice": [
+  "core"
+ ],
+ "sa-ton": [
+  "core"
+ ],
+ "sales-krit": [
+  "core"
+ ],
+ "sales-mook": [
+  "core"
+ ],
+ "sales-nida": [
+  "core"
+ ]
+}

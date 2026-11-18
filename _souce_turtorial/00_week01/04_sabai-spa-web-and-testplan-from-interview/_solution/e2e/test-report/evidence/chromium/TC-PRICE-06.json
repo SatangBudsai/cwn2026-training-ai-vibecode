@@ -1,0 +1,136 @@
+{
+  "id": "TC-PRICE-06",
+  "checks": [
+    {
+      "n": 1,
+      "label": "K01 ไม่มีตัวเลือกเดือนเกิด",
+      "pass": true,
+      "actual": "ซื้อคอร์สใหม่ คอร์สกระชับสัดส่วน 10 แถม 1 ฿15,000 11 ครั้ง อายุ 180 วัน ไม่มีส่วนลด เปิดใช้ทันที เป็นการจ่ายจำลอง ไม่มีการเก็บเงินจริง ยืนยันการซื้อคอร์ส ฿15,000 เป็นการจ่ายจำลอง คอร์สเปิดใช้ทันที 11 ครั้ง อายุ 180 วัน ไม่มีส่วนลด ยืนยันซื้อคอร์ส ยังไม่ซื้อ",
+      "shot": "shots/chromium/TC-PRICE-06/001.jpg",
+      "actor": "main",
+      "t": 3417
+    },
+    {
+      "n": 2,
+      "label": "K01 ฿15,000",
+      "pass": true,
+      "actual": "฿15,000",
+      "shot": "shots/chromium/TC-PRICE-06/002.jpg",
+      "actor": "main",
+      "t": 4415
+    },
+    {
+      "n": 3,
+      "label": "P01 ไม่มีตัวเลือกเดือนเกิด",
+      "pass": true,
+      "actual": "(ไม่พบ element)",
+      "shot": "shots/chromium/TC-PRICE-06/003.jpg",
+      "actor": "main",
+      "t": 14403
+    },
+    {
+      "n": 4,
+      "label": "P01 ฿2,900 − 0% = ฿2,900 ค่ารถรวมแล้ว ฿0",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿2,900",
+      "shot": "shots/chromium/TC-PRICE-06/004.jpg",
+      "actor": "main",
+      "t": 16132
+    },
+    {
+      "n": 5,
+      "label": "U02 1 ก.ค. เลือกเดือนเกิดไม่ได้",
+      "pass": false,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-06/005.jpg",
+      "actor": "main",
+      "t": 20831
+    },
+    {
+      "n": 6,
+      "label": "U02 1 ก.ค. ฿1,000 − 10% = ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-06/006.jpg",
+      "actor": "main",
+      "t": 22530
+    },
+    {
+      "n": 7,
+      "label": "U02 30 มิ.ย. เลือกเดือนเกิดได้",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-06/007.jpg",
+      "actor": "main",
+      "t": 27077
+    },
+    {
+      "n": 8,
+      "label": "U02 30 มิ.ย. ฿1,000 − 20% (฿200) = ฿800",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-06/008.jpg",
+      "actor": "main",
+      "t": 28783
+    },
+    {
+      "n": 9,
+      "label": "U02 30 มิ.ย. ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"26BZXALP\"}",
+      "shot": "shots/chromium/TC-PRICE-06/009.jpg",
+      "actor": "main",
+      "t": 30172
+    },
+    {
+      "n": 10,
+      "label": "U02 30 มิ.ย. ยังเป็น ฿800 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿800",
+      "shot": "shots/chromium/TC-PRICE-06/010.jpg",
+      "actor": "main",
+      "t": 31743
+    },
+    {
+      "n": 11,
+      "label": "U11 31 พ.ค. เลือกเดือนเกิดไม่ได้",
+      "pass": false,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-06/011.jpg",
+      "actor": "main",
+      "t": 37617
+    },
+    {
+      "n": 12,
+      "label": "U11 31 พ.ค. ฿1,000 − 0% = ฿1,000",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-06/012.jpg",
+      "actor": "main",
+      "t": 39313
+    },
+    {
+      "n": 13,
+      "label": "U11 1 มิ.ย. เลือกเดือนเกิดได้",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-06/013.jpg",
+      "actor": "main",
+      "t": 43864
+    },
+    {
+      "n": 14,
+      "label": "U11 1 มิ.ย. ฿1,000 − 20% (฿200) = ฿800",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-06/014.jpg",
+      "actor": "main",
+      "t": 45581
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-PRICE-06/main.webm"
+    }
+  }
+}

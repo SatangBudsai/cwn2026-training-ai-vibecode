@@ -1,0 +1,127 @@
+{
+  "id": "TC-EXPR-04",
+  "checks": [
+    {
+      "n": 1,
+      "label": "เวลา th: \"ร้านเปิดกี่โมง\"",
+      "pass": true,
+      "actual": "ร้านเปิดทุกวัน 10:00–22:00 น.",
+      "shot": "shots/chromium/TC-EXPR-04/001.jpg",
+      "actor": "main",
+      "t": 2595
+    },
+    {
+      "n": 2,
+      "label": "เวลา en: \"What time do you open?\"",
+      "pass": true,
+      "actual": "We are open every day, 10:00–22:00.",
+      "shot": "shots/chromium/TC-EXPR-04/002.jpg",
+      "actor": "main",
+      "t": 4264
+    },
+    {
+      "n": 3,
+      "label": "เวลา zh: \"几点开门\"",
+      "pass": true,
+      "actual": "我们每天营业，时间为 10:00–22:00。",
+      "shot": "shots/chromium/TC-EXPR-04/003.jpg",
+      "actor": "main",
+      "t": 6043
+    },
+    {
+      "n": 4,
+      "label": "ราคา th: \"นวดน้ำมันอโรมาราคาเท่าไหร่\"",
+      "pass": true,
+      "actual": "S04 นวดน้ำมันอโรมา: ฿2,000 ต่อคน (90 นาที)",
+      "shot": "shots/chromium/TC-EXPR-04/004.jpg",
+      "actor": "main",
+      "t": 7845
+    },
+    {
+      "n": 5,
+      "label": "ราคา en: \"How much is Aroma Oil Massage?\"",
+      "pass": true,
+      "actual": "S04 Aroma Oil Massage: ฿2,000 per person (90 min)",
+      "shot": "shots/chromium/TC-EXPR-04/005.jpg",
+      "actor": "main",
+      "t": 9646
+    },
+    {
+      "n": 6,
+      "label": "ราคา zh: \"香薰精油按摩多少钱\"",
+      "pass": true,
+      "actual": "S04 香薰精油按摩：每人 2,000 泰铢（90 分钟）",
+      "shot": "shots/chromium/TC-EXPR-04/006.jpg",
+      "actor": "main",
+      "t": 11448
+    },
+    {
+      "n": 7,
+      "label": "นอกเรื่อง th: \"พรุ่งนี้ฝนตกไหม\"",
+      "pass": true,
+      "actual": "ขออภัย ยังตอบเรื่องนี้ไม่ได้ กรุณาโทร 02-123-4567",
+      "shot": "shots/chromium/TC-EXPR-04/007.jpg",
+      "actor": "main",
+      "t": 13245
+    },
+    {
+      "n": 8,
+      "label": "นอกเรื่อง en: \"Will it rain tomorrow?\"",
+      "pass": true,
+      "actual": "Sorry, I cannot answer that yet. Please call 02-123-4567",
+      "shot": "shots/chromium/TC-EXPR-04/008.jpg",
+      "actor": "main",
+      "t": 15032
+    },
+    {
+      "n": 9,
+      "label": "นอกเรื่อง zh: \"明天会下雨吗\"",
+      "pass": true,
+      "actual": "抱歉，暂时无法回答这个问题，请致电 02-123-4567",
+      "shot": "shots/chromium/TC-EXPR-04/009.jpg",
+      "actor": "main",
+      "t": 16810
+    },
+    {
+      "n": 10,
+      "label": "คำตอบอังกฤษและจีนตาม regex ของแผน 0 จุด",
+      "pass": false,
+      "actual": "[\"How much is Aroma Oil Massage? → S04 Aroma Oil Massage: ฿2,000 per person (90 min)\"]",
+      "shot": "shots/chromium/TC-EXPR-04/010.jpg",
+      "actor": "main",
+      "t": 17780
+    },
+    {
+      "n": 11,
+      "label": "คำตอบของ \"12345\" เป็นภาษาไทยและมี 02-123-4567",
+      "pass": true,
+      "actual": "ขออภัย ยังตอบเรื่องนี้ไม่ได้ กรุณาโทร 02-123-4567",
+      "shot": "shots/chromium/TC-EXPR-04/011.jpg",
+      "actor": "main",
+      "t": 19593
+    },
+    {
+      "n": 12,
+      "label": "คำตอบของ \"???\" เป็นภาษาไทยและมี 02-123-4567",
+      "pass": true,
+      "actual": "ขออภัย ยังตอบเรื่องนี้ไม่ได้ กรุณาโทร 02-123-4567",
+      "shot": "shots/chromium/TC-EXPR-04/012.jpg",
+      "actor": "main",
+      "t": 21383
+    },
+    {
+      "n": 13,
+      "label": "ถามราคาไทย 20 รอบ ได้ข้อความเดียวกันทุกตัวอักษร",
+      "pass": true,
+      "actual": "[\"S04 นวดน้ำมันอโรมา: ฿2,000 ต่อคน (90 นาที)\"]",
+      "shot": "shots/chromium/TC-EXPR-04/013.jpg",
+      "actor": "main",
+      "t": 37680
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-EXPR-04/main.webm"
+    }
+  }
+}

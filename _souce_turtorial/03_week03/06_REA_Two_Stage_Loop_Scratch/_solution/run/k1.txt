@@ -1,0 +1,26 @@
+ประกอบชุดวัดกลาง + แช่แข็งพิกเซล + สัญญาของ loop ทำงานใน /workspace/arena6 (ไม่ต่อ Google · ห้ามแก้ไฟล์ใน rulers/ ใช้ได้อย่างเดียว)
+
+ไม้บรรทัดที่สร้างไว้แล้ว: rulers/accept (กรรมการ cyolo1: run.mjs + META.json) · rulers/structure · rulers/visual · rulers/diff · rulers/flights (อ่าน rulers/RULERS.md และ rulers/accept/ACCEPT.md)
+
+1. kit/measure.sh <BASE_URL> <โฟลเดอร์ผล> เรียกไม้บรรทัดทั้ง 5 อันตามลำดับ visual → structure → flights → accept → diff แล้วเขียน report.json:
+   - scores: acceptance (ผ่าน/valid) · differential (ตรง/ทั้งหมด) · structure% · visual diff% · flights (ตอนแรก → ทั้งหมด)
+   - Score = structure% − visual diff%
+   - gate: acceptance ≥ 90% ของข้อ valid (rulers/accept/META.json) · differential ตรงทุกสถานการณ์ที่ valid (rulers/diff/META.json) · flights ตอนแรก = จำนวนใน spec/data/flights-initial.json และทั้งหมด = จำนวนใน spec/data/flights-all.json
+   - ข้อ invalid ยังรันและรายงานใน report.json แต่ไม่นับใน gate
+   - issues (ให้ loop ใช้เลือกงาน): test ที่ไม่ผ่าน (id + เหตุผล) · สถานการณ์ differential ที่ไม่ตรง · token โครงสร้างที่ขาด/เกิน · ภาพ diff สีแดง + สัดส่วนพิกเซลแดงต่อแถบสูง 75 px
+   - exit 0 = gate ผ่าน · 1 = ไม่ผ่าน · 2 = วัดไม่ได้ (เช่น เปิด BASE_URL ไม่ได้)
+2. ตรวจชุดวัด: (ก) วัดพอร์ต 5095 ที่ยังไม่มีแอป ต้อง exit 2 · (ข) โครงสร้างของ original.yml เทียบตัวเอง = 100% และ visual ของ reference.png เทียบตัวเอง = 0% · บอกเวลาที่ใช้แต่ละไม้บรรทัด
+3. แช่แข็งพิกเซล: สร้าง app/ เปล่า + git init แล้ววาง app/src/styles/tokens.css
+   - CSS custom properties ที่คุมหน้าตาทั้งหมด: ฟอนต์ (family · ขนาด · น้ำหนัก · ความสูงแถว) · สเกลระยะห่าง · มุมโค้ง · สีข้อความ/พื้น/เส้น/สีหลัก · ตัวแปรรายส่วนของทุกส่วนในหน้าผลค้นหา (หัวเว็บ ฟอร์ม ชิปตัวกรอง แท็บ แถวเที่ยวบิน ราคา คอลัมน์ ฯลฯ) อย่างน้อย 30 ตัว
+   - ตั้งค่า "แบบตาบอด": ห้ามเปิดดู rulers/visual/reference.png หรือภาพใน spec/shots ตอนตั้งค่า · ฟอนต์ไทยที่มีในเครื่องและสัญญาอนุญาตเปิด · ตัวอักษร ≥ 14 px · contrast ≥ 4.5:1
+   - commit แรก + tag pixel-freeze
+4. loop/scope-check.sh <stage1|stage2> <commit ฐาน> ตรวจจาก git diff ฐาน..HEAD ใน app (ใช้ APP_DIR กำหนด repo ได้)
+   - stage1: ห้ามแตะ src/styles/tokens.css · ไฟล์ .css/.tsx/.ts อื่นห้ามมีเลข px หรือสี (#hex rgb() hsl()) ตรง ๆ ต้องใช้ var(--…) หรือ calc() ของตัวแปร (ยกเว้น 0 และ 1px)
+   - stage2: แตะได้แค่ src/styles/tokens.css และห้ามเพิ่ม/ลบชื่อตัวแปร
+   ทดสอบให้เห็นทั้งกรณีผ่านและไม่ผ่าน (ใน branch ชั่วคราวแล้วลบทิ้ง)
+5. loop/CONTRACT.md ตาราง 2 ขั้น: ขั้น | สถานะเริ่ม | แก้อะไรได้ | วัดอะไร | เก็บเมื่อไร | หยุดเมื่อไร | งบ
+   - ขั้นที่ 1 · loop โครงสร้าง: แก้ได้ทุกอย่างยกเว้น tokens.css · เป้าหมาย gate ก่อน แล้วโครงสร้าง% สูงสุด · เก็บเมื่อ gate ผ่าน หรือจำนวนข้อที่ผ่านใน gate ดีขึ้นโดยโครงสร้าง% ไม่ลด · ไม่เกิน 2 loop · จบด้วย tag structure-lock
+   - ขั้นที่ 2 · loop พิกเซล: ฐาน tag structure-lock · แก้ได้แค่ค่าใน tokens.css · เป้าหมาย visual diff% ต่ำสุด · ไม่เกิน 2 รอบ · gate ห้ามต่ำกว่าตอนล็อก
+   - ถ้าขั้นที่ 1 ครบงบแล้ว gate ยังไม่ผ่าน ให้ล็อกแล้วไปขั้นที่ 2 ได้ โดยรายงานตามจริง
+
+ตอบเป็นตาราง: สิ่งที่เตรียม | อยู่ที่ไหน | ตรวจแล้วได้อะไร และแสดง tokens.css ทั้งไฟล์

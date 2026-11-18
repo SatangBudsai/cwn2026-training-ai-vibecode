@@ -1,0 +1,6 @@
+## t1 r1 (train) score 1.00 · คำสั่งล้ม 1 · runs/v2/t1-r1/transcript.jsonl
+## t1 r2 (train) score 1.00 · คำสั่งล้ม 2 · runs/v2/t1-r2/transcript.jsonl
+## t2 r1 (train) score 1.00 · คำสั่งล้ม 1 · runs/v2/t2-r1/transcript.jsonl
+## t3 r1 (train) score 1.00 · คำสั่งล้ม 1 · runs/v2/t3-r1/transcript.jsonl
+## t3 r2 (train) score 1.00 · คำสั่งล้ม 1 · runs/v2/t3-r2/transcript.jsonl
+## t4 r2 (train) score 1.00 · คำสั่งล้ม 1 · runs/v2/t4-r2/transcript.jsonl

@@ -1,0 +1,93 @@
+{
+  "timestamp_utc": "2026-09-17T10:21:03.123238+00:00",
+  "phase": "phase1",
+  "diagrams": [
+    {
+      "index": 1,
+      "rendered": true
+    },
+    {
+      "index": 2,
+      "rendered": true
+    },
+    {
+      "index": 3,
+      "rendered": true
+    },
+    {
+      "index": 4,
+      "rendered": true
+    }
+  ],
+  "mockup": {
+    "1440": {
+      "checks": {
+        "submit": true,
+        "tracking": true,
+        "review": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "unresolved_limits": true,
+        "owners": true,
+        "required_customer_fields": true
+      },
+      "console_page_errors": []
+    },
+    "390": {
+      "checks": {
+        "submit": true,
+        "tracking": true,
+        "review": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "unresolved_limits": true,
+        "owners": true,
+        "required_customer_fields": true
+      },
+      "console_page_errors": []
+    }
+  },
+  "automated_scope": "rendering, DOM visibility, selected source/contract checks; semantic review is separate",
+  "source_coverage": {
+    "S01": true,
+    "S02": true,
+    "S03": true,
+    "S04": true,
+    "S05": true,
+    "S06": true,
+    "S07": true,
+    "S08": true,
+    "S09": true,
+    "S10": true
+  },
+  "contract_fields": {
+    "Employee": true,
+    "Claim": true,
+    "Receipt": true,
+    "Approval": true,
+    "Payment": true,
+    "LodgingPolicy": true
+  },
+  "state_owners": {
+    "ร่าง": true,
+    "รอตรวจเอกสาร": true,
+    "รอหัวหน้าอนุมัติ": true,
+    "รอยืนยันนโยบาย": true,
+    "รอผู้จัดการอนุมัติ": true,
+    "รอจ่าย": true,
+    "จ่ายแล้ว": true
+  },
+  "automated_pass": true,
+  "sha256": {
+    "output.md": "fa742e823a816123e7a2f47c068ef9edad4c7868b0d5d62af4f4c26a7a825de6",
+    "mockup.html": "ed50ffe22fceb7a4f1a6454d0ec584338c748b9214aa4317e3be009a4832cd08"
+  },
+  "criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS"
+  },
+  "semantic_review": "tasks/T5-review.md"
+}

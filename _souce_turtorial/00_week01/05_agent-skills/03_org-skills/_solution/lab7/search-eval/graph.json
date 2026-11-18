@@ -1,0 +1,982 @@
+{
+  "nodes": [
+    {
+      "id": "skill:brand-guide",
+      "type": "skill",
+      "name": "brand-guide",
+      "plugin": "core",
+      "layer": "core"
+    },
+    {
+      "id": "skill:customer-data-policy",
+      "type": "skill",
+      "name": "customer-data-policy",
+      "plugin": "core",
+      "layer": "core"
+    },
+    {
+      "id": "skill:pricing-rules",
+      "type": "skill",
+      "name": "pricing-rules",
+      "plugin": "core",
+      "layer": "core"
+    },
+    {
+      "id": "skill:skill-finder",
+      "type": "skill",
+      "name": "skill-finder",
+      "plugin": "core",
+      "layer": "core"
+    },
+    {
+      "id": "skill:coding-standard",
+      "type": "skill",
+      "name": "coding-standard",
+      "plugin": "dev",
+      "layer": "department"
+    },
+    {
+      "id": "skill:project-scaffold",
+      "type": "skill",
+      "name": "project-scaffold",
+      "plugin": "dev",
+      "layer": "department"
+    },
+    {
+      "id": "skill:deploy-checklist",
+      "type": "skill",
+      "name": "deploy-checklist",
+      "plugin": "devops",
+      "layer": "department"
+    },
+    {
+      "id": "skill:postmortem",
+      "type": "skill",
+      "name": "postmortem",
+      "plugin": "devops",
+      "layer": "department"
+    },
+    {
+      "id": "skill:cost-headcount-review",
+      "type": "skill",
+      "name": "cost-headcount-review",
+      "plugin": "exec",
+      "layer": "department"
+    },
+    {
+      "id": "skill:deal-approval",
+      "type": "skill",
+      "name": "deal-approval",
+      "plugin": "exec",
+      "layer": "department"
+    },
+    {
+      "id": "skill:exec-deck",
+      "type": "skill",
+      "name": "exec-deck",
+      "plugin": "exec",
+      "layer": "department"
+    },
+    {
+      "id": "skill:pipeline-review",
+      "type": "skill",
+      "name": "pipeline-review",
+      "plugin": "exec",
+      "layer": "department"
+    },
+    {
+      "id": "skill:tech-risk-review",
+      "type": "skill",
+      "name": "tech-risk-review",
+      "plugin": "exec",
+      "layer": "department"
+    },
+    {
+      "id": "skill:invoice-check",
+      "type": "skill",
+      "name": "invoice-check",
+      "plugin": "finance",
+      "layer": "department"
+    },
+    {
+      "id": "skill:pricing-calc",
+      "type": "skill",
+      "name": "pricing-calc",
+      "plugin": "finance",
+      "layer": "department"
+    },
+    {
+      "id": "skill:jd-writer",
+      "type": "skill",
+      "name": "jd-writer",
+      "plugin": "hr",
+      "layer": "department"
+    },
+    {
+      "id": "skill:onboarding-pack",
+      "type": "skill",
+      "name": "onboarding-pack",
+      "plugin": "hr",
+      "layer": "department"
+    },
+    {
+      "id": "skill:mlflow-experiment",
+      "type": "skill",
+      "name": "mlflow-experiment",
+      "plugin": "mlops",
+      "layer": "department"
+    },
+    {
+      "id": "skill:model-release",
+      "type": "skill",
+      "name": "model-release",
+      "plugin": "mlops",
+      "layer": "department"
+    },
+    {
+      "id": "skill:prd-writer",
+      "type": "skill",
+      "name": "prd-writer",
+      "plugin": "product",
+      "layer": "department"
+    },
+    {
+      "id": "skill:product-sunset",
+      "type": "skill",
+      "name": "product-sunset",
+      "plugin": "product",
+      "layer": "department"
+    },
+    {
+      "id": "skill:bug-report",
+      "type": "skill",
+      "name": "bug-report",
+      "plugin": "qa",
+      "layer": "department"
+    },
+    {
+      "id": "skill:test-from-plan",
+      "type": "skill",
+      "name": "test-from-plan",
+      "plugin": "qa",
+      "layer": "department"
+    },
+    {
+      "id": "skill:arch-template",
+      "type": "skill",
+      "name": "arch-template",
+      "plugin": "sa",
+      "layer": "department"
+    },
+    {
+      "id": "skill:req-to-spec",
+      "type": "skill",
+      "name": "req-to-spec",
+      "plugin": "sa",
+      "layer": "department"
+    },
+    {
+      "id": "skill:follow-up-email",
+      "type": "skill",
+      "name": "follow-up-email",
+      "plugin": "sales",
+      "layer": "department"
+    },
+    {
+      "id": "skill:sales-proposal",
+      "type": "skill",
+      "name": "sales-proposal",
+      "plugin": "sales",
+      "layer": "department"
+    },
+    {
+      "id": "skill:meeting-minutes",
+      "type": "skill",
+      "name": "meeting-minutes",
+      "plugin": "shared",
+      "layer": "shared"
+    },
+    {
+      "id": "person:plat-may",
+      "type": "owner",
+      "name": "plat-may"
+    },
+    {
+      "id": "person:fin-joy",
+      "type": "owner",
+      "name": "fin-joy"
+    },
+    {
+      "id": "person:plat-ken",
+      "type": "owner",
+      "name": "plat-ken"
+    },
+    {
+      "id": "person:dev-pond",
+      "type": "owner",
+      "name": "dev-pond"
+    },
+    {
+      "id": "person:dev-mew",
+      "type": "owner",
+      "name": "dev-mew"
+    },
+    {
+      "id": "person:ops-art",
+      "type": "owner",
+      "name": "ops-art"
+    },
+    {
+      "id": "person:ops-fon",
+      "type": "owner",
+      "name": "ops-fon"
+    },
+    {
+      "id": "person:cfo-ying",
+      "type": "owner",
+      "name": "cfo-ying"
+    },
+    {
+      "id": "person:md-somchai",
+      "type": "owner",
+      "name": "md-somchai"
+    },
+    {
+      "id": "person:exec-ploy",
+      "type": "owner",
+      "name": "exec-ploy"
+    },
+    {
+      "id": "person:cco-wit",
+      "type": "owner",
+      "name": "cco-wit"
+    },
+    {
+      "id": "person:cto-nat",
+      "type": "owner",
+      "name": "cto-nat"
+    },
+    {
+      "id": "person:fin-nok",
+      "type": "owner",
+      "name": "fin-nok"
+    },
+    {
+      "id": "person:hr-fah",
+      "type": "owner",
+      "name": "hr-fah"
+    },
+    {
+      "id": "person:hr-oat",
+      "type": "owner",
+      "name": "hr-oat"
+    },
+    {
+      "id": "person:ml-jay",
+      "type": "owner",
+      "name": "ml-jay"
+    },
+    {
+      "id": "person:ml-pim",
+      "type": "owner",
+      "name": "ml-pim"
+    },
+    {
+      "id": "person:pm-beam",
+      "type": "owner",
+      "name": "pm-beam"
+    },
+    {
+      "id": "person:pm-gift",
+      "type": "owner",
+      "name": "pm-gift"
+    },
+    {
+      "id": "person:qa-bank",
+      "type": "owner",
+      "name": "qa-bank"
+    },
+    {
+      "id": "person:qa-mint",
+      "type": "owner",
+      "name": "qa-mint"
+    },
+    {
+      "id": "person:sa-ice",
+      "type": "owner",
+      "name": "sa-ice"
+    },
+    {
+      "id": "person:sa-ton",
+      "type": "owner",
+      "name": "sa-ton"
+    },
+    {
+      "id": "person:sales-krit",
+      "type": "owner",
+      "name": "sales-krit"
+    },
+    {
+      "id": "person:sales-nida",
+      "type": "owner",
+      "name": "sales-nida"
+    }
+  ],
+  "edges": [
+    {
+      "from": "skill:brand-guide",
+      "to": "person:plat-may",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:customer-data-policy",
+      "to": "skill:invoice-check",
+      "type": "next"
+    },
+    {
+      "from": "skill:customer-data-policy",
+      "to": "skill:follow-up-email",
+      "type": "next"
+    },
+    {
+      "from": "skill:customer-data-policy",
+      "to": "skill:sales-proposal",
+      "type": "next"
+    },
+    {
+      "from": "skill:customer-data-policy",
+      "to": "person:plat-may",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:pricing-rules",
+      "to": "person:fin-joy",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:skill-finder",
+      "to": "person:plat-ken",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:coding-standard",
+      "to": "skill:test-from-plan",
+      "type": "next"
+    },
+    {
+      "from": "skill:coding-standard",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:coding-standard",
+      "to": "person:dev-pond",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:project-scaffold",
+      "to": "skill:coding-standard",
+      "type": "next"
+    },
+    {
+      "from": "skill:project-scaffold",
+      "to": "skill:test-from-plan",
+      "type": "next"
+    },
+    {
+      "from": "skill:project-scaffold",
+      "to": "skill:deploy-checklist",
+      "type": "next"
+    },
+    {
+      "from": "skill:project-scaffold",
+      "to": "skill:coding-standard",
+      "type": "follows"
+    },
+    {
+      "from": "skill:project-scaffold",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:project-scaffold",
+      "to": "person:dev-mew",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:deploy-checklist",
+      "to": "skill:postmortem",
+      "type": "next"
+    },
+    {
+      "from": "skill:deploy-checklist",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:deploy-checklist",
+      "to": "person:ops-art",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:postmortem",
+      "to": "skill:exec-deck",
+      "type": "next"
+    },
+    {
+      "from": "skill:postmortem",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:postmortem",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:postmortem",
+      "to": "person:ops-fon",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:cost-headcount-review",
+      "to": "skill:exec-deck",
+      "type": "next"
+    },
+    {
+      "from": "skill:cost-headcount-review",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:cost-headcount-review",
+      "to": "skill:jd-writer",
+      "type": "next"
+    },
+    {
+      "from": "skill:cost-headcount-review",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:cost-headcount-review",
+      "to": "person:cfo-ying",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:deal-approval",
+      "to": "skill:sales-proposal",
+      "type": "next"
+    },
+    {
+      "from": "skill:deal-approval",
+      "to": "skill:jd-writer",
+      "type": "next"
+    },
+    {
+      "from": "skill:deal-approval",
+      "to": "skill:invoice-check",
+      "type": "next"
+    },
+    {
+      "from": "skill:deal-approval",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:deal-approval",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:deal-approval",
+      "to": "person:md-somchai",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:exec-deck",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:exec-deck",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:exec-deck",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:exec-deck",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:exec-deck",
+      "to": "person:exec-ploy",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:pipeline-review",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:pipeline-review",
+      "to": "skill:tech-risk-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:pipeline-review",
+      "to": "skill:exec-deck",
+      "type": "next"
+    },
+    {
+      "from": "skill:pipeline-review",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:pipeline-review",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:pipeline-review",
+      "to": "person:cco-wit",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:tech-risk-review",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:tech-risk-review",
+      "to": "skill:deploy-checklist",
+      "type": "next"
+    },
+    {
+      "from": "skill:tech-risk-review",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:tech-risk-review",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:tech-risk-review",
+      "to": "person:cto-nat",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:invoice-check",
+      "to": "skill:cost-headcount-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:invoice-check",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:invoice-check",
+      "to": "person:fin-nok",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "skill:sales-proposal",
+      "type": "next"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "skill:pipeline-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "skill:cost-headcount-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:pricing-calc",
+      "to": "person:fin-joy",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:jd-writer",
+      "to": "skill:onboarding-pack",
+      "type": "next"
+    },
+    {
+      "from": "skill:jd-writer",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:jd-writer",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:jd-writer",
+      "to": "person:hr-fah",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:onboarding-pack",
+      "to": "skill:skill-finder",
+      "type": "next"
+    },
+    {
+      "from": "skill:onboarding-pack",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:onboarding-pack",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:onboarding-pack",
+      "to": "person:hr-oat",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:mlflow-experiment",
+      "to": "skill:model-release",
+      "type": "next"
+    },
+    {
+      "from": "skill:mlflow-experiment",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:mlflow-experiment",
+      "to": "person:ml-jay",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:model-release",
+      "to": "skill:deploy-checklist",
+      "type": "next"
+    },
+    {
+      "from": "skill:model-release",
+      "to": "skill:postmortem",
+      "type": "next"
+    },
+    {
+      "from": "skill:model-release",
+      "to": "skill:tech-risk-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:model-release",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:model-release",
+      "to": "person:ml-pim",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "skill:req-to-spec",
+      "type": "next"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "skill:test-from-plan",
+      "type": "next"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "skill:pipeline-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "skill:product-sunset",
+      "type": "next"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:prd-writer",
+      "to": "person:pm-beam",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:product-sunset",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:product-sunset",
+      "to": "skill:deploy-checklist",
+      "type": "next"
+    },
+    {
+      "from": "skill:product-sunset",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:product-sunset",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:product-sunset",
+      "to": "person:pm-gift",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:bug-report",
+      "to": "skill:coding-standard",
+      "type": "next"
+    },
+    {
+      "from": "skill:bug-report",
+      "to": "skill:deploy-checklist",
+      "type": "next"
+    },
+    {
+      "from": "skill:bug-report",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:bug-report",
+      "to": "person:qa-bank",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:test-from-plan",
+      "to": "skill:bug-report",
+      "type": "next"
+    },
+    {
+      "from": "skill:test-from-plan",
+      "to": "skill:deploy-checklist",
+      "type": "next"
+    },
+    {
+      "from": "skill:test-from-plan",
+      "to": "skill:tech-risk-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:test-from-plan",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:test-from-plan",
+      "to": "person:qa-mint",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:arch-template",
+      "to": "skill:project-scaffold",
+      "type": "next"
+    },
+    {
+      "from": "skill:arch-template",
+      "to": "skill:pricing-calc",
+      "type": "next"
+    },
+    {
+      "from": "skill:arch-template",
+      "to": "skill:sales-proposal",
+      "type": "next"
+    },
+    {
+      "from": "skill:arch-template",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:arch-template",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:arch-template",
+      "to": "person:sa-ice",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:arch-template",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:test-from-plan",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:pricing-calc",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:sales-proposal",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:tech-risk-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:project-scaffold",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:mlflow-experiment",
+      "type": "next"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "skill:coding-standard",
+      "type": "follows"
+    },
+    {
+      "from": "skill:req-to-spec",
+      "to": "person:sa-ton",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:follow-up-email",
+      "to": "skill:sales-proposal",
+      "type": "next"
+    },
+    {
+      "from": "skill:follow-up-email",
+      "to": "skill:pricing-calc",
+      "type": "next"
+    },
+    {
+      "from": "skill:follow-up-email",
+      "to": "skill:pipeline-review",
+      "type": "next"
+    },
+    {
+      "from": "skill:follow-up-email",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:follow-up-email",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:follow-up-email",
+      "to": "person:sales-krit",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:pricing-calc",
+      "type": "uses"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:deal-approval",
+      "type": "next"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:follow-up-email",
+      "type": "next"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:req-to-spec",
+      "type": "next"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "skill:pricing-rules",
+      "type": "follows"
+    },
+    {
+      "from": "skill:sales-proposal",
+      "to": "person:sales-nida",
+      "type": "owned_by"
+    },
+    {
+      "from": "skill:meeting-minutes",
+      "to": "skill:follow-up-email",
+      "type": "next"
+    },
+    {
+      "from": "skill:meeting-minutes",
+      "to": "skill:customer-data-policy",
+      "type": "follows"
+    },
+    {
+      "from": "skill:meeting-minutes",
+      "to": "skill:brand-guide",
+      "type": "follows"
+    },
+    {
+      "from": "skill:meeting-minutes",
+      "to": "person:plat-ken",
+      "type": "owned_by"
+    }
+  ]
+}

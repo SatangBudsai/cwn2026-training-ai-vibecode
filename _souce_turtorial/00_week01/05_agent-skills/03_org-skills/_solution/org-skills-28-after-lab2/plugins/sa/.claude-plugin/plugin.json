@@ -1,0 +1,11 @@
+{
+  "name": "sa",
+  "version": "1.0.0",
+  "description": "แผนก Presales / SA: แตก TOR เป็น spec และวาด architecture",
+  "author": {
+    "name": "sa-ton"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

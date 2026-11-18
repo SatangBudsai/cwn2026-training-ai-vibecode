@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "url": "http://localhost:5081",
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "threshold": 0.1,
+  "includeAA": false,
+  "pixels": 339448,
+  "totalPixels": 1229400,
+  "percent": 27.61086708963722
+}

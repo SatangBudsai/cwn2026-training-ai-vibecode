@@ -1,0 +1,36 @@
+# หลัง merge เข้า main: ตรวจย้อนหลัง + บอกแผนออกเวอร์ชัน (ไม่ใช้ AI ไม่มี secret ไม่ติด tag)
+#   scripts/release.py --plan --comment = merge_gate.py กับทุก PR ตั้งแต่ tag คลังล่าสุด
+#     (ด่าน CI เป็น task จริง · CODEOWNER approve · skill-eval มาจากผู้รีวิวตัวจริง) แล้วคอมเมนต์ผล + แผน tag ใน PR
+#   ไม่ผ่าน = job แดง + คอมเมนต์เตือน → ทีมกลางตรวจก่อนออกเวอร์ชัน
+# การออกเวอร์ชันจริง (tag + Release) ทีมกลางรัน scripts/release.py เองจาก main:
+#   tag v* และ */* ถูก protect ให้ทีมกลาง และ Gitea 1.24 ใส่บัญชี Actions ใน allowlist ไม่ได้
+#   และไม่เก็บ token บอตเป็น repo secret เพราะ workflow pull_request จาก branch ในคลังเดียวกันอ่าน secret ได้
+name: release
+
+on:
+  push:
+    branches: [main]
+
+env:
+  SERVER: ${{ vars.GITEA_INTERNAL_URL || 'http://gitea:3000' }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout main + tags
+        env: { TOKEN: "${{ secrets.GITHUB_TOKEN }}", REPO: "${{ gitea.repository }}", SHA: "${{ gitea.sha }}" }
+        run: |
+          host="${SERVER#*://}"; scheme="${SERVER%%://*}"
+          git init -q . && git remote add origin "${scheme}://x-access-token:${TOKEN}@${host}/${REPO}.git"
+          git fetch -q --tags origin "+refs/heads/main:refs/remotes/origin/main"
+          git checkout -q --detach "${SHA}"
+          echo "main $(git rev-parse --short HEAD) · tags $(git tag | wc -l)"
+
+      - name: ตรวจย้อนหลัง + คอมเมนต์แผนออกเวอร์ชัน
+        env:
+          GITEA_API: ${{ env.SERVER }}/api/v1
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ gitea.repository }}
+          SHA: ${{ gitea.sha }}
+        run: python3 scripts/release.py --plan --comment

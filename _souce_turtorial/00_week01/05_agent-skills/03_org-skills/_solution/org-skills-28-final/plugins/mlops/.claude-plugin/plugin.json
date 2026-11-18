@@ -1,0 +1,11 @@
+{
+  "name": "mlops",
+  "version": "1.0.0",
+  "description": "แผนก ML / MLOps: บันทึกการทดลอง และปล่อยโมเดล",
+  "author": {
+    "name": "ml-jay"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

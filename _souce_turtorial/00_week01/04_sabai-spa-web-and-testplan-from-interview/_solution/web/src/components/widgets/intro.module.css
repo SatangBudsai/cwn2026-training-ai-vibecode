@@ -1,0 +1,24 @@
+.intro {
+  position: relative;
+  overflow: clip;
+  background: var(--c-forest-900);
+  color: var(--c-cream-100);
+  padding-block: clamp(56px, 8vw, 104px) clamp(44px, 6vw, 72px);
+}
+.image { object-fit: cover; }
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(15, 32, 24, 0.92) 0%, rgba(15, 32, 24, 0.74) 55%, rgba(15, 32, 24, 0.5) 100%);
+}
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+.inner h1 { color: var(--c-cream-50); max-width: 18em; }
+.inner :global(.eyebrow) { color: var(--c-gold-300); }
+.rule { display: block; width: 64px; height: 1px; background: var(--c-gold-500); margin-block: 4px; }
+.subtitle { max-width: 40em; color: var(--c-forest-200); font-size: 1.08rem; }

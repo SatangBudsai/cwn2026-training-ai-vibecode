@@ -1,0 +1,14 @@
+# 16-origin-typed-krungthep @ 2026-11-01 17:09:06 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- listbox:
+  - option "กรุงเทพมหานคร" [selected]:
+    - img
+    - text: กรุงเทพมหานคร เมืองหลวงของประเทศไทย
+  - button "สลับปุ่มเพื่อแสดงรายการสนามบินที่อยู่ใกล้เคียงกับกรุงเทพมหานคร" [expanded]:
+    - img
+  - option "ท่าอากาศยานสุวรรณภูมิ (BKK)" [selected]:
+    - img
+    - text: ท่าอากาศยานสุวรรณภูมิ BKK ห่างจากจุดหมาย 27 กม.
+  - option "ท่าอากาศยานดอนเมือง (DMK)" [selected]:
+    - img
+    - text: ท่าอากาศยานดอนเมือง DMK ห่างจากจุดหมาย 20 กม.

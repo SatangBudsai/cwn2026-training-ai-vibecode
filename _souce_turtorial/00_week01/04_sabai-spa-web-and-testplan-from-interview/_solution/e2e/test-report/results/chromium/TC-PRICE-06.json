@@ -1,0 +1,82 @@
+{
+  "id": "TC-PRICE-06",
+  "title": "TC-PRICE-06 ตัวเลือกเดือนเกิดดูจากเดือนของวันนัด และไม่มีกับ P01 K01",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "K01: ไม่มีตัวเลือกเดือนเกิด · ฿15,000 (ถ้าให้ลด 20% จะได้ ฿12,000)\nP01: ไม่มีตัวเลือกเดือนเกิด · ฿2,900 − 0% = ฿2,900 · ค่ารถรวมแล้ว ฿0 (ถ้าให้ลด 20% จะได้ ฿2,320)\nU02 1 ก.ค.: เลือกไม่ได้ · ใช้ระดับ ฿1,000 − 10% = ฿900 (ถ้าดูเดือนของวันนี้จะได้ ฿800)\nU02 30 มิ.ย.: ฿1,000 − 20% (฿200) = ฿800 ทั้งก่อนและหลังรีโหลด\nU11 31 พ.ค.: เลือกไม่ได้ · ฿1,000 − 0% = ฿1,000 (ถ้าให้เลือกทั้งที่เดือนไม่ตรงจะได้ ฿800)\nU11 1 มิ.ย.: ฿1,000 − 20% (฿200) = ฿800 (ถ้าดูเดือนของวันนี้จะได้ ฿1,000)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 566,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 แต้มและระดับ · [R] ⚠️D-24",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 566,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-33, BR-25, BR-28",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 566,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R45",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 566,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 566,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 566,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 46200,
+  "at": "2026-11-06T02:57:27.084Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: false\nReceived: true",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: false\nReceived: true"
+  ],
+  "steps": [
+    "1. U02 เปิดซื้อ K01 อ่านตัวเลือกและราคา แล้วไม่ซื้อ",
+    "2. U02 จอง P01 1 คน รถ H04 17 มิ.ย. ถึงหน้าสรุป ไม่ยืนยัน",
+    "3. U02 จอง S01 1 ก.ค. พยายามเลือกเดือนเกิด ไม่ยืนยัน ✗",
+    "4. U02 จอง S01 30 มิ.ย. เลือกเดือนเกิด ยืนยัน รีโหลด",
+    "5. ล็อก 15 พ.ค. แล้วรีเซ็ต U11 จอง S01 31 พ.ค. พยายามเลือกเดือนเกิด ไม่ยืนยัน ✗",
+    "6. U11 จอง S01 1 มิ.ย. เลือกเดือนเกิด อ่านยอด"
+  ]
+}

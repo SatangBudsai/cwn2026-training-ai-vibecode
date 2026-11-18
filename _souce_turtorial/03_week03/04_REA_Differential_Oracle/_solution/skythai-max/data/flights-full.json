@@ -1,0 +1,2501 @@
+{
+  "meta": {
+    "route": "กรุงเทพ (BKK/DMK) → โตเกียว (NRT/HND) เที่ยวเดียว 15 พ.ย. 2026 ผู้ใหญ่ 1 ชั้นประหยัด",
+    "source": "AF_initDataCallback key 'ds:1' ฝังใน HTML ของหน้า (ไม่ใช่ข้อความบนจอ)",
+    "captured_by": "REA capture_browser_scenario (connect, CDP 127.0.0.1:9222) — at_end dom",
+    "inspect_captured_at": "2026-10-31T16:21:00.307Z",
+    "scenario_evidence_id": "ev_2cd5f0100d0ee0cc2c22d350de9184df629ae7e51dbb4a712b2d6480cd87c9b9",
+    "inspect_evidence_id": "ev_6a1a2a4e35eff34340d487f3ca243cbf905c746ebe3a54a61c003f355ec9d26d",
+    "dom_sha256": "6a637ea6614db68eca49f3c7800c1c03f9c9ef2a7838a8e72c1c81ebc97c29ac",
+    "caveat": "scenario แบบ connect ทำ goto_start (โหลด URL ค้นหาเดิมซ้ำ 1 ครั้ง) ก่อนเก็บ DOM ข้อมูลนี้จึงมาจากหน้าที่โหลดใหม่ ไม่ใช่หน้าเดิมก่อนแนบ",
+    "embedded_flight_count": 22,
+    "best_count": 3,
+    "other_count": 19,
+    "not_embedded_more_flights_count_inferred": 278,
+    "note": "เที่ยวบินที่เหลือ (278) ไม่ได้ฝังในหน้า ต้องกด 'ดูเที่ยวบินเพิ่มเติม' ซึ่งต้องคลิก จึงไม่ได้ดึงเพราะทำงานแบบอ่านอย่างเดียว"
+  },
+  "filters": {
+    "price_range_thb": {
+      "min": 7635,
+      "max": 194610
+    },
+    "alliances": [
+      {
+        "code": "ONEWORLD",
+        "name": "Oneworld"
+      },
+      {
+        "code": "SKYTEAM",
+        "name": "SkyTeam"
+      },
+      {
+        "code": "STAR_ALLIANCE",
+        "name": "Star Alliance"
+      }
+    ],
+    "airlines": [
+      {
+        "code": "QR",
+        "name": "กาตาร์แอร์เวย์"
+      },
+      {
+        "code": "TG",
+        "name": "การบินไทย"
+      },
+      {
+        "code": "GA",
+        "name": "การูดาอินโดนีเซีย"
+      },
+      {
+        "code": "CX",
+        "name": "คาเธ่ย์แปซิฟิคแอร์เวย์"
+      },
+      {
+        "code": "KE",
+        "name": "โคเรียนแอร์ไลน์"
+      },
+      {
+        "code": "LJ",
+        "name": "จินแอร์"
+      },
+      {
+        "code": "HO",
+        "name": "จูนเยาแอร์ไลน์"
+      },
+      {
+        "code": "7C",
+        "name": "เจจูแอร์"
+      },
+      {
+        "code": "JL",
+        "name": "เจเอแอล"
+      },
+      {
+        "code": "CZ",
+        "name": "ไชนาเซาเทิร์นแอร์ไลน์"
+      },
+      {
+        "code": "MU",
+        "name": "ไชนาอีสเทิร์นแอร์ไลน์"
+      },
+      {
+        "code": "CI",
+        "name": "ไชนาแอร์ไลน์"
+      },
+      {
+        "code": "SC",
+        "name": "ซานตง แอร์ไลน์"
+      },
+      {
+        "code": "5J",
+        "name": "เซบูแอร์"
+      },
+      {
+        "code": "ZH",
+        "name": "เซินเจิ้นแอร์ไลน์"
+      },
+      {
+        "code": "FM",
+        "name": "เซี่ยงไฮ้แอร์ไลน์"
+      },
+      {
+        "code": "MF",
+        "name": "เซียะเหมินแอร์"
+      },
+      {
+        "code": "TK",
+        "name": "เตอร์กิชแอร์ไลน์"
+      },
+      {
+        "code": "TW",
+        "name": "ทรินิตี้ แอร์เวย์ส"
+      },
+      {
+        "code": "SL",
+        "name": "ไทยไลอ้อนแอร์"
+      },
+      {
+        "code": "VZ",
+        "name": "ไทยเวียดเจ๊ทแอร์"
+      },
+      {
+        "code": "RA",
+        "name": "เนปาลแอร์ไลน์"
+      },
+      {
+        "code": "PG",
+        "name": "บางกอกแอร์เวย์ส"
+      },
+      {
+        "code": "BG",
+        "name": "ไบแมนบังคลาเทศแอร์ไลน์"
+      },
+      {
+        "code": "MM",
+        "name": "พีชเอวิเอชัน"
+      },
+      {
+        "code": "FY",
+        "name": "ฟลายไฟร์ฟลาย"
+      },
+      {
+        "code": "FJ",
+        "name": "ฟิจิแอร์เวย์"
+      },
+      {
+        "code": "PR",
+        "name": "ฟิลิปปินส์แอร์ไลน์"
+      },
+      {
+        "code": "MH",
+        "name": "มาเลเซียแอร์ไลน์"
+      },
+      {
+        "code": "UA",
+        "name": "ยูไนเต็ดแอร์ไลน์"
+      },
+      {
+        "code": "BI",
+        "name": "รอยัลบรูไนแอร์ไลน์"
+      },
+      {
+        "code": "VJ",
+        "name": "เวียดเจ็ทแอร์"
+      },
+      {
+        "code": "VN",
+        "name": "เวียดนามแอร์ไลน์"
+      },
+      {
+        "code": "UL",
+        "name": "ศรีลังกันแอร์ไลน์"
+      },
+      {
+        "code": "TR",
+        "name": "สกู๊ต"
+      },
+      {
+        "code": "9C",
+        "name": "สปริงแอร์ไลน์"
+      },
+      {
+        "code": "SQ",
+        "name": "สิงคโปร์แอร์ไลน์"
+      },
+      {
+        "code": "3U",
+        "name": "เสฉวนแอร์ไลน์"
+      },
+      {
+        "code": "HU",
+        "name": "ไห่หนานแอร์ไลน์"
+      },
+      {
+        "code": "6E",
+        "name": "อินดิโก"
+      },
+      {
+        "code": "BR",
+        "name": "อีวีเอแอร์"
+      },
+      {
+        "code": "HY",
+        "name": "อุซเบกิสถานแอร์เวย์"
+      },
+      {
+        "code": "OZ",
+        "name": "เอเชียนาแอร์ไลน์"
+      },
+      {
+        "code": "ET",
+        "name": "เอธิโอเปียแอร์ไลน์"
+      },
+      {
+        "code": "OM",
+        "name": "เอ็มไอเอที - มองโกเลียนแอร์ไลน์"
+      },
+      {
+        "code": "NH",
+        "name": "เอเอ็นเอ"
+      },
+      {
+        "code": "CA",
+        "name": "แอร์ไชนาลิมิเต็ด"
+      },
+      {
+        "code": "NZ",
+        "name": "แอร์นิวซีแลนด์"
+      },
+      {
+        "code": "BX",
+        "name": "แอร์ปูซาน"
+      },
+      {
+        "code": "NX",
+        "name": "แอร์มาเก๊า"
+      },
+      {
+        "code": "AI",
+        "name": "แอร์อินเดีย"
+      },
+      {
+        "code": "AK",
+        "name": "แอร์เอเชีย"
+      },
+      {
+        "code": "FD",
+        "name": "แอร์เอเชีย"
+      },
+      {
+        "code": "XJ",
+        "name": "แอร์เอเชีย"
+      },
+      {
+        "code": "D7",
+        "name": "แอร์เอเชีย เอ็กซ์"
+      },
+      {
+        "code": "KC",
+        "name": "แอร์แอสตานา"
+      },
+      {
+        "code": "UO",
+        "name": "ฮ่องกงเอ็กซ์เพรส"
+      },
+      {
+        "code": "HX",
+        "name": "ฮ่องกงแอร์ไลน์"
+      },
+      {
+        "code": "K6",
+        "name": "Air Cambodia"
+      },
+      {
+        "code": "YP",
+        "name": "Air Premia"
+      },
+      {
+        "code": "OD",
+        "name": "Batik Air"
+      },
+      {
+        "code": "HB",
+        "name": "Greater Bay Airlines"
+      },
+      {
+        "code": "JX",
+        "name": "STARLUX Airlines"
+      },
+      {
+        "code": "ZG",
+        "name": "ZIPAIR Tokyo"
+      }
+    ],
+    "connecting_airports": [
+      {
+        "code": "CAN",
+        "city": "กว่างโจว"
+      },
+      {
+        "code": "KHH",
+        "city": "เก้าสุยง"
+      },
+      {
+        "code": "HKG",
+        "city": "เขตบริหารพิเศษฮ่องกง"
+      },
+      {
+        "code": "KUL",
+        "city": "เขตสหพันธรัฐกัวลาลัมเปอร์"
+      },
+      {
+        "code": "UKB",
+        "city": "โคเบะ"
+      },
+      {
+        "code": "CGK",
+        "city": "จาการ์ตา"
+      },
+      {
+        "code": "TFU",
+        "city": "เฉิงตู"
+      },
+      {
+        "code": "TAO",
+        "city": "ชิงเต่า"
+      },
+      {
+        "code": "CTS",
+        "city": "ซัปโปะโระ"
+      },
+      {
+        "code": "SZX",
+        "city": "เซินเจิ้น"
+      },
+      {
+        "code": "PVG",
+        "city": "เซี่ยงไฮ"
+      },
+      {
+        "code": "SHA",
+        "city": "เซี่ยงไฮ"
+      },
+      {
+        "code": "XMN",
+        "city": "เซี่ยเหมิน"
+      },
+      {
+        "code": "GMP",
+        "city": "โซล"
+      },
+      {
+        "code": "ICN",
+        "city": "โซล"
+      },
+      {
+        "code": "DAD",
+        "city": "ดานัง"
+      },
+      {
+        "code": "HKT",
+        "city": "เทศบาลนครภูเก็ต"
+      },
+      {
+        "code": "TAE",
+        "city": "แทกู"
+      },
+      {
+        "code": "TPE",
+        "city": "ไทเป"
+      },
+      {
+        "code": "TSA",
+        "city": "ไทเป"
+      },
+      {
+        "code": "DAC",
+        "city": "ธากา"
+      },
+      {
+        "code": "SGN",
+        "city": "นครโฮจิมินห์"
+      },
+      {
+        "code": "NGO",
+        "city": "นาโงยะ"
+      },
+      {
+        "code": "PEK",
+        "city": "ปักกิ่ง"
+      },
+      {
+        "code": "PKX",
+        "city": "ปักกิ่ง"
+      },
+      {
+        "code": "FUK",
+        "city": "ฟุกุโอะกะ"
+      },
+      {
+        "code": "MNL",
+        "city": "มะนิลา"
+      },
+      {
+        "code": "SIN",
+        "city": "สิงคโปร์"
+      },
+      {
+        "code": "USM",
+        "city": "อำเภอเกาะสมุย"
+      },
+      {
+        "code": "ITM",
+        "city": "โอซากะ"
+      },
+      {
+        "code": "KIX",
+        "city": "โอซากะ"
+      },
+      {
+        "code": "HAN",
+        "city": "ฮานอย"
+      },
+      {
+        "code": "HAK",
+        "city": "Haikou"
+      }
+    ],
+    "layover_duration_range_min": {
+      "min": 55,
+      "max": 2010
+    },
+    "total_duration_range_min": {
+      "min": 340,
+      "max": 2495
+    },
+    "raw_stop_options": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "raw_bag_or_flags": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "price_insights": {
+    "lowest_now_thb": 7635,
+    "raw_5_2_thb": 5900,
+    "raw_5_3_diff_thb": -1735,
+    "typical_range_thb": [
+      4950,
+      7200
+    ],
+    "level_code_inferred": 1,
+    "history": [
+      {
+        "date_utc_ms": 1788195600000,
+        "price_thb": 7091
+      },
+      {
+        "date_utc_ms": 1788282000000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1788368400000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1788454800000,
+        "price_thb": 7079
+      },
+      {
+        "date_utc_ms": 1788541200000,
+        "price_thb": 7079
+      },
+      {
+        "date_utc_ms": 1788627600000,
+        "price_thb": 6760
+      },
+      {
+        "date_utc_ms": 1788714000000,
+        "price_thb": 6760
+      },
+      {
+        "date_utc_ms": 1788800400000,
+        "price_thb": 6760
+      },
+      {
+        "date_utc_ms": 1788886800000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1788973200000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789059600000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789146000000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789232400000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789318800000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789405200000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789491600000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789578000000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789664400000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789750800000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789837200000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1789923600000,
+        "price_thb": 7156
+      },
+      {
+        "date_utc_ms": 1790010000000,
+        "price_thb": 7050
+      },
+      {
+        "date_utc_ms": 1790096400000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790182800000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790269200000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790355600000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790442000000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790528400000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790614800000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790701200000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790787600000,
+        "price_thb": 5861
+      },
+      {
+        "date_utc_ms": 1790874000000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1790960400000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791046800000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791133200000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791219600000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791306000000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791392400000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791478800000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791565200000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791651600000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791738000000,
+        "price_thb": 6533
+      },
+      {
+        "date_utc_ms": 1791824400000,
+        "price_thb": 6533
+      },
+      {
+        "date_utc_ms": 1791910800000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1791997200000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792083600000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792170000000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792256400000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792342800000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792429200000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792515600000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792602000000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792688400000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792774800000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792861200000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1792947600000,
+        "price_thb": 5900
+      },
+      {
+        "date_utc_ms": 1793034000000,
+        "price_thb": 6533
+      },
+      {
+        "date_utc_ms": 1793120400000,
+        "price_thb": 6533
+      },
+      {
+        "date_utc_ms": 1793206800000,
+        "price_thb": 6533
+      },
+      {
+        "date_utc_ms": 1793293200000,
+        "price_thb": 7140
+      },
+      {
+        "date_utc_ms": 1793379600000,
+        "price_thb": 7635
+      }
+    ]
+  },
+  "cheaper_dates": [
+    {
+      "date": "2026-11-13",
+      "price_thb": 5255
+    }
+  ],
+  "airline_baggage_links": [
+    {
+      "code": "TG",
+      "name": "การบินไทย",
+      "url": "https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?"
+    },
+    {
+      "code": "JL",
+      "name": "เจเอแอล",
+      "url": "https://www.jal.co.jp/en/inter/baggage/"
+    },
+    {
+      "code": "CI",
+      "name": "ไชนาแอร์ไลน์",
+      "url": "https://www.china-airlines.com/us/en/fly/prepare-for-the-fly/baggage/baggage-rules"
+    },
+    {
+      "code": "SL",
+      "name": "ไทยไลอ้อนแอร์",
+      "url": "https://www.lionairthai.com/th/Terms-And-Conditions#twelve"
+    },
+    {
+      "code": "VZ",
+      "name": "ไทยเวียดเจ๊ทแอร์",
+      "url": "https://www.vietjetair.com/en/pages/to-have-a-good-flight-1599448842652/baggage-service-1608369253127"
+    },
+    {
+      "code": "HU",
+      "name": "ไห่หนานแอร์ไลน์",
+      "url": "https://www.hainanairlines.com/OEC/GB/BASV#"
+    },
+    {
+      "code": "NH",
+      "name": "เอเอ็นเอ",
+      "url": "https://www.ana.co.jp/th/th/serviceinfo/international/optional_svc/fbag/"
+    },
+    {
+      "code": "UO",
+      "name": "ฮ่องกงเอ็กซ์เพรส",
+      "url": "https://www.hkexpress.com/en/Plan/Extras/Baggage"
+    }
+  ],
+  "airline_special_assistance_links": [
+    {
+      "code": "TG",
+      "name": "การบินไทย",
+      "url": "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+    },
+    {
+      "code": "JL",
+      "name": "เจเอแอล",
+      "url": "https://www.jal.co.jp/en/jalpri/"
+    },
+    {
+      "code": "CI",
+      "name": "ไชนาแอร์ไลน์",
+      "url": "https://www.china-airlines.com/sea/th/fly/prepare-for-the-fly/special-assistance/index"
+    },
+    {
+      "code": "SL",
+      "name": "ไทยไลอ้อนแอร์",
+      "url": "https://www.lionairthai.com/th/ThaiLionAir-Experience/Special-Needs"
+    },
+    {
+      "code": "VZ",
+      "name": "ไทยเวียดเจ๊ทแอร์",
+      "url": "https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036"
+    },
+    {
+      "code": "HU",
+      "name": "ไห่หนานแอร์ไลน์",
+      "url": "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=CN&SITE=CBHZCBHZ&PAGE=CMOR"
+    },
+    {
+      "code": "NH",
+      "name": "เอเอ็นเอ",
+      "url": "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+    },
+    {
+      "code": "UO",
+      "name": "ฮ่องกงเอ็กซ์เพรส",
+      "url": "https://www.hkexpress.com/en-HK/Plan/Travel/Special-Assistance"
+    },
+    {
+      "code": "ZG",
+      "name": "ZIPAIR Tokyo",
+      "url": "https://www.zipair.net/th/boarding/support"
+    }
+  ],
+  "raw_15_english_airline_list_unknown_purpose": [
+    "Air China",
+    "Batik Air",
+    "Biman Bangladesh Airlines",
+    "China Eastern Airlines",
+    "Hong Kong Airlines",
+    "Jeju Air",
+    "Sichuan Airlines",
+    "Singapore Airlines",
+    "STARLUX Airlines",
+    "Vietnam Airlines",
+    "Xiamen Airlines"
+  ],
+  "flights": [
+    {
+      "group": "best",
+      "rank_in_group": 1,
+      "airline_codes": [
+        "SL"
+      ],
+      "airlines": [
+        "ไทยไลอ้อนแอร์"
+      ],
+      "price_thb": 7635,
+      "price_token_present": true,
+      "origin": "DMK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "06:20",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "16:25",
+      "total_duration_min": 485,
+      "stops": 1,
+      "layovers": [
+        {
+          "duration_min": 60,
+          "airport_code": "TPE",
+          "airport_name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "city": "ไทเป",
+          "change_airport_to": null
+        }
+      ],
+      "legs": [
+        {
+          "flight_number": "SL 394",
+          "marketing_carrier_code": "SL",
+          "carrier_name": "ไทยไลอ้อนแอร์",
+          "operated_by": null,
+          "from_code": "DMK",
+          "from_name": "ท่าอากาศยานดอนเมือง",
+          "to_code": "TPE",
+          "to_name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "depart_date": "2026-11-15",
+          "depart_time": "06:20",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "11:10",
+          "depart_iso_with_tz": "2026-11-15T06:20:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T11:10:00+08:00",
+          "duration_min": 230,
+          "aircraft": "Boeing 737",
+          "aircraft_code_in_token": "739",
+          "legroom": "74 ซม.",
+          "legroom_long": "74 เซนติเมตร",
+          "co2_grams_inferred": 191959,
+          "raw_amenity_flags": []
+        },
+        {
+          "flight_number": "SL 394",
+          "marketing_carrier_code": "SL",
+          "carrier_name": "ไทยไลอ้อนแอร์",
+          "operated_by": null,
+          "from_code": "TPE",
+          "from_name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "12:10",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "16:25",
+          "depart_iso_with_tz": "2026-11-15T12:10:00+08:00",
+          "arrive_iso_with_tz": "2026-11-15T16:25:00+09:00",
+          "duration_min": 195,
+          "aircraft": "Boeing 737",
+          "aircraft_code_in_token": "739",
+          "legroom": "74 ซม.",
+          "legroom_long": "74 เซนติเมตร",
+          "co2_grams_inferred": 171427,
+          "raw_amenity_flags": []
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 363000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -2,
+        "level_code": 2,
+        "level_label": "โดยเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "SL",
+          "name": "ไทยไลอ้อนแอร์",
+          "url": "https://www.lionairthai.com/th/ThaiLionAir-Experience/Special-Needs"
+        }
+      ]
+    },
+    {
+      "group": "best",
+      "rank_in_group": 2,
+      "airline_codes": [
+        "VZ"
+      ],
+      "airlines": [
+        "ไทยเวียดเจ๊ทแอร์"
+      ],
+      "price_thb": 8172,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "09:35",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "17:30",
+      "total_duration_min": 355,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "VZ 832",
+          "marketing_carrier_code": "VZ",
+          "carrier_name": "ไทยเวียดเจ๊ทแอร์",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "09:35",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "17:30",
+          "depart_iso_with_tz": "2026-11-15T09:35:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T17:30:00+09:00",
+          "duration_min": 355,
+          "aircraft": "Boeing 737",
+          "aircraft_code_in_token": "737",
+          "legroom": "74 ซม.",
+          "legroom_long": "74 เซนติเมตร",
+          "co2_grams_inferred": 396434,
+          "raw_amenity_flags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 396000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 7,
+        "level_code": 3,
+        "level_label": "สูงกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "VZ",
+          "name": "ไทยเวียดเจ๊ทแอร์",
+          "url": "https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036"
+        }
+      ]
+    },
+    {
+      "group": "best",
+      "rank_in_group": 3,
+      "airline_codes": [
+        "ZG"
+      ],
+      "airlines": [
+        "ZIPAIR Tokyo"
+      ],
+      "price_thb": 11580,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "23:45",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "07:30",
+      "total_duration_min": 345,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "ZG 52",
+          "marketing_carrier_code": "ZG",
+          "carrier_name": "ZIPAIR Tokyo",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "23:45",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "07:30",
+          "depart_iso_with_tz": "2026-11-15T23:45:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T07:30:00+09:00",
+          "duration_min": 345,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "788",
+          "legroom": "79 ซม.",
+          "legroom_long": "79 เซนติเมตร",
+          "co2_grams_inferred": 310154,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            2
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 310000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -16,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "ZG",
+          "name": "ZIPAIR Tokyo",
+          "url": "https://www.zipair.net/th/boarding/support"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 1,
+      "airline_codes": [
+        "VZ"
+      ],
+      "airlines": [
+        "ไทยเวียดเจ๊ทแอร์"
+      ],
+      "price_thb": 8802,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "23:50",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "07:55",
+      "total_duration_min": 365,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "VZ 830",
+          "marketing_carrier_code": "VZ",
+          "carrier_name": "ไทยเวียดเจ๊ทแอร์",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "23:50",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "07:55",
+          "depart_iso_with_tz": "2026-11-15T23:50:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T07:55:00+09:00",
+          "duration_min": 365,
+          "aircraft": "Boeing 737",
+          "aircraft_code_in_token": "737",
+          "legroom": "74 ซม.",
+          "legroom_long": "74 เซนติเมตร",
+          "co2_grams_inferred": 396434,
+          "raw_amenity_flags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 396000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 7,
+        "level_code": 3,
+        "level_label": "สูงกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "VZ",
+          "name": "ไทยเวียดเจ๊ทแอร์",
+          "url": "https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 2,
+      "airline_codes": [
+        "HU"
+      ],
+      "airlines": [
+        "ไห่หนานแอร์ไลน์"
+      ],
+      "price_thb": 9165,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "19:30",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "13:30",
+      "total_duration_min": 960,
+      "stops": 1,
+      "layovers": [
+        {
+          "duration_min": 520,
+          "airport_code": "HAK",
+          "airport_name": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+          "city": "Haikou",
+          "change_airport_to": null
+        }
+      ],
+      "legs": [
+        {
+          "flight_number": "HU 722",
+          "marketing_carrier_code": "HU",
+          "carrier_name": "ไห่หนานแอร์ไลน์",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HAK",
+          "to_name": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+          "depart_date": "2026-11-15",
+          "depart_time": "19:30",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "23:00",
+          "depart_iso_with_tz": "2026-11-15T19:30:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T23:00:00+08:00",
+          "duration_min": 150,
+          "aircraft": "Airbus A320neo",
+          "aircraft_code_in_token": "32N",
+          "legroom": "74 ซม.",
+          "legroom_long": "74 เซนติเมตร",
+          "co2_grams_inferred": 107338,
+          "raw_amenity_flags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        },
+        {
+          "flight_number": "HU 791",
+          "marketing_carrier_code": "HU",
+          "carrier_name": "ไห่หนานแอร์ไลน์",
+          "operated_by": null,
+          "from_code": "HAK",
+          "from_name": "ท่าอากาศยานนานาชาติไหโข่ว เมลัน",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-16",
+          "depart_time": "07:40",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "13:30",
+          "depart_iso_with_tz": "2026-11-16T07:40:00+08:00",
+          "arrive_iso_with_tz": "2026-11-16T13:30:00+09:00",
+          "duration_min": 290,
+          "aircraft": "Boeing 737",
+          "aircraft_code_in_token": "73H",
+          "legroom": "74 ซม.",
+          "legroom_long": "74 เซนติเมตร",
+          "co2_grams_inferred": 311743,
+          "raw_amenity_flags": []
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 419000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 13,
+        "level_code": 3,
+        "level_label": "สูงกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "HU",
+          "name": "ไห่หนานแอร์ไลน์",
+          "url": "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=CN&SITE=CBHZCBHZ&PAGE=CMOR"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 3,
+      "airline_codes": [
+        "UO"
+      ],
+      "airlines": [
+        "ฮ่องกงเอ็กซ์เพรส"
+      ],
+      "price_thb": 9371,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "12:00",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "00:45",
+      "total_duration_min": 645,
+      "stops": 1,
+      "layovers": [
+        {
+          "duration_min": 240,
+          "airport_code": "HKG",
+          "airport_name": "ท่าอากาศยานนานาชาติฮ่องกง",
+          "city": "เขตบริหารพิเศษฮ่องกง",
+          "change_airport_to": null
+        }
+      ],
+      "legs": [
+        {
+          "flight_number": "UO 713",
+          "marketing_carrier_code": "UO",
+          "carrier_name": "ฮ่องกงเอ็กซ์เพรส",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HKG",
+          "to_name": "ท่าอากาศยานนานาชาติฮ่องกง",
+          "depart_date": "2026-11-15",
+          "depart_time": "12:00",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "15:55",
+          "depart_iso_with_tz": "2026-11-15T12:00:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T15:55:00+08:00",
+          "duration_min": 175,
+          "aircraft": "Airbus A320neo",
+          "aircraft_code_in_token": "32N",
+          "legroom": "71 ซม.",
+          "legroom_long": "71 เซนติเมตร",
+          "co2_grams_inferred": 121517,
+          "raw_amenity_flags": []
+        },
+        {
+          "flight_number": "UO 628",
+          "marketing_carrier_code": "UO",
+          "carrier_name": "ฮ่องกงเอ็กซ์เพรส",
+          "operated_by": null,
+          "from_code": "HKG",
+          "from_name": "ท่าอากาศยานนานาชาติฮ่องกง",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "19:55",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "00:45",
+          "depart_iso_with_tz": "2026-11-15T19:55:00+08:00",
+          "arrive_iso_with_tz": "2026-11-16T00:45:00+09:00",
+          "duration_min": 230,
+          "aircraft": "Airbus A321neo",
+          "aircraft_code_in_token": "32Q",
+          "legroom": "71 ซม.",
+          "legroom_long": "71 เซนติเมตร",
+          "co2_grams_inferred": 186006,
+          "raw_amenity_flags": []
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 308000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -17,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "UO",
+          "name": "ฮ่องกงเอ็กซ์เพรส",
+          "url": "https://www.hkexpress.com/en-HK/Plan/Travel/Special-Assistance"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 4,
+      "airline_codes": [
+        "CI"
+      ],
+      "airlines": [
+        "ไชนาแอร์ไลน์"
+      ],
+      "price_thb": 11520,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "02:35",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "13:30",
+      "total_duration_min": 535,
+      "stops": 1,
+      "layovers": [
+        {
+          "duration_min": 135,
+          "airport_code": "TPE",
+          "airport_name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "city": "ไทเป",
+          "change_airport_to": null
+        }
+      ],
+      "legs": [
+        {
+          "flight_number": "CI 838",
+          "marketing_carrier_code": "CI",
+          "carrier_name": "ไชนาแอร์ไลน์",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "TPE",
+          "to_name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "depart_date": "2026-11-15",
+          "depart_time": "02:35",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "07:15",
+          "depart_iso_with_tz": "2026-11-15T02:35:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T07:15:00+08:00",
+          "duration_min": 220,
+          "aircraft": "Airbus A321neo",
+          "aircraft_code_in_token": "32Q",
+          "legroom": "79 ซม.",
+          "legroom_long": "79 เซนติเมตร",
+          "co2_grams_inferred": 233493,
+          "raw_amenity_flags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        },
+        {
+          "flight_number": "CI 100",
+          "marketing_carrier_code": "CI",
+          "carrier_name": "ไชนาแอร์ไลน์",
+          "operated_by": null,
+          "from_code": "TPE",
+          "from_name": "ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "09:30",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "13:30",
+          "depart_iso_with_tz": "2026-11-15T09:30:00+08:00",
+          "arrive_iso_with_tz": "2026-11-15T13:30:00+09:00",
+          "duration_min": 180,
+          "aircraft": "Airbus A350",
+          "aircraft_code_in_token": "359",
+          "legroom": "81 ซม.",
+          "legroom_long": "81 เซนติเมตร",
+          "co2_grams_inferred": 188090,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 422000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 14,
+        "level_code": 3,
+        "level_label": "สูงกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "CI",
+          "name": "ไชนาแอร์ไลน์",
+          "url": "https://www.china-airlines.com/sea/th/fly/prepare-for-the-fly/special-assistance/index"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 5,
+      "airline_codes": [
+        "XJ"
+      ],
+      "airlines": [
+        "แอร์เอเชีย"
+      ],
+      "price_thb": 12660,
+      "price_token_present": true,
+      "origin": "DMK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "23:55",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "08:00",
+      "total_duration_min": 365,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "XJ 600",
+          "marketing_carrier_code": "XJ",
+          "carrier_name": "แอร์เอเชีย",
+          "operated_by": null,
+          "from_code": "DMK",
+          "from_name": "ท่าอากาศยานดอนเมือง",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "23:55",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "08:00",
+          "depart_iso_with_tz": "2026-11-15T23:55:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T08:00:00+09:00",
+          "duration_min": 365,
+          "aircraft": "Airbus A330",
+          "aircraft_code_in_token": "333",
+          "legroom": "76 ซม.",
+          "legroom_long": "76 เซนติเมตร",
+          "co2_grams_inferred": 296156,
+          "raw_amenity_flags": []
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 296000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -20,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": []
+    },
+    {
+      "group": "other",
+      "rank_in_group": 6,
+      "airline_codes": [
+        "TG"
+      ],
+      "airlines": [
+        "การบินไทย"
+      ],
+      "price_thb": 15320,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "14:25",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "22:05",
+      "total_duration_min": 340,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "TG 660",
+          "marketing_carrier_code": "TG",
+          "carrier_name": "การบินไทย",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "14:25",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "22:05",
+          "depart_iso_with_tz": "2026-11-15T14:25:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T22:05:00+09:00",
+          "duration_min": 340,
+          "aircraft": "Airbus A350",
+          "aircraft_code_in_token": "359",
+          "legroom": "81 ซม.",
+          "legroom_long": "81 เซนติเมตร",
+          "co2_grams_inferred": 331262,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 331000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -11,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "TG",
+          "name": "การบินไทย",
+          "url": "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 7,
+      "airline_codes": [
+        "TG"
+      ],
+      "airlines": [
+        "การบินไทย"
+      ],
+      "price_thb": 15320,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "22:30",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "06:20",
+      "total_duration_min": 350,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "TG 640",
+          "marketing_carrier_code": "TG",
+          "carrier_name": "การบินไทย",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "22:30",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "06:20",
+          "depart_iso_with_tz": "2026-11-15T22:30:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T06:20:00+09:00",
+          "duration_min": 350,
+          "aircraft": "Airbus A350",
+          "aircraft_code_in_token": "359",
+          "legroom": "81 ซม.",
+          "legroom_long": "81 เซนติเมตร",
+          "co2_grams_inferred": 337648,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 338000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -9,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "TG",
+          "name": "การบินไทย",
+          "url": "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 8,
+      "airline_codes": [
+        "TG"
+      ],
+      "airlines": [
+        "การบินไทย"
+      ],
+      "price_thb": 15320,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "23:15",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "06:55",
+      "total_duration_min": 340,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "TG 682",
+          "marketing_carrier_code": "TG",
+          "carrier_name": "การบินไทย",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "23:15",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "06:55",
+          "depart_iso_with_tz": "2026-11-15T23:15:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T06:55:00+09:00",
+          "duration_min": 340,
+          "aircraft": "Boeing 777",
+          "aircraft_code_in_token": "77W",
+          "legroom": "81 ซม.",
+          "legroom_long": "81 เซนติเมตร",
+          "co2_grams_inferred": 401206,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 401000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 8,
+        "level_code": 3,
+        "level_label": "สูงกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "TG",
+          "name": "การบินไทย",
+          "url": "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 9,
+      "airline_codes": [
+        "TG"
+      ],
+      "airlines": [
+        "การบินไทย"
+      ],
+      "price_thb": 15320,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "23:45",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "07:40",
+      "total_duration_min": 355,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "TG 642",
+          "marketing_carrier_code": "TG",
+          "carrier_name": "การบินไทย",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "23:45",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "07:40",
+          "depart_iso_with_tz": "2026-11-15T23:45:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T07:40:00+09:00",
+          "duration_min": 355,
+          "aircraft": "Airbus A350",
+          "aircraft_code_in_token": "359",
+          "legroom": "81 ซม.",
+          "legroom_long": "81 เซนติเมตร",
+          "co2_grams_inferred": 337648,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 338000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -9,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "TG",
+          "name": "การบินไทย",
+          "url": "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 10,
+      "airline_codes": [
+        "JL"
+      ],
+      "airlines": [
+        "เจเอแอล"
+      ],
+      "price_thb": 16390,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "07:55",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "15:50",
+      "total_duration_min": 355,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "JL 708",
+          "marketing_carrier_code": "JL",
+          "carrier_name": "เจเอแอล",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "07:55",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "15:50",
+          "depart_iso_with_tz": "2026-11-15T07:55:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T15:50:00+09:00",
+          "duration_min": 355,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "788",
+          "legroom": "79 ซม.",
+          "legroom_long": "79 เซนติเมตร",
+          "co2_grams_inferred": 381088,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 381000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 3,
+        "level_code": 2,
+        "level_label": "โดยเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "JL",
+          "name": "เจเอแอล",
+          "url": "https://www.jal.co.jp/en/jalpri/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 11,
+      "airline_codes": [
+        "TG"
+      ],
+      "airlines": [
+        "การบินไทย"
+      ],
+      "price_thb": 21360,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "08:00",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "15:50",
+      "total_duration_min": 350,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "TG 676",
+          "marketing_carrier_code": "TG",
+          "carrier_name": "การบินไทย",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "08:00",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "15:50",
+          "depart_iso_with_tz": "2026-11-15T08:00:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T15:50:00+09:00",
+          "duration_min": 350,
+          "aircraft": "Boeing 777",
+          "aircraft_code_in_token": "77W",
+          "legroom": "81 ซม.",
+          "legroom_long": "81 เซนติเมตร",
+          "co2_grams_inferred": 426076,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 426000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 15,
+        "level_code": 3,
+        "level_label": "สูงกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "TG",
+          "name": "การบินไทย",
+          "url": "https://www.thaiairways.com/en/help/special_request_assistance/index.page"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 12,
+      "airline_codes": [
+        "JL"
+      ],
+      "airlines": [
+        "เจเอแอล"
+      ],
+      "price_thb": 22990,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "09:50",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "17:30",
+      "total_duration_min": 340,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "JL 32",
+          "marketing_carrier_code": "JL",
+          "carrier_name": "เจเอแอล",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "09:50",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "17:30",
+          "depart_iso_with_tz": "2026-11-15T09:50:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T17:30:00+09:00",
+          "duration_min": 340,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "789",
+          "legroom": "84 ซม.",
+          "legroom_long": "84 เซนติเมตร",
+          "co2_grams_inferred": 352915,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 353000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -5,
+        "level_code": 2,
+        "level_label": "โดยเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "JL",
+          "name": "เจเอแอล",
+          "url": "https://www.jal.co.jp/en/jalpri/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 13,
+      "airline_codes": [
+        "JL"
+      ],
+      "airlines": [
+        "เจเอแอล"
+      ],
+      "price_thb": 24990,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "22:05",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "05:45",
+      "total_duration_min": 340,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "JL 34",
+          "marketing_carrier_code": "JL",
+          "carrier_name": "เจเอแอล",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "22:05",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "05:45",
+          "depart_iso_with_tz": "2026-11-15T22:05:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T05:45:00+09:00",
+          "duration_min": 340,
+          "aircraft": "Boeing 777",
+          "aircraft_code_in_token": "773",
+          "legroom": "84 ซม.",
+          "legroom_long": "84 เซนติเมตร",
+          "co2_grams_inferred": 387174,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 387000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": 4,
+        "level_code": 2,
+        "level_label": "โดยเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "JL",
+          "name": "เจเอแอล",
+          "url": "https://www.jal.co.jp/en/jalpri/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 14,
+      "airline_codes": [
+        "NH"
+      ],
+      "airlines": [
+        "เอเอ็นเอ"
+      ],
+      "price_thb": 29745,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "14:20",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "22:10",
+      "total_duration_min": 350,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "NH 878",
+          "marketing_carrier_code": "NH",
+          "carrier_name": "เอเอ็นเอ",
+          "operated_by": "Air Japan",
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "14:20",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "22:10",
+          "depart_iso_with_tz": "2026-11-15T14:20:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T22:10:00+09:00",
+          "duration_min": 350,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "788",
+          "legroom": "79 ซม.",
+          "legroom_long": "79 เซนติเมตร",
+          "co2_grams_inferred": 312802,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 313000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -16,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "NH",
+          "name": "เอเอ็นเอ",
+          "url": "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 15,
+      "airline_codes": [
+        "NH"
+      ],
+      "airlines": [
+        "เอเอ็นเอ"
+      ],
+      "price_thb": 30245,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "00:10",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "08:05",
+      "total_duration_min": 355,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "NH 808",
+          "marketing_carrier_code": "NH",
+          "carrier_name": "เอเอ็นเอ",
+          "operated_by": "Air Japan",
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "00:10",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "08:05",
+          "depart_iso_with_tz": "2026-11-15T00:10:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T08:05:00+09:00",
+          "duration_min": 355,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "788",
+          "legroom": "79 ซม.",
+          "legroom_long": "79 เซนติเมตร",
+          "co2_grams_inferred": 318864,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 319000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -14,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "NH",
+          "name": "เอเอ็นเอ",
+          "url": "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 16,
+      "airline_codes": [
+        "NH"
+      ],
+      "airlines": [
+        "เอเอ็นเอ"
+      ],
+      "price_thb": 30245,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "07:10",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "15:05",
+      "total_duration_min": 355,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "NH 806",
+          "marketing_carrier_code": "NH",
+          "carrier_name": "เอเอ็นเอ",
+          "operated_by": "Air Japan",
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "07:10",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "15:05",
+          "depart_iso_with_tz": "2026-11-15T07:10:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T15:05:00+09:00",
+          "duration_min": 355,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "789",
+          "legroom": "86 ซม.",
+          "legroom_long": "86 เซนติเมตร",
+          "co2_grams_inferred": 332804,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 333000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -10,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "NH",
+          "name": "เอเอ็นเอ",
+          "url": "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 17,
+      "airline_codes": [
+        "NH"
+      ],
+      "airlines": [
+        "เอเอ็นเอ"
+      ],
+      "price_thb": 30745,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "09:10",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "16:55",
+      "total_duration_min": 345,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "NH 848",
+          "marketing_carrier_code": "NH",
+          "carrier_name": "เอเอ็นเอ",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "09:10",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "16:55",
+          "depart_iso_with_tz": "2026-11-15T09:10:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T16:55:00+09:00",
+          "duration_min": 345,
+          "aircraft": "Boeing 787",
+          "aircraft_code_in_token": "789",
+          "legroom": "86 ซม.",
+          "legroom_long": "86 เซนติเมตร",
+          "co2_grams_inferred": 326457,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 326000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -12,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "NH",
+          "name": "เอเอ็นเอ",
+          "url": "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 18,
+      "airline_codes": [
+        "NH"
+      ],
+      "airlines": [
+        "เอเอ็นเอ"
+      ],
+      "price_thb": 30745,
+      "price_token_present": true,
+      "origin": "BKK",
+      "destination": "HND",
+      "depart_date": "2026-11-15",
+      "depart_time": "22:25",
+      "arrive_date": "2026-11-16",
+      "arrive_time": "06:05",
+      "total_duration_min": 340,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "NH 850",
+          "marketing_carrier_code": "NH",
+          "carrier_name": "เอเอ็นเอ",
+          "operated_by": null,
+          "from_code": "BKK",
+          "from_name": "ท่าอากาศยานสุวรรณภูมิ",
+          "to_code": "HND",
+          "to_name": "ท่าอากาศยานนานาชาติโตเกียว",
+          "depart_date": "2026-11-15",
+          "depart_time": "22:25",
+          "arrive_date": "2026-11-16",
+          "arrive_time": "06:05",
+          "depart_iso_with_tz": "2026-11-15T22:25:00+07:00",
+          "arrive_iso_with_tz": "2026-11-16T06:05:00+09:00",
+          "duration_min": 340,
+          "aircraft": "Boeing 787-10",
+          "aircraft_code_in_token": "781",
+          "legroom": "86 ซม.",
+          "legroom_long": "86 เซนติเมตร",
+          "co2_grams_inferred": 308771,
+          "raw_amenity_flags": [
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            3
+          ]
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 309000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -17,
+        "level_code": 1,
+        "level_label": "ต่ำกว่าเฉลี่ย"
+      },
+      "special_assistance_links": [
+        {
+          "code": "NH",
+          "name": "เอเอ็นเอ",
+          "url": "https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/"
+        }
+      ]
+    },
+    {
+      "group": "other",
+      "rank_in_group": 19,
+      "airline_codes": [
+        "XJ"
+      ],
+      "airlines": [
+        "แอร์เอเชีย"
+      ],
+      "price_thb": 41760,
+      "price_token_present": true,
+      "origin": "DMK",
+      "destination": "NRT",
+      "depart_date": "2026-11-15",
+      "depart_time": "01:40",
+      "arrive_date": "2026-11-15",
+      "arrive_time": "09:45",
+      "total_duration_min": 365,
+      "stops": 0,
+      "layovers": [],
+      "legs": [
+        {
+          "flight_number": "XJ 602",
+          "marketing_carrier_code": "XJ",
+          "carrier_name": "แอร์เอเชีย",
+          "operated_by": null,
+          "from_code": "DMK",
+          "from_name": "ท่าอากาศยานดอนเมือง",
+          "to_code": "NRT",
+          "to_name": "ท่าอากาศยานนานาชาตินะริตะ",
+          "depart_date": "2026-11-15",
+          "depart_time": "01:40",
+          "arrive_date": "2026-11-15",
+          "arrive_time": "09:45",
+          "depart_iso_with_tz": "2026-11-15T01:40:00+07:00",
+          "arrive_iso_with_tz": "2026-11-15T09:45:00+09:00",
+          "duration_min": 365,
+          "aircraft": "Airbus A330",
+          "aircraft_code_in_token": "333",
+          "legroom": "79 ซม.",
+          "legroom_long": "79 เซนติเมตร",
+          "co2_grams_inferred": 368647,
+          "raw_amenity_flags": []
+        }
+      ],
+      "emissions": {
+        "this_flight_g": 369000,
+        "typical_for_route_g": 371000,
+        "lowest_g_inferred": 345000,
+        "pct_vs_typical": -1,
+        "level_code": 2,
+        "level_label": "โดยเฉลี่ย"
+      },
+      "special_assistance_links": []
+    }
+  ]
+}

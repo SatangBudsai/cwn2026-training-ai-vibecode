@@ -1,0 +1,14 @@
+code,qty,note
+MD-SA,20,core banking mTLS + Q-Matic + SSO Entra + ML architecture
+MD-PM,40,6 เดือน + นำร่อง 10 สาขา -> 120 สาขา
+MD-DEV-SR,45,tech lead: integration core banking / Q-Matic / slot lock
+MD-DEV,85,web + LIFF + branch console + walk-in + dashboard/Excel + audit log
+MD-UX,10,ต่อยอดหน้าจอจากงานเกษตรไทย
+MD-QA,35,UAT + retest หลัง pentest + rollout 120 สาขา
+MD-DEVOPS,15,mTLS + HA + monitoring + เก็บ audit log 2 ปี
+MD-ML,25,ต่อยอดโมเดล r03 + ข้อมูลจริง 24 เดือน + pipeline รายคืน + monitoring/rollback
+CL-M,12,hosting ปีแรก
+LIC-LINE,12,LINE OA ปีแรก
+LIC-WAF,12,WAF + DDoS ปีแรก (ธนาคารเน้นความปลอดภัย)
+LIC-APM,12,APM + log ปีแรก (SLA 99.5% / ติดตามความแม่นยำ)
+MA-STD,1,MA ปีแรก 8x5

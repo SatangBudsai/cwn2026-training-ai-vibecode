@@ -1,0 +1,86 @@
+- banner:
+  - button "เมนูหลัก":
+    - img
+  - link "Google":
+    - /url: /
+  - button "ข้ามไปที่เนื้อหาหลัก"
+  - button "ความคิดเห็นเกี่ยวกับการช่วยเหลือพิเศษ"
+  - navigation:
+    - link "สำรวจ":
+      - img
+      - text: สำรวจ
+    - link "เที่ยวบิน":
+      - img
+      - text: เที่ยวบิน
+    - link "โรงแรม":
+      - img
+      - text: โรงแรม
+    - link "ที่พักให้เช่า":
+      - img
+      - text: ที่พักให้เช่า
+  - button "เปลี่ยนธีมเว็บไซต์":
+    - img
+  - button "แอป Google"
+  - link "เข้าสู่ระบบ":
+    - /url: https://accounts.google.com/ServiceLogin?service=searchandassistant&passive=1209600&continue=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%2Fsearch%3Ftfs%3DCBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABQAFIAXABggELCP___________wGYAQI%26tfu%3DEgYIABAAGAA%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26utm_source%3Dsign_in_ogb&followup=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%2Fsearch%3Ftfs%3DCBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABQAFIAXABggELCP___________wGYAQI%26tfu%3DEgYIABAAGAA%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26utm_source%3Dsign_in_ogb&hl=th&ec=GAZAlQM
+- text: กำลังโหลดผลลัพธ์
+- search:
+  - heading "การค้นหาเที่ยวบิน" [level=1]
+  - combobox "เปลี่ยนประเภทตั๋ว เที่ยวเดียว"
+  - button "ผู้โดยสาร 2 คน":
+    - img
+    - text: "2"
+    - img
+  - combobox "เปลี่ยนชั้นโดยสาร ชั้นประหยัด"
+  - combobox "ต้นทาง": กรุงเทพมหานคร
+  - img
+  - button "สลับต้นทางกับปลายทาง":
+    - img
+  - combobox "ปลายทาง": โตเกียว
+  - img
+  - img
+  - textbox "ขาไป": อาทิตย์ 15 พ.ย.
+  - heading "ตัวกรอง" [level=2]
+  - button "ตัวกรองทั้งหมด":
+    - img
+    - text: ตัวกรองทั้งหมด
+  - button "จำนวนครั้งที่แวะพัก, ไม่ได้เลือก": จำนวนครั้งที่แวะพัก
+  - button "สายการบิน, ไม่ได้เลือก": สายการบิน
+  - button "สัมภาระ, ไม่ได้เลือก": สัมภาระ
+  - button "ราคา, ไม่ได้เลือก": ราคา
+  - button "เวลา, ไม่ได้เลือก": เวลา
+  - button "การปล่อยก๊าซ, ไม่ได้เลือก": การปล่อยก๊าซ
+  - button "สนามบินสำหรับต่อเครื่อง, ไม่ได้เลือก": สนามบินสำหรับต่อเครื่อง
+  - button "ระยะเวลา, ไม่ได้เลือก": ระยะเวลา
+- main:
+  - heading "ผลการค้นหา" [level=2]
+  - paragraph: อ๊ะ มีบางอย่างผิดพลาด
+  - paragraph:
+    - button "โหลดซ้ำ"
+- contentinfo:
+  - button "ภาษา·ไทย":
+    - img
+    - text: ภาษา·ไทย
+  - button "สถานที่ตั้ง·ไทย":
+    - img
+    - text: สถานที่ตั้ง·ไทย
+  - button "สกุลเงิน THB":
+    - img
+  - link "เกี่ยวกับ Google Travel":
+    - /url: https://about.google/?hl=th
+    - text: เกี่ยวกับ
+  - link "ความเป็นส่วนตัว":
+    - /url: https://policies.google.com/privacy?hl=th
+  - link "ข้อกำหนด":
+    - /url: https://policies.google.com/terms?hl=th
+  - link "ความคิดเห็น":
+    - /url: ./#0
+  - link "ศูนย์ช่วยเหลือ":
+    - /url: https://support.google.com/travel/?hl=th#topic=2475360
+  - paragraph:
+    - text: สกุลเงินที่แสดงอาจแตกต่างจากสกุลเงินที่ใช้ในการซื้อเที่ยวบิน
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับสกุลเงิน":
+      - /url: https://www.google.com/googlefinance/disclaimer?hl=th&gl=TH
+      - text: ดูข้อมูลเพิ่มเติม
+  - paragraph: ราคานี้เป็นราคาสุดท้ายซึ่งรวมภาษีและค่าธรรมเนียมทั้งหมดแล้ว โดยคิดรวมค่าธรรมเนียมการชำระเงินสำหรับวิธีการชำระเงินแบบทั่วไปที่ถูกที่สุด (ซึ่งอาจแตกต่างกันตามผู้ให้บริการ) ทั้งนี้ อาจมีการเรียกเก็บเงินเพิ่มเติมสำหรับการชำระเงินประเภทอื่นๆ ค่าสัมภาระ อาหาร WLAN หรือบริการเพิ่มเติมอื่นๆ ระบบจะแสดงรายละเอียดราคา ที่นั่งว่าง และการเดินทางโดยอิงตามข้อมูลล่าสุดที่ได้รับจากพาร์ทเนอร์ ข้อมูลดังกล่าวจะแสดงในผลการค้นหาภายในระยะเวลาไม่เกิน 24 ชั่วโมง และอาจมีเงื่อนไขเพิ่มเติมจากพาร์ทเนอร์ ดังนั้นโปรดตรวจสอบราคาและเงื่อนไขกับผู้ให้บริการก่อนทำการจอง
+- text: ใช้ลูกศรซ้ายหรือขวาเพื่อสลับคำแนะนำสถานที่ใกล้เคียง โหลดหน้านี้แล้ว

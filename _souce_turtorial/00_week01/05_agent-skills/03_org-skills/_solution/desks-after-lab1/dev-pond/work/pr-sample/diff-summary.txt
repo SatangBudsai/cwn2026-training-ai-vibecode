@@ -1,0 +1,8 @@
+files changed:
+  A src/modules/auth/service.ts
+  A src/app/api/auth/refresh/route.ts
+  A src/app/api/payment/webhook/route.ts
+  M .env            (เพิ่ม THAIPAY_WEBHOOK_SECRET=abc123  # ใช้ชั่วคราว)
+  M .gitignore      (ลบบรรทัด .env ออก)
+  -- ไม่มีไฟล์ใน __tests__/ หรือ tests/e2e/
+  -- ไม่มี prisma/migrations ใหม่ (แต่ PR description บอกว่า "เพิ่มคอลัมน์ family_id ใน refresh_tokens ผ่าน psql แล้ว")

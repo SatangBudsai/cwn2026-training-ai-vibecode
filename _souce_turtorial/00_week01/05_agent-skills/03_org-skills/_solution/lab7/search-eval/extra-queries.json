@@ -1,0 +1,77 @@
+[
+ {
+  "q": "สรุปยอดขายเดือนนี้เทียบเป้า แยกตามทีม",
+  "who": "cco-wit",
+  "expect": "exec:pipeline-review"
+ },
+ {
+  "q": "พรุ่งนี้เช้าต้องเข้าประชุมผู้บริหารเรื่องดีลลูกค้ารายใหญ่ที่ติดอยู่หลายตัว ฝ่ายขายบอกว่าลูกค้ารอ proposal จาก SA ส่วน SA บอกว่ารอ Product ยืนยันฟีเจอร์ ช่วยไล่ให้หน่อยว่าแต่ละดีลค้างอยู่ที่ใคร ค้างมานานแค่ไหน แล้วควรตัดสินใจอะไรก่อน",
+  "who": "cco-wit",
+  "expect": "exec:pipeline-review"
+ },
+ {
+  "q": "ช่วยทำ Q4 pipeline review ให้หน่อย เอา top 10 deals พร้อม win probability กับ risk แต่ละตัว แล้วเช็กด้วยว่า product roadmap ตรงกับที่ sales commit ลูกค้าไว้มั้ย ขอเป็น summary สั้นๆ สำหรับ present ให้ CEO",
+  "who": "cco-wit",
+  "expect": "exec:pipeline-review"
+ },
+ {
+  "q": "สรุปสถานะทุกทีมสัปดาห์นี้ ขอแค่เรื่องเสี่ยงกับงานที่ล่าช้า",
+  "who": "cto-nat",
+  "expect": "exec:tech-risk-review"
+ },
+ {
+  "q": "พรุ่งนี้เช้าผมต้องรายงานบอร์ดเรื่องระบบล่มเมื่อต้นเดือน ลูกค้าได้รับผลกระทบหลายราย แล้วตอนนี้ฝั่ง DevOps กับ Dev ก็ยังเห็นไม่ตรงกันว่าต้นเหตุอยู่ตรงไหน ช่วยรวบรวมข้อมูลจากทั้งสองทีม เรียงไทม์ไลน์ และร่างสรุปให้ผู้บริหารที่ไม่ใช่สายเทคนิคอ่านเข้าใจหน่อย",
+  "who": "cto-nat",
+  "expect": "exec:tech-risk-review"
+ },
+ {
+  "q": "ช่วย review tech budget Q1 ของ Dev, QA, DevOps, ML แล้วเทียบกับ headcount plan และ cloud cost ปัจจุบันให้หน่อย อยากรู้ว่าตรงไหน over budget บ้าง พร้อม recommend ว่าควร cut หรือ reallocate ตรงไหนก่อน prepare slide คุยกับ CFO",
+  "who": "cto-nat",
+  "expect": "exec:tech-risk-review"
+ },
+ {
+  "q": "สรุปงบการเงินเดือนล่าสุดให้หน่อย",
+  "who": "cfo-ying",
+  "expect": "exec:cost-headcount-review"
+ },
+ {
+  "q": "ใกล้ปิดงบสิ้นเดือนแล้ว ฝ่ายบัญชียังตามเอกสารเบิกค่าใช้จ่ายของหลายทีมไม่ครบ แล้วพรุ่งนี้เช้าพี่ต้องรายงาน CEO ด้วย ช่วยดูหน่อยว่ายังค้างรายการไหน ทีมอะไรบ้าง ยอดรวมเท่าไหร่ แล้วร่างข้อความตามงานให้แต่ละทีมด้วย",
+  "who": "cfo-ying",
+  "expect": "exec:cost-headcount-review"
+ },
+ {
+  "q": "ช่วยทำ headcount report ของ Q4 แยกตาม team หน่อย เทียบ actual กับ budget ด้วย ถ้า payroll cost ทีมไหน over budget เกิน 5% ให้ highlight แล้วสรุปเป็น key points สั้นๆ สำหรับ present ใน exec meeting",
+  "who": "cfo-ying",
+  "expect": "exec:cost-headcount-review"
+ },
+ {
+  "q": "สรุป feature request เดือนนี้ เรียงตามความสำคัญ",
+  "who": "pm-beam",
+  "expect": "product:prd-writer"
+ },
+ {
+  "q": "ไตรมาสหน้าทีม dev มีคนจำกัด แต่ฝ่ายขายขอฟีเจอร์ใหม่มาเยอะมาก ส่วนลูกค้าเดิมก็บ่นเรื่องระบบช้าและบั๊กที่ค้างอยู่ ช่วยจัดลำดับสิ่งที่ควรทำก่อนหลังให้หน่อย พร้อมเหตุผลที่เอาไปคุยกับผู้บริหารและทีมขายได้",
+  "who": "pm-beam",
+  "expect": "product:prd-writer"
+ },
+ {
+  "q": "ช่วย draft product roadmap Q1 ให้หน่อย แยกเป็น now/next/later พร้อม key milestones กับ success metrics ของแต่ละ initiative จะเอาไป present ให้ leadership สัปดาห์หน้า",
+  "who": "pm-beam",
+  "expect": "product:prd-writer"
+ },
+ {
+  "q": "สรุป feedback ลูกค้าเดือนนี้ให้หน่อย แยกตามฟีเจอร์",
+  "who": "pm-gift",
+  "expect": "product:product-sunset"
+ },
+ {
+  "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+  "who": "pm-gift",
+  "expect": "product:product-sunset"
+ },
+ {
+  "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+  "who": "pm-gift",
+  "expect": "product:product-sunset"
+ }
+]

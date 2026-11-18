@@ -1,0 +1,32 @@
+name: skythai-pipe2
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: skythai
+      POSTGRES_PASSWORD: skythai
+      POSTGRES_DB: skythai
+      TZ: Asia/Bangkok
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skythai -d skythai"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgres://skythai:skythai@db:5432/skythai
+    ports:
+      - "5092:5092"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  dbdata:

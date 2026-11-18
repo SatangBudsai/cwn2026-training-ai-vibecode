@@ -1,0 +1,58 @@
+#!/bin/bash
+# คำสั่ง yolo1..5 / cyolo1..5 เป็น symlink มาที่ไฟล์นี้ แล้วแยกบัญชีจากชื่อคำสั่ง
+# ใช้ CLAUDE_CONFIG_DIR / CODEX_HOME เท่านั้น ไม่เปลี่ยน $HOME และไม่พิมพ์ secret
+
+LIB_DIR=/usr/local/lib/multi-account
+source "$LIB_DIR/common.sh"
+
+name="$(basename "$0")"
+case "$name" in
+    yolo[1-5])  root="$CLAUDE_ROOT" ;;
+    cyolo[1-5]) root="$CODEX_ROOT" ;;
+    *)
+        echo "account-wrapper: ไม่รู้จักคำสั่ง '$name' (ใช้ yolo1..5 หรือ cyolo1..5)" >&2
+        exit 2
+        ;;
+esac
+
+account_dir="$root/$name"
+if [ ! -d "$account_dir" ]; then
+    echo "$name: ไม่พบโฟลเดอร์บัญชี $account_dir" >&2
+    echo "$name: รัน multi-account-install เพื่อสร้าง (ไม่ทับของเดิม)" >&2
+    exit 3
+fi
+
+link_shared_skills "$root" "$name"
+mcp_file="$root/shared/mcp/mcp.json"
+
+case "$name" in
+    yolo*)
+        export CLAUDE_CONFIG_DIR="$account_dir"
+        # Claude Code ไม่ยอมรัน --dangerously-skip-permissions ด้วย root ถ้าไม่ตั้งค่านี้
+        if [ "$(id -u)" -eq 0 ]; then
+            export IS_SANDBOX=1
+        fi
+        args=(--dangerously-skip-permissions)
+        # ต้องมี = เพราะ --mcp-config รับได้หลายค่า ไม่งั้นจะกิน prompt ที่ตามมาเป็น config ไปด้วย
+        if [ -f "$mcp_file" ]; then
+            args+=("--mcp-config=$mcp_file")
+        fi
+        exec claude "${args[@]}" "$@"
+        ;;
+    cyolo*)
+        export CODEX_HOME="$account_dir"
+        args=(--dangerously-bypass-approvals-and-sandbox -c 'cli_auth_credentials_store="file"')
+        if [ -f "$mcp_file" ]; then
+            if ! overrides="$(python3 -I "$LIB_DIR/mcp-to-codex.py" "$mcp_file")"; then
+                echo "$name: อ่าน $mcp_file ไม่ได้ แก้ไฟล์ให้เป็น JSON รูปแบบ {\"mcpServers\":{...}} ก่อน" >&2
+                exit 4
+            fi
+            while IFS= read -r line; do
+                if [ -n "$line" ]; then
+                    args+=(-c "$line")
+                fi
+            done <<<"$overrides"
+        fi
+        exec codex "${args[@]}" "$@"
+        ;;
+esac

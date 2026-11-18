@@ -1,0 +1,244 @@
+{
+  "id": "TC-GIFT-10",
+  "checks": [
+    {
+      "n": 1,
+      "label": "LINE ฿2,000 ข้อความจำลองบอกมูลค่า ลาย และวันหมดอายุ",
+      "pass": true,
+      "actual": "ข้อความจำลอง ไม่ได้ส่งออกจริง: Gift Card มูลค่า ฿2,000 ลายบัว ส่งทาง LINE รหัส GIFT-AX7DPC5TEX หมดอายุ 15 มิ.ย. 2027",
+      "shot": "shots/chromium/TC-GIFT-10/001.jpg",
+      "actor": "main",
+      "t": 3675
+    },
+    {
+      "n": 2,
+      "label": "LINE ฿2,000 ไม่มี request ออกนอกเว็บไป LINE หรือ email",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-GIFT-10/002.jpg",
+      "actor": "main",
+      "t": 4642
+    },
+    {
+      "n": 3,
+      "label": "LINE ฿2,000 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-AX7DPC5TEX",
+      "shot": "shots/chromium/TC-GIFT-10/003.jpg",
+      "actor": "main",
+      "t": 5625
+    },
+    {
+      "n": 4,
+      "label": "LINE ยอด ฿2,000 (ทันที)",
+      "pass": true,
+      "actual": "฿2,000",
+      "shot": "shots/chromium/TC-GIFT-10/004.jpg",
+      "actor": "main",
+      "t": 8306
+    },
+    {
+      "n": 5,
+      "label": "LINE ใช้ได้ทันที (ทันที)",
+      "pass": true,
+      "actual": "ใช้งานได้",
+      "shot": "shots/chromium/TC-GIFT-10/005.jpg",
+      "actor": "main",
+      "t": 9305
+    },
+    {
+      "n": 6,
+      "label": "LINE หมดอายุ 15 มิ.ย. 2027 (ทันที)",
+      "pass": true,
+      "actual": "15 มิ.ย. 2027",
+      "shot": "shots/chromium/TC-GIFT-10/006.jpg",
+      "actor": "main",
+      "t": 10291
+    },
+    {
+      "n": 7,
+      "label": "LINE ยอด ฿2,000 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "฿2,000",
+      "shot": "shots/chromium/TC-GIFT-10/007.jpg",
+      "actor": "main",
+      "t": 12988
+    },
+    {
+      "n": 8,
+      "label": "LINE ใช้ได้ทันที (หลังรีโหลด)",
+      "pass": true,
+      "actual": "ใช้งานได้",
+      "shot": "shots/chromium/TC-GIFT-10/008.jpg",
+      "actor": "main",
+      "t": 13975
+    },
+    {
+      "n": 9,
+      "label": "LINE หมดอายุ 15 มิ.ย. 2027 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "15 มิ.ย. 2027",
+      "shot": "shots/chromium/TC-GIFT-10/009.jpg",
+      "actor": "main",
+      "t": 14976
+    },
+    {
+      "n": 10,
+      "label": "email ฿1,000 ข้อความจำลองบอกมูลค่า ลาย และวันหมดอายุ",
+      "pass": true,
+      "actual": "ข้อความจำลอง ไม่ได้ส่งออกจริง: Gift Card มูลค่า ฿1,000 ลายทอง ส่งทาง email รหัส GIFT-PZY8B4WDWN หมดอายุ 15 มิ.ย. 2027",
+      "shot": "shots/chromium/TC-GIFT-10/010.jpg",
+      "actor": "main",
+      "t": 17742
+    },
+    {
+      "n": 11,
+      "label": "email ฿1,000 ไม่มี request ออกนอกเว็บไป LINE หรือ email",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-GIFT-10/011.jpg",
+      "actor": "main",
+      "t": 18709
+    },
+    {
+      "n": 12,
+      "label": "email ฿1,000 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-PZY8B4WDWN",
+      "shot": "shots/chromium/TC-GIFT-10/012.jpg",
+      "actor": "main",
+      "t": 19692
+    },
+    {
+      "n": 13,
+      "label": "email ยอด ฿1,000 (ทันที)",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-GIFT-10/013.jpg",
+      "actor": "main",
+      "t": 22375
+    },
+    {
+      "n": 14,
+      "label": "email ใช้ได้ทันที (ทันที)",
+      "pass": true,
+      "actual": "ใช้งานได้",
+      "shot": "shots/chromium/TC-GIFT-10/014.jpg",
+      "actor": "main",
+      "t": 23358
+    },
+    {
+      "n": 15,
+      "label": "email หมดอายุ 15 มิ.ย. 2027 (ทันที)",
+      "pass": true,
+      "actual": "15 มิ.ย. 2027",
+      "shot": "shots/chromium/TC-GIFT-10/015.jpg",
+      "actor": "main",
+      "t": 24357
+    },
+    {
+      "n": 16,
+      "label": "email ยอด ฿1,000 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-GIFT-10/016.jpg",
+      "actor": "main",
+      "t": 27055
+    },
+    {
+      "n": 17,
+      "label": "email ใช้ได้ทันที (หลังรีโหลด)",
+      "pass": true,
+      "actual": "ใช้งานได้",
+      "shot": "shots/chromium/TC-GIFT-10/017.jpg",
+      "actor": "main",
+      "t": 28056
+    },
+    {
+      "n": 18,
+      "label": "email หมดอายุ 15 มิ.ย. 2027 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "15 มิ.ย. 2027",
+      "shot": "shots/chromium/TC-GIFT-10/018.jpg",
+      "actor": "main",
+      "t": 29026
+    },
+    {
+      "n": 19,
+      "label": "หน้าซื้อบัตรไม่มีช่องจ่ายด้วยบัตร",
+      "pass": true,
+      "actual": "1 เลือกลาย กล้วยไม้ บัว ทอง 2 กำหนดมูลค่า มูลค่า (บาท) จำนวนเต็ม ฿500–฿10,000 ทีละ ฿1 ฿500 ฿1,000 ฿2,000 ฿5,000 ฿10,000 3 ส่งถึงผู้รับ LINE Email LINE ID ผู้รับ ข้อความถึงผู้รับ การส่งเป็นแบบจำลอง ข้อความจะแสดงในเว็บนี้เท่านั้น ไม่ส่งออกจริง 4 ชำระเงินจำลอง ยอดชำระจำลอง ฿ — นี่คือการจ่ายจำลอง ไม่มีการตัดเงินจริง บัตรเปิดใช้ทันที · ซื้อด้วย Gift Card ไม่ได้ จ่ายจำลองและเปิดใช้บัตร",
+      "shot": "shots/chromium/TC-GIFT-10/019.jpg",
+      "actor": "main",
+      "t": 30638
+    },
+    {
+      "n": 20,
+      "label": "หน้าซื้อคอร์สไม่มีช่องจ่ายด้วยบัตร",
+      "pass": true,
+      "actual": "ซื้อคอร์สใหม่ คอร์สกระชับสัดส่วน 10 แถม 1 ฿15,000 11 ครั้ง อายุ 180 วัน ไม่มีส่วนลด เปิดใช้ทันที เป็นการจ่ายจำลอง ไม่มีการเก็บเงินจริง ยืนยันการซื้อคอร์ส ฿15,000 เป็นการจ่ายจำลอง คอร์สเปิดใช้ทันที 11 ครั้ง อายุ 180 วัน ไม่มีส่วนลด ยืนยันซื้อคอร์ส ยังไม่ซื้อ",
+      "shot": "shots/chromium/TC-GIFT-10/020.jpg",
+      "actor": "main",
+      "t": 32923
+    },
+    {
+      "n": 21,
+      "label": "ยิงพร้อม GIFT-ACTIVE ไม่เกิด error ฝั่งเซิร์ฟเวอร์",
+      "pass": true,
+      "actual": "201",
+      "shot": "shots/chromium/TC-GIFT-10/021.jpg",
+      "actor": "main",
+      "t": 33889
+    },
+    {
+      "n": 22,
+      "label": "GIFT-ACTIVE ยัง ฿2,000",
+      "pass": true,
+      "actual": "฿2,000",
+      "shot": "shots/chromium/TC-GIFT-10/022.jpg",
+      "actor": "main",
+      "t": 36572
+    },
+    {
+      "n": 23,
+      "label": "U03 ยอดสะสม ฿9,999 (ทันที)",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-10/023.jpg",
+      "actor": "main",
+      "t": 38071
+    },
+    {
+      "n": 24,
+      "label": "U03 ระดับ Silver (ทันที)",
+      "pass": true,
+      "actual": "Silver",
+      "shot": "shots/chromium/TC-GIFT-10/024.jpg",
+      "actor": "main",
+      "t": 39054
+    },
+    {
+      "n": 25,
+      "label": "U03 ยอดสะสม ฿9,999 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-10/025.jpg",
+      "actor": "main",
+      "t": 40557
+    },
+    {
+      "n": 26,
+      "label": "U03 ระดับ Silver (หลังรีโหลด)",
+      "pass": true,
+      "actual": "Silver",
+      "shot": "shots/chromium/TC-GIFT-10/026.jpg",
+      "actor": "main",
+      "t": 41538
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GIFT-10/main.webm"
+    }
+  }
+}

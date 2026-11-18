@@ -1,0 +1,6 @@
+ใน container multi-account-devtool ที่ /workspace/arena6 ช่วยตรวจผลทั้งบทด้วยตัวเอง (ไม่เชื่อตัวเลขที่ agent รายงาน)
+1. build แอปจาก tag s1-loop1 ของ app/ ที่พอร์ต 5094 ชั่วคราว แล้ววัด 3 แอปด้วย kit/measure.sh ตัวเดียวกันทีละแอป: Loop 1 (5094) · หลังล็อกโครงสร้าง (5095) · v6 (5096) เก็บผลที่ /workspace/arena6/final/<ชื่อ>
+2. ตรวจตัวกันทั้ง 3 แอปด้วยตัวตรวจใน loop/pixel/ และตรวจ hash โครงสร้างของ 5095 กับ 5096 ด้วย loop/aria-lock.mjs
+3. ตรวจการแบ่งขอบเขต: loop/scope-check.sh stage1 pixel-freeze ที่ tag structure-lock และ loop/scope-check.sh stage2 structure-lock ที่ HEAD ของ app-s2 พร้อม git diff --stat ของแต่ละขั้น
+4. ทำ GIF เทียบ หน้าแอป | ภาพ diff สีแดง ของ 3 แอป ค้างภาพละ 3 วินาที
+ตอบเป็นตาราง: แอป | acceptance | differential | โครงสร้าง% | visual diff% | เที่ยวบิน | Score | gate | hash โครงสร้าง | ตัวกัน แล้วปิดแอปที่พอร์ต 5094

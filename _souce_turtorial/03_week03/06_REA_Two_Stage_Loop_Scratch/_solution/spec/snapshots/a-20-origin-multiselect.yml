@@ -1,0 +1,11 @@
+# 20-origin-multiselect @ 2026-11-01 17:10:06 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- dialog "ป้อนต้นทาง":
+  - listbox:
+    - option "กรุงเทพมหานคร"
+    - button "ลบ":
+      - img
+    - combobox "มีต้นทางอื่นอีกไหม" [expanded]
+  - img
+  - button "เสร็จ":
+    - img

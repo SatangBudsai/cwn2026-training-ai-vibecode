@@ -1,0 +1,20 @@
+# เมื่อ merge เข้า main: ออก tag เวอร์ชันและเขียน CHANGELOG.md
+# push ด้วย deploy key ที่เขียนได้ใน secret RELEASE_DEPLOY_KEY เพราะ token อัตโนมัติของ Actions push เข้า branch ที่ป้องกันไม่ได้ (pre-receive ตอบ Internal Server Error)
+# นี่เป็น secret เดียวที่ CI ใช้ และไม่ใช่ token ของ AI · main ยอมให้ push ตรงเฉพาะ commit ที่แก้ CHANGELOG.md อย่างเดียว · วิธีหมุนกุญแจดู README
+name: release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ssh-key: ${{ secrets.RELEASE_DEPLOY_KEY }}
+          # host key ของ gitea จากในเครือข่าย runner ไม่ใช่ความลับ · ถ้า server เปลี่ยน host key ต้องแก้บรรทัดนี้
+          ssh-known-hosts: gitea ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPDQuoLlA/gbeEa2XxMx567ncsiMlCc8QWUO4Cgmyrf
+      - name: tag และ CHANGELOG
+        run: python3 scripts/release.py

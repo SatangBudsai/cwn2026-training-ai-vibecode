@@ -1,0 +1,358 @@
+{
+ "start": {
+  "--font-family": "\"Garuda\", \"Loma\", sans-serif",
+  "--space-6": "27px",
+  "--space-8": "48px",
+  "--space-3": "11px",
+  "--font-size-md": "17px",
+  "--font-size-lg": "17px",
+  "--font-size-xl": "17px",
+  "--font-size-xs": "12px",
+  "--font-weight-medium": "400",
+  "--color-primary": "#1a6ddf"
+ },
+ "passes": 1,
+ "vars": [
+  {
+   "name": "--list-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border)"
+   ]
+  },
+  {
+   "name": "--row-divider",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-divider)"
+   ]
+  },
+  {
+   "name": "--tabs-height",
+   "kind": "px",
+   "step": 4,
+   "min": 40,
+   "max": 80
+  },
+  {
+   "name": "--tabs-margin-top",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 32
+  },
+  {
+   "name": "--row-min-height",
+   "kind": "px",
+   "step": 4,
+   "min": 60,
+   "max": 110
+  },
+  {
+   "name": "--row-padding-y",
+   "kind": "px",
+   "step": 2,
+   "min": 0,
+   "max": 24
+  },
+  {
+   "name": "--row-padding-x",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 40
+  },
+  {
+   "name": "--list-heading-margin",
+   "kind": "choice",
+   "choices": [
+    "var(--space-4) 0 var(--space-1)",
+    "var(--space-3) 0 var(--space-1)",
+    "var(--space-2) 0 0",
+    "var(--space-5) 0 var(--space-2)"
+   ]
+  },
+  {
+   "name": "--list-heading-size",
+   "kind": "px",
+   "step": 1,
+   "min": 14,
+   "max": 26
+  },
+  {
+   "name": "--col-logo-width",
+   "kind": "px",
+   "step": 4,
+   "min": 30,
+   "max": 100
+  },
+  {
+   "name": "--col-times-width",
+   "kind": "px",
+   "step": 8,
+   "min": 150,
+   "max": 320
+  },
+  {
+   "name": "--col-duration-width",
+   "kind": "px",
+   "step": 8,
+   "min": 100,
+   "max": 220
+  },
+  {
+   "name": "--col-stops-width",
+   "kind": "px",
+   "step": 8,
+   "min": 100,
+   "max": 200
+  },
+  {
+   "name": "--col-co2-width",
+   "kind": "px",
+   "step": 8,
+   "min": 100,
+   "max": 220
+  },
+  {
+   "name": "--col-price-width",
+   "kind": "px",
+   "step": 8,
+   "min": 80,
+   "max": 180
+  },
+  {
+   "name": "--row-time-size",
+   "kind": "px",
+   "step": 1,
+   "min": 13,
+   "max": 22
+  },
+  {
+   "name": "--price-size",
+   "kind": "px",
+   "step": 1,
+   "min": 13,
+   "max": 22
+  },
+  {
+   "name": "--row-sub-size",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 18
+  },
+  {
+   "name": "--form-field-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border-strong)"
+   ]
+  },
+  {
+   "name": "--form-shadow",
+   "kind": "choice",
+   "choices": [
+    "none",
+    "0 1px 3px rgba(60, 64, 67, 0.3)",
+    "var(--shadow-raised)"
+   ]
+  },
+  {
+   "name": "--form-field-height",
+   "kind": "px",
+   "step": 4,
+   "min": 40,
+   "max": 64
+  },
+  {
+   "name": "--form-options-height",
+   "kind": "px",
+   "step": 4,
+   "min": 28,
+   "max": 48
+  },
+  {
+   "name": "--form-margin-top",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 40
+  },
+  {
+   "name": "--form-field-padding-x",
+   "kind": "px",
+   "step": 4,
+   "min": 4,
+   "max": 32
+  },
+  {
+   "name": "--form-field-font-size",
+   "kind": "px",
+   "step": 1,
+   "min": 13,
+   "max": 20
+  },
+  {
+   "name": "--form-padding",
+   "kind": "choice",
+   "choices": [
+    "var(--space-2) var(--space-4) var(--space-12)",
+    "var(--space-2) var(--space-4) var(--space-4)",
+    "var(--space-1) 0 var(--space-2)",
+    "var(--space-2) 0 var(--space-6)"
+   ]
+  },
+  {
+   "name": "--chip-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border-strong)"
+   ]
+  },
+  {
+   "name": "--chips-margin-top",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 32
+  },
+  {
+   "name": "--chip-height",
+   "kind": "px",
+   "step": 2,
+   "min": 24,
+   "max": 40
+  },
+  {
+   "name": "--chip-padding-x",
+   "kind": "px",
+   "step": 2,
+   "min": 4,
+   "max": 20
+  },
+  {
+   "name": "--chips-gap",
+   "kind": "px",
+   "step": 2,
+   "min": 0,
+   "max": 16
+  },
+  {
+   "name": "--chip-font-size",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 16
+  },
+  {
+   "name": "--header-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border)"
+   ]
+  },
+  {
+   "name": "--header-height",
+   "kind": "px",
+   "step": 4,
+   "min": 48,
+   "max": 80
+  },
+  {
+   "name": "--header-padding-x",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 40
+  },
+  {
+   "name": "--header-nav-font-size",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 18
+  },
+  {
+   "name": "--list-note-size",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 16
+  },
+  {
+   "name": "--sort-font-size",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 16
+  },
+  {
+   "name": "--page-max-width",
+   "kind": "px",
+   "step": 8,
+   "min": 960,
+   "max": 1100
+  },
+  {
+   "name": "--page-gutter",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 40
+  },
+  {
+   "name": "--insights-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border)"
+   ]
+  },
+  {
+   "name": "--tool-button-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border)"
+   ]
+  },
+  {
+   "name": "--chip-selected-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-bg-selected)",
+    "var(--color-bg-selected)"
+   ]
+  },
+  {
+   "name": "--footer-border",
+   "kind": "choice",
+   "choices": [
+    "1px solid var(--color-border)",
+    "1px solid var(--color-border-strong)",
+    "1px solid var(--color-divider)",
+    "var(--color-border)"
+   ]
+  }
+ ]
+}

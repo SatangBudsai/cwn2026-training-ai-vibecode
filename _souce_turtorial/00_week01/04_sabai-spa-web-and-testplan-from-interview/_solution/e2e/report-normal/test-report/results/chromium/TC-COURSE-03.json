@@ -1,0 +1,77 @@
+{
+  "id": "TC-COURSE-03",
+  "title": "TC-COURSE-03 ซื้อคอร์ส K01 ราคาเท่ากันทุกระดับ ได้ 11 ครั้ง ยอดสะสมไม่เพิ่ม และวันหมดอายุนับวันซื้อเป็นวันที่ 0",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ราคาและยอดสะสมหลังซื้อ:\nU01: ฿15,000 · ยอด ฿12,400 + ฿0 = ฿12,400 ยัง Gold (ถ้าบวกจะได้ ฿27,400)\nU03: ฿15,000 − 0% = ฿15,000 · ยอด ฿9,999 ยัง Silver (ถ้าบวกจะได้ ฿24,999 เป็น Gold)\nU05: ฿15,000 − 0% = ฿15,000 · ยอด ฿29,999 ยัง Gold (ถ้าลด 5% จะได้ ฿14,250 · ถ้าบวกยอดจะได้ ฿44,999 เป็น Platinum)\nU02: ฿15,000 − 0% = ฿15,000 · ยอด ฿30,000 ยัง Platinum (ถ้าลด 10% จะได้ ฿13,500)\nทุกบัญชี: คอร์สใหม่ \"เหลือ 11 ครั้ง จาก 11 ครั้ง\" (10 + แถม 1) · หมดอายุ 12 ธ.ค. 2026 (15 มิ.ย. 2026 + 180 วัน · ถ้านับวันซื้อเป็นวันที่ 1 จะได้ 11 ธ.ค.)\nU01: C01 ยังเป็น \"เหลือ 7 ครั้ง จาก 11 ครั้ง\" แยกจากคอร์สใหม่ (ถ้ารวมกันจะเห็น 18 จาก 22)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 362,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 แต้มและระดับ · [D] §1 · [R] ⚠️A-27 · [R] ⚠️A-30",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 362,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-30, FR-37, BR-23, BR-45, BR-46",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 362,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R37, R78",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 362,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Boundary, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 362,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 362,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 67348,
+  "at": "2026-11-06T02:20:10.856Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1-3. U01 อ่านราคา กดยืนยันซื้อ เปิด Wallet และหน้าบัญชี แล้วรีโหลด",
+    "4. ทำซ้ำกับ U03",
+    "4. ทำซ้ำกับ U05",
+    "4. ทำซ้ำกับ U02"
+  ]
+}

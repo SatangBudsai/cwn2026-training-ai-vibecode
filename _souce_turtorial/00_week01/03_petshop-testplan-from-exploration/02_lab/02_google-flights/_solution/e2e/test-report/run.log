@@ -1,0 +1,2572 @@
+npm notice run gf-e2e@1.0.0 npx
+npm notice run playwright test
+
+Running 38 tests using 1 worker
+
+(node:115008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   1 [chromium] › tests\5.1-search-form.spec.ts:437:5 › TC-SRCH-01 · Happy path กรอกฟอร์มโจทย์ลูกค้า @P1 @5.1 (1.4m)
+(node:60940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  2 [chromium] › tests\5.1-search-form.spec.ts:564:5 › TC-SRCH-02 · เปลี่ยนไป-กลับ → เที่ยวเดียวในปฏิทิน @P1 @5.1 (1.4m)
+  ok  3 [chromium] › tests\5.1-search-form.spec.ts:657:5 › TC-SRCH-03 · เลื่อนเดือนในปฏิทินและวันสุดท้าย @P1 @5.1 (2.1m)
+  ok  4 [chromium] › tests\5.1-search-form.spec.ts:790:5 › TC-SRCH-04 · ป๊อปอัปผู้โดยสาร @P1 @5.1 (3.3m)
+  ok  5 [chromium] › tests\5.1-search-form.spec.ts:942:5 › TC-SRCH-05 · รายการแนะนำต้นทาง/ปลายทาง @P1 @5.1 (2.9m)
+  ok  6 [chromium] › tests\5.1-search-form.spec.ts:1107:5 › TC-SRCH-06 · หน้าผลลัพธ์ค้นหาใหม่อัตโนมัติ @P1 @5.1 (1.8m)
+  ok  7 [chromium] › tests\5.1-search-form.spec.ts:1209:5 › TC-SRCH-07 · ขอบ "วันนี้" ในปฏิทินและปุ่ม < @P1 @5.1 (1.5m)
+  x   8 [chromium] › tests\5.1-search-form.spec.ts:1321:5 › TC-SRCH-08 · ⚠️ ฟอร์มยอมค่าที่ควรเตือน @P1 @5.1 @known-defect (3.1m)
+(node:89632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   9 [chromium] › tests\5.1-search-form.spec.ts:1450:5 › TC-SRCH-09 · ⚠️ ไม่พบผลจากเงื่อนไขค้นหา @P1 @5.1 @known-defect (2.2m)
+(node:124480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  10 [chromium] › tests\5.1-search-form.spec.ts:1552:5 › TC-SRCH-10 · ⚠️ ค้นหาวันนี้ @P1 @5.1 @known-defect (1.8m)
+(node:117000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 11 [chromium] › tests\5.2-results-ranking.spec.ts:447:5 › TC-RES-01 · เวลาออก–ถึง และ +N ทุกแถว @P1 @5.2 (1.5m)
+  ok 12 [chromium] › tests\5.2-results-ranking.spec.ts:551:5 › TC-RES-02 · แท็บดีที่สุด ราคาบนแท็บ ⓘ และข้อความเงื่อนไขราคา @P2 @5.2 (1.1m)
+  ok 13 [chromium] › tests\5.2-results-ranking.spec.ts:676:5 › TC-RES-03 · เรียงตามราคา และเวลาออกเดินทาง @P2 @5.2 (1.2m)
+  ok 14 [chromium] › tests\5.2-results-ranking.spec.ts:755:5 › TC-RES-04 · เรียงตามเวลาถึง / ระยะเวลา และดูเพิ่มคงการเรียง @P2 @5.2 (1.7m)
+  ok 15 [chromium] › tests\5.2-results-ranking.spec.ts:843:5 › TC-RES-05 · ป้ายเตือนแวะนาน / เปลี่ยนสนามบิน / ข้ามคืน @P2 @5.2 (1.6m)
+  x  16 [chromium] › tests\5.2-results-ranking.spec.ts:987:5 › TC-RES-06 · ⚠️ แท็บถูกที่สุด + ข้อความจำนวนผล + สับเซตหลังเพิ่มตัวกรอง @P2 @5.2 @known-defect (2.4m)
+(node:124104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  17 [chromium] › tests\5.2-results-ranking.spec.ts:1092:5 › TC-RES-07 · ⚠️ ข้อมูลกระเป๋าในแถว + เตือนแวะนานในหน้า booking @P2 @5.2 @known-defect (1.2m)
+(node:106148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 18 [chromium] › tests\5.3-filters.spec.ts:317:5 › TC-FLT-01 · บินตรงเท่านั้น + กระเป๋าถือ 1 ใบ + "ล้าง" ในป๊อปอัป @P1 @5.3 (2.0m)
+  x  19 [chromium] › tests\5.3-filters.spec.ts:494:5 › TC-FLT-02 · ⚠️ ชั้นโดยสารปนเมื่อกรองสายการบิน + ตัวกรองสัมภาระ @P1 @5.3 @known-defect (58.8s)
+(node:51696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  20 [chromium] › tests\5.3-filters.spec.ts:594:5 › TC-FLT-03 · สายการบิน "เท่านั้น" รวม codeshare + ✕ บนชิป @P2 @5.3 (22.8s)
+(node:81352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 21 [chromium] › tests\5.3-filters.spec.ts:725:5 › TC-FLT-04 · ราคาสูงสุด + การปล่อยก๊าซต่ำเท่านั้น + "ล้างทั้งหมด" ในแผง @P2 @5.3 (1.6m)
+  x  22 [chromium] › tests\5.3-filters.spec.ts:867:5 › TC-FLT-05 · เวลาถึง / เวลาออก ตามเวลาท้องถิ่น จนไม่พบผล @P2 @5.3 (1.4m)
+(node:87548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  23 [chromium] › tests\5.3-filters.spec.ts:994:5 › TC-FLT-06 · ตัวเลือกแวะพัก + ตัดสนามบินต่อเครื่อง + slider ระยะเวลา @P2 @5.3 (1.3m)
+(node:112652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  24 [chromium] › tests\5.3-filters.spec.ts:1143:5 › TC-FLT-07 · ⚠️ ตั๋วแยก · slider ราคา · แถวไม่มีราคา · ชิปเวลา · ขอบ 08:00 · สับเซตเทียบชุดแรก @P2 @5.3 @known-defect (1.5m)
+(node:83572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  25 [chromium] › tests\5.4-price-date-tools.spec.ts:393:5 › TC-PRC-01 · ข้อมูลเชิงลึกด้านราคาและสวิตช์ติดตามราคา (ก่อนล็อกอิน) @P2 @5.4 (4.4m)
+(node:83532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  26 [chromium] › tests\5.4-price-date-tools.spec.ts:534:5 › TC-PRC-02 · ตารางวันที่และกราฟราคา: ราคา ไฮไลต์ ✦ ยกเลิก/ตกลง @P2 @5.4 (1.5m)
+(node:86360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  27 [chromium] › tests\5.4-price-date-tools.spec.ts:771:5 › TC-PRC-03 · ⚠️ การ์ดวันที่ถูกกว่า: ขึ้นสม่ำเสมอ และ "เปลี่ยนวันที่" พาไปวันที่แนะนำ @P2 @5.4 @known-defect (1.7m)
+(node:66020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  28 [chromium] › tests\5.4-price-date-tools.spec.ts:940:5 › TC-PRC-04 · ราคาบนการ์ดวันที่ถูกกว่า ป้าย "สูง" และช่วงราคาปกติ @P2 @5.4 (1.5m)
+(node:110604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  29 [chromium] › tests\5.5-booking.spec.ts:464:5 › TC-BKG-01 · เลือกด้วยปุ่ม "เลือกเที่ยวบิน" + คัดลอก UB + เปิดซ้ำในแท็บใหม่ @P1 @5.5 (2.0m)
+(node:87240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  30 [chromium] › tests\5.5-booking.spec.ts:633:5 › TC-BKG-02 · กดตัวแถวต่อเครื่องสายการบินเดียว + ตรวจผู้ขาย ลิงก์ออกนอก Google สัมภาระ แชร์ @P1 @5.5 (50.3s)
+(node:82408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 31 [chromium] › tests\5.5-booking.spec.ts:886:5 › TC-BKG-03 · แถว codeshare + ← / Back คืนเงื่อนไขและแท็บ @P1 @5.5 (1.6m)
+  ok 32 [chromium] › tests\5.5-booking.spec.ts:1049:5 › TC-BKG-04 · ผู้ใหญ่ 2 คนในหน้า booking: ราคา = 2 × และติดกลับหน้าผลลัพธ์ @P1 @5.5 (1.4m)
+  x  33 [chromium] › tests\5.5-booking.spec.ts:1165:5 › TC-BKG-05 · ⚠️ หลังเปลี่ยนผู้โดยสารแล้วกด Back จอต้องตรงกับ URL @P1 @5.5 @known-defect (1.6m)
+(node:117056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  34 [chromium] › tests\5.5-booking.spec.ts:1264:5 › TC-BKG-06 · ⚠️ ผู้ขายราคาถูกสุดต้องเห็นชัด · ลิงก์แชร์คงภาษา/สกุลเงิน · กลับมาที่แถวเดิม @P1 @5.5 @known-defect (1.5m)
+(node:25480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  35 [chromium] › tests\5.6-locale-home.spec.ts:431:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-01 · เปลี่ยนสกุลเงิน THB → JPY → THB และรีเฟรช @P1 @5.6 (22.5s)
+(node:60200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  36 [chromium] › tests\5.6-locale-home.spec.ts:607:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-02 · เปลี่ยนประเทศและภาษาแล้วเงื่อนไขกับสกุลเงินคงเดิม @P1 @5.6 (22.7s)
+(node:59312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  37 [chromium] › tests\5.6-locale-home.spec.ts:746:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-03 · ⚠️ ชื่อสายการบินข้ามภาษา ป้ายท้ายหน้า และการ์ดหน้าแรก @P1 @5.6 @known-defect (21.9s)
+(node:23172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  38 [chromium] › tests\5.6-locale-home.spec.ts:966:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore @P3 @5.6 (8.1s)
+
+
+  1) [chromium] › tests\5.1-search-form.spec.ts:437:5 › TC-SRCH-01 · Happy path กรอกฟอร์มโจทย์ลูกค้า @P1 @5.1 › 6. คลิกช่อง "ขาไป" พิมพ์ "15 ธ.ค. 2026" กด Enter · snapshot อ่านข้อความในช่องและ aria-label ของช่อง › ตรวจ E1 ช่องขาไปแสดง "อังคาร 15 ธ.ค." และมีปี 2026 บนจอหรือใน aria-label 
+
+    Error: บนจอไม่แสดงปี → aria-label ของช่องต้องมีปี 2026
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /2026/
+    Received string:  "ขาไป |  | ป้อนวันที่หรือใช้แป้นลูกศรเพื่อเปลี่ยนวันที่ปัจจุบัน"
+
+      498 |       await expect.soft(box, 'ช่องขาไปแสดง อังคาร 15 ธ.ค.').toHaveValue(RE_DATE15);
+      499 |       expect.soft(weekdayOfText(value), `วันในสัปดาห์ในช่อง ("${value}") ตรงกับปฏิทินจริงของ 15 ธ.ค. 2026 (${TH_WEEKDAY_FORMS[wd][0]})`).toBe(wd);
+    > 500 |       if (!/2026/.test(value)) expect.soft(aria, 'บนจอไม่แสดงปี → aria-label ของช่องต้องมีปี 2026').toMatch(/2026/);
+          |                                                                                                     ^
+      501 |     });
+      502 |   });
+      503 |
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:500:101
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:497:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:490:3
+
+    attachment #1: ตรวจ 01: E1 ช่องขาไปแสดง "อังคาร 15 ธ.ค." และมีปี 2026 บนจอหรือใน aria-label (image/png) 
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\attachments\ตรวจ-01-E1-ช่องขาไปแสดง-อังคาร-15-ธ-ค-และมีปี-2026-บนจอหรือใน-aria-label-9b7812401b53f8af78ea9da7ed777a8d302e8648.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 "เสร็จ" บนหน้าแรกแค่ปิดปฏิทิน ไม่ค้นหา ค่าทุกช่องคงเดิม (image/png) ─
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\attachments\ตรวจ-02-E2-เสร็จ-บนหน้าแรกแค่ปิดปฏิทิน-ไม่ค้นหา-ค่าทุกช่องคงเดิม-dfeded07609aacfa4d42ad84575a185e98675639.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 URL ผลค้นหาและหัวผลลัพธ์ตรงกับที่กรอก + ราคาสำหรับผู้ใหญ่ 1 ท่าน (image/png) 
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\attachments\ตรวจ-03-E3-URL-ผลค้นหาและหัวผลลัพธ์ตรงกับที่กรอก-ราคาสำหรับผู้ใหญ่-1-ท่าน-5f6b7ad9823fd0a85285ba188f3b8dddb2971db9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E4 มีแถว ≥ 1 และทุกแถวในชุดแรก ต้นทาง ∈ {BKK, DMK} ปลายทาง ∈ {HND, NRT} (image/png) 
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\attachments\ตรวจ-04-E4-มีแถว-≥-1-และทุกแถวในชุดแรก-ต้นทาง-∈-BKK-DMK-ปลายทาง-∈-HND-NRT--98c1258113e7fc4e8c67091a29914b6b1026fcaa.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E5 ชุดแรกมีปลายทางมากกว่า 1 แห่ง (พบทั้ง HND และ NRT) (image/png) ──────
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\attachments\ตรวจ-05-E5-ชุดแรกมีปลายทางมากกว่า-1-แห่ง-พบทั้ง-HND-และ-NRT--0e5a80c31b3b4b7057aa800501fa715ca638d513.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 06: E6 URL ขึ้นต้น https://www.google.com/travel/flights/search?tfs= และมี hl=th กับ curr=THB (image/png) 
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\attachments\ตรวจ-06-E6-URL-ขึ้นต้น-https-www-google-com-travel-flights-search-tfs-และมี-hl-th-กับ-curr-THB-19df4361668a413776c488088d25cf19036429d7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.1-search-form-TC-SRCH-01-·-Happy-path-กรอกฟอร์มโจทย์ลูกค้า-chromium\error-context.md
+
+  2) [chromium] › tests\5.1-search-form.spec.ts:1321:5 › TC-SRCH-08 · ⚠️ ฟอร์มยอมค่าที่ควรเตือน @P1 @5.1 @known-defect 
+
+    Error: มี "โตเกียว ญี่ปุ่น" หรือคำแนะนำ (ที่เห็น: เลือกสนามบินหลายแห่ง ไม่พบสถานที่ที่ตรงกัน)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1353 |       const hasTokyo = opts.some((o) => /^โตเกียว ญี่ปุ่น/.test(o.name));
+      1354 |       const didYouMean = /หมายถึง|Did you mean|Tokyo\s*\?/i.test(msg);
+    > 1355 |       expect.soft(hasTokyo || didYouMean, `มี "โตเกียว ญี่ปุ่น" หรือคำแนะนำ (ที่เห็น: ${listSummary(opts) || msg})`).toBe(true);
+           |                                                                                                                      ^
+      1356 |     });
+      1357 |   });
+      1358 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1355:118)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1352:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1346:3
+
+    Error: มีข้อความเตือนต้นทาง = ปลายทาง (ช่องปลายทาง "กรุงเทพมหานคร" · ปุ่ม "ค้นหา")
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1365 |     note('ขั้น 3', `ปลายทาง "${destVal}" · ปุ่มหลัก "${btn}" · ข้อความ "${msgs.slice(0, 400)}"`);
+      1366 |     await gf.check('E2 มีข้อความเตือนว่าต้นทางกับปลายทางเหมือนกัน ไม่ใช่ล้างช่องเงียบ ๆ', [f.dest, mainBtn(page)], async () => {
+    > 1367 |       expect.soft(SAME_RE.test(msgs), `มีข้อความเตือนต้นทาง = ปลายทาง (ช่องปลายทาง "${destVal}" · ปุ่ม "${btn}")`).toBe(true);
+           |                                                                                                                    ^
+      1368 |     });
+      1369 |   });
+      1370 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1367:116)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1366:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1359:3
+
+    Error: ลำดับ [{"code":"BKK","km":27},{"code":"DMK","km":20}]
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+    -   20,
+        27,
+    +   20,
+      ]
+
+      1389 |       const kms = bKm.map((x) => x.km ?? NaN);
+      1390 |       expect.soft(kms.length, 'มีแถวสนามบินใต้เมืองกรุงเทพมหานคร').toBeGreaterThan(0);
+    > 1391 |       expect.soft(kms, `ลำดับ ${JSON.stringify(bKm)}`).toEqual([...kms].sort((a, b2) => a - b2));
+           |                                                        ^
+      1392 |     });
+      1393 |     await gf.press('Escape');
+      1394 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1391:56)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1388:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1371:3
+
+    Error: สถานะปุ่ม + ที่ 9 คน (true = ยังกดได้)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 4
+    + Received  + 4
+
+      Object {
+    -   "adult": false,
+    -   "child": false,
+    -   "lap": false,
+    -   "seat": false,
+    +   "adult": true,
+    +   "child": true,
+    +   "lap": true,
+    +   "seat": true,
+      }
+
+      1409 |     }
+      1410 |     await gf.check('E4 ถึงจำนวนสูงสุดแล้ว ปุ่ม + ทุกประเภทใช้ไม่ได้ (ไม่เข้าสถานะข้อความแดงเรื่องเพดาน)', [paxDlg(page), ...kinds.map((k) => paxBtn(page, k, 'add'))], async () => {
+    > 1411 |       expect.soft(enabled9, 'สถานะปุ่ม + ที่ 9 คน (true = ยังกดได้)').toEqual({ adult: false, child: false, seat: false, lap: false });
+           |                                                                       ^
+      1412 |       expect.soft(alert10, 'กด + ได้จนเกิดข้อความแดงเรื่องเพดานจำนวนคน').toBe('');
+      1413 |     });
+      1414 |     await gf.press('Escape');
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1411:71)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1410:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1396:3
+
+    Error: กด + ได้จนเกิดข้อความแดงเรื่องเพดานจำนวนคน
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: "ขออภัย เราไม่รองรับผู้โดยสารมากกว่า 9 ท่าน"
+
+      1410 |     await gf.check('E4 ถึงจำนวนสูงสุดแล้ว ปุ่ม + ทุกประเภทใช้ไม่ได้ (ไม่เข้าสถานะข้อความแดงเรื่องเพดาน)', [paxDlg(page), ...kinds.map((k) => paxBtn(page, k, 'add'))], async () => {
+      1411 |       expect.soft(enabled9, 'สถานะปุ่ม + ที่ 9 คน (true = ยังกดได้)').toEqual({ adult: false, child: false, seat: false, lap: false });
+    > 1412 |       expect.soft(alert10, 'กด + ได้จนเกิดข้อความแดงเรื่องเพดานจำนวนคน').toBe('');
+           |                                                                          ^
+      1413 |     });
+      1414 |     await gf.press('Escape');
+      1415 |     await markPaxIcon(page);
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1412:74)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1410:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1396:3
+
+    Error: มีข้อความบอกว่าต้องเลือกวันที่
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1428 |     note('ขั้น 6', `URL ${page.url()} · ปฏิทินเปิด=${calOpen} · ข้อความ "${msgs.slice(0, 400)}"`);
+      1429 |     await gf.check('E5 มีข้อความบอกว่าต้องเลือกวันที่', [calDlg(page), f.date], async () => {
+    > 1430 |       expect.soft(NEED_DATE_RE.test(msgs), 'มีข้อความบอกว่าต้องเลือกวันที่').toBe(true);
+           |                                                                              ^
+      1431 |     });
+      1432 |   });
+      1433 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1430:78)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1429:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1422:3
+
+    attachment #1: ตรวจ 01: E1 "Tokio": รายการมี "โตเกียว ญี่ปุ่น" หรือมีคำแนะนำ "หมายถึง Tokyo?" (image/png) 
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-01-E1-Tokio-รายการมี-โตเกียว-ญี่ปุ่น-หรือมีคำแนะนำ-หมายถึง-Tokyo--a5d4cb924d0e6911d71a707143988d71338156c2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 มีข้อความเตือนว่าต้นทางกับปลายทางเหมือนกัน ไม่ใช่ล้างช่องเงียบ ๆ (image/png) 
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-02-E2-มีข้อความเตือนว่าต้นทางกับปลายทางเหมือนกัน-ไม่ใช่ล้างช่องเงียบ-ๆ-0ae3077a0924b69b7d555540d5d37ddb1b5b82a6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 (โตเกียว) แถวสนามบินใต้เมืองเรียงระยะ กม. จากน้อยไปมาก (image/png) ──
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-03-E3-โตเกียว-แถวสนามบินใต้เมืองเรียงระยะ-กม-จากน้อยไปมาก-275de28468a938c5860061f575a8b419b4cce3bf.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E3 (กรุงเทพมหานคร) แถวสนามบินใต้เมืองเรียงระยะ กม. จากน้อยไปมาก (เกณฑ์เดียวกับโตเกียว) (image/png) 
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-04-E3-กรุงเทพมหานคร-แถวสนามบินใต้เมืองเรียงระยะ-กม-จากน้อยไปมาก-เกณฑ์เดียวกับโตเกียว--c9c6623fa914be137c032c8c413e620c1e26f0ee.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E4 ถึงจำนวนสูงสุดแล้ว ปุ่ม + ทุกประเภทใช้ไม่ได้ (ไม่เข้าสถานะข้อความแดงเรื่องเพดาน) (image/png) 
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-05-E4-ถึงจำนวนสูงสุดแล้ว-ปุ่ม-ทุกประเภทใช้ไม่ได้-ไม่เข้าสถานะข้อความแดงเรื่องเพดาน--599e8ce9cd9eba9ebf2bcace63a906a25ed12379.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 06: ขั้น 5 Esc แล้วไอคอนผู้โดยสารกลับเป็น "1" (image/png) ──────────────────
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-06-ขั้น-5-Esc-แล้วไอคอนผู้โดยสารกลับเป็น-1--cbf1254227bfcf43349adc696681d5a888a08228.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: ตรวจ 07: E5 มีข้อความบอกว่าต้องเลือกวันที่ (image/png) ──────────────────────────
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-07-E5-มีข้อความบอกว่าต้องเลือกวันที่-6930abaaccc12fd067e9a159928e05a3447d38d5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: ตรวจ 08: E6 หัวผลลัพธ์: เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. (image/png) 
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\attachments\ตรวจ-08-E6-หัวผลลัพธ์-เที่ยวเดียว-·-1-·-ชั้นประหยัด-·-กรุงเทพมหานคร-→-โตเกียว-·-อังคาร-15-ธ-ค--c43efcbf62ebd13fda43d657f4397139093b4327.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: video (video/webm) ─────────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.1-search-form-TC-SRCH-08-·-⚠️-ฟอร์มยอมค่าที่ควรเตือน-chromium\error-context.md
+
+  3) [chromium] › tests\5.1-search-form.spec.ts:1450:5 › TC-SRCH-09 · ⚠️ ไม่พบผลจากเงื่อนไขค้นหา @P1 @5.1 @known-defect 
+
+    Error: มีข้อความเตือนการซ้อน หรือปุ่ม "ค้นหา" ใช้ไม่ได้
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1478 |     note('ขั้น 2', `ปลายทาง "${(await ariaOf(f.dest)).name}" · ปุ่มค้นหาใช้ได้=${btnUsable} · ข้อความ "${msgs.slice(0, 300)}"`);
+      1479 |     await gf.check('E1 ก่อนค้นหามีข้อความเตือนว่าต้นทาง/ปลายทางซ้อนกัน หรือปุ่ม "ค้นหา" ใช้ไม่ได้', [f.origin, f.dest, searchBtn(page)], async () => {
+    > 1480 |       expect.soft(OVERLAP_RE.test(msgs) || !btnUsable, 'มีข้อความเตือนการซ้อน หรือปุ่ม "ค้นหา" ใช้ไม่ได้').toBe(true);
+           |                                                                                                            ^
+      1481 |     });
+      1482 |   });
+      1483 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1480:108)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1479:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1474:3
+
+    Error: ข้อความบอกสาเหตุการซ้อนของเส้นทาง/สถานที่
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(ต้นทาง|ปลายทาง|จุดหมาย|สถานที่|เส้นทาง|สนามบิน).{0,40}(ซ้อน|ซ้ำ|เหมือน|เดียวกัน|ทับ)|(ซ้อน|ซ้ำ|เหมือน|เดียวกัน|ทับ).{0,40}(ต้นทาง|ปลายทาง|จุดหมาย|สถานที่|เส้นทาง|สนามบิน)/
+    Received string:  "ไม่พบตัวเลือกที่ตรงกับการค้นหา ลองเปลี่ยนวันที่หรือจุดหมายเพื่อดูผลการค้นหา"
+
+      1497 |     else {
+      1498 |       await gf.check('E2 ข้อความไม่พบผลบอกสาเหตุที่เส้นทาง/สถานที่ซ้อนกัน ไม่ใช่แนะนำให้เปลี่ยนวันที่', noResHeading(page).locator('xpath=..'), async () => {
+    > 1499 |         expect.soft(msg, 'ข้อความบอกสาเหตุการซ้อนของเส้นทาง/สถานที่').toMatch(OVERLAP_RE);
+           |                                                                       ^
+      1500 |         expect.soft(msg, 'ไม่แนะนำให้เปลี่ยนวันที่').not.toMatch(CHANGE_DATE_RE);
+      1501 |       });
+      1502 |     }
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1499:71)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1498:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1484:3
+
+    Error: ไม่แนะนำให้เปลี่ยนวันที่
+
+    expect(received).not.toMatch(expected)
+
+    Expected pattern: not /เปลี่ยนวันที่/
+    Received string:      "ไม่พบตัวเลือกที่ตรงกับการค้นหา ลองเปลี่ยนวันที่หรือจุดหมายเพื่อดูผลการค้นหา"
+
+      1498 |       await gf.check('E2 ข้อความไม่พบผลบอกสาเหตุที่เส้นทาง/สถานที่ซ้อนกัน ไม่ใช่แนะนำให้เปลี่ยนวันที่', noResHeading(page).locator('xpath=..'), async () => {
+      1499 |         expect.soft(msg, 'ข้อความบอกสาเหตุการซ้อนของเส้นทาง/สถานที่').toMatch(OVERLAP_RE);
+    > 1500 |         expect.soft(msg, 'ไม่แนะนำให้เปลี่ยนวันที่').not.toMatch(CHANGE_DATE_RE);
+           |                                                          ^
+      1501 |       });
+      1502 |     }
+      1503 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1500:58)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1498:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1484:3
+
+    Error: ช่องปลายทางแสดง "โตเกียว 23K" (ชื่อ "ปลายทาง โตเกียว 23K")
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1535 |         const shown = a.name.replace(/^ปลายทาง\s*/, '').trim();
+      1536 |         const ok = /\b(HND|NRT)\b/.test(a.name) || (shown === '' && /^\s*โตเกียว\s*$/.test(v));
+    > 1537 |         expect.soft(ok, `ช่องปลายทางแสดง "${shown || v}" (ชื่อ "${a.name}")`).toBe(true);
+           |                                                                               ^
+      1538 |       });
+      1539 |       await gf.check('E4 มีแถว ≥ 1 ที่ปลายทาง ∈ {HND, NRT} หรือข้อความไม่พบผลบอกว่าปลายทางไม่ใช่สนามบิน', [rowItems(page), noResHeading(page)], async () => {
+      1540 |         const good = rows.filter((r) => TYO_SET.includes(r.to || ''));
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1537:79)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1534:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1513:3
+
+    Error: ไม่พบผล: ข้อความบอกว่าปลายทางไม่ใช่สนามบิน
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /ไม่ใช่สนามบิน|ไม่มีสนามบิน|ไม่ได้เป็นสนามบิน|สถานีรถไฟ|ไม่รองรับ.{0,20}(ปลายทาง|จุดหมาย|สถานที่)/
+    Received string:  "ไม่พบตัวเลือกที่ตรงกับการค้นหา ลองเปลี่ยนวันที่หรือจุดหมายเพื่อดูผลการค้นหา"
+
+      1540 |         const good = rows.filter((r) => TYO_SET.includes(r.to || ''));
+      1541 |         if (good.length === 0) {
+    > 1542 |           expect.soft(msg, 'ไม่พบผล: ข้อความบอกว่าปลายทางไม่ใช่สนามบิน').toMatch(NOT_AIRPORT_RE);
+           |                                                                          ^
+      1543 |           expect.soft(msg, 'ไม่พบผล: ไม่แนะนำให้เปลี่ยนวันที่').not.toMatch(CHANGE_DATE_RE);
+      1544 |         }
+      1545 |         expect.soft(good.length > 0 || (NOT_AIRPORT_RE.test(msg) && !CHANGE_DATE_RE.test(msg)), `แถวปลายทาง HND/NRT = ${good.length}`).toBe(true);
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1542:74)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1539:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1513:3
+
+    Error: ไม่พบผล: ไม่แนะนำให้เปลี่ยนวันที่
+
+    expect(received).not.toMatch(expected)
+
+    Expected pattern: not /เปลี่ยนวันที่/
+    Received string:      "ไม่พบตัวเลือกที่ตรงกับการค้นหา ลองเปลี่ยนวันที่หรือจุดหมายเพื่อดูผลการค้นหา"
+
+      1541 |         if (good.length === 0) {
+      1542 |           expect.soft(msg, 'ไม่พบผล: ข้อความบอกว่าปลายทางไม่ใช่สนามบิน').toMatch(NOT_AIRPORT_RE);
+    > 1543 |           expect.soft(msg, 'ไม่พบผล: ไม่แนะนำให้เปลี่ยนวันที่').not.toMatch(CHANGE_DATE_RE);
+           |                                                                     ^
+      1544 |         }
+      1545 |         expect.soft(good.length > 0 || (NOT_AIRPORT_RE.test(msg) && !CHANGE_DATE_RE.test(msg)), `แถวปลายทาง HND/NRT = ${good.length}`).toBe(true);
+      1546 |       });
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1543:69)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1539:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1513:3
+
+    Error: แถวปลายทาง HND/NRT = 0
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1543 |           expect.soft(msg, 'ไม่พบผล: ไม่แนะนำให้เปลี่ยนวันที่').not.toMatch(CHANGE_DATE_RE);
+      1544 |         }
+    > 1545 |         expect.soft(good.length > 0 || (NOT_AIRPORT_RE.test(msg) && !CHANGE_DATE_RE.test(msg)), `แถวปลายทาง HND/NRT = ${good.length}`).toBe(true);
+           |                                                                                                                                        ^
+      1546 |       });
+      1547 |     }
+      1548 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1545:136)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1539:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1513:3
+
+    attachment #1: ตรวจ 01: E1 ก่อนค้นหามีข้อความเตือนว่าต้นทาง/ปลายทางซ้อนกัน หรือปุ่ม "ค้นหา" ใช้ไม่ได้ (image/png) 
+    test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\attachments\ตรวจ-01-E1-ก่อนค้นหามีข้อความเตือนว่าต้นทาง-ปลายทางซ้อนกัน-หรือปุ่ม-ค้นหา-ใช้ไม่ได้-d61abeb99564e14099221cc5c75f0e6237ed25ff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 ข้อความไม่พบผลบอกสาเหตุที่เส้นทาง/สถานที่ซ้อนกัน ไม่ใช่แนะนำให้เปลี่ยนวันที่ (image/png) 
+    test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\attachments\ตรวจ-02-E2-ข้อความไม่พบผลบอกสาเหตุที่เส้นทาง-สถานที่ซ้อนกัน-ไม่ใช่แนะนำให้เปลี่ยนวันที่-1f58125fe66a6dab41d8d91e312f53640a8380bb.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 เลือก Tokyo Station แล้วช่องปลายทางเป็น HND/NRT หรือ "โตเกียว" ระดับเมือง (image/png) 
+    test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\attachments\ตรวจ-03-E3-เลือก-Tokyo-Station-แล้วช่องปลายทางเป็น-HND-NRT-หรือ-โตเกียว-ระดับเมือง-2b66034dc11eadbce9d0d8c1d5266ed9b10c8632.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E4 มีแถว ≥ 1 ที่ปลายทาง ∈ {HND, NRT} หรือข้อความไม่พบผลบอกว่าปลายทางไม่ใช่สนามบิน (image/png) 
+    test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\attachments\ตรวจ-04-E4-มีแถว-≥-1-ที่ปลายทาง-∈-HND-NRT-หรือข้อความไม่พบผลบอกว่าปลายทางไม่ใช่สนามบิน-3f57e98c9fcc3e8f1900930c67c75b99fee41bec.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.1-search-form-TC-SRCH-09-·-⚠️-ไม่พบผลจากเงื่อนไขค้นหา-chromium\error-context.md
+
+  4) [chromium] › tests\5.1-search-form.spec.ts:1552:5 › TC-SRCH-10 · ⚠️ ค้นหาวันนี้ @P1 @5.1 @known-defect 
+
+    Error: แถวที่ออกก่อน T_now + 60 นาทีโดยไม่มีป้ายเตือน
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 16
+
+    - Array []
+    + Array [
+    +   "DMK 10:25 แอร์เอเชีย",
+    +   "BKK 10:40 ฮ่องกงเอ็กซ์เพรส",
+    +   "BKK 10:40 ฮ่องกงเอ็กซ์เพรส",
+    +   "BKK 10:40 ฮ่องกงเอ็กซ์เพรส",
+    +   "BKK 10:40 ฮ่องกงเอ็กซ์เพรส",
+    +   "BKK 09:50 โคเรียนแอร์ไลน์",
+    +   "DMK 09:55 แอร์เอเชีย และแอร์เอเชีย เอ็กซ์",
+    +   "BKK 09:50 โคเรียนแอร์ไลน์",
+    +   "BKK 10:30 การบินไทย และเอเอ็นเอ",
+    +   "BKK 09:50 เจเอแอล",
+    +   "BKK 10:30 การบินไทย และคาเธ่ย์แปซิฟิคแอร์เวย์",
+    +   "BKK 10:30 การบินไทย และเจเอแอล",
+    +   "BKK 10:30 การบินไทย และคาเธ่ย์แปซิฟิคแอร์เวย์",
+    +   "BKK 10:35 การบินไทย และจูนเยาแอร์ไลน์",
+    + ]
+
+      1598 |     else {
+      1599 |       await gf.check('E1 ไม่มีแถวที่เวลาออกก่อน T_now + 60 นาที หรือแถวเหล่านั้นมีป้ายเตือน', rowItems(page), async () => {
+    > 1600 |         expect.soft(noWarn.map((r) => `${r.from || '?'} ${r.time} ${r.airline || ''}`), `แถวที่ออกก่อน T_now + ${CUTOFF_MIN} นาทีโดยไม่มีป้ายเตือน`).toEqual([]);
+           |                                                                                                                                                      ^
+      1601 |       });
+      1602 |     }
+      1603 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1600:150)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1599:7
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1580:3
+
+    Error: วันที่ในช่องขาไป
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "3/11"
+    Received: "2/11"
+
+      1622 |     const fd = parseShortDate(field3);
+      1623 |     await gf.check('E3 (ขั้น 3) วันที่ที่ช่องขาไปแสดง = วันที่ที่ใช้ค้นหาจริง (หัวผลลัพธ์/aria-label ของช่องและของแถว)', [box, calOpen4 ? calDone(dlg) : rowItems(page)], async () => {
+    > 1624 |       expect.soft(fd ? `${fd.d}/${fd.m}` : field3, 'วันที่ในช่องขาไป').toBe(actual3 ? `${actual3.d}/${actual3.m}` : '(อ่านวันที่ที่ใช้ค้นหาไม่ได้)');
+           |                                                                        ^
+      1625 |       for (const rd of rowDates) expect.soft(rd, 'วันที่ใน aria-label ของแถว = ช่องขาไป').toBe(fd ? `${fd.d}/${fd.m}` : field3);
+      1626 |     });
+      1627 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1624:72)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1623:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1606:3
+
+    Error: ช่องขาไปขั้น 3 "2 พ.ย. 2026" · วันที่ใช้ค้นหาจริง 3/11 · มีเตือน=false
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1646 |     await gf.check('E2 มีข้อความเตือนว่าวันที่ผ่านมาแล้ว หรือช่องขาไปเปลี่ยนกลับเป็นวันที่ที่ใช้ค้นหาจริง', f.date, async () => {
+      1647 |       const reverted = !!fd3 && !!actual3 && fd3.d === actual3.d && fd3.m === actual3.m;
+    > 1648 |       expect.soft(warnSeen || reverted, `ช่องขาไปขั้น 3 "${field3}" · วันที่ใช้ค้นหาจริง ${actual3 ? `${actual3.d}/${actual3.m}` : '?'} · มีเตือน=${warnSeen}`).toBe(true);
+           |                                                                                                                                                                 ^
+      1649 |     });
+      1650 |   });
+      1651 |   gf.finishNA();
+        at assertion (C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1648:161)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1646:5
+        at C:\t\gf03v2\e2e\tests\5.1-search-form.spec.ts:1629:3
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม: หัวผลลัพธ์ตรงนิยาม U1 (image/png) ───────────────────────────
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์ตรงนิยาม-U1-1b93f4b2902dea92e4d940d0e176cc21d783edbd.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E1 ไม่มีแถวที่เวลาออกก่อน T_now + 60 นาที หรือแถวเหล่านั้นมีป้ายเตือน (image/png) 
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\attachments\ตรวจ-02-E1-ไม่มีแถวที่เวลาออกก่อน-T-now-60-นาที-หรือแถวเหล่านั้นมีป้ายเตือน-6d6d89b99caf71031f8ebb5b685073e9c200d622.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 (ขั้น 3) วันที่ที่ช่องขาไปแสดง = วันที่ที่ใช้ค้นหาจริง (หัวผลลัพธ์/aria-label ของช่องและของแถว) (image/png) 
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\attachments\ตรวจ-03-E3-ขั้น-3-วันที่ที่ช่องขาไปแสดง-วันที่ที่ใช้ค้นหาจริง-หัวผลลัพธ์-aria-label-ของช่องและของแถว--65cac1a951252e5c1e99ef1d9e01bfbf82b98e5c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E3 (ขั้น 4) วันที่ที่ช่องขาไปแสดง = วันที่ใน aria-label ของแถว (image/png) 
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\attachments\ตรวจ-04-E3-ขั้น-4-วันที่ที่ช่องขาไปแสดง-วันที่ใน-aria-label-ของแถว-d84f47dfe5c22ac4e6f1c522dd9b97ac4c935bb9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E2 มีข้อความเตือนว่าวันที่ผ่านมาแล้ว หรือช่องขาไปเปลี่ยนกลับเป็นวันที่ที่ใช้ค้นหาจริง (image/png) 
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\attachments\ตรวจ-05-E2-มีข้อความเตือนว่าวันที่ผ่านมาแล้ว-หรือช่องขาไปเปลี่ยนกลับเป็นวันที่ที่ใช้ค้นหาจริง-1ca1f65cfa47b1465c4d0da934a3992568e74eca.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.1-search-form-TC-SRCH-10-·-⚠️-ค้นหาวันนี้-chromium\error-context.md
+
+  5) [chromium] › tests\5.2-results-ranking.spec.ts:987:5 › TC-RES-06 · ⚠️ แท็บถูกที่สุด + ข้อความจำนวนผล + สับเซตหลังเพิ่มตัวกรอง @P2 @5.2 @known-defect 
+
+    Error: ป๊อปอัปเปิดขึ้น
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      1018 |     note('ข้อความ ⓘ', d.text || '(ไม่เปิด/ว่าง)');
+      1019 |     await gf.check('E3 ⓘ ข้าง "จัดอันดับตามราคาและความสะดวก" เปิดป๊อปอัปที่มีข้อความ', d.n ? page.getByRole('dialog') : info, async () => {
+    > 1020 |       expect.soft(d.n, 'ป๊อปอัปเปิดขึ้น').toBeGreaterThan(0);
+           |                                           ^
+      1021 |       expect.soft(d.text.length, 'ข้อความคำอธิบายไม่ว่าง').toBeGreaterThan(0);
+      1022 |     });
+      1023 |     if (d.n) await closeDialog(page, gf);
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1020:43)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1019:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1011:3
+
+    Error: ข้อความคำอธิบายไม่ว่าง
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      1019 |     await gf.check('E3 ⓘ ข้าง "จัดอันดับตามราคาและความสะดวก" เปิดป๊อปอัปที่มีข้อความ', d.n ? page.getByRole('dialog') : info, async () => {
+      1020 |       expect.soft(d.n, 'ป๊อปอัปเปิดขึ้น').toBeGreaterThan(0);
+    > 1021 |       expect.soft(d.text.length, 'ข้อความคำอธิบายไม่ว่าง').toBeGreaterThan(0);
+           |                                                            ^
+      1022 |     });
+      1023 |     if (d.n) await closeDialog(page, gf);
+      1024 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1021:60)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1019:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1011:3
+
+    Error: คู่ที่ราคาลดลงในแท็บ "ถูกที่สุด"
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "#3 แอร์เอเชีย DMK10:25→NRT18:30 (6:05, แวะ 0) ฿8,755 [฿8755] → #4 เวียดเจ็ทแอร์ BKK20:05→HND01:00+2 (26:55, แวะ 1) ฿5,900 [฿5900]",
+    + ]
+
+      1031 |     await gf.check('E1 Lc ราคาไม่ลดลงทุกคู่ และแถวแรก = P_tab', [CHEAP_TAB(page), ROWS(page)], async () => {
+      1032 |       expect.soft(Lc.length, 'มีแถวในแท็บถูกที่สุด').toBeGreaterThan(0);
+    > 1033 |       expect.soft(top(decreasing(priced(Lc), priceOf, (r) => `฿${r.price}`)), 'คู่ที่ราคาลดลงในแท็บ "ถูกที่สุด"').toEqual([]);
+           |                                                                                                                   ^
+      1034 |       expect.soft(Lc[0]?.price ?? null, 'ราคาแถวแรก = P_tab').toBe(P);
+      1035 |     });
+      1036 |     const c = compareSets(S0, Lc);
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1033:115)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1031:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1026:3
+
+    Error: "มีผลลัพธ์ N รายการ" ก่อนดูเพิ่ม (N0) = M = 300
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 300
+    Received: 24
+
+      1052 |     const expected = more ? M : S0.length;
+      1053 |     await gf.check(`E4 N0 = ${more ? 'M' : 'n0 (ไม่มีปุ่มดูเพิ่ม)'}`, [countLoc, ROWS(page)], async () => {
+    > 1054 |       expect.soft(N0, `"มีผลลัพธ์ N รายการ" ก่อนดูเพิ่ม (N0) = ${more ? 'M' : 'n0'} = ${expected}`).toBe(expected);
+           |                                                                                                     ^
+      1055 |     });
+      1056 |     if (!more) { gf.na('E5 ข้อความจำนวนผลหลังดูเพิ่ม = M', 'ไม่มีปุ่ม "ดูเที่ยวบินเพิ่มเติม"'); return; }
+      1057 |     await gf.check('E5 หลังดูเพิ่มยังมี "มีผลลัพธ์ N รายการ" และ N = M', [countLoc, ROWS(page)], async () => {
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1054:101)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1053:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1045:3
+
+    Error: ยังมีข้อความ "มีผลลัพธ์ N รายการ" หลังดูเพิ่ม
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      1056 |     if (!more) { gf.na('E5 ข้อความจำนวนผลหลังดูเพิ่ม = M', 'ไม่มีปุ่ม "ดูเที่ยวบินเพิ่มเติม"'); return; }
+      1057 |     await gf.check('E5 หลังดูเพิ่มยังมี "มีผลลัพธ์ N รายการ" และ N = M', [countLoc, ROWS(page)], async () => {
+    > 1058 |       expect.soft(Nafter, 'ยังมีข้อความ "มีผลลัพธ์ N รายการ" หลังดูเพิ่ม').not.toBeNull();
+           |                                                                                ^
+      1059 |       expect.soft(Nafter, `N = จำนวนแถวที่แสดงอยู่ M = ${M}`).toBe(M);
+      1060 |     });
+      1061 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1058:80)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1057:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1045:3
+
+    Error: N = จำนวนแถวที่แสดงอยู่ M = 300
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 300
+    Received: null
+
+      1057 |     await gf.check('E5 หลังดูเพิ่มยังมี "มีผลลัพธ์ N รายการ" และ N = M', [countLoc, ROWS(page)], async () => {
+      1058 |       expect.soft(Nafter, 'ยังมีข้อความ "มีผลลัพธ์ N รายการ" หลังดูเพิ่ม').not.toBeNull();
+    > 1059 |       expect.soft(Nafter, `N = จำนวนแถวที่แสดงอยู่ M = ${M}`).toBe(M);
+           |                                                               ^
+      1060 |     });
+      1061 |   });
+      1062 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1059:63)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1057:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1045:3
+
+    Error: อ่าน N1 ได้
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      1082 |     note('บันทึกเพิ่ม Q13 (ไม่นับผ่าน/ล้ม)', notInM.length ? `แถวใน S1 ที่ไม่อยู่ใน SM: ${top(notInM).join(' · ')}` : 'ทุกแถวใน S1 อยู่ใน SM (สาเหตุ = N/ผลฐานนับแค่ชุดแรก)');
+      1083 |     await gf.check('E6 N1 ≤ N0 และทุกแถวใน S1 อยู่ใน S0', [COUNT_TEXT(page), ROWS(page)], async () => {
+    > 1084 |       expect.soft(N1, 'อ่าน N1 ได้').not.toBeNull();
+           |                                          ^
+      1085 |       expect.soft(N0 != null && N1 != null && N1 <= N0, `N1 (${N1}) ≤ N0 (${N0})`).toBe(true);
+      1086 |       expect.soft(top(notIn0), 'แถวใน S1 ที่ไม่เคยอยู่ใน S0').toEqual([]);
+      1087 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1084:42)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1083:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1063:3
+
+    Error: N1 (null) ≤ N0 (24)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1083 |     await gf.check('E6 N1 ≤ N0 และทุกแถวใน S1 อยู่ใน S0', [COUNT_TEXT(page), ROWS(page)], async () => {
+      1084 |       expect.soft(N1, 'อ่าน N1 ได้').not.toBeNull();
+    > 1085 |       expect.soft(N0 != null && N1 != null && N1 <= N0, `N1 (${N1}) ≤ N0 (${N0})`).toBe(true);
+           |                                                                                    ^
+      1086 |       expect.soft(top(notIn0), 'แถวใน S1 ที่ไม่เคยอยู่ใน S0').toEqual([]);
+      1087 |     });
+      1088 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1085:84)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1083:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1063:3
+
+    Error: แถวใน S1 ที่ไม่เคยอยู่ใน S0
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 18
+
+    - Array []
+    + Array [
+    +   "#4 เวียดเจ็ทแอร์ BKK16:05→HND01:00+2 (30:55, แวะ 1) ฿5,900",
+    +   "#6 ฮ่องกงเอ็กซ์เพรส BKK00:35→HND22:45 (20:10, แวะ 1) ฿7,956",
+    +   "#7 ฮ่องกงเอ็กซ์เพรส BKK10:40→HND22:45 (10:05, แวะ 1) ฿7,956",
+    +   "#8 ฮ่องกงเอ็กซ์เพรส BKK10:40→HND00:45+1 (12:05, แวะ 1) ฿7,956",
+    +   "#10 ฮ่องกงเอ็กซ์เพรส BKK12:00→HND00:45+1 (10:45, แวะ 1) ฿7,956",
+    +   "#11 ฮ่องกงเอ็กซ์เพรส BKK00:35→NRT15:55 (13:20, แวะ 1) ฿7,961",
+    +   "#12 ฮ่องกงเอ็กซ์เพรส BKK00:35→NRT18:05 (15:30, แวะ 1) ฿7,961",
+    +   "#13 ฮ่องกงเอ็กซ์เพรส BKK00:35→NRT19:05 (16:30, แวะ 1) ฿7,961",
+    +   "#15 ไชนาเซาเทิร์นแอร์ไลน์ BKK02:10→HND20:00 (15:50, แวะ 1) ฿8,375",
+    +   "#17 ไชนาเซาเทิร์นแอร์ไลน์ BKK08:10→NRT13:15+1 (27:05, แวะ 1) ฿8,375",
+    +   "#18 ไชนาเซาเทิร์นแอร์ไลน์ BKK11:25→NRT13:15+1 (23:50, แวะ 1) ฿8,375",
+    +   "#19 ไชนาเซาเทิร์นแอร์ไลน์ BKK11:25→HND13:35+1 (24:10, แวะ 1) ฿8,375",
+    +   "#20 ไชนาเซาเทิร์นแอร์ไลน์ BKK13:55→NRT13:15+1 (21:20, แวะ 1) ฿8,375",
+    +   "#21 ไชนาเซาเทิร์นแอร์ไลน์ BKK13:55→HND13:35+1 (21:40, แวะ 1) ฿8,375",
+    +   "#22 ไชนาเซาเทิร์นแอร์ไลน์ BKK16:20→NRT13:15+1 (18:55, แวะ 1) ฿8,375",
+    +   "… อีก 90 รายการ",
+    + ]
+
+      1084 |       expect.soft(N1, 'อ่าน N1 ได้').not.toBeNull();
+      1085 |       expect.soft(N0 != null && N1 != null && N1 <= N0, `N1 (${N1}) ≤ N0 (${N0})`).toBe(true);
+    > 1086 |       expect.soft(top(notIn0), 'แถวใน S1 ที่ไม่เคยอยู่ใน S0').toEqual([]);
+           |                                                               ^
+      1087 |     });
+      1088 |   });
+      1089 |   gf.finishNA();
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1086:63)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1083:5
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1063:3
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. (image/png) 
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์-เที่ยวเดียว-·-1-·-ชั้นประหยัด-·-กรุงเทพมหานคร-→-โตเกียว-·-อังคาร-15-ธ-ค--f6e61c5a9f68c132dc2b66a92898e9ca90c4f36e.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E3 ⓘ ข้าง "จัดอันดับตามราคาและความสะดวก" เปิดป๊อปอัปที่มีข้อความ (image/png) 
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-02-E3-ⓘ-ข้าง-จัดอันดับตามราคาและความสะดวก-เปิดป๊อปอัปที่มีข้อความ-9e60f68920bef660d2d7a9f9ae9117d5e5a228e1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E1 Lc ราคาไม่ลดลงทุกคู่ และแถวแรก = P_tab (image/png) ──────────────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-03-E1-Lc-ราคาไม่ลดลงทุกคู่-และแถวแรก-P-tab-29da996dca6260a435007f7ec12ec366436b5b28.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E2 ชุดคีย์ Lc = S0 (image/png) ─────────────────────────────────────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-04-E2-ชุดคีย์-Lc-S0-05e624034f9048b6bd4bc4a3322f34e175d4d104.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E4 N0 = M (image/png) ──────────────────────────────────────────────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-05-E4-N0-M-e4e9512b268b567f570c75409f19d9cbc8f97941.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 06: E5 หลังดูเพิ่มยังมี "มีผลลัพธ์ N รายการ" และ N = M (image/png) ─────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-06-E5-หลังดูเพิ่มยังมี-มีผลลัพธ์-N-รายการ-และ-N-M-d56299a3ea280934028e5f0c9de954947bfeefc5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: ตรวจ 07: E6 N1 ≤ N0 และทุกแถวใน S1 อยู่ใน S0 (image/png) ────────────────────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\attachments\ตรวจ-07-E6-N1-≤-N0-และทุกแถวใน-S1-อยู่ใน-S0-9a57dfc3f585130c61a8ec5bc021c05c4352bf56.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.2-results-ranking-TC-RES-b4447-วนผล-สับเซตหลังเพิ่มตัวกรอง-chromium\error-context.md
+
+  6) [chromium] › tests\5.2-results-ranking.spec.ts:1092:5 › TC-RES-07 · ⚠️ ข้อมูลกระเป๋าในแถว + เตือนแวะนานในหน้า booking @P2 @5.2 @known-defect › 5. กด ˅ ที่แถวนั้น → กด "เลือกเที่ยวบิน" (หน้า booking ใน google.com นับ 1 การค้นหา) · รอ ≥ 10 วินาที · อ่านข้อความที่จุดแวะพักในรายละเอียดเที่ยวบิน › ตรวจ E4 แวะพักคร่อม 00:00–05:00: หน้า booking (หรือแถวขยาย) บอกว่าเป็นการแวะพัก/ค้างคืน 
+
+    Error: ข้อความจุดแวะ booking "หยุดพักนาน 19 ชม. 45 นาทีนครโฮจิมินห์ (SGN)แวะพักนาน" / แถวขยาย "หยุดพักนาน 19 ชม. 45 นาทีนครโฮจิมินห์ (SGN)แวะพักนาน" ต้องบอกว่าค้างคืน
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1186 |     else await gf.check('E4 แวะพักคร่อม 00:00–05:00: หน้า booking (หรือแถวขยาย) บอกว่าเป็นการแวะพัก/ค้างคืน', stopLoc, async () => {
+      1187 |       const found = /ค้างคืน|ข้ามคืน/.test(bLay) || /ค้างคืน|ข้ามคืน/.test(resultLayText);
+    > 1188 |       expect.soft(found, `ข้อความจุดแวะ booking "${bLay}" / แถวขยาย "${resultLayText}" ต้องบอกว่าค้างคืน`).toBe(true);
+           |                                                                                                            ^
+      1189 |     });
+      1190 |     await gf.check('E5 หน้า booking แจ้งเรื่องผ่านแดน/วีซ่าผ่านแดน/ต้องออกจากพื้นที่ต่อเครื่อง', MAIN(page), async () => {
+      1191 |       const m = /ผ่านแดน|วีซ่า|ตรวจคนเข้าเมือง|ออกจากพื้นที่|ออกนอกสนามบิน|transit/i.exec(mainText);
+        at assertion (C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1188:108)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1186:10
+        at C:\t\gf03v2\e2e\tests\5.2-results-ranking.spec.ts:1151:3
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. (image/png) 
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์-เที่ยวเดียว-·-1-·-ชั้นประหยัด-·-กรุงเทพมหานคร-→-โตเกียว-·-อังคาร-15-ธ-ค--3521e2bf53a4f83f2a42802224c751d4dd96801f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E1 แถวโลว์คอสต์ (เวียดเจ็ทแอร์) มีข้อมูลกระเป๋าในแถวสรุป/แถวขยาย (image/png) 
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\attachments\ตรวจ-02-E1-แถวโลว์คอสต์-เวียดเจ็ทแอร์-มีข้อมูลกระเป๋าในแถวสรุป-แถวขยาย-b2504e2488312c65b5690ec9f8020a0c5170f746.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E2 แถวบริการเต็ม (ไชนาเซาเทิร์นแอร์ไลน์) มีข้อมูลกระเป๋าแบบเดียวกัน (image/png) 
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\attachments\ตรวจ-03-E2-แถวบริการเต็ม-ไชนาเซาเทิร์นแอร์ไลน์-มีข้อมูลกระเป๋าแบบเดียวกัน-8ccc5bf72f6dd0e5ba578cfe89f83ebb7200b135.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E3 หน้า booking มีข้อความเตือนแวะพักนานที่จุดแวะนั้น (image/png) ───────
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\attachments\ตรวจ-04-E3-หน้า-booking-มีข้อความเตือนแวะพักนานที่จุดแวะนั้น-ef65bde5603074cf8db30c4314884c5ae2f0166d.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E4 แวะพักคร่อม 00:00–05:00: หน้า booking (หรือแถวขยาย) บอกว่าเป็นการแวะพัก/ค้างคืน (image/png) 
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\attachments\ตรวจ-05-E4-แวะพักคร่อม-00-00–05-00-หน้า-booking-หรือแถวขยาย-บอกว่าเป็นการแวะพัก-ค้างคืน-2dd916c045f503571524cb5546df5ef40ab4ae4a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 06: E5 หน้า booking แจ้งเรื่องผ่านแดน/วีซ่าผ่านแดน/ต้องออกจากพื้นที่ต่อเครื่อง (image/png) 
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\attachments\ตรวจ-06-E5-หน้า-booking-แจ้งเรื่องผ่านแดน-วีซ่าผ่านแดน-ต้องออกจากพื้นที่ต่อเครื่อง-184be84ae64e24cd7b1566f29f7f751bc2715920.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.2-results-ranking-TC-RES-bc5a7-ว-เตือนแวะนานในหน้า-booking-chromium\error-context.md
+
+  7) [chromium] › tests\5.3-filters.spec.ts:494:5 › TC-FLT-02 · ⚠️ ชั้นโดยสารปนเมื่อกรองสายการบิน + ตัวกรองสัมภาระ @P1 @5.3 @known-defect 
+
+    Error: ตัวนับนอกเหนือจากกระเป๋าถือขึ้นเครื่อง (พบ: เพิ่มกระเป๋าถือขึ้นเครื่อง)
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      533 |       await gf.check('E2 ป๊อปอัปสัมภาระมีตัวเลือกกระเป๋าโหลด', dlg, async () => {
+      534 |         const checked = addNames.filter((n) => !/กระเป๋าถือขึ้นเครื่อง/.test(n));
+    > 535 |         expect.soft(checked.length, `ตัวนับนอกเหนือจากกระเป๋าถือขึ้นเครื่อง (พบ: ${addNames.join(', ') || '-'})`).toBeGreaterThan(0);
+          |                                                                                                                   ^
+      536 |         expect.soft(dlgText, 'มีตัวเลือกกระเป๋าโหลด').toMatch(/กระเป๋าโหลด|โหลดใต้ท้อง|กระเป๋าเดินทางที่โหลด|checked bag/i);
+      537 |       });
+      538 |       await gf.click(dlg.getByRole('button', { name: 'เพิ่มกระเป๋าถือขึ้นเครื่อง', exact: true }));
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:535:115)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:533:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:526:5
+
+    Error: มีตัวเลือกกระเป๋าโหลด
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /กระเป๋าโหลด|โหลดใต้ท้อง|กระเป๋าเดินทางที่โหลด|checked bag/i
+    Received string:  "สัมภาระ ปิดกล่องโต้ตอบ กระเป๋าถือขึ้นเครื่อง นำกระเป๋าถือขึ้นเครื่องออก เลือกกระเป๋าถือขึ้นเครื่องแล้ว 0 ใบ 0 เพิ่มกระเป๋าถือขึ้นเครื่อง ดูข้อมูลเพิ่มเติมเกี่ยวกับตัวเลือกสัมภาระ ล้าง"
+
+      534 |         const checked = addNames.filter((n) => !/กระเป๋าถือขึ้นเครื่อง/.test(n));
+      535 |         expect.soft(checked.length, `ตัวนับนอกเหนือจากกระเป๋าถือขึ้นเครื่อง (พบ: ${addNames.join(', ') || '-'})`).toBeGreaterThan(0);
+    > 536 |         expect.soft(dlgText, 'มีตัวเลือกกระเป๋าโหลด').toMatch(/กระเป๋าโหลด|โหลดใต้ท้อง|กระเป๋าเดินทางที่โหลด|checked bag/i);
+          |                                                       ^
+      537 |       });
+      538 |       await gf.click(dlg.getByRole('button', { name: 'เพิ่มกระเป๋าถือขึ้นเครื่อง', exact: true }));
+      539 |       await gf.press('Escape', { search: 'ตั้งกระเป๋าถือ 1 ใบ (TC-FLT-02 ขั้น 2)' });
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:536:55)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:533:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:526:5
+
+    Error: มีข้อความบอกว่าราคารวมกระเป๋าถือ 1 ใบแล้ว
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(?<!ไม่)รวม(ค่า)?(กระเป๋าถือ|สัมภาระถือ)/
+    Received string:  "จัดอันดับตามราคาและความสะดวกราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและค่าธรรมเนียมสัมภาระ ข้อมูลความช่วยเหลือสำหรับผู้โดยสาร ผลการค้นหา มีผลลัพธ์ 24 รายการ ดีที่สุด ถูกที่สุด เริ่มต้น ฿5,900 เที่ยวบินยอดนิยม จัดอันดับตามราคาและความสะดวกราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและค่าธรรมเนียมสัมภาระ ข้อมูลความช่วยเหลือสำหรับผู้โดยสาร จัดเรียงตามเที่ยวบินยอดนิยม 14:00 – 01:00+1 เวียดเจ็ทแอร์ 9 ชม. BKK–HND หยุดพัก 1 ครั้ง 1 ชม. 50 นาที SGN CO2e 409กก. ปริมาณการปล่อยก๊าซ +10% ฿5,900 06:20 – 16:25 ไทยไลอ้อนแอร์ 8 ชม. 5 นาที DMK–NRT หยุดพัก 1 ครั้ง 1 ชม. TPE CO2e 363กก. การปล่อยก๊าซเฉลี่ย ฿7,635 10:25 – 18:30 แอร์เอเชีย 6 ชม. 5 นาที DMK–NRT บินตรง CO2e 356กก. การปล่อยก๊าซเฉลี่ย ฿8,755 ติดตามราคา ติดตามราคาเที่ยวบินจาก กรุงเทพมหานคร ไป โตเกียว ออกเดินทางวันที่ 2026-12-15 15 ธ.ค. ติดตามราคาเที่ยวบินจาก กรุงเทพมหานคร ไป โตเกียว - วันใดก็ได้ วันใดก็ได้ ตารางวันที่ กราฟราคา เที่ยวบินอื่นๆ 20:05 – 01:00+2 เวียดเจ็ทแอร์ 26 ชม. 55 นาที BKK–HND หยุดพัก 1 ครั้ง 19 ชม. 45 นาที SGN CO2e 410กก. ปริมาณการปล่อยก๊าซ +11% ฿5,900 12:00 – 22:45 ฮ่องกงเอ็กซ์เพรส 8 ชม. 45 นาที BKK–HND หยุดพัก 1 ครั้ง 2 ชม. HKG CO2e 308กก. ปริมาณการปล่อยก๊าซ -17% ฿7,956 02:10 – 13:35 ไชนาเซาเทิร์นแอร์ไลน์ 9 ชม. 25 นาที BKK–HND หยุดพัก 1 ครั้ง 2 ชม. 45 นาที CAN CO2e 400กก. ปริมาณการปล่อยก๊าซ +8% ฿8,375 08:10 – 20:00 ไชนาเซาเทิร์นแอร์ไลน์ 9 ชม. 50 นาที BKK–HND หยุดพัก 1 ครั้ง 3 ชม. 15 นาที CAN CO2e 366กก. การปล่อยก๊าซเฉลี่ย ฿8,375 23:50 – 07:55+1 ไทยเวียดเจ๊ทแอร์ 6 ชม. 5 นาที BKK–NRT บินตรง CO2e 396กก. ปริมาณการปล่อยก๊าซ +7% ฿10,772 01:40 – 09:45 แอร์เอเชีย 6 ชม. 5 นาที DMK–NRT บินตรง CO2e 299กก. ปริมาณการปล่อยก๊าซ -19% ฿10,774 23:45 – 07:30+1 ZIPAIR Tokyo 5 ชม. 45 นาที BKK–NRT บินตรง CO2e 310กก. ปริมาณการปล่อยก๊าซ -16% ฿10,780 23:55 – 08:00+1 แอร์เอเชีย 6 ชม. 5 นาที DMK–NRT บินตรง CO2e 299กก. ปริมาณการปล่อยก๊าซ -19% ฿10,886 08:00 – 15:50 การบินไทย 5 ชม. 50 นาที BKK–NRT บินตรง CO2e 416กก. ปริมาณการปล่อยก๊าซ +12% ฿15,330 14:25 – 22:05 การบินไทย 5 ชม. 40 นาที BKK–HND บินตรง CO2e 324กก. ปริมาณการปล่อยก๊าซ -13% ฿15,330 22:30 – 06:20+1 การบินไทยเอเอ็นเอ 5 ชม. 50 นาที BKK–NRT บินตรง CO2e 330กก. ปริมาณการปล่อยก๊าซ -11% ฿15,330 23:15 – 06:55+1 การบินไทยเอเอ็นเอ 5 ชม. 40 นาที BKK–HND บินตรง CO2e 392กก. ปริมาณการปล่อยก๊าซ +6% ฿15,330 23:55 – 07:40+1 การบินไทยเอเอ็นเอ 5 ชม. 45 นาที BKK–NRT บินตรง CO2e 330กก. ปริมาณการปล่อยก๊าซ -11% ฿15,330 07:55 – 15:50 เจเอแอลบางกอกแอร์เวย์ส 5 ชม. 55 นาที BKK–NRT บินตรง CO2e 391กก. การปล่อยก๊าซเฉลี่ย ฿16,405 09:50 – 17:30 เจเอแอลบางกอกแอร์เวย์ส 5 ชม. 40 นาที BKK–HND บินตรง CO2e 362กก. การปล่อยก๊าซเฉลี่ย ฿16,405 22:05 – 05:45+1 เจเอแอลบางกอกแอร์เวย์ส 5 ชม. 40 นาที BKK–HND บินตรง CO2e 398กก. ปริมาณการปล่อยก๊าซ +7% ฿16,405 14:20 – 22:10 เอเอ็นเอดำเนินการโดย Air Japan 5 ชม. 50 นาที BKK–HND บินตรง CO2e 321กก. ปริมาณการปล่อยก๊าซ -13% ฿29,445 00:10 – 08:05 เอเอ็นเอดำเนินการโดย Air Japan 5 ชม. 55 นาที BKK–NRT บินตรง CO2e 328กก. ปริมาณการปล่อยก๊าซ -12% ฿29,945 07:10 – 15:05 เอเอ็นเอดำเนินการโดย Air Japan 5 ชม. 55 นาที BKK–NRT บินตรง CO2e 342กก. ปริมาณการปล่อยก๊าซ -8% ฿29,945 09:10 – 16:55 เอเอ็นเอ 5 ชม. 45 นาที BKK–HND บินตรง CO2e 335กก. ปริมาณการปล่อยก๊าซ -10% ฿30,445 22:25 – 06:05+1 เอเอ็นเอ 5 ชม. 40 นาที BKK–HND บินตรง CO2e 317กก. ปริมาณการปล่อยก๊าซ -15% ฿30,445 ดูเที่ยวบินเพิ่มเติม"
+
+      553 |           expect.soft(lower.length, `แถวที่ราคาต่ำลงหลังตั้งกระเป๋าถือ: ${lower.map((r) => `[${r.key}: ${bByKey.get(r.key)} → ${r.price}]`).join(' ')}`).toBe(0);
+      554 |         } else if (matched.length > 0) {
+    > 555 |           expect.soft(`${headG} ${mainText}`, 'มีข้อความบอกว่าราคารวมกระเป๋าถือ 1 ใบแล้ว').toMatch(/(?<!ไม่)รวม(ค่า)?(กระเป๋าถือ|สัมภาระถือ)/);
+          |                                                                                            ^
+      556 |           expect.soft(headG, 'ข้อความหัวรายการต้องไม่ใช่ข้อความเดิมก่อนตั้งตัวกรอง').not.toBe(headB);
+      557 |           expect.soft(headG, 'ข้อความหัวรายการยังเป็น "อาจมี…ค่าธรรมเนียมสัมภาระ"').not.toMatch(/อาจมีการเรียกเก็บเงินเพิ่มเติมและ\s*ค่าธรรมเนียมสัมภาระ/);
+      558 |         }
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:555:92)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:545:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:526:5
+
+    Error: ข้อความหัวรายการต้องไม่ใช่ข้อความเดิมก่อนตั้งตัวกรอง
+
+    expect(received).not.toBe(expected) // Object.is equality
+
+    Expected: not "จัดอันดับตามราคาและความสะดวกราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและค่าธรรมเนียมสัมภาระ ข้อมูลความช่วยเหลือสำหรับผู้โดยสาร"
+
+      554 |         } else if (matched.length > 0) {
+      555 |           expect.soft(`${headG} ${mainText}`, 'มีข้อความบอกว่าราคารวมกระเป๋าถือ 1 ใบแล้ว').toMatch(/(?<!ไม่)รวม(ค่า)?(กระเป๋าถือ|สัมภาระถือ)/);
+    > 556 |           expect.soft(headG, 'ข้อความหัวรายการต้องไม่ใช่ข้อความเดิมก่อนตั้งตัวกรอง').not.toBe(headB);
+          |                                                                                          ^
+      557 |           expect.soft(headG, 'ข้อความหัวรายการยังเป็น "อาจมี…ค่าธรรมเนียมสัมภาระ"').not.toMatch(/อาจมีการเรียกเก็บเงินเพิ่มเติมและ\s*ค่าธรรมเนียมสัมภาระ/);
+      558 |         }
+      559 |       });
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:556:90)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:545:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:526:5
+
+    Error: ข้อความหัวรายการยังเป็น "อาจมี…ค่าธรรมเนียมสัมภาระ"
+
+    expect(received).not.toMatch(expected)
+
+    Expected pattern: not /อาจมีการเรียกเก็บเงินเพิ่มเติมและ\s*ค่าธรรมเนียมสัมภาระ/
+    Received string:      "จัดอันดับตามราคาและความสะดวกราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและค่าธรรมเนียมสัมภาระ ข้อมูลความช่วยเหลือสำหรับผู้โดยสาร"
+
+      555 |           expect.soft(`${headG} ${mainText}`, 'มีข้อความบอกว่าราคารวมกระเป๋าถือ 1 ใบแล้ว').toMatch(/(?<!ไม่)รวม(ค่า)?(กระเป๋าถือ|สัมภาระถือ)/);
+      556 |           expect.soft(headG, 'ข้อความหัวรายการต้องไม่ใช่ข้อความเดิมก่อนตั้งตัวกรอง').not.toBe(headB);
+    > 557 |           expect.soft(headG, 'ข้อความหัวรายการยังเป็น "อาจมี…ค่าธรรมเนียมสัมภาระ"').not.toMatch(/อาจมีการเรียกเก็บเงินเพิ่มเติมและ\s*ค่าธรรมเนียมสัมภาระ/);
+          |                                                                                         ^
+      558 |         }
+      559 |       });
+      560 |       await gf.check('E4 (ขั้น 2) ยังเป็นชั้นประหยัด · ไม่มีป้ายชั้นอื่นใน G', [cabin(), rowItems(page)], async () => {
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:557:89)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:545:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:526:5
+
+    Error: ไม่พบ "เอเอ็นเอ" หรือสายการบินที่มี codeshare ในป๊อปอัปสายการบิน (D-FLT-AIRLINE) → เว็บเปลี่ยน
+
+      568 |       const dlg = await openChip(gf, page, 'สายการบิน');
+      569 |       const al = await pickAirline(dlg, B.rows);
+    > 570 |       if (!al) throw new Error('ไม่พบ "เอเอ็นเอ" หรือสายการบินที่มี codeshare ในป๊อปอัปสายการบิน (D-FLT-AIRLINE) → เว็บเปลี่ยน');
+          |                      ^
+      571 |       note('D-FLT-AIRLINE', al.name);
+      572 |       await clickOnly(gf, page, al.item);
+      573 |       await gf.press('Escape', { search: `${al.name} เท่านั้น (TC-FLT-02 ขั้น 3)` });
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:570:22
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:567:5
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ตรงโจทย์ (image/png) ──────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์ตรงโจทย์-fe91690c065b97884d2289b767774538813048fc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E1 ไม่มีป้ายชั้นอื่นในแถวของ B (image/png) ─────────────────────────────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\attachments\ตรวจ-02-E1-ไม่มีป้ายชั้นอื่นในแถวของ-B-25c68b034fc0765efe02e0385aeee6e6694af30c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E2 ป๊อปอัปสัมภาระมีตัวเลือกกระเป๋าโหลด (image/png) ─────────────────────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\attachments\ตรวจ-03-E2-ป๊อปอัปสัมภาระมีตัวเลือกกระเป๋าโหลด-7073a4ce6f29e9b5b00477bba9194e570d6e1db7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E3 แยกได้ว่าราคาใน G รวมกระเป๋าถือ 1 ใบแล้ว (image/png) ────────────────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\attachments\ตรวจ-04-E3-แยกได้ว่าราคาใน-G-รวมกระเป๋าถือ-1-ใบแล้ว-57e2626168bb96e45556a3adaed29fc42b30bcd6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 05: E4 (ขั้น 2) ยังเป็นชั้นประหยัด · ไม่มีป้ายชั้นอื่นใน G (image/png) ─────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\attachments\ตรวจ-05-E4-ขั้น-2-ยังเป็นชั้นประหยัด-·-ไม่มีป้ายชั้นอื่นใน-G-6d2e0109e650c10fc10cbb05a97f812b357d898c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.3-filters-TC-FLT-02-·-⚠️-b2ba5-รองสายการบิน-ตัวกรองสัมภาระ-chromium\error-context.md
+
+  8) [chromium] › tests\5.3-filters.spec.ts:594:5 › TC-FLT-03 · สายการบิน "เท่านั้น" รวม codeshare + ✕ บนชิป @P2 @5.3 › 2. กดชิป "สายการบิน" → ที่ "เอเอ็นเอ" กด "เท่านั้น" · snapshot ขณะป๊อปอัปเปิด · Esc · รอ ≥ 10 วินาที · snapshot → ชุด A · ปุ่มดูเพิ่ม · แท็บ "ถูกที่สุด" = PA · ข้อความชิป · ขยาย (˅) 1 แถวที่ไม่ได้มีแค่เอเอ็นเอ [ค้นหา 2] 
+
+    Error: ไม่พบ "เอเอ็นเอ" หรือสายการบินที่มี codeshare ในป๊อปอัปสายการบิน (D-FLT-AIRLINE) → เว็บเปลี่ยน
+
+      629 |       const dlg = await openChip(gf, page, 'สายการบิน');
+      630 |       const pick = await pickAirline(dlg, B.rows);
+    > 631 |       if (!pick) throw new Error('ไม่พบ "เอเอ็นเอ" หรือสายการบินที่มี codeshare ในป๊อปอัปสายการบิน (D-FLT-AIRLINE) → เว็บเปลี่ยน');
+          |                        ^
+      632 |       if (pick.name !== al) {
+      633 |         al = pick.name;
+      634 |         BANA = B.rows.filter(hasAl);
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:631:24
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:628:5
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ตรงโจทย์ (image/png) ──────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์ตรงโจทย์-69146aedd187951834be294814a614df50d415ff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\error-context.md
+
+  9) [chromium] › tests\5.3-filters.spec.ts:867:5 › TC-FLT-05 · เวลาถึง / เวลาออก ตามเวลาท้องถิ่น จนไม่พบผล @P2 @5.3 › 3. กดชิป "เวลา" → ตั้ง slider "เวลาออกเดินทาง" เป็น 06:00 – 12:00 (D-FLT-DEP) · Esc · รอ ≥ 10 วินาที · snapshot → ชุด T · ข้อความปุ่ม "ตัวกรองทั้งหมด" [ค้นหา 3] 
+
+    TimeoutError: locator.click: Timeout 20000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /(^|, )เวลา, (ไม่ได้เลือก|เลือกแล้ว)$/, includeHidden: true }).visible().first()
+        - locator resolved to <button jsname="LgbsSe" jscontroller="soHxf" aria-haspopup="true" data-disable-idom="true" aria-label="เวลา, เลือกแล้ว" class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 nCOOmf WAWozd KLFr4 KKjvXb VfPpkd-ksKsZd-mWPk3d-OWXEXe-AHe6Kc-XpnDCe gmghec" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmen…>…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="NXZglb"></div> from <button jsname="JIbuQc" jscontroller="soHxf" aria-label="ล้าง เวลา" data-disable-idom="true" class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc iWux8d KKjvXb" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd">…</button> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="NXZglb"></div> from <button jsname="JIbuQc" jscontroller="soHxf" aria-label="ล้าง เวลา" data-disable-idom="true" class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc iWux8d KKjvXb" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd">…</button> subtree intercepts pointer events
+      2 × retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="VfPpkd-RLmnJb"></div> from <c-wiz c-wiz="" id="ow6" jsshadow="" jsname="d2Q2jb" jsmodel="hc6Ubd" __is_owner="true" jsrenderer="eixcv" jsdata="deferred-i2" jscontroller="CWvKEd" data-node-index="0;0" jsaction="rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;" data-p="%.@.[[[["สำรวจ",18,null,null,null,null,"/travel/explore?hl\u003dth\u0026authuser","travel_explore"],["เที่ยวบิน",7,null,null,null,null,"/travel/flights?hl\u003dth\u0026authuser","flight"],["โรงแรม",8,null,null,null,null,"/travel/hotels?hl\u003dth\u0026authu…>…</c-wiz> subtree intercepts pointer events
+      9 × retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="NXZglb"></div> from <button jsname="JIbuQc" jscontroller="soHxf" aria-label="ล้าง เวลา" data-disable-idom="true" class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc iWux8d KKjvXb" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd">…</button> subtree intercepts pointer events
+        - retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="NXZglb"></div> from <button jsname="JIbuQc" jscontroller="soHxf" aria-label="ล้าง เวลา" data-disable-idom="true" class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc iWux8d KKjvXb" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd">…</button> subtree intercepts pointer events
+        - retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="VfPpkd-RLmnJb"></div> from <c-wiz c-wiz="" id="ow6" jsshadow="" jsname="d2Q2jb" jsmodel="hc6Ubd" __is_owner="true" jsrenderer="eixcv" jsdata="deferred-i2" jscontroller="CWvKEd" data-node-index="0;0" jsaction="rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;" data-p="%.@.[[[["สำรวจ",18,null,null,null,null,"/travel/explore?hl\u003dth\u0026authuser","travel_explore"],["เที่ยวบิน",7,null,null,null,null,"/travel/flights?hl\u003dth\u0026authuser","flight"],["โรงแรม",8,null,null,null,null,"/travel/hotels?hl\u003dth\u0026authu…>…</c-wiz> subtree intercepts pointer events
+        - retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="VfPpkd-RLmnJb"></div> from <c-wiz c-wiz="" id="ow6" jsshadow="" jsname="d2Q2jb" jsmodel="hc6Ubd" __is_owner="true" jsrenderer="eixcv" jsdata="deferred-i2" jscontroller="CWvKEd" data-node-index="0;0" jsaction="rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;" data-p="%.@.[[[["สำรวจ",18,null,null,null,null,"/travel/explore?hl\u003dth\u0026authuser","travel_explore"],["เที่ยวบิน",7,null,null,null,null,"/travel/flights?hl\u003dth\u0026authuser","flight"],["โรงแรม",8,null,null,null,null,"/travel/hotels?hl\u003dth\u0026authu…>…</c-wiz> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="NXZglb"></div> from <button jsname="JIbuQc" jscontroller="soHxf" aria-label="ล้าง เวลา" data-disable-idom="true" class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc iWux8d KKjvXb" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd">…</button> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+
+
+       at ..\support\gf.ts:208
+
+      206 |     await target.hover({ timeout: 10_000 }).catch(() => {});
+      207 |     await sleep(rand(400, 900));
+    > 208 |     await target.click({ force: opts.force });
+          |                  ^
+      209 |     if (opts.search) await this.searched(opts.search);
+      210 |     else if (opts.booking) await this.bookingOpened(opts.booking);
+      211 |     else await this.pause();
+        at GF.click (C:\t\gf03v2\e2e\support\gf.ts:208:18)
+        at openChip (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:265:3)
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:928:19
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:927:5
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ตรงโจทย์ (image/png) ──────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-05-·-เว-b8bb7-ก-ตามเวลาท้องถิ่น-จนไม่พบผล-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์ตรงโจทย์-ac49c986221c826281c7bdd122de641082bb12ed.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 ทุกแถวใน A ถึงใน 00:00–08:00 (เวลาโตเกียว) (image/png) ──────────────
+    test-results\5.3-filters-TC-FLT-05-·-เว-b8bb7-ก-ตามเวลาท้องถิ่น-จนไม่พบผล-chromium\attachments\ตรวจ-02-E2-ทุกแถวใน-A-ถึงใน-00-00–08-00-เวลาโตเกียว--a27fac3bb4bdb21601e4670ebc43c211bd9d0f1c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 แถวใน B ที่ถึง 08:01–10:00 ไม่อยู่ใน A (ใช้เวลาโตเกียว) (image/png) ─
+    test-results\5.3-filters-TC-FLT-05-·-เว-b8bb7-ก-ตามเวลาท้องถิ่น-จนไม่พบผล-chromium\attachments\ตรวจ-03-E3-แถวใน-B-ที่ถึง-08-01–10-00-ไม่อยู่ใน-A-ใช้เวลาโตเกียว--0c740c2f446977369d1004651928a9e58b487df6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-05-·-เว-b8bb7-ก-ตามเวลาท้องถิ่น-จนไม่พบผล-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-05-·-เว-b8bb7-ก-ตามเวลาท้องถิ่น-จนไม่พบผล-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.3-filters-TC-FLT-05-·-เว-b8bb7-ก-ตามเวลาท้องถิ่น-จนไม่พบผล-chromium\error-context.md
+
+  10) [chromium] › tests\5.3-filters.spec.ts:994:5 › TC-FLT-06 · ตัวเลือกแวะพัก + ตัดสนามบินต่อเครื่อง + slider ระยะเวลา @P2 @5.3 
+
+    Error: มี "ไม่จำกัด"
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /ไม่จำกัด/
+    Received string:  " |  |  | "
+
+      1028 |       await gf.check('E1 ตัวเลือกแวะพัก ไม่จำกัด / บินตรง / ≤1 / ≤2 และไม่มี ≥3', sd.getByRole('radiogroup'), async () => {
+      1029 |         const all = names.join(' | ');
+    > 1030 |         expect.soft(all, 'มี "ไม่จำกัด"').toMatch(/ไม่จำกัด/);
+           |                                           ^
+      1031 |         expect.soft(all, 'มี "บินตรงเท่านั้น"').toMatch(/บินตรงเท่านั้น/);
+      1032 |         expect.soft(all, 'มี "แวะพัก 1 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 1 ครั้ง/);
+      1033 |         expect.soft(all, 'มี "แวะพัก 2 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 2 ครั้ง/);
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1030:43)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1028:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1017:5
+
+    Error: มี "บินตรงเท่านั้น"
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /บินตรงเท่านั้น/
+    Received string:  " |  |  | "
+
+      1029 |         const all = names.join(' | ');
+      1030 |         expect.soft(all, 'มี "ไม่จำกัด"').toMatch(/ไม่จำกัด/);
+    > 1031 |         expect.soft(all, 'มี "บินตรงเท่านั้น"').toMatch(/บินตรงเท่านั้น/);
+           |                                                 ^
+      1032 |         expect.soft(all, 'มี "แวะพัก 1 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 1 ครั้ง/);
+      1033 |         expect.soft(all, 'มี "แวะพัก 2 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 2 ครั้ง/);
+      1034 |         expect.soft(all, 'ไม่มีตัวเลือกสำหรับ ≥ 3 ครั้ง').not.toMatch(/แวะพัก ([3-9]|\d{2}) ครั้ง/);
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1031:49)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1028:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1017:5
+
+    Error: มี "แวะพัก 1 ครั้งหรือน้อยกว่า"
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /แวะพัก 1 ครั้ง/
+    Received string:  " |  |  | "
+
+      1030 |         expect.soft(all, 'มี "ไม่จำกัด"').toMatch(/ไม่จำกัด/);
+      1031 |         expect.soft(all, 'มี "บินตรงเท่านั้น"').toMatch(/บินตรงเท่านั้น/);
+    > 1032 |         expect.soft(all, 'มี "แวะพัก 1 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 1 ครั้ง/);
+           |                                                             ^
+      1033 |         expect.soft(all, 'มี "แวะพัก 2 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 2 ครั้ง/);
+      1034 |         expect.soft(all, 'ไม่มีตัวเลือกสำหรับ ≥ 3 ครั้ง').not.toMatch(/แวะพัก ([3-9]|\d{2}) ครั้ง/);
+      1035 |         expect.soft(names.length, 'มี 4 ตัวเลือก').toBe(4);
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1032:61)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1028:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1017:5
+
+    Error: มี "แวะพัก 2 ครั้งหรือน้อยกว่า"
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /แวะพัก 2 ครั้ง/
+    Received string:  " |  |  | "
+
+      1031 |         expect.soft(all, 'มี "บินตรงเท่านั้น"').toMatch(/บินตรงเท่านั้น/);
+      1032 |         expect.soft(all, 'มี "แวะพัก 1 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 1 ครั้ง/);
+    > 1033 |         expect.soft(all, 'มี "แวะพัก 2 ครั้งหรือน้อยกว่า"').toMatch(/แวะพัก 2 ครั้ง/);
+           |                                                             ^
+      1034 |         expect.soft(all, 'ไม่มีตัวเลือกสำหรับ ≥ 3 ครั้ง').not.toMatch(/แวะพัก ([3-9]|\d{2}) ครั้ง/);
+      1035 |         expect.soft(names.length, 'มี 4 ตัวเลือก').toBe(4);
+      1036 |       });
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1033:61)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1028:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1017:5
+
+    Error: ไม่พบรายการสนามบินในป๊อปอัป "สนามบินสำหรับต่อเครื่อง" → เว็บเปลี่ยน
+
+      1067 |         list.find((h) => connecting.some((r) => r.stopCodes.includes(h.code) || (r.stopCodes.length === 0 && r.stopSegs.some((s) => s.includes(h.city))))) ||
+      1068 |         list[0];
+    > 1069 |       if (!pick) throw new Error('ไม่พบรายการสนามบินในป๊อปอัป "สนามบินสำหรับต่อเครื่อง" → เว็บเปลี่ยน');
+           |                        ^
+      1070 |       H0 = pick;
+      1071 |       note('H0 (D-FLT-HUB-A)', `${H0.name}${connecting.length ? '' : ' · A ไม่มีแถวต่อเครื่อง จึงใช้ D-FLT-HUB (สนามบินแรกในรายการ)'}`);
+      1072 |       await gf.click(dlg.getByRole('checkbox', { name: H0.name, exact: true }));
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1069:24
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1056:5
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ตรงโจทย์ (image/png) ──────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-06-·-ตั-f8755-นต่อเครื่อง-slider-ระยะเวลา-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์ตรงโจทย์-ee358e60df0ec22f64d6b0db0369dc3e5e59aa43.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E1 ตัวเลือกแวะพัก ไม่จำกัด / บินตรง / ≤1 / ≤2 และไม่มี ≥3 (image/png) ──
+    test-results\5.3-filters-TC-FLT-06-·-ตั-f8755-นต่อเครื่อง-slider-ระยะเวลา-chromium\attachments\ตรวจ-02-E1-ตัวเลือกแวะพัก-ไม่จำกัด-บินตรง-≤1-≤2-และไม่มี-≥3-943654b7ced4a9b17791a09f36b09e296a028220.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E1 ป้าย slider ระยะเวลาเริ่มต้น = "ไม่จำกัด" (image/png) ───────────────
+    test-results\5.3-filters-TC-FLT-06-·-ตั-f8755-นต่อเครื่อง-slider-ระยะเวลา-chromium\attachments\ตรวจ-03-E1-ป้าย-slider-ระยะเวลาเริ่มต้น-ไม่จำกัด--d3602e9553ae6dde3a848e43735019b955fa19da.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-06-·-ตั-f8755-นต่อเครื่อง-slider-ระยะเวลา-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-06-·-ตั-f8755-นต่อเครื่อง-slider-ระยะเวลา-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.3-filters-TC-FLT-06-·-ตั-f8755-นต่อเครื่อง-slider-ระยะเวลา-chromium\error-context.md
+
+  11) [chromium] › tests\5.3-filters.spec.ts:1143:5 › TC-FLT-07 · ⚠️ ตั๋วแยก · slider ราคา · แถวไม่มีราคา · ชิปเวลา · ขอบ 08:00 · สับเซตเทียบชุดแรก @P2 @5.3 @known-defect 
+
+    Error: ค่าเริ่มต้น = แสดง · ชิปตั๋วแยกในแถวชิป 0 ตัว (ชิป: จำนวนครั้งที่แวะพัก, ไม่ได้เลือก | สายการบิน, ไม่ได้เลือก | สัมภาระ, ไม่ได้เลือก | ราคา, ไม่ได้เลือก | เวลา, ไม่ได้เลือก | การปล่อยก๊าซ, ไม่ได้เลือก | สนามบินสำหรับต่อเครื่อง, ไม่ได้เลือก | ระยะเวลา, ไม่ได้เลือก)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1192 |       await gf.check('E2 ค่าเริ่มต้นตั๋วแยก = ซ่อน หรือมีชิปบอกสถานะ', [allChips(page), sepChip], async () => {
+      1193 |         expect.soft(hideChecked || showChecked, 'อ่านค่าสวิตช์ตั๋วแยกได้').toBe(true);
+    > 1194 |         expect.soft(hideChecked || (showChecked && sepChipCount > 0), `ค่าเริ่มต้น = ${hideChecked ? 'ซ่อน' : 'แสดง'} · ชิปตั๋วแยกในแถวชิป ${sepChipCount} ตัว (ชิป: ${chipNames.join(' | ')})`).toBe(true);
+           |                                                                                                                                                                                                  ^
+      1195 |       });
+      1196 |     });
+      1197 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1194:194)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1192:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1165:5
+
+    Error: X (10000) ≤ P0 (5900)
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 5900
+    Received:    10000
+
+      1213 |         expect.soft(X, 'อ่านค่า X ได้').not.toBeNull();
+      1214 |         expect.soft(B.cheapest, 'อ่าน P0 ได้').not.toBeNull();
+    > 1215 |         if (X !== null && B.cheapest !== null) expect.soft(X, `X (${X}) ≤ P0 (${B.cheapest})`).toBeLessThanOrEqual(B.cheapest);
+           |                                                                                                ^
+      1216 |       });
+      1217 |       if (P.rows.length === 0) {
+      1218 |         note('หน้าไม่พบผล (ขั้น 2)', (await textOf(page.getByRole('main'))).slice(0, 400));
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1215:96)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1212:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1198:5
+
+    Error: แถวไม่มีราคาใน P: [เซี่ยงไฮ้แอร์ไลน์ และไชนาอีสเทิร์นแอร์ไลน์ · 10:45→20:50 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติซ่างไห่ผู่ตง ในเซี่ยงไฮ · ไม่อยู่ใน B]
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      1221 |       } else {
+      1222 |         await gf.check('E4 ไม่มีแถว "ไม่มีข้อมูลราคา" ใน P', noPrice.length ? rowItems(page).filter({ hasText: /ไม่มีข้อมูลราคา/ }) : rowItems(page), async () => {
+    > 1223 |           expect.soft(noPrice.length, `แถวไม่มีราคาใน P: ${noPrice.map((r) => `[${r.key} · ${keySet(B.rows).has(r.key) ? 'อยู่ใน B' : 'ไม่อยู่ใน B'}]`).join(' ')}`).toBe(0);
+           |                                                                                                                                                                      ^
+      1224 |         });
+      1225 |         await gf.check('E5 ทุกแถวใน P อยู่ใน B และ N\' ≤ N', [rowItems(page), resultCountText(page)], async () => {
+      1226 |           const extra = notIn(P.rows, B.rows);
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1223:166)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1222:9
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1198:5
+
+    Error: แถวใน P ที่ไม่อยู่ใน B (ข้อความ N = 24 ไม่ได้นับทุกเที่ยวบิน): [ฮ่องกงเอ็กซ์เพรส · 00:35→15:55 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาตินะริตะ · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติฮ่องกง ในเขตบริหารพิเศษฮ่องกง · ฿7961] [ไชนาเซาเทิร์นแอร์ไลน์ · 19:55→13:15+1 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาตินะริตะ · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติกว่างโจวไป๋-ยฺหวิน ในกว่างโจว · ฿8375] [เซี่ยงไฮ้แอร์ไลน์ และไชนาอีสเทิร์นแอร์ไลน์ · 10:45→20:50 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติซ่างไห่ผู่ตง ในเซี่ยงไฮ · ไม่มีราคา]
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 3
+
+      1225 |         await gf.check('E5 ทุกแถวใน P อยู่ใน B และ N\' ≤ N', [rowItems(page), resultCountText(page)], async () => {
+      1226 |           const extra = notIn(P.rows, B.rows);
+    > 1227 |           expect.soft(extra.length, `แถวใน P ที่ไม่อยู่ใน B (ข้อความ N = ${B.count.n} ไม่ได้นับทุกเที่ยวบิน): ${show(extra)}`).toBe(0);
+           |                                                                                                                                ^
+      1228 |           expect.soft(P.count.n, 'อ่าน N\' ได้').not.toBeNull();
+      1229 |           if (P.count.n !== null && B.count.n !== null) expect.soft(P.count.n, `N' (${P.count.n}) ≤ N (${B.count.n})`).toBeLessThanOrEqual(B.count.n);
+      1230 |         });
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1227:128)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1225:9
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1198:5
+
+    Error: ชิปเวลาไม่ใช่แค่คำว่า "เวลา" (ชิปราคา: "สูงสุด ฿10,000")
+
+    expect(received).not.toBe(expected) // Object.is equality
+
+    Expected: not "เวลา"
+
+      1252 |
+      1253 |       await gf.check('E6 ชิปเวลาแสดงค่าที่ตั้ง (ไม่ใช่แค่ "เวลา")', [timeChip, priceChip], async () => {
+    > 1254 |         expect.soft(timeTxt, `ชิปเวลาไม่ใช่แค่คำว่า "เวลา" (ชิปราคา: "${priceTxt}")`).not.toBe('เวลา');
+           |                                                                                           ^
+      1255 |         expect.soft(timeTxt, 'ชิปเวลามีช่วงเวลาหรืออย่างน้อย "08:00"').toMatch(/\d{1,2}:\d{2}/);
+      1256 |       });
+      1257 |       if (r08.length > 0) {
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1254:91)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1253:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1234:5
+
+    Error: ชิปเวลามีช่วงเวลาหรืออย่างน้อย "08:00"
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /\d{1,2}:\d{2}/
+    Received string:  "เวลา"
+
+      1253 |       await gf.check('E6 ชิปเวลาแสดงค่าที่ตั้ง (ไม่ใช่แค่ "เวลา")', [timeChip, priceChip], async () => {
+      1254 |         expect.soft(timeTxt, `ชิปเวลาไม่ใช่แค่คำว่า "เวลา" (ชิปราคา: "${priceTxt}")`).not.toBe('เวลา');
+    > 1255 |         expect.soft(timeTxt, 'ชิปเวลามีช่วงเวลาหรืออย่างน้อย "08:00"').toMatch(/\d{1,2}:\d{2}/);
+           |                                                                        ^
+      1256 |       });
+      1257 |       if (r08.length > 0) {
+      1258 |         await gf.check('E7 r08 (ถึง 08:00 พอดี) อยู่ใน T', rowItems(page), async () => {
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1255:72)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1253:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:1234:5
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ตรงโจทย์ (image/png) ──────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์ตรงโจทย์-31dd80ff626e0dae9432ca2771f561d548e7f2fa.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: แผงตัวกรองทั้งหมด: สวิตช์ตั๋วแยก (ค่าเริ่มต้น) (image/png) ──────────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\แผงตัวกรองทั้งหมด-สวิตช์ตั๋วแยก-ค่าเริ่มต้น--d56b7a3f74b39d9898536cd872d9e47924b9a27b.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 02: E2 ค่าเริ่มต้นตั๋วแยก = ซ่อน หรือมีชิปบอกสถานะ (image/png) ─────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\ตรวจ-02-E2-ค่าเริ่มต้นตั๋วแยก-ซ่อน-หรือมีชิปบอกสถานะ-d50c35565f51cc9caec2b678484ab61e53478060.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 03: E3 X ≤ P0 (slider ราคาลงได้ถึงราคาถูกสุด) (image/png) ──────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\ตรวจ-03-E3-X-≤-P0-slider-ราคาลงได้ถึงราคาถูกสุด--79f3f4054af9ca951a33f50d18462a6f2cc801aa.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 04: E4 ไม่มีแถว "ไม่มีข้อมูลราคา" ใน P (image/png) ─────────────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\ตรวจ-04-E4-ไม่มีแถว-ไม่มีข้อมูลราคา-ใน-P-2e7d05b3d0140529ff63c9670e50f54d7b06cc23.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 05: E5 ทุกแถวใน P อยู่ใน B และ N' ≤ N (image/png) ──────────────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\ตรวจ-05-E5-ทุกแถวใน-P-อยู่ใน-B-และ-N-≤-N-5c7510ff6da8b6ca194e95aa4f0839d1620729d2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: ตรวจ 06: E6 ชิปเวลาแสดงค่าที่ตั้ง (ไม่ใช่แค่ "เวลา") (image/png) ────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\attachments\ตรวจ-06-E6-ชิปเวลาแสดงค่าที่ตั้ง-ไม่ใช่แค่-เวลา--4206f395619b34c046213dfad0aab717ecfebaf0.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.3-filters-TC-FLT-07-·-⚠️-51d09-บ-08-00-·-สับเซตเทียบชุดแรก-chromium\error-context.md
+
+  12) [chromium] › tests\5.4-price-date-tools.spec.ts:393:5 › TC-PRC-01 · ข้อมูลเชิงลึกด้านราคาและสวิตช์ติดตามราคา (ก่อนล็อกอิน) @P2 @5.4 
+
+    Error: อ่านราคาแท็บ "ถูกที่สุด" ได้
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      444 |     await gf.check('E1 X = ราคาต่ำสุดในรายการ = "เริ่มที่" ในปฏิทิน = ช่อง 15 ธ.ค.', [cheapestTab(page), cal15.loc, from], async () => {
+      445 |       const minRow = rows.length ? Math.min(...rows) : null;
+    > 446 |       expect.soft(X, 'อ่านราคาแท็บ "ถูกที่สุด" ได้').not.toBeNull();
+          |                                                          ^
+      447 |       expect.soft(minRow, `X ${fmt(X)} = ราคาต่ำสุดในรายการ ${fmt(minRow)}`).toBe(X);
+      448 |       expect.soft(calFrom, `X ${fmt(X)} = ยอด "เริ่มที่" ในปฏิทิน ${fmt(calFrom)}`).toBe(X);
+      449 |       expect.soft(sameAtCell(cal15!.display, unit, X),
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:446:58)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:444:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:431:3
+
+    Error: ช่อง 15 ธ.ค. ในปฏิทิน — = X — ที่ความละเอียดของช่อง (฿10)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      448 |       expect.soft(calFrom, `X ${fmt(X)} = ยอด "เริ่มที่" ในปฏิทิน ${fmt(calFrom)}`).toBe(X);
+      449 |       expect.soft(sameAtCell(cal15!.display, unit, X),
+    > 450 |         `ช่อง 15 ธ.ค. ในปฏิทิน ${fmt(cal15!.display)} = X ${fmt(X)} ที่ความละเอียดของช่อง (฿${unit})`).toBe(true);
+          |                                                                                                        ^
+      451 |     });
+      452 |     await closeCalendarEsc(gf, page);
+      453 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:450:104)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:444:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:431:3
+
+    TimeoutError: locator.click: Timeout 20000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'ดูประวัติราคา' })
+
+
+       at ..\support\gf.ts:208
+
+      206 |     await target.hover({ timeout: 10_000 }).catch(() => {});
+      207 |     await sleep(rand(400, 900));
+    > 208 |     await target.click({ force: opts.force });
+          |                  ^
+      209 |     if (opts.search) await this.searched(opts.search);
+      210 |     else if (opts.booking) await this.bookingOpened(opts.booking);
+      211 |     else await this.pause();
+        at GF.click (C:\t\gf03v2\e2e\support\gf.ts:208:18)
+        at expandInsights (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:182:79)
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:459:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:455:3
+
+    attachment #1: ตรวจ 01: ตั้งต้น หัวผลลัพธ์ตรงโจทย์ U1 (15 ธ.ค.) (image/png) ────────────────────
+    test-results\5.4-price-date-tools-TC-PR-2759a-ิตช์ติดตามราคา-ก่อนล็อกอิน--chromium\attachments\ตรวจ-01-ตั้งต้น-หัวผลลัพธ์ตรงโจทย์-U1-15-ธ-ค--bda1d08bcdf79786c0be18801ec3f61ea2f399d0.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: snapshot · ขั้น 2 แท็บถูกที่สุดและรายการ (text/yaml) ────────────────────────────
+    - banner:
+      - button "เมนูหลัก":
+        - img
+      - link "Google":
+        - /url: /
+      - button "ข้ามไปที่เนื้อหาหลัก"
+      - button "ความคิดเห็นเกี่ยวกับการช่วยเหลือพิเศษ"
+      - navigation:
+        - link "สำรวจ":
+          - img
+          - text: สำรวจ
+        - link "เที่ยวบิน":
+          - img
+          - text: เที่ยวบิน
+        - link ...
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 02: E1 X = ราคาต่ำสุดในรายการ = "เริ่มที่" ในปฏิทิน = ช่อง 15 ธ.ค. (image/png) 
+    test-results\5.4-price-date-tools-TC-PR-2759a-ิตช์ติดตามราคา-ก่อนล็อกอิน--chromium\attachments\ตรวจ-02-E1-X-ราคาต่ำสุดในรายการ-เริ่มที่-ในปฏิทิน-ช่อง-15-ธ-ค--3885aad7dd39baba0e485160eb59575dbed8be54.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-2759a-ิตช์ติดตามราคา-ก่อนล็อกอิน--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-2759a-ิตช์ติดตามราคา-ก่อนล็อกอิน--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.4-price-date-tools-TC-PR-2759a-ิตช์ติดตามราคา-ก่อนล็อกอิน--chromium\error-context.md
+
+  13) [chromium] › tests\5.4-price-date-tools.spec.ts:534:5 › TC-PRC-02 · ตารางวันที่และกราฟราคา: ราคา ไฮไลต์ ✦ ยกเลิก/ตกลง @P2 @5.4 
+
+    Error: เสาร์ 12 ธ.ค.: ตาราง ฿5,900 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: อาทิตย์ 13 ธ.ค.: ตาราง ฿5,900 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: จันทร์ 14 ธ.ค.: ตาราง ฿5,900 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: อังคาร 15 ธ.ค.: ตาราง ฿5,900 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: พุธ 16 ธ.ค.: ตาราง ฿5,900 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: พฤหัส 17 ธ.ค.: ตาราง ฿6,533 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: ศุกร์ 18 ธ.ค.: ตาราง ฿6,533 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    Error: เสาร์ 19 ธ.ค.: ตาราง ฿5,900 = ปฏิทิน — ที่ความละเอียดช่อง ฿10
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      611 |         if (!cr) continue;
+      612 |         expect.soft(sameAtCell(cr.display, unit, c.price),
+    > 613 |           `${c.header}: ตาราง ${fmt(c.price)} = ปฏิทิน ${fmt(cr.display)} ที่ความละเอียดช่อง ฿${unit}`).toBe(true);
+          |                                                                                                         ^
+      614 |       }
+      615 |       expect.soft(gridPrices.get(D_DATE), `ช่อง 15 ธ.ค. ในตาราง = X ${fmt(X)}`).toBe(X);
+      616 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:613:105)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:607:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:580:3
+
+    TimeoutError: locator.click: Timeout 20000ms exceeded.
+    Call log:
+      - waiting for getByRole('dialog', { name: 'ข้อมูลเชิงลึกด้านราคา' }).getByRole('tabpanel', { name: 'วันที่' }).getByRole('button', { name: /^฿\s*[\d,]+/ }).nth(5)
+        - locator resolved to <div data-row="0" role="button" data-col="44" aria-label="฿6,533" class="QB2Jof DmxQAb  pIviAd  ">฿6,533</div>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <canvas role="grid" tabindex="0" class="Nk9ZY" jsname="qTwgI" aria-label="ตารางวันที่" jsaction="keydown:Hq2uPe; keyup:OohHqe"></canvas> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <canvas role="grid" tabindex="0" class="Nk9ZY" jsname="qTwgI" aria-label="ตารางวันที่" jsaction="keydown:Hq2uPe; keyup:OohHqe"></canvas> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        38 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <canvas role="grid" tabindex="0" class="Nk9ZY" jsname="qTwgI" aria-label="ตารางวันที่" jsaction="keydown:Hq2uPe; keyup:OohHqe"></canvas> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+
+
+       at ..\support\gf.ts:208
+
+      206 |     await target.hover({ timeout: 10_000 }).catch(() => {});
+      207 |     await sleep(rand(400, 900));
+    > 208 |     await target.click({ force: opts.force });
+          |                  ^
+      209 |     if (opts.search) await this.searched(opts.search);
+      210 |     else if (opts.booking) await this.bookingOpened(opts.booking);
+      211 |     else await this.pause();
+        at GF.click (C:\t\gf03v2\e2e\support\gf.ts:208:18)
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:663:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:647:3
+
+    attachment #1: ตรวจ 01: ตั้งต้น หัวผลลัพธ์ตรงโจทย์ U1 (15 ธ.ค.) (image/png) ────────────────────
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\attachments\ตรวจ-01-ตั้งต้น-หัวผลลัพธ์ตรงโจทย์-U1-15-ธ-ค--8341798baa12f12028299326b3d5af02daf5143f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: snapshot · ขั้น 3 ตารางวันที่ (text/yaml) ───────────────────────────────────────
+    - text: กำลังโหลดราคา
+    - dialog "ข้อมูลเชิงลึกด้านราคา":
+      - tablist:
+        - tab "วันที่" [selected]
+        - tab "กราฟราคา"
+      - tabpanel "วันที่":
+        - img
+        - text: ถูกที่สุด เมื่อเทียบกับราคาอื่นๆ ที่แสดง เวลาออกเดินทาง
+        - button "เลื่อนไปทางซ้าย":
+          - img
+        - button "เลื่อนไปทางขวา":
+        ...
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 02: E1 ตารางมีแถวเดียว วันติดกันเรียงเก่า→ใหม่ (image/png) ─────────────────
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\attachments\ตรวจ-02-E1-ตารางมีแถวเดียว-วันติดกันเรียงเก่า→ใหม่-6ccdd3bf713596a2ad24bcd1dfb0001a74e8a3ba.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 03: E2 ช่อง 15 ธ.ค. เลือกแล้วช่องเดียว และสรุปท้าย = 15 ธ.ค. · X · เที่ยวเดียว (image/png) 
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\attachments\ตรวจ-03-E2-ช่อง-15-ธ-ค-เลือกแล้วช่องเดียว-และสรุปท้าย-15-ธ-ค-·-X-·-เที่ยวเดียว-6e790392cb4eefeee119af82e02711498b56b844.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: ตรวจ 04: E3 ราคาทุกช่องในตาราง = ปฏิทินวันเดียวกัน และช่อง 15 ธ.ค. = X (image/png) 
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\attachments\ตรวจ-04-E3-ราคาทุกช่องในตาราง-ปฏิทินวันเดียวกัน-และช่อง-15-ธ-ค-X-6b9482a499563789469eb920d70e35d8afc538c3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: ตรวจ 05: E4 ✦ = ราคาต่ำสุดของช่องที่แสดง (ชุดแรก) (image/png) ───────────────────
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\attachments\ตรวจ-05-E4-✦-ราคาต่ำสุดของช่องที่แสดง-ชุดแรก--45f3f1c37020d0c617449b8f5c1c3eafae495f9f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: ตรวจ 06: E4 ✦ หลังกด > ยังเป็นราคาต่ำสุดของชุดช่องใหม่ (image/png) ──────────────
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\attachments\ตรวจ-06-E4-✦-หลังกด-ยังเป็นราคาต่ำสุดของชุดช่องใหม่-407356fcd082c44aaffcb9167f8065df2ef75af4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: screenshot (image/png) ─────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #11: video (video/webm) ─────────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.4-price-date-tools-TC-PR-92bff-า-ราคา-ไฮไลต์-✦-ยกเลิก-ตกลง-chromium\error-context.md
+
+  14) [chromium] › tests\5.4-price-date-tools.spec.ts:771:5 › TC-PRC-03 · ⚠️ การ์ดวันที่ถูกกว่า: ขึ้นสม่ำเสมอ และ "เปลี่ยนวันที่" พาไปวันที่แนะนำ @P2 @5.4 @known-defect 
+
+    Error: ช่องที่เลือกแล้ว = D-PRC-CARD 29 ธ.ค. (ถ้ายังเป็น 31 ธ.ค. = ล้ม)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+    -   "2026-12-29",
+    +   "2026-12-31",
+      ]
+
+      865 |         note(`"เปลี่ยนวันที่" เปิดป๊อปอัปตาราง · ช่องที่เลือก ${sel.map((c) => c.header).join(', ') || '—'} · สรุป "${sum.text}"`);
+      866 |         await gf.check('E3 หลังกด "เปลี่ยนวันที่" ได้วัน D-PRC-CARD (ช่องที่เลือก + สรุปท้าย)', [sel[0]?.btn ?? gridPanel(dlg), sum.loc], async () => {
+    > 867 |           expect.soft(sel.map((c) => c.iso), `ช่องที่เลือกแล้ว = D-PRC-CARD ${thShort(card2.iso!)} (ถ้ายังเป็น 31 ธ.ค. = ล้ม)`).toEqual([card2.iso]);
+          |                                                                                                                                 ^
+      868 |           expect.soft(sum.iso, `สรุปท้าย "${sum.text}" = ${thShort(card2.iso!)}`).toBe(card2.iso);
+      869 |           expect.soft(sum.price, `สรุปท้ายราคา = ราคาบนการ์ด ${fmt(card2.price)}`).toBe(card2.price);
+      870 |         });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:867:129)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:866:9
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:846:3
+
+    Error: สรุปท้าย "31 ธ.ค.฿11,575 · เที่ยวเดียว" = 29 ธ.ค.
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2026-12-29"
+    Received: "2026-12-31"
+
+      866 |         await gf.check('E3 หลังกด "เปลี่ยนวันที่" ได้วัน D-PRC-CARD (ช่องที่เลือก + สรุปท้าย)', [sel[0]?.btn ?? gridPanel(dlg), sum.loc], async () => {
+      867 |           expect.soft(sel.map((c) => c.iso), `ช่องที่เลือกแล้ว = D-PRC-CARD ${thShort(card2.iso!)} (ถ้ายังเป็น 31 ธ.ค. = ล้ม)`).toEqual([card2.iso]);
+    > 868 |           expect.soft(sum.iso, `สรุปท้าย "${sum.text}" = ${thShort(card2.iso!)}`).toBe(card2.iso);
+          |                                                                                   ^
+      869 |           expect.soft(sum.price, `สรุปท้ายราคา = ราคาบนการ์ด ${fmt(card2.price)}`).toBe(card2.price);
+      870 |         });
+      871 |         await collectWindow(gf, dlg, D_HIGH, win31, { n: 0 });
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:868:83)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:866:9
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:846:3
+
+    Error: สรุปท้ายราคา = ราคาบนการ์ด ฿8,375
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 8375
+    Received: 11575
+
+      867 |           expect.soft(sel.map((c) => c.iso), `ช่องที่เลือกแล้ว = D-PRC-CARD ${thShort(card2.iso!)} (ถ้ายังเป็น 31 ธ.ค. = ล้ม)`).toEqual([card2.iso]);
+      868 |           expect.soft(sum.iso, `สรุปท้าย "${sum.text}" = ${thShort(card2.iso!)}`).toBe(card2.iso);
+    > 869 |           expect.soft(sum.price, `สรุปท้ายราคา = ราคาบนการ์ด ${fmt(card2.price)}`).toBe(card2.price);
+          |                                                                                    ^
+      870 |         });
+      871 |         await collectWindow(gf, dlg, D_HIGH, win31, { n: 0 });
+      872 |       } else {
+        at assertion (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:869:84)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:866:9
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:846:3
+
+    TimeoutError: locator.click: Timeout 20000ms exceeded.
+    Call log:
+      - waiting for getByRole('dialog', { name: 'ข้อมูลเชิงลึกด้านราคา' }).getByRole('tabpanel', { name: 'วันที่' }).getByRole('button', { name: /^฿\s*[\d,]+/ }).nth(1)
+        - locator resolved to <div data-row="0" role="button" data-col="56" class="QB2Jof DmxQAb  qCQZpc  " aria-label="฿8,375, ราคาถูกที่สุด">…</div>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <canvas role="grid" tabindex="0" class="Nk9ZY" jsname="qTwgI" aria-label="ตารางวันที่" jsaction="keydown:Hq2uPe; keyup:OohHqe"></canvas> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <canvas role="grid" tabindex="0" class="Nk9ZY" jsname="qTwgI" aria-label="ตารางวันที่" jsaction="keydown:Hq2uPe; keyup:OohHqe"></canvas> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        38 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <canvas role="grid" tabindex="0" class="Nk9ZY" jsname="qTwgI" aria-label="ตารางวันที่" jsaction="keydown:Hq2uPe; keyup:OohHqe"></canvas> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+
+
+       at ..\support\gf.ts:208
+
+      206 |     await target.hover({ timeout: 10_000 }).catch(() => {});
+      207 |     await sleep(rand(400, 900));
+    > 208 |     await target.click({ force: opts.force });
+          |                  ^
+      209 |     if (opts.search) await this.searched(opts.search);
+      210 |     else if (opts.booking) await this.bookingOpened(opts.booking);
+      211 |     else await this.pause();
+        at GF.click (C:\t\gf03v2\e2e\support\gf.ts:208:18)
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:908:9
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:896:3
+
+    attachment #1: ตรวจ 01: ตั้งต้น หัวผลลัพธ์ตรงโจทย์ U1 (15 ธ.ค.) (image/png) ────────────────────
+    test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\attachments\ตรวจ-01-ตั้งต้น-หัวผลลัพธ์ตรงโจทย์-U1-15-ธ-ค--cb2e9869e06f82ec39588db7dcfe5cae5ca1d61b.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: snapshot · ขั้น 2 การ์ดวันที่ถูกกว่า (15 ธ.ค.) (text/yaml) ──────────────────────
+    - banner:
+      - button "เมนูหลัก":
+        - img
+      - link "Google":
+        - /url: /
+      - button "ข้ามไปที่เนื้อหาหลัก"
+      - button "ความคิดเห็นเกี่ยวกับการช่วยเหลือพิเศษ"
+      - navigation:
+        - link "สำรวจ":
+          - img
+          - text: สำรวจ
+        - link "เที่ยวบิน":
+          - img
+          - text: เที่ยวบิน
+        - link ...
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 03: ตั้งต้น หัวผลลัพธ์ = พฤหัส 31 ธ.ค. (image/png) ─────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\attachments\ตรวจ-03-ตั้งต้น-หัวผลลัพธ์-พฤหัส-31-ธ-ค--c099b064b3a1cd583390f200b15f6a1cf02674a2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: snapshot · ขั้น 5 การ์ดวันที่ถูกกว่า (31 ธ.ค.) (text/yaml) ──────────────────────
+    - banner:
+      - button "เมนูหลัก":
+        - img
+      - link "Google":
+        - /url: /
+      - button "ข้ามไปที่เนื้อหาหลัก"
+      - button "ความคิดเห็นเกี่ยวกับการช่วยเหลือพิเศษ"
+      - navigation:
+        - link "สำรวจ":
+          - img
+          - text: สำรวจ
+        - link "เที่ยวบิน":
+          - img
+          - text: เที่ยวบิน
+        - link ...
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: snapshot · ขั้น 6 หลังกด เปลี่ยนวันที่ (text/yaml) ──────────────────────────────
+    - text: วันพฤหัสบดีที่ 31 ธันวาคม ค.ศ. 2026
+    - dialog "ข้อมูลเชิงลึกด้านราคา":
+      - tablist:
+        - tab "วันที่" [selected]
+        - tab "กราฟราคา"
+      - tabpanel "วันที่":
+        - img
+        - text: ถูกที่สุด เมื่อเทียบกับราคาอื่นๆ ที่แสดง เวลาออกเดินทาง
+        - button "เลื่อนไปทางซ้าย":
+          - img
+        - button ...
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: ตรวจ 04: E3 หลังกด "เปลี่ยนวันที่" ได้วัน D-PRC-CARD (ช่องที่เลือก + สรุปท้าย) (image/png) 
+    test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\attachments\ตรวจ-04-E3-หลังกด-เปลี่ยนวันที่-ได้วัน-D-PRC-CARD-ช่องที่เลือก-สรุปท้าย--50c76445314c2ec1fc3fdfcbfc2267c1cfd47882.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: ตรวจ 05: E2 กฎร่วม R99 ที่ 31 ธ.ค. (มีวันใกล้ถูกกว่า ⇒ มีการ์ด) (image/png) ────
+    test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\attachments\ตรวจ-05-E2-กฎร่วม-R99-ที่-31-ธ-ค-มีวันใกล้ถูกกว่า-⇒-มีการ์ด--97ef055609796857a37ce251a17e9d31370ace0a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #11: screenshot (image/png) ─────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #12: video (video/webm) ─────────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.4-price-date-tools-TC-PR-f7c38-ลี่ยนวันที่-พาไปวันที่แนะนำ-chromium\error-context.md
+
+  15) [chromium] › tests\5.4-price-date-tools.spec.ts:940:5 › TC-PRC-04 · ราคาบนการ์ดวันที่ถูกกว่า ป้าย "สูง" และช่วงราคาปกติ @P2 @5.4 › 4. กด "ดูประวัติราคา" จด Lo31–Hi31 คำป้าย และราคาในประโยค "฿… อยู่ในช่วงราคา …" · screenshot 
+
+    TimeoutError: locator.click: Timeout 20000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'ดูประวัติราคา' })
+        - locator resolved to <button jsname="LgbsSe" jscontroller="soHxf" aria-expanded="false" aria-describedby="ucc-6" aria-label="ดูประวัติราคา" data-idom-class="nCP5yc AjY5Oe LQeN7 nJawce OTelKf XPGpHc mAozAc" class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-Bz112c-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe LQeN7 nJawce OTelKf XPGpHc mAozAc" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:J…>…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div role="presentation" class="KLUzxd P2UJoe"></div> from <div role="region" class="MqKGaf FlfUOc" aria-label="หาราคาที่ดีที่สุด">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div role="presentation" class="KLUzxd P2UJoe"></div> from <div role="region" class="MqKGaf FlfUOc" aria-label="หาราคาที่ดีที่สุด">…</div> subtree intercepts pointer events
+      2 × retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <a class="gb_C" tabindex="0" role="button" aria-expanded="false" aria-label="แอป Google" href="https://www.google.co.th/intl/th/about/products">…</a> from <c-wiz c-wiz="" id="ow6" jsshadow="" jsname="d2Q2jb" jsmodel="hc6Ubd" __is_owner="true" jsrenderer="eixcv" jsdata="deferred-i2" jscontroller="CWvKEd" data-node-index="0;0" jsaction="rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;" data-p="%.@.[[[["สำรวจ",18,null,null,null,null,"/travel/explore?hl\u003dth\u0026authuser","travel_explore"],["เที่ยวบิน",7,null,null,null,null,"/travel/flights?hl\u003dth\u0026authuser","flight"],["โรงแรม",8,null,null,null,null,"/travel/hotels?hl\u003dth\u0026authu…>…</c-wiz> subtree intercepts pointer events
+      9 × retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div role="presentation" class="KLUzxd P2UJoe"></div> from <div role="region" class="MqKGaf FlfUOc" aria-label="หาราคาที่ดีที่สุด">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div role="presentation" class="KLUzxd P2UJoe"></div> from <div role="region" class="MqKGaf FlfUOc" aria-label="หาราคาที่ดีที่สุด">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <a class="gb_C" tabindex="0" role="button" aria-expanded="false" aria-label="แอป Google" href="https://www.google.co.th/intl/th/about/products">…</a> from <c-wiz c-wiz="" id="ow6" jsshadow="" jsname="d2Q2jb" jsmodel="hc6Ubd" __is_owner="true" jsrenderer="eixcv" jsdata="deferred-i2" jscontroller="CWvKEd" data-node-index="0;0" jsaction="rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;" data-p="%.@.[[[["สำรวจ",18,null,null,null,null,"/travel/explore?hl\u003dth\u0026authuser","travel_explore"],["เที่ยวบิน",7,null,null,null,null,"/travel/flights?hl\u003dth\u0026authuser","flight"],["โรงแรม",8,null,null,null,null,"/travel/hotels?hl\u003dth\u0026authu…>…</c-wiz> subtree intercepts pointer events
+        - retrying click action
+          - waiting 500ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <a class="gb_C" tabindex="0" role="button" aria-expanded="false" aria-label="แอป Google" href="https://www.google.co.th/intl/th/about/products">…</a> from <c-wiz c-wiz="" id="ow6" jsshadow="" jsname="d2Q2jb" jsmodel="hc6Ubd" __is_owner="true" jsrenderer="eixcv" jsdata="deferred-i2" jscontroller="CWvKEd" data-node-index="0;0" jsaction="rcuQ6b:npT2md;F8PQfd:XC9dqb;NiEu1e:um7RNb;RTRBwf:xT0n9e;" data-p="%.@.[[[["สำรวจ",18,null,null,null,null,"/travel/explore?hl\u003dth\u0026authuser","travel_explore"],["เที่ยวบิน",7,null,null,null,null,"/travel/flights?hl\u003dth\u0026authuser","flight"],["โรงแรม",8,null,null,null,null,"/travel/hotels?hl\u003dth\u0026authu…>…</c-wiz> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div role="presentation" class="KLUzxd P2UJoe"></div> from <div role="region" class="MqKGaf FlfUOc" aria-label="หาราคาที่ดีที่สุด">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+
+
+       at ..\support\gf.ts:208
+
+      206 |     await target.hover({ timeout: 10_000 }).catch(() => {});
+      207 |     await sleep(rand(400, 900));
+    > 208 |     await target.click({ force: opts.force });
+          |                  ^
+      209 |     if (opts.search) await this.searched(opts.search);
+      210 |     else if (opts.booking) await this.bookingOpened(opts.booking);
+      211 |     else await this.pause();
+        at GF.click (C:\t\gf03v2\e2e\support\gf.ts:208:18)
+        at expandInsights (C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:182:79)
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:994:5
+        at C:\t\gf03v2\e2e\tests\5.4-price-date-tools.spec.ts:993:3
+
+    attachment #1: ตรวจ 01: ตั้งต้น หัวผลลัพธ์ตรงโจทย์ U1 (15 ธ.ค.) (image/png) ────────────────────
+    test-results\5.4-price-date-tools-TC-PR-aae43-่า-ป้าย-สูง-และช่วงราคาปกติ-chromium\attachments\ตรวจ-01-ตั้งต้น-หัวผลลัพธ์ตรงโจทย์-U1-15-ธ-ค--3887dcfacfdee4895b24d655644ad4b8fc45b62f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 02: E2 ช่วงปกติอ้างอิงทริปที่คล้ายกันที่เดินทางสู่โตเกียว [O] (image/png) ──
+    test-results\5.4-price-date-tools-TC-PR-aae43-่า-ป้าย-สูง-และช่วงราคาปกติ-chromium\attachments\ตรวจ-02-E2-ช่วงปกติอ้างอิงทริปที่คล้ายกันที่เดินทางสู่โตเกียว-O--245832e67e3da5e7227701cc4dbd6ca3e2198f83.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 03: ตั้งต้น หัวผลลัพธ์ = พฤหัส 31 ธ.ค. (image/png) ─────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-aae43-่า-ป้าย-สูง-และช่วงราคาปกติ-chromium\attachments\ตรวจ-03-ตั้งต้น-หัวผลลัพธ์-พฤหัส-31-ธ-ค--07488ce1d1f7629bb31e0d30f559d84d728e4063.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-aae43-่า-ป้าย-สูง-และช่วงราคาปกติ-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.4-price-date-tools-TC-PR-aae43-่า-ป้าย-สูง-และช่วงราคาปกติ-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.4-price-date-tools-TC-PR-aae43-่า-ป้าย-สูง-และช่วงราคาปกติ-chromium\error-context.md
+
+  16) [chromium] › tests\5.5-booking.spec.ts:464:5 › TC-BKG-01 · เลือกด้วยปุ่ม "เลือกเที่ยวบิน" + คัดลอก UB + เปิดซ้ำในแท็บใหม่ @P1 @5.5 
+
+    Error: booking vs แถว A: ชื่อสายการบิน
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+    - Array [
+    -   "เวียดเจ็ทแอร์",
+    - ]
+    + Array []
+
+      408 |   expect.soft(a.arr, `${who}: เวลาถึง`).toBe(e.arr);
+      409 |   expect.soft(a.plus, `${who}: +วัน ของเวลาถึง`).toBe(e.plus);
+    > 410 |   expect.soft(a.airlines, `${who}: ชื่อสายการบิน`).toEqual(e.airlines);
+          |                                                    ^
+      411 |   expect.soft(a.duration, `${who}: ระยะเวลา`).toBe(e.duration);
+      412 |   expect.soft(a.stops, `${who}: จำนวนแวะ`).toBe(e.stops);
+      413 |   expect.soft(a.layovers, `${who}: สนามบินที่แวะ`).toEqual(e.layovers);
+        at expectSameFlight (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:410:52)
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:553:9
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:550:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:539:3
+
+    Error: booking ˅ vs แถว A ˅: อ่านช่วงบินจาก ˅ ได้
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      416 | }
+      417 | function expectSameSegments(a: Segment[], e: Segment[], who: string) {
+    > 418 |   expect.soft(e.length, `${who}: อ่านช่วงบินจาก ˅ ได้`).toBeGreaterThan(0);
+          |                                                         ^
+      419 |   expect.soft(a.map((s) => s.flightNos.join('+')), `${who}: เลขเที่ยวบินแต่ละช่วง`).toEqual(e.map((s) => s.flightNos.join('+')));
+      420 |   expect.soft(a.map((s) => `${s.dep}→${s.arr}`), `${who}: เวลาแต่ละช่วง`).toEqual(e.map((s) => `${s.dep}→${s.arr}`));
+      421 | }
+        at expectSameSegments (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:418:57)
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:554:9
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:550:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:539:3
+
+    TimeoutError: locator.evaluate: Timeout 20000ms exceeded.
+    Call log:
+      - waiting for getByRole('main').getByRole('listitem').filter({ has: getByRole('button', { name: /^รายละเอียดเที่ยวบิน/ }) }).first()
+
+
+      208 | /** อ่านค่าของเที่ยวบินจากแถวผลลัพธ์ / ส่วน "เที่ยวบินที่เลือก" ในหน้า booking (aria-label + ข้อความบนจอ) */
+      209 | async function readFlight(loc: Locator): Promise<Flight> {
+    > 210 |   const raw = await loc.evaluate((root) => {
+          |                         ^
+      211 |     const el = root as HTMLElement;
+      212 |     const nodes = [el, ...Array.from(el.querySelectorAll<HTMLElement>('[aria-label]'))];
+      213 |     const labels: string[] = [];
+        at readFlight (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:210:25)
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:574:17
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:566:3
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. (image/png) 
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์-เที่ยวเดียว-·-1-·-ชั้นประหยัด-·-กรุงเทพมหานคร-→-โตเกียว-·-อังคาร-15-ธ-ค--54ada2dff69e6fafb1f14ab17e868cca32665afc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 แท็บเท่าเดิม (1) · URL www.google.com/travel/flights/booking มี tfs= และ tfu= (image/png) 
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\attachments\ตรวจ-02-E2-แท็บเท่าเดิม-1-·-URL-www-google-com-travel-flights-booking-มี-tfs-และ-tfu--a7ca71189a0b82aabef6a238c8867f28d1b7cb52.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 หัวสรุป + เที่ยวบินในหน้า booking = แถว A (ขั้น 2) · เลขเที่ยวบิน/เวลาใน ˅ = ขั้น 3 (image/png) 
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\attachments\ตรวจ-03-E3-หัวสรุป-เที่ยวบินในหน้า-booking-แถว-A-ขั้น-2-·-เลขเที่ยวบิน-เวลาใน-˅-ขั้น-3-a0e10990b573b0c8933dee8b48cb28731dbf8855.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E4 H = Pa และ H = ราคาต่ำสุดในชุด S0 (image/png) ───────────────────────
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\attachments\ตรวจ-04-E4-H-Pa-และ-H-ราคาต่ำสุดในชุด-S0-d5c7b8d1d88b7091d3e8da56a4b713ae4cadfc60.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\video-1.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.5-booking-TC-BKG-01-·-เล-ada69-คัดลอก-UB-เปิดซ้ำในแท็บใหม่-chromium\error-context.md
+
+  17) [chromium] › tests\5.5-booking.spec.ts:633:5 › TC-BKG-02 · กดตัวแถวต่อเครื่องสายการบินเดียว + ตรวจผู้ขาย ลิงก์ออกนอก Google สัมภาระ แชร์ @P1 @5.5 › 1. เปิด U1 ตรง รอ ≥ 10 วินาที อ่านหัวผลลัพธ์ 
+
+    Error: ไม่พบแถวผลลัพธ์ในหน้า (หน้าผลลัพธ์ไม่โหลด)
+
+      181 | async function waitRows(page: Page) {
+      182 |   const ok = await until(async () => (await rowLink(page).count()) > 0, 30_000);
+    > 183 |   if (!ok) throw new Error('ไม่พบแถวผลลัพธ์ในหน้า (หน้าผลลัพธ์ไม่โหลด)');
+          |                  ^
+      184 | }
+      185 |
+      186 | function identFromLabel(label: string): Ident {
+        at waitRows (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:183:18)
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:664:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:662:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-02-·-กด-88ee3-์ออกนอก-Google-สัมภาระ-แชร์-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-02-·-กด-88ee3-์ออกนอก-Google-สัมภาระ-แชร์-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.5-booking-TC-BKG-02-·-กด-88ee3-์ออกนอก-Google-สัมภาระ-แชร์-chromium\error-context.md
+
+  18) [chromium] › tests\5.5-booking.spec.ts:1165:5 › TC-BKG-05 · ⚠️ หลังเปลี่ยนผู้โดยสารแล้วกด Back จอต้องตรงกับ URL @P1 @5.5 @known-defect › 2. กด Back อีก 1 ครั้ง รอโหลด อ่านค่าชุดเดียวกับขั้น 1 · ถ่าย screenshot (ห้ามรีเฟรช) › ตรวจ E2 URL = D-BKG-B1 (ผู้ใหญ่ 1) · จอต้องแสดงผู้โดยสาร 1 · ผู้ใหญ่ 1 ท่าน · ราคา = H1 (= H2 ÷ 2) 
+
+    Error: ปุ่มผู้โดยสาร
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      1241 |     await gf.check('E2 URL = D-BKG-B1 (ผู้ใหญ่ 1) · จอต้องแสดงผู้โดยสาร 1 · ผู้ใหญ่ 1 ท่าน · ราคา = H1 (= H2 ÷ 2)', [paxButton(page), lowestPrice(page)], async () => {
+      1242 |       expect.soft(sameState(url, B1), `URL = D-BKG-B1 (path+tfs)\nได้   ${url}\nคาด  ${B1}`).toBe(true);
+    > 1243 |       expect.soft(pax, 'ปุ่มผู้โดยสาร').toBe(1);
+           |                                         ^
+      1244 |       expect.soft(adults, 'ข้อความผู้ใหญ่ N ท่าน').toBe(1);
+      1245 |       expect.soft(H, 'ราคา = H1').toBe(H1);
+      1246 |       expect.soft(H1, 'H1 = H2 ÷ 2').toBe(H2 === null ? -1 : H2 / 2);
+        at assertion (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1243:41)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1241:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1234:3
+
+    Error: ข้อความผู้ใหญ่ N ท่าน
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      1242 |       expect.soft(sameState(url, B1), `URL = D-BKG-B1 (path+tfs)\nได้   ${url}\nคาด  ${B1}`).toBe(true);
+      1243 |       expect.soft(pax, 'ปุ่มผู้โดยสาร').toBe(1);
+    > 1244 |       expect.soft(adults, 'ข้อความผู้ใหญ่ N ท่าน').toBe(1);
+           |                                                    ^
+      1245 |       expect.soft(H, 'ราคา = H1').toBe(H1);
+      1246 |       expect.soft(H1, 'H1 = H2 ÷ 2').toBe(H2 === null ? -1 : H2 / 2);
+      1247 |     });
+        at assertion (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1244:52)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1241:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1234:3
+
+    Error: ราคา = H1
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 5900
+    Received: 11800
+
+      1243 |       expect.soft(pax, 'ปุ่มผู้โดยสาร').toBe(1);
+      1244 |       expect.soft(adults, 'ข้อความผู้ใหญ่ N ท่าน').toBe(1);
+    > 1245 |       expect.soft(H, 'ราคา = H1').toBe(H1);
+           |                                   ^
+      1246 |       expect.soft(H1, 'H1 = H2 ÷ 2').toBe(H2 === null ? -1 : H2 / 2);
+      1247 |     });
+      1248 |   });
+        at assertion (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1245:35)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1241:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1234:3
+
+    attachment #1: ตรวจ 01: E1 URL = D-BKG-B2 · จอแสดงผู้โดยสาร 2 · ผู้ใหญ่ 2 ท่าน · ราคา = H2 (image/png) 
+    test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\attachments\ตรวจ-01-E1-URL-D-BKG-B2-·-จอแสดงผู้โดยสาร-2-·-ผู้ใหญ่-2-ท่าน-·-ราคา-H2-07fee62747afec599924d813eeb5f75011649bf9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 URL = D-BKG-B1 (ผู้ใหญ่ 1) · จอต้องแสดงผู้โดยสาร 1 · ผู้ใหญ่ 1 ท่าน · ราคา = H1 (= H2 ÷ 2) (image/png) 
+    test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\attachments\ตรวจ-02-E2-URL-D-BKG-B1-ผู้ใหญ่-1-·-จอต้องแสดงผู้โดยสาร-1-·-ผู้ใหญ่-1-ท่าน-·-ราคา-H1-H2-÷-2--e3ddec04a1d5091b392e6fe568b5959c6c7865dd.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 หน้าผลลัพธ์แสดงผู้โดยสาร 1 · เที่ยวเดียว · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. (image/png) 
+    test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\attachments\ตรวจ-03-E3-หน้าผลลัพธ์แสดงผู้โดยสาร-1-·-เที่ยวเดียว-·-ชั้นประหยัด-·-กรุงเทพมหานคร-→-โตเกียว-·-อังคาร-15-ธ-ค--dcc9655ecdbd8273ef75f7e36f56b316f679cbf6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E3 ราคาของแถวที่ 1 (14:00 เวียดเจ็ทแอร์) = P1 ฿5900 (ราคา 1 คน) (image/png) 
+    test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\attachments\ตรวจ-04-E3-ราคาของแถวที่-1-14-00-เวียดเจ็ทแอร์-P1-฿5900-ราคา-1-คน--cbcef0b363041ba2a9385f6ffd9c0368a42449e1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.5-booking-TC-BKG-05-·-⚠️-16d70-ล้วกด-Back-จอต้องตรงกับ-URL-chromium\error-context.md
+
+  19) [chromium] › tests\5.5-booking.spec.ts:1264:5 › TC-BKG-06 · ⚠️ ผู้ขายราคาถูกสุดต้องเห็นชัด · ลิงก์แชร์คงภาษา/สกุลเงิน · กลับมาที่แถวเดิม @P1 @5.5 @known-defect › 8. ในหน้า booking กดปุ่ม ← รอ ≥ 10 วินาที ไม่เลื่อนหน้า ถ่าย screenshot ทันที › ตรวจ E5 (ขั้น 8) หลังกด ← แถว X (23:50 ไทยเวียดเจ๊ทแอร์) อยู่ใน screenshot ทันทีโดยไม่เลื่อน 
+
+    Error: แถว X 23:50 ไทยเวียดเจ๊ทแอร์ อยู่ในภาพหน้าจอทันทีโดยไม่เลื่อน (scrollY=0)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1331 |     await gf.check(label, inView ? target : null, async () => {
+      1332 |       expect.soft(hit, `พบแถว X ${idX.dep} ${idX.airline} ในหน้าผลลัพธ์`).not.toBeNull();
+    > 1333 |       expect.soft(inView, `แถว X ${idX.dep} ${idX.airline} อยู่ในภาพหน้าจอทันทีโดยไม่เลื่อน (scrollY=${scrollY})`).toBe(true);
+           |                                                                                                                    ^
+      1334 |     });
+      1335 |   };
+      1336 |
+        at assertion (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1333:116)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at checkBackRow (C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1331:5)
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1440:5
+        at C:\t\gf03v2\e2e\tests\5.5-booking.spec.ts:1438:3
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ = เที่ยวเดียว · 1 · ชั้นประหยัด · กรุงเทพมหานคร → โตเกียว · อังคาร 15 ธ.ค. (image/png) 
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์-เที่ยวเดียว-·-1-·-ชั้นประหยัด-·-กรุงเทพมหานคร-→-โตเกียว-·-อังคาร-15-ธ-ค--109c7f44c173bc94b4aac656f7c8b300fc9da3a1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 02: E2 (ก) ผู้ขายบนสุดราคา ≤ ทุกเจ้า หรือ (ข) ผู้ขายราคาต่ำสุดมีป้ายข้อความ (สีเขียวอย่างเดียวไม่นับ) (image/png) 
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\attachments\ตรวจ-02-E2-ก-ผู้ขายบนสุดราคา-≤-ทุกเจ้า-หรือ-ข-ผู้ขายราคาต่ำสุดมีป้ายข้อความ-สีเขียวอย่างเดียวไม่นับ--9d9694fb4f2c470edc5757ac87f6409bb5bb448b.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 03: E3 ลิงก์แชร์เปิดได้เที่ยวบินเดิม (เวลาออก 23:50 / ถึง 07:55) (image/png) 
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\attachments\ตรวจ-03-E3-ลิงก์แชร์เปิดได้เที่ยวบินเดิม-เวลาออก-23-50-ถึง-07-55--d61d05222d74755225a89d94a92dcb6d09a16682.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 04: E4 ผู้รับเห็นภาษา/สกุลเงินเดียวกับผู้แชร์: URL มี hl=th และ curr=THB หรือ หัวข้อ/ปุ่มภาษาไทย + ราคาใช้ "฿" (image/png) 
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\attachments\ตรวจ-04-E4-ผู้รับเห็นภาษา-สกุลเงินเดียวกับผู้แชร์-URL-มี-hl-th-และ-curr-THB-หรือ-หัวข้อ-ปุ่มภาษาไทย-ราคาใช้-฿--9a9897ac794edbcdc370ece3f3364585f789f8e0.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 05: E5 (ขั้น 8) หลังกด ← แถว X (23:50 ไทยเวียดเจ๊ทแอร์) อยู่ใน screenshot ทันทีโดยไม่เลื่อน (image/png) 
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\attachments\ตรวจ-05-E5-ขั้น-8-หลังกด-←-แถว-X-23-50-ไทยเวียดเจ๊ทแอร์-อยู่ใน-screenshot-ทันทีโดยไม่เลื่อน-4c65935c8c2f819de9fce8813e9ee64774b548b5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\video-1.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.5-booking-TC-BKG-06-·-⚠️-f55f0-สกุลเงิน-·-กลับมาที่แถวเดิม-chromium\error-context.md
+
+  20) [chromium] › tests\5.6-locale-home.spec.ts:431:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-01 · เปลี่ยนสกุลเงิน THB → JPY → THB และรีเฟรช @P1 @5.6 › 1. เปิด U1 (ค้นหาครั้งที่ 1) รอ ≥ 10 วินาที · ตรวจหัวผลลัพธ์ตามนิยาม U1 · จด URL เต็มเป็น URL-A › ตรวจ ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB 
+
+    Error: ท้ายหน้าหลังเปิด U1: ปุ่มภาษา
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /ภาษา\s*·\s*ไทย/
+    Received string:  "ภาษา​ไทย"
+
+      187 |   const f = await footerLabels(page);
+      188 |   note(`${tag} ป้ายท้ายหน้า`, f);
+    > 189 |   expect.soft(f[0], `${tag}: ปุ่มภาษา`).toMatch(/ภาษา\s*·\s*ไทย/);
+          |                                         ^
+      190 |   expect.soft(f[1], `${tag}: ปุ่มสถานที่ตั้ง`).toMatch(/สถานที่ตั้ง\s*·\s*ไทย/);
+      191 |   expect.soft(f[2], `${tag}: ปุ่มสกุลเงิน`).toMatch(/สกุลเงิน\s*·?\s*THB/);
+      192 | }
+        at expectFooterDefault (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:189:41)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:180:5
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:179:15)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:454:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:452:5
+
+    Error: ท้ายหน้าหลังเปิด U1: ปุ่มสถานที่ตั้ง
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /สถานที่ตั้ง\s*·\s*ไทย/
+    Received string:  "สถานที่ตั้ง​ไทย"
+
+      188 |   note(`${tag} ป้ายท้ายหน้า`, f);
+      189 |   expect.soft(f[0], `${tag}: ปุ่มภาษา`).toMatch(/ภาษา\s*·\s*ไทย/);
+    > 190 |   expect.soft(f[1], `${tag}: ปุ่มสถานที่ตั้ง`).toMatch(/สถานที่ตั้ง\s*·\s*ไทย/);
+          |                                                ^
+      191 |   expect.soft(f[2], `${tag}: ปุ่มสกุลเงิน`).toMatch(/สกุลเงิน\s*·?\s*THB/);
+      192 | }
+      193 |
+        at expectFooterDefault (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:190:48)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:180:5
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:179:15)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:454:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:452:5
+
+    Error: เงื่อนไขก่อนเริ่มไม่ผ่าน (หัวผลลัพธ์ไม่ตรง U1 หรือสถานะค้างจาก test ก่อน) → หยุด test และแจ้งผู้คุมชุด
+
+      181 |   });
+      182 |   if (st1 === 'fail' || st2 === 'fail') {
+    > 183 |     throw new Error('เงื่อนไขก่อนเริ่มไม่ผ่าน (หัวผลลัพธ์ไม่ตรง U1 หรือสถานะค้างจาก test ก่อน) → หยุด test และแจ้งผู้คุมชุด');
+          |           ^
+      184 |   }
+      185 | }
+      186 | async function expectFooterDefault(page: Page, tag: string) {
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:183:11)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:454:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:452:5
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม: หัวผลลัพธ์ตรงนิยาม U1 (image/png) ───────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-e9ae2-น-THB-→-JPY-→-THB-และรีเฟรช-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์ตรงนิยาม-U1-d21b4e451756cff8b0a991e8741113aa38d18487.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB (image/png) 
+    test-results\5.6-locale-home-5-6-ภาษา-ส-e9ae2-น-THB-→-JPY-→-THB-และรีเฟรช-chromium\attachments\ตรวจ-02-ก่อนเริ่ม-ท้ายหน้า-ภาษา·ไทย-สถานที่ตั้ง·ไทย-สกุลเงิน·THB-95dc0860e0e975af32fecdf398305856fbcde980.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-e9ae2-น-THB-→-JPY-→-THB-และรีเฟรช-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-e9ae2-น-THB-→-JPY-→-THB-และรีเฟรช-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.6-locale-home-5-6-ภาษา-ส-e9ae2-น-THB-→-JPY-→-THB-และรีเฟรช-chromium\error-context.md
+
+  21) [chromium] › tests\5.6-locale-home.spec.ts:607:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-02 · เปลี่ยนประเทศและภาษาแล้วเงื่อนไขกับสกุลเงินคงเดิม @P1 @5.6 › 1. เปิด U1 (ค้นหาครั้งที่ 1) รอ ≥ 10 วินาที · ตรวจหัวผลลัพธ์ · จด URL-A › ตรวจ ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB 
+
+    Error: ท้ายหน้าหลังเปิด U1: ปุ่มภาษา
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /ภาษา\s*·\s*ไทย/
+    Received string:  "ภาษา​ไทย"
+
+      187 |   const f = await footerLabels(page);
+      188 |   note(`${tag} ป้ายท้ายหน้า`, f);
+    > 189 |   expect.soft(f[0], `${tag}: ปุ่มภาษา`).toMatch(/ภาษา\s*·\s*ไทย/);
+          |                                         ^
+      190 |   expect.soft(f[1], `${tag}: ปุ่มสถานที่ตั้ง`).toMatch(/สถานที่ตั้ง\s*·\s*ไทย/);
+      191 |   expect.soft(f[2], `${tag}: ปุ่มสกุลเงิน`).toMatch(/สกุลเงิน\s*·?\s*THB/);
+      192 | }
+        at expectFooterDefault (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:189:41)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:180:5
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:179:15)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:629:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:627:5
+
+    Error: ท้ายหน้าหลังเปิด U1: ปุ่มสถานที่ตั้ง
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /สถานที่ตั้ง\s*·\s*ไทย/
+    Received string:  "สถานที่ตั้ง​ไทย"
+
+      188 |   note(`${tag} ป้ายท้ายหน้า`, f);
+      189 |   expect.soft(f[0], `${tag}: ปุ่มภาษา`).toMatch(/ภาษา\s*·\s*ไทย/);
+    > 190 |   expect.soft(f[1], `${tag}: ปุ่มสถานที่ตั้ง`).toMatch(/สถานที่ตั้ง\s*·\s*ไทย/);
+          |                                                ^
+      191 |   expect.soft(f[2], `${tag}: ปุ่มสกุลเงิน`).toMatch(/สกุลเงิน\s*·?\s*THB/);
+      192 | }
+      193 |
+        at expectFooterDefault (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:190:48)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:180:5
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:179:15)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:629:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:627:5
+
+    Error: เงื่อนไขก่อนเริ่มไม่ผ่าน (หัวผลลัพธ์ไม่ตรง U1 หรือสถานะค้างจาก test ก่อน) → หยุด test และแจ้งผู้คุมชุด
+
+      181 |   });
+      182 |   if (st1 === 'fail' || st2 === 'fail') {
+    > 183 |     throw new Error('เงื่อนไขก่อนเริ่มไม่ผ่าน (หัวผลลัพธ์ไม่ตรง U1 หรือสถานะค้างจาก test ก่อน) → หยุด test และแจ้งผู้คุมชุด');
+          |           ^
+      184 |   }
+      185 | }
+      186 | async function expectFooterDefault(page: Page, tag: string) {
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:183:11)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:629:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:627:5
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม: หัวผลลัพธ์ตรงนิยาม U1 (image/png) ───────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-f65d4-้วเงื่อนไขกับสกุลเงินคงเดิม-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์ตรงนิยาม-U1-f8acec7d8d9037a6a5757e081e4bd0fd89680303.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB (image/png) 
+    test-results\5.6-locale-home-5-6-ภาษา-ส-f65d4-้วเงื่อนไขกับสกุลเงินคงเดิม-chromium\attachments\ตรวจ-02-ก่อนเริ่ม-ท้ายหน้า-ภาษา·ไทย-สถานที่ตั้ง·ไทย-สกุลเงิน·THB-3f09d0f3b805e9e58805b06d15d13be5e4245fed.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-f65d4-้วเงื่อนไขกับสกุลเงินคงเดิม-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-f65d4-้วเงื่อนไขกับสกุลเงินคงเดิม-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.6-locale-home-5-6-ภาษา-ส-f65d4-้วเงื่อนไขกับสกุลเงินคงเดิม-chromium\error-context.md
+
+  22) [chromium] › tests\5.6-locale-home.spec.ts:746:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-03 · ⚠️ ชื่อสายการบินข้ามภาษา ป้ายท้ายหน้า และการ์ดหน้าแรก @P1 @5.6 @known-defect › 1. เปิด U1 (ค้นหาครั้งที่ 1) · ตรวจหัวผลลัพธ์ · เลือกแถวอ้างอิงตาม D-LOC-REF · กด ˅ ขยายแต่ละแถว จดเวลา/รหัสสนามบิน/เลขเที่ยวบิน/ชื่อสายการบิน · จดชื่อสายการบินภาษาไทยทุกชื่อที่ไม่ซ้ำ › ตรวจ ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB 
+
+    Error: ท้ายหน้าหลังเปิด U1: ปุ่มภาษา
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /ภาษา\s*·\s*ไทย/
+    Received string:  "ภาษา​ไทย"
+
+      187 |   const f = await footerLabels(page);
+      188 |   note(`${tag} ป้ายท้ายหน้า`, f);
+    > 189 |   expect.soft(f[0], `${tag}: ปุ่มภาษา`).toMatch(/ภาษา\s*·\s*ไทย/);
+          |                                         ^
+      190 |   expect.soft(f[1], `${tag}: ปุ่มสถานที่ตั้ง`).toMatch(/สถานที่ตั้ง\s*·\s*ไทย/);
+      191 |   expect.soft(f[2], `${tag}: ปุ่มสกุลเงิน`).toMatch(/สกุลเงิน\s*·?\s*THB/);
+      192 | }
+        at expectFooterDefault (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:189:41)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:180:5
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:179:15)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:805:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:803:5
+
+    Error: ท้ายหน้าหลังเปิด U1: ปุ่มสถานที่ตั้ง
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /สถานที่ตั้ง\s*·\s*ไทย/
+    Received string:  "สถานที่ตั้ง​ไทย"
+
+      188 |   note(`${tag} ป้ายท้ายหน้า`, f);
+      189 |   expect.soft(f[0], `${tag}: ปุ่มภาษา`).toMatch(/ภาษา\s*·\s*ไทย/);
+    > 190 |   expect.soft(f[1], `${tag}: ปุ่มสถานที่ตั้ง`).toMatch(/สถานที่ตั้ง\s*·\s*ไทย/);
+          |                                                ^
+      191 |   expect.soft(f[2], `${tag}: ปุ่มสกุลเงิน`).toMatch(/สกุลเงิน\s*·?\s*THB/);
+      192 | }
+      193 |
+        at expectFooterDefault (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:190:48)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:180:5
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:179:15)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:805:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:803:5
+
+    Error: เงื่อนไขก่อนเริ่มไม่ผ่าน (หัวผลลัพธ์ไม่ตรง U1 หรือสถานะค้างจาก test ก่อน) → หยุด test และแจ้งผู้คุมชุด
+
+      181 |   });
+      182 |   if (st1 === 'fail' || st2 === 'fail') {
+    > 183 |     throw new Error('เงื่อนไขก่อนเริ่มไม่ผ่าน (หัวผลลัพธ์ไม่ตรง U1 หรือสถานะค้างจาก test ก่อน) → หยุด test และแจ้งผู้คุมชุด');
+          |           ^
+      184 |   }
+      185 | }
+      186 | async function expectFooterDefault(page: Page, tag: string) {
+        at verifyU1Start (C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:183:11)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:805:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:803:5
+
+    attachment #1: ตรวจ 01: ก่อนเริ่ม: หัวผลลัพธ์ตรงนิยาม U1 (image/png) ───────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-01-ก่อนเริ่ม-หัวผลลัพธ์ตรงนิยาม-U1-1b9b7666e224387c33e2cd19bf26b2211e52fa75.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: ก่อนเริ่ม: ท้ายหน้า ภาษา·ไทย / สถานที่ตั้ง·ไทย / สกุลเงิน·THB (image/png) 
+    test-results\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\attachments\ตรวจ-02-ก่อนเริ่ม-ท้ายหน้า-ภาษา·ไทย-สถานที่ตั้ง·ไทย-สกุลเงิน·THB-2788aa7369eecab9fc8e747c1b58559c6b2f9d3a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.6-locale-home-5-6-ภาษา-ส-49109-้ายท้ายหน้า-และการ์ดหน้าแรก-chromium\error-context.md
+
+  23) [chromium] › tests\5.6-locale-home.spec.ts:966:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore @P3 @5.6 › 1. เปิด U0 (ไม่นับงบ) รอโหลดเสร็จ · snapshot + screenshot: หา dialog/banner คุกกี้/ความยินยอม · จดชื่อแท็บและหัวข้อหลัก · ตรวจว่ามีช่องฟอร์มค้นหาครบ › เงื่อนไขก่อนเริ่ม: ท้ายหน้าแสดง ไทย / ไทย / THB 
+
+    Error: เงื่อนไขก่อนเริ่มไม่ผ่าน: ท้ายหน้า ["ภาษา​ไทย","สถานที่ตั้ง​ไทย","สกุลเงินTHB"] (มีค่า hl/curr/gl ค้าง) → หยุด test และแจ้งผู้คุมชุด
+
+      1008 |         note('ป้ายท้ายหน้าหลังเปิด U0', f);
+      1009 |         if (!/ภาษา\s*·\s*ไทย/.test(f[0]) || !/สถานที่ตั้ง\s*·\s*ไทย/.test(f[1]) || !/THB/.test(f[2])) {
+    > 1010 |           throw new Error(`เงื่อนไขก่อนเริ่มไม่ผ่าน: ท้ายหน้า ${JSON.stringify(f)} (มีค่า hl/curr/gl ค้าง) → หยุด test และแจ้งผู้คุมชุด`);
+           |                 ^
+      1011 |         }
+      1012 |       });
+      1013 |       const origin = formFields().origin;
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1010:17
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1006:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:999:5
+
+    attachment #1: step1-home (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\attachments\step1-home-665cc55cfc4281059ce903562ff9da9ca862fbee.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\error-context.md
+
+  23 failed
+    [chromium] › tests\5.1-search-form.spec.ts:437:5 › TC-SRCH-01 · Happy path กรอกฟอร์มโจทย์ลูกค้า @P1 @5.1 
+    [chromium] › tests\5.1-search-form.spec.ts:1321:5 › TC-SRCH-08 · ⚠️ ฟอร์มยอมค่าที่ควรเตือน @P1 @5.1 @known-defect 
+    [chromium] › tests\5.1-search-form.spec.ts:1450:5 › TC-SRCH-09 · ⚠️ ไม่พบผลจากเงื่อนไขค้นหา @P1 @5.1 @known-defect 
+    [chromium] › tests\5.1-search-form.spec.ts:1552:5 › TC-SRCH-10 · ⚠️ ค้นหาวันนี้ @P1 @5.1 @known-defect 
+    [chromium] › tests\5.2-results-ranking.spec.ts:987:5 › TC-RES-06 · ⚠️ แท็บถูกที่สุด + ข้อความจำนวนผล + สับเซตหลังเพิ่มตัวกรอง @P2 @5.2 @known-defect 
+    [chromium] › tests\5.2-results-ranking.spec.ts:1092:5 › TC-RES-07 · ⚠️ ข้อมูลกระเป๋าในแถว + เตือนแวะนานในหน้า booking @P2 @5.2 @known-defect 
+    [chromium] › tests\5.3-filters.spec.ts:494:5 › TC-FLT-02 · ⚠️ ชั้นโดยสารปนเมื่อกรองสายการบิน + ตัวกรองสัมภาระ @P1 @5.3 @known-defect 
+    [chromium] › tests\5.3-filters.spec.ts:594:5 › TC-FLT-03 · สายการบิน "เท่านั้น" รวม codeshare + ✕ บนชิป @P2 @5.3 
+    [chromium] › tests\5.3-filters.spec.ts:867:5 › TC-FLT-05 · เวลาถึง / เวลาออก ตามเวลาท้องถิ่น จนไม่พบผล @P2 @5.3 
+    [chromium] › tests\5.3-filters.spec.ts:994:5 › TC-FLT-06 · ตัวเลือกแวะพัก + ตัดสนามบินต่อเครื่อง + slider ระยะเวลา @P2 @5.3 
+    [chromium] › tests\5.3-filters.spec.ts:1143:5 › TC-FLT-07 · ⚠️ ตั๋วแยก · slider ราคา · แถวไม่มีราคา · ชิปเวลา · ขอบ 08:00 · สับเซตเทียบชุดแรก @P2 @5.3 @known-defect 
+    [chromium] › tests\5.4-price-date-tools.spec.ts:393:5 › TC-PRC-01 · ข้อมูลเชิงลึกด้านราคาและสวิตช์ติดตามราคา (ก่อนล็อกอิน) @P2 @5.4 
+    [chromium] › tests\5.4-price-date-tools.spec.ts:534:5 › TC-PRC-02 · ตารางวันที่และกราฟราคา: ราคา ไฮไลต์ ✦ ยกเลิก/ตกลง @P2 @5.4 
+    [chromium] › tests\5.4-price-date-tools.spec.ts:771:5 › TC-PRC-03 · ⚠️ การ์ดวันที่ถูกกว่า: ขึ้นสม่ำเสมอ และ "เปลี่ยนวันที่" พาไปวันที่แนะนำ @P2 @5.4 @known-defect 
+    [chromium] › tests\5.4-price-date-tools.spec.ts:940:5 › TC-PRC-04 · ราคาบนการ์ดวันที่ถูกกว่า ป้าย "สูง" และช่วงราคาปกติ @P2 @5.4 
+    [chromium] › tests\5.5-booking.spec.ts:464:5 › TC-BKG-01 · เลือกด้วยปุ่ม "เลือกเที่ยวบิน" + คัดลอก UB + เปิดซ้ำในแท็บใหม่ @P1 @5.5 
+    [chromium] › tests\5.5-booking.spec.ts:633:5 › TC-BKG-02 · กดตัวแถวต่อเครื่องสายการบินเดียว + ตรวจผู้ขาย ลิงก์ออกนอก Google สัมภาระ แชร์ @P1 @5.5 
+    [chromium] › tests\5.5-booking.spec.ts:1165:5 › TC-BKG-05 · ⚠️ หลังเปลี่ยนผู้โดยสารแล้วกด Back จอต้องตรงกับ URL @P1 @5.5 @known-defect 
+    [chromium] › tests\5.5-booking.spec.ts:1264:5 › TC-BKG-06 · ⚠️ ผู้ขายราคาถูกสุดต้องเห็นชัด · ลิงก์แชร์คงภาษา/สกุลเงิน · กลับมาที่แถวเดิม @P1 @5.5 @known-defect 
+    [chromium] › tests\5.6-locale-home.spec.ts:431:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-01 · เปลี่ยนสกุลเงิน THB → JPY → THB และรีเฟรช @P1 @5.6 
+    [chromium] › tests\5.6-locale-home.spec.ts:607:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-02 · เปลี่ยนประเทศและภาษาแล้วเงื่อนไขกับสกุลเงินคงเดิม @P1 @5.6 
+    [chromium] › tests\5.6-locale-home.spec.ts:746:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-03 · ⚠️ ชื่อสายการบินข้ามภาษา ป้ายท้ายหน้า และการ์ดหน้าแรก @P1 @5.6 @known-defect 
+    [chromium] › tests\5.6-locale-home.spec.ts:966:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore @P3 @5.6 
+  15 passed (1.0h)

@@ -1,0 +1,65 @@
+﻿### Result
+"[แขก บัตรผิด] line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม0 แต้ม฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿1,000 | quote-stale=ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน | error-giftcard-not-found=ไม่พบ Gift Card นี้ || confirm.dis=true gcInput=\"GIFT-NOPE\" guestFields=true\n[แขก ลบช่องบัตรจนว่าง] line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม0 แต้ม฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿1,000 | quote-stale=ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน | error-giftcard-not-found=ไม่พบ Gift Card นี้ || confirm.dis=true gcInput=\"\" guestFields=true\nremove btn=1\n[แขก บัตรถูกหลังจากผิด] line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม0 แต้ม฿0 | line-giftcard=Gift Card−฿500 | pay-at-shop=จ่ายหน้าร้าน฿500 | giftcard-info=ยอดในบัตร ฿500 ใช้ ฿500 เหลือ ฿0 หมดอายุ 5 มิ.ย. 2027 || confirm.dis=false gcInput=\"GIFT-500\" guestFields=true\n[U11 เดือนเกิด ลดเหลือ 15 ชุด] line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿0 | quote-stale=ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=15 ชุด (1500 แต้ม) | error-points-exceed-service=ส่วนลดจากแต้มเกินค่าบริการ | birthday-result=ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า || confirm.dis=true gcInput=undefined guestFields=false\n[U11 เดือนเกิด ลดเหลือ 14 ชุด] line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿0 | quote-stale=ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=14 ชุด (1400 แต้ม) | error-points-exceed-service=ส่วนลดจากแต้มเกินค่าบริการ | birthday-result=ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า || confirm.dis=true gcInput=undefined guestFields=false\n[U11 เดือนเกิด ลดเหลือ 13 ชุด] line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿0 | quote-stale=ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=13 ชุด (1300 แต้ม) | error-points-exceed-service=ส่วนลดจากแต้มเกินค่าบริการ | birthday-result=ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า || confirm.dis=true gcInput=undefined guestFields=false\n[U11 เดือนเกิด ลดเหลือ 12 ชุด] line-discount=ส่วนลด 20%สิทธิ์เดือนเกิด−฿160 | line-points=แลกแต้ม1200 แต้ม−฿600 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿40 | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 12 ชุด ชุดละ 100 แต้ม | points-value=12 ชุด (1200 แต้ม) | birthday-result=ราคานี้ใช้สิทธิ์เดือนเกิดแล้ว || confirm.dis=false gcInput=undefined guestFields=false\n[U10 ออกจากระบบ กดยืนยัน] line-discount=ส่วนลด 10%ส่วนลดสมาชิก Platinum−฿100 | line-points=แลกแต้ม0 แต้ม฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿900 | error-guest-info-required=กรุณากรอกชื่อและเบอร์โทร || confirm.dis=false gcInput=undefined guestFields=false"
+### Ran Playwright code
+```js
+await (async (page) => {
+  const out = [];
+  const sleep = (ms) => page.waitForTimeout(ms);
+  const tid = (t) => page.locator(`[data-testid="${t}"]`);
+  const ready = () => page.waitForFunction(() => document.documentElement.dataset.ready === 'true');
+  const lines = async (label) => {
+    await sleep(600);
+    const s = await page.evaluate(() => [...document.querySelectorAll('[data-testid=booking-line-discount],[data-testid=booking-line-points],[data-testid=booking-line-giftcard],[data-testid=booking-pay-at-shop],[data-testid=booking-points-value],[data-testid=booking-points-balance],[data-testid=booking-giftcard-info],[data-testid=booking-quote-stale],[data-testid=booking-birthday-result],[data-testid^=error-]')].map(e => e.dataset.testid.replace('booking-', '') + '=' + e.textContent.trim()).join(' | ') + ' || confirm.dis=' + document.querySelector('[data-testid=booking-confirm]')?.disabled + ' gcInput=' + JSON.stringify(document.querySelector('[data-testid=booking-giftcard-code]')?.value) + ' guestFields=' + !!document.querySelector('[data-testid=booking-guest-name]'));
+    out.push(`[${label}] ${s}`);
+  };
+  const login = async (email, pw) => {
+    await page.evaluate(async ([email, pw]) => { await fetch('/api/auth/logout', { method: 'POST' }); if (email) await fetch('/api/auth/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, password: pw }) }); }, [email, pw]);
+  };
+  const flow = async (svc, party, date, slot = '10-00') => {
+    await page.goto(`http://localhost:3000/th/booking?service=${svc}`); await ready();
+    await tid(`booking-party-${party}`).click();
+    await tid('booking-step1-next').click();
+    await tid('booking-date').fill(date);
+    await tid(`booking-slot-${slot}`).click({ timeout: 5000 });
+    await tid('booking-step2-next').click();
+    await tid('booking-screen-3').waitFor();
+    await sleep(500);
+  };
+  const open = async (x) => { const t = tid(`booking-toggle-${x}`); if (await t.count()) await t.click(); };
+
+  await page.goto('http://localhost:3000/th/login'); await ready();
+  // guest: wrong card then clear field
+  await login(null, null);
+  await flow('S01', 1, '2026-07-08', '14-00');
+  await open('giftcard');
+  await tid('booking-giftcard-code').fill('GIFT-NOPE');
+  await tid('booking-giftcard-apply').click(); await lines('แขก บัตรผิด');
+  await tid('booking-giftcard-code').fill(''); await lines('แขก ลบช่องบัตรจนว่าง');
+  await page.screenshot({ path: 'guest-gc-cleared.png', fullPage: true });
+  out.push('remove btn=' + await tid('booking-giftcard-remove').count());
+  await tid('booking-giftcard-code').fill('GIFT-500');
+  await tid('booking-giftcard-apply').click(); await lines('แขก บัตรถูกหลังจากผิด');
+  // U11: step down to 12 with birthday
+  await login('por@sabai.test', 'Por#2026');
+  await flow('S05', 1, '2026-06-17');
+  await open('points'); await open('birthday');
+  await tid('booking-points-max').click(); await sleep(400);
+  await tid('booking-use-birthday').click(); await sleep(400);
+  for (let i = 15; i >= 12; i--) { await tid('booking-points-dec').click(); await lines(`U11 เดือนเกิด ลดเหลือ ${i} ชุด`); }
+  await page.screenshot({ path: 'u11-birthday-12sets.png', fullPage: true });
+  // U10 logout: fields?
+  await login('bee@sabai.test', 'Bee#2026');
+  await flow('S01', 1, '2026-06-17');
+  await page.evaluate(() => fetch('/api/auth/logout', { method: 'POST' }));
+  await tid('booking-confirm').click(); await lines('U10 ออกจากระบบ กดยืนยัน');
+  await page.screenshot({ path: 'u10-logout-deadend.png', fullPage: true });
+  return out.join('\n');
+}
+)(page);
+```
+### Page
+- Page URL: http://localhost:3000/th/booking?service=S01
+- Page Title: จองคิว · สบายใจ สปา
+- Console: 1 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli\console-2026-11-06T00-45-11-176Z.log#L23-L28

@@ -1,0 +1,64 @@
+{
+  "id": "TC-EXPR-02",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ขั้น 2 T01 คะแนน 5.0",
+      "pass": true,
+      "actual": "5.0 3 รีวิว",
+      "shot": "shots/chromium/TC-EXPR-02/001.jpg",
+      "actor": "main",
+      "t": 1486
+    },
+    {
+      "n": 2,
+      "label": "ขั้น 2 T05 คะแนน 4.6",
+      "pass": true,
+      "actual": "4.6 5 รีวิว",
+      "shot": "shots/chromium/TC-EXPR-02/002.jpg",
+      "actor": "main",
+      "t": 2544
+    },
+    {
+      "n": 3,
+      "label": "ขั้น 2 T02 คะแนน 4.5",
+      "pass": true,
+      "actual": "4.5 2 รีวิว",
+      "shot": "shots/chromium/TC-EXPR-02/003.jpg",
+      "actor": "main",
+      "t": 3597
+    },
+    {
+      "n": 4,
+      "label": "ขั้น 2 T03 คะแนน 4.4",
+      "pass": true,
+      "actual": "4.4 5 รีวิว",
+      "shot": "shots/chromium/TC-EXPR-02/004.jpg",
+      "actor": "main",
+      "t": 4616
+    },
+    {
+      "n": 5,
+      "label": "ขั้น 2 T06 คะแนน 4.0",
+      "pass": true,
+      "actual": "4.0 2 รีวิว",
+      "shot": "shots/chromium/TC-EXPR-02/005.jpg",
+      "actor": "main",
+      "t": 5611
+    },
+    {
+      "n": 6,
+      "label": "ขั้น 3 หลังรีโหลดคะแนนทั้ง 5 คนเท่าเดิม",
+      "pass": true,
+      "actual": "{\"T01\":\"5.0\",\"T05\":\"4.6\",\"T02\":\"4.5\",\"T03\":\"4.4\",\"T06\":\"4.0\"}",
+      "shot": "shots/chromium/TC-EXPR-02/006.jpg",
+      "actor": "main",
+      "t": 7026
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-EXPR-02/main.webm"
+    }
+  }
+}

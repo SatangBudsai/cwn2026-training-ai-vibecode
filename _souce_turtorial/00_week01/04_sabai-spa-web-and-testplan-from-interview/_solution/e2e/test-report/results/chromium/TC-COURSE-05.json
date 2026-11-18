@@ -1,0 +1,84 @@
+{
+  "id": "TC-COURSE-05",
+  "title": "TC-COURSE-05 ขอบคอร์สเหลือ 0, 1, 2 และครั้งที่ถูกกันไว้นับรวมจนยกเลิกแล้วคืน",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ค่าเหลือ 0 (U10): ✗ \"คอร์สนี้ใช้ครบแล้ว\" · C04 ยังเหลือ 0 · ไม่มีนัดใหม่\nค่าเหลือ 2 (U08): ✓ 2 − 1 = เหลือ 1\nค่าเหลือ 1 (U11): ✓ 1 − 1 = เหลือ 0 ทันที\nขั้น 4: ✗ มีข้อความแจ้งว่าใช้คอร์สไม่ได้ · C05 ยังเหลือ 0 · U11 ยังมีนัดเดียว (ถ้าคิด 11 − 10 ไม่หัก reserved จะจองผ่าน)\nขั้น 5: คืนเป็น \"เหลือ 1 ครั้ง จาก 11 ครั้ง\" (ถ้าไม่คืนจะค้าง 0)\nขั้น 6: ✓ 1 − 1 = เหลือ 0\nหมายเหตุ: ถ้อยคำขั้น 4 ตอนนี้ใช้ \"คอร์สนี้ใช้ครบแล้ว\" ตาม FR-40 ทั้งที่ยังยกเลิกคืนได้ รอร้านตอบ F-ร้าน 14 จึงไม่ถือเป็นข้อล้มในรอบนี้",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 524,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.17 · [D] E184 · [D][R] E185, E186 · [R] ⚠️A-48 · F-ร้าน 14",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 524,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-38, FR-40, BR-39",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 524,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R71, R82",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 524,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, State, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 524,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 524,
+        "column": 1
+      }
+    },
+    {
+      "type": "pending-answer",
+      "description": "F-ร้าน 14 ถ้อยคำขั้น 4 ที่เว็บแสดงจริง: คอร์สนี้ใช้ครบแล้ว"
+    }
+  ],
+  "status": "passed",
+  "durationMs": 56327,
+  "at": "2026-11-06T02:53:27.098Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U10 จองด้วย C04",
+    "2. U08 จองด้วย C02 17 มิ.ย. 12:00 ดู Wallet แล้วรีโหลด",
+    "2 (ต่อ). ยืนยันฝั่ง API ว่า C04 ของ U10 ถูกปฏิเสธเช่นกัน",
+    "3. U11 จองด้วย C05 17 มิ.ย. 12:00 ดู Wallet แล้วรีโหลด",
+    "4. U11 จองด้วย C05 อีกครั้ง 18 มิ.ย. 12:00",
+    "5. U11 ยกเลิกนัด 17 มิ.ย. ดู Wallet แล้วรีโหลด",
+    "6. U11 จองด้วย C05 18 มิ.ย. 12:00 อีกครั้ง"
+  ]
+}

@@ -1,0 +1,7 @@
+ผมเป็นทีมกลาง (plat-ken) ช่วยรวม skill ส่วนตัวของทุกคนใน ../*/.claude/skills/ เป็นคลังกลาง org-skills แบบ Claude Code plugin marketplace ชื่อ novatech-skills
+- 1 แผนก = 1 plugin (ดูแผนกใน ../../people/README.md) และมี plugin core สำหรับของที่ทุกคนต้องใช้ ถ้าหลายคนเขียนกติกาเดียวกันซ้ำ (เช่น ข้อมูลลูกค้า แบรนด์) ให้รวมเป็น skill เดียวใน core แล้วให้ skill เดิมอ้าง core แทนการคัดลอก
+- เพิ่ม plugin shared สำหรับงานข้ามแผนก เช่น meeting-minutes
+- ปรับหัวไฟล์ให้เป็นแบบเดียวกันทั้งคลัง (layer ตามชั้นใหม่, uses = skill ที่เรียกใช้, next = งานถัดไป, follows = นโยบายที่ต้องทำตาม) และให้หัวหน้าแผนกเป็น CODEOWNER ของ plugin แผนกตัวเอง
+- ตรวจด้วย claude plugin validate จนผ่าน แล้วสร้าง repo สาธารณะ novatech/org-skills บน Gitea (http://localhost:3300 token ของผมอยู่ใน .gitea-token) แล้ว push
+- ตั้ง branch main ให้ห้าม push ตรง ต้องผ่าน PR และ approve อย่างน้อย 1 คน
+จบแล้วสรุป: มี plugin อะไรบ้าง skill แต่ละตัวอยู่ชั้นไหน รวมอะไรเป็น core เพราะอะไร

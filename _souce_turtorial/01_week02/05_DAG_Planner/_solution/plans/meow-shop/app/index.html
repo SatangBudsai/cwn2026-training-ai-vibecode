@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="เหมียวช็อป ร้านอาหารแมวสำหรับมื้ออร่อยของเจ้าเหมียว เลือกสินค้าและจัดตะกร้าได้ง่ายในหน้าเดียว">
+    <title>เหมียวช็อป | อิ่มอร่อยทุกมื้อ เพื่อเจ้าเหมียวที่คุณรัก</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="products.js" defer></script>
+    <script src="shop.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="cart-ui.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="เหมียวช็อป หน้าหลัก">🐾 เหมียวช็อป</a>
+      <h1>อาหารอร่อย สำหรับเจ้าเหมียวคนโปรด</h1>
+      <p id="slogan">อาหารแมวอร่อย เจ้าเหมียวชอบทุกวัน</p>
+      <nav aria-label="เมนูหลัก">
+        <a href="#products">เลือกซื้ออาหารแมว</a>
+        <a href="#cart">ตะกร้าสินค้า</a>
+      </nav>
+    </header>
+
+    <div class="shop-layout">
+      <main id="products" aria-label="สินค้าอาหารแมว" aria-live="polite"></main>
+      <aside id="cart" aria-label="ตะกร้าสินค้า" aria-live="polite"></aside>
+    </div>
+
+    <footer class="site-footer">
+      <p>🐾 เหมียวช็อป — ใส่ใจทุกมื้อของเพื่อนตัวน้อย</p>
+      <p>ร้านตัวอย่างสำหรับเลือกสินค้าและทดลองใช้งานตะกร้า</p>
+    </footer>
+  </body>
+</html>

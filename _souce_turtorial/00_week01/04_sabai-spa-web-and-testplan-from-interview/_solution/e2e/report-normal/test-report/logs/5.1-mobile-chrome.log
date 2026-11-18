@@ -1,0 +1,8 @@
+npm notice run npx
+npm notice run playwright test tests/5.1- --project=mobile-chrome
+
+Running 1 test using 1 worker
+
+  ok 1 [mobile-chrome] › tests\5.1-booking.spec.ts:163:1 › TC-BOOK-01 สมาชิก Gold จอง 1 คนจนจบใน 3 หน้าจอ ยอดตรงกันทุกจุด @P1 @5.1 @mobile (30.7s)
+
+  1 passed (31.4s)

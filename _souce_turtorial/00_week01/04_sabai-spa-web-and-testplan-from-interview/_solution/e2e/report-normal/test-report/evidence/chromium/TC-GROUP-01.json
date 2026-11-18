@@ -1,0 +1,148 @@
+{
+  "id": "TC-GROUP-01",
+  "checks": [
+    {
+      "n": 1,
+      "label": "รอบ A ฿3,600",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿3,600",
+      "shot": "shots/chromium/TC-GROUP-01/001.jpg",
+      "actor": "main",
+      "t": 5986
+    },
+    {
+      "n": 2,
+      "label": "รอบ A ไม่มีบรรทัดส่วนลดคู่",
+      "pass": true,
+      "actual": "สรุปและยืนยัน นวดน้ำมันอโรมา 90 นาที 2 คน ห้อง Couple Suite 19 มิ.ย. 2026 · 18:00 ระบบจัดนักบำบัดให้ สรุปราคา ราคาเต็ม 2 คน ฿4,000 ส่วนลด 10% ส่วนลดสมาชิก Platinum −฿400 แลกแต้ม 0 แต้ม ฿0 ค่ารถรับส่ง ฿0 Gift Card ฿0 จ่ายหน้าร้าน ฿3,600 ไม่รับชำระเงินออนไลน์ ยอดที่เหลือชำระที่หน้าร้าน ส่วนเสริม ไม่บังคับ กดเปิดเฉพาะที่ต้องการ แลกแต้ม สิทธิ์เดือนเกิด รถรับส่ง Gift Card จองด้วยบัญชีสมาชิก ระดับ Platinum เมื่อใช้บริการเสร็จจะได้รับ 36 แต้ม ยอดจ่ายหน้าร้าน ฿3,600 แก้ไขวันเวลา ยืนยันการจอง ยกเลิกได้ทั",
+      "shot": "shots/chromium/TC-GROUP-01/002.jpg",
+      "actor": "main",
+      "t": 6973
+    },
+    {
+      "n": 3,
+      "label": "รอบ A: จองสำเร็จได้รหัสจอง",
+      "pass": true,
+      "actual": "{\"code\":\"W8DQKFFC\",\"detail\":\"\"}",
+      "shot": "shots/chromium/TC-GROUP-01/003.jpg",
+      "actor": "main",
+      "t": 8322
+    },
+    {
+      "n": 4,
+      "label": "หลังรีโหลด รอบ A ยอด ฿3,600 ในหน้าบัญชี",
+      "pass": true,
+      "actual": "19 มิ.ย. 2026 18:00–19:30 นวดน้ำมันอโรมา รหัสการจอง W8DQKFFC คู่ 2 คน · Couple Suite พี่ศรี พี่ทิว จ่ายหน้าร้าน ฿3,600 การจองคู่และกลุ่มยกเลิกได้ทั้งการจองเท่านั้น ยกเลิกนัดนี้",
+      "shot": "shots/chromium/TC-GROUP-01/004.jpg",
+      "actor": "main",
+      "t": 10269
+    },
+    {
+      "n": 5,
+      "label": "หลังร้าน รอบ A Couple Suite 18:00–19:30 นักบำบัด 2 คนจาก T01, T05, T03 ฿3,600",
+      "pass": true,
+      "actual": "18:00–19:30 W8DQKFFC นวดน้ำมันอโรมา Couple Suite 2 คน คุณต้น สมาชิก 0810000002 พี่ศรี, พี่ทิว ฿3,600 รอรับบริการ ใช้บริการเสร็จ",
+      "shot": "shots/chromium/TC-GROUP-01/005.jpg",
+      "actor": "owner",
+      "t": 2748
+    },
+    {
+      "n": 6,
+      "label": "รอบ B เลือกเดือนเกิดได้",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/chromium/TC-GROUP-01/006.jpg",
+      "actor": "main",
+      "t": 17672
+    },
+    {
+      "n": 7,
+      "label": "รอบ B ฿1,600",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,600",
+      "shot": "shots/chromium/TC-GROUP-01/007.jpg",
+      "actor": "main",
+      "t": 19391
+    },
+    {
+      "n": 8,
+      "label": "รอบ B: จองสำเร็จได้รหัสจอง",
+      "pass": true,
+      "actual": "{\"code\":\"HYR6XY2Y\",\"detail\":\"\"}",
+      "shot": "shots/chromium/TC-GROUP-01/008.jpg",
+      "actor": "main",
+      "t": 20776
+    },
+    {
+      "n": 9,
+      "label": "หลังร้าน รอบ B มีปุ่มใช้บริการเสร็จ",
+      "pass": true,
+      "actual": "12:00–13:00 HYR6XY2Y นวดไทย 60 นาที Couple Suite 2 คน คุณต้น สมาชิก 0810000002 พี่ศรี, พี่ทิว ฿1,600 รอรับบริการ ใช้บริการเสร็จ",
+      "shot": "shots/chromium/TC-GROUP-01/009.jpg",
+      "actor": "owner",
+      "t": 11793
+    },
+    {
+      "n": 10,
+      "label": "กดใช้บริการเสร็จรอบ B สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-GROUP-01/010.jpg",
+      "actor": "owner",
+      "t": 13169
+    },
+    {
+      "n": 11,
+      "label": "รอบ A ยังไม่เสร็จ ยังมีปุ่มใช้บริการเสร็จ",
+      "pass": true,
+      "actual": "ใช้บริการเสร็จ",
+      "shot": "shots/chromium/TC-GROUP-01/011.jpg",
+      "actor": "owner",
+      "t": 14952
+    },
+    {
+      "n": 12,
+      "label": "ยอดสะสม ฿31,600",
+      "pass": true,
+      "actual": "฿31,600",
+      "shot": "shots/chromium/TC-GROUP-01/012.jpg",
+      "actor": "main",
+      "t": 27901
+    },
+    {
+      "n": 13,
+      "label": "แต้ม 16",
+      "pass": true,
+      "actual": "16",
+      "shot": "shots/chromium/TC-GROUP-01/013.jpg",
+      "actor": "main",
+      "t": 28866
+    },
+    {
+      "n": 14,
+      "label": "หลังรีโหลด ยอดสะสม ฿31,600",
+      "pass": true,
+      "actual": "฿31,600",
+      "shot": "shots/chromium/TC-GROUP-01/014.jpg",
+      "actor": "main",
+      "t": 31551
+    },
+    {
+      "n": 15,
+      "label": "หลังรีโหลด แต้ม 16 (ไม่รวมรอบ A)",
+      "pass": true,
+      "actual": "16",
+      "shot": "shots/chromium/TC-GROUP-01/015.jpg",
+      "actor": "main",
+      "t": 32582
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GROUP-01/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-GROUP-01/owner.webm"
+    }
+  }
+}

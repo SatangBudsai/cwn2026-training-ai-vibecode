@@ -1,0 +1,226 @@
+{
+  "id": "TC-GIFT-03",
+  "checks": [
+    {
+      "n": 1,
+      "label": "GIFT-2199 ยอดก่อนหักบัตร ฿2,200",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,200",
+      "shot": "shots/chromium/TC-GIFT-03/001.jpg",
+      "actor": "main",
+      "t": 8498
+    },
+    {
+      "n": 2,
+      "label": "GIFT-2199 หัก ฿2,199",
+      "pass": true,
+      "actual": "Gift Card −฿2,199",
+      "shot": "shots/chromium/TC-GIFT-03/002.jpg",
+      "actor": "main",
+      "t": 11414
+    },
+    {
+      "n": 3,
+      "label": "GIFT-2199 จ่าย ฿1",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1",
+      "shot": "shots/chromium/TC-GIFT-03/003.jpg",
+      "actor": "main",
+      "t": 13175
+    },
+    {
+      "n": 4,
+      "label": "GIFT-2199: ได้รหัสจอง",
+      "pass": true,
+      "actual": "AT8Y49WF",
+      "shot": "shots/chromium/TC-GIFT-03/004.jpg",
+      "actor": "main",
+      "t": 14691
+    },
+    {
+      "n": 5,
+      "label": "GIFT-2199 แต้ม 50 (ทันที)",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-GIFT-03/005.jpg",
+      "actor": "main",
+      "t": 16291
+    },
+    {
+      "n": 6,
+      "label": "GIFT-2199 แต้ม 50 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-GIFT-03/006.jpg",
+      "actor": "main",
+      "t": 17925
+    },
+    {
+      "n": 7,
+      "label": "GIFT-2199 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-03/007.jpg",
+      "actor": "main",
+      "t": 20873
+    },
+    {
+      "n": 8,
+      "label": "GIFT-2199 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-03/008.jpg",
+      "actor": "main",
+      "t": 23720
+    },
+    {
+      "n": 9,
+      "label": "GIFT-2200 ยอดก่อนหักบัตร ฿2,200",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,200",
+      "shot": "shots/chromium/TC-GIFT-03/009.jpg",
+      "actor": "main",
+      "t": 32660
+    },
+    {
+      "n": 10,
+      "label": "GIFT-2200 หัก ฿2,200",
+      "pass": true,
+      "actual": "Gift Card −฿2,200",
+      "shot": "shots/chromium/TC-GIFT-03/010.jpg",
+      "actor": "main",
+      "t": 35493
+    },
+    {
+      "n": 11,
+      "label": "GIFT-2200 จ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-03/011.jpg",
+      "actor": "main",
+      "t": 37193
+    },
+    {
+      "n": 12,
+      "label": "GIFT-2200: ได้รหัสจอง",
+      "pass": true,
+      "actual": "EY8HJCNU",
+      "shot": "shots/chromium/TC-GIFT-03/012.jpg",
+      "actor": "main",
+      "t": 38566
+    },
+    {
+      "n": 13,
+      "label": "GIFT-2200 แต้ม 50 (ทันที)",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-GIFT-03/013.jpg",
+      "actor": "main",
+      "t": 40136
+    },
+    {
+      "n": 14,
+      "label": "GIFT-2200 แต้ม 50 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-GIFT-03/014.jpg",
+      "actor": "main",
+      "t": 41723
+    },
+    {
+      "n": 15,
+      "label": "GIFT-2200 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-03/015.jpg",
+      "actor": "main",
+      "t": 44533
+    },
+    {
+      "n": 16,
+      "label": "GIFT-2200 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-03/016.jpg",
+      "actor": "main",
+      "t": 47422
+    },
+    {
+      "n": 17,
+      "label": "GIFT-2201 ยอดก่อนหักบัตร ฿2,200",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,200",
+      "shot": "shots/chromium/TC-GIFT-03/017.jpg",
+      "actor": "main",
+      "t": 56487
+    },
+    {
+      "n": 18,
+      "label": "GIFT-2201 หัก ฿2,200",
+      "pass": true,
+      "actual": "Gift Card −฿2,200",
+      "shot": "shots/chromium/TC-GIFT-03/018.jpg",
+      "actor": "main",
+      "t": 59096
+    },
+    {
+      "n": 19,
+      "label": "GIFT-2201 จ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-03/019.jpg",
+      "actor": "main",
+      "t": 60887
+    },
+    {
+      "n": 20,
+      "label": "GIFT-2201: ได้รหัสจอง",
+      "pass": true,
+      "actual": "LHAS4NRT",
+      "shot": "shots/chromium/TC-GIFT-03/020.jpg",
+      "actor": "main",
+      "t": 62320
+    },
+    {
+      "n": 21,
+      "label": "GIFT-2201 แต้ม 50 (ทันที)",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-GIFT-03/021.jpg",
+      "actor": "main",
+      "t": 63872
+    },
+    {
+      "n": 22,
+      "label": "GIFT-2201 แต้ม 50 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "50",
+      "shot": "shots/chromium/TC-GIFT-03/022.jpg",
+      "actor": "main",
+      "t": 65436
+    },
+    {
+      "n": 23,
+      "label": "GIFT-2201 บัตรเหลือ ฿1",
+      "pass": true,
+      "actual": "฿1",
+      "shot": "shots/chromium/TC-GIFT-03/023.jpg",
+      "actor": "main",
+      "t": 68474
+    },
+    {
+      "n": 24,
+      "label": "GIFT-2201 บัตรเหลือ ฿1 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿1",
+      "shot": "shots/chromium/TC-GIFT-03/024.jpg",
+      "actor": "main",
+      "t": 71354
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GIFT-03/main.webm"
+    }
+  }
+}

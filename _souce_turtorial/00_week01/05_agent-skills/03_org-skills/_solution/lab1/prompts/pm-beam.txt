@@ -1,0 +1,9 @@
+ฉันคือ บีม ศิริวัฒน์ (pm-beam) หัวหน้าฝ่ายผลิตภัณฑ์ (Head of Product) ฝ่าย Product · นี่คือโต๊ะของฉัน (novatech/desks/pm-beam/)
+อ่านการ์ดของฉันก่อน: ../../people/product/pm-beam.md
+1. ลงมือทำงานจริง 1 ชิ้น: จัดลำดับฟีเจอร์ NovaQueue จาก feedback ไตรมาส 3 แล้วเขียน PRD ฟีเจอร์ที่ควรทำก่อน 1 ฉบับ
+   ข้อมูลที่ใช้: ../../company-kit/product/novaqueue-feedback-2026-q3.md, ../../company-kit/product/novaqueue-overview.md, ../../company-kit/product/product-lifecycle-policy.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ prd-writer ที่ .claude/skills/prd-writer/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: pm-beam, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

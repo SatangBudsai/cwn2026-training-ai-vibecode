@@ -1,0 +1,64 @@
+=== CI run #1873 · repo: kaset-appointment-web · branch: release/2026.11 · commit 3b7e9f1 ===
+=== env: UAT (https://uat.kaset-appointment.novatech.example) · runner TZ=UTC · 2026-11-02 09:14:22 UTC ===
+=== Playwright 1.48.2 · projects: chromium, mobile-safari ===
+
+Running 42 tests using 4 workers
+
+  ✓  [chromium] › auth/login.spec.ts:12:3 › login ด้วย OTP สำเร็จ (3.1s)
+  ✓  [chromium] › booking/search.spec.ts:8:3 › ค้นหาสาขาจากชื่อจังหวัด (1.9s)
+  ...
+  ✘  [chromium] › booking/create-booking.spec.ts:41:3 › จองคิว › จองช่วงเวลา 15:00 วันศุกร์ได้ (12.4s)
+  ✘  [mobile-safari] › booking/create-booking.spec.ts:41:3 › จองคิว › จองช่วงเวลา 15:00 วันศุกร์ได้ (13.0s)
+  ✓  [chromium] › booking/create-booking.spec.ts:22:3 › จองคิว › จองช่วงเวลา 09:00 วันจันทร์ได้ (4.2s)
+  ✓  [chromium] › booking/cancel.spec.ts:10:3 › ยกเลิกนัดได้ก่อน 1 ชั่วโมง (3.8s)
+
+  1) [chromium] › booking/create-booking.spec.ts:41:3 › จองคิว › จองช่วงเวลา 15:00 วันศุกร์ได้
+
+    Error: Timed out 10000ms waiting for expect(locator).toHaveText(expected)
+
+    Locator: getByTestId('booking-result')
+    Expected string: "จองสำเร็จ"
+    Received string: "ช่วงเวลานี้เต็มแล้ว กรุณาเลือกเวลาอื่น"
+    Call log:
+      - expect.toHaveText with timeout 10000ms
+      - waiting for getByTestId('booking-result')
+      -   locator resolved to <div role="alert" data-testid="booking-result">ช่วงเวลานี้เต็มแล้ว กรุณาเลือกเวลาอื่น</div>
+
+      39 |   test('จองช่วงเวลา 15:00 วันศุกร์ได้', async ({ page }) => {
+      40 |     await loginAsTestUser(page, 'qa-user-07');
+      41 |     await page.goto('/booking/new?branch=BR-012');
+      42 |     await page.getByLabel('ประเภทบริการ').selectOption('deposit-withdraw');
+      43 |     await page.getByTestId('date-picker').fill('2026-11-06');
+      44 |     await page.getByRole('button', { name: '15:00' }).click();     // UI แสดง "ว่าง 3 ที่"
+      45 |     await page.getByRole('button', { name: 'ยืนยันการจอง' }).click();
+    > 46 |     await expect(page.getByTestId('booking-result')).toHaveText('จองสำเร็จ');
+         |                                                       ^
+      47 |   });
+
+    Network (from trace):
+      GET  /api/slots?branch=BR-012&date=2026-11-06        200  (slot "15:00" remaining=3)
+      POST /api/bookings                                    409  {"error":{"code":"BOOKING_SLOT_FULL","message":"slot is full"}}
+           request body: {"branchId":"BR-012","service":"deposit-withdraw","slotStart":"2026-11-06T15:00:00.000Z"}
+
+    Server log (uat, requestId=req_8d21f0):
+      {"level":"warn","time":"2026-11-02T09:14:31.882Z","module":"booking","requestId":"req_8d21f0",
+       "msg":"slot full","branchId":"BR-012","slotStart":"2026-11-06T15:00:00.000Z",
+       "resolvedLocalSlot":"2026-11-06 22:00","capacity":0}
+
+    attachments:
+      screenshot: test-results/create-booking-15-00-chromium/test-failed-1.png
+      trace:      test-results/create-booking-15-00-chromium/trace.zip
+      video:      test-results/create-booking-15-00-chromium/video.webm
+
+  2) [mobile-safari] › same failure, same 409 (requestId=req_8d22a4)
+
+  2 failed
+  40 passed (1.6m)
+
+--- โน้ตจากแบงค์ (QA) ตอนลองมือ 2026-11-02 ---
+- ลองบน UAT ด้วยมือ: จอง 09:00 / 10:30 / 13:00 ผ่านหมด, 15:00 / 15:30 ไม่ผ่าน ขึ้น "เต็มแล้ว" ทั้งที่หน้าจอบอกว่าง 3 ที่
+- สาขาอื่น (BR-005) ก็เป็นเหมือนกัน ช่วงหลัง 15:00 (สาขาปิด 15:30)
+- บนเครื่องผม (TZ Asia/Bangkok) ใช้ npm run dev ต่อ DB local → จอง 15:00 ผ่าน!
+- release/2026.11 มี commit "refactor: move slot time handling to date-fns-tz" (dev: มิว) เมื่อ 2026-10-30
+- ลูกค้าเกษตรไทยจะ deploy release นี้ 2026-11-10
+- user ทดสอบ qa-user-07 = ข้อมูลสังเคราะห์ (ไม่ใช่ลูกค้าจริง)

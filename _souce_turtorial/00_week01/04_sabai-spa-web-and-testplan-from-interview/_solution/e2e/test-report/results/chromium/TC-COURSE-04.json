@@ -1,0 +1,78 @@
+{
+  "id": "TC-COURSE-04",
+  "title": "TC-COURSE-04 Gift Card ใช้ซื้อคอร์สไม่ได้ แต่ใช้จ่ายค่ารถของการจองด้วยคอร์สได้",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1–2: จ่ายคอร์สด้วยบัตรไม่ได้ · ถูกปฏิเสธด้วยสถานะ 4xx หรือคิดราคาเต็ม ฿15,000 โดยไม่แตะบัตร (ถ้าหักบัตรจะจ่าย ฿14,500 และบัตรเหลือ ฿0)\nขั้น 3: ยอดบัตรก่อนหักยังเป็น ฿500 · ราคาคอร์ส ฿0 + ค่ารถ ฿300 = ฿300 − หักบัตร ฿300 = จ่าย ฿0 · บัตรเหลือ ฿500 − ฿300 = ฿200 (ถ้าไม่ให้บัตรจ่ายค่ารถจะจ่าย ฿300 และบัตรเหลือ ฿500)\nขั้น 4: C01 \"เหลือ 6 ครั้ง จาก 11 ครั้ง\"\nขั้น 5: แต้มยัง 99 (ค่ารถไม่เข้าฐานแต้ม)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 415,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-27 · [R] ⚠️D-09 · [D] §4 Gift Card",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 415,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-49, FR-50, BR-16, BR-33",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 415,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R84",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 415,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 415,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 415,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 35593,
+  "at": "2026-11-06T02:52:30.763Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิดหน้าซื้อคอร์ส หาช่องใส่บัตร ถ้ามีให้ใส่ GIFT-500 แล้วกดซื้อ",
+    "2. ยิงคำขอซื้อซ้ำโดยแนบ GIFT-500 ในช่องเดียวกับที่หน้าจองใช้ส่งบัตร",
+    "3. จองด้วยคอร์ส C01 เลือกรถ H04 ใส่ GIFT-500 อ่านยอดบัตรก่อนหัก แล้วยืนยัน",
+    "4. เปิด Wallet แล้วรีโหลด",
+    "5. เข้า /th/admin กดใช้บริการเสร็จที่นัดนี้ แล้วดูแต้มของ U01"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "TC-PRICE-05",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ก่อนเลือกเดือนเกิด ฿800 − ฿800 = ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-PRICE-05/001.jpg",
+      "actor": "main",
+      "t": 18175
+    },
+    {
+      "n": 2,
+      "label": "เลือกเดือนเกิดได้",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-05/002.jpg",
+      "actor": "main",
+      "t": 19969
+    },
+    {
+      "n": 3,
+      "label": "ผลเดือนเกิดไม่ขึ้นว่าส่วนลดอื่นมากกว่า",
+      "pass": false,
+      "actual": "สิทธิ์เดือนเกิด เลือกแล้ว ใช้สิทธิ์เดือนเกิดกับการจองนี้ ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า",
+      "shot": "shots/chromium/TC-PRICE-05/003.jpg",
+      "actor": "main",
+      "t": 20972
+    },
+    {
+      "n": 4,
+      "label": "ค่าบริการ ฿800 − 20% (฿160)",
+      "pass": false,
+      "actual": "ราคาเต็ม 1 คน ฿800",
+      "shot": "shots/chromium/TC-PRICE-05/004.jpg",
+      "actor": "main",
+      "t": 22729
+    },
+    {
+      "n": 5,
+      "label": "แลกสูงสุด ได้ 12 ชุด",
+      "pass": false,
+      "actual": "16 ชุด (1600 แต้ม)",
+      "shot": "shots/chromium/TC-PRICE-05/005.jpg",
+      "actor": "main",
+      "t": 25213
+    },
+    {
+      "n": 6,
+      "label": "ยอดสุดท้าย ฿640 − ฿600 = ฿40",
+      "pass": false,
+      "actual": "จ่ายหน้าร้าน ฿160",
+      "shot": "shots/chromium/TC-PRICE-05/006.jpg",
+      "actor": "main",
+      "t": 33663
+    },
+    {
+      "n": 7,
+      "label": "ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"VPZL6J57\"}",
+      "shot": "shots/chromium/TC-PRICE-05/007.jpg",
+      "actor": "main",
+      "t": 35045
+    },
+    {
+      "n": 8,
+      "label": "หน้ายืนยัน ฿40",
+      "pass": false,
+      "actual": "จ่ายหน้าร้าน ฿160",
+      "shot": "shots/chromium/TC-PRICE-05/008.jpg",
+      "actor": "main",
+      "t": 36733
+    },
+    {
+      "n": 9,
+      "label": "แต้ม 1,700 − 1,200 = 500",
+      "pass": true,
+      "actual": "500",
+      "shot": "shots/chromium/TC-PRICE-05/009.jpg",
+      "actor": "main",
+      "t": 38265
+    },
+    {
+      "n": 10,
+      "label": "ยอดนัด ฿40 หลังรีโหลด",
+      "pass": false,
+      "actual": "฿160",
+      "shot": "shots/chromium/TC-PRICE-05/010.jpg",
+      "actor": "main",
+      "t": 39799
+    },
+    {
+      "n": 11,
+      "label": "หลังร้าน ฿40",
+      "pass": false,
+      "actual": "฿160",
+      "shot": "shots/chromium/TC-PRICE-05/011.jpg",
+      "actor": "owner",
+      "t": 2423
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-PRICE-05/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-PRICE-05/main.webm"
+    }
+  }
+}

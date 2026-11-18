@@ -1,0 +1,22 @@
+diff -ruN -x node_modules -x .next -x public petshop/lib/catalog.ts petshop/lib/catalog.ts
+--- petshop/lib/catalog.ts	2026-11-11 06:04:17.756138257 +0700
++++ petshop/lib/catalog.ts	2026-11-11 06:08:47.078233998 +0700
+@@ -69,7 +69,7 @@
+   const byPop = (a: Product, b: Product) => b.popularity - a.popularity;
+   const sorters: Record<SortKey, (a: Product, b: Product) => number> = {
+     popular: byPop,
+-    "price-asc": (a, b) => lowestPrice(b) - lowestPrice(a) || byPop(a, b),
++    "price-asc": (a, b) => lowestPrice(a) - lowestPrice(b) || byPop(a, b),
+     "price-desc": (a, b) => lowestPrice(b) - lowestPrice(a) || byPop(a, b),
+     rating: (a, b) => b.rating - a.rating || byPop(a, b),
+   };
+diff -ruN -x node_modules -x .next -x public petshop/lib/pricing.ts petshop/lib/pricing.ts
+--- petshop/lib/pricing.ts	2026-11-11 06:04:17.756138257 +0700
++++ petshop/lib/pricing.ts	2026-11-11 06:08:47.078233998 +0700
+@@ -150,5 +150,5 @@
+ }
+ 
+ export function freeShippingRemaining(subtotal: number): number {
+-  return FREE_SHIPPING_MIN - subtotal;
++  return Math.max(0, FREE_SHIPPING_MIN - subtotal);
+ }

@@ -1,0 +1,17 @@
+[
+  {
+    "file": "components/ShopProvider.tsx",
+    "find": "removeFromWishlist: (slug: string) => void;",
+    "replace": "removeFromWishlist: (slug: string, syncBadge?: boolean) => void;"
+  },
+  {
+    "file": "components/ShopProvider.tsx",
+    "find": "const removeFromWishlist = useCallback(\n    (slug: string) => {\n      const next = wishlistRef.current.filter((s) => s !== slug);\n      commitWishlist(next);\n      setWishlistBadge(next.length);",
+    "replace": "const removeFromWishlist = useCallback(\n    (slug: string, syncBadge = true) => {\n      const next = wishlistRef.current.filter((s) => s !== slug);\n      commitWishlist(next);\n      if (syncBadge) setWishlistBadge(next.length);"
+  },
+  {
+    "file": "components/WishlistView.tsx",
+    "find": "            removeFromWishlist(product.slug);",
+    "replace": "            removeFromWishlist(product.slug, false);"
+  }
+]

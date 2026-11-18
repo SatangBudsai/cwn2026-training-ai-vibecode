@@ -1,0 +1,46 @@
+{
+  "id": "TC-ACCT-10",
+  "checks": [
+    {
+      "n": 1,
+      "label": "/api/health ตอบ 200",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-10/001.jpg",
+      "actor": "main",
+      "t": 1445
+    },
+    {
+      "n": 2,
+      "label": "/api/nope content-type ไม่ใช่ text/html",
+      "pass": false,
+      "actual": "text/html; charset=utf-8",
+      "shot": "shots/chromium/TC-ACCT-10/002.jpg",
+      "actor": "main",
+      "t": 2474
+    },
+    {
+      "n": 3,
+      "label": "/api/nope เนื้อหาไม่มี <html",
+      "pass": false,
+      "actual": "<!DOCTYPE html><html lang=\"th\" data-ready=\"false\" data-bug-mode=\"0\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Fbrand%2Fshop%2Fhero-dusk.jpg&amp;w=640&amp;q=75 640w, /_next/image?url",
+      "shot": "shots/chromium/TC-ACCT-10/003.jpg",
+      "actor": "main",
+      "t": 3551
+    },
+    {
+      "n": 4,
+      "label": "/api/nope สถานะ 4xx",
+      "pass": false,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-10/004.jpg",
+      "actor": "main",
+      "t": 4540
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-ACCT-10/main.webm"
+    }
+  }
+}

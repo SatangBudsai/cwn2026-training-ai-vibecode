@@ -1,0 +1,127 @@
+{
+ "goal": "pipeline ทำนายลูกค้าเลิกใช้บริการ ตั้งแต่เตรียมข้อมูล เทรนโมเดล เก็บผลการทดลอง เปิดเป็น API และหน้า dashboard ติดตามผล",
+ "name": "hw06-churn-ml-pipeline",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์และ Docker Compose",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "docker-compose.yml",
+   "done": "docker compose up แล้ว MLflow ขึ้น และมีโครงโฟลเดอร์ครบ"
+  },
+  {
+   "id": "B02",
+   "title": "ข้อมูลลูกค้าสังเคราะห์",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "data/customers.csv",
+   "done": "CSV 5,000 แถว มีคอลัมน์ churn และสัดส่วนเลิกใช้ราวร้อยละ 20"
+  },
+  {
+   "id": "B03",
+   "title": "เลือกตัวชี้วัดและวิธีแบ่งข้อมูล",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 3,
+   "output": "docs/eval-decision.md",
+   "done": "ระบุตัวชี้วัดหลัก 1 ตัว และวิธีแบ่ง train/test พร้อมเหตุผล"
+  },
+  {
+   "id": "B04",
+   "title": "เตรียมข้อมูลและสร้าง feature",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "pipeline/features.py",
+   "done": "รันแล้วได้ชุด train/test และไม่มีข้อมูลอนาคตรั่วเข้า feature"
+  },
+  {
+   "id": "B05",
+   "title": "เทรน เทียบโมเดล และบันทึกลง MLflow",
+   "size": "L",
+   "depends_on": [
+    "B03",
+    "B04"
+   ],
+   "skill": "review",
+   "difficulty": 4,
+   "output": "pipeline/train.py",
+   "done": "เทียบอย่างน้อย 3 โมเดลด้วยตัวชี้วัดใน eval-decision.md และบันทึกทุกการทดลอง"
+  },
+  {
+   "id": "B06",
+   "title": "API ทำนาย",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B05"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "api/predict.py",
+   "done": "POST /predict คืนความน่าจะเป็นที่จะเลิกใช้ จากโมเดลที่ดีที่สุด"
+  },
+  {
+   "id": "B07",
+   "title": "ตรวจข้อมูลเพี้ยน (drift)",
+   "size": "M",
+   "depends_on": [
+    "B04"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "monitor/drift.py",
+   "done": "รายงาน feature ที่การกระจายเปลี่ยนเกินเกณฑ์"
+  },
+  {
+   "id": "B08",
+   "title": "dashboard ติดตามผล",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B03"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "dashboard/app.py",
+   "done": "แสดงตัวชี้วัดหลัก จำนวนการทำนาย และผล drift"
+  },
+  {
+   "id": "B09",
+   "title": "เอกสารอธิบายโมเดลสำหรับผู้บริหาร",
+   "size": "S",
+   "depends_on": [
+    "B05"
+   ],
+   "skill": "best_of",
+   "difficulty": 2,
+   "output": "docs/model-card.md",
+   "done": "ไม่เกิน 1 หน้า บอกความแม่น ข้อจำกัด และ feature สำคัญ 5 ตัว"
+  },
+  {
+   "id": "B10",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "รัน pipeline ต้นจนจบ เรียก API ได้ และ dashboard แสดงผล บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

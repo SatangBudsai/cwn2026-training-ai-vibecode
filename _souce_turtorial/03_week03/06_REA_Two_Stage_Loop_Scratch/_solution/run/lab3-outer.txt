@@ -1,0 +1,4 @@
+ใน container multi-account-devtool ที่ /workspace/arena6 ช่วยสร้างไม้บรรทัดใหม่จากต้นฉบับ โดยให้ทำพร้อมกัน 2 บัญชี
+- _solution/run/j1.txt ของบทนี้ → cyolo1 (cyolo1 exec --skip-git-repo-check) ในโฟลเดอร์ rulers/accept (กรรมการอิสระ)
+- _solution/run/o1.txt ของบทนี้ → yolo2 (yolo2 -p) ในโฟลเดอร์ rulers (เฉลยจากต้นฉบับ)
+ระหว่างรอให้บอกความคืบหน้า เมื่อครบให้แสดงคำตอบของทั้งสองบัญชี

@@ -1,0 +1,78 @@
+{
+  "id": "TC-GROUP-03",
+  "title": "TC-GROUP-03 จองคู่รอบเดียวกันแข่งกัน 3 คำขอ ได้คู่เดียว",
+  "project": "chromium",
+  "file": "5.2-group.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.2"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "1 คำขอสำเร็จ · 2 คำขอถูกปฏิเสธด้วยสถานะ 4xx\nหลังร้าน: การจองคู่รอบนี้มี 1 รายการ ใช้นักบำบัด 2 คน · แขกของ 2 คำขอที่ถูกปฏิเสธไม่มีการจอง\nคำขอเดี่ยวของ G4 ได้ 409 ทั้งที่นักบำบัดเหลือ 4 คน จึงยืนยันว่าห้องเป็นตัวปฏิเสธ\nนักบำบัดที่เหลือ 6 − 2 = 4 คน จึงยังจอง 1 คน รอบ 12:00 ได้",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 403,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.12 · [R]",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 403,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-14, BR-06",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 403,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 403,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Boundary, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 403,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 403,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 18603,
+  "at": "2026-11-06T02:51:27.967Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. จองคู่ S01 รอบอื่นบนหน้าเว็บ แล้วดึง URL และ body จาก Network",
+    "2. ล็อกแล้วรีเซ็ตใหม่",
+    "3. ยิง 3 คำขอพร้อมกันด้วยข้อมูล G1, G2, G3",
+    "4. ยิงคู่ S01 12:00 แบบเดี่ยวด้วย G4 แล้วเข้าหลังร้านดู 17 มิ.ย. 12:00 และรีโหลด",
+    "5. เปิดหน้าจอง เลือก S01 1 คน 17 มิ.ย. ดูรอบ 12:00"
+  ]
+}

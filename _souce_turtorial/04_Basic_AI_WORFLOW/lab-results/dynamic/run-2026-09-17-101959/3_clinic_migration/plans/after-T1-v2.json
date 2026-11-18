@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "replans": 1,
+  "tasks": {
+    "T1": {
+      "description": "ตรวจคุณภาพข้อมูลและระบุรายการรอยืนยัน",
+      "dependencies": [],
+      "status": "DONE"
+    },
+    "T2": {
+      "description": "อธิบาย As-Is",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T3": {
+      "description": "ออกแบบ To-Be/Data Model/Mockup",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T4": {
+      "description": "ทำ Data Mapping และแผน Migration",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T5": {
+      "description": "รวม Gap/Roll-out และตรวจ C1–C3",
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "status": "DONE"
+    },
+    "T1-v2": {
+      "description": "เพิ่มข้อกำหนดและข้อมูลความยินยอม/LINE",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T3-v2": {
+      "description": "ปรับ To-Be/แบบจำลอง/Mockup เพิ่มสองส่วน",
+      "dependencies": [
+        "T1-v2"
+      ],
+      "status": "TODO"
+    },
+    "T4-v2": {
+      "description": "เพิ่ม Mapping และเงื่อนไขย้ายข้อมูลใหม่",
+      "dependencies": [
+        "T1-v2"
+      ],
+      "status": "TODO"
+    },
+    "T5-v2": {
+      "description": "รวมผล ตรวจ C1–C3 และขอบเขตใหม่",
+      "dependencies": [
+        "T2",
+        "T3-v2",
+        "T4-v2"
+      ],
+      "status": "TODO"
+    }
+  },
+  "reason": "NEW INFORMATION: เพิ่มความยินยอมและการจองเองผ่าน LINE OA หลังเฟสแรกผ่าน",
+  "changes": "เพิ่ม T1-v2, T3-v2, T4-v2, T5-v2; เก็บ T1–T5 เฟสแรกและใช้ T2 เดิม",
+  "impact": [
+    "contract/To-Be/Data Model/Mockup/Mapping/ผลตรวจรวม"
+  ],
+  "reuse": [
+    "T2 As-Is",
+    "CSV และ Findings",
+    "normalization",
+    "Mockup สามส่วนเดิม"
+  ]
+}

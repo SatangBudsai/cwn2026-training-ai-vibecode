@@ -1,0 +1,78 @@
+{
+  "id": "TC-RIDE-02",
+  "title": "TC-RIDE-02 จำนวนคันปัดขึ้นทุก 4 คน และยอดรวมถูกเมื่อมีส่วนลดกลุ่มกับค่ารถ",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "3 คน H04 → 1 คัน ค่ารถ ฿300 ยอด ฿3,300 (฿3,000 + ฿300 · ถ้าลดกลุ่ม 10% จะได้ ฿3,000)\n4 คน H04 → 1 คัน ค่ารถ ฿300 ยอด ฿3,900 (฿4,000 − 10% = ฿3,600 + ฿300 · ถ้าคิด 2 คันจะได้ ฿4,200 ถ้าไม่ลดกลุ่มจะได้ ฿4,300)\n5 คน H04 → 2 คัน ค่ารถ ฿600 ยอด ฿5,100 (฿5,000 − 10% = ฿4,500 + ฿600 · ถ้าคิด 1 คันจะได้ ฿4,800)\n6 คน H04 → 2 คัน ค่ารถ ฿600 ยอด ฿6,000 (฿6,000 − 10% = ฿5,400 + ฿600 · ถ้าคิด 3 คันจะได้ ฿6,300)\n5 คน H02 → 2 คัน ค่ารถ ฿0 ยอด ฿4,500 (2 × ฿0 · ถ้าเก็บเพราะเกิน 4 คนจะได้ ฿5,100)\nแถว 6 คน: หน้าสรุป หน้ายืนยัน และหลังร้าน ต่างเป็น ฿6,000",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 193,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 รถรับส่ง · [D][R] E173–E177",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 193,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-53, BR-34, BR-36",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 193,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R61",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 193,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 193,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 193,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 47751,
+  "at": "2026-11-06T02:51:39.249Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. แขก 3 คน H04",
+    "1. U06 4 คน H04 ที่ /zh",
+    "2. แถวแขกที่เหลือ โดยยังไม่กดยืนยัน",
+    "3. แขก 6 คน H04 กดยืนยัน รีโหลดหน้ายืนยัน",
+    "4. เปิดคิว 17 มิ.ย. ที่หลังร้าน อ่านยอด"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "TC-EXPR-08",
+  "title": "TC-EXPR-08 โหมด /zh เหลือข้อความไทย 0 จุดตั้งแต่เริ่มจองถึงหน้ายืนยัน รวมแชตและ error",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ทุกขั้น: regex `[฀-๿]` ได้ 0 จุด (จุดเสี่ยงคือแชตและ error ที่ R113 ยังไม่ได้ลอง · ถ้าคำตอบแชตหรือ error เป็นไทยจะได้อย่างน้อย 1 จุด)\nขั้น 4: มีข้อความแจ้งเป็นภาษาจีน และยังไม่เกิดการจอง คิววันที่ 17 มิ.ย. 2026 เพิ่ม 0 รายการ\nขั้น 6: ได้รหัสจอง 1 รหัส ยอด 1,000 (S01 ฿1,000 × 1 คน = ฿1,000) นักบำบัด 诗丽 · ในหลังร้านคิววันที่ 17 มิ.ย. 2026 เพิ่ม 1 รายการพอดี",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 756,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.22 · [R] ⚠️A-38 · [R] · F-สร้าง 26",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 756,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-56, FR-57, NFR-07",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 756,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R113",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 756,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 756,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 756,
+        "column": 3
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 41422,
+  "at": "2026-11-06T02:24:06.704Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. สลับภาษาจาก /th เป็น 中文 แล้วค้นข้อความไทย",
+    "2. เปิด /zh/booking เลือก S01 แล้วค้นซ้ำ",
+    "3. เลือกวัน รอบ และ T01 แล้วค้นซ้ำ",
+    "4. ส่งฟอร์มแบบชื่อว่าง และแบบเบอร์ 12345 อ่านข้อความ error แล้วค้นซ้ำ",
+    "5. เปิดแชต ส่งราคา นอกเรื่อง 12345 และเริ่มจองด้วยรอบ 10:15 แล้วค้นซ้ำทุกคำตอบ",
+    "6. กรอกข้อมูลถูกต้องแล้วยืนยัน ค้นซ้ำที่หน้ายืนยัน",
+    "7. รีโหลดหน้ายืนยันแล้วค้นซ้ำ"
+  ]
+}

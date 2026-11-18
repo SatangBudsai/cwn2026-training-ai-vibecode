@@ -1,0 +1,31 @@
+# 05-multicity @ 2026-11-01 17:06:32 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?tfs=CBwQARoaEgoyMDI2LTExLTE3agwIAhIIL20vMGZuMmcaGhIKMjAyNi0xMS0yMXIMCAISCC9tLzBmbjJnQAFIAXABggELCP___________wGYAQM&tfu=KgIIAw&hl=th&gl=TH&curr=THB
+- search "เที่ยวบิน":
+  - combobox "เปลี่ยนประเภทตั๋ว หลายเมือง"
+  - button "ผู้โดยสาร 1 คน":
+    - img
+    - text: "1"
+    - img
+  - combobox "เปลี่ยนชั้นโดยสาร ชั้นประหยัด"
+  - combobox "ต้นทาง": กรุงเทพมหานคร
+  - img
+  - button "สลับต้นทางกับปลายทาง" [disabled]:
+    - img
+  - combobox "ปลายทาง"
+  - img
+  - img
+  - textbox "ขาไป": อังคาร 17 พ.ย.
+  - button "ลบเที่ยวบินจากกรุงเทพมหานคร ในวันที่ อังคาร 17 พ.ย.":
+    - img
+  - combobox "ต้นทาง"
+  - img
+  - button "สลับต้นทางกับปลายทาง" [disabled]:
+    - img
+  - combobox "ปลายทาง": กรุงเทพมหานคร
+  - img
+  - img
+  - textbox "ขาไป": เสาร์ 21 พ.ย.
+  - button "ลบเที่ยวบินไปยังกรุงเทพมหานคร ในวันที่ เสาร์ 21 พ.ย.":
+    - img
+  - button "เพิ่มเที่ยวบิน"
+  - button "สำรวจจุดหมายปลายทาง": สำรวจ

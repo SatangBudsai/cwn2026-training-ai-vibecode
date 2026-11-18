@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-11-01T10:07:49.250Z",
+  "allCount": {
+    "network": 300,
+    "screen": 300,
+    "domCards": 300,
+    "pass": true
+  },
+  "firstFive": {
+    "network": [
+      7635,
+      9062,
+      11580,
+      9335,
+      9335
+    ],
+    "screen": [
+      7635,
+      9062,
+      11580,
+      9335,
+      9335
+    ],
+    "pass": true
+  },
+  "nonstop": {
+    "allLoaded": 18,
+    "filteredNetwork": null,
+    "screen": 18,
+    "pass": true,
+    "filteredNetworkBodyAvailable": false,
+    "note": "Compare 18 one-leg itineraries in full 300-row network response with 18 shown after nonstop filter. Filtered response body absent in HAR (size -1); not needed for this comparison."
+  }
+}

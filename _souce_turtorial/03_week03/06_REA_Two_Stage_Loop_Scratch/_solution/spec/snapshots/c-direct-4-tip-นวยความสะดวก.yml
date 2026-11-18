@@ -1,0 +1,5 @@
+# captured 2026-11-01 17:15:01 url=https://www.google.com/travel/flights/booking?tfs=CBwQAhpJEgoyMDI2LTExLTE1Ih8KA0JLSxIKMjAyNi0xMS0xNRoDTlJUKgJWWjIDODMwagwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=CmxDalJJYWxOVk5XSnNUMGhsY0c5QlZrWmlNM2RDUnkwdExTMHRMUzB0TFhObFluQm5PVUZCUVVGQlIzSnVSVkpGUWtsMVRFMUJFZ1ZXV2pnek1Cb0tDT1pHRUFBYUExUklRamdjY1ByUkFRPT0SAggAIgA&hl=th&gl=TH&curr=THB
+- dialog "ค่าธรรมเนียมนี้จะมีผลในขั้นตอนสุดท้ายของการจองบนเว็บไซต์ของพาร์ทเนอร์":
+  - button "ปิดกล่องโต้ตอบ":
+    - img
+  - text: ค่าธรรมเนียมนี้จะมีผลในขั้นตอนสุดท้ายของการจองบนเว็บไซต์ของพาร์ทเนอร์

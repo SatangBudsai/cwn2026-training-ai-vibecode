@@ -1,0 +1,75 @@
+{
+ "score": 0.714,
+ "checks": [
+  {
+   "id": "fixed_A5",
+   "pass": true,
+   "note": "TC-CHK-04 ผ่านแล้ว"
+  },
+  {
+   "id": "fixed_B5",
+   "pass": true,
+   "note": "TC-CHK-01 ผ่านแล้ว"
+  },
+  {
+   "id": "fixed_C5",
+   "pass": true,
+   "note": "TC-CART-04 ผ่านแล้ว"
+  },
+  {
+   "id": "no_regression",
+   "pass": true,
+   "note": "TC อื่นผ่านครบ 38 เทสต์"
+  },
+  {
+   "id": "tests_green",
+   "pass": true,
+   "note": "ผ่านครบ 11 เทสต์"
+  },
+  {
+   "id": "caught_A5",
+   "pass": false,
+   "note": "เทสต์ของเอเจนต์เกิน 180 วินาที"
+  },
+  {
+   "id": "caught_B5",
+   "pass": false,
+   "note": "เทสต์ของเอเจนต์เกิน 180 วินาที"
+  },
+  {
+   "id": "caught_C5",
+   "pass": false,
+   "note": "เทสต์ของเอเจนต์เกิน 180 วินาที"
+  },
+  {
+   "id": "reported_A5",
+   "pass": true,
+   "note": "รายงาน TC-CHK-04 แล้ว"
+  },
+  {
+   "id": "reported_B5",
+   "pass": true,
+   "note": "รายงาน TC-CHK-01 แล้ว"
+  },
+  {
+   "id": "reported_C5",
+   "pass": true,
+   "note": "รายงาน TC-CART-04 แล้ว"
+  },
+  {
+   "id": "no_false_alarm",
+   "pass": false,
+   "note": "รายงานเกิน: TC-CART-01, TC-CART-02, TC-CART-03, TC-CPN-01, TC-CPN-02, TC-CPN-03, TC-REC-04"
+  },
+  {
+   "id": "evidence",
+   "pass": true,
+   "note": "มีภาพหลักฐานครบ 3 บั๊ก"
+  },
+  {
+   "id": "plan_untouched",
+   "pass": true,
+   "note": "ตรงกับต้นฉบับ"
+  }
+ ]
+}

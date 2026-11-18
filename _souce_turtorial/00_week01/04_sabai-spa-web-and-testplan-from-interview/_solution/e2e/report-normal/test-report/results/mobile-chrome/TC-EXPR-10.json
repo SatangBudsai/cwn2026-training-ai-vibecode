@@ -1,0 +1,94 @@
+{
+  "id": "TC-EXPR-10",
+  "title": "TC-EXPR-10 เพลงเงียบจนกว่าจะกดเอง และทัวร์หมุนด้วยการลากครบ 360 องศาทั้งจอ 375px และ 1280px",
+  "project": "mobile-chrome",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P3",
+    "@5.8",
+    "@mobile"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1–2: `audio.paused` = true\nขั้น 3: กดครั้งแรก false · กดครั้งที่สอง true\nขั้น 4: `audio.paused` = true (เพลงดังเองหลังโหลดถือว่าผิด)\nขั้น 5–6: ภาพเปลี่ยนระหว่างลาก และกลับมาตรงภาพเริ่มเมื่อครบ 360° ทั้ง 2 ขนาด (ถ้าการลากใช้ไม่ได้ ภาพจะไม่เปลี่ยนเลย)\nขั้น 7: error ใน console 0 รายการ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 966,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.21 · [R] ⚠️A-41",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 966,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-65, FR-66, NFR-04, NFR-10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 966,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R116, R117, R118",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 966,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 966,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 966,
+        "column": 3
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 34304,
+  "at": "2026-11-06T02:44:18.451Z",
+  "attempts": [
+    {
+      "status": "failed",
+      "durationMs": 32505,
+      "at": "2026-11-06T02:26:54.884Z"
+    },
+    {
+      "status": "failed",
+      "durationMs": 31996,
+      "at": "2026-11-06T02:39:39.452Z"
+    }
+  ],
+  "errors": [
+    "Error: expect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 10\nReceived:    14.571014287674522"
+  ],
+  "steps": [
+    "1. เปิด /th ไม่กดอะไร อ่าน audio.paused",
+    "2. เปิด /th/tour อ่าน audio.paused",
+    "3. กด music-toggle อ่านค่า แล้วกดอีกครั้งและอ่านค่า",
+    "4. รีโหลดแล้วอ่านค่า",
+    "5. ที่ viewport 375 ลากแนวนอนทีละช่วงจนภาพวนกลับมาตรงภาพเริ่ม ✗",
+    "6. ทำขั้น 5 ซ้ำที่ viewport 1280",
+    "7. นับ error ใน console"
+  ]
+}

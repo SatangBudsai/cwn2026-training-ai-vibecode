@@ -1,0 +1,54 @@
+<html lang="th"><meta charset="utf-8"><style>body{font:19px/1.7 "Noto Sans Thai",sans-serif;color:#243e4a;padding:36px;background:#f5f8fa}main{background:white;border-radius:16px;padding:30px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d5e3e7;padding:12px;text-align:left}th{background:#e3f1eb}h1{color:#126455}</style><main><h1>Plan v2</h1>
+<p>เหตุผล: พบกติกาส่งอนุมัติสองค่าที่ไม่ตรงกัน และ Plan v1 ยังไม่มีงานจัดการข้อขัดแย้ง</p>
+<p>สิ่งที่เปลี่ยน: เพิ่ม T1b และให้ T5 รอ T1b ก่อนตรวจรับ</p>
+<p>Impact: Open Issues, Mockup ต้องแสดงรอยืนยันนโยบาย, T5</p>
+<p>Reuse: T1 ข้อกำหนดและหลักฐานสัมภาษณ์</p>
+<table>
+<thead>
+<tr>
+  <th>งาน</th>
+  <th>คำอธิบาย</th>
+  <th>Dependency</th>
+  <th>สถานะ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>T1</td>
+  <td>สกัดข้อกำหนดจากบทสัมภาษณ์</td>
+  <td>-</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T2</td>
+  <td>สร้าง Use Case/Sequence/State</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T3</td>
+  <td>สร้าง ERD</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T4</td>
+  <td>สร้าง Mockup สามส่วนและตาราง Pain Point</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T5</td>
+  <td>รวมเอกสารและตรวจ C1–C3</td>
+  <td>T2, T3, T4, T1b</td>
+  <td>DONE</td>
+</tr>
+<tr>
+  <td>T1b</td>
+  <td>เก็บข้อขัดแย้ง 5,000/10,000 และวงเงินที่พักที่ยังไม่ระบุ</td>
+  <td>T1</td>
+  <td>DONE</td>
+</tr>
+</tbody>
+</table>
+</main></html>

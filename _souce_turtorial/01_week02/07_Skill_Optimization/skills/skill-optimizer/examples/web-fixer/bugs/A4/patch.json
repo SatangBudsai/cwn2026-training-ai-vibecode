@@ -1,0 +1,7 @@
+[
+  {
+    "file": "components/CartView.tsx",
+    "find": "{formatBaht(line.lineTotal)}",
+    "replace": "{formatBaht(line.price)}"
+  }
+]

@@ -1,0 +1,103 @@
+# บริษัทจำลองโนวาเทค: Gitea (คลังกลาง = remote) + CI runner + seed พนักงาน 28 คน
+# เปิด:  docker compose up -d        ปิดและลบทั้งหมด:  docker compose down -v
+# ทำงานตลอด 2 ตัว: gitea, runner (ล่มเอง/รีสตาร์ต Docker แล้วกลับมาเอง)
+# ตัวช่วยตอนเปิด 3 ตัว: init → seed → cleanup ทำงานครั้งเดียว แล้ว cleanup ลบทั้งสามทิ้งเอง
+#   → docker compose ps เหลือแค่ gitea + runner · ถ้าเปิดไม่สำเร็จ ตัวที่ล้มจะค้างไว้ให้ดู docker compose logs init seed
+# ไม่มี .env ก็เปิดได้ (ใช้ค่าทดสอบใน .env.example) · มี .env จะใช้ค่าใน .env ทับ
+name: novatech
+
+services:
+  gitea:                                   # 🌐 คลังกลาง เปิดที่ http://localhost:3300
+    image: gitea/gitea:1.24
+    container_name: novatech-gitea
+    restart: unless-stopped
+    environment:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      GITEA__database__DB_TYPE: sqlite3
+      GITEA__security__INSTALL_LOCK: "true"
+      GITEA__server__ROOT_URL: http://localhost:3300/
+      GITEA__server__HTTP_PORT: "3000"
+      GITEA__server__DISABLE_SSH: "true"
+      GITEA__service__DISABLE_REGISTRATION: "true"
+      GITEA__repository__DEFAULT_BRANCH: main
+      GITEA__actions__ENABLED: "true"
+      GITEA__ui__DEFAULT_SHOW_FULL_NAME: "true"
+    ports:
+      - "3300:3000"
+    volumes:
+      - gitea-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/api/healthz"]
+      interval: 3s
+      retries: 40
+      start_period: 30s
+
+  init:                                    # สร้างผู้ดูแลระบบ (รันครั้งเดียว cleanup ลบทิ้งให้)
+    image: gitea/gitea:1.24
+    container_name: novatech-init
+    user: git
+    entrypoint: ["/bin/sh", "/seed/init.sh"]
+    restart: "no"
+    env_file: &lab-env
+      - path: .env.example
+      - path: .env
+        required: false
+    volumes:
+      - gitea-data:/data
+      - ./seed:/seed:ro
+    depends_on:
+      gitea:
+        condition: service_healthy
+
+  runner:                                  # CI ของ Gitea Actions (ใช้ใน LAB 6)
+    image: gitea/act_runner:0.2.11
+    container_name: novatech-runner
+    restart: unless-stopped
+    environment:
+      GITEA_INSTANCE_URL: http://gitea:3000
+      GITEA_RUNNER_REGISTRATION_TOKEN_FILE: /shared/runner-token
+      GITEA_RUNNER_NAME: novatech-runner
+      CONFIG_FILE: /config.yaml
+    volumes:
+      - runner-data:/data
+      - runner-token:/shared:ro
+      - ./seed/runner-config.yaml:/config.yaml:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      seed:
+        condition: service_completed_successfully
+
+  seed:                                    # สร้างองค์กร ทีม 12 ทีม (11 แผนก + leads) พนักงาน 28 คน โต๊ะทำงาน และ token ของ runner (รันครั้งเดียว cleanup ลบทิ้งให้)
+    image: node:22-alpine
+    container_name: novatech-seed
+    working_dir: /novatech
+    command: ["node", "seed/seed.mjs"]
+    restart: "no"
+    env_file: *lab-env
+    environment:
+      GITEA_URL: http://gitea:3000
+    volumes:
+      - ./seed:/novatech/seed:ro
+      - ./desks:/novatech/desks
+      - runner-token:/shared
+    depends_on:
+      init:
+        condition: service_completed_successfully
+
+  cleanup:                                 # 🧹 เปิดครบแล้ว ลบ init, seed และตัวเอง (ทำงานเฉพาะเมื่อ seed สำเร็จ)
+    image: node:22-alpine
+    container_name: novatech-cleanup
+    command: ["node", "/seed/cleanup.mjs"]
+    restart: "no"
+    volumes:
+      - ./seed:/seed:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      runner:
+        condition: service_started
+
+volumes:
+  gitea-data:
+  runner-data:
+  runner-token:

@@ -1,0 +1,82 @@
+{
+  "id": "TC-ACCT-08",
+  "title": "TC-ACCT-08 จ่ายค่าบริการแล้วยอดสะสมเพิ่มและขึ้น Gold ทันที ราคานัดเดิมไม่เปลี่ยน แต้มกับยอดของการจองครบ 5 ขั้นคิดตรง",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ส่วน ก:\nยอด ฿9,999 + ฿800 = ฿10,799 → Gold ทันที (ไม่ใช่ Silver จนสิ้นรอบ)\nแต้ม ฿800 ÷ 100 = 8 → 250 + 8 = 258\nนัดใหม่ S01 ฿1,000 − 5% (฿50) = ฿950 (ถ้าระดับยังไม่ขึ้นจะได้ ฿1,000)\nนัดเดิม S01 ยัง ฿1,000 (ถ้าคิดใหม่จะได้ ฿950)\nส่วน ข:\nจ่าย ฿2,000 − 200 แต้ม (฿100) = ฿1,900 + รถ ฿300 = ฿2,200 − บัตร ฿500 = ฿1,700\nส่วนค่าบริการ ฿1,900 − ฿500 = ฿1,400 ÷ 100 = 14 แต้ม → 250 − 200 + 14 = 64 (ถ้าคิดรวมค่ารถจะได้ 17 แต้ม เหลือ 67)\nยอด ฿9,999 + ฿1,400 = ฿11,399 → Gold (ถ้าคิดรวมค่ารถจะได้ ฿11,699)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 797,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 แต้มและระดับ · [D][R] E112, E248 · [R] ⚠️D-11 E249 · [R] ⚠️A-09, A-10 E244",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 797,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-34, FR-79, BR-23, BR-17",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 797,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R29, R38, R40",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 797,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 797,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 797,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 45935,
+  "at": "2026-11-06T02:54:24.502Z",
+  "attempts": [],
+  "errors": [
+    "Error: U03 หลังกดเสร็จ S04: ยอดสะสม ฿11,399 (อ่านได้: ฿11,899)\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 11399\nReceived: 11899"
+  ],
+  "steps": [
+    "1. U03 จอง S05 17 มิ.ย. 12:00 และ S01 17 มิ.ย. 14:00 อ่านยอดทั้งสองนัด",
+    "2. U07 เลือกวันที่ 17 มิ.ย. 2026 กด \"ใช้บริการเสร็จ\" ของนัด S05 เท่านั้น",
+    "3. U03 อ่านระดับ ยอด และแต้มในบัญชี",
+    "4. U03 เริ่มจอง S01 18 มิ.ย. 12:00 อ่านยอดในหน้าสรุป",
+    "5. ดูยอดนัด S01 17 มิ.ย. 14:00 ในบัญชี และในคิวหลังร้าน",
+    "6. ส่วน ข รีเซ็ต · U03 จอง S04 17 มิ.ย. 12:00 แลก 200 แต้ม รถ H04 บัตร GIFT-500",
+    "7. U07 กด \"ใช้บริการเสร็จ\" ของนัดนี้ · U03 อ่านแต้มและยอด ✗"
+  ]
+}

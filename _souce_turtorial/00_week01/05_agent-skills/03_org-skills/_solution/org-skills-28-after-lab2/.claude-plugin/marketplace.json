@@ -1,0 +1,72 @@
+{
+  "name": "novatech-skills",
+  "owner": {
+    "name": "ทีมกลาง โนวาเทค (plat-ken)",
+    "email": "plat-ken@novatech.test"
+  },
+  "metadata": {
+    "description": "คลัง skill กลางของโนวาเทค 1 แผนก = 1 plugin"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "./plugins/core",
+      "description": "ของที่ทุกคนต้องใช้: นโยบายข้อมูลลูกค้า แบรนด์ กติการาคา และการหา skill ในคลัง"
+    },
+    {
+      "name": "shared",
+      "source": "./plugins/shared",
+      "description": "งานข้ามแผนกที่ไม่มีแผนกไหนเป็นเจ้าของ เช่น บันทึกประชุม"
+    },
+    {
+      "name": "exec",
+      "source": "./plugins/exec",
+      "description": "แผนก MD / ผู้บริหาร: อนุมัติดีล สไลด์ผู้บริหาร และรีวิวของผู้บริหารสาย"
+    },
+    {
+      "name": "sales",
+      "source": "./plugins/sales",
+      "description": "แผนก Sales: proposal และอีเมลติดตามลูกค้า"
+    },
+    {
+      "name": "sa",
+      "source": "./plugins/sa",
+      "description": "แผนก Presales / SA: แตก TOR เป็น spec และวาด architecture"
+    },
+    {
+      "name": "product",
+      "source": "./plugins/product",
+      "description": "แผนก Product: เขียน PRD และแผนเลิกให้บริการ"
+    },
+    {
+      "name": "dev",
+      "source": "./plugins/dev",
+      "description": "แผนก Dev: รีวิวโค้ดตามมาตรฐานทีม และขึ้นโปรเจกต์ใหม่"
+    },
+    {
+      "name": "qa",
+      "source": "./plugins/qa",
+      "description": "แผนก QA: ทดสอบเว็บตามแผน และเขียนรายงานบั๊ก"
+    },
+    {
+      "name": "devops",
+      "source": "./plugins/devops",
+      "description": "แผนก DevOps: checklist ขึ้นระบบจริง และ postmortem"
+    },
+    {
+      "name": "mlops",
+      "source": "./plugins/mlops",
+      "description": "แผนก ML / MLOps: บันทึกการทดลอง และปล่อยโมเดล"
+    },
+    {
+      "name": "hr",
+      "source": "./plugins/hr",
+      "description": "แผนก HR: ประกาศรับสมัคร และชุดต้อนรับพนักงานใหม่"
+    },
+    {
+      "name": "finance",
+      "source": "./plugins/finance",
+      "description": "แผนกบัญชี / ธุรการ: คิดราคาโปรเจกต์ และตรวจใบแจ้งหนี้"
+    }
+  ]
+}

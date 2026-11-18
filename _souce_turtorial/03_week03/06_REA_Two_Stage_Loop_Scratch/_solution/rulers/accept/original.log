@@ -1,0 +1,37 @@
+B2 ผ่าน ตรวจผ่านหน้าจอจริง
+B3 ผ่าน ตรวจผ่านหน้าจอจริง
+B4 ผ่าน ตรวจผ่านหน้าจอจริง
+B7 ผ่าน ตรวจผ่านหน้าจอจริง
+B27 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.
+B28 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.
+B29 ไม่ผ่าน locator.waitFor: Timeout 20000ms exceeded.
+B30 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.
+B31 ไม่ผ่าน locator.waitFor: Timeout 20000ms exceeded.
+B33 ไม่ผ่าน locator.waitFor: Timeout 20000ms exceeded.
+B34 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.
+B37 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.
+B38 ไม่ผ่าน locator.waitFor: Timeout 20000ms exceeded.
+B39 ผ่าน ตรวจผ่านหน้าจอจริง
+B40 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.waitFor: Timeout 4500ms exceeded.
+B41 ผ่าน ตรวจผ่านหน้าจอจริง
+B42 ผ่าน ตรวจผ่านหน้าจอจริง
+B43 ผ่าน ตรวจผ่านหน้าจอจริง
+B44 ผ่าน ตรวจผ่านหน้าจอจริง
+B45 ผ่าน ตรวจผ่านหน้าจอจริง
+B46 ผ่าน ตรวจผ่านหน้าจอจริง
+B47 ผ่าน ตรวจผ่านหน้าจอจริง
+C1 ผ่าน ตรวจผ่านหน้าจอจริง
+C2 ไม่ผ่าน locator.waitFor: Timeout 20000ms exceeded.
+C3 ผ่าน ตรวจผ่านหน้าจอจริง
+C4 ไม่ผ่าน locator.waitFor: Timeout 20000ms exceeded.
+C5 ผ่าน ตรวจผ่านหน้าจอจริง
+C6 ผ่าน ตรวจผ่านหน้าจอจริง
+C23 ไม่ผ่าน Expected values to be strictly equal:
+C25 ไม่ผ่าน Expected values to be strictly deep-equal:
+C26 ผ่าน ตรวจผ่านหน้าจอจริง
+C29 ผ่าน ตรวจผ่านหน้าจอจริง
+C32 ไม่ผ่าน Expected values to be strictly equal:
+C42 ผ่าน ตรวจผ่านหน้าจอจริง
+C49 ไม่ผ่าน Google แสดง อ๊ะ มีบางอย่างผิดพลาด; locator.click: Timeout 4500ms exceeded.
+C51 ผ่าน ตรวจผ่านหน้าจอจริง
+C55 ไม่ผ่าน locator.click: Timeout 4500ms exceeded.

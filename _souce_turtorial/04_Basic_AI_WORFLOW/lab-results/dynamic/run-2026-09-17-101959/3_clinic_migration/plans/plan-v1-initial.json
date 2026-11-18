@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "replans": 0,
+  "tasks": {
+    "T1": {
+      "description": "ตรวจคุณภาพข้อมูลและระบุรายการรอยืนยัน",
+      "dependencies": [],
+      "status": "TODO"
+    },
+    "T2": {
+      "description": "อธิบาย As-Is",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "TODO"
+    },
+    "T3": {
+      "description": "ออกแบบ To-Be/Data Model/Mockup",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "TODO"
+    },
+    "T4": {
+      "description": "ทำ Data Mapping และแผน Migration",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "TODO"
+    },
+    "T5": {
+      "description": "รวม Gap/Roll-out และตรวจ C1–C3",
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "status": "TODO"
+    }
+  },
+  "reason": "เริ่มจากโจทย์และ C1–C3",
+  "changes": "สร้างแผนเริ่มต้น",
+  "impact": [],
+  "reuse": []
+}

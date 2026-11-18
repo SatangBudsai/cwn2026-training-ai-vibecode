@@ -1,0 +1,78 @@
+{
+  "id": "TC-ACCT-01",
+  "title": "TC-ACCT-01 ยกเลิกเองได้เมื่อเหลืออย่างน้อย 24 ชม. ทั้งหน้าเว็บและ API และยกเลิกไม่ทันให้โทรร้าน",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "เวลาเหลือนับเป็นนาที:\n09:59 เหลือ 24:01 → ✓ ยกเลิกได้ T02 ว่าง\n10:00 เหลือ 24:00 → ✓ ยกเลิกได้ T02 ว่าง (ถ้าเทียบเป็น \"มากกว่า 24 ชม.\" แถวนี้จะถูกปฏิเสธ)\n10:01 เหลือ 23:59 → ✗ เห็นเบอร์ 02-123-4567 · API ถูกปฏิเสธด้วยสถานะ 4xx ที่ไม่ใช่ 401 และ 404 · B07 ยังอยู่ในบัญชี · T02 16 มิ.ย. 10:00 ยังถูกจอง (ถ้าตรวจเฉพาะหน้าเว็บ API จะยกเลิกสำเร็จ)\nB05 เหลือ 3:00 → ✗ เห็นเบอร์ 02-123-4567 · B05 ยังอยู่ · แต้ม U09 ยัง 199 · ไม่มีค่าปรับในหน้าเว็บ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 132,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 ยกเลิก · [D][R] E71–E74 · [R] ⚠️A-13",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 132,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-20, FR-21, FR-23, BR-14",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 132,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R21",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 132,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative, Security",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 132,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 132,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 31241,
+  "at": "2026-11-06T02:18:44.984Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. ล็อก 10:00 รีเซ็ต · U01 ยกเลิก B07 เก็บ URL แล้วดู T02 16 มิ.ย. 10:00",
+    "2. ล็อก 09:59 รีเซ็ต · U01 ยกเลิก B07 บนหน้าเว็บ",
+    "3. ล็อก 10:01 รีเซ็ต · U01 ลองยกเลิก B07 บนหน้าเว็บ",
+    "4. ยังล็อก 10:01 · อ่านรหัส B07 จาก Network ยิง API ในชื่อ U01 แล้วรีโหลดบัญชี",
+    "5. ล็อก 10:00 รีเซ็ต · U09 ลองยกเลิก B05 แล้วอ่านแต้ม"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+ "lab": "LAB 2",
+ "steps": [
+  {
+   "id": "lab2-step1",
+   "prompt": "ดูด skill ของทุกคน: อ่านทุกโฟลเดอร์ ../*/.claude/skills/ (อ่านอย่างเดียว ห้ามแก้หรือลบของในโต๊ะคนอื่น)",
+   "reads": [
+    "skill ส่วนตัว 24 ตัว จาก 24 โต๊ะ",
+    "people/README.md (ใครอยู่แผนกไหน)"
+   ],
+   "skill": "",
+   "skillNote": "งานจัดคลัง ไม่ได้ใช้ skill · Claude ทำตามพรอมต์",
+   "time": "ขั้น ① ดูด",
+   "outputs": [
+    {
+     "file": "กติกาข้อมูลลูกค้า",
+     "note": "ซ้ำอยู่ใน 17 skill"
+    },
+    {
+     "file": "กติกาแบรนด์",
+     "note": "ซ้ำอยู่ใน 8 skill"
+    },
+    {
+     "file": "ราคาและ margin",
+     "note": "ซ้ำอยู่ใน 8 skill · price-list.csv 3 สำเนา"
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "รู้แล้วว่าอะไรซ้ำ โดยไม่แตะของใคร",
+    "sub": "ตรวจซ้ำหลังรัน: skill ใน 24 โต๊ะเหมือนเดิมทุกไฟล์"
+   },
+   "next": "",
+   "who": "plat-ken",
+   "role": "ทีมกลาง",
+   "color": "#bfdbfe",
+   "portrait": "../../../img/people/plat-ken.jpg"
+  },
+  {
+   "id": "lab2-step2",
+   "prompt": "รวมเฉพาะของที่ซ้ำกันหลาย skill · 1 แผนก = 1 plugin · สร้าง skill-finder ใน core",
+   "reads": [
+    "ส่วนที่ซ้ำกันของทุก skill",
+    "price-list.csv ทั้ง 3 สำเนา"
+   ],
+   "skill": "",
+   "skillNote": "งานจัดคลัง ไม่ได้ใช้ skill · Claude ทำตามพรอมต์",
+   "time": "ขั้น ② จัดคลัง",
+   "outputs": [
+    {
+     "file": "core · 4 skill",
+     "note": "customer-data-policy · brand-guide · pricing-rules · skill-finder"
+    },
+    {
+     "file": "shared · 1 skill",
+     "note": "meeting-minutes"
+    },
+    {
+     "file": "10 แผนก · 23 skill",
+     "note": "exec 5 · product 2 (ใหม่) · แผนกอื่นแผนกละ 2"
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "12 plugin · 28 skill · ของซ้ำเหลือที่เดียว",
+    "sub": "ลบไฟล์สำเนา 6 ไฟล์ · ไฟล์ที่เหลือตัดส่วนซ้ำแล้วอ้าง core"
+   },
+   "next": "",
+   "who": "plat-ken",
+   "role": "ทีมกลาง",
+   "color": "#bfdbfe",
+   "portrait": "../../../img/people/plat-ken.jpg"
+  },
+  {
+   "id": "lab2-step3",
+   "prompt": "ทำหัวไฟล์ให้เป็นแบบเดียวกันทั้งคลัง · ให้หัวหน้าแผนกเป็น CODEOWNER ของ plugin แผนกตัวเอง",
+   "reads": [
+    "หัวไฟล์ SKILL.md ทั้ง 28 ตัว",
+    "รายชื่อหัวหน้าแผนก"
+   ],
+   "skill": "",
+   "skillNote": "งานจัดคลัง ไม่ได้ใช้ skill · Claude ทำตามพรอมต์",
+   "time": "ขั้น ③ หัวไฟล์ + เจ้าของ",
+   "outputs": [
+    {
+     "file": "layer",
+     "note": "personal → core / shared / department"
+    },
+    {
+     "file": "follows",
+     "note": "เหลือแค่นโยบายใน core · งานก่อนหน้าย้ายไปเป็น next"
+    },
+    {
+     "file": "CODEOWNERS",
+     "note": "plugins/sales → @sales-nida · plugins/product → @pm-beam"
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "หัวไฟล์แบบเดียวกันทั้งคลัง",
+    "sub": "แก้ปัญหา 2 ของ LAB 1 · แก้แผนกไหน หัวหน้าแผนกนั้นถูกขอรีวิว"
+   },
+   "next": "",
+   "who": "plat-ken",
+   "role": "ทีมกลาง",
+   "color": "#bfdbfe",
+   "portrait": "../../../img/people/plat-ken.jpg"
+  },
+  {
+   "id": "lab2-step4",
+   "prompt": "ตรวจด้วย claude plugin validate จนผ่าน · push ขึ้น Gitea · ตั้ง main ห้าม push ตรง ต้อง approve อย่างน้อย 1 คน",
+   "reads": [
+    "http://localhost:3300 (token ของเคน)"
+   ],
+   "skill": "",
+   "skillNote": "งานจัดคลัง ไม่ได้ใช้ skill · Claude ทำตามพรอมต์",
+   "time": "ขั้น ④ ขึ้น Gitea",
+   "outputs": [
+    {
+     "file": "validate --strict",
+     "note": "ผ่าน marketplace + 12 plugin"
+    },
+    {
+     "file": "ติดตั้งจาก Gitea จริง",
+     "note": "ลง sales แล้ว core ตามมาเอง"
+    },
+    {
+     "file": "git push origin main",
+     "note": "Not allowed to push to protected branch main"
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "ขึ้น Gitea แล้ว และ main มียาม",
+    "sub": "merge โดยไม่มี approve ก็ถูกปฏิเสธ"
+   },
+   "next": "→ LAB 3",
+   "who": "plat-ken",
+   "role": "ทีมกลาง",
+   "color": "#bfdbfe",
+   "portrait": "../../../img/people/plat-ken.jpg"
+  },
+  {
+   "id": "lab2-step5",
+   "prompt": "ถ้าเจอกฎที่แผนกหนึ่งควรรู้แต่ยังไม่รู้ ให้บอกในสรุป (หัวหน้าแผนกจะตัดสินผ่าน PR)",
+   "reads": [
+    "exec:deal-approval (กฎของ MD)",
+    "sales:sales-proposal (แม่แบบ 9 หัวข้อ)"
+   ],
+   "skill": "",
+   "skillNote": "งานจัดคลัง ไม่ได้ใช้ skill · Claude ทำตามพรอมต์",
+   "time": "13 นาที 15 วินาที · 34 คำสั่ง",
+   "outputs": [
+    {
+     "file": "sales-nida",
+     "note": "ไม่รู้กฎภาคผนวก PDPA · proposal ธนาคารจะถูก MD ตีกลับ"
+    },
+    {
+     "file": "sales-nida · exec-ploy",
+     "note": "ไม่รู้ว่าดีลธนาคารทุกมูลค่าต้องผ่าน MD"
+    },
+    {
+     "file": "pipeline-review",
+     "note": "ไม่ได้ตรวจภาคผนวกเดียวกัน"
+    }
+   ],
+   "verdict": {
+    "kind": "warn",
+    "text": "เจอช่องโหว่ แต่ไม่เติมให้เอง",
+    "sub": "กฎของแผนกไหน หัวหน้าแผนกนั้นตัดสิน · LAB 4 จะเห็นผล · LAB 5 แก้ผ่าน PR"
+   },
+   "next": "→ LAB 4–5",
+   "who": "plat-ken",
+   "role": "ทีมกลาง",
+   "color": "#bfdbfe",
+   "portrait": "../../../img/people/plat-ken.jpg"
+  }
+ ]
+}

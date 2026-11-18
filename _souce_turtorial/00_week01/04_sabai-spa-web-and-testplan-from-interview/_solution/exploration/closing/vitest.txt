@@ -1,0 +1,11 @@
+npm notice run sabai-web@1.0.0 npx
+npm notice run vitest run
+
+ RUN  v5.1.0 C:/t/spa04/sabai/web
+
+
+ Test Files  21 passed (21)
+      Tests  548 passed (548)
+   Start at  07:56:50
+   Duration  479ms (import 51%, transform 24%, tests 21%, worker 4%)
+

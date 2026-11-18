@@ -1,0 +1,12 @@
+วัด SkyThai Mini (v1) ที่ http://localhost:5081 ด้วย "ไม้บรรทัด" 5 อันชุดเดียวกับบทที่ 3–4 เครื่องมือและเฉลยอยู่ใน /workspace/rea-flight/measure/ ทำงานในโฟลเดอร์ /workspace/rea-flight
+ห้ามแก้เกณฑ์ของ test ห้ามแก้แอป และห้ามต่ออินเทอร์เน็ตไปที่ Google (ใช้เฉลยที่บันทึกไว้เท่านั้น)
+
+1. acceptance 82 ข้อ: รัน measure/accept/run.cjs กับ BASE_URL=http://localhost:5081 นับว่าผ่านกี่ข้อ
+2. differential 8 สถานการณ์: เฉลยของต้นฉบับแช่แข็งอยู่ในส่วน original ของ measure/diff/diff-results.json ไม่ต้องเปิดต้นฉบับใหม่ ทำสถานการณ์ S1–S8 ใน measure/diff/scenarios.mjs กับ v1 แล้วตัดสินด้วยฟังก์ชัน compare เดิม
+3. โครงสร้างหน้า: ถ่าย ariaSnapshot ของหน้าแรก v1 แล้วเทียบกับ measure/structure/original.yml ด้วยวิธีเดียวกับ measure/structure/compare.mjs (Jaccard + องค์ประกอบสำคัญ 38 อย่าง)
+4. visual diff: ถ่ายหน้าจอ v1 ขนาด 1366×900 แล้วเทียบกับ measure/visual/reference.png ด้วย pixelmatch threshold 0.1
+5. เที่ยวบิน: นับเที่ยวบินทั้งหมดที่แอปแสดงได้
+
+รวมทุกอย่างเป็นคำสั่งเดียว measure/run-all.sh ให้รันซ้ำได้ และเก็บผลไว้ที่ measure/results/
+สรุปเป็นตาราง: เวอร์ชัน | acceptance 82 ข้อ | differential 8 สถานการณ์ | โครงสร้างหน้า | visual diff | เที่ยวบิน
+แล้วเทียบกับค่าที่บทที่ 3–4 เคยวัด v1 ได้ (0/82 · 0/8 · 3.8% · 27.88% · 22) ถ้าต่างให้บอกเหตุผล

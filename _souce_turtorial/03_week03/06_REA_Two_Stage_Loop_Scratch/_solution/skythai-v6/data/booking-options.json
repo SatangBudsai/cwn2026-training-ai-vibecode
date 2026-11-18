@@ -1,0 +1,36 @@
+{
+ "observedAt": "2026-11-01T10:08:19.567Z",
+ "selectedFlight": "VZ 830",
+ "route": "BKK–NRT",
+ "date": "2026-11-15",
+ "options": [
+  {
+   "providerCode": "VZ",
+   "providerName": "ไทยเวียดเจ๊ทแอร์",
+   "isAirline": true,
+   "displayDomain": "th.vietjetair.com/...",
+   "price": {
+    "amount": 9062,
+    "currency": "THB"
+   },
+   "additionalFee": 81,
+   "flightNumbers": [
+    "VZ 830"
+   ]
+  },
+  {
+   "providerCode": "ETRAVELI_FALLBACK",
+   "providerName": "Gotogate",
+   "isAirline": false,
+   "displayDomain": "th.gotogate.com/...",
+   "price": {
+    "amount": 9737,
+    "currency": "THB"
+   },
+   "additionalFee": null,
+   "flightNumbers": [
+    "VZ 830"
+   ]
+  }
+ ]
+}

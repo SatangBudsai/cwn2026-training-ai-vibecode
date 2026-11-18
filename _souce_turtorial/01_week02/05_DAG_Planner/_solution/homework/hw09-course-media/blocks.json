@@ -1,0 +1,129 @@
+{
+ "goal": "สื่อการสอนออนไลน์ 1 บทเรื่อง \"Docker เบื้องต้น\" มีสไลด์ ภาพประกอบ สคริปต์บรรยาย แบบทดสอบ 10 ข้อ และหน้าเว็บรวมทุกอย่าง",
+ "name": "hw09-course-media",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงบทเรียนและวัตถุประสงค์",
+   "size": "S",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "outline.md",
+   "done": "มีวัตถุประสงค์ 4 ข้อ และหัวข้อย่อย 6 หัวข้อ เรียงจากง่ายไปยาก"
+  },
+  {
+   "id": "B02",
+   "title": "ชื่อบทและคำโปรย",
+   "size": "S",
+   "depends_on": [],
+   "skill": "best_of",
+   "difficulty": 1,
+   "output": "title.json",
+   "done": "JSON มีชื่อบทไม่เกิน 8 คำ และคำโปรย 1 ประโยค",
+   "n": 3
+  },
+  {
+   "id": "B03",
+   "title": "สคริปต์บรรยาย",
+   "size": "L",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "review",
+   "difficulty": 3,
+   "output": "script.md",
+   "done": "ครบ 6 หัวข้อตาม outline.md คำสั่ง docker ทุกคำสั่งถูกต้อง"
+  },
+  {
+   "id": "B04",
+   "title": "สไลด์",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "slides.html",
+   "done": "สไลด์ 12 หน้า ครบ 6 หัวข้อตาม outline.md"
+  },
+  {
+   "id": "B05",
+   "title": "ภาพ container เทียบกับ VM",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "image",
+   "difficulty": 1,
+   "output": "img/container-vs-vm.png",
+   "done": "PNG เทียบ 2 ฝั่ง มีป้าย Container และ VM"
+  },
+  {
+   "id": "B06",
+   "title": "ภาพขั้นตอน build และ run",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "image",
+   "difficulty": 1,
+   "output": "img/build-run.png",
+   "done": "PNG ลำดับ Dockerfile image container มีลูกศรและป้ายคำสั่ง"
+  },
+  {
+   "id": "B07",
+   "title": "แล็บลงมือทำ",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "lab.md",
+   "done": "มี 5 ขั้น ทุกขั้นมีคำสั่งและผลที่ควรเห็น"
+  },
+  {
+   "id": "B08",
+   "title": "แบบทดสอบ 10 ข้อพร้อมเฉลย",
+   "size": "M",
+   "depends_on": [
+    "B03"
+   ],
+   "skill": "review",
+   "difficulty": 3,
+   "output": "quiz.json",
+   "done": "JSON 10 ข้อ 4 ตัวเลือก เฉลยถูก และทุกข้อตอบได้จาก script.md"
+  },
+  {
+   "id": "B09",
+   "title": "หน้าเว็บรวมบทเรียน",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "index.html",
+   "done": "มีชื่อบทจาก title.json และช่องสำหรับสไลด์ ภาพ สคริปต์ แล็บ และแบบทดสอบ"
+  },
+  {
+   "id": "B10",
+   "title": "รวมและตรวจทั้งบท",
+   "size": "M",
+   "depends_on": [
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "index.html เปิดได้ ลิงก์ครบทุกส่วน และคำสั่งในแล็บรันได้จริง บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

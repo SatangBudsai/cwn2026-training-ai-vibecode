@@ -1,0 +1,82 @@
+{
+  "id": "TC-RIDE-08",
+  "title": "TC-RIDE-08 API ที่ได้รับ hotelId และ distanceKm ขัดกัน ต้องไม่คิดเงินแล้วเงียบ",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ทั้ง 2 คำขอถูกปฏิเสธด้วยสถานะ 4xx โดยเหตุเป็นเรื่องระยะ · เหตุอื่นเช่นข้อมูลแขกหรือรอบชนถือว่ายังตัดสินไม่ได้ (ถ้าเชื่อ `hotelId` อย่างเดียวแล้วเงียบจะได้ ฿1,000 ทั้งที่ส่ง 15.1 กม.)\nข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ\nหากคนสร้างเว็บตอบ F-สร้าง 15 ว่ามีกติกาค่าใดชนะ ให้ปรับข้อนี้ตามกติกาที่เขียนไว้ และถือว่าเงียบโดยไม่มีกติกาไม่ผ่าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 763,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] · F-สร้าง 15",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 763,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-53, BR-35",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 763,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R67",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 763,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 763,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 763,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 22911,
+  "at": "2026-11-06T02:22:11.280Z",
+  "attempts": [],
+  "errors": [
+    "Error: /api/quote: สถานะ 200\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false",
+    "Error: POST ยืนยันการจอง: สถานะ 201\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false",
+    "Error: คิว 17 มิ.ย. 0 รายการ\n\nexpect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - คิว 17 มิ.ย. 0 รายการ locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: ข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1"
+  ],
+  "steps": [
+    "1. จอง S01 รถ H01 วันที่ 19 มิ.ย. เก็บรูปแบบคำขอ แล้วยิงค่าควบคุมที่ 18 มิ.ย.",
+    "2. ยิง /api/quote 17 มิ.ย. ใส่ทั้ง hotelId และ distanceKm 15.1 ✗",
+    "3. ยิง URL ยืนยันการจองแบบเดียวกัน ✗",
+    "4. เปิดคิว 17 มิ.ย. ที่หลังร้าน ✗"
+  ]
+}

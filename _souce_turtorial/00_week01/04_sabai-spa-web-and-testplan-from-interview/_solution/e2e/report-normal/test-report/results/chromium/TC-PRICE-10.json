@@ -1,0 +1,80 @@
+{
+  "id": "TC-PRICE-10",
+  "title": "TC-PRICE-10 ยอดจากผู้ส่งไม่ตรงและแต้มที่ถูกใช้จากแท็บอื่น",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "`expectedPayAtShop` ผิด: ถูกปฏิเสธด้วยสถานะ 4xx · U03 ยัง 250 แต้ม · ไม่มีนัดใหม่\n`lines` ปลอม: ไม่มีผลกับยอด · ถ้าจองผ่าน นัดเป็น (฿1,000 − 0% − ฿50 = ฿950) ไม่ใช่ ฿1 และแต้ม 250 − 100 = 150 · ถ้าถูกปฏิเสธ แต้มต้องยัง 250 และไม่มีนัดใหม่\nไม่ตรวจกรณีไม่ส่ง `expectedPayAtShop` เพราะยังรอคำตอบ F-สร้าง 9\nแท็บ B: ฿1,000 − 5% = ฿950 − ฿50 = ฿900 · แต้ม 100 − 100 = 0\nแท็บ A: มีข้อความแจ้งว่าแต้มไม่พอ · ไม่เกิดนัดรอบ 12:00 · แต้ม 0 ไม่ใช่ −100 · U05 มีนัดใหม่นัดเดียว · หน้าสรุปไม่ค้างยอด ฿900 กับ 1 ชุด แต่อัปเดตเป็นแต้ม 0 และยอด ฿950",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 876,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] · F-สร้าง 9",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 876,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-27, FR-32, BR-18",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 876,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R54, R55",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 876,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Security, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 876,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 876,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 49956,
+  "at": "2026-11-06T02:28:33.186Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 950\nReceived: 900"
+  ],
+  "steps": [
+    "1-3. ส่วน A: ดึงคำขอจริง รีเซ็ต แล้วยิงด้วยยอดผิดและ lines ปลอม",
+    "4. ส่วน B: U05 แท็บ A ไปถึงหน้าสรุปรอบ 12:00 แลก 1 ชุด ยังไม่ยืนยัน",
+    "5. แท็บ B จองรอบ 14:00 แลก 1 ชุด กดยืนยัน",
+    "6. กลับแท็บ A กดยืนยัน อ่านข้อความและยอด แล้วรีโหลดแต้มและประวัติ ✗"
+  ]
+}

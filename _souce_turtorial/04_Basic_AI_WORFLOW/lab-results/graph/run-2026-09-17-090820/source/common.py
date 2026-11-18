@@ -1,0 +1,17 @@
+from pathlib import Path
+from datetime import datetime,timezone
+from html import escape
+import json,hashlib
+ROOT=Path.cwd();RUN=Path((ROOT/'work/graph-current-run.txt').read_text())
+def case(key):return RUN/key
+def node(p,name,deps,files,assumptions=()):
+ events=[json.loads(x) for x in (p/'events.jsonl').read_text().splitlines()]
+ done={e['node'] for e in events if e['status']=='DONE'}
+ assert set(deps)<=done,(name,deps,done)
+ for file,content in files.items():(p/file).write_text(content)
+ event={'node':name,'status':'DONE','depends_on':deps,'output':list(files),'assumptions':list(assumptions),'timestamp_utc':datetime.now(timezone.utc).isoformat(),'sha256':{f:hashlib.sha256((p/f).read_bytes()).hexdigest() for f in files}}
+ with (p/'events.jsonl').open('a') as f:f.write(json.dumps(event,ensure_ascii=False)+'\n')
+ with (p/'trace.md').open('a') as f:f.write(f"## {name} — DONE\n\nDependency: {', '.join(deps) or 'ไม่มี'}\n\nผลลัพธ์: {', '.join(files)}\n\n"+('สมมติฐาน/ข้อจำกัด: '+'; '.join(assumptions)+'\n\n' if assumptions else ''))
+CSS='''*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#223a4b;font:16px/1.6 "Noto Sans Thai",Tahoma,sans-serif}header{background:#153f4e;color:white;padding:30px 5%}h1{font-size:32px;margin:8px 0}header p{color:#d7e8ed}main{max-width:1240px;margin:auto;padding:26px}h2{font-size:24px;margin:0 0 14px}h3{font-size:19px;margin:8px 0}section{background:white;border:1px solid #dbe4ea;border-radius:18px;margin-bottom:24px;padding:26px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{border:1px solid #d2e3e3;border-radius:12px;padding:20px;background:#f8fcfb}.tag{display:inline-block;border-radius:20px;padding:4px 12px;background:#dbf1e8;color:#23604a;font-size:13px}.muted{color:#586f80}.warn{padding:14px 18px;border-left:4px solid #cc9b3c;background:#fff4df;color:#714e1a;border-radius:8px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:13px 12px;border-bottom:1px solid #dce4ea;text-align:left;vertical-align:top}th{background:#eef5f7}label{display:block;font-weight:600}input,select,textarea{display:block;width:100%;padding:11px;border:1px solid #b9cbd4;border-radius:8px;font:inherit;color:#223a4b;background:#fafcfd}button{padding:10px 18px;border:0;border-radius:8px;background:#1c735e;color:white;font:inherit;cursor:pointer}button:disabled{background:#dce5e9;color:#536776;cursor:default}button.secondary{background:#edf3f6;color:#284c5d}nav{display:flex;gap:14px;flex-wrap:wrap}nav a{color:inherit;text-decoration:none;border:1px solid #72939c;border-radius:20px;padding:5px 13px}footer{color:#5d7180;text-align:center;padding:24px}input[type=checkbox]{display:inline;width:auto}@media(max-width:680px){main{padding:14px 10px}section{padding:18px}.grid,.form-grid{grid-template-columns:1fr}h1{font-size:25px}header{padding:23px 18px}}'''
+def page(title,subtitle,body,nav='',script=''):
+ return '<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+title+'</title><style>'+CSS+'</style></head><body><header><span class="tag">GRAPH LAB · ข้อมูลจำลอง</span><h1>'+title+'</h1><p>'+subtitle+'</p><nav>'+nav+'</nav></header><main>'+body+'</main><footer>ผลงานทดลอง Graph · ข้อมูลจำลองเพื่อการเรียนรู้</footer>'+script+'</body></html>'

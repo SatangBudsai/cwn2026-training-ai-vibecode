@@ -1,0 +1,82 @@
+{
+  "id": "TC-GROUP-07",
+  "title": "TC-GROUP-07 จำนวนคนแบ่งประเภทการจองถูกต้อง 7 คนหยุดให้โทรร้าน และค่าจำนวนคนผิดถูกปฏิเสธเมื่อยิงตรง",
+  "project": "chromium",
+  "file": "5.2-group.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.2"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "1 คน: ฿1,000 ไม่ใช้ Couple Suite ไม่ลดกลุ่ม\n2 คน: ฿2,000 (฿1,000 × 2) ใช้ Couple Suite ไม่มีบรรทัดส่วนลดคู่\n3 คน: ฿3,000 (฿1,000 × 3 ไม่ลด) เป็นจองกลุ่ม ไม่ใช้ Couple Suite นักบำบัด 3 คน\n7 คน และ 8 คน: หยุดจอง แสดงให้โทร 02-123-4567 ไม่มีปุ่มไปขั้นถัดไป\nยิงตรง 0, -1, \"3\", 2.5, 7: ถูกปฏิเสธด้วยสถานะ 4xx ทุกค่า โดยเหตุเป็นเรื่องจำนวนคน ไม่ใช่ยอดไม่ตรง · ตัวคุม 15:00 สำเร็จ 2xx\nข้อมูลไม่เปลี่ยน: หลังร้าน 17 มิ.ย. มี 4 รายการ คือ 3 รายการจากข้อ 1–3 และตัวคุม 15:00 ไม่มีรายการเวลา 14:00",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 725,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.12 · [R] ⚠️A-01",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 725,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-18, FR-19, BR-08, BR-09, BR-10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 725,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R13, R14, R15",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 725,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Equivalence partition, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 725,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 725,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 55221,
+  "at": "2026-11-06T02:21:00.129Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('booking-screen-1').getByTestId('booking-step1-next')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('booking-screen-1').getByTestId('booking-step1-next') with timeout 6000ms\n  - waiting for getByTestId('booking-screen-1').getByTestId('booking-step1-next')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('booking-screen-1').getByTestId('booking-step1-next')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('booking-screen-1').getByTestId('booking-step1-next') with timeout 6000ms\n  - waiting for getByTestId('booking-screen-1').getByTestId('booking-step1-next')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n"
+  ],
+  "steps": [
+    "1. จอง S01 1 คน จนยืนยัน",
+    "2. จอง S01 2 คน จนยืนยัน แล้วดึง URL และ body จาก Network",
+    "3. จอง S01 3 คน จนยืนยัน",
+    "4. เลือก 7 คน และ 8 คน ดูหน้าจอ ✗",
+    "5. ยิงตรงด้วยจำนวนคนผิด รอบ 14:00 แล้วยิงตัวคุมรอบ 15:00",
+    "6. เข้าหลังร้านดูการจองของวันนี้ แล้วรีโหลด"
+  ]
+}

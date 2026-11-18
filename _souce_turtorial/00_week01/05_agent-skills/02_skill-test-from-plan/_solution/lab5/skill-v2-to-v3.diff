@@ -1,0 +1,306 @@
+diff --git a/.claude/skills/test-from-plan/SKILL.md b/.claude/skills/test-from-plan/SKILL.md
+index fc48a49..d831d55 100644
+--- a/.claude/skills/test-from-plan/SKILL.md
++++ b/.claude/skills/test-from-plan/SKILL.md
+@@ -32,6 +32,9 @@ mkdir -p e2e && cd e2e && node $SKILL_DIR/scripts/parse-plan.mjs --plan ../TEST-
+ ได้ URL, health/reset endpoint, test cases ทุกข้อ (รหัส โมดูล ระดับ ผลที่คาดหวัง), โมดูล → ไฟล์ spec, เกณฑ์ผ่าน และรายชื่อหัวข้อที่ข้าม
+ - ถ้าไม่พบ URL / ตาราง test → ถามผู้ใช้ อย่าเดา
+ - อ่านหัวข้อ "ข้อมูลทดสอบ" (บัญชี คูปอง ฯลฯ) ด้วย Read แบบมี offset/limit — agent ต้องใช้
++- **คำตอบเดิมของเจ้าของแผน:** `node $SKILL_DIR/scripts/plan-answers.mjs` — หาไฟล์ใน `references/plan-answers/` ที่ scope ตรงกับแผนนี้ (ชื่อแผน + baseURL + จำนวน test) และใช้แต่ละคำตอบเฉพาะเมื่อถ้อยคำในแผน (`planText`) ยังอยู่ในแถวของ test นั้น
++  - ตรง → ใช้คำตอบนั้นเป็นการตีความที่ตัดสินแล้ว: ใส่ใน brief ของ agent เป็น "ANSWERED — ห้ามถามซ้ำ" และ comment ใน test เป็น `// ANSWERED ...`
++  - ไม่ตรง/หมดอายุ/ไม่มีไฟล์ → ทำตามปกติ (ตีความเข้ม + ลองอีกแบบ + ถามผู้ใช้) **ห้ามยืมคำตอบของแผนเว็บอื่นมาใช้** แม้ถ้อยคำจะคล้ายกัน
+ 
+ ### 2 · เปิดเว็บ + entry criteria
+ - หาไฟล์ compose โดยดูแค่ path: `find .. -maxdepth 2 -name "docker-compose.y*ml" -not -path "*/e2e/*"` (ห้ามเปิดไฟล์)
+@@ -96,6 +99,12 @@ cp test-report/results.json test-report/results-round1.json
+ ```
+ `altResult` = `passed` / `failed` / `unknown` (ใช้ `unknown` เมื่อลองไม่ได้จริง และบอกเหตุผลใน `altEvidence`)
+ 
++**มีคำตอบเดิม (ขั้น 1)** → `node $SKILL_DIR/scripts/plan-answers.mjs --write` หลังเขียน interpretations.json: เติมฟิลด์ `answer` ให้ข้อที่ตอบแล้ว (รายงานย้ายไปตาราง "คำตอบจากเจ้าของแผน" และไม่นับเป็นความเสี่ยงต่อคำตัดสิน) และสร้างร่าง `test-report/observations.json` จากคำตอบแบบ "ข้อสังเกตนอกแผน" — **ต้องตรวจกับเว็บรอบนี้จริง** (สคริปต์ใน scratch) แล้วแทน `TODO` ด้วยผลที่เห็น ถ้าเว็บแก้แล้วให้เขียนว่าไม่พบอีก ห้ามคัดผลรอบก่อนมาใส่
++
++**เจ้าของแผนเพิ่งตอบคำถาม** → แก้ test ตามคำตอบ (comment `// ANSWERED (เจ้าของแผน <เว็บ> <วันที่>): ...`) → รันรวมใหม่ (results-round1.json เก็บไว้เทียบ) → เพิ่มคำตอบลง `references/plan-answers/<เว็บ>.json` (ไฟล์ละ 1 แผน · `scope` ระบุชื่อแผน/baseURL/จำนวน test · ทุกคำตอบมี `planText` ที่คัดจากแถวของ test ตรงตัว · `kind` = `interpretation` หรือ `observation` + `check` วิธีตรวจซ้ำ) แล้วรัน `plan-answers.mjs --write`
++- คำตอบแบบ "ไม่อยู่ในแผน ไม่ต้องเพิ่ม test ให้จดเป็นข้อสังเกต" → `observations.json` (`id, test, flag, title, detail, evidence`) ไม่นับในผลและคำตัดสิน แต่ขึ้นในรายงานหัวข้อ 5 · เรื่องที่เจ้าของแผนบอกว่าเกี่ยวกับเงินให้ใส่ `flag: "💰 น่าสงสัยเรื่องเงิน"`
++- คำตอบที่ทำให้ test ที่เคยล้มกลับมาผ่าน → ลบข้อนั้นออกจาก bugs.json · คำตอบที่ยืนยันว่าเว็บผิด → เพิ่ม "เจ้าของแผนยืนยัน (<วันที่>)" ใน `why`
++
+ ### 7 · หลักฐาน GIF + index
+ ```bash
+ node $SKILL_DIR/scripts/make-gifs.mjs     # exit 2 = มีไฟล์ < 5 วินาที → เพิ่ม waitForTimeout/ค้างผลในข้อนั้น รันข้อนั้นใหม่ แล้วทำ GIF ใหม่ (ห้ามยืดวิดีโอด้วย ffmpeg)
+@@ -113,7 +122,7 @@ node $SKILL_DIR/scripts/build-report.mjs --env "<เช่น container X health
+ ### 9 · สรุปให้ผู้ใช้ (ภาษาไทย)
+ - ผลรันแต่ละช่วง (เปิดเว็บ · ลองโมดูลแรก · agent ใช้กี่ตัว · รันรวม ผ่าน/ล้ม/เวลา · GIF ยาวกี่วินาที · คำตัดสิน)
+ - ข้อที่ล้ม + เว็บผิด/test ผิด + เหตุผล · ตาราง รอบแรก/รอบหลังแก้
+-- **ข้อที่ต้องถามผู้ใช้** ทุกข้อ (คำถาม · ตีความแบบไหน · อีกแบบผลเป็นอย่างไร · คำตัดสินจะเปลี่ยนไหม) — ห้ามซ่อนไว้แค่ในรายงาน
++- **ข้อที่ต้องถามผู้ใช้** ทุกข้อ (คำถาม · ตีความแบบไหน · อีกแบบผลเป็นอย่างไร · คำตัดสินจะเปลี่ยนไหม) — ห้ามซ่อนไว้แค่ในรายงาน · ถ้าใช้คำตอบเดิมจาก `plan-answers/` ให้บอกว่าใช้กี่ข้อ จากไฟล์ไหน และข้อไหนหมดอายุ
+ - เวลาที่ใช้ทั้งหมดและแต่ละช่วง
+ - จุดที่ต้องตัดสินใจเองรอบนี้ (ดู decisions) และ **การละเมิดกติกาใด ๆ ที่เกิดขึ้น บอกตรง ๆ**
+ - path เต็มของ TEST-REPORT.md, index.html (และ agents.html ถ้าผู้ใช้ขอดูจอ agent)
+diff --git a/.claude/skills/test-from-plan/references/agent-brief.md b/.claude/skills/test-from-plan/references/agent-brief.md
+index 17f2e9a..7a06878 100644
+--- a/.claude/skills/test-from-plan/references/agent-brief.md
++++ b/.claude/skills/test-from-plan/references/agent-brief.md
+@@ -9,6 +9,7 @@
+ - `{TESTDATA}` = เนื้อหาหัวข้อ "ข้อมูลทดสอบ" ของแผน (คัดมาเอง)
+ - `{HINTS}` = สิ่งที่รู้แล้วจากหน้าเว็บ (data-testid ที่ใช้บ่อย, ที่เก็บตะกร้า, endpoint ที่เห็นจาก API สาธารณะ) + ข้อห้ามแชร์ข้อมูลกับโมดูลอื่น (เช่น "ห้ามซื้อสินค้า X, Y เพราะ test อื่นตรวจสต็อก") + ข้อเตือนเฉพาะโมดูล (ดู decisions.md: API, มือถือ, สมัครสมาชิก)
+ - `{STRICT}` = การตีความที่ต้องเข้มตามแผน เช่น "error ทุกช่อง = ทุกช่องมี error ของตัวเอง", "ทำจากแซลมอนทั้งหมด = ตรวจทุกรายการ ไม่ใช่แค่จำนวน"
++- `{ANSWERED}` = คำตอบเดิมของเจ้าของแผนที่ `plan-answers.mjs` บอกว่าใช้กับ**แผนนี้**ได้ (เฉพาะ test ของโมดูลนี้) เขียนเป็น `ANSWERED by plan owner — use as-is, do not re-ask: <test>: <answer>` · ไม่มี → ลบทั้งบรรทัด · **ห้ามใส่คำตอบจากแผนเว็บอื่น**
+ - `{LOG_BLOCK}` = **ค่าเริ่มต้น: ลบทิ้งทั้งบรรทัด** ใส่เฉพาะเมื่อผู้ใช้ขอดูจอ agent (ดู SKILL.md ขั้น 5) โดยใช้ข้อความนี้:
+   ```text
+   ## FIRST and LAST command (mandatory, proves concurrency)
+@@ -43,6 +44,8 @@ You are agent **{AID}**, module **{MODULE}**. You write Playwright tests (black-
+ - One test per plan row. Title starts with the ID: `test('{ID} <what> <expected>', { tag: '@P1' }, async ({ page }) => {...})`, grouped in `test.describe('{MODULE}', ...)`.
+ - Assert exactly what the plan's expected result says (numbers/text). {STRICT}
+ - **Ambiguous wording** (an expected result that can be read more than one way, e.g. does "cat food" include cat treats? how fast is "immediately"?): NEVER silently pick the reading that makes the test pass. Use the most literal reading of the plan, put a comment `// INTERPRETATION: ...` above the assertion, and ACTUALLY TRY the other reading against the live site (a scratch script or a temporary assertion — then remove it) so you can say whether the result would change. Report every such point.
++{ANSWERED}
++- Points listed as ANSWERED above are already decided by the plan owner: implement exactly that reading, comment `// ANSWERED: ...`, do not report them as open questions. If the observations need re-checking, say what you saw this run.
+ - Tests must be independent (no serial ordering), robust under parallel runs (unique emails/data, don't depend on absolute stock other than the plan's fixed items), relative URLs. Scroll the asserted element into view at the end so the GIF shows the evidence.
+ - Run ONLY your file, without resetting data and with your own output dir:
+   `cd {E2E_ABS} && SKIP_RESET=1 npx playwright test {SPEC} --reporter=list --output=scratch/{AID}/test-results`
+diff --git a/.claude/skills/test-from-plan/references/decisions.md b/.claude/skills/test-from-plan/references/decisions.md
+index 45ba748..8517e36 100644
+--- a/.claude/skills/test-from-plan/references/decisions.md
++++ b/.claude/skills/test-from-plan/references/decisions.md
+@@ -39,6 +39,8 @@
+ 22. API "สั่งซื้อโดยไม่ login ต้อง 401" = ส่ง body ที่ถูกต้องเหมือนหน้าเว็บส่ง (ดักจาก network ตอนกดสั่งซื้อ โดย `route.abort` ไม่ให้เกิด order จริง) เพื่อให้ 401 หมายถึง "ไม่ login" ไม่ใช่ข้อมูลผิด; API 404 = ลองของที่มีอยู่ก่อนได้ 200 แล้วค่อยของที่ไม่มี
+ 23. มือถือ: ใช้ `devices['Pixel 7']` ตัด `defaultBrowserType` ออก (ยังเป็น Chromium) และ `test.use({ video: { size: … } })` ต้องอยู่ **ระดับบนสุดของไฟล์** ไม่ใช่ใน describe
+ 24. ความรุนแรงของบั๊ก = ระดับ P ของ test ข้อนั้นตามแผน
++24.1 **คำตอบของเจ้าของแผนเก็บแยกรายแผน** ที่ `references/plan-answers/<เว็บ>.json` — ใช้ได้เฉพาะแผนที่ scope ตรง (ชื่อแผน + baseURL + จำนวน test) และถ้อยคำ `planText` ยังอยู่ในแถว test นั้น (`plan-answers.mjs` ตรวจให้) · **ห้ามเอาคำตอบของแผนหนึ่งไปใช้กับแผนเว็บอื่น** แม้คำจะเหมือนกัน (เช่น "อาหารแมว รวมขนม" เป็นคำตอบของ PawPantry เท่านั้น เว็บอื่นต้องตีความเข้ม + ลองอีกแบบ + ถามใหม่ตามข้อ 16–23) · แผนเปลี่ยนถ้อยคำ = คำตอบข้อนั้นหมดอายุ ต้องถามใหม่
++24.2 ตัวอย่างรอบ 2 (PawPantry 2 พ.ย. 2569): เจ้าของแผนตอบ 8 คำถาม → REC-01/03 ผ่าน (ขนมนับเป็นอาหาร), AUTH-02 ยังล้มแต่ยืนยันว่าเว็บผิด, 3 เรื่องนอกแผนเป็นข้อสังเกต (คูปองหลุด = 💰) → 39/40 ปล่อยได้ · คำตอบของเจ้าของแผนเปลี่ยนคำตัดสินได้จริง จึงต้องถามทุกครั้งที่ไม่มีคำตอบเดิม
+ 
+ ## E. แยก "เว็บผิด" / "test ผิด"
+ 
+diff --git a/.claude/skills/test-from-plan/references/plan-answers/pawpantry.json b/.claude/skills/test-from-plan/references/plan-answers/pawpantry.json
+new file mode 100644
+index 0000000..52606cb
+--- /dev/null
++++ b/.claude/skills/test-from-plan/references/plan-answers/pawpantry.json
+@@ -0,0 +1,79 @@
++{
++  "_README": "คำตอบของเจ้าของแผนสำหรับแผน PawPantry เท่านั้น — ห้ามใช้กับแผนของเว็บอื่น. plan-answers.mjs จะใช้ไฟล์นี้เฉพาะเมื่อ scope ตรงทุกข้อ และใช้คำตอบแต่ละข้อเฉพาะเมื่อข้อความในแผน (planText) ยังอยู่ในแถวของ test นั้น ถ้าแผนเปลี่ยนถ้อยคำ คำตอบข้อนั้นถือว่าหมดอายุ ต้องถามใหม่",
++  "scope": {
++    "planTitleIncludes": "PawPantry",
++    "baseURL": "http://localhost:3100",
++    "caseCount": 40
++  },
++  "answeredBy": "เจ้าของแผน PawPantry",
++  "answeredAt": "2026-11-02",
++  "answers": [
++    {
++      "test": "TC-REC-01", "kind": "interpretation", "planText": "อาหารแมวไม่มีไก่",
++      "wording": "อาหารแมวไม่มีไก่",
++      "answer": "\"อาหารแมว\" รวมขนมแมวด้วย (อาหาร = เม็ด/เปียก/ขนม · ของเล่น/อุปกรณ์ไม่ใช่อาหาร)",
++      "chosen": "อาหาร = dry/wet/treat และไม่มีไก่ทุกรายการ อันดับ 1 ลูกแมวแซลมอน"
++    },
++    {
++      "test": "TC-REC-03", "kind": "interpretation", "planText": "เป็นอาหารแมวทั้งหมด",
++      "wording": "\"แนะนำสำหรับคุณ\" เป็นอาหารแมวทั้งหมด",
++      "answer": "\"อาหารแมว\" รวมขนมแมวด้วย",
++      "chosen": "ทุกการ์ดเป็นของแมว และเป็น dry/wet/treat"
++    },
++    {
++      "test": "TC-AUTH-02", "kind": "interpretation", "planText": "error ทุกช่อง",
++      "wording": "error ทุกช่อง",
++      "answer": "ช่องยืนยันรหัสผ่านที่ว่างต้องขึ้น error ของตัวเองด้วย",
++      "chosen": "ทุกช่อง (ชื่อ อีเมล รหัสผ่าน ยืนยันรหัสผ่าน เงื่อนไข) มี error ของตัวเอง — ถ้าช่องยืนยันไม่ขึ้น = เว็บผิด"
++    },
++    {
++      "test": "TC-HOME-02", "kind": "interpretation", "planText": "ไปหน้าสินค้าแมว พบ 14 รายการ",
++      "wording": "ปุ่ม \"ช้อปอาหารแมว\" → ไปหน้าสินค้าแมว พบ 14 รายการ",
++      "answer": "ปุ่ม/เมนู \"อาหารแมว\" พาไปหน้าสินค้าแมวทุกชนิด (รวมของเล่น/อุปกรณ์) ถูกแล้ว",
++      "chosen": "หน้า pet=cat มี 14 รายการ ทุกรายการเป็นของแมว"
++    },
++    {
++      "test": "TC-MOB-01", "kind": "interpretation", "planText": "ไปหน้าสินค้าหมาได้ (14 รายการ)",
++      "wording": "เมนู \"อาหารสุนัข\" → ไปหน้าสินค้าหมาได้ (14 รายการ)",
++      "answer": "เมนู \"อาหารสุนัข\" พาไปหน้าสินค้าหมาทุกชนิด ถูกแล้ว",
++      "chosen": "หน้า pet=dog มี 14 รายการ ทุกรายการเป็นของหมา"
++    },
++    {
++      "test": "TC-CPN-01", "kind": "interpretation", "planText": "฿799 ลด ฿79 → ฿770",
++      "wording": "฿799 ลด ฿79 → ฿770",
++      "answer": "฿770 คือยอดชำระที่รวมค่าส่ง ฿50 แล้ว",
++      "chosen": "summary-total = 799 − 79 + 50 = ฿770"
++    },
++    {
++      "test": "TC-CAT-01", "kind": "interpretation", "planText": "ทำจากแซลมอนทั้งหมด",
++      "wording": "พบ 5 รายการที่ทำจากแซลมอนทั้งหมด",
++      "answer": "\"ทำจากแซลมอน\" ดูจากวัตถุดิบหลัก (protein) ไม่ใช่ชื่อสินค้า",
++      "chosen": "5 รายการ และทุกรายการ protein = salmon"
++    },
++    {
++      "test": "TC-CAT-03", "kind": "interpretation", "planText": "เริ่มที่ ฿35",
++      "wording": "ราคาเรียงถูก เริ่มที่ ฿35",
++      "answer": "\"ราคา\" = ราคาเริ่มต้นที่แสดงบนการ์ด",
++      "chosen": "ราคาบนการ์ดไม่ลดลงตลอดรายการ เริ่มที่ ฿35"
++    },
++    {
++      "test": "TC-CPN-02", "kind": "observation", "planText": "ยอดไม่เปลี่ยน",
++      "answer": "ไม่อยู่ในแผน ไม่ต้องเพิ่ม test — จดเป็นข้อสังเกต เน้นว่าน่าสงสัยเรื่องเงิน",
++      "flag": "💰 น่าสงสัยเรื่องเงิน",
++      "title": "กรอกโค้ดผิด/หมดอายุทับคูปองที่ใช้อยู่ คูปองเดิมหลุด",
++      "check": "ตะกร้า ฿790 (สุนัขโต สูตรแกะ 3 kg) + PAW10 → กรอก FAKE123 หรือ SUMMER20 → ดูว่า PAW10 ยังอยู่ไหม/ยอดเปลี่ยนไหม"
++    },
++    {
++      "test": "TC-PRD-03", "kind": "observation", "planText": "สต็อก 3 กด + 5 ครั้ง หยุดที่ 3",
++      "answer": "ไม่อยู่ในแผน ไม่ต้องเพิ่ม test — จดเป็นข้อสังเกต",
++      "title": "ปุ่ม + ยังกดได้เมื่อจำนวนถึงสต็อก",
++      "check": "หน้า สูตรลดก้อนขน (สต็อก 3) กด + จนถึง 3 แล้วดูว่าปุ่ม + disabled ไหม"
++    },
++    {
++      "test": "TC-CAT-05", "kind": "observation", "planText": "ล้างตัวกรองแล้วกลับมา 28 รายการ",
++      "answer": "ไม่อยู่ในแผน ไม่ต้องเพิ่ม test — จดเป็นข้อสังเกต",
++      "title": "ช่องค้นหาค้างคำค้นเก่าหลังล้างตัวกรอง",
++      "check": "ค้นหาคำที่ไม่เจอ → กด \"ล้างตัวกรองทั้งหมด\" → ดูช่องค้นหาที่ header"
++    }
++  ]
++}
+diff --git a/.claude/skills/test-from-plan/scripts/build-report.mjs b/.claude/skills/test-from-plan/scripts/build-report.mjs
+index c8462bc..1125466 100644
+--- a/.claude/skills/test-from-plan/scripts/build-report.mjs
++++ b/.claude/skills/test-from-plan/scripts/build-report.mjs
+@@ -50,24 +50,47 @@ const release = crit.every(c => c.ok);
+ const allowFail = Math.floor(N * (1 - plan.exit.passRate / 100) + 1e-9);
+ 
+ // ---- ข้อที่ต้องถามผู้ใช้: ถ้าตีความอีกแบบทุกข้อ ผลและคำตัดสินเป็นอย่างไร ----
+-const iList = interps ?? [];
++// ข้อที่มีฟิลด์ "answer" = เจ้าของแผนตอบแล้ว → ไม่นับเป็นความเสี่ยงต่อคำตัดสิน แสดงในตาราง "คำตอบจากเจ้าของแผน"
++const allInterps = interps ?? [];
++const answered = allInterps.filter(i => i.answer);
++const iList = allInterps.filter(i => !i.answer);
++// ข้อสังเกตนอกแผน (ไม่นับในผล/คำตัดสิน) — test-report/observations.json
++const observations = readJson('test-report/observations.json', []);
+ const flips = iList.filter(i => ['passed', 'failed'].includes(i.altResult) && i.altResult !== (i.chosenResult ?? byId.get(i.test)?.status));
+ const altRows = rows.map(r => { const f = flips.find(i => i.test === r.id); return f ? { ...r, ok: f.altResult === 'passed' } : r; });
+ const altRelease = criteria(altRows).every(c => c.ok);
+ const unknownAlt = iList.filter(i => !['passed', 'failed'].includes(i.altResult));
+ const verdictAtRisk = altRelease !== release || unknownAlt.length > 0;
+ const resTh = s => ({ passed: '✅ ผ่าน', failed: '❌ ล้ม' }[s] ?? '❔ ยังไม่รู้');
+-const interpSection = interps === null
++const answeredSection = answered.length ? `### คำตอบจากเจ้าของแผน (ตัดสินแล้ว ไม่ต้องถามซ้ำ)
++
++| test | คำในแผน | คำตอบ | ใช้ใน test → ผล |
++|---|---|---|---|
++${answered.map(i => `| ${i.test} | "${i.wording}" | ${i.answer}${i.answeredBy ? ` — ${i.answeredBy}${i.answeredAt ? ` ${i.answeredAt}` : ''}` : ''} | ${i.chosen} → ${resTh(i.chosenResult ?? byId.get(i.test)?.status)} |`).join('\n')}
++
++### ยังต้องถาม
++
++` : '';
++const interpSection = answeredSection + (interps === null
+   ? '> ⚠️ **ยังไม่ได้ตรวจจุดกำกวมของแผน** (ไม่มี `interpretations.json`) — รายงานนี้ยังไม่สมบูรณ์'
+   : !iList.length
+-    ? 'ไม่พบจุดที่แผนเขียนกำกวมในรอบนี้ (ตรวจแล้ว)'
++    ? (answered.length ? 'ไม่มี — ทุกจุดกำกวมได้คำตอบจากเจ้าของแผนแล้ว' : 'ไม่พบจุดที่แผนเขียนกำกวมในรอบนี้ (ตรวจแล้ว)')
+     : `ผลที่คาดหวังข้อต่อไปนี้อ่านได้มากกว่า 1 แบบ ผู้ทดสอบเลือกแบบที่ตรงตัวอักษรที่สุด **ไม่ใช่แบบที่ทำให้ผ่าน** และลองอีกแบบกับเว็บจริงแล้ว
+ 
+ | test | คำในแผน | ตีความแบบที่ใช้ → ผล | ถ้าตีความอีกแบบ → ผล | ผลเปลี่ยนไหม | คำถาม |
+ |---|---|---|---|---|---|
+ ${iList.map(i => { const cur = i.chosenResult ?? byId.get(i.test)?.status; return `| ${i.test} | "${i.wording}" | ${i.chosen} → ${resTh(cur)} | ${i.alternative} → ${resTh(i.altResult)}${i.altEvidence ? ` (${i.altEvidence})` : ''} | ${!['passed', 'failed'].includes(i.altResult) ? '❔ ยังไม่รู้' : i.altResult !== cur ? '**เปลี่ยน**' : 'ไม่เปลี่ยน'} | ${i.question ?? '-'} |`; }).join('\n')}
+ 
+-**ผลต่อคำตัดสิน:** ถ้าใช้การตีความอีกแบบทุกข้อ ผ่าน ${altRows.filter(r => r.ok).length}/${N} (${pct(altRows.filter(r => r.ok).length, N)}) → **${altRelease ? 'ปล่อยได้' : 'ยังไม่ปล่อย'}** ${altRelease === release ? '(คำตัดสินเหมือนเดิม)' : '— ⚠️ **คำตัดสินพลิก** ต้องให้ผู้ใช้/เจ้าของแผนตอบก่อน'}${unknownAlt.length ? `\n\n❔ ยังลองอีกแบบไม่ได้: ${unknownAlt.map(i => i.test).join(', ')} — คำตัดสินอาจเปลี่ยน` : ''}`;
++**ผลต่อคำตัดสิน:** ถ้าใช้การตีความอีกแบบทุกข้อ ผ่าน ${altRows.filter(r => r.ok).length}/${N} (${pct(altRows.filter(r => r.ok).length, N)}) → **${altRelease ? 'ปล่อยได้' : 'ยังไม่ปล่อย'}** ${altRelease === release ? '(คำตัดสินเหมือนเดิม)' : '— ⚠️ **คำตัดสินพลิก** ต้องให้ผู้ใช้/เจ้าของแผนตอบก่อน'}${unknownAlt.length ? `\n\n❔ ยังลองอีกแบบไม่ได้: ${unknownAlt.map(i => i.test).join(', ')} — คำตัดสินอาจเปลี่ยน` : ''}`);
++const obsSection = observations.length ? `
++
++### ข้อสังเกตนอกแผน (ไม่นับในผลและคำตัดสิน)
++
++พบระหว่างทดสอบ แต่ไม่อยู่ในแผน — ไม่ได้เขียน test เพิ่ม ส่งให้ทีมพิจารณา
++
++| รหัส | เกี่ยวกับ | เรื่อง | รายละเอียด | หลักฐาน |
++|---|---|---|---|---|
++${observations.map(o => `| ${o.id} | ${o.test ?? '-'} | ${o.flag ? `**${o.flag}** ` : ''}${o.title} | ${o.detail} | ${o.evidence ?? '-'} |`).join('\n')}` : '';
+ 
+ // ---- ข้อบกพร่อง: ทุกข้อที่ล้มต้องมีใน bugs.json ----
+ const failed = rows.filter(r => !r.ok);
+@@ -126,7 +149,7 @@ ${rows.map(r => `| ${r.no} | ${r.id} | ${r.priority} | ${r.what} |${round1 ? ` $
+ |---|---|---|---|---|
+ ${bugRows}
+ 
+-${bugNotes}
++${bugNotes}${obsSection}
+ 
+ ## 6. ข้อที่ต้องถามผู้ใช้
+ 
+@@ -151,4 +174,4 @@ ${F ? `- ต้องส่ง ${bugs.map(b => b.bug).join(', ') || 'บั๊
+ `;
+ fs.writeFileSync('test-report/TEST-REPORT.md', md);
+ console.log(`TEST-REPORT.md: ${N} ข้อ · ผ่าน ${P} · ล้ม ${F} · ${pct(P, N)} → ${release ? 'ปล่อยได้' : 'ยังไม่ปล่อย'}`);
+-console.log(interps === null ? '⚠️ ข้อที่ต้องถามผู้ใช้: ยังไม่ได้ตรวจ' : `ข้อที่ต้องถามผู้ใช้: ${iList.length} ข้อ${verdictAtRisk ? ` · ⚠️ ตีความอีกแบบแล้วคำตัดสิน${altRelease !== release ? 'พลิก' : 'อาจเปลี่ยน'}` : ''}`);
++console.log(interps === null ? '⚠️ ข้อที่ต้องถามผู้ใช้: ยังไม่ได้ตรวจ' : `ตอบแล้ว ${answered.length} ข้อ · ข้อสังเกตนอกแผน ${observations.length} ข้อ · ข้อที่ต้องถามผู้ใช้: ${iList.length} ข้อ${verdictAtRisk ? ` · ⚠️ ตีความอีกแบบแล้วคำตัดสิน${altRelease !== release ? 'พลิก' : 'อาจเปลี่ยน'}` : ''}`);
+diff --git a/.claude/skills/test-from-plan/scripts/plan-answers.mjs b/.claude/skills/test-from-plan/scripts/plan-answers.mjs
+new file mode 100644
+index 0000000..120adf9
+--- /dev/null
++++ b/.claude/skills/test-from-plan/scripts/plan-answers.mjs
+@@ -0,0 +1,74 @@
++#!/usr/bin/env node
++// หาคำตอบของเจ้าของแผนที่เคยให้ไว้ (references/plan-answers/*.json) ที่ใช้กับแผน "นี้" ได้จริง
++// ใช้: node plan-answers.mjs [--write]      (cwd = e2e, หลัง parse-plan.mjs)
++//
++// กันใช้ผิดแผน: ไฟล์คำตอบจะถูกใช้เฉพาะเมื่อ scope ตรงทุกข้อ (ชื่อแผนในหัวเรื่องบรรทัดแรก, baseURL, จำนวน test)
++// และคำตอบแต่ละข้อใช้ได้เฉพาะเมื่อ test ID นั้นมีอยู่ และข้อความ planText ยังอยู่ในแถวของ test นั้น (สิ่งที่ทดสอบ/ผลที่คาดหวัง)
++// ถ้าแผนเปลี่ยนถ้อยคำ → คำตอบข้อนั้น "หมดอายุ" ต้องถามเจ้าของแผนใหม่ (ห้ามเดาว่ายังใช้ได้)
++//
++// --write: เติมคำตอบแบบ interpretation ลง test-report/interpretations.json (ฟิลด์ answer → รายงานย้ายไปตาราง "ตอบแล้ว")
++//          และสร้างร่าง test-report/observations.json จากคำตอบแบบ observation (ต้องตรวจกับเว็บรอบนี้แล้วเติม detail/evidence เอง)
++import fs from 'node:fs';
++import path from 'node:path';
++import { fileURLToPath } from 'node:url';
++import { loadPlan } from './_lib.mjs';
++
++const plan = loadPlan();
++const dir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'references', 'plan-answers');
++const planPath = path.resolve(plan.planFile);
++const title = fs.readFileSync(planPath, 'utf8').split(/\r?\n/).find(l => /^#\s/.test(l)) ?? '';
++const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')) : [];
++
++const matched = [];
++for (const f of files) {
++  const a = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
++  const s = a.scope ?? {};
++  const why = [];
++  if (!s.planTitleIncludes || !title.includes(s.planTitleIncludes)) why.push(`ชื่อแผนไม่มี "${s.planTitleIncludes}"`);
++  if (s.baseURL && s.baseURL !== plan.baseURL) why.push(`baseURL ${plan.baseURL} ≠ ${s.baseURL}`);
++  if (s.caseCount && s.caseCount !== plan.cases.length) why.push(`จำนวน test ${plan.cases.length} ≠ ${s.caseCount}`);
++  if (why.length) { console.log(`⏭  ${f}: ไม่ใช่แผนนี้ (${why.join(', ')}) — ไม่ใช้`); continue; }
++  matched.push({ f, a });
++}
++if (!matched.length) { console.log('ไม่มีคำตอบเดิมสำหรับแผนนี้ → จุดกำกวมทุกจุดต้องลองอีกแบบและถามผู้ใช้ตามปกติ'); process.exit(0); }
++
++const valid = [], stale = [];
++for (const { f, a } of matched) {
++  for (const x of a.answers) {
++    const c = plan.cases.find(k => k.id === x.test);
++    const ok = c && `${c.what} ${c.expected}`.includes(x.planText);
++    (ok ? valid : stale).push({ ...x, file: f, answeredBy: a.answeredBy, answeredAt: a.answeredAt });
++  }
++}
++console.log(`✅ ใช้คำตอบเดิม ${valid.length} ข้อ (จาก ${matched.map(m => m.f).join(', ')}):`);
++for (const v of valid) console.log(`   ${v.test} [${v.kind}] ${v.answer}`);
++if (stale.length) {
++  console.log(`⚠️ หมดอายุ ${stale.length} ข้อ (แผนเปลี่ยนถ้อยคำหรือไม่มี test นี้แล้ว) — ต้องถามใหม่:`);
++  for (const s of stale) console.log(`   ${s.test}: "${s.planText}"`);
++}
++
++if (process.argv.includes('--write')) {
++  fs.mkdirSync('test-report', { recursive: true });
++  const iFile = 'test-report/interpretations.json';
++  const interps = fs.existsSync(iFile) ? JSON.parse(fs.readFileSync(iFile, 'utf8')) : [];
++  for (const v of valid.filter(v => v.kind === 'interpretation')) {
++    const e = interps.find(i => i.test === v.test && !i.answer) ?? interps.find(i => i.test === v.test);
++    const fields = { wording: v.wording, chosen: v.chosen, answer: v.answer, answeredBy: v.answeredBy, answeredAt: v.answeredAt };
++    if (e) { Object.assign(e, fields); delete e.chosenResult; delete e.alternative; delete e.altResult; delete e.altEvidence; delete e.question; }
++    else interps.push({ test: v.test, ...fields });
++  }
++  const oFile = 'test-report/observations.json';
++  const obs = fs.existsSync(oFile) ? JSON.parse(fs.readFileSync(oFile, 'utf8')) : [];
++  let n = obs.length;
++  for (const v of valid.filter(v => v.kind === 'observation')) {
++    // ถ้ารอบนี้มีคำถามเรื่องเดียวกันใน interpretations อยู่แล้ว → ปิดคำถามด้วยคำตอบ (ย้ายไปเป็นข้อสังเกต)
++    const q = interps.find(i => i.test === v.test && !i.answer);
++    if (q) { Object.assign(q, { answer: v.answer, answeredBy: v.answeredBy, answeredAt: v.answeredAt }); }
++    if (obs.some(o => o.test === v.test && o.title === v.title)) continue;
++    obs.push({ id: `OBS-${String(++n).padStart(2, '0')}`, test: v.test, flag: v.flag, title: v.title,
++      detail: `TODO ตรวจกับเว็บรอบนี้: ${v.check}`, evidence: 'TODO' });
++  }
++  fs.writeFileSync(iFile, JSON.stringify(interps, null, 2));
++  fs.writeFileSync(oFile, JSON.stringify(obs, null, 2));
++  console.log(`→ เขียน ${iFile} และ ${oFile} (แก้ TODO ใน observations ด้วยผลที่ตรวจจริงรอบนี้)`);
++}

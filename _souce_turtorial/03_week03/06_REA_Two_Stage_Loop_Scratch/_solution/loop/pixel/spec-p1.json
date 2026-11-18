@@ -1,0 +1,180 @@
+{
+ "passes": 1,
+ "vars": [
+  {
+   "name": "--font-family",
+   "kind": "choice",
+   "choices": [
+    "\"Waree\", \"Loma\", \"Garuda\", sans-serif",
+    "\"Liberation Sans\", \"Loma\", sans-serif",
+    "\"Liberation Sans\", \"Waree\", sans-serif",
+    "\"Loma\", \"Waree\", sans-serif",
+    "\"Umpush\", \"Loma\", sans-serif",
+    "\"Liberation Sans\", \"Umpush\", sans-serif",
+    "\"FreeSans\", \"Loma\", sans-serif",
+    "\"Garuda\", \"Loma\", sans-serif",
+    "\"Sawasdee\", \"Loma\", sans-serif"
+   ]
+  },
+  {
+   "name": "--font-family-numeric",
+   "kind": "choice",
+   "choices": [
+    "\"Waree\", \"Loma\", \"Garuda\", sans-serif",
+    "\"Liberation Sans\", \"Loma\", sans-serif",
+    "\"Liberation Sans\", \"Waree\", sans-serif",
+    "\"Loma\", \"Waree\", sans-serif",
+    "\"Umpush\", \"Loma\", sans-serif",
+    "\"Liberation Sans\", \"Umpush\", sans-serif",
+    "\"FreeSans\", \"Loma\", sans-serif",
+    "\"Garuda\", \"Loma\", sans-serif",
+    "\"Sawasdee\", \"Loma\", sans-serif"
+   ]
+  },
+  {
+   "name": "--space-6",
+   "kind": "px",
+   "step": 8,
+   "min": 0,
+   "max": 48
+  },
+  {
+   "name": "--space-4",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 32
+  },
+  {
+   "name": "--space-8",
+   "kind": "px",
+   "step": 8,
+   "min": 0,
+   "max": 64
+  },
+  {
+   "name": "--space-12",
+   "kind": "px",
+   "step": 8,
+   "min": 0,
+   "max": 64
+  },
+  {
+   "name": "--space-2",
+   "kind": "px",
+   "step": 2,
+   "min": 0,
+   "max": 16
+  },
+  {
+   "name": "--space-3",
+   "kind": "px",
+   "step": 2,
+   "min": 0,
+   "max": 24
+  },
+  {
+   "name": "--space-1",
+   "kind": "px",
+   "step": 2,
+   "min": 0,
+   "max": 8
+  },
+  {
+   "name": "--space-5",
+   "kind": "px",
+   "step": 4,
+   "min": 0,
+   "max": 32
+  },
+  {
+   "name": "--space-10",
+   "kind": "px",
+   "step": 8,
+   "min": 0,
+   "max": 64
+  },
+  {
+   "name": "--font-size-sm",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 20
+  },
+  {
+   "name": "--font-size-md",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 24
+  },
+  {
+   "name": "--font-size-lg",
+   "kind": "px",
+   "step": 2,
+   "min": 12,
+   "max": 30
+  },
+  {
+   "name": "--font-size-xl",
+   "kind": "px",
+   "step": 2,
+   "min": 14,
+   "max": 32
+  },
+  {
+   "name": "--font-size-xs",
+   "kind": "px",
+   "step": 1,
+   "min": 12,
+   "max": 16
+  },
+  {
+   "name": "--font-weight-medium",
+   "kind": "num",
+   "step": 100,
+   "min": 400,
+   "max": 700
+  },
+  {
+   "name": "--font-weight-bold",
+   "kind": "num",
+   "step": 100,
+   "min": 500,
+   "max": 800
+  },
+  {
+   "name": "--font-weight-regular",
+   "kind": "num",
+   "step": 100,
+   "min": 300,
+   "max": 500
+  },
+  {
+   "name": "--line-height-tight",
+   "kind": "px",
+   "step": 2,
+   "min": 14,
+   "max": 32
+  },
+  {
+   "name": "--line-height-normal",
+   "kind": "px",
+   "step": 2,
+   "min": 16,
+   "max": 36
+  },
+  {
+   "name": "--line-height-loose",
+   "kind": "px",
+   "step": 2,
+   "min": 18,
+   "max": 40
+  },
+  {
+   "name": "--color-primary",
+   "kind": "color",
+   "step": 6
+  }
+ ]
+}

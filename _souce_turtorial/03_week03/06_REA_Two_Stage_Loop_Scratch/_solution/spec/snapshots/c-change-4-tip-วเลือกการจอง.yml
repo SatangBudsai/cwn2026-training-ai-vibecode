@@ -1,0 +1,9 @@
+# captured 2026-11-01 17:17:06 url=https://www.google.com/travel/flights/booking?tfs=CBwQAhprEgoyMDI2LTExLTE1Ih8KA0JLSxIKMjAyNi0xMS0xNRoDS0lYKgJKTDIDNzI4IiAKA0lUTRIKMjAyNi0xMS0xNRoDTlJUKgJKTDIEMzAwNmoMCAISCC9tLzBmbjJncgwIAhIIL20vMDdkZmtAAUgBcAGCAQsI____________AZgBAg&tfu=CnRDalJJTkhaUFJrWlpWRzVEWVhkQlVWSlhkMUZDUnkwdExTMHRMUzB0TFhOdGRYQXhPVUZCUVVGQlIzSnVSVmxCVGsxTmRqSkJFZ3hLVERjeU9IeEtURE13TURZYUN3aWhxUUVRQUJvRFZFaENPQnh3K3ZVRBICCAAiAA&hl=th&gl=TH&curr=THB
+- dialog "ระบบจัดอันดับตัวเลือกการจองโดยอิงตามปัจจัยต่างๆ เช่น ราคา คุณภาพลิงก์ ประเภทพาร์ทเนอร์ และประสบการณ์การใช้งานบนเว็บไซต์ของพาร์ทเนอร์ ดูข้อมูลเพิ่มเติมเกี่ยวกับการค้นหาและการจองเที่ยวบินบน Google":
+  - button "ปิดกล่องโต้ตอบ":
+    - img
+  - paragraph: ระบบจัดอันดับตัวเลือกการจองโดยอิงตามปัจจัยต่างๆ เช่น ราคา คุณภาพลิงก์ ประเภทพาร์ทเนอร์ และประสบการณ์การใช้งานบนเว็บไซต์ของพาร์ทเนอร์
+  - paragraph:
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับการค้นหาและการจองเที่ยวบินบน Google":
+      - /url: https://support.google.com/travel/answer/7664728?hl=th
+      - text: ดูข้อมูลเพิ่มเติม

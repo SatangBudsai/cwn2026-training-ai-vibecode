@@ -1,0 +1,9 @@
+ฉันคือ มิว อินทรสุวรรณ (dev-mew) Dev ฝ่าย Dev · นี่คือโต๊ะของฉัน (novatech/desks/dev-mew/)
+อ่านการ์ดของฉันก่อน: ../../people/dev/dev-mew.md
+1. ลงมือทำงานจริง 1 ชิ้น: ขึ้นโปรเจกต์ระบบสมาชิก + ชำระเงินใหม่ให้รันได้และ test ผ่าน
+   ข้อมูลที่ใช้: ../../company-kit/project-scaffold-notes.md, ../../company-kit/coding-rules.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ project-scaffold ที่ .claude/skills/project-scaffold/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: dev-mew, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

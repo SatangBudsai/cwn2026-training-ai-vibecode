@@ -1,0 +1,17 @@
+[
+  {
+    "entry": 58,
+    "time": "2026-11-01T10:07:49.250Z",
+    "url": "/_/FlightsFrontendUi/data/travel.frontend.flights.FlightsFrontendService/GetShoppingResults"
+  },
+  {
+    "entry": 113,
+    "time": "2026-11-01T10:08:19.567Z",
+    "url": "/_/FlightsFrontendUi/data/travel.frontend.flights.FlightsFrontendService/GetBookingResults"
+  },
+  {
+    "entry": 113,
+    "time": "2026-11-01T10:08:19.567Z",
+    "url": "/_/FlightsFrontendUi/data/travel.frontend.flights.FlightsFrontendService/GetBookingResults"
+  }
+]

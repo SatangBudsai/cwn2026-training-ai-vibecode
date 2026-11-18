@@ -1,0 +1,23 @@
+# ผู้รีวิวของแต่ละ plugin = หัวหน้าแผนก · Gitea อ่าน path เป็น regular expression
+
+^plugins/core/.* @plat-ken
+^plugins/shared/.* @plat-ken
+^plugins/exec/.* @exec-ploy
+^plugins/sales/.* @sales-nida
+^plugins/sa/.* @sa-ton
+^plugins/product/.* @pm-beam
+^plugins/dev/.* @dev-pond
+^plugins/qa/.* @qa-mint
+^plugins/devops/.* @ops-art
+^plugins/mlops/.* @ml-jay
+^plugins/hr/.* @hr-fah
+^plugins/finance/.* @fin-joy
+
+# กติการาคาอยู่ใน core แต่เจ้าของกติกาคือหัวหน้าบัญชี
+^plugins/core/skills/pricing-rules/.* @fin-joy
+
+# โครงของคลัง
+^\.claude-plugin/.* @plat-ken
+^scripts/.* @plat-ken
+^CODEOWNERS$ @plat-ken
+^README\.md$ @plat-ken

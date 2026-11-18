@@ -1,0 +1,7 @@
+{
+  "_note": "ฉบับ B ของบัญชี (fin-joy) ตาม deal-001-B-quotation-draft.md · buffer รวมแล้ว",
+  "lines": [{"code":"MD-SA","qty":17},{"code":"MD-PM","qty":44},{"code":"MD-DEV-SR","qty":61},{"code":"MD-DEV","qty":100},{"code":"MD-UX","qty":14},{"code":"MD-QA","qty":40},{"code":"MD-DEVOPS","qty":20},{"code":"MD-ML","qty":22},{"code":"CL-M","qty":12},{"code":"LIC-LINE","qty":12},{"code":"LIC-WAF","qty":12},{"code":"LIC-APM","qty":12},{"code":"MA-STD","qty":1}],
+  "external": [], "discount": 619000,
+  "team_size": 9, "working_days": 125,
+  "buffer_included": true
+}

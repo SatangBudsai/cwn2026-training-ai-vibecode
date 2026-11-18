@@ -1,0 +1,91 @@
+{
+  "id": "TC-RIDE-10",
+  "title": "TC-RIDE-10 ตารางหลังร้านแสดงจุดรับและจำนวนรถบนหน้าจอ",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "17 มิ.ย.: บนหน้าจอเห็นระยะ 14.9 กม. และ 1 คัน ยอด ฿1,300 (฿1,000 + ฿300)\n26 มิ.ย. `SJTEST16`: บนหน้าจอเห็น โรงแรมกล้วยไม้ พาเลซ ระยะ 12.0 กม. และ 2 คัน (6 ÷ 4 ปัดขึ้น) ยอด ฿6,000\nต้องอ่านจากหน้าจอ ข้อมูลใน JSON ของ API อย่างเดียวไม่นับว่าผ่าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 951,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] · F-ร้าน 10 · F-สร้าง 28 · [D] §4 หลังร้านและข้อมูลส่วนตัว",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 951,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-78, BR-36",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 951,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R70",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 951,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 951,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ในหน้าร้าน · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 951,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 82766,
+  "at": "2026-11-06T02:59:17.412Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-KPDP6QF4')\nExpected pattern: /(?<![\\d.])14\\.9\\s*กม/\nReceived string:  \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-KPDP6QF4') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-KPDP6QF4')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-KPDP6QF4\">…</tr>\n       - unexpected value \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-KPDP6QF4')\nExpected pattern: /(?<!\\d)1\\s*คัน/\nReceived string:  \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-KPDP6QF4') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-KPDP6QF4')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-KPDP6QF4\">…</tr>\n       - unexpected value \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-SJTEST16')\nExpected substring: \"โรงแรมกล้วยไม้ พาเลซ\"\nReceived string:    \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-SJTEST16') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-SJTEST16')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-SJTEST16\">…</tr>\n       - unexpected value \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-SJTEST16')\nExpected pattern: /(?<![\\d.])12\\.0\\s*กม/\nReceived string:  \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-SJTEST16') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-SJTEST16')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-SJTEST16\">…</tr>\n       - unexpected value \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-SJTEST16')\nExpected pattern: /(?<!\\d)2\\s*คัน/\nReceived string:  \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-SJTEST16') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-SJTEST16')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-SJTEST16\">…</tr>\n       - unexpected value \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-SJTEST16')\nExpected substring: \"โรงแรมกล้วยไม้ พาเลซ\"\nReceived string:    \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-SJTEST16') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-SJTEST16')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-SJTEST16\">…</tr>\n       - unexpected value \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-SJTEST16')\nExpected pattern: /(?<![\\d.])12\\.0\\s*กม/\nReceived string:  \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-SJTEST16') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-SJTEST16')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-SJTEST16\">…</tr>\n       - unexpected value \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-SJTEST16')\nExpected pattern: /(?<!\\d)2\\s*คัน/\nReceived string:  \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-SJTEST16') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-SJTEST16')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-SJTEST16\">…</tr>\n       - unexpected value \"12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-KPDP6QF4')\nExpected pattern: /(?<![\\d.])14\\.9\\s*กม/\nReceived string:  \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-KPDP6QF4') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-KPDP6QF4')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-KPDP6QF4\">…</tr>\n       - unexpected value \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('admin-booking-KPDP6QF4')\nExpected pattern: /(?<!\\d)1\\s*คัน/\nReceived string:  \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('admin-booking-KPDP6QF4') with timeout 6000ms\n  - waiting for getByTestId('admin-booking-KPDP6QF4')\n    16 × locator resolved to <tr role=\"row\" class=\"nc4JNq_row\" data-status=\"CONFIRMED\" data-e2e-prev-outline=\"\" data-testid=\"admin-booking-KPDP6QF4\">…</tr>\n       - unexpected value \"12:00–13:00KPDP6QF4นวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ\"\n",
+    "Error: expect(received).toContain(expected) // indexOf\n\nExpected substring: \"โรงแรมกล้วยไม้ พาเลซ\"\nReceived string:    \"12:00–13:00 SJTEST16 นวดไทย 60 นาที 6 คน คุณทดสอบ หก แขก 0890000006 พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว ฿6,000 รอรับบริการ ใช้บริการเสร็จ\"",
+    "Error: expect(received).toMatch(expected)\n\nExpected pattern: /(?<![\\d.])12\\.0\\s*กม/\nReceived string:  \"12:00–13:00 SJTEST16 นวดไทย 60 นาที 6 คน คุณทดสอบ หก แขก 0890000006 พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว ฿6,000 รอรับบริการ ใช้บริการเสร็จ\"",
+    "Error: expect(received).toMatch(expected)\n\nExpected pattern: /(?<!\\d)2\\s*คัน/\nReceived string:  \"12:00–13:00 SJTEST16 นวดไทย 60 นาที 6 คน คุณทดสอบ หก แขก 0890000006 พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว ฿6,000 รอรับบริการ ใช้บริการเสร็จ\""
+  ],
+  "steps": [
+    "1. แขกจอง S01 1 คน พิมพ์ 14.9 กม. แล้วยืนยัน",
+    "2. เข้าหลังร้าน เลือกวันที่ 17 มิ.ย. อ่านแถวของการจองนี้ ✗",
+    "3. เลือกวันที่ 26 มิ.ย. อ่านแถว SJTEST16 ✗",
+    "4. รีโหลด อ่านซ้ำ ✗"
+  ]
+}

@@ -1,0 +1,9 @@
+# captured 2026-11-01 17:19:59 url=https://www.google.com/travel/flights/booking?tfs=CBwQAhpJEgoyMDI2LTExLTE1Ih8KA0JLSxIKMjAyNi0xMS0xNRoDTlJUKgJWWjIDODMwagwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=CmxDalJJV1hSUU5YQllkazVxYW1OQlUwaHJPRUZDUnkwdExTMHRMUzB0TFhOdFptMHhORUZCUVVGQlIzSnVSV3RGVFdzMU1uVkJFZ1ZXV2pnek1Cb0tDT1pHRUFBYUExUklRamdjY1ByUkFRPT0SAggAIgA&hl=th&gl=TH&curr=THB
+- dialog:
+  - heading "แชร์เที่ยวบินนี้" [level=2]
+  - button "ปิด":
+    - img
+  - button "Facebook"
+  - button "X (Twitter)"
+  - button "คัดลอกลิงก์":
+    - button "คัดลอกลิงก์"

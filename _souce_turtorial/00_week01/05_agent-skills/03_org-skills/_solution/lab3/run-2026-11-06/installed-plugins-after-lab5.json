@@ -1,0 +1,541 @@
+{
+  "version": 2,
+  "plugins": {
+    "hyperframes@hyperframes": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\hyperframes\\hyperframes\\0.8.96",
+        "version": "0.8.96",
+        "installedAt": "2026-09-30T08:12:56.241Z",
+        "lastUpdated": "2026-09-30T08:12:56.241Z",
+        "gitCommitSha": "84811c43297c4487fb5d472bee131ff0c37bc31e"
+      }
+    ],
+    "core@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\cco-wit",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:23:59.799Z",
+        "lastUpdated": "2026-11-05T21:23:59.799Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\cfo-ying",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:01.441Z",
+        "lastUpdated": "2026-11-05T21:24:01.441Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\cto-nat",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:07.397Z",
+        "lastUpdated": "2026-11-05T21:24:07.397Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\dev-mew",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:14.434Z",
+        "lastUpdated": "2026-11-05T21:24:14.434Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\dev-new",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:25:52.226Z",
+        "lastUpdated": "2026-11-05T21:25:52.226Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\dev-pond",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:26:00.070Z",
+        "lastUpdated": "2026-11-05T21:26:00.070Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\fin-joy",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:26:12.529Z",
+        "lastUpdated": "2026-11-05T21:26:12.529Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\exec-ploy",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:26:16.239Z",
+        "lastUpdated": "2026-11-05T21:26:16.239Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\fin-nok",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:10.504Z",
+        "lastUpdated": "2026-11-05T21:27:10.504Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\hr-fah",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:13.058Z",
+        "lastUpdated": "2026-11-05T21:27:13.058Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\hr-namtan",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:21.333Z",
+        "lastUpdated": "2026-11-05T21:27:21.333Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\hr-oat",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:25.869Z",
+        "lastUpdated": "2026-11-05T21:27:25.869Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\md-somchai",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:24.731Z",
+        "lastUpdated": "2026-11-05T21:28:24.731Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ml-jay",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:26.046Z",
+        "lastUpdated": "2026-11-05T21:28:26.046Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ml-pim",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:33.869Z",
+        "lastUpdated": "2026-11-05T21:28:33.869Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ops-art",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:39.788Z",
+        "lastUpdated": "2026-11-05T21:28:39.788Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ops-fon",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:29:28.459Z",
+        "lastUpdated": "2026-11-05T21:29:28.459Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\plat-may",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:29:38.747Z",
+        "lastUpdated": "2026-11-05T21:29:38.747Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\plat-ken",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:29:42.003Z",
+        "lastUpdated": "2026-11-05T21:29:42.003Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\pm-beam",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:29:47.610Z",
+        "lastUpdated": "2026-11-05T21:29:47.610Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\pm-gift",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:30:40.416Z",
+        "lastUpdated": "2026-11-05T21:30:40.416Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\qa-bank",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:30:46.494Z",
+        "lastUpdated": "2026-11-05T21:30:46.494Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\qa-mint",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:30:53.528Z",
+        "lastUpdated": "2026-11-05T21:30:53.528Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sa-ice",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:31:00.099Z",
+        "lastUpdated": "2026-11-05T21:31:00.099Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sa-ton",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:31:57.587Z",
+        "lastUpdated": "2026-11-05T21:31:57.587Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sales-krit",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.1.0",
+        "version": "1.1.0",
+        "installedAt": "2026-11-05T21:32:03.936Z",
+        "lastUpdated": "2026-11-05T22:41:34.203Z",
+        "gitCommitSha": "0d9989f82fa7d6612f70433c01fdc8cdc4705834"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sales-mook",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:32:11.907Z",
+        "lastUpdated": "2026-11-05T21:32:11.907Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sales-nida",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:32:15.966Z",
+        "lastUpdated": "2026-11-05T21:32:15.966Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\rr\\nh\\with",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\core\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:40:21.347Z",
+        "lastUpdated": "2026-11-05T21:40:21.347Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "exec@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\cco-wit",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\exec\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:00.669Z",
+        "lastUpdated": "2026-11-05T21:24:00.669Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\cfo-ying",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\exec\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:05.666Z",
+        "lastUpdated": "2026-11-05T21:24:05.666Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\cto-nat",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\exec\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:08.270Z",
+        "lastUpdated": "2026-11-05T21:24:08.270Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\exec-ploy",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\exec\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:26:17.109Z",
+        "lastUpdated": "2026-11-05T21:26:17.109Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\md-somchai",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\exec\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:25.615Z",
+        "lastUpdated": "2026-11-05T21:28:25.615Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "dev@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\dev-mew",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\dev\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:24:15.458Z",
+        "lastUpdated": "2026-11-05T21:24:15.458Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\dev-new",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\dev\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:25:53.137Z",
+        "lastUpdated": "2026-11-05T21:25:53.137Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\dev-pond",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\dev\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:26:01.061Z",
+        "lastUpdated": "2026-11-05T21:26:01.061Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\rr\\nh\\with",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\dev\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:40:22.270Z",
+        "lastUpdated": "2026-11-05T21:40:22.270Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "finance@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\fin-joy",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\finance\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:26:13.385Z",
+        "lastUpdated": "2026-11-05T21:26:13.385Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\fin-nok",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\finance\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:11.355Z",
+        "lastUpdated": "2026-11-05T21:27:11.355Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "hr@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\hr-fah",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\hr\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:13.927Z",
+        "lastUpdated": "2026-11-05T21:27:13.927Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\hr-namtan",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\hr\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:22.179Z",
+        "lastUpdated": "2026-11-05T21:27:22.179Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\hr-oat",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\hr\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:27:26.737Z",
+        "lastUpdated": "2026-11-05T21:27:26.737Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "mlops@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ml-jay",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\mlops\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:26.960Z",
+        "lastUpdated": "2026-11-05T21:28:26.960Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ml-pim",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\mlops\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:34.787Z",
+        "lastUpdated": "2026-11-05T21:28:34.787Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "devops@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ops-art",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\devops\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:28:40.682Z",
+        "lastUpdated": "2026-11-05T21:28:40.682Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\ops-fon",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\devops\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:29:29.319Z",
+        "lastUpdated": "2026-11-05T21:29:29.319Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "product@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\pm-beam",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\product\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:29:48.473Z",
+        "lastUpdated": "2026-11-05T21:29:48.473Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\pm-gift",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\product\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:30:41.257Z",
+        "lastUpdated": "2026-11-05T21:30:41.257Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "qa@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\qa-bank",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\qa\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:30:47.406Z",
+        "lastUpdated": "2026-11-05T21:30:47.406Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\qa-mint",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\qa\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:30:54.392Z",
+        "lastUpdated": "2026-11-05T21:30:54.392Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "sa@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sa-ice",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\sa\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:31:00.975Z",
+        "lastUpdated": "2026-11-05T21:31:00.975Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sa-ton",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\sa\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:31:58.477Z",
+        "lastUpdated": "2026-11-05T21:31:58.477Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ],
+    "sales@novatech-skills": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sales-krit",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\sales\\1.1.0",
+        "version": "1.1.0",
+        "installedAt": "2026-11-05T21:32:04.814Z",
+        "lastUpdated": "2026-11-05T22:41:34.988Z",
+        "gitCommitSha": "0d9989f82fa7d6612f70433c01fdc8cdc4705834"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sales-mook",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\sales\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:32:12.761Z",
+        "lastUpdated": "2026-11-05T21:32:12.761Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      },
+      {
+        "scope": "project",
+        "projectPath": "C:\\t\\org05l2\\novatech\\desks\\sales-nida",
+        "installPath": "C:\\Users\\oishi\\.claude\\plugins\\cache\\novatech-skills\\sales\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T21:32:16.815Z",
+        "lastUpdated": "2026-11-05T21:32:16.815Z",
+        "gitCommitSha": "c732c6cb9a5b602e31bc277f20f7c4742d8b45d1"
+      }
+    ]
+  }
+}

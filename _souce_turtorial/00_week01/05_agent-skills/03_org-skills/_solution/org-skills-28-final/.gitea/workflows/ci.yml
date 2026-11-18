@@ -1,0 +1,37 @@
+# ด่านอัตโนมัติของทุก PR (ไม่ใช้ AI ไม่มี token ของ AI ใน CI) · skill-eval อยู่นอก workflow นี้ ดู scripts/skill-eval.py
+# ชื่อ workflow และ job เป็นชื่อ required status ของ branch protection เปลี่ยนแล้วต้องแก้ protection ด้วย
+name: ci
+on:
+  pull_request:
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ติดตั้ง Claude Code (ใช้แค่ validate ไม่เรียก AI)
+        run: npm install --global --no-fund --no-audit @anthropic-ai/claude-code@2.1.318
+      - name: claude plugin validate
+        run: |
+          claude plugin validate --strict .
+          for plugin in plugins/*/; do claude plugin validate --strict "$plugin"; done
+      - name: catalog ตรงกับหัวไฟล์
+        run: python3 scripts/build-catalog.py --check
+
+  frontmatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: หัวไฟล์ครบและอ้างอิงถูกต้อง
+        run: python3 scripts/check-frontmatter.py --base "origin/${{ github.base_ref }}"
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ทดสอบตัวตรวจ
+        run: python3 -m unittest discover -s scripts/tests
+      - name: สแกนความปลอดภัย
+        run: python3 scripts/security-scan.py

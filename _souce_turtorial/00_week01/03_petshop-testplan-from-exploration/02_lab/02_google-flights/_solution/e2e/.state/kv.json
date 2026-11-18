@@ -1,0 +1,26 @@
+{
+  "U1": "https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE1agwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&hl=th&curr=THB",
+  "UB": "",
+  "D-BKG-MULTI": [],
+  "BKG-FEES": [],
+  "BKG-01-rowA": {
+    "dep": "14:00",
+    "airline": "เวียดเจ็ทแอร์",
+    "group": "เที่ยวบินยอดนิยม",
+    "price": 5900
+  },
+  "D-BKG-B1": "https://www.google.com/travel/flights/booking?tfs=CBwQAhpqEgoyMDI2LTEyLTE1Ih8KA0JLSxIKMjAyNi0xMi0xNRoDU0dOKgJWSjIDODA0Ih8KA1NHThIKMjAyNi0xMi0xNRoDSE5EKgJWSjIDODIwagwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=CnRDalJJVmpsTVVUZHdkR3h1YjNkQlFtZEllR2RDUnkwdExTMHRMWE5sZEcweU5DMXVNa0ZCUVVGQlIzSndWVzEzUWxOMVZEaEJFZ3RXU2pnd05IeFdTamd5TUJvS0NJd3VFQUFhQTFSSVFqZ2NjTjZJQVE9PRICCAAiAA&hl=th&curr=THB",
+  "D-BKG-B2": "https://www.google.com/travel/flights/booking?tfs=CBwQAhpqEgoyMDI2LTEyLTE1Ih8KA0JLSxIKMjAyNi0xMi0xNRoDU0dOKgJWSjIDODA0Ih8KA1NHThIKMjAyNi0xMi0xNRoDSE5EKgJWSjIDODIwagwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABQAFIAXABggELCP___________wGYAQI&tfu=EgIIACIA&hl=th&curr=THB",
+  "BKG-04": {
+    "H1": 5900,
+    "H2": 11800,
+    "P1": 5900,
+    "row1": {
+      "dep": "14:00",
+      "airline": "เวียดเจ็ทแอร์",
+      "group": "เที่ยวบินยอดนิยม",
+      "price": 5900
+    }
+  },
+  "D-BKG-SHARE": "https://www.google.com/travel/flights/s/xNM5FLPwdNrsPfXW9"
+}

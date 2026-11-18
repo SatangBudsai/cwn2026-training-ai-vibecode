@@ -1,0 +1,32 @@
+{
+  "1_meeting_room": {
+    "dependency_order_valid": true,
+    "all_tasks_done": true,
+    "no_duplicate_execution": true,
+    "artifact_hashes_valid": true,
+    "evaluation_after_every_task": true,
+    "replans": 0,
+    "plan_version": 1,
+    "independent_model_calls": false
+  },
+  "2_expense_claim": {
+    "dependency_order_valid": true,
+    "all_tasks_done": true,
+    "no_duplicate_execution": true,
+    "artifact_hashes_valid": true,
+    "evaluation_after_every_task": true,
+    "replans": 1,
+    "plan_version": 2,
+    "independent_model_calls": false
+  },
+  "3_clinic_migration": {
+    "dependency_order_valid": true,
+    "all_tasks_done": true,
+    "no_duplicate_execution": true,
+    "artifact_hashes_valid": true,
+    "evaluation_after_every_task": true,
+    "replans": 1,
+    "plan_version": 2,
+    "independent_model_calls": false
+  }
+}

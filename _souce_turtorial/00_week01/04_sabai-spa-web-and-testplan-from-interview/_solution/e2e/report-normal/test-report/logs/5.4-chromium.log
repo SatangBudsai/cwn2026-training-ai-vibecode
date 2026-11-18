@@ -1,0 +1,783 @@
+npm notice run npx
+npm notice run playwright test tests/5.4- --project=chromium
+
+Running 10 tests using 1 worker
+
+  ok  1 [chromium] › tests\5.4-ride.spec.ts:128:1 › TC-RIDE-01 ค่ารถตรงขอบ 5.0 และ 15.0 กม. และระยะเกินถูกปฏิเสธก่อนยืนยัน @P1 @5.4 (50.3s)
+  ok  2 [chromium] › tests\5.4-ride.spec.ts:193:1 › TC-RIDE-02 จำนวนคันปัดขึ้นทุก 4 คน และยอดรวมถูกเมื่อมีส่วนลดกลุ่มกับค่ารถ @P1 @5.4 (44.1s)
+  ok  3 [chromium] › tests\5.4-ride.spec.ts:276:1 › TC-RIDE-03 Bangkok Relax ไม่ลด % ทุกระดับ ไม่เก็บค่ารถ และแต้มกับ Gift Card ถูก @P1 @5.4 (50.3s)
+  ok  4 [chromium] › tests\5.4-ride.spec.ts:374:1 › TC-RIDE-04 Bangkok Relax ต้องระบุโรงแรมหรือระยะ รวมค่ารถถึง 15.0 กม. และไม่รับเกินนั้น @P1 @5.4 (33.9s)
+  ok  5 [chromium] › tests\5.4-ride.spec.ts:453:1 › TC-RIDE-05 Bangkok Relax จองได้สูงสุด 3 คน และนับนักบำบัดที่ถูกจองไปแล้ว @P1 @5.4 (46.3s)
+  ok  6 [chromium] › tests\5.4-ride.spec.ts:568:1 › TC-RIDE-06 ระยะที่พิมพ์รับเฉพาะค่าไม่ติดลบ ทศนิยมไม่เกิน 1 ตำแหน่ง ไม่ปัดเอง @P1 @5.4 (1.2m)
+  x   7 [chromium] › tests\5.4-ride.spec.ts:666:1 › TC-RIDE-07 เปลี่ยนค่าระหว่างกรอกแล้วไม่มียอดเก่าค้าง @P1 @5.4 (40.8s)
+  x   8 [chromium] › tests\5.4-ride.spec.ts:763:1 › TC-RIDE-08 API ที่ได้รับ hotelId และ distanceKm ขัดกัน ต้องไม่คิดเงินแล้วเงียบ @P1 @5.4 (22.9s)
+  x   9 [chromium] › tests\5.4-ride.spec.ts:848:1 › TC-RIDE-09 เครื่องคำนวณ /shuttle ตรงกับหน้าจอง บอกช่องที่ผิด และลิงก์จองพาค่าไปต่อ @P3 @5.4 (1.7m)
+  x  10 [chromium] › tests\5.4-ride.spec.ts:951:1 › TC-RIDE-10 ตารางหลังร้านแสดงจุดรับและจำนวนรถบนหน้าจอ @P1 @5.4 (1.4m)
+
+
+  1) [chromium] › tests\5.4-ride.spec.ts:666:1 › TC-RIDE-07 เปลี่ยนค่าระหว่างกรอกแล้วไม่มียอดเก่าค้าง @P1 @5.4 › 2. แก้เป็น 15.1 อ่านยอดและปุ่มยืนยัน 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: getByTestId('booking-screen-3')
+    Expected pattern: not /฿\s?1,300(?![\d,])/
+    Received string: "สรุปและยืนยันนวดไทย 60 นาที60 นาที1 คน17 มิ.ย. 2026 · 12:00นักบำบัด: ใครก็ได้สรุปราคาราคาเต็ม1 คน฿1,000ส่วนลด 0%ไม่มีส่วนลด฿0แลกแต้ม0 แต้ม฿0ค่ารถรับส่ง1 คัน฿300Gift Card฿0จ่ายหน้าร้าน฿1,300ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยันไม่รับชำระเงินออนไลน์ ยอดที่เหลือชำระที่หน้าร้านส่วนเสริมไม่บังคับ กดเปิดเฉพาะที่ต้องการรถรับส่งเลือกแล้วรถรับส่งโรงแรมต้องการรถรับส่งเลือกโรงแรมเลือกโรงแรมของคุณโรงแรมเรือนไทย ริเวอร์ไซด์ · 2.0 กม.โรงแรมบ้านสบาย สุขุมวิท · 5.0 กม.โรงแรมดอกบัว สีลม · 5.1 กม.โรงแรมกล้วยไม้ พาเลซ · 12.0 กม.โรงแรมทองคำ แกรนด์ · 15.0 กม.โรงแรมสวนมะลิ บางนา · 15.1 กม.พิมพ์ระยะเองกิโลเมตร ทศนิยมไม่เกิน 1 ตำแหน่งระยะเกิน 15.0 กม. ไม่รับรถรับส่งไม่เกิน 5.0 กม. ฟรีถึง 15.0 กม. ฿300 ต่อคัน รวมไป-กลับเกิน 15.0 กม. ไม่รับรถ 1 คันไม่เกิน 4 คนไม่จำกัดจำนวนรถต่อรอบแพ็กเกจ Bangkok Relax รวมค่ารถแล้ว เมื่อไม่เกิน 15.0 กม.Gift Cardข้อมูลผู้จองชื่อเบอร์โทรจองโดยไม่เข้าสู่ระบบ จะไม่ได้รับแต้มและส่วนลดสมาชิกเข้าสู่ระบบเพื่อรับสิทธิ์สมาชิกยอดจ่ายหน้าร้าน฿1,300แก้ไขวันเวลายืนยันการจองยกเลิกได้ทั้งการจองเท่านั้น หากต้องการเปลี่ยนเวลาให้ยกเลิกแล้วจองใหม่"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toContainText" getByTestId('booking-screen-3') with timeout 6000ms
+      - waiting for getByTestId('booking-screen-3')
+        16 × locator resolved to <section class="nv8LGq_screen" data-e2e-prev-outline="" data-testid="booking-screen-3">…</section>
+           - unexpected value "สรุปและยืนยันนวดไทย 60 นาที60 นาที1 คน17 มิ.ย. 2026 · 12:00นักบำบัด: ใครก็ได้สรุปราคาราคาเต็ม1 คน฿1,000ส่วนลด 0%ไม่มีส่วนลด฿0แลกแต้ม0 แต้ม฿0ค่ารถรับส่ง1 คัน฿300Gift Card฿0จ่ายหน้าร้าน฿1,300ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยันไม่รับชำระเงินออนไลน์ ยอดที่เหลือชำระที่หน้าร้านส่วนเสริมไม่บังคับ กดเปิดเฉพาะที่ต้องการรถรับส่งเลือกแล้วรถรับส่งโรงแรมต้องการรถรับส่งเลือกโรงแรมเลือกโรงแรมของคุณโรงแรมเรือนไทย ริเวอร์ไซด์ · 2.0 กม.โรงแรมบ้านสบาย สุขุมวิท · 5.0 กม.โรงแรมดอกบัว สีลม · 5.1 กม.โรงแรมกล้วยไม้ พาเลซ · 12.0 กม.โรงแรมทองคำ แกรนด์ · 15.0 กม.โรงแรมสวนมะลิ บางนา · 15.1 กม.พิมพ์ระยะเองกิโลเมตร ทศนิยมไม่เกิน 1 ตำแหน่งระยะเกิน 15.0 กม. ไม่รับรถรับส่งไม่เกิน 5.0 กม. ฟรีถึง 15.0 กม. ฿300 ต่อคัน รวมไป-กลับเกิน 15.0 กม. ไม่รับรถ 1 คันไม่เกิน 4 คนไม่จำกัดจำนวนรถต่อรอบแพ็กเกจ Bangkok Relax รวมค่ารถแล้ว เมื่อไม่เกิน 15.0 กม.Gift Cardข้อมูลผู้จองชื่อเบอร์โทรจองโดยไม่เข้าสู่ระบบ จะไม่ได้รับแต้มและส่วนลดสมาชิกเข้าสู่ระบบเพื่อรับสิทธิ์สมาชิกยอดจ่ายหน้าร้าน฿1,300แก้ไขวันเวลายืนยันการจองยกเลิกได้ทั้งการจองเท่านั้น หากต้องการเปลี่ยนเวลาให้ยกเลิกแล้วจองใหม่"
+
+
+      703 |     await booking.shuttleDistance('15.1');
+      704 |     await app.check(booking.el('booking-screen-3'), 'ขั้น 2 ไม่เห็นยอด ฿1,300 บนหน้าจอ', async (el) => {
+    > 705 |       await expect.soft(el).not.toContainText(bahtRe(1300));
+          |                                 ^
+      706 |     });
+      707 |     await app.check(errorsOn(page, /ไม่รับ/), 'ขั้น 2 แจ้งว่าไม่รับระยะนี้', async (el) => {
+      708 |       await expect.soft(el.first()).toBeVisible();
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:705:33)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:704:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:702:3
+
+    Error Context: test-results\5.4-chromium\5.4-ride-TC-RIDE-07-เปลี่ย-03a91-่างกรอกแล้วไม่มียอดเก่าค้าง-chromium\error-context.md
+
+  2) [chromium] › tests\5.4-ride.spec.ts:763:1 › TC-RIDE-08 API ที่ได้รับ hotelId และ distanceKm ขัดกัน ต้องไม่คิดเงินแล้วเงียบ @P1 @5.4 
+
+    Error: /api/quote: สถานะ 200
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      779 |   const checkRejected = async (label: string, res: { status: number; text: string }) => {
+      780 |     await app.checkValue(page, `${label} ถูกปฏิเสธ 4xx`, { status: res.status, body: res.text.slice(0, 300) }, (v) => {
+    > 781 |       expect.soft(is4xx(v.status), `${label}: สถานะ ${v.status}`).toBe(true);
+          |                                                                   ^
+      782 |     });
+      783 |     if (is4xx(res.status) && !distanceReason.test(res.text)) {
+      784 |       // เหตุอื่นตามแผนถือว่ายังตัดสินไม่ได้ จึงไม่ assert เหตุ
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:781:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at checkRejected (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:780:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:826:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:822:3
+
+    Error: POST ยืนยันการจอง: สถานะ 201
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      779 |   const checkRejected = async (label: string, res: { status: number; text: string }) => {
+      780 |     await app.checkValue(page, `${label} ถูกปฏิเสธ 4xx`, { status: res.status, body: res.text.slice(0, 300) }, (v) => {
+    > 781 |       expect.soft(is4xx(v.status), `${label}: สถานะ ${v.status}`).toBe(true);
+          |                                                                   ^
+      782 |     });
+      783 |     if (is4xx(res.status) && !distanceReason.test(res.text)) {
+      784 |       // เหตุอื่นตามแผนถือว่ายังตัดสินไม่ได้ จึงไม่ assert เหตุ
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:781:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at checkRejected (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:780:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:839:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:829:3
+
+    Error: คิว 17 มิ.ย. 0 รายการ
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - คิว 17 มิ.ย. 0 รายการ locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      101 |   await admin.open(date);
+      102 |   await app.check(admin.page.getByTestId('admin-page'), label, async () => {
+    > 103 |     await expect.soft(admin.rowsLocator(), label).toHaveCount(expected);
+          |                                                   ^
+      104 |   });
+      105 |   return { admin, count: await admin.rowCount() };
+      106 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:103:51)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkQueue (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:102:3)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:843:23
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:842:3
+
+    Error: ข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      108 | /** แสดงผลนับคิวซ้ำบนหน้าหลัก เพื่อเป็นภาพท้าย GIF */
+      109 | async function finalQueue(app: App, page: Page, label: string, count: number, expected: number) {
+    > 110 |   await app.checkValue(page, label, count, (v) => { expect.soft(v, label).toBe(expected); });
+          |                                                                           ^
+      111 | }
+      112 |
+      113 | /** P01 ไม่มีช่องติ๊กรถ (รวมรถอยู่แล้ว) จึงใช้ helper รถของ fixture ไม่ได้ */
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:110:75)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at finalQueue (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:110:3)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:844:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:842:3
+
+    Error Context: test-results\5.4-chromium\5.4-ride-TC-RIDE-08-API-ที-763a1-กัน-ต้องไม่คิดเงินแล้วเงียบ-chromium\error-context.md
+
+  3) [chromium] › tests\5.4-ride.spec.ts:848:1 › TC-RIDE-09 เครื่องคำนวณ /shuttle ตรงกับหน้าจอง บอกช่องที่ผิด และลิงก์จองพาค่าไปต่อ @P3 @5.4 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+    Expected: visible
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toBeVisible" locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms
+      - waiting for locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+
+
+      905 |       });
+      906 |       await app.check(errorsOn(page, /จำนวนคน/), `${label} ข้อความบอกว่าช่องจำนวนคนผิด`, async (el) => {
+    > 907 |         await expect.soft(el.first()).toBeVisible();
+          |                                       ^
+      908 |       });
+      909 |     }
+      910 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:907:39)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:906:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:898:3
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+    Expected: visible
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toBeVisible" locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms
+      - waiting for locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+
+
+      905 |       });
+      906 |       await app.check(errorsOn(page, /จำนวนคน/), `${label} ข้อความบอกว่าช่องจำนวนคนผิด`, async (el) => {
+    > 907 |         await expect.soft(el.first()).toBeVisible();
+          |                                       ^
+      908 |       });
+      909 |     }
+      910 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:907:39)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:906:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:898:3
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+    Expected: visible
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toBeVisible" locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms
+      - waiting for locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+
+
+      905 |       });
+      906 |       await app.check(errorsOn(page, /จำนวนคน/), `${label} ข้อความบอกว่าช่องจำนวนคนผิด`, async (el) => {
+    > 907 |         await expect.soft(el.first()).toBeVisible();
+          |                                       ^
+      908 |       });
+      909 |     }
+      910 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:907:39)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:906:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:898:3
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+    Expected: visible
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toBeVisible" locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms
+      - waiting for locator('[data-testid^="error-"]').filter({ hasText: /จำนวนคน/ }).first()
+
+
+      905 |       });
+      906 |       await app.check(errorsOn(page, /จำนวนคน/), `${label} ข้อความบอกว่าช่องจำนวนคนผิด`, async (el) => {
+    > 907 |         await expect.soft(el.first()).toBeVisible();
+          |                                       ^
+      908 |       });
+      909 |     }
+      910 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:907:39)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:906:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:898:3
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('booking-party-5')
+    Expected: "true"
+    Received: "false"
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveAttribute" getByTestId('booking-party-5') with timeout 6000ms
+      - waiting for getByTestId('booking-party-5')
+        16 × locator resolved to <button type="button" aria-label="5 คน" aria-pressed="false" class="nv8LGq_partyBtn" data-e2e-prev-outline="" data-testid="booking-party-5">5</button>
+           - unexpected value "false"
+
+
+      920 |   await test.step('4. อ่านจำนวนคนและรถที่หน้าจอง เลือก S01 ไปหน้าสรุป ไม่ยืนยัน', async () => {
+      921 |     await app.check(t('booking-party-5'), 'หน้าจองยังเป็น 5 คน', async (el) => {
+    > 922 |       await expect.soft(el).toHaveAttribute('aria-pressed', 'true');
+          |                             ^
+      923 |     });
+      924 |     await t('booking-service-S01').click();
+      925 |     await settle(page);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:922:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:921:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:920:3
+
+    Error: expect(locator).toBeChecked() failed
+
+    Locator:  getByTestId('booking-shuttle-toggle')
+    Expected: checked
+    Received: unchecked
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toBeChecked" getByTestId('booking-shuttle-toggle') with timeout 6000ms
+      - waiting for getByTestId('booking-shuttle-toggle')
+        16 × locator resolved to <input type="checkbox" data-e2e-prev-outline="" data-testid="booking-shuttle-toggle"/>
+           - unexpected value "unchecked"
+
+
+      932 |     await booking.openShuttle();
+      933 |     await app.check(t('booking-shuttle-toggle'), 'ติ๊กรถไว้แล้ว', async (el) => {
+    > 934 |       await expect.soft(el).toBeChecked();
+          |                             ^
+      935 |     });
+      936 |     await app.check(t('booking-shuttle-hotel'), 'เลือก H04 ไว้แล้ว', async (el) => {
+      937 |       await expect.soft(el).toHaveValue('H04');
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:934:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:933:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:920:3
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator: getByTestId('booking-shuttle-hotel')
+    Expected: "H04"
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toHaveValue" getByTestId('booking-shuttle-hotel') with timeout 6000ms
+      - waiting for getByTestId('booking-shuttle-hotel')
+
+
+      935 |     });
+      936 |     await app.check(t('booking-shuttle-hotel'), 'เลือก H04 ไว้แล้ว', async (el) => {
+    > 937 |       await expect.soft(el).toHaveValue('H04');
+          |                             ^
+      938 |     });
+      939 |     const pay = await booking.pay();
+      940 |     await app.check(t('booking-pay-at-shop'), 'หน้าสรุป S01 ยอด ฿5,100', async () => {
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:937:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:936:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:920:3
+
+    Error: ยอดหน้าสรุป
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 5100
+    Received: 1000
+
+      939 |     const pay = await booking.pay();
+      940 |     await app.check(t('booking-pay-at-shop'), 'หน้าสรุป S01 ยอด ฿5,100', async () => {
+    > 941 |       expect.soft(pay, 'ยอดหน้าสรุป').toBe(5100);
+          |                                       ^
+      942 |     });
+      943 |   });
+      944 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:941:39)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:940:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:920:3
+
+    Error Context: test-results\5.4-chromium\5.4-ride-TC-RIDE-09-เครื่อ-b942b-ี่ผิด-และลิงก์จองพาค่าไปต่อ-chromium\error-context.md
+
+  4) [chromium] › tests\5.4-ride.spec.ts:951:1 › TC-RIDE-10 ตารางหลังร้านแสดงจุดรับและจำนวนรถบนหน้าจอ @P1 @5.4 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-Y4LXK64Q')
+    Expected pattern: /(?<![\d.])14\.9\s*กม/
+    Received string:  "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-Y4LXK64Q') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-Y4LXK64Q')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-Y4LXK64Q">…</tr>
+           - unexpected value "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+
+
+      972 |     const pay = lineAmount(await admin.pay(code).innerText().catch(() => ''));
+      973 |     await app.check(admin.row(code), `${when} 17 มิ.ย. เห็น 14.9 กม. และ 1 คัน`, async (el) => {
+    > 974 |       await expect.soft(el).toContainText(/(?<![\d.])14\.9\s*กม/);
+          |                             ^
+      975 |       await expect.soft(el).toContainText(/(?<!\d)1\s*คัน/);
+      976 |     });
+      977 |     await app.check(admin.pay(code), `${when} 17 มิ.ย. ยอด ฿1,300`, async () => { expect.soft(pay).toBe(1300); });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:974:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkRow17 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:973:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1001:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:998:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-Y4LXK64Q')
+    Expected pattern: /(?<!\d)1\s*คัน/
+    Received string:  "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-Y4LXK64Q') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-Y4LXK64Q')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-Y4LXK64Q">…</tr>
+           - unexpected value "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+
+
+      973 |     await app.check(admin.row(code), `${when} 17 มิ.ย. เห็น 14.9 กม. และ 1 คัน`, async (el) => {
+      974 |       await expect.soft(el).toContainText(/(?<![\d.])14\.9\s*กม/);
+    > 975 |       await expect.soft(el).toContainText(/(?<!\d)1\s*คัน/);
+          |                             ^
+      976 |     });
+      977 |     await app.check(admin.pay(code), `${when} 17 มิ.ย. ยอด ฿1,300`, async () => { expect.soft(pay).toBe(1300); });
+      978 |   };
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:975:29
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkRow17 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:973:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1001:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:998:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-SJTEST16')
+    Expected substring: "โรงแรมกล้วยไม้ พาเลซ"
+    Received string:    "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-SJTEST16') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-SJTEST16')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-SJTEST16">…</tr>
+           - unexpected value "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+
+
+      981 |     const pay = lineAmount(await admin.pay('SJTEST16').innerText().catch(() => ''));
+      982 |     await app.check(admin.row('SJTEST16'), `${when} SJTEST16 เห็นโรงแรม ระยะ 12.0 กม. และ 2 คัน`, async (el) => {
+    > 983 |       await expect.soft(el).toContainText('โรงแรมกล้วยไม้ พาเลซ');
+          |                             ^
+      984 |       await expect.soft(el).toContainText(/(?<![\d.])12\.0\s*กม/);
+      985 |       await expect.soft(el).toContainText(/(?<!\d)2\s*คัน/);
+      986 |     });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:983:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkRow26 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:982:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1007:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1004:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-SJTEST16')
+    Expected pattern: /(?<![\d.])12\.0\s*กม/
+    Received string:  "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-SJTEST16') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-SJTEST16')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-SJTEST16">…</tr>
+           - unexpected value "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+
+
+      982 |     await app.check(admin.row('SJTEST16'), `${when} SJTEST16 เห็นโรงแรม ระยะ 12.0 กม. และ 2 คัน`, async (el) => {
+      983 |       await expect.soft(el).toContainText('โรงแรมกล้วยไม้ พาเลซ');
+    > 984 |       await expect.soft(el).toContainText(/(?<![\d.])12\.0\s*กม/);
+          |                             ^
+      985 |       await expect.soft(el).toContainText(/(?<!\d)2\s*คัน/);
+      986 |     });
+      987 |     await app.check(admin.pay('SJTEST16'), `${when} SJTEST16 ยอด ฿6,000`, async () => { expect.soft(pay).toBe(6000); });
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:984:29
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkRow26 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:982:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1007:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1004:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-SJTEST16')
+    Expected pattern: /(?<!\d)2\s*คัน/
+    Received string:  "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-SJTEST16') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-SJTEST16')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-SJTEST16">…</tr>
+           - unexpected value "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+
+
+      983 |       await expect.soft(el).toContainText('โรงแรมกล้วยไม้ พาเลซ');
+      984 |       await expect.soft(el).toContainText(/(?<![\d.])12\.0\s*กม/);
+    > 985 |       await expect.soft(el).toContainText(/(?<!\d)2\s*คัน/);
+          |                             ^
+      986 |     });
+      987 |     await app.check(admin.pay('SJTEST16'), `${when} SJTEST16 ยอด ฿6,000`, async () => { expect.soft(pay).toBe(6000); });
+      988 |   };
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:985:29
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkRow26 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:982:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1007:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1004:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-SJTEST16')
+    Expected substring: "โรงแรมกล้วยไม้ พาเลซ"
+    Received string:    "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-SJTEST16') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-SJTEST16')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-SJTEST16">…</tr>
+           - unexpected value "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+
+
+      981 |     const pay = lineAmount(await admin.pay('SJTEST16').innerText().catch(() => ''));
+      982 |     await app.check(admin.row('SJTEST16'), `${when} SJTEST16 เห็นโรงแรม ระยะ 12.0 กม. และ 2 คัน`, async (el) => {
+    > 983 |       await expect.soft(el).toContainText('โรงแรมกล้วยไม้ พาเลซ');
+          |                             ^
+      984 |       await expect.soft(el).toContainText(/(?<![\d.])12\.0\s*กม/);
+      985 |       await expect.soft(el).toContainText(/(?<!\d)2\s*คัน/);
+      986 |     });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:983:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkRow26 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:982:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1017:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-SJTEST16')
+    Expected pattern: /(?<![\d.])12\.0\s*กม/
+    Received string:  "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-SJTEST16') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-SJTEST16')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-SJTEST16">…</tr>
+           - unexpected value "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+
+
+      982 |     await app.check(admin.row('SJTEST16'), `${when} SJTEST16 เห็นโรงแรม ระยะ 12.0 กม. และ 2 คัน`, async (el) => {
+      983 |       await expect.soft(el).toContainText('โรงแรมกล้วยไม้ พาเลซ');
+    > 984 |       await expect.soft(el).toContainText(/(?<![\d.])12\.0\s*กม/);
+          |                             ^
+      985 |       await expect.soft(el).toContainText(/(?<!\d)2\s*คัน/);
+      986 |     });
+      987 |     await app.check(admin.pay('SJTEST16'), `${when} SJTEST16 ยอด ฿6,000`, async () => { expect.soft(pay).toBe(6000); });
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:984:29
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkRow26 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:982:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1017:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-SJTEST16')
+    Expected pattern: /(?<!\d)2\s*คัน/
+    Received string:  "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-SJTEST16') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-SJTEST16')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-SJTEST16">…</tr>
+           - unexpected value "12:00–13:00SJTEST16นวดไทย 60 นาที6 คนคุณทดสอบ หกแขก0890000006พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว฿6,000รอรับบริการใช้บริการเสร็จ"
+
+
+      983 |       await expect.soft(el).toContainText('โรงแรมกล้วยไม้ พาเลซ');
+      984 |       await expect.soft(el).toContainText(/(?<![\d.])12\.0\s*กม/);
+    > 985 |       await expect.soft(el).toContainText(/(?<!\d)2\s*คัน/);
+          |                             ^
+      986 |     });
+      987 |     await app.check(admin.pay('SJTEST16'), `${when} SJTEST16 ยอด ฿6,000`, async () => { expect.soft(pay).toBe(6000); });
+      988 |   };
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:985:29
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkRow26 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:982:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1017:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-Y4LXK64Q')
+    Expected pattern: /(?<![\d.])14\.9\s*กม/
+    Received string:  "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-Y4LXK64Q') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-Y4LXK64Q')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-Y4LXK64Q">…</tr>
+           - unexpected value "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+
+
+      972 |     const pay = lineAmount(await admin.pay(code).innerText().catch(() => ''));
+      973 |     await app.check(admin.row(code), `${when} 17 มิ.ย. เห็น 14.9 กม. และ 1 คัน`, async (el) => {
+    > 974 |       await expect.soft(el).toContainText(/(?<![\d.])14\.9\s*กม/);
+          |                             ^
+      975 |       await expect.soft(el).toContainText(/(?<!\d)1\s*คัน/);
+      976 |     });
+      977 |     await app.check(admin.pay(code), `${when} 17 มิ.ย. ยอด ฿1,300`, async () => { expect.soft(pay).toBe(1300); });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:974:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkRow17 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:973:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1023:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('admin-booking-Y4LXK64Q')
+    Expected pattern: /(?<!\d)1\s*คัน/
+    Received string:  "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('admin-booking-Y4LXK64Q') with timeout 6000ms
+      - waiting for getByTestId('admin-booking-Y4LXK64Q')
+        16 × locator resolved to <tr role="row" class="nc4JNq_row" data-status="CONFIRMED" data-e2e-prev-outline="" data-testid="admin-booking-Y4LXK64Q">…</tr>
+           - unexpected value "12:00–13:00Y4LXK64Qนวดไทย 60 นาที1 คนคุณทดสอบแขก0895400001พี่ศรี฿1,300รอรับบริการใช้บริการเสร็จ"
+
+
+      973 |     await app.check(admin.row(code), `${when} 17 มิ.ย. เห็น 14.9 กม. และ 1 คัน`, async (el) => {
+      974 |       await expect.soft(el).toContainText(/(?<![\d.])14\.9\s*กม/);
+    > 975 |       await expect.soft(el).toContainText(/(?<!\d)1\s*คัน/);
+          |                             ^
+      976 |     });
+      977 |     await app.check(admin.pay(code), `${when} 17 มิ.ย. ยอด ฿1,300`, async () => { expect.soft(pay).toBe(1300); });
+      978 |   };
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:975:29
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkRow17 (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:973:5)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1023:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "โรงแรมกล้วยไม้ พาเลซ"
+    Received string:    "12:00–13:00 SJTEST16 นวดไทย 60 นาที 6 คน คุณทดสอบ หก แขก 0890000006 พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว ฿6,000 รอรับบริการ ใช้บริการเสร็จ"
+
+      1025 |     // แสดงผลที่อ่านจากหน้าจอหลังร้านซ้ำบนหน้าหลัก เพื่อเป็นภาพท้าย GIF
+      1026 |     await app.checkValue(page, 'แถว SJTEST16 บนจอหลังร้านมีจุดรับ ระยะ และจำนวนรถ', row16.replace(/\s+/g, ' '), (v) => {
+    > 1027 |       expect.soft(v).toContain('โรงแรมกล้วยไม้ พาเลซ');
+           |                      ^
+      1028 |       expect.soft(v).toMatch(/(?<![\d.])12\.0\s*กม/);
+      1029 |       expect.soft(v).toMatch(/(?<!\d)2\s*คัน/);
+      1030 |     });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1027:22)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1026:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(received).toMatch(expected)
+
+    Expected pattern: /(?<![\d.])12\.0\s*กม/
+    Received string:  "12:00–13:00 SJTEST16 นวดไทย 60 นาที 6 คน คุณทดสอบ หก แขก 0890000006 พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว ฿6,000 รอรับบริการ ใช้บริการเสร็จ"
+
+      1026 |     await app.checkValue(page, 'แถว SJTEST16 บนจอหลังร้านมีจุดรับ ระยะ และจำนวนรถ', row16.replace(/\s+/g, ' '), (v) => {
+      1027 |       expect.soft(v).toContain('โรงแรมกล้วยไม้ พาเลซ');
+    > 1028 |       expect.soft(v).toMatch(/(?<![\d.])12\.0\s*กม/);
+           |                      ^
+      1029 |       expect.soft(v).toMatch(/(?<!\d)2\s*คัน/);
+      1030 |     });
+      1031 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1028:22)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1026:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error: expect(received).toMatch(expected)
+
+    Expected pattern: /(?<!\d)2\s*คัน/
+    Received string:  "12:00–13:00 SJTEST16 นวดไทย 60 นาที 6 คน คุณทดสอบ หก แขก 0890000006 พี่ศรี, พี่มาลี, พี่ภูมิ, น้องฟ้า, พี่ทิว, น้องแก้ว ฿6,000 รอรับบริการ ใช้บริการเสร็จ"
+
+      1027 |       expect.soft(v).toContain('โรงแรมกล้วยไม้ พาเลซ');
+      1028 |       expect.soft(v).toMatch(/(?<![\d.])12\.0\s*กม/);
+    > 1029 |       expect.soft(v).toMatch(/(?<!\d)2\s*คัน/);
+           |                      ^
+      1030 |     });
+      1031 |   });
+      1032 | });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1029:22)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1026:5
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:1010:3
+
+    Error Context: test-results\5.4-chromium\5.4-ride-TC-RIDE-10-ตารางห-01bb2-สดงจุดรับและจำนวนรถบนหน้าจอ-chromium\error-context.md
+
+  4 failed
+    [chromium] › tests\5.4-ride.spec.ts:666:1 › TC-RIDE-07 เปลี่ยนค่าระหว่างกรอกแล้วไม่มียอดเก่าค้าง @P1 @5.4 
+    [chromium] › tests\5.4-ride.spec.ts:763:1 › TC-RIDE-08 API ที่ได้รับ hotelId และ distanceKm ขัดกัน ต้องไม่คิดเงินแล้วเงียบ @P1 @5.4 
+    [chromium] › tests\5.4-ride.spec.ts:848:1 › TC-RIDE-09 เครื่องคำนวณ /shuttle ตรงกับหน้าจอง บอกช่องที่ผิด และลิงก์จองพาค่าไปต่อ @P3 @5.4 
+    [chromium] › tests\5.4-ride.spec.ts:951:1 › TC-RIDE-10 ตารางหลังร้านแสดงจุดรับและจำนวนรถบนหน้าจอ @P1 @5.4 
+  6 passed (9.2m)
+npm notice run npx
+npm notice run playwright test tests/5.4- --grep TC-RIDE-06  --project=chromium
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › tests\5.4-ride.spec.ts:568:1 › TC-RIDE-06 ระยะที่พิมพ์รับเฉพาะค่าไม่ติดลบ ทศนิยมไม่เกิน 1 ตำแหน่ง ไม่ปัดเอง @P1 @5.4 (1.2m)
+
+  1 passed (1.2m)
+npm notice run npx
+npm notice run playwright test tests/5.4- --grep TC-RIDE-06  --project=chromium
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\5.4-ride.spec.ts:568:1 › TC-RIDE-06 ระยะที่พิมพ์รับเฉพาะค่าไม่ติดลบ ทศนิยมไม่เกิน 1 ตำแหน่ง ไม่ปัดเอง @P1 @5.4 (1.2m)
+
+
+  1) [chromium] › tests\5.4-ride.spec.ts:568:1 › TC-RIDE-06 ระยะที่พิมพ์รับเฉพาะค่าไม่ติดลบ ทศนิยมไม่เกิน 1 ตำแหน่ง ไม่ปัดเอง @P1 @5.4 › 2-3. กลุ่ม ข ใส่ค่าทีละตัว บันทึกผลแยกทีละค่า 
+
+    Error: กลุ่ม ข ค่า ".5" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /รูปแบบ|ตัวเลข/
+    Received string:  "ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง"
+
+      652 |           expect.soft(v.pay, `${label} รับแล้วยอดต้องตามค่านั้น`).toBe(pay);
+      653 |         } else {
+    > 654 |           expect.soft(v.errors, `${label} ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด`).toMatch(/รูปแบบ|ตัวเลข/);
+          |                                                                             ^
+      655 |         }
+      656 |       });
+      657 |     }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:654:77)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:649:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:635:3
+
+    Error: กลุ่ม ข ค่า "5." ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /รูปแบบ|ตัวเลข/
+    Received string:  "ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง"
+
+      652 |           expect.soft(v.pay, `${label} รับแล้วยอดต้องตามค่านั้น`).toBe(pay);
+      653 |         } else {
+    > 654 |           expect.soft(v.errors, `${label} ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด`).toMatch(/รูปแบบ|ตัวเลข/);
+          |                                                                             ^
+      655 |         }
+      656 |       });
+      657 |     }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:654:77)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:649:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:635:3
+
+    Error: กลุ่ม ข ค่า "-0" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /รูปแบบ|ตัวเลข/
+    Received string:  "ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง"
+
+      652 |           expect.soft(v.pay, `${label} รับแล้วยอดต้องตามค่านั้น`).toBe(pay);
+      653 |         } else {
+    > 654 |           expect.soft(v.errors, `${label} ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด`).toMatch(/รูปแบบ|ตัวเลข/);
+          |                                                                             ^
+      655 |         }
+      656 |       });
+      657 |     }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:654:77)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:649:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:635:3
+
+    Error: กลุ่ม ข ค่า "+5" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /รูปแบบ|ตัวเลข/
+    Received string:  "ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง"
+
+      652 |           expect.soft(v.pay, `${label} รับแล้วยอดต้องตามค่านั้น`).toBe(pay);
+      653 |         } else {
+    > 654 |           expect.soft(v.errors, `${label} ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด`).toMatch(/รูปแบบ|ตัวเลข/);
+          |                                                                             ^
+      655 |         }
+      656 |       });
+      657 |     }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:654:77)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:649:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:635:3
+
+    Error: กลุ่ม ข ค่า "๕" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /รูปแบบ|ตัวเลข/
+    Received string:  "ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง"
+
+      652 |           expect.soft(v.pay, `${label} รับแล้วยอดต้องตามค่านั้น`).toBe(pay);
+      653 |         } else {
+    > 654 |           expect.soft(v.errors, `${label} ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด`).toMatch(/รูปแบบ|ตัวเลข/);
+          |                                                                             ^
+      655 |         }
+      656 |       });
+      657 |     }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:654:77)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:649:7
+        at C:\t\spa04\sabai\e2e\tests\5.4-ride.spec.ts:635:3
+
+    Error Context: test-results\5.4-chromium\5.4-ride-TC-RIDE-06-ระยะที-457c3-ไม่เกิน-1-ตำแหน่ง-ไม่ปัดเอง-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\5.4-ride.spec.ts:568:1 › TC-RIDE-06 ระยะที่พิมพ์รับเฉพาะค่าไม่ติดลบ ทศนิยมไม่เกิน 1 ตำแหน่ง ไม่ปัดเอง @P1 @5.4 

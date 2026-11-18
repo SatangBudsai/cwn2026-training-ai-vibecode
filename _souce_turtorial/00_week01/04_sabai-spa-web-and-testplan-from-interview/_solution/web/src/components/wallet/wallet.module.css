@@ -1,0 +1,184 @@
+/* Hero */
+.hero {
+  position: relative;
+  overflow: clip;
+  padding-block: clamp(48px, 8vw, 96px);
+  background: linear-gradient(160deg, var(--c-forest-950), var(--c-forest-800));
+  color: var(--c-cream-100);
+}
+.heroInner { position: relative; z-index: 1; display: grid; gap: 12px; justify-items: start; }
+.heroInner :global(.eyebrow) { color: var(--c-gold-300); }
+.heroInner h1 { color: var(--c-cream-50); }
+.heroIntro { max-width: 560px; color: var(--c-forest-200); font-size: 1.05rem; }
+.heroLink {
+  color: var(--c-gold-300);
+  text-underline-offset: 4px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+.heroLink:hover { color: var(--c-cream-50); }
+
+.status { padding-block: 48px; color: var(--text-soft); }
+
+/* คอร์ส */
+.courseLayout { display: grid; gap: 24px; align-items: start; }
+.courseLayout > * { min-width: 0; }
+.courseList { display: grid; gap: 20px; min-width: 0; }
+@media (min-width: 980px) {
+  .courseLayout { grid-template-columns: minmax(0, 1fr) 340px; gap: 32px; }
+}
+
+.course { display: grid; }
+.courseImage { min-width: 0; }
+.courseBody { display: grid; gap: 14px; padding: clamp(20px, 3vw, 28px); min-width: 0; }
+.courseRemaining {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.35;
+  color: var(--c-forest-800);
+}
+@media (min-width: 720px) {
+  .course { grid-template-columns: 260px minmax(0, 1fr); }
+  .courseImage { height: 100%; aspect-ratio: auto !important; min-height: 240px; }
+}
+
+.dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.dotsMuted { opacity: 0.45; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; }
+.dotUsed { background: var(--c-forest-700); }
+.dotReserved { background: var(--c-gold-500); }
+.dotLeft { background: transparent; border: 1.5px solid var(--c-gold-600); }
+
+.courseFacts { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 0; }
+.courseFacts dt { font-size: 0.86rem; color: var(--text-soft); }
+.courseFacts dd { margin: 0; font-weight: 500; }
+
+.courseNotice {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--c-cream-200);
+  color: var(--c-teak-900);
+  font-size: 0.95rem;
+}
+.courseBook { justify-self: start; max-width: 100%; }
+
+/* ซื้อคอร์ส */
+.buy {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding: clamp(22px, 3vw, 30px);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-gold-600);
+  background: linear-gradient(170deg, var(--c-forest-900), var(--c-forest-800));
+  color: var(--c-cream-100);
+  box-shadow: var(--shadow-card);
+}
+.buy :global(.eyebrow) { color: var(--c-gold-300); }
+.buy h3 { color: var(--c-cream-50); }
+.buyPrice { font-family: var(--font-display); font-size: 2rem; line-height: 1.2; color: var(--c-gold-300); }
+.buyTerms { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 0.95rem; }
+.buyTerms li { display: flex; gap: 10px; align-items: baseline; }
+.buyTerms li::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg) translateY(-2px);
+  background: var(--c-gold-500);
+}
+.buyButton { width: 100%; white-space: normal; }
+.buySuccess {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--c-success-bg);
+  color: var(--c-success);
+  font-size: 0.95rem;
+}
+.buyConfirm {
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(226, 205, 155, 0.35);
+  font-size: 0.95rem;
+}
+.buyConfirmTitle { font-weight: 500; color: var(--c-cream-50); font-size: 1.02rem; }
+.buyActions { display: flex; flex-wrap: wrap; gap: 10px; }
+.buyActions > * { flex: 1 1 auto; white-space: normal; }
+
+/* ผลการดูแล */
+.resultsGrid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  align-items: start;
+}
+.resultsGrid > * { min-width: 0; }
+
+.chartCard { padding: clamp(18px, 3vw, 28px); display: grid; gap: 16px; min-width: 0; }
+.chartHead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 8px 20px; }
+.chartRange { color: var(--text-soft); font-size: 0.95rem; }
+.chartReduced {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  line-height: 1.35;
+  color: var(--c-forest-800);
+}
+.chartBox { width: 100%; min-width: 0; overflow: hidden; }
+.chartSvg { display: block; max-width: 100%; }
+
+.axisText { font-size: 12px; fill: var(--text-soft); }
+.axisTitle { font-size: 12px; fill: var(--text-soft); }
+.gridLine { stroke: var(--line-soft); stroke-width: 1; }
+.axisLine { stroke: var(--c-ink-soft); stroke-width: 1; }
+.chartArea { fill: var(--c-gold-500); opacity: 0.1; }
+.chartLine { fill: none; stroke: var(--c-gold-600); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.chartHit { fill: transparent; }
+.chartDot { fill: var(--c-forest-800); stroke: var(--bg-card); stroke-width: 2; }
+.chartValue {
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--c-ink);
+  paint-order: stroke;
+  stroke: var(--bg-card);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.photosCard { padding: clamp(18px, 3vw, 28px); display: grid; gap: 16px; min-width: 0; }
+.photoGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.photo { margin: 0; min-width: 0; display: grid; gap: 8px; }
+.photoFrame { position: relative; border-radius: var(--radius-sm); overflow: hidden; }
+.photoBadge { position: absolute; left: 8px; bottom: 8px; max-width: calc(100% - 16px); }
+.photo figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 8px; font-size: 0.9rem; }
+.photo figcaption strong { font-weight: 500; }
+.photo figcaption span { color: var(--text-soft); }
+.photoNote { color: var(--text-soft); font-size: 0.9rem; }
+
+/* Gift Card */
+.giftGrid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.giftBody { display: grid; gap: 12px; padding: 18px 20px 22px; }
+.giftCode { font-size: 0.9rem; letter-spacing: 0.06em; color: var(--text-soft); overflow-wrap: anywhere; }
+.giftFacts { display: grid; gap: 8px; margin: 0; }
+.giftFacts > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 12px; }
+.giftFacts dt { font-size: 0.9rem; color: var(--text-soft); }
+.giftFacts dd { margin: 0; font-weight: 500; }
+.giftBalance { font-family: var(--font-display); font-size: 1.35rem; color: var(--c-forest-800); }
+.giftNotice {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--c-cream-200);
+  color: var(--c-teak-900);
+  font-size: 0.9rem;
+}
+.giftUnusable img { filter: grayscale(0.6); }
+
+/* สถานะว่าง */
+.empty { display: grid; }
+.emptyImage { min-width: 0; }
+.emptyBody { display: grid; gap: 10px; align-content: center; justify-items: start; padding: clamp(20px, 3vw, 32px); }
+.emptyBody p { color: var(--text-soft); }
+@media (min-width: 720px) {
+  .empty { grid-template-columns: 320px minmax(0, 1fr); }
+}

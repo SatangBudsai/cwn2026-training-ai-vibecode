@@ -1,0 +1,662 @@
+{
+  "baseURL": "http://localhost:5084",
+  "runAt": "2026-10-31T18:52:22.363Z",
+  "results": [
+    {
+      "id": "B01",
+      "title": "ประเภทตั๋ว",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5080
+    },
+    {
+      "id": "B02",
+      "title": "ผู้โดยสาร",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5459
+    },
+    {
+      "id": "B03",
+      "title": "ชั้นโดยสาร",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5159
+    },
+    {
+      "id": "B04",
+      "title": "รายการแนะนำเมืองและสนามบิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4316
+    },
+    {
+      "id": "B05",
+      "title": "ปุ่มเลือกสนามบินหลายแห่ง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4973
+    },
+    {
+      "id": "B06",
+      "title": "สลับต้นทางปลายทางและคงวันที่",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5152
+    },
+    {
+      "id": "B07",
+      "title": "ปฏิทินสองเดือนพร้อมราคา",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4799
+    },
+    {
+      "id": "B08",
+      "title": "ปุ่มเลื่อนวันที่",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5137
+    },
+    {
+      "id": "B09",
+      "title": "ค้นหาได้ 22 รายการ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4983
+    },
+    {
+      "id": "B10",
+      "title": "สลับแท็บดีที่สุดและถูกที่สุด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4932
+    },
+    {
+      "id": "B11",
+      "title": "คำอธิบายการจัดอันดับ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5064
+    },
+    {
+      "id": "B12",
+      "title": "เรียงราคา",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5183
+    },
+    {
+      "id": "B13",
+      "title": "ข้อมูลย่อเที่ยวบิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4913
+    },
+    {
+      "id": "B14",
+      "title": "ขยายรายละเอียดหลายเที่ยวบิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5317
+    },
+    {
+      "id": "B15",
+      "title": "โหลดครบ 300 เที่ยวบิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5263
+    },
+    {
+      "id": "B16",
+      "title": "ตัวกรองบินตรง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4848
+    },
+    {
+      "id": "B17",
+      "title": "ตัวกรองการบินไทยเท่านั้น",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5179
+    },
+    {
+      "id": "B18",
+      "title": "ตัวกรองสัมภาระ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5183
+    },
+    {
+      "id": "B19",
+      "title": "ตัวกรองราคาสูงสุดหนึ่งหมื่น",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4720
+    },
+    {
+      "id": "B20",
+      "title": "ตัวกรองเวลา 23-24",
+      "status": "FAIL",
+      "reason": "คาด 35 รายการ แต่พบ มีผลลัพธ์ 33 รายการ\n+ actual - expected\n\n+ 'มีผลลัพธ์ 33 รายการ'\n- 'มีผลลัพธ์ 35 รายการ'\n              ^\n",
+      "artifactError": null,
+      "durationMs": 4927
+    },
+    {
+      "id": "B21",
+      "title": "ตัวกรองการปล่อยก๊าซต่ำ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4935
+    },
+    {
+      "id": "B22",
+      "title": "ตัวกรองสนามบิน HKG",
+      "status": "FAIL",
+      "reason": "คาด 76 รายการ แต่พบ มีผลลัพธ์ 77 รายการ\n+ actual - expected\n\n+ 'มีผลลัพธ์ 77 รายการ'\n- 'มีผลลัพธ์ 76 รายการ'\n              ^\n",
+      "artifactError": null,
+      "durationMs": 4809
+    },
+    {
+      "id": "B23",
+      "title": "ตัวกรองระยะเวลาสั้นสุดไม่มีผลลัพธ์",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4984
+    },
+    {
+      "id": "B24",
+      "title": "แผงตัวกรองทั้งหมด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5050
+    },
+    {
+      "id": "B25",
+      "title": "ล้างตัวกรองคืน 300 รายการ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4984
+    },
+    {
+      "id": "B26",
+      "title": "ประวัติและช่วงราคาปกติ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4849
+    },
+    {
+      "id": "B27",
+      "title": "การ์ดแนะนำวันที่ถูกกว่า",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4874
+    },
+    {
+      "id": "B28",
+      "title": "ติดตามราคาขอล็อกอิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4820
+    },
+    {
+      "id": "B29",
+      "title": "ตารางวันที่",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4858
+    },
+    {
+      "id": "B30",
+      "title": "กราฟราคา",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5074
+    },
+    {
+      "id": "B31",
+      "title": "เลือกเที่ยวบินเข้าหน้าจอง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4897
+    },
+    {
+      "id": "B32",
+      "title": "สรุปการเดินทางและผู้ขาย",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4870
+    },
+    {
+      "id": "B33",
+      "title": "ย้อนกลับหน้าผลลัพธ์",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5086
+    },
+    {
+      "id": "B34",
+      "title": "ดีลและ FAQ หน้าแรก",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4393
+    },
+    {
+      "id": "B35",
+      "title": "ภาษา สถานที่ตั้ง สกุลเงิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4222
+    },
+    {
+      "id": "C01",
+      "title": "ผู้ใหญ่อย่างน้อยหนึ่งคน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4360
+    },
+    {
+      "id": "C02",
+      "title": "ทารกบนตักไม่เกินผู้ใหญ่",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4290
+    },
+    {
+      "id": "C03",
+      "title": "รวมทารกแล้วไม่เกินเก้าคน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4722
+    },
+    {
+      "id": "C04",
+      "title": "แก้จำนวนแล้วกลับมายืนยันได้",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4521
+    },
+    {
+      "id": "C05",
+      "title": "ปลายทางว่างสลับไม่ได้",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4258
+    },
+    {
+      "id": "C06",
+      "title": "เลือกวันที่อดีตไม่ได้",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4735
+    },
+    {
+      "id": "C07",
+      "title": "ปฏิทินมีราคาประมาณ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4820
+    },
+    {
+      "id": "C08",
+      "title": "เมืองค้นทั้งสองสนามบิน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4840
+    },
+    {
+      "id": "C09",
+      "title": "แจ้งราคารวมภาษีและค่าธรรมเนียม",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4515
+    },
+    {
+      "id": "C10",
+      "title": "เตือนตรวจราคากับผู้ขาย",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4592
+    },
+    {
+      "id": "C11",
+      "title": "คงการเรียงเมื่อสลับแท็บ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4843
+    },
+    {
+      "id": "C12",
+      "title": "เครื่องมือราคาปรากฏเฉพาะดีที่สุดและยอดนิยม",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4513
+    },
+    {
+      "id": "C13",
+      "title": "ตัวกรองทำงานร่วมแบบ AND",
+      "status": "FAIL",
+      "reason": "คาด 35 รายการ แต่พบ มีผลลัพธ์ 33 รายการ\n+ actual - expected\n\n+ 'มีผลลัพธ์ 33 รายการ'\n- 'มีผลลัพธ์ 35 รายการ'\n              ^\n",
+      "artifactError": null,
+      "durationMs": 4808
+    },
+    {
+      "id": "C14",
+      "title": "ราคาเริ่มต้นเปลี่ยนตามตัวกรอง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4700
+    },
+    {
+      "id": "C15",
+      "title": "สายการบินเท่านั้นไม่รวมบินร่วม",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4771
+    },
+    {
+      "id": "C16",
+      "title": "สนามบินต่อเครื่องยังคงเที่ยวบินตรง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4714
+    },
+    {
+      "id": "C17",
+      "title": "กระเป๋าถือได้สูงสุดหนึ่งใบ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4927
+    },
+    {
+      "id": "C18",
+      "title": "slider เวลาไม่ซ้อนกัน",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4566
+    },
+    {
+      "id": "C19",
+      "title": "ราคาต่ำสุดหนึ่งหมื่นขั้นหนึ่งหมื่น",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4707
+    },
+    {
+      "id": "C20",
+      "title": "ชิปแสดงค่าจำนวนและล้างได้",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4774
+    },
+    {
+      "id": "C21",
+      "title": "กล่องข้อมูลบังการกดจนปิด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 5305
+    },
+    {
+      "id": "C22",
+      "title": "ราคาที่เลือกเท่ากับต่ำสุดหน้าจอง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4780
+    },
+    {
+      "id": "C23",
+      "title": "ราคาผู้ขายต่างกันและมีค่าธรรมเนียม",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4826
+    },
+    {
+      "id": "C24",
+      "title": "ติดตามราคาต้องล็อกอินและสวิตช์ไม่เปิด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4758
+    },
+    {
+      "id": "C25",
+      "title": "ยกเลิกตารางวันที่คงวันเดิม",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4926
+    },
+    {
+      "id": "C26",
+      "title": "ย้อนกลับรีเซ็ตรายการที่โหลด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4884
+    },
+    {
+      "id": "C27",
+      "title": "เปลี่ยนประเภทตั๋วคงวันที่",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4537
+    },
+    {
+      "id": "C28",
+      "title": "[R] ต้นทางปลายทางเหมือนกันไม่ได้",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4733
+    },
+    {
+      "id": "C29",
+      "title": "[R] ข้อมูลไม่ครบค้นหาไม่ได้",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4293
+    },
+    {
+      "id": "C30",
+      "title": "[R] เวลาสนามบินเป็นเวลาท้องถิ่น",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4750
+    },
+    {
+      "id": "C31",
+      "title": "บวกหนึ่งถึงวันถัดไป",
+      "status": "FAIL",
+      "reason": "locator.innerText: Error: strict mode violation: getByRole('link', { name: /^เที่ยวบิน .*ราคา/ }).filter({ hasText: '23:45' }) resolved to 2 elements:\n    1) <div role=\"link\" tabindex=\"0\" class=\"flight-row\" aria-label=\"เที่ยวบิน ZIPAIR Tokyo ราคา ฿11,580\">…</div> aka getByRole('link', { name: 'เที่ยวบิน ZIPAIR Tokyo ราคา ฿' })\n    2) <div role=\"link\" tabindex=\"0\" class=\"flight-row\" aria-label=\"เที่ยวบิน การบินไทย ราคา ฿15,320\">…</div> aka getByText('23:45 – 07:40+1การบินไทย5')\n\nCall log:\n  - waiting for getByRole('link', { name: /^เที่ยวบิน .*ราคา/ }).filter({ hasText: '23:45' })\n",
+      "artifactError": null,
+      "durationMs": 4589
+    },
+    {
+      "id": "F01",
+      "title": "โหลดครบ 300 เที่ยวบินจริง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4783
+    },
+    {
+      "id": "F02",
+      "title": "โหลดทั้งหมดครั้งเดียวไม่มีหน้าถัดไป",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4892
+    },
+    {
+      "id": "F03",
+      "title": "ผลแรก 22 รายการคงเดิมหลังโหลด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4763
+    },
+    {
+      "id": "F04",
+      "title": "บินตรงครบสิบแปดใบ",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4752
+    },
+    {
+      "id": "F05",
+      "title": "การกระจายจุดแวะครบ 300 ใบ",
+      "status": "FAIL",
+      "reason": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    18,\n+   202,\n-   201,\n    32,\n    47,\n    1\n  ]\n",
+      "artifactError": null,
+      "durationMs": 4719
+    },
+    {
+      "id": "F06",
+      "title": "ช่วงราคาข้อมูลทั้งชุด",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4842
+    },
+    {
+      "id": "F07",
+      "title": "ช่วงราคาปกติเปลี่ยนตามคำค้น",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4852
+    },
+    {
+      "id": "F08",
+      "title": "สูตรราคาอ้างอิงภายใน",
+      "status": "FAIL",
+      "reason": "ยืนยันไม่ได้ผ่าน UI: ดัชนี [1]/[2]/[3] และสูตรเป็นข้อมูลภายใน ไม่อนุมานว่าผ่าน",
+      "artifactError": null,
+      "durationMs": 4500
+    },
+    {
+      "id": "F09",
+      "title": "ผู้ขายสายการบินและ Gotogate",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4785
+    },
+    {
+      "id": "F10",
+      "title": "แสดงการเปลี่ยนสนามบินต่อเครื่อง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4901
+    },
+    {
+      "id": "F11",
+      "title": "สายการบินผู้ทำการบินจริง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4757
+    },
+    {
+      "id": "F12",
+      "title": "รายละเอียด VZ832 เครื่องบิน ที่วางขา CO2",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4781
+    },
+    {
+      "id": "F13",
+      "title": "ตารางบินซ้ำราคาแตกต่าง",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4883
+    },
+    {
+      "id": "F14",
+      "title": "ราคาเปลี่ยนได้ตามเวลา",
+      "status": "FAIL",
+      "reason": "ยืนยันไม่ได้ด้วยการรัน UI รอบเดียว: ต้องมี snapshot สองเวลาห่างกันราว 40 นาที ไม่บังคับราคาสดให้ตรงอดีต",
+      "artifactError": null,
+      "durationMs": 4543
+    },
+    {
+      "id": "F15",
+      "title": "รายการตัวกรองจากชุดเต็ม",
+      "status": "PASS",
+      "reason": "พฤติกรรมตรงตามเกณฑ์ที่ระบุ",
+      "artifactError": null,
+      "durationMs": 4797
+    },
+    {
+      "id": "F16",
+      "title": "telemetry ที่ผู้ใช้ไม่เห็น",
+      "status": "FAIL",
+      "reason": "ยืนยันไม่ได้ผ่าน UI: /log และ browserinfo เป็นคำขอเบื้องหลัง อยู่นอกข้อกำหนดตรวจจากสิ่งที่ผู้ใช้เห็น",
+      "artifactError": null,
+      "durationMs": 4480
+    }
+  ]
+}

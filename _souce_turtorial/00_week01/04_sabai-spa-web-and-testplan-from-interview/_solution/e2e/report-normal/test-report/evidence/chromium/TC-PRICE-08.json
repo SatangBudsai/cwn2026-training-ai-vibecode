@@ -1,0 +1,91 @@
+{
+  "id": "TC-PRICE-08",
+  "checks": [
+    {
+      "n": 1,
+      "label": "นัด 20 ม.ค. 2026 เลือกเดือนเกิดได้",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-08/001.jpg",
+      "actor": "main",
+      "t": 5681
+    },
+    {
+      "n": 2,
+      "label": "นัด 20 ม.ค. 2026 ฿1,000 − 20% (฿200) = ฿800",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-08/002.jpg",
+      "actor": "main",
+      "t": 7396
+    },
+    {
+      "n": 3,
+      "label": "นัด 20 ม.ค. 2026 ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"TJXXGAXV\"}",
+      "shot": "shots/chromium/TC-PRICE-08/003.jpg",
+      "actor": "main",
+      "t": 8758
+    },
+    {
+      "n": 4,
+      "label": "นัด 20 ม.ค. 2026 ฿800 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿800",
+      "shot": "shots/chromium/TC-PRICE-08/004.jpg",
+      "actor": "main",
+      "t": 10257
+    },
+    {
+      "n": 5,
+      "label": "นัด 25 ม.ค. 2026 ใช้ซ้ำไม่ได้ ฿1,000 − 0% = ฿1,000",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-08/005.jpg",
+      "actor": "main",
+      "t": 15890
+    },
+    {
+      "n": 6,
+      "label": "นัด 5 ม.ค. 2027 เลือกได้",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-08/006.jpg",
+      "actor": "main",
+      "t": 21403
+    },
+    {
+      "n": 7,
+      "label": "นัด 5 ม.ค. 2027 ฿1,000 − 20% (฿200) = ฿800",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-08/007.jpg",
+      "actor": "main",
+      "t": 23104
+    },
+    {
+      "n": 8,
+      "label": "นัด 5 ม.ค. 2027 ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"3YCKEWJ5\"}",
+      "shot": "shots/chromium/TC-PRICE-08/008.jpg",
+      "actor": "main",
+      "t": 24438
+    },
+    {
+      "n": 9,
+      "label": "นัด 5 ม.ค. 2027 ฿800 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿800",
+      "shot": "shots/chromium/TC-PRICE-08/009.jpg",
+      "actor": "main",
+      "t": 25939
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-PRICE-08/main.webm"
+    }
+  }
+}

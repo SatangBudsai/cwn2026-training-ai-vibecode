@@ -1,0 +1,8 @@
+## t1 r2 (train) score 1.00 · คำสั่งล้ม 1 · runs/v1/t1-r2/transcript.jsonl
+## t2 r1 (train) score 0.71 · คำสั่งล้ม 1 · runs/v1/t2-r1/transcript.jsonl
+  ✗ fixed_A2: TC-CART-03 ยังล้ม: expected "ได้ส่งฟรีแล้ว" received "ซื้อเพิ่มอีก -฿1,681 เพื่อส่งฟรี"
+  ✗ caught_A2: ไม่มีเทสต์ที่ชื่อมี TC-CART-03
+  ✗ reported_A2: ไม่มีแถวที่คอลัมน์แรกเป็น TC-CART-03
+  ✗ evidence: ไม่มี evidence/*<TC>*.png (>5KB) ของ TC-CART-03
+## t4 r1 (train) score 1.00 · คำสั่งล้ม 1 · runs/v1/t4-r1/transcript.jsonl
+## t4 r2 (train) score 1.00 · คำสั่งล้ม 1 · runs/v1/t4-r2/transcript.jsonl

@@ -1,0 +1,145 @@
+{
+ "goal": "เว็บขายอาหารแมว ใช้ Next.js กับ Docker มีแชทบอทช่วยแนะนำอาหาร",
+ "name": "hw01-catfood-next",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์ Next.js",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "package.json",
+   "done": "npm run build ผ่าน มีโฟลเดอร์ app/ และหน้าแรกเปล่า"
+  },
+  {
+   "id": "B02",
+   "title": "เลือกวิธีทำแชทบอท",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 3,
+   "detail": "เทียบ rule-based กับเรียก LLM API ว่าแบบไหนเหมาะกับการแนะนำอาหารจากอายุ น้ำหนัก และโรคประจำตัวของแมว",
+   "output": "docs/chatbot-decision.md",
+   "done": "ระบุวิธีเดียว พร้อมเหตุผล 2 ข้อ และรูปแบบ request/response ของ /api/chat"
+  },
+  {
+   "id": "B03",
+   "title": "ข้อมูลสินค้า 12 รายการ",
+   "size": "S",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "data/products.json",
+   "done": "JSON 12 รายการ มี id ชื่อ ราคา ช่วงอายุ สูตร และชื่อไฟล์รูป"
+  },
+  {
+   "id": "B04",
+   "title": "ชื่อร้านและคำทักทายของบอท",
+   "size": "S",
+   "depends_on": [],
+   "skill": "best_of",
+   "difficulty": 1,
+   "n": 2,
+   "output": "data/brand.json",
+   "done": "JSON มีชื่อร้าน สโลแกนไม่เกิน 8 คำ และคำทักทายของบอท 1 ประโยค"
+  },
+  {
+   "id": "B05",
+   "title": "ภาพสินค้า",
+   "size": "S",
+   "depends_on": [
+    "B03"
+   ],
+   "skill": "image",
+   "difficulty": 1,
+   "detail": "ภาพเดียวแบ่ง 4x3 ช่อง เรียงตามลำดับ id ใน data/products.json",
+   "output": "public/products.png",
+   "done": "PNG 12 ช่อง แต่ละช่องตรงกับชื่อสินค้าใน products.json"
+  },
+  {
+   "id": "B06",
+   "title": "หน้ารายการสินค้า",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B03"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "app/page.tsx",
+   "done": "แสดงการ์ดสินค้าครบ 12 ใบจาก products.json พร้อมปุ่มใส่ตะกร้า"
+  },
+  {
+   "id": "B07",
+   "title": "ตะกร้าและสรุปยอด",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "app/cart/page.tsx",
+   "done": "เพิ่ม ลด ลบสินค้าได้ ยอดรวมถูก และรีเฟรชแล้วตะกร้ายังอยู่"
+  },
+  {
+   "id": "B08",
+   "title": "API แชทบอทแนะนำอาหาร",
+   "size": "L",
+   "depends_on": [
+    "B01",
+    "B02",
+    "B03"
+   ],
+   "skill": "review",
+   "difficulty": 4,
+   "output": "app/api/chat/route.ts",
+   "done": "POST /api/chat ตอบสินค้าที่แนะนำจาก products.json เท่านั้น ตามรูปแบบใน chatbot-decision.md"
+  },
+  {
+   "id": "B09",
+   "title": "หน้าต่างแชท",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B02",
+    "B04"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "app/components/ChatWidget.tsx",
+   "done": "พิมพ์ถามแล้วเรียก /api/chat ตามรูปแบบใน chatbot-decision.md และแสดงคำทักทายจาก brand.json"
+  },
+  {
+   "id": "B10",
+   "title": "Dockerfile และ docker-compose",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "Dockerfile",
+   "done": "docker compose up แล้วเปิด http://localhost:3000 ได้"
+  },
+  {
+   "id": "B11",
+   "title": "รวมระบบและทดสอบใน Docker",
+   "size": "L",
+   "depends_on": [
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "docker compose up แล้วทดสอบ ดูสินค้า ใส่ตะกร้า และถามแชทบอท ผ่านทั้ง 3 ข้อ บันทึกผลใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

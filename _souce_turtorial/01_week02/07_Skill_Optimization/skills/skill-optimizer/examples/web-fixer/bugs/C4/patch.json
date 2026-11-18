@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/finder.ts",
+    "find": "(!input.noChicken || p.protein !== \"chicken\") &&",
+    "replace": "(!input.noChicken || p.protein === \"chicken\") &&"
+  }
+]

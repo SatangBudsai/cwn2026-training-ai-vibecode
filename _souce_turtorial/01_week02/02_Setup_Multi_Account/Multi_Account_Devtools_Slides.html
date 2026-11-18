@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>หลายบัญชี AI ในห้องทดลองเดียว: Claude Code + Codex บน devtools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12305e; --teal:#0f9d9a; --teal-soft:#e2f5f4; --orange:#f08a24; --orange-soft:#fff1e3;
+  --red:#dc2626; --red-soft:#fdecec; --green:#15803d; --green-soft:#e7f7ec; --ink:#1f2937; --muted:#5b6b80; --line:#dbe3ee;
+  --bg:#f6f8fb; --card:#ffffff; --code:#0f1b2d;
+  --font:'IBM Plex Sans Thai','Leelawadee UI','Segoe UI',sans-serif; --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0b1424;overflow:hidden;font-family:var(--font);color:var(--ink)}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#deck{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);padding:60px 80px 70px;display:none;flex-direction:column;overflow:hidden;border-radius:6px}
+.slide.active{display:flex;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.kicker{font-size:22px;font-weight:600;color:var(--teal);letter-spacing:.02em;margin-bottom:6px}
+.kicker.red{color:var(--red)}
+h1{font-size:64px;line-height:1.15;margin:0;color:var(--navy);font-weight:700}
+h2{font-size:46px;line-height:1.2;margin:0 0 24px;color:var(--navy);font-weight:700}
+h3{font-size:28px;margin:0 0 10px;color:var(--navy)}
+p,li{font-size:25px;line-height:1.6}
+p{margin:0 0 14px}
+ul,ol{margin:0;padding-left:30px}
+li{margin:6px 0}
+b,strong{color:var(--navy)}
+code{font-family:var(--mono);font-size:.86em;background:#e8eef7;color:#0b3b7a;padding:2px 8px;border-radius:6px}
+.muted{color:var(--muted)}
+.small{font-size:21px;line-height:1.55}
+.cap{font-size:17px;color:var(--muted);margin-top:8px;line-height:1.45}
+.row{display:flex;gap:40px;flex:1;min-height:0}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;min-height:0}
+.c2{flex:2}.c3{flex:3}
+.vc{justify-content:center}
+.fig{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.fig img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;box-shadow:0 10px 30px rgba(18,48,94,.16);background:#fff}
+.fig.flat img{box-shadow:none;background:none}
+.fig.photo img{border-radius:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;box-shadow:0 4px 14px rgba(18,48,94,.06)}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.num{display:inline-flex;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:22px;align-items:center;justify-content:center;flex:none}
+.pill{display:inline-block;background:var(--teal-soft);color:#0b6b69;font-weight:600;padding:6px 16px;border-radius:999px;font-size:19px}
+.pill.or{background:var(--orange-soft);color:#a3530c}
+.pill.gr{background:var(--green-soft);color:var(--green)}
+.pill.rd{background:var(--red-soft);color:var(--red)}
+.note{border-left:6px solid var(--orange);background:var(--orange-soft);padding:14px 20px;border-radius:10px;font-size:21px;line-height:1.55}
+.note.ok{border-color:var(--green);background:var(--green-soft)}
+.note.info{border-color:var(--teal);background:var(--teal-soft)}
+.note.bad{border-color:var(--red);background:var(--red-soft)}
+pre{position:relative;margin:0;background:var(--code);color:#dbe7ff;font-family:var(--mono);font-size:17.5px;line-height:1.6;padding:20px 24px;border-radius:14px;white-space:pre-wrap;word-break:break-word}
+pre,code{font-variant-ligatures:none;font-feature-settings:"liga" 0,"calt" 0}
+pre .copy{position:absolute;top:10px;right:10px;font-family:var(--font);font-size:15px;background:#26406a;color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+pre .copy:hover{background:var(--teal)}
+pre .err{color:#ff8a8a}
+pre .ok{color:#7ee0a8}
+pre .dim{color:#7f93b5}
+pre .hl{background:rgba(240,138,36,.25);border-radius:4px;padding:0 3px}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+th{color:var(--navy);background:#eaf0f8}
+.steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.step p{margin:4px 0 0}
+.quote{font-size:40px;font-weight:700;color:var(--navy);line-height:1.35}
+.quote .mark{color:var(--orange)}
+/* cover / photo slides */
+.cover{padding:0;background:#0b1424 center/cover no-repeat}
+.cover .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,16,32,.95) 0%,rgba(8,16,32,.8) 45%,rgba(8,16,32,.15) 78%)}
+.cover .inner{position:relative;padding:110px 90px;max-width:1180px;color:#fff;display:flex;flex-direction:column;height:100%}
+.cover h1{color:#fff;font-size:64px}
+.cover .sub{font-size:28px;color:#cfe0ff;margin-top:22px;line-height:1.5}
+.cover .hint{margin-top:auto;font-size:20px;color:#9fb6dd}
+.cover b{color:#fff}
+.nw{white-space:nowrap}
+.kbd{display:inline-block;border:1px solid #9fb6dd;border-bottom-width:3px;border-radius:7px;padding:1px 10px;font-family:var(--mono);font-size:18px;margin:0 3px}
+/* dark / divider */
+.divider{background:linear-gradient(135deg,var(--navy) 0%,#163f7a 60%,var(--teal) 140%);color:#fff;justify-content:center}
+.divider .big{font-size:150px;font-weight:700;line-height:1}
+.divider h1{color:#fff;font-size:68px;margin-top:10px}
+.divider p{color:#d5e4ff;font-size:28px;margin-top:18px;max-width:1200px}
+.divider b{color:#fff}
+.hook{background:#0b1424;color:#fff;justify-content:center;align-items:center;text-align:center}
+.hook h1{color:#fff;font-size:60px;max-width:1300px}
+.hook p{color:#b9cbe8;font-size:30px;max-width:1150px;margin:26px auto 0}
+.hook .em{color:var(--orange)}
+/* machine grid (pain 1) */
+.mach{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mach div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:17px;line-height:1.45}
+.mach div b{display:block;font-size:16px;color:var(--muted)}
+.mach .x{border-color:#f3b4b4;background:var(--red-soft)}
+.mach .y{border-color:#f6d3ad;background:var(--orange-soft)}
+/* needs */
+.need{text-align:center;padding:22px 20px;min-height:200px;display:flex;flex-direction:column;justify-content:center}
+.need .ic{font-size:56px;line-height:1}
+.need h3{font-size:28px;margin:18px 0 10px}
+.need p{font-size:22px;line-height:1.5;margin:0;color:var(--muted)}
+/* before/after */
+.ba td:first-child{font-weight:600;color:var(--navy);width:22%}
+.ba td:nth-child(2){color:#9b1c1c;background:#fff7f7}
+.ba td:nth-child(3){color:#0f5132;background:#f4fbf6}
+/* 3 steps strip */
+.trio{display:flex;gap:24px;margin-top:40px}
+.trio div{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:22px;padding:36px 32px;font-size:34px;line-height:1.4;color:#fff;min-height:220px}
+.trio div span{display:block;font-size:22px;color:#9fd8ff;margin-bottom:10px}
+.trio .star{background:rgba(15,157,154,.35);border-color:#7fe0dc}
+/* architecture */
+.arch{display:flex;gap:22px;flex:1;min-height:0}
+.host{flex:1;border:2px dashed #9fb3cf;border-radius:22px;padding:14px 18px;background:#eef3f9;display:flex;flex-direction:column}
+.hosttag{font-size:20px;color:var(--navy);margin-bottom:10px}
+.cbox{flex:1;border:3px solid #2f6fd6;border-radius:18px;background:#fff;padding:12px 16px;display:flex;flex-direction:column}
+.ctag{font-size:20px;color:#1d4ed8;margin-bottom:10px}
+.cin{display:flex;gap:16px;flex:1}
+.layers{flex:3;display:flex;flex-direction:column;gap:7px}
+.ly{background:#e8f0fc;border:1px solid #c6d6f2;border-radius:10px;padding:8px 14px;font-size:19px;color:var(--navy)}
+.ly span{color:var(--muted);font-size:16px;margin-left:6px}
+.ly.base{background:#12305e;color:#fff;border-color:#12305e}
+.ly.add{background:#fff1e3;border:2px dashed var(--orange)}
+.svc{flex:2;display:flex;flex-direction:column;gap:8px}
+.svh{font-size:16px;color:var(--muted)}
+.sv{background:var(--teal-soft);border:1px solid #b7e3e1;border-radius:10px;padding:9px 14px;font-size:19px;color:#0b6b69;font-weight:600}
+.sv span{display:block;font-weight:400;font-size:16px;color:var(--muted)}
+.sv.fold{background:#fff8e6;border-color:#f3dca5;color:#8a5a00}
+.doors{width:300px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.door{background:#fff;border:1px solid var(--line);border-left:6px solid var(--orange);border-radius:12px;padding:12px 16px;font-size:18px;line-height:1.4;color:var(--muted)}
+.door b{display:block;font-size:22px;color:var(--navy);font-family:var(--mono)}
+/* story timeline */
+.story{background:linear-gradient(160deg,#0b1424 0%,#1a1630 100%);color:#fff}
+.story.good{background:linear-gradient(160deg,#0b1f1c 0%,#0d2a3a 100%)}
+.tl{display:flex;flex-direction:column;gap:12px;margin-top:6px;border-left:3px solid rgba(255,255,255,.2);padding-left:26px;margin-left:10px}
+.ev{display:flex;gap:22px;align-items:center;position:relative}
+.ev::before{content:"";position:absolute;left:-36px;width:16px;height:16px;border-radius:50%;background:#7f93b5}
+.ev.bad::before{background:#ff6b6b}.ev.ok::before{background:#5fd68f}.ev.end::before{background:var(--orange);width:20px;height:20px;left:-38px}
+.ev .t{font-family:var(--mono);font-size:24px;color:#9fb6dd;width:86px;flex:none}
+.ev .b{font-size:25px;line-height:1.45;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 20px;color:#e9f0ff}
+.ev.bad .b{border-color:rgba(255,107,107,.45)}
+.ev.ok .b{border-color:rgba(95,214,143,.45)}
+.ev.end .b{background:rgba(240,138,36,.18);border-color:rgba(240,138,36,.6)}
+.ev .who{display:block;font-size:17px;color:#ffb27a;margin-bottom:2px}
+.story b{color:#fff}
+/* root cause */
+.root{display:flex;align-items:center;gap:22px;flex:1}
+.pains{display:flex;flex-direction:column;gap:14px;width:330px}
+.pc{background:var(--red-soft);border:1px solid #f3b4b4;color:#9b1c1c;border-radius:14px;padding:16px 20px;font-size:23px;font-weight:600}
+.arrow{font-size:56px;color:var(--orange);font-weight:700}
+.cause{width:300px;background:var(--navy);color:#dfe8f7;border-radius:22px;padding:30px 26px;font-size:26px;line-height:1.5;text-align:center}
+.cause b{color:#ffcf9e}
+.lbl{font-size:17px;letter-spacing:.06em;color:var(--orange);font-weight:700;margin-bottom:10px}
+.want{flex:1;background:#fff;border:3px solid var(--teal);border-radius:22px;padding:24px 28px}
+.want h3{font-size:34px;color:var(--teal);margin:0 0 10px}
+.want ul{list-style:none;padding:0}
+.want li{font-size:23px;margin:9px 0}
+/* photo story */
+.photo-slide{padding:0;background:#0b1424 center/cover no-repeat}
+.capbox{position:absolute;left:60px;right:60px;bottom:64px;display:flex;gap:24px;align-items:center;background:rgba(10,20,40,.86);color:#fff;border-radius:22px;padding:24px 34px;font-size:31px;line-height:1.45;border-left:10px solid #7fd3ff;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.capbox.bad{border-left-color:#ff6b6b}.capbox.good{border-left-color:#5fd68f}
+.capbox b{color:#ffe1a8}
+.capbox .sm{font-size:23px;color:#c7d6ee}
+.capbox .badge{font-size:60px;line-height:1;color:#7fd3ff;flex:none}
+.capbox.bad .badge{color:#ff8a8a}.capbox.good .badge{color:#7ee0a8}
+.imgnote{position:absolute;right:24px;top:18px;font-size:15px;color:#fff;background:rgba(0,0,0,.4);padding:3px 10px;border-radius:8px}
+/* stacks */
+.stacks{display:flex;gap:24px;align-items:stretch;flex:1}
+.mc{width:430px;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;background:#fff;border:3px solid var(--green)}
+.mc.bad{border-color:var(--red)}
+.mh{font-size:25px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between}
+.mh span{font-size:21px}
+.mc.ok .mh span{color:var(--green)}.mc.bad .mh span{color:var(--red)}
+.ly2{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;background:#eef3f9;border:1px solid var(--line);font-size:23px;color:var(--navy);padding:8px}
+.ly2.app{background:#e2f5f4;border-color:#b7e3e1}
+.ly2.diff{background:var(--red-soft);border:2px solid #f19a9a;color:#9b1c1c}
+.ly2 i{font-size:17px;color:var(--muted);margin-left:6px;font-style:normal}
+.vs{align-self:center;font-size:90px;color:var(--red);font-weight:700}
+.why{flex:1;display:flex;flex-direction:column;justify-content:center}
+/* equations */
+.eqs{display:flex;flex-direction:column;gap:20px;margin-top:6px}
+.eq{border-radius:20px;padding:18px 26px;background:#fff;border:2px solid var(--line)}
+.eq.bad{border-color:#f3b4b4;background:#fffafa}.eq.good{border-color:#a7dcb8;background:#f6fcf8}
+.eq .lab{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.ex{display:flex;align-items:center;gap:18px}
+.tk{flex:1;text-align:center;font-size:27px;font-weight:600;padding:18px 10px;border-radius:14px;background:#eef3f9;color:var(--navy)}
+.tk.r{background:var(--red-soft);color:#9b1c1c}.tk.g{background:var(--green-soft);color:var(--green)}
+.op{font-size:44px;font-weight:700;color:var(--muted)}
+pre.prompt{max-height:610px;overflow:auto;font-size:13px;line-height:1.5}
+/* chrome */
+#bar{position:fixed;left:0;bottom:0;height:5px;background:var(--orange);transition:width .3s;z-index:5}
+#hud{position:fixed;right:18px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:6;font-family:var(--font)}
+#hud button{background:rgba(18,48,94,.78);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:10px;height:40px;min-width:40px;font-size:18px;cursor:pointer;padding:0 12px}
+#hud button:hover{background:var(--teal)}
+#count{color:#fff;background:rgba(18,48,94,.78);border-radius:10px;padding:9px 10px;font-size:16px;min-width:76px;text-align:center}
+#help{position:fixed;left:18px;bottom:16px;color:#fff;background:rgba(18,48,94,.6);padding:4px 10px;border-radius:8px;font-size:14px;z-index:6}
+.zone{position:fixed;top:0;bottom:60px;width:12%;z-index:4;cursor:pointer}
+#zl{left:0}#zr{right:0}
+body.ov #stage{display:none}
+#ov{display:none;position:fixed;inset:0;overflow:auto;padding:30px;z-index:10;background:#0b1424}
+body.ov #ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-content:start}
+#ov .th{background:#16233a;border:2px solid transparent;border-radius:10px;padding:12px 14px;color:#dbe7ff;cursor:pointer;font-size:16px;line-height:1.4}
+#ov .th:hover,#ov .th.cur{border-color:var(--orange)}
+#ov .th span{color:var(--orange);font-weight:700;margin-right:6px}
+#check label{font-size:24px;display:flex;gap:14px;align-items:center;cursor:pointer;line-height:1.4}
+#check input{width:26px;height:26px;accent-color:var(--teal);flex:none}
+@page{size:1600px 900px;margin:0}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}
+  #hud,#help,#bar,.zone,#ov,pre .copy,.cover .hint{display:none!important}
+  #stage{position:static;display:block}
+  #deck{transform:none!important;width:1600px;height:auto}
+  .slide{display:flex!important;position:relative;width:1600px;height:900px;border-radius:0;animation:none!important;page-break-after:always;break-after:page}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- ================= เปิดเรื่อง ================= -->
+<section class="slide cover" data-title="ปก" style="background-image:url('img/slides/slide-cover.jpg')">
+  <div class="shade"></div>
+  <div class="inner">
+    <div class="kicker" style="color:#7fd3ff">สัปดาห์ที่ 2 · Setup Multi Account</div>
+    <h1><span class="nw">หลายบัญชี AI</span><br><span class="nw">ในห้องทดลองเดียว</span></h1>
+    <div class="sub" style="font-size:30px;color:#7fd3ff;margin-top:10px">ปรับ devtools ให้รองรับ Claude Code + Codex หลายบัญชี</div>
+    <div class="sub" style="font-size:32px;color:#fff;margin-top:14px">งานใหญ่เกินบัญชีเดียว…<br>จะแบ่งงานให้ AI หลายบัญชีช่วยกันได้อย่างไร?</div>
+    <div class="sub" style="font-size:22px">Claude Code Desktop · <b>yolo1–5</b> · <b>cyolo1–5</b> · skill + MCP กลาง</div>
+    <div class="hint">กด <span class="kbd">→</span> เพื่อเริ่ม · <span class="kbd">F</span> เต็มจอ · <span class="kbd">O</span> ดูทุกหน้า</div>
+  </div>
+</section>
+
+<section class="slide photo-slide" data-title="เรื่องเล่า ①: ติดลิมิต" style="background-image:url('img/slides/slide-story-limit.jpg')">
+  <div class="capbox bad"><span class="badge">①</span><div>ได้งานใหญ่มา 1 ชิ้น: วางแผน เขียน backend frontend ทดสอบ รีวิว และเขียนเอกสาร<br><b>ใช้บัญชีเดียวทำทั้งหมด… ทำไปได้ครึ่งทาง โควตาหมด ต้องรอรอบถัดไป 😩</b></div></div>
+  <div class="imgnote">ภาพจำลอง สร้างด้วย Imagegen</div>
+</section>
+
+<section class="slide" data-title="ทำไมบัญชีเดียวไม่พอ">
+  <div class="kicker red">ปัญหา</div>
+  <h2>งานใหญ่ + multi-agent = บัญชีเดียวไม่พอ</h2>
+  <div class="row">
+    <div class="col">
+      <div class="grid" style="gap:18px">
+        <div class="card"><span class="pill rd">① โควตาไม่พอ</span><p class="small" style="margin:10px 0 0">บัญชีระดับเล็ก (เช่น $20/เดือน) ใช้หมดกลางงาน ต้องรอรอบถัดไปจึงทำต่อได้</p></div>
+        <div class="card"><span class="pill rd">② ช้า</span><p class="small" style="margin:10px 0 0">งานที่แยกทำพร้อมกันได้ เช่น backend / frontend / test ต้องรอคิวทีละชิ้นในบัญชีเดียว</p></div>
+        <div class="card"><span class="pill or">③ โมเดลเดียวมองไม่รอบด้าน</span><p class="small" style="margin:10px 0 0">ถ้ามีแค่ Claude หรือ Codex อย่างเดียว ก็ไม่มีโมเดลที่สองมาตรวจงาน</p></div>
+      </div>
+    </div>
+    <div class="col vc">
+      <h3>แต่ในองค์กรเรามีหลายบัญชีอยู่แล้ว</h3>
+      <table>
+        <tr><th>แผน</th><th>ตัวอย่าง</th></tr>
+        <tr><td>Claude Team / Enterprise</td><td>หลาย seat ระดับต่างกัน</td></tr>
+        <tr><td>ChatGPT Business (Codex)</td><td>หลาย seat ใช้ Codex CLI ได้</td></tr>
+        <tr><td>บัญชีส่วนตัว</td><td>$20 · $100 · $200 ต่อเดือน</td></tr>
+      </table>
+      <div class="note info" style="margin-top:20px">คำถามคือ จะ <b>ใช้หลายบัญชีพร้อมกันในเครื่องเดียว</b> โดยไม่ปนกันได้อย่างไร?</div>
+      <p class="cap">ราคาเป็นตัวอย่างระดับแพ็กเกจ ไม่ใช่ราคาทางการ</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide photo-slide" data-title="เรื่องเล่า ②: แบ่งงาน" style="background-image:url('img/slides/slide-story-team.jpg')">
+  <div class="capbox good"><span class="badge">②</span><div>ถ้า container เดียวมี <b>หลายบัญชีพร้อมใช้</b> ทั้ง Claude และ Codex<br>แบ่งงาน 6 ชิ้นให้ 6 บัญชีทำพร้อมกัน… แล้วรวมผล ✅ <span class="sm">ไม่ต้องรอโควตาบัญชีเดียว</span></div></div>
+  <div class="imgnote">ภาพจำลอง สร้างด้วย Imagegen</div>
+</section>
+
+<section class="slide" data-title="บัญชีเดียว vs หลายบัญชี (GIF)">
+  <div class="kicker">แนวคิด · กระจายโหลด + ทำงานขนาน</div>
+  <h2>งานเดียวกัน ปิดงานเร็วขึ้นมาก</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig flat"><img src="img/intro-03-parallel-flow.gif" alt="ภาพเคลื่อนไหว บัญชีเดียวติดลิมิต เทียบหลายบัญชีทำพร้อมกัน"></div>
+      <div class="cap">ภาพเคลื่อนไหวจำลองแนวคิด ตัวเลขชั่วโมงเป็นตัวอย่าง ไม่ใช่ผลวัดจริง</div></div>
+    <div class="col c2 vc">
+      <p>เหมือน <b>ครัวที่มีเชฟหลายคน</b></p>
+      <ul>
+        <li><b>ครัว</b> = container <code>devtools</code></li>
+        <li><b>เชฟ</b> = บัญชี <code>yolo1–5</code> (Claude) และ <code>cyolo1–5</code> (Codex)</li>
+        <li><b>สูตรกลาง</b> = skill และ MCP ใน <code>shared</code></li>
+      </ul>
+      <div class="note ok" style="margin-top:18px">เชฟคนเดียว ออเดอร์ 30 จานต้องทำทีละจาน · หลายเชฟแบ่งกันทำ อาหารออกเร็วกว่ามาก</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="หลายบัญชี = หลายโมเดล">
+  <div class="kicker">แนวคิด · ใช้จุดเด่นของแต่ละโมเดล</div>
+  <h2>ไม่ใช่แค่หลายบัญชี แต่เป็นหลายโมเดลด้วย</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/intro-04-mix-models.png" alt="แบ่งงานให้ Claude Code และ Codex CLI แล้วตรวจไขว้"></div></div>
+    <div class="col c2 vc">
+      <p>Claude กับ Codex ถนัดงานต่างกัน อยู่ใน container เดียวกันจึงส่งงานให้ตัวที่เหมาะได้ทันที</p>
+      <div class="note info">ให้โมเดลหนึ่ง <b>ตรวจงานของอีกโมเดลหนึ่ง</b> (cross-review) ลดจุดบอดที่โมเดลเดียวมองไม่เห็น</div>
+      <p class="cap">การแบ่งงานในภาพเป็นตัวอย่าง ควรทดลองเลือกโมเดลตามงานจริง</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ภาพรวม + ข้อควรระวัง">
+  <div class="kicker">สรุปแนวคิด</div>
+  <h2>หลายบัญชี อยู่รวมในที่เดียว</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/intro-01-why-multi-account.png" alt="องค์กรมีหลายบัญชี รวมใน devtools แล้วแบ่งงานขนาน"></div></div>
+    <div class="col c2 vc">
+      <div class="grid" style="gap:14px">
+        <div class="card small">⚖️ <b>กระจายโหลด</b> ไม่กองที่บัญชีเดียว</div>
+        <div class="card small">⚡ <b>ทำงานขนาน</b> 1 Terminal = 1 บัญชี</div>
+        <div class="card small">🧠 <b>ผสมหลายโมเดล</b> Claude + Codex ตรวจกันเอง</div>
+        <div class="card small">🔧 <b>ตั้งค่าครั้งเดียว</b> skill/MCP อยู่ใน shared</div>
+      </div>
+      <div class="note bad small" style="margin-top:18px">ใช้เฉพาะบัญชีที่ตนเองหรือองค์กรมีสิทธิ์ใช้จริง ทำตามเงื่อนไขผู้ให้บริการ LAB นี้ไม่ได้เพิ่มโควตา และห้ามแชร์ข้อมูลล็อกอิน</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= จุดเริ่มต้น ================= -->
+<section class="slide divider" data-title="จุดเริ่มต้น">
+  <div class="kicker" style="color:#9fd8ff">กลับมาที่ห้องทดลองของเรา</div>
+  <h1>devtools ตอนนี้<br>ยังเป็น Linux ธรรมดา</h1>
+  <p>มี <b>claude</b> กับ <b>codex</b> แล้ว แต่ล็อกอินได้ทีละบัญชี ยังไม่มีโครงสร้างสำหรับหลายบัญชี</p>
+</section>
+
+<section class="slide" data-title="ก่อนปรับ: ภาพจริง">
+  <div class="kicker">ก่อนเริ่ม LAB · ภาพจริงจาก devtools</div>
+  <h2>มี claude, codex แต่ยังไม่มี yolo / cyolo</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/slides/before-terminal.png" alt="Terminal ก่อนปรับ ไม่มี ai-accounts และไม่มี yolo1" style="width:100%"></div><div class="cap">ภาพจริงจาก JupyterLab Terminal ของ devtools ที่เพิ่งสร้างตามบทที่แล้ว</div></div>
+    <div class="col c2 vc">
+      <ul>
+        <li>Ubuntu 24.04 · Claude Code 2.1.319 · codex-cli 0.167.0</li>
+        <li><code>ls ~/ai-accounts</code> → <b style="color:var(--red)">No such file</b></li>
+        <li><code>which yolo1 cyolo1</code> → <b style="color:var(--red)">ไม่พบ</b></li>
+      </ul>
+      <div class="note info" style="margin-top:18px">image <code>tuchsanai/devtools:2569_1</code> ไม่ได้ออกแบบมาให้มีหลายบัญชี เราจะเติมเองขณะที่ container ยังรันอยู่</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ก่อน → หลัง">
+  <div class="kicker">เป้าหมาย</div>
+  <h2>ปรับโครงสร้างข้างใน container ตัวเดิม</h2>
+  <div class="fig"><img src="img/arch-01-before-after.png" alt="ก่อนและหลังปรับโครงสร้าง devtools"></div>
+  <div class="cap" style="text-align:center">ไม่สร้าง image ใหม่ ไม่ลบ container · เพิ่ม <code>/root/ai-accounts</code> และคำสั่งใน <code>/usr/local/bin</code></div>
+</section>
+
+<section class="slide" data-title="ใครเป็นคนปรับ">
+  <div class="kicker">พระเอกของวันนี้</div>
+  <h2>สั่งจากข้างนอก ให้ไปจัดโครงสร้างข้างใน</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/arch-02-desktop-outside.png" alt="Claude Code Desktop ใช้ docker exec ปรับ devtools"></div></div>
+    <div class="col c2 vc">
+      <p><b>Claude Code Desktop</b> บน Windows ตัวเดียวกับที่สร้าง container ในบทที่แล้ว</p>
+      <p>เราแค่วางพรอมต์ Claude ส่งคำสั่งเข้าไปเองด้วย <code>docker exec devtools …</code></p>
+      <div class="note">สิ่งเดียวที่ Claude ทำแทนไม่ได้คือ <b>การล็อกอิน</b> เราต้องยืนยันตัวตนในเบราว์เซอร์เอง</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ภาพรวมการทดลอง (GIF)">
+  <div class="kicker">ลงมือ · 4 ขั้น</div>
+  <h2>ข้างนอกสั่ง · ข้างในทำงาน · เราล็อกอิน</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig flat"><img src="img/arch-04-protocol-flow.gif" alt="ภาพเคลื่อนไหว 4 ขั้นของการทดลอง"></div></div>
+    <div class="col c2 vc">
+      <table>
+        <tr><th>ขั้น</th><th>ที่ไหน</th><th>ใคร</th></tr>
+        <tr><td>1 ตั้งค่าหลายบัญชี</td><td>💻 Desktop</td><td>Claude</td></tr>
+        <tr><td>2 ตรวจผลข้างใน</td><td>🖥️ JupyterLab</td><td>เรา</td></tr>
+        <tr><td>3 ล็อกอิน + ตรวจ</td><td>🖥️ → 💻</td><td>เรา + Claude</td></tr>
+        <tr><td>4 ทดสอบข้ามบัญชี</td><td>💻 Desktop</td><td>Claude</td></tr>
+      </table>
+      <div class="note small" style="margin-top:16px">ก่อนเริ่ม: Docker <b>Engine running</b> · <code>devtools</code> กำลังรัน · Claude Code Desktop ล็อกอินแล้ว</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ขั้นที่ 1 ================= -->
+<section class="slide divider" data-title="ขั้น 1">
+  <div class="big">1</div>
+  <h1>ให้ Claude Code Desktop<br>ตั้งค่าหลายบัญชี</h1>
+  <p>วางพรอมต์เดียว → Claude ใช้ <b>docker exec</b> สร้างโฟลเดอร์ คำสั่ง yolo/cyolo ติดตั้ง skill และ MCP กลาง แล้วทดสอบเอง (~5–10 นาที)</p>
+</section>
+
+<section class="slide" data-title="ขั้น 1: วางพรอมต์ (GIF)">
+  <div class="kicker">ขั้นที่ 1 · New session → Ctrl+V → Enter</div>
+  <h2>วางพรอมต์ใน Claude Code Desktop</h2>
+  <div class="row">
+    <div class="col"><div class="fig flat"><img src="img/desktop-setup-paste.gif" alt="ภาพเคลื่อนไหววางพรอมต์ตั้งค่าใน Claude Code Desktop"></div></div>
+    <div class="col">
+<pre class="prompt"><button class="copy">คัดลอก</button>ช่วยปรับโครงสร้างข้างใน container ชื่อ devtools ที่กำลังรันอยู่ ให้รองรับหลายบัญชี AI
+ทำทุกอย่างข้างใน container ผ่าน docker exec เท่านั้น ห้ามแก้ไฟล์บนเครื่อง Windows ห้ามหยุด ลบ หรือสร้าง container ใหม่
+ถ้า devtools ไม่ได้รันอยู่ ให้รายงานแล้วหยุด
+
+ข้างในมี Claude Code และ Codex CLI แล้ว ห้ามติดตั้งซ้ำ ตรวจ --version ก่อน
+ตรวจ --help ของเวอร์ชันจริงก่อนใช้ env/flag ห้ามเดา
+
+## เป้าหมาย (BASE=/root/ai-accounts)
+- yolo1..yolo5   → claude --dangerously-skip-permissions  (CLAUDE_CONFIG_DIR=$BASE/.Claude/yoloN)
+- cyolo1..cyolo5 → codex --dangerously-bypass-approvals-and-sandbox  (CODEX_HOME=$BASE/.Codex/cyoloN)
+- wrapper วางใน /usr/local/bin ให้พิมพ์ได้ทันที ส่งต่อ "$@" ครบ แจ้งชัดถ้าโฟลเดอร์บัญชีไม่มี ไม่พิมพ์ secret
+- $BASE/.Claude/shared และ $BASE/.Codex/shared มี skills/ และ mcp/ แก้ครั้งเดียว ทุกบัญชีของ CLI นั้นเห็นตอนเปิดครั้งถัดไป
+
+## กติกา
+- แยก credential/config/session ต่อบัญชี เปิดพร้อมกันได้ ใช้ CLAUDE_CONFIG_DIR/CODEX_HOME เท่านั้น ห้ามเปลี่ยน $HOME
+- Codex ใช้ file-based credential ต่อ CODEX_HOME ห้ามแชร์ credential ใน shared
+- สร้าง installer เป็นไฟล์ใน container รันซ้ำได้ ไม่เขียนทับ credential/config เดิม ห้ามแก้ .bashrc/Git/SSH
+- MCP ส่วนกลางตัวแรก: Playwright (@playwright/mcp) + Chromium ติดตั้งครั้งเดียว
+- skill ตัวอย่าง shared-check: ตอบ SHARED_SKILL_OK-&lt;tool&gt;-&lt;ค่าสุ่มตอนติดตั้ง&gt; ซึ่งมีในไฟล์ skill เท่านั้น
+
+## ข้อเท็จจริงจากการทดลอง (ตรวจว่ายังจริงกับเวอร์ชันนี้)
+- root ต้องตั้ง IS_SANDBOX=1; CODEX_HOME ต้อง mkdir -p ก่อน
+- Claude: skill อ่านจาก $CLAUDE_CONFIG_DIR/skills; MCP ส่งผ่าน --mcp-config=&lt;ไฟล์&gt; (ต้องมี =)
+  ห้าม symlink .claude.json (มีสถานะล็อกอิน); claude mcp list ไม่แสดง MCP นี้ ให้ตรวจด้วย /mcp
+- Codex: skill อ่านจาก $CODEX_HOME/skills และเขียน skills/.system เอง ห้าม symlink ทั้งโฟลเดอร์
+  MCP ส่งด้วย -c mcp_servers.&lt;name&gt;={...} (ใช้กับ codex mcp list ได้)
+- Playwright ใน root container: --browser chromium --headless --isolated --no-sandbox และ --output-dir นอกโฟลเดอร์งาน
+  ติดตั้ง Chromium ด้วย playwright ในแพ็กเกจ @playwright/mcp ให้เวอร์ชันตรงกัน (อาจต้อง install-deps)
+
+## ทดสอบใน container (PASS/FAIL/SKIP ตามจริง)
+- 10 คำสั่ง --version ครบ, config root คนละโฟลเดอร์, installer รอบ 2 ไม่ทำลายของเดิม
+- cyoloN mcp list เห็น playwright, skill shared-check ทุกบัญชี readlink -f ไปไฟล์เดียวกันใน shared
+- อะไรที่ต้องล็อกอิน = SKIP
+
+## รายงาน (ห้ามมี secret) เขียนไว้ใน container ที่ /workspace/multi-account/
+- setup-report.md: โครงสร้างโฟลเดอร์, wrapper, แต่ละ CLI อ่าน skill/MCP จากไหน, ข้อจำกัด
+- login-guide.md: ล็อกอินทีละบัญชีใน JupyterLab Terminal
+- checklist.md: รายการ | หลักฐาน | PASS/FAIL/SKIP
+เสร็จแล้วสรุปเป็นตารางสั้น ๆ แล้วหยุดรอ ห้ามล็อกอินแทนฉัน</pre>
+      <div class="cap">เลื่อนดูพรอมต์เต็มในกรอบ หรือกด "คัดลอก" · พรอมต์เดียวกับใน README</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 1: พรอมต์ฉลาดตรงไหน">
+  <div class="kicker">ขั้นที่ 1 · ทำไมพรอมต์เขียนแบบนี้</div>
+  <h2>บอกเป้าหมาย กติกา และสิ่งที่รู้แล้ว</h2>
+  <div class="grid g3" style="gap:20px">
+    <div class="card"><span class="pill">เป้าหมาย</span><p class="small" style="margin:10px 0 0"><code>yolo1–5</code> → Claude, <code>cyolo1–5</code> → Codex แยกโฟลเดอร์ต่อบัญชี + <code>shared</code> สำหรับ skill/MCP</p></div>
+    <div class="card"><span class="pill or">กติกา</span><p class="small" style="margin:10px 0 0">ทำผ่าน <code>docker exec</code> เท่านั้น ไม่แตะ Windows ไม่ลบ container ไม่แชร์ credential รันซ้ำได้</p></div>
+    <div class="card"><span class="pill gr">ข้อเท็จจริงจากการทดลอง</span><p class="small" style="margin:10px 0 0">เช่น root ต้องตั้ง <code>IS_SANDBOX=1</code> · flag ของ MCP · Playwright ต้อง <code>--no-sandbox</code> ให้ Claude ไม่ต้องลองผิดลองถูก</p></div>
+    <div class="card"><span class="pill">วางคำสั่งใน /usr/local/bin</span><p class="small" style="margin:10px 0 0">พิมพ์ <code>yolo1</code> ได้ทันทีในทุก Terminal ไม่ต้องแก้ PATH</p></div>
+    <div class="card"><span class="pill or">ทดสอบเอง</span><p class="small" style="margin:10px 0 0">10 คำสั่ง <code>--version</code> · installer รอบ 2 ไม่ทำลายของเดิม · อะไรที่ต้องล็อกอิน = SKIP</p></div>
+    <div class="card"><span class="pill gr">รายงาน</span><p class="small" style="margin:10px 0 0">ตาราง PASS/FAIL/SKIP + ไฟล์รายงานใน <code>/workspace/multi-account/</code></p></div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 1: ผลจริง">
+  <div class="kicker">ขั้นที่ 1 · ผลจริง (7 พ.ย. 2026 · ~5 นาที)</div>
+  <h2>18 PASS · 0 FAIL · 4 SKIP</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/slides/setup-result-table.png" alt="ผลจริงจาก Claude ตาราง PASS/SKIP"></div></div>
+    <div class="col c2 vc">
+      <div class="note ok">ข้อที่ SKIP ทั้งหมดคือข้อที่ <b>ต้องล็อกอินก่อน</b> ซึ่งทำในขั้นที่ 3–4</div>
+      <p class="small" style="margin-top:18px">ระหว่างทาง Claude แก้ปัญหาเอง:</p>
+      <ul class="small">
+        <li>ติดตั้ง library ของ Chromium เพิ่ม</li>
+        <li>Git Bash แปลง path ผิด → ใช้ <code>MSYS_NO_PATHCONV=1</code></li>
+      </ul>
+      <p class="cap">ข้อความคำตอบจริงของ Claude จัดหน้าใหม่ให้อ่านง่าย</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ขั้นที่ 2 ================= -->
+<section class="slide divider" data-title="ขั้น 2">
+  <div class="big">2</div>
+  <h1>เข้าไปดูข้างในด้วยตาตัวเอง</h1>
+  <p>Claude บอกว่าเสร็จแล้ว… เปิด <b>JupyterLab</b> ของ devtools ตรวจว่าคำสั่งใช้ได้ และโฟลเดอร์ตรงกับที่ออกแบบไว้</p>
+</section>
+
+<section class="slide" data-title="ขั้น 2: เปิด JupyterLab + ตรวจคำสั่ง (GIF)">
+  <div class="kicker">ขั้นที่ 2 · VS Code → JupyterLab → Terminal</div>
+  <h2>คำสั่ง yolo / cyolo ใช้ได้จริงไหม?</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig flat"><img src="img/open-jupyter-versions.gif" alt="ภาพเคลื่อนไหวเปิด JupyterLab จาก VS Code แล้วตรวจเวอร์ชัน"></div></div>
+    <div class="col c2 vc">
+<pre><button class="copy">คัดลอก</button>which yolo1 cyolo1
+yolo1 --version; cyolo1 --version
+yolo2 --version; cyolo2 --version
+yolo3 --version; cyolo3 --version</pre>
+      <p class="small" style="margin-top:14px">ต้องเห็น <code>/usr/local/bin/yolo1</code> และเวอร์ชันครบทุกบรรทัด</p>
+      <div class="note bad small"><b>ระวัง:</b> <code>--version</code> บอกแค่ว่าคำสั่งพร้อมใช้ <b>ไม่ได้บอกว่าล็อกอินแล้ว</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 2: โครงสร้างโฟลเดอร์ (GIF)">
+  <div class="kicker">ขั้นที่ 2 · File Browser → /root/ai-accounts</div>
+  <h2>โฟลเดอร์ตรงกับที่ออกแบบไว้</h2>
+  <div class="row">
+    <div class="col c2"><div class="fig flat"><img src="img/devtools-folders.gif" alt="ภาพเคลื่อนไหว File Browser เปิด ai-accounts .Claude .Codex shared"></div></div>
+    <div class="col c3 vc">
+      <table>
+        <tr><th>โฟลเดอร์</th><th>คืออะไร</th></tr>
+        <tr><td><code>.Claude/yolo1…5</code></td><td>ข้อมูลแต่ละบัญชี Claude (<code>CLAUDE_CONFIG_DIR</code>) ล็อกอิน การตั้งค่า ประวัติแยกกัน</td></tr>
+        <tr><td><code>.Codex/cyolo1…5</code></td><td>ข้อมูลแต่ละบัญชี Codex (<code>CODEX_HOME</code>) credential เป็นไฟล์แยกต่อบัญชี</td></tr>
+        <tr><td><code>shared/skills</code> <code>shared/mcp</code></td><td>ของกลางที่ทุกบัญชีใช้ร่วมกัน <b>ไม่มีข้อมูลล็อกอิน</b></td></tr>
+      </table>
+      <p class="cap" style="margin-top:14px"><code>yolo1</code> = สคริปต์สั้น ๆ ที่เลือกโฟลเดอร์ yolo1 แล้วเปิด claude · การแยกนี้อยู่ใต้ผู้ใช้ Linux เดียวกัน ไม่ใช่การแยกสิทธิ์ OS</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="MCP พื้นฐาน: Playwright">
+  <div class="kicker">ของแถมที่ติดตั้งมาให้</div>
+  <h2>Playwright MCP: ให้ AI เปิดเว็บได้เอง</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/mcp-01-playwright-included.png" alt="Playwright MCP ใน shared/mcp ทุกบัญชีใช้ร่วมกัน"></div></div>
+    <div class="col c2 vc">
+      <p>ติดตั้ง <b>ครั้งเดียว</b> ในขั้นที่ 1 อยู่ใน <code>shared/mcp</code> พร้อม Chromium แบบไม่มีหน้าจอ</p>
+      <ul>
+        <li>ทุกบัญชี <code>yolo</code> / <code>cyolo</code> ใช้ได้ทันที</li>
+        <li>ไม่ต้องติดตั้งเองอีก</li>
+        <li>AI เปิดเว็บ กรอกฟอร์ม กดปุ่ม ถ่ายภาพหน้าจอได้</li>
+      </ul>
+      <div class="note info small">จะได้ใช้จริงในขั้นที่ 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ขั้นที่ 3 ================= -->
+<section class="slide divider" data-title="ขั้น 3">
+  <div class="big">3</div>
+  <h1>ล็อกอินทีละบัญชี<br>แล้วให้ Claude ตรวจ</h1>
+  <p>ขั้นเดียวที่ AI ทำแทนไม่ได้ · <b>1 บัญชี = 1 แท็บ Terminal</b> · ยืนยันตัวตนในเบราว์เซอร์ด้วยตัวเอง</p>
+</section>
+
+<section class="slide" data-title="ขั้น 3: ล็อกอินครบขั้น (GIF)">
+  <div class="kicker">ขั้นที่ 3 · yolo1 → yolo2 → cyolo1</div>
+  <h2>+ → Terminal → พิมพ์ชื่อบัญชี → ทำตามหน้าจอ</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig flat"><img src="img/login-flow.gif" alt="ภาพเคลื่อนไหวล็อกอิน yolo1 yolo2 cyolo1 ครบทุกขั้น"></div>
+      <div class="cap">ภาพจริงจาก JupyterLab ของ devtools (ช่วงล็อกอินจากการรันจริง ก.ย. 2026 · yolo2 ถ่าย 7 พ.ย. 2026)</div></div>
+    <div class="col c2 vc">
+      <table>
+        <tr><th>พิมพ์</th><th>เลือก</th></tr>
+        <tr><td><code>yolo1</code>…</td><td><b>Claude account with subscription</b> → ยืนยันในเบราว์เซอร์ → <b>Yes, I trust this folder</b> → <code>/model</code> Fable · Medium</td></tr>
+        <tr><td><code>cyolo1</code>…</td><td><b>Sign in with ChatGPT</b> (หรือ <b>Device Code</b>) → <code>/model</code> GPT-6-Astra · Medium</td></tr>
+      </table>
+      <p class="small" style="margin-top:14px">ทำอย่างน้อย <code>yolo1</code> <code>yolo2</code> <code>cyolo1</code> <code>cyolo2</code> · เสร็จแล้ว <code>/exit</code> หรือ Ctrl+C</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 3: ให้ Claude ตรวจล็อกอิน">
+  <div class="kicker">ขั้นที่ 3 · 💻 ไม่ต้องพิมพ์คำสั่งตรวจเอง</div>
+  <h2>ให้ Claude Code Desktop ตรวจว่าล็อกอินครบหรือยัง</h2>
+  <div class="row">
+    <div class="col">
+<pre><button class="copy">คัดลอก</button>ช่วยตรวจสถานะล็อกอินทุกบัญชีใน container devtools ทำผ่าน docker exec เท่านั้น ห้ามล็อกอินแทนฉัน ห้ามแก้ไฟล์ใด ๆ
+- Claude: yolo1 ถึง yolo5 ใช้คำสั่ง yoloN auth status แล้วดูเฉพาะค่า "loggedIn"
+- Codex: cyolo1 ถึง cyolo5 ใช้คำสั่ง cyoloN login status
+สรุปเป็นตาราง บัญชี | ล็อกอินแล้ว/ยัง เท่านั้น ห้ามแสดงอีเมล ชื่อองค์กร หรือ token
+ถ้ามีบัญชีที่ยังไม่ล็อกอิน ให้บอกวิธีล็อกอินใน JupyterLab Terminal
+(พิมพ์ yoloN แล้วเลือก Claude account with subscription / พิมพ์ cyoloN หรือ cyoloN login --device-auth)</pre>
+      <p class="small" style="margin-top:14px">พรอมต์บอกคำสั่งไว้ให้แล้ว: <code>yoloN auth status</code> และ <code>cyoloN login status</code> และห้ามแสดงอีเมลหรือ token</p>
+    </div>
+    <div class="col"><div class="fig"><img src="img/slides/login-check-table.png" alt="ผลจริง ตารางสถานะล็อกอิน 10 บัญชี"></div>
+      <div class="cap">ผลจริง ~5 วินาที · เครื่องตัวอย่างล็อกอินไว้ 5 บัญชี Claude บอกวิธีล็อกอินที่เหลือ</div></div>
+  </div>
+</section>
+
+<!-- ================= ขั้นที่ 4 ================= -->
+<section class="slide divider" data-title="ขั้น 4">
+  <div class="big">4</div>
+  <h1>พิสูจน์ว่าใช้ร่วมกันได้จริง</h1>
+  <p>ทุกบัญชีเรียก skill กลาง <b>shared-check</b> และใช้ <b>Playwright MCP</b> เปิด Google Flights ค้น BKK → Tokyo เอง · <b>ค้นหาอย่างเดียว ไม่จอง ไม่จ่าย</b></p>
+</section>
+
+<section class="slide" data-title="ขั้น 4: เช็กบัญชีก่อน">
+  <div class="kicker">ขั้นที่ 4 · ขั้น 1</div>
+  <h2>เช็กก่อนว่าบัญชีพร้อมไหม</h2>
+  <div class="fig"><img src="img/step4-01-check-accounts.png" alt="ตรวจทีละบัญชี ครบไปต่อ ไม่ครบหยุด"></div>
+</section>
+
+<section class="slide" data-title="ขั้น 4: ลอง skill และ MCP">
+  <div class="kicker">ขั้นที่ 4 · ขั้น 2</div>
+  <h2>แต่ละบัญชีลองใช้ skill และ MCP กลาง</h2>
+  <div class="fig"><img src="img/step4-02-skill-mcp-flights.png" alt="แต่ละบัญชีใช้ shared-check และ Playwright MCP ค้น Google Flights"></div>
+</section>
+
+<section class="slide" data-title="ขั้น 4: พรอมต์ทดสอบ">
+  <div class="kicker">ขั้นที่ 4 · ขั้น 1 = ตรวจล็อกอินก่อนเสมอ</div>
+  <h2>ล็อกอินไม่ครบ → Claude หยุดและบอกเรา</h2>
+  <div class="row">
+    <div class="col">
+<pre class="prompt"><button class="copy">คัดลอก</button>ทดสอบบัญชี yolo1 yolo2 cyolo1 cyolo2 ใน container devtools ผ่าน docker exec ห้ามล็อกอินแทนฉัน ห้ามแก้ไฟล์ตั้งค่า
+
+ขั้น 1 ตรวจล็อกอิน: ใช้ yoloN auth status และ cyoloN login status
+สรุปตาราง บัญชี | ล็อกอินแล้ว/ยัง ห้ามแสดงอีเมลหรือ token ถ้ามีบัญชีที่ยังไม่ล็อกอิน ให้หยุดแล้วบอกฉัน
+
+ขั้น 2 ให้ทีละบัญชีทำ "งาน" ข้างล่าง ในโฟลเดอร์ /workspace/multi-account (timeout บัญชีละ 15 นาที)
+ใช้คำสั่ง yoloN -p "งาน" หรือ cyoloN exec --skip-git-repo-check "งาน" โดยแทน NAME ด้วยชื่อบัญชี
+
+งาน: ใช้ skill shared-check แล้วบอกรหัสที่ได้ จากนั้นใช้ Playwright MCP เท่านั้น เปิด https://www.google.com/travel/flights?hl=en ค้นเที่ยวบินเที่ยวเดียว BKK ไป Tokyo วันที่ 15 ของเดือนหน้า ค้นหาอย่างเดียว ห้ามจอง แล้วบันทึกภาพหน้าผลค้นหาเป็น /workspace/multi-account/evidence/NAME.png และบอกเที่ยวบินอันดับ 1 ถ้าเว็บ error ให้บอกตามจริง
+
+ขั้น 3 บัญชีไหนเว็บ error ให้รันบัญชีนั้นซ้ำอีก 1 รอบ
+แล้วสรุปตาราง บัญชี | รหัส shared-check | เที่ยวบินอันดับ 1 | PASS/FAIL</pre>
+    </div>
+    <div class="col"><div class="fig"><img src="img/desktop-verify-warn-result.png" alt="ผลจริงเมื่อยังล็อกอินไม่ครบ Claude หยุดที่ขั้น 1"></div>
+      <div class="cap">ผลจริงเมื่อลองใส่บัญชีที่ยังไม่ล็อกอิน (yolo4, cyolo3): Claude ไม่ทำขั้น 2–3</div></div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 4: ผลจริง">
+  <div class="kicker">ขั้นที่ 4 · ผลจริง (9 พ.ย. 2026 · ~8 นาที)</div>
+  <h2>คนละบัญชี… แต่ได้รหัสเดียวกัน</h2>
+  <div class="fig" style="flex:none;max-height:390px"><img src="img/desktop-verify-result.png" alt="ผลจริงจาก Claude ตาราง 4 บัญชี" style="max-height:390px"></div>
+  <div class="grid g3" style="gap:16px;margin-top:22px">
+    <div class="note ok small"><b>skill กลาง:</b> yolo1 = yolo2 ได้ <code>…claude-5b7b8d3ed923</code> · cyolo1 = cyolo2 ได้ <code>…codex-89b4c3fde329</code> → อ่านจากไฟล์เดียวกันใน <code>shared</code></div>
+    <div class="note ok small"><b>MCP กลาง:</b> ทุกบัญชีเปิด Google Flights ผ่าน Playwright MCP และเห็นเที่ยวบินอันดับ 1 เหมือนกัน</div>
+    <div class="note bad small"><b>cyolo2 รอบ 2?</b> รอบแรก Google Flights ตอบ error พรอมต์จึงรันซ้ำให้… หน้าถัดไป</div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 4: อ่าน FAIL ให้เป็น">
+  <div class="kicker red">อ่าน FAIL ให้เป็น</div>
+  <h2>ระบบของเราพัง หรือเว็บภายนอกพัง?</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="img/slides/yolo2-error-crop.png" alt="ภาพจริง Google Flights Oops something went wrong"></div>
+      <div class="cap">ภาพจริงเมื่อเว็บภายนอก error: กรอกเงื่อนไขครบ แต่เว็บตอบ "Oops, something went wrong."</div></div>
+    <div class="col c2 vc">
+      <div class="note">พรอมต์รันซ้ำให้ 1 รอบ <b>ถ้ายัง FAIL</b> สั่งเพิ่ม เช่น "รัน yolo2 ซ้ำอีกรอบด้วยพรอมต์เดิม แล้วอัปเดตหลักฐาน"</div>
+      <table style="margin-top:16px;font-size:20px">
+        <tr><th>บัญชี</th><th>ผล</th></tr>
+        <tr><td>yolo1</td><td style="color:var(--green)"><b>PASS</b></td></tr>
+        <tr><td>yolo2</td><td style="color:var(--green)"><b>PASS</b></td></tr>
+        <tr><td>cyolo1</td><td style="color:var(--green)"><b>PASS</b></td></tr>
+        <tr><td>cyolo2</td><td>รอบ 1 เว็บ error → <b style="color:var(--green)">รอบ 2 PASS</b></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 4: เปรียบเทียบ 4 บัญชี (GIF)">
+  <div class="kicker">ขั้นที่ 4 · /workspace/multi-account/evidence/</div>
+  <h2>เปรียบเทียบ 4 บัญชีพร้อมกัน ทีละขั้น</h2>
+  <div class="fig flat"><img src="img/evidence-compare-4accounts.gif" alt="ภาพเคลื่อนไหวเปรียบเทียบ 4 บัญชีทีละขั้น"></div>
+  <div class="cap">GIF จากการรันเพิ่มอีกรอบที่สั่งให้แต่ละบัญชีเก็บภาพทุกขั้น · ราคาของผู้เรียนจะต่างตามวันที่ค้นหา</div>
+</section>
+
+<section class="slide" data-title="ขั้น 4: หลักฐานรายบัญชี (GIF)">
+  <div class="kicker">ขั้นที่ 4 · หลักฐานรายบัญชี</div>
+  <h2>หลักฐานจริง ไม่ใช่คำตอบที่โมเดลเดา</h2>
+  <div class="grid g2" style="gap:10px 24px"><div><div class="fig flat"><img src="img/evidence-yolo1.gif" alt="ภาพเคลื่อนไหวจริงของ yolo1" style=max-height:280px></div><div class="cap" style="text-align:center"><b>yolo1</b></div></div><div><div class="fig flat"><img src="img/evidence-yolo2.gif" alt="ภาพเคลื่อนไหวจริงของ yolo2" style=max-height:280px></div><div class="cap" style="text-align:center"><b>yolo2</b></div></div><div><div class="fig flat"><img src="img/evidence-cyolo1.gif" alt="ภาพเคลื่อนไหวจริงของ cyolo1" style=max-height:280px></div><div class="cap" style="text-align:center"><b>cyolo1</b></div></div><div><div class="fig flat"><img src="img/evidence-cyolo2.gif" alt="ภาพเคลื่อนไหวจริงของ cyolo2" style=max-height:280px></div><div class="cap" style="text-align:center"><b>cyolo2</b></div></div></div>
+</section>
+
+<!-- ================= ปิดท้าย ================= -->
+<section class="slide" data-title="เช็กลิสต์">
+  <div class="kicker">ก่อนไปทำ LAB ถัดไป</div>
+  <h2>เช็กลิสต์หลายบัญชีของฉัน</h2>
+  <div class="grid g2" id="check" style="gap:16px">
+    <label class="card"><input type="checkbox"><span>วางพรอมต์ขั้นที่ 1 ได้ผล PASS ไม่มี FAIL</span></label>
+    <label class="card"><input type="checkbox"><span><code>which yolo1 cyolo1</code> ชี้ไป <code>/usr/local/bin</code></span></label>
+    <label class="card"><input type="checkbox"><span>File Browser เห็น <code>.Claude</code> <code>.Codex</code> และ <code>shared</code></span></label>
+    <label class="card"><input type="checkbox"><span>ล็อกอิน <code>yolo1</code> <code>yolo2</code> <code>cyolo1</code> <code>cyolo2</code> แล้ว</span></label>
+    <label class="card"><input type="checkbox"><span>Claude ตรวจล็อกอินแล้วขึ้น "ล็อกอินแล้ว" ครบ</span></label>
+    <label class="card"><input type="checkbox"><span>ขั้นที่ 4: บัญชี CLI เดียวกันได้รหัส shared-check เดียวกัน</span></label>
+    <label class="card"><input type="checkbox"><span>มีภาพผลค้นหาใน <code>evidence/</code> ทุกบัญชี</span></label>
+    <label class="card"><input type="checkbox"><span>รู้ว่าเว็บ error = รันบัญชีนั้นซ้ำ ไม่ใช่ตั้งค่าใหม่</span></label>
+  </div>
+  <p class="cap" style="margin-top:16px">คลิกช่องเพื่อติ๊กระหว่างเรียน (ไม่บันทึกถาวร)</p>
+</section>
+
+<section class="slide" data-title="ปัญหาที่พบบ่อย">
+  <div class="kicker">ถ้าติดขัด</div>
+  <h2>ปัญหาที่พบบ่อย</h2>
+  <table>
+    <tr><th style="width:38%">อาการ</th><th>สาเหตุและวิธีแก้</th></tr>
+    <tr><td>Claude บอกว่า devtools ไม่ได้รัน</td><td>เปิด container ใน VS Code แถบ Containers (Start) หรือดูบทที่แล้ว แล้ววางพรอมต์เดิมอีกครั้ง</td></tr>
+    <tr><td><code>yolo1: command not found</code></td><td>ขั้นที่ 1 ยังไม่สำเร็จ ดูตารางสรุปของ Claude ว่าข้อไหน FAIL แล้วให้ Claude แก้ต่อ</td></tr>
+    <tr><td><code>--version</code> ได้ แต่ใช้งานไม่ได้</td><td>ยังไม่ได้ล็อกอิน ใช้พรอมต์ตรวจล็อกอินในขั้นที่ 3</td></tr>
+    <tr><td>Codex ล็อกอินในเบราว์เซอร์แล้วไม่กลับมา</td><td>เลือก <b>Sign in with Device Code</b> หรือพิมพ์ <code>cyolo1 login --device-auth</code></td></tr>
+    <tr><td>Google Flights ขึ้น "Oops, something went wrong."</td><td>เว็บภายนอกล่มชั่วคราว รันเฉพาะบัญชีนั้นซ้ำ</td></tr>
+    <tr><td>รหัส shared-check ไม่ตรงกันในบัญชี CLI เดียวกัน</td><td>skill ไม่ได้ลิงก์ไป <code>shared</code> ให้ Claude รัน installer ซ้ำ (รันซ้ำได้ ไม่ทำลายของเดิม)</td></tr>
+  </table>
+</section>
+
+<section class="slide cover" data-title="ปิดท้าย" style="background-image:url('img/slides/slide-story-team.jpg')">
+  <div class="shade"></div>
+  <div class="inner" style="justify-content:center">
+    <div class="kicker" style="color:#7fd3ff">กลับไปที่คำถามแรก</div>
+    <h1><span class="nw">งานใหญ่เกินบัญชีเดียว…</span><br><span class="nw">ตอนนี้แบ่งให้หลายบัญชีได้แล้ว</span></h1>
+    <div class="sub">container เดิม · 10 บัญชีพร้อมใช้ · skill และ MCP ชุดเดียวกัน<br>ต่อไปเราจะสั่ง multi-agent ให้ช่วยกันทำงานใหญ่จริง 🚀<br><span style="font-size:22px;color:#9fb6dd">รายละเอียดทุกขั้นตอนและพรอมต์เต็มอยู่ใน README.md</span></div>
+  </div>
+</section>
+
+</div></div>
+
+<div class="zone" id="zl" title="หน้าก่อน"></div><div class="zone" id="zr" title="หน้าถัดไป"></div>
+<div id="bar"></div>
+<div id="help">← → เปลี่ยนหน้า · F เต็มจอ · O ดูทุกหน้า</div>
+<div id="hud"><button id="bp" title="หน้าก่อน (←)">‹</button><span id="count"></span><button id="bn" title="หน้าถัดไป (→)">›</button><button id="bo" title="ดูทุกหน้า (O)">▦</button><button id="bf" title="เต็มจอ (F)">⛶</button></div>
+<div id="ov"></div>
+
+<script>
+(function(){
+  const deck = document.getElementById('deck');
+  const slides = [...deck.querySelectorAll('.slide')];
+  const N = slides.length;
+  let cur = 0;
+  function fit(){
+    const s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  function go(i, push){
+    cur = Math.max(0, Math.min(N - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+    document.getElementById('count').textContent = (cur + 1) + ' / ' + N;
+    document.getElementById('bar').style.width = ((cur + 1) / N * 100) + '%';
+    if (push !== false) history.replaceState(null, '', '#' + (cur + 1));
+    document.querySelectorAll('#ov .th').forEach((t, k) => t.classList.toggle('cur', k === cur));
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1);
+  function fs(){
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+    else document.exitFullscreen && document.exitFullscreen();
+  }
+  function ov(on){ document.body.classList.toggle('ov', on === undefined ? !document.body.classList.contains('ov') : on); }
+  const ovEl = document.getElementById('ov');
+  slides.forEach((s, k) => {
+    const d = document.createElement('div'); d.className = 'th';
+    d.innerHTML = '<span>' + (k + 1) + '</span>' + (s.dataset.title || '');
+    d.onclick = () => { go(k); ov(false); };
+    ovEl.appendChild(d);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT') return;
+    const k = e.key;
+    if (['ArrowRight','PageDown',' ','Enter'].includes(k)) { e.preventDefault(); next(); }
+    else if (['ArrowLeft','PageUp','Backspace'].includes(k)) { e.preventDefault(); prev(); }
+    else if (k === 'Home') go(0);
+    else if (k === 'End') go(N - 1);
+    else if (k === 'f' || k === 'F') fs();
+    else if (k === 'o' || k === 'O') ov();
+    else if (k === 'Escape' && document.body.classList.contains('ov')) ov(false);
+  });
+  document.getElementById('bn').onclick = next;
+  document.getElementById('bp').onclick = prev;
+  document.getElementById('bf').onclick = fs;
+  document.getElementById('bo').onclick = () => ov();
+  document.getElementById('zr').onclick = next;
+  document.getElementById('zl').onclick = prev;
+  let tx = null;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', e => {
+    if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+  });
+  document.querySelectorAll('pre .copy').forEach(b => {
+    b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      const text = b.parentElement.innerText.replace(/^คัดลอก(แล้ว ✓)?\n?/, '');
+      const done = () => { b.textContent = 'คัดลอกแล้ว ✓'; setTimeout(() => b.textContent = 'คัดลอก', 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done); else done();
+    });
+  });
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1)); if (n) go(n - 1, false); });
+  fit();
+  const start = parseInt(location.hash.slice(1));
+  go(start ? start - 1 : 0, false);
+})();
+</script>
+</body>
+</html>

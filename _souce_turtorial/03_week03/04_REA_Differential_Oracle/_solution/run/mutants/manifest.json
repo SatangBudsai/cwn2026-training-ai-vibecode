@@ -1,0 +1,72 @@
+[
+  {
+    "id": "M01",
+    "bug": "เรียงราคาจากแพงไปถูก",
+    "file": "Results.tsx",
+    "old": "case \"price\": return by((f) => f.price);",
+    "new": "case \"price\": return by((f) => -f.price);"
+  },
+  {
+    "id": "M02",
+    "bug": "ปิดการกรองจำนวนครั้งที่แวะพัก",
+    "file": "filters.ts",
+    "old": "if (x.stops !== \"any\" && f.stops > Number(x.stops)) return false;",
+    "new": "// mutation: stops filter disabled"
+  },
+  {
+    "id": "M03",
+    "bug": "แสดงจำนวนผลลัพธ์ขาด 1",
+    "file": "Results.tsx",
+    "old": "มีผลลัพธ์ {filtered.length} รายการ",
+    "new": "มีผลลัพธ์ {Math.max(0, filtered.length - 1)} รายการ"
+  },
+  {
+    "id": "M04",
+    "bug": "โหลดเพิ่มเติมได้สูงสุด 299 เที่ยวบิน",
+    "file": "Results.tsx",
+    "old": "const visible = sorted;",
+    "new": "const visible = loadedAll ? sorted.slice(0, 299) : sorted;"
+  },
+  {
+    "id": "M05",
+    "bug": "ราคาเพดานใช้ < แทน ≤",
+    "file": "filters.ts",
+    "old": "total(f.price) > x.maxPrice",
+    "new": "total(f.price) >= x.maxPrice"
+  },
+  {
+    "id": "M06",
+    "bug": "เวลาออกที่แสดงในรายการเลื่อน 1 ชั่วโมง",
+    "file": "FlightRow.tsx",
+    "old": "{f.departTime} – {f.arriveTime}",
+    "new": "{String((Number(f.departTime.slice(0, 2)) + 1) % 24).padStart(2, \"0\") + f.departTime.slice(2)} – {f.arriveTime}"
+  },
+  {
+    "id": "M07",
+    "bug": "ปิดตัวกรองสายการบิน",
+    "file": "filters.ts",
+    "old": "if (x.airlines && !f.airlines.every((a) => x.airlines!.includes(a.code))) return false;",
+    "new": "// mutation: airline filter disabled"
+  },
+  {
+    "id": "M08",
+    "bug": "ปิดตัวกรองเวลาออกเดินทาง",
+    "file": "filters.ts",
+    "old": "if (!inHours(f.departTime, x.dep) || !inHours(f.arriveTime, x.arr)) return false;",
+    "new": "if (!inHours(f.arriveTime, x.arr)) return false;"
+  },
+  {
+    "id": "M09",
+    "bug": "ปิดตัวกรองระยะเวลาเดินทางสูงสุด",
+    "file": "filters.ts",
+    "old": "if (x.maxDurationH !== null && f.durationMin > x.maxDurationH * 60) return false;",
+    "new": "// mutation: duration filter disabled"
+  },
+  {
+    "id": "M10",
+    "bug": "รายละเอียดแสดงหมายเลขเที่ยวบินผิดทุกขา",
+    "file": "FlightRow.tsx",
+    "old": "<b>{l.flightNumber}</b>",
+    "new": "<b>XX000</b>"
+  }
+]

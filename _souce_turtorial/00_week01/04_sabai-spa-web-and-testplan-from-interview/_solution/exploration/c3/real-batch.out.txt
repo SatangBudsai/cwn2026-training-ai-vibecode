@@ -1,0 +1,60 @@
+﻿START pts=250 spend=9999 | pts=100 spend=29999 | pts=200 spend=30001 | cards 2199 2200 2201
+
+# E157 จริง U03
+201 2UB9HY7M 2026-07-08 10:00 T01 pct=0NONE pts=200 net=1900 trans=300 gc=2199 pay=1
+pts=50 spend=9999 card 0
+admin schedule 8 Jul sample {"date":"2026-07-08","bookings":[{"id":"43f36b70-36c7-46c4-a842-d1c827062597","bookingCode":"2UB9HY7M","userId":"00000000-0000-0000-0000-000000000103","guestName":null,"guestPhone":null,"serviceId":"S04","serviceName":{"th":"นวดน้ำมันอโรมา","en":"Aroma Oil Massage","zh":"香薰精油按摩"},"bookingType":"SINGLE","partySize":1,"date":"2026-07-08","time":"10:00","endTime":"11:30","startAt":"2026-07-08T10:00:00+07:00","endAt":"2026-07-08T11:30:00+07:00","isCoupleSuite":false,"status":"CONFIRMED","therapists":[{"personNo":1,"id":"T01","name":{"th":"พี่ศรี","en":"P'Sri","zh":"诗丽"},"photoPath":"/brand/people/staff-t01-sri.jpg"}],"lines":{"fullPrice":2000,"discountPercent":0,"discountSource":"NONE","discountAmount":0,"pointsRedeemed":200,"pointsDiscount":100,"serviceNet":1900,"cars":1,"transportFee":300,"totalBeforeGiftCard":2200,"giftCardAmount":2199,"payAtShop":1},"hotelId":"H04","hotelName":{"th":"โรง
+  cancel 43f36b70 200 ok
+pts=250 spend=9999 card 2199
+
+# E158 จริง U03
+201 WN27TXNL 2026-07-08 10:00 T01 pct=0NONE pts=200 net=1900 trans=300 gc=2200 pay=0
+pts=50 spend=9999 card 0
+  cancel 8500adc6 200 ok
+pts=250 spend=9999 card 2200
+
+# expectedPayAtShop ผิด / ไม่ส่ง (U10 17 มิ.ย.)
+wrong: 409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง pts=200 spend=30001
+missing: 201 26PLLXVZ 2026-06-17 10:00 T01 pct=10TIER pts=0 net=900 trans=0 gc=0 pay=900 pts=200 spend=30001
+  cancel 588aa1c0 200 ok
+client-sent lines ignored?: 201 F2H9TCFN 2026-06-17 10:00 T01 pct=10TIER pts=0 net=900 trans=0 gc=0 pay=900 pts=200 spend=30001
+  cancel c5135c72 200 ok
+
+# E97 จริง U10 + admin
+201 SLYAXLV8 2026-06-17 10:00 T01 pct=10TIER pts=200 net=800 trans=0 gc=0 pay=800 pts=0 spend=30001
+admin 17 Jun {"date":"2026-06-17","bookings":[{"id":"848570ff-17c6-43a8-8471-9fb530edf3d1","bookingCode":"SLYAXLV8","userId":"00000000-0000-0000-0000-000000000110","guestName":null,"guestPhone":null,"serviceId":"S01","serviceName":{"th":"นวดไทย 60 นาที","en":"Thai Massage 60","zh":"泰式按摩 60分钟"},"bookingType":"SINGLE","partySize":1,"date":"2026-06-17","time":"10:00","endTime":"11:00","startAt":"2026-06-17T10:00:00+07:00","endAt":"2026-06-17T11:00:00+07:00","isCoupleSuite":false,"status":"CONFIRMED","therapists":[{"personNo":1,"id":"T01","name":{"th":"พี่ศรี","en":"P'Sri","zh":"诗丽"},"photoPath":"/brand/people/staff-t01-sri.jpg"}],"lines":{"fullPrice":1000,"discountPercent":10,"discountSource":"TIER","discou
+quote after spend, ask 100 pts: points-not-enough
+cancel race: 200 ok / 409 booking-not-cancellable / 409 booking-not-cancellable / 409 booking-not-cancellable pts=200 spend=30001
+
+# race แต้ม U05 มี 100 แต้ม จองพร้อมกัน 2 ใบ ใบละ 100 แต้ม (6 ก.ค.)
+422 points-not-enough: แต้มไม่พอ ต้องมีอย่างน้อย 100 แต้ม
+201 YA5D5EAA 2026-07-06 12:00 T01 pct=5TIER pts=100 net=900 trans=0 gc=0 pay=900
+pts=0 spend=29999
+  cancel 622fd900 200 ok
+pts=100 spend=29999
+
+# race แต้ม U10 มี 200 แต้ม จองพร้อมกัน 5 ใบ ใบละ 100 แต้ม (6 ก.ค.)
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+pts=200 spend=30001
+pts=200 spend=30001
+
+# race บัตร GIFT-2200 U03 S04 2 ใบพร้อมกัน ใบละ ฿2,000 (7 ก.ค.)
+201 2J9U73RT 2026-07-07 10:00 T01 pct=0NONE pts=0 net=2000 trans=0 gc=2000 pay=0
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+card 200
+  cancel 2d05137e 200 ok
+card 2200
+
+# U05 เดือนเกิดใช้แล้ว ส่ง useBirthday ตอนจอง expected 800 แล้ว 950
+409 price-changed: ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง
+201 UFSVDG6H 2026-06-17 10:00 T01 pct=5TIER pts=0 net=950 trans=0 gc=0 pay=950
+  cancel dd62edeb 200 ok
+
+# แขก แลกแต้ม/จองปกติ 8 ก.ค. เบอร์ 0893000001
+422 guest-info-required: กรุณากรอกชื่อและเบอร์โทร
+END pts=250 spend=9999 | pts=100 spend=29999 | pts=200 spend=30001 | cards 2199 2200 2201
+clock {"now":"2026-06-15T10:00:00+07:00","today":"2026-06-15","minBookingDate":"2026-06-16","maxBookingDate":"2026-07-15","locked":true}

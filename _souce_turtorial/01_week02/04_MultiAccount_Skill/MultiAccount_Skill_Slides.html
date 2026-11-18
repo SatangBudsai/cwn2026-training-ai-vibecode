@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>การสร้างสกิลสำหรับระบบหลายบัญชี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12305e; --teal:#0f9d9a; --teal-soft:#e2f5f4; --orange:#f08a24; --orange-soft:#fff1e3;
+  --red:#dc2626; --red-soft:#fdecec; --green:#15803d; --green-soft:#e7f7ec; --ink:#1f2937; --muted:#5b6b80; --line:#dbe3ee;
+  --bg:#f6f8fb; --card:#ffffff; --code:#0f1b2d;
+  --font:'IBM Plex Sans Thai','Leelawadee UI','Segoe UI',sans-serif; --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0b1424;overflow:hidden;font-family:var(--font);color:var(--ink)}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#deck{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);padding:60px 80px 70px;display:none;flex-direction:column;overflow:hidden;border-radius:6px}
+.slide.active{display:flex;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.kicker{font-size:22px;font-weight:600;color:var(--teal);letter-spacing:.02em;margin-bottom:6px}
+.kicker.red{color:var(--red)}
+h1{font-size:64px;line-height:1.15;margin:0;color:var(--navy);font-weight:700}
+h2{font-size:46px;line-height:1.2;margin:0 0 24px;color:var(--navy);font-weight:700}
+h3{font-size:28px;margin:0 0 10px;color:var(--navy)}
+p,li{font-size:25px;line-height:1.6}
+p{margin:0 0 14px}
+ul,ol{margin:0;padding-left:30px}
+li{margin:6px 0}
+b,strong{color:var(--navy)}
+code{font-family:var(--mono);font-size:.86em;background:#e8eef7;color:#0b3b7a;padding:2px 8px;border-radius:6px}
+.muted{color:var(--muted)}
+.small{font-size:21px;line-height:1.55}
+.cap{font-size:17px;color:var(--muted);margin-top:8px;line-height:1.45}
+.row{display:flex;gap:40px;flex:1;min-height:0}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;min-height:0}
+.c2{flex:2}.c3{flex:3}
+.vc{justify-content:center}
+.fig{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.fig img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;box-shadow:0 10px 30px rgba(18,48,94,.16);background:#fff}
+.fig.flat img{box-shadow:none;background:none}
+.fig.photo img{border-radius:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;box-shadow:0 4px 14px rgba(18,48,94,.06)}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.num{display:inline-flex;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:22px;align-items:center;justify-content:center;flex:none}
+.pill{display:inline-block;background:var(--teal-soft);color:#0b6b69;font-weight:600;padding:6px 16px;border-radius:999px;font-size:19px}
+.pill.or{background:var(--orange-soft);color:#a3530c}
+.pill.gr{background:var(--green-soft);color:var(--green)}
+.pill.rd{background:var(--red-soft);color:var(--red)}
+.note{border-left:6px solid var(--orange);background:var(--orange-soft);padding:14px 20px;border-radius:10px;font-size:21px;line-height:1.55}
+.note.ok{border-color:var(--green);background:var(--green-soft)}
+.note.info{border-color:var(--teal);background:var(--teal-soft)}
+.note.bad{border-color:var(--red);background:var(--red-soft)}
+pre{position:relative;margin:0;background:var(--code);color:#dbe7ff;font-family:var(--mono);font-size:17.5px;line-height:1.6;padding:20px 24px;border-radius:14px;white-space:pre-wrap;word-break:break-word}
+pre,code{font-variant-ligatures:none;font-feature-settings:"liga" 0,"calt" 0}
+pre .copy{position:absolute;top:10px;right:10px;font-family:var(--font);font-size:15px;background:#26406a;color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+pre .copy:hover{background:var(--teal)}
+pre .err{color:#ff8a8a}
+pre .ok{color:#7ee0a8}
+pre .dim{color:#7f93b5}
+pre .hl{background:rgba(240,138,36,.25);border-radius:4px;padding:0 3px}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+th{color:var(--navy);background:#eaf0f8}
+.steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.step p{margin:4px 0 0}
+.quote{font-size:40px;font-weight:700;color:var(--navy);line-height:1.35}
+.quote .mark{color:var(--orange)}
+/* cover / photo slides */
+.cover{padding:0;background:#0b1424 center/cover no-repeat}
+.cover .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,16,32,.95) 0%,rgba(8,16,32,.8) 45%,rgba(8,16,32,.15) 78%)}
+.cover .inner{position:relative;padding:110px 90px;max-width:1180px;color:#fff;display:flex;flex-direction:column;height:100%}
+.cover h1{color:#fff;font-size:64px}
+.cover .sub{font-size:28px;color:#cfe0ff;margin-top:22px;line-height:1.5}
+.cover .hint{margin-top:auto;font-size:20px;color:#9fb6dd}
+.cover b{color:#fff}
+.nw{white-space:nowrap}
+.kbd{display:inline-block;border:1px solid #9fb6dd;border-bottom-width:3px;border-radius:7px;padding:1px 10px;font-family:var(--mono);font-size:18px;margin:0 3px}
+/* dark / divider */
+.divider{background:linear-gradient(135deg,var(--navy) 0%,#163f7a 60%,var(--teal) 140%);color:#fff;justify-content:center}
+.divider .big{font-size:150px;font-weight:700;line-height:1}
+.divider h1{color:#fff;font-size:68px;margin-top:10px}
+.divider p{color:#d5e4ff;font-size:28px;margin-top:18px;max-width:1200px}
+.divider b{color:#fff}
+.hook{background:#0b1424;color:#fff;justify-content:center;align-items:center;text-align:center}
+.hook h1{color:#fff;font-size:60px;max-width:1300px}
+.hook p{color:#b9cbe8;font-size:30px;max-width:1150px;margin:26px auto 0}
+.hook .em{color:var(--orange)}
+/* machine grid (pain 1) */
+.mach{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mach div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:17px;line-height:1.45}
+.mach div b{display:block;font-size:16px;color:var(--muted)}
+.mach .x{border-color:#f3b4b4;background:var(--red-soft)}
+.mach .y{border-color:#f6d3ad;background:var(--orange-soft)}
+/* needs */
+.need{text-align:center;padding:22px 20px;min-height:200px;display:flex;flex-direction:column;justify-content:center}
+.need .ic{font-size:56px;line-height:1}
+.need h3{font-size:28px;margin:18px 0 10px}
+.need p{font-size:22px;line-height:1.5;margin:0;color:var(--muted)}
+/* before/after */
+.ba td:first-child{font-weight:600;color:var(--navy);width:22%}
+.ba td:nth-child(2){color:#9b1c1c;background:#fff7f7}
+.ba td:nth-child(3){color:#0f5132;background:#f4fbf6}
+/* 3 steps strip */
+.trio{display:flex;gap:24px;margin-top:40px}
+.trio div{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:22px;padding:36px 32px;font-size:34px;line-height:1.4;color:#fff;min-height:220px}
+.trio div span{display:block;font-size:22px;color:#9fd8ff;margin-bottom:10px}
+.trio .star{background:rgba(15,157,154,.35);border-color:#7fe0dc}
+/* architecture */
+.arch{display:flex;gap:22px;flex:1;min-height:0}
+.host{flex:1;border:2px dashed #9fb3cf;border-radius:22px;padding:14px 18px;background:#eef3f9;display:flex;flex-direction:column}
+.hosttag{font-size:20px;color:var(--navy);margin-bottom:10px}
+.cbox{flex:1;border:3px solid #2f6fd6;border-radius:18px;background:#fff;padding:12px 16px;display:flex;flex-direction:column}
+.ctag{font-size:20px;color:#1d4ed8;margin-bottom:10px}
+.cin{display:flex;gap:16px;flex:1}
+.layers{flex:3;display:flex;flex-direction:column;gap:7px}
+.ly{background:#e8f0fc;border:1px solid #c6d6f2;border-radius:10px;padding:8px 14px;font-size:19px;color:var(--navy)}
+.ly span{color:var(--muted);font-size:16px;margin-left:6px}
+.ly.base{background:#12305e;color:#fff;border-color:#12305e}
+.ly.add{background:#fff1e3;border:2px dashed var(--orange)}
+.svc{flex:2;display:flex;flex-direction:column;gap:8px}
+.svh{font-size:16px;color:var(--muted)}
+.sv{background:var(--teal-soft);border:1px solid #b7e3e1;border-radius:10px;padding:9px 14px;font-size:19px;color:#0b6b69;font-weight:600}
+.sv span{display:block;font-weight:400;font-size:16px;color:var(--muted)}
+.sv.fold{background:#fff8e6;border-color:#f3dca5;color:#8a5a00}
+.doors{width:300px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.door{background:#fff;border:1px solid var(--line);border-left:6px solid var(--orange);border-radius:12px;padding:12px 16px;font-size:18px;line-height:1.4;color:var(--muted)}
+.door b{display:block;font-size:22px;color:var(--navy);font-family:var(--mono)}
+/* story timeline */
+.story{background:linear-gradient(160deg,#0b1424 0%,#1a1630 100%);color:#fff}
+.story.good{background:linear-gradient(160deg,#0b1f1c 0%,#0d2a3a 100%)}
+.tl{display:flex;flex-direction:column;gap:12px;margin-top:6px;border-left:3px solid rgba(255,255,255,.2);padding-left:26px;margin-left:10px}
+.ev{display:flex;gap:22px;align-items:center;position:relative}
+.ev::before{content:"";position:absolute;left:-36px;width:16px;height:16px;border-radius:50%;background:#7f93b5}
+.ev.bad::before{background:#ff6b6b}.ev.ok::before{background:#5fd68f}.ev.end::before{background:var(--orange);width:20px;height:20px;left:-38px}
+.ev .t{font-family:var(--mono);font-size:24px;color:#9fb6dd;width:86px;flex:none}
+.ev .b{font-size:25px;line-height:1.45;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 20px;color:#e9f0ff}
+.ev.bad .b{border-color:rgba(255,107,107,.45)}
+.ev.ok .b{border-color:rgba(95,214,143,.45)}
+.ev.end .b{background:rgba(240,138,36,.18);border-color:rgba(240,138,36,.6)}
+.ev .who{display:block;font-size:17px;color:#ffb27a;margin-bottom:2px}
+.story b{color:#fff}
+/* root cause */
+.root{display:flex;align-items:center;gap:22px;flex:1}
+.pains{display:flex;flex-direction:column;gap:14px;width:330px}
+.pc{background:var(--red-soft);border:1px solid #f3b4b4;color:#9b1c1c;border-radius:14px;padding:16px 20px;font-size:23px;font-weight:600}
+.arrow{font-size:56px;color:var(--orange);font-weight:700}
+.cause{width:300px;background:var(--navy);color:#dfe8f7;border-radius:22px;padding:30px 26px;font-size:26px;line-height:1.5;text-align:center}
+.cause b{color:#ffcf9e}
+.lbl{font-size:17px;letter-spacing:.06em;color:var(--orange);font-weight:700;margin-bottom:10px}
+.want{flex:1;background:#fff;border:3px solid var(--teal);border-radius:22px;padding:24px 28px}
+.want h3{font-size:34px;color:var(--teal);margin:0 0 10px}
+.want ul{list-style:none;padding:0}
+.want li{font-size:23px;margin:9px 0}
+/* photo story */
+.photo-slide{padding:0;background:#0b1424 center/cover no-repeat}
+.capbox{position:absolute;left:60px;right:60px;bottom:64px;display:flex;gap:24px;align-items:center;background:rgba(10,20,40,.86);color:#fff;border-radius:22px;padding:24px 34px;font-size:31px;line-height:1.45;border-left:10px solid #7fd3ff;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.capbox.bad{border-left-color:#ff6b6b}.capbox.good{border-left-color:#5fd68f}
+.capbox b{color:#ffe1a8}
+.capbox .sm{font-size:23px;color:#c7d6ee}
+.capbox .badge{font-size:60px;line-height:1;color:#7fd3ff;flex:none}
+.capbox.bad .badge{color:#ff8a8a}.capbox.good .badge{color:#7ee0a8}
+.imgnote{position:absolute;right:24px;top:18px;font-size:15px;color:#fff;background:rgba(0,0,0,.4);padding:3px 10px;border-radius:8px}
+/* stacks */
+.stacks{display:flex;gap:24px;align-items:stretch;flex:1}
+.mc{width:430px;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;background:#fff;border:3px solid var(--green)}
+.mc.bad{border-color:var(--red)}
+.mh{font-size:25px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between}
+.mh span{font-size:21px}
+.mc.ok .mh span{color:var(--green)}.mc.bad .mh span{color:var(--red)}
+.ly2{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;background:#eef3f9;border:1px solid var(--line);font-size:23px;color:var(--navy);padding:8px}
+.ly2.app{background:#e2f5f4;border-color:#b7e3e1}
+.ly2.diff{background:var(--red-soft);border:2px solid #f19a9a;color:#9b1c1c}
+.ly2 i{font-size:17px;color:var(--muted);margin-left:6px;font-style:normal}
+.vs{align-self:center;font-size:90px;color:var(--red);font-weight:700}
+.why{flex:1;display:flex;flex-direction:column;justify-content:center}
+/* equations */
+.eqs{display:flex;flex-direction:column;gap:20px;margin-top:6px}
+.eq{border-radius:20px;padding:18px 26px;background:#fff;border:2px solid var(--line)}
+.eq.bad{border-color:#f3b4b4;background:#fffafa}.eq.good{border-color:#a7dcb8;background:#f6fcf8}
+.eq .lab{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.ex{display:flex;align-items:center;gap:18px}
+.tk{flex:1;text-align:center;font-size:27px;font-weight:600;padding:18px 10px;border-radius:14px;background:#eef3f9;color:var(--navy)}
+.tk.r{background:var(--red-soft);color:#9b1c1c}.tk.g{background:var(--green-soft);color:var(--green)}
+.op{font-size:44px;font-weight:700;color:var(--muted)}
+pre.prompt{max-height:610px;overflow:auto;font-size:13px;line-height:1.5}
+/* chrome */
+#bar{position:fixed;left:0;bottom:0;height:5px;background:var(--orange);transition:width .3s;z-index:5}
+#hud{position:fixed;right:18px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:6;font-family:var(--font)}
+#hud button{background:rgba(18,48,94,.78);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:10px;height:40px;min-width:40px;font-size:18px;cursor:pointer;padding:0 12px}
+#hud button:hover{background:var(--teal)}
+#count{color:#fff;background:rgba(18,48,94,.78);border-radius:10px;padding:9px 10px;font-size:16px;min-width:76px;text-align:center}
+#help{position:fixed;left:18px;bottom:16px;color:#fff;background:rgba(18,48,94,.6);padding:4px 10px;border-radius:8px;font-size:14px;z-index:6}
+.zone{position:fixed;top:0;bottom:60px;width:12%;z-index:4;cursor:pointer}
+#zl{left:0}#zr{right:0}
+body.ov #stage{display:none}
+#ov{display:none;position:fixed;inset:0;overflow:auto;padding:30px;z-index:10;background:#0b1424}
+body.ov #ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-content:start}
+#ov .th{background:#16233a;border:2px solid transparent;border-radius:10px;padding:12px 14px;color:#dbe7ff;cursor:pointer;font-size:16px;line-height:1.4}
+#ov .th:hover,#ov .th.cur{border-color:var(--orange)}
+#ov .th span{color:var(--orange);font-weight:700;margin-right:6px}
+#check label{font-size:24px;display:flex;gap:14px;align-items:center;cursor:pointer;line-height:1.4}
+#check input{width:26px;height:26px;accent-color:var(--teal);flex:none}
+@page{size:1600px 900px;margin:0}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}
+  #hud,#help,#bar,.zone,#ov,pre .copy,.cover .hint{display:none!important}
+  #stage{position:static;display:block}
+  #deck{transform:none!important;width:1600px;height:auto}
+  .slide{display:flex!important;position:relative;width:1600px;height:900px;border-radius:0;animation:none!important;page-break-after:always;break-after:page}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+pre.prompt{max-height:720px}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section class="slide cover" data-title="ปก" style="background-image:url('img/slide-cover.jpg')"><div class="shade"></div><div class="inner">
+<div class="kicker" style="color:#7fd3ff">สัปดาห์ที่ 2 · 04_MultiAccount_Skill</div>
+<h1>การสร้างสกิล<br>สำหรับระบบหลายบัญชี</h1>
+<div class="sub" style="font-size:30px;color:#7fd3ff">yolo · cyolo · agent-team</div>
+<div class="sub" style="font-size:22px">ให้ AI ใช้ <b>yolo1–5</b> และ <b>cyolo1–5</b> ได้ถูกวิธี · ทำงานเป็นทีม · รู้สถิติทุกบัญชี · สลับหัวหน้าได้เมื่อโควตาหมด</div>
+<div class="hint">กด <span class="kbd">→</span> เพื่อเริ่ม · <span class="kbd">F</span> เต็มจอ · <span class="kbd">O</span> ดูทุกหน้า</div></div></section>
+<section class="slide hook" data-title="ผลลัพธ์ก่อนเริ่ม"><div class="kicker" style="color:#7fd3ff;font-size:24px">พรอมต์เดียวกันใน Claude Code app · เพิ่มแค่สกิล · เฉลี่ย 2 รอบ</div><div style="display:flex;gap:60px;align-items:center;justify-content:center;margin-top:30px"><div><div style="font-size:120px;font-weight:700;color:#ff8a8a;line-height:1">40</div><div style="font-size:28px;color:#b9cbe8">คำสั่งของ app · ก่อนมีสกิล</div></div><div style="font-size:90px;color:#f08a24">→</div><div><div style="font-size:120px;font-weight:700;color:#7ee0a8;line-height:1">25</div><div style="font-size:28px;color:#b9cbe8">คำสั่งของ app · หลังมีสกิล</div></div></div><p>คำสั่งที่ล้ม <span class="em">8.5 → 3</span> · ค่าใช้จ่าย <span class="em">$1.29 → $0.80</span> · คะแนนชุดซ่อน 90 เต็มทั้งสองวิธี</p></section>
+<section class="slide " data-title="สารบัญ"><div class="kicker">สารบัญ</div><h2>ปูพื้น แล้วลงมือ 2 ส่วน</h2><div class="grid" style="margin-top:20px;grid-template-columns:repeat(4,1fr)"><div class="card need"><div class="num" style="margin:0 auto">A</div><h3>ปัญหา</h3><p>มีคำสั่งครบ แต่ AI ยังใช้ไม่เป็น · โจทย์ baseline</p></div><div class="card need"><div class="num" style="margin:0 auto">B</div><h3>แนวคิด</h3><p>ทำไมสกิลแก้ได้ · สกิล 3 ตัว · ledger</p></div><div class="card need"><div class="num" style="margin:0 auto">1</div><h3>ส่วนที่ 1</h3><p>สร้างสกิล → ติดตั้ง → เทียบกับ baseline</p></div><div class="card need"><div class="num" style="margin:0 auto">2</div><h3>ส่วนที่ 2</h3><p>ทดลอง feature: โทเค็นลูกทีม · สลับหัวหน้า · รูปแบบ 10 แบบ</p></div></div></section>
+<section class="slide hook" data-title="ปูพื้น · ปัญหา"><div class="pill" style="font-size:24px;padding:8px 22px;background:#0f9d9a;color:#fff">ปูพื้น · ปัญหา</div><h1 style="margin-top:26px">ปัญหา</h1><p>container มี <b style="color:#fff">yolo1–5</b> และ <b style="color:#fff">cyolo1–5</b> ครบ แต่ AI ยังใช้ไม่เป็น · ทดลองจริงก่อนมีสกิล</p></section>
+<section class="slide photo-slide" data-title="ปัญหา: มีคำสั่ง แต่ใช้ไม่เป็น" style="background-image:url('img/photo-01-pain.jpg')"><div class="capbox bad"><div class="badge">!</div><div><b>มีคำสั่งครบ แต่ AI ยังใช้ไม่เป็น</b><br><span class="sm">เปิด --help ซ้ำ · ค้างรอ input · ล็อกอินหมดอายุ · ไม่รู้ว่าใช้โทเค็นไปเท่าไร</span></div></div><div class="imgnote">ภาพจำลอง</div></section>
+<section class="slide " data-title="เพนพอยต์ 6 ข้อ"><div class="kicker red">1 · ปัญหา</div><div class="fig "><img src="img/concept-01-pain-points.png" alt=""></div></section>
+<section class="slide " data-title="เพนพอยต์: สิ่งที่เกิดจริง"><div class="kicker red">1 · ปัญหา</div><h2>สิ่งที่เกิดขึ้นจริง</h2><table class="" style="font-size:21px"><tr><th>เพนพอยต์</th><th>สิ่งที่เกิดขึ้นจริง</th></tr><tr><td><b>เรียกผิดวิธี</b></td><td><code>codex exec</code> ไม่ปิด stdin จะค้าง · ไม่ใส่ <code>-p</code> เปิดโหมดโต้ตอบ · exit code 0 ≠ สำเร็จ</td></tr><tr><td><b>สถานะล็อกอินไม่ตรงจริง</b></td><td><code>auth status</code> ตอบ loggedIn แต่เรียกจริงได้ <code>OAuth session expired</code></td></tr><tr><td><b>ประสานงานไม่เป็น</b></td><td>สั่งทีละบัญชี · ยัดข้อมูลยาวลง prompt · ไม่มีที่แชร์ความรู้</td></tr><tr><td><b>ไม่มีสถิติ</b></td><td>ไม่รู้โทเค็น เวลา และโควตาของแต่ละบัญชี</td></tr><tr><td><b>ลองผิดลองถูกทุกครั้ง</b></td><td>เปิด --help ซ้ำ เขียนสคริปต์ช่วยใหม่ทุกครั้ง</td></tr><tr><td><b>หัวหน้าทีมโควตาหมด</b></td><td>แผนงานอยู่ในบริบทแชตของหัวหน้า งานค้างหายไปด้วย</td></tr></table></section>
+<section class="slide " data-title="1.1 โจทย์"><div class="kicker">1.1 · Baseline: ทีม AI ทำความสะอาดข้อมูล ticket</div><div class="fig "><img src="img/baseline-01-story.png" alt=""></div><div class="cap">ภาพจำลอง · AI เป็นผู้เขียนโค้ดเท่านั้น โค้ดห้ามเรียก AI</div></section>
+<section class="slide " data-title="1.1 fan-out แล้ว fan-in"><div class="kicker">1.1 · Baseline: ทีม AI ทำความสะอาดข้อมูล ticket</div><div class="fig "><img src="img/baseline-02-fanout-fanin.png" alt=""></div><div class="cap">ใช้รูปแบบการทำงานร่วมกันแบบเดียว: 3 บัญชีเขียนคนละไฟล์พร้อมกัน แล้วบัญชีเดียวรวมเป็นโปรแกรมเดียว</div></section>
+<section class="slide " data-title="1.1 ข้อมูลหลายรูปแบบ"><div class="kicker">1.1 · Baseline: ทีม AI ทำความสะอาดข้อมูล ticket</div><div class="fig "><img src="img/baseline-06-dirty-formats.png" alt=""></div><div class="cap">baseline/tickets.csv · 1,000 ใบ · คอลัมน์ id, received_at, order_id, channel, text</div></section>
+<section class="slide " data-title="1.1 งานย่อย 3 ชิ้น"><div class="kicker">1.1 · Baseline: ทีม AI ทำความสะอาดข้อมูล ticket</div><div class="fig "><img src="img/baseline-05-before-after.png" alt=""></div><div class="cap">งานละ 1 ไฟล์ 1 ฟังก์ชัน คำตอบถูกหรือผิดชัดเจน</div></section>
+<section class="slide " data-title="1.1 วัดอย่างไร"><div class="kicker">1.1 · Baseline: ทีม AI ทำความสะอาดข้อมูล ticket</div><div class="fig "><img src="img/baseline-03-metrics.png" alt=""></div><div class="cap">ชุดซ่อน 1,000 ใบ รูปแบบเหมือนชุดนี้แต่ค่าต่างกันทั้งหมด ทีมไม่เคยเห็น</div></section>
+<section class="slide " data-title="1.1 พรอมต์"><div class="kicker">1.1 · พรอมต์ (ใช้ชุดเดียวกันทั้งก่อนและหลังมีสกิล)</div><pre class="prompt"><button class="copy">คัดลอก</button>ใช้ทีมเอเจนต์ใน container multi-account ทำความสะอาดข้อมูล ticket ของทีม Support งานของทีมทำใน container ผ่าน docker exec เท่านั้น (ใช้ได้เฉพาะ 3 บัญชีนี้เท่านั้นตลอดทุกขั้น: yolo1, yolo2 และ cyolo1 ห้ามเรียกบัญชีอื่นเด็ดขาด)
+เตรียมก่อนเริ่ม (ถ้า container multi-account กำลังรันอยู่แล้ว ข้ามไปได้ ห้ามลบ container / image / volume ที่มีอยู่)
+- ถ้าเครื่องนี้ไม่มีทั้ง image multi-account:1.0 และ tuchsanai/multi-account:1 ให้ docker pull tuchsanai/multi-account:1
+- ถ้ายังไม่มีชื่อ multi-account:1.0 ให้ docker tag tuchsanai/multi-account:1 multi-account:1.0
+- ถ้า container หยุดอยู่ให้ docker start ถ้ายังไม่มีให้ docker run -dit --name multi-account --privileged -p &lt;PORT&gt;:8888 -v ai-accounts:/root/ai-accounts -v &lt;path เต็มของ ../03_MultiAccount_Container/workspace&gt;:/workspace multi-account:1.0 (PORT เริ่มที่ 8886 ถ้าชนใช้เลขว่างถัดไป)
+- ถ้าใน container ยังไม่มี pandas ให้ติดตั้งด้วย pip install pandas
+- ถ้าไม่มีบัญชี Claude หรือ Codex ที่ล็อกอินเลย ให้หยุดและบอกวิธีล็อกอินใน JupyterLab Terminal ห้ามล็อกอินแทนผม
+ก่อนเริ่ม ดูว่าใน container มีสกิลที่ช่วยงานนี้ได้หรือไม่ (/root/ai-accounts/.Claude/shared/skills) ถ้ามีให้อ่านและใช้
+โฟลเดอร์งานใน container: /workspace/team-demo คัดลอก ./baseline/tickets.csv ไปไว้ที่ /workspace/team-demo/data
+
+โจทย์: tickets.csv มี ticket 1,000 ใบ คอลัมน์ id, received_at, order_id, channel, text ข้อมูลเดียวกันถูกเขียนมาหลายรูปแบบ มีเลขไทย การเว้นวรรคหลายแบบ และอักขระที่มองไม่เห็นปนอยู่ ต้องการโปรแกรม Python ที่แปลงให้เป็นรูปแบบเดียว
+- ใช้ได้เฉพาะ Python มาตรฐานและ pandas อ่านไฟล์ด้วย pandas.read_csv โค้ดห้ามเรียก AI และห้ามใช้เน็ต AI มีหน้าที่เขียนโค้ดเท่านั้น
+- โปรแกรมจะถูกตรวจกับ ticket ชุดใหม่ที่ไม่มีใครเห็น ค่าจะต่างจากชุดนี้ จึงห้ามใส่ id เลขออเดอร์ หรือรหัสของข้อมูลชุดนี้ลงในโค้ด
+
+ขั้นที่ 1 แบ่งงาน (fan-out): ให้ 3 บัญชีเขียนคนละไฟล์พร้อมกันใน /workspace/team-demo แต่ละไฟล์มีฟังก์ชันเดียว เจ้าของไฟล์ทดสอบกับ data/tickets.csv เองจนมั่นใจ
+- yolo1 เขียน clean_time.py ฟังก์ชัน clean_time(received_at) คืนเวลาไทย ปี ค.ศ. รูปแบบ YYYY-MM-DDTHH:MM ข้อมูลมี 3 รูปแบบ: ลงท้าย +07:00 คือเวลาไทย · ลงท้าย Z คือ UTC ต้องบวก 7 ชั่วโมง · วัน/เดือน/ปี พ.ศ. ชั่วโมง:นาที คือเวลาไทย
+- yolo2 เขียน clean_order.py ฟังก์ชัน clean_order(order_id, text) คืนเลขออเดอร์รูปแบบ ORD-ตามด้วยเลข 6 หลัก ข้อมูลเขียนมาหลายแบบ เช่น #312364, ord312364, ORD 312364, 312364 ถ้าคอลัมน์ order_id ว่าง เลขออเดอร์จะอยู่ในข้อความ ถ้าไม่มีเลยให้คืน None
+- cyolo1 เขียน clean_code.py ฟังก์ชัน clean_code(text) คืนรหัสข้อผิดพลาดในข้อความ รูปแบบ E ตามด้วยเลข 3 หลัก เช่น E402 ข้อมูลเขียนมาหลายแบบ เช่น E-402, e 402, ERR402, E๔๐๒, อี402 ถ้าไม่มีรหัสให้คืน None เลขพัสดุและเลขออเดอร์ไม่ใช่รหัสข้อผิดพลาด
+
+ขั้นที่ 2 รวมงาน (fan-in): เมื่อครบ 3 ไฟล์ ให้ yolo1 เขียน clean.py ที่เรียกใช้ทั้ง 3 ฟังก์ชัน
+- python3 clean.py &lt;ไฟล์ csv&gt; ต้องพิมพ์ JSON เป็น {id: {&quot;time&quot;: ..., &quot;order_id&quot;: ..., &quot;error_code&quot;: ...}} ครบทุกใบ ค่าที่ไม่มีให้เป็น null
+- รันกับ data/tickets.csv ให้ผ่าน แล้วเขียน report.md สรุปจำนวน ticket ต่อวัน จำนวน ticket ของแต่ละรหัสข้อผิดพลาด และจำนวนใบที่คอลัมน์ order_id ว่าง
+
+ขั้นที่ 3 สรุป: ตาราง บัญชี | งาน | รุ่น | เวลา (วินาที) | input tokens | output tokens | สำเร็จ/ล้ม ตัวเลขต้องมาจากผลจริงของแต่ละบัญชี ห้ามประมาณ และบอกโควตาที่เหลือของแต่ละบัญชีพร้อมเวลาของข้อมูล บันทึกสรุปนี้เป็น /workspace/team-demo/run-summary.md ด้วย</pre><p class="cap">บรรทัด "ก่อนเริ่ม ดูว่าใน container มีสกิล…" ทำให้เทียบได้ยุติธรรม และเป็นวิธีที่ Claude Code app รู้จักสกิลใน container</p></section>
+<section class="slide " data-title="1.1 ผลจริงก่อนมีสกิล"><div class="kicker red">1.1 · ผลจริงก่อนมีสกิล · 2 รอบ</div><h2>เฉลี่ย 377 วินาที · 40 คำสั่ง (ล้ม 8.5)</h2><div class="row"><div class="col "><table class="" style="font-size:20px"><tr><th>รอบ</th><th>ชุดซ่อน (90)</th><th>เวลา (วินาที)</th><th>คำสั่ง</th><th>ล้ม</th><th>ค่าใช้จ่าย</th></tr><tr><td>1</td><td>90</td><td>332.6</td><td>41</td><td>9</td><td>$1.22</td></tr><tr><td>2</td><td>90</td><td>422.1</td><td>39</td><td>8</td><td>$1.36</td></tr><tr><td><b>เฉลี่ย</b></td><td><b>90</b></td><td><b>377.4</b></td><td><b>40</b></td><td><b>8.5</b></td><td><b>$1.29</b></td></tr></table></div><div class="col  vc"><table class="" style="font-size:19px"><tr><th>สิ่งที่สังเกตได้</th><th>รายละเอียด</th></tr><tr><td>โค้ดถูกทั้งหมด</td><td><code>clean.py</code> ได้ 90 เต็มบนชุดซ่อนทั้ง 2 รอบ</td></tr><tr><td>หาวิธีเอง</td><td>เขียนสคริปต์คุมงาน สคริปต์รอผล และรวมตัวเลขเอง</td></tr><tr><td><b>อ่านไฟล์ credential</b></td><td>รอบที่ 1 เขียนสคริปต์อ่าน token ใน .credentials.json เพื่อถามโควตา</td></tr><tr><td>ผลแกว่ง</td><td>เวลาของสองรอบต่างกัน 90 วินาที</td></tr></table></div></div></section>
+<section class="slide hook" data-title="ปูพื้น · แนวคิด"><div class="pill" style="font-size:24px;padding:8px 22px;background:#0f9d9a;color:#fff">ปูพื้น · แนวคิด</div><h1 style="margin-top:26px">แนวคิดและสถาปัตยกรรม</h1><p>ทำไมสกิลแก้ปัญหานี้ได้ · สกิล 3 ตัว · Claude Code app เข้าใจระบบใน container อย่างไร</p></section>
+<section class="slide " data-title="2. ทำไมสกิลแก้ได้"><div class="kicker">2 · ทำไมสกิลแก้ปัญหานี้ได้</div><div class="row"><div class="col c3"><div class="fig "><img src="img/concept-07-progressive.png" alt=""></div></div><div class="col c2 vc"><div class="note info"><b>งานซ้ำให้สคริปต์ · งานคิดให้ AI</b><br>เรียกบัญชีให้ถูก flag ตรวจความพร้อม จับเวลา รวมสถิติ = สคริปต์ในสกิล</div><div style="height:16px"></div><div class="note info"><b>เปิดทีละชั้น</b><br>AI เห็นแค่ชื่อและคำอธิบายตลอดเวลา เปิด SKILL.md เมื่อจะใช้ และสคริปต์เมื่อถึงขั้นนั้น</div></div></div></section>
+<section class="slide " data-title="3. สถาปัตยกรรมของสกิล"><div class="kicker">3 · ออกแบบสกิล 3 ตัว</div><div class="fig "><img src="img/concept-02-skill-architecture.png" alt=""></div></section>
+<section class="slide " data-title="3. สกิล 3 ตัว"><div class="kicker">3 · ออกแบบสกิล 3 ตัว</div><h2>แต่ละสกิลรู้เรื่องอะไร</h2><div class="row"><div class="col "><table class="" style="font-size:20px"><tr><th>สกิล</th><th>รู้เรื่องอะไร</th></tr><tr><td><code>yolo</code></td><td>Claude Code ทุกบัญชี · รุ่น/effort ตามความยาก · ตรวจความพร้อมด้วยการเรียกจริง · โควตา</td></tr><tr><td><code>cyolo</code></td><td>Codex ทุกบัญชี · รุ่นจาก models_cache · <b>สร้างภาพ</b> · โควตาจาก rollout</td></tr><tr><td><code>agent-team</code></td><td>ทำงานร่วมกันทั้งใน CLI เดียวกันและข้าม CLI · บริหารโทเค็น · สลับหัวหน้า · สถิติทั้งทีม</td></tr></table></div><div class="col  vc"><pre class="" style="font-size:15px;white-space:pre">skills/
+├── yolo/        SKILL.md · scripts/ · references/
+├── cyolo/       SKILL.md · scripts/ · references/
+└── agent-team/  SKILL.md · scripts/team.py · references/</pre></div></div></section>
+<section class="slide " data-title="3.1 สถิติทุกบัญชี"><div class="kicker">3.1 · สถิติทุกบัญชี (ledger)</div><div class="row"><div class="col c3"><div class="fig "><img src="img/concept-05-ledger.png" alt=""></div></div><div class="col c2 vc"><ul><li>ทุกการเรียก = 1 บรรทัดใน <code>ledger.jsonl</code></li><li><code>team.py stats</code> สรุปตามบัญชี / รุ่น / งาน</li><li><code>team.py quota</code> บอก<b>เวลาของข้อมูล</b>เสมอ</li><li><b>ไม่เก็บ prompt และ secret</b></li></ul></div></div></section>
+<section class="slide " data-title="3.2 Claude Code app เข้าใจระบบ"><div class="kicker">3.2 · Claude Code app เข้าใจระบบใน container</div><div class="fig "><img src="img/concept-08-host-bridge.png" alt=""></div></section>
+<section class="slide " data-title="4. บทนี้แบ่งเป็น 2 ส่วน"><div class="kicker">4 · ภาพรวม: บทนี้แบ่งเป็น 2 ส่วน</div><div class="fig "><img src="img/overview-two-parts.png" alt=""></div></section>
+<section class="slide " data-title="4. เวลารันจริง"><div class="kicker">4 · ภาพรวม: เวลารันจริงของทุกขั้น</div><div class="row"><div class="col c3"><table class="" style="font-size:19px"><tr><th>ส่วน</th><th>ขั้น / การทดลอง</th><th>เวลารันจริง</th></tr><tr><td><b>1</b></td><td>ขั้นที่ 1 สร้างสกิลจากสเปก</td><td>48 นาที</td></tr><tr><td><b>1</b></td><td>ขั้นที่ 2 ติดตั้งด้วยการคัดลอกโฟลเดอร์</td><td>43.4 วินาที</td></tr><tr><td><b>1</b></td><td>ขั้นที่ 3 รัน baseline ซ้ำแล้วเทียบผล</td><td>353.0 วินาที (เฉลี่ย 2 รอบ)</td></tr><tr><td><b>2</b></td><td>การทดลองที่ 1 บริหารโทเค็นของลูกทีม</td><td>129.1 วินาที</td></tr><tr><td><b>2</b></td><td>การทดลองที่ 2 สลับหัวหน้าทีม</td><td>213.3 วินาที</td></tr><tr><td><b>2</b></td><td>การทดลองที่ 3 รูปแบบการทำงานร่วมกัน 5 แบบ</td><td>369.9 วินาที</td></tr><tr><td><b>2</b></td><td>การทดลองที่ 4 รูปแบบขั้นสูง 5 แบบ</td><td>306.8 วินาที</td></tr></table></div><div class="col c2 vc"><pre class="">04_MultiAccount_Skill/
+├── prompt_skill_spec.md   ← สเปกของสกิล 3 ตัว: ต้องทำอะไร + เกณฑ์ทดสอบ
+├── baseline/tickets.csv   ← ข้อมูลของโจทย์ใน 1.1
+└── _solution/
+    ├── skills/            ← สกิลที่ได้จากขั้นที่ 1 = โฟลเดอร์สำรองพร้อมติดตั้ง
+    ├── TEST-REPORT.md     ← รายงานทดสอบของขั้นที่ 1
+    ├── eval/              ← พรอมต์ ชุดซ่อน ตัวตรวจคะแนน สคริปต์วัดผล
+    └── results/           ← ผลจริงของส่วนที่ 1 และส่วนที่ 2</pre><p class="cap" style="margin-top:12px">ต้องมี container multi-account และล็อกอินอย่างน้อย 1 บัญชี Claude + 1 บัญชี Codex</p></div></div></section>
+<section class="slide hook" data-title="ส่วนที่ 1"><div class="pill" style="font-size:24px;padding:8px 22px;background:#0f9d9a;color:#fff">ส่วนที่ 1 จาก 2</div><h1 style="margin-top:26px">สร้างสกิล ติดตั้ง และเทียบกับ baseline</h1><p>ให้ Claude สร้างสกิลจากสเปก → ติดตั้งด้วยการคัดลอกโฟลเดอร์ → รันโจทย์ baseline ซ้ำแล้วเทียบผล</p></section>
+<section class="slide divider" data-title="ขั้นที่ 1"><div class="big">1</div><h1>ให้ Claude สร้างสกิลจากสเปก</h1><p>สร้าง<b>จากศูนย์</b> ไม่มีสกิลเก่าให้ลอก · input: <b>prompt_skill_spec.md</b> ไฟล์เดียว → <b>./skills</b> (48 นาที)</p></section>
+<section class="slide " data-title="ขั้น 1: ภาพรวม"><div class="kicker">ขั้นที่ 1 · 💻 Claude Code app</div><div class="fig "><img src="img/step-1-build.png" alt=""></div></section>
+<section class="slide " data-title="ขั้น 1: พรอมต์"><div class="kicker">ขั้นที่ 1 · พรอมต์ · เปิด session ใหม่ในโฟลเดอร์ที่มี prompt_skill_spec.md</div><pre class=""><button class="copy">คัดลอก</button>ช่วยสร้างสกิลชุดใหม่ที่ทำให้ AI ใช้ระบบหลายบัญชีใน container multi-account ได้เต็มประสิทธิภาพ
+ทำในโฟลเดอร์นี้ ใช้คำสั่ง docker ได้ แต่ห้ามลบ หยุด หรือสร้าง container / volume ใหม่ ห้ามแตะ credential และห้ามล็อกอินแทนผม
+
+วัตถุดิบ
+- ./prompt_skill_spec.md = สเปกของสกิล 3 ตัว (yolo, cyolo, agent-team) ทุกข้อต้องเป็นจริง
+- container multi-account ที่กำลังรัน = ที่ทดสอบจริง
+
+สร้างจากศูนย์ไว้ใน ./skills (นอก container นี่คือต้นฉบับที่เก็บสำรอง)
+ทดสอบ: คัดลอกโฟลเดอร์สกิลใน ./skills ไปวางที่ shared ของทั้งสองฝั่งใน container แล้วทดสอบทุกข้อในหัวข้อ &quot;ทดสอบ&quot; ของสเปก
+ทดสอบด้วยบัญชีที่ล็อกอินอยู่ในตอนนี้ (ตรวจเองว่าบัญชีไหนพร้อม) ใช้รุ่นและ effort ตามค่าเริ่มต้นของสกิลเหมือนการใช้งานจริง
+เขียน ./TEST-REPORT.md (นอกโฟลเดอร์ skills) แล้วสรุปเป็นตารางสั้น ๆ: ผลทดสอบ ไฟล์ที่สร้าง และเวลาที่ใช้ แล้วหยุด</pre><p class="cap" style="margin-top:14px">ทดสอบด้วยบัญชีที่ล็อกอินอยู่ และใช้รุ่นกับ effort ตามค่าเริ่มต้นของสกิล เหมือนการใช้งานจริง</p></section>
+<section class="slide " data-title="ขั้น 1: ผลจริง"><div class="kicker">ขั้นที่ 1 · ผลจริง</div><h2>48 นาที · 94 คำสั่ง (ล้ม 2) · $8.57</h2><div class="row"><div class="col "><table class="" style="font-size:20px"><tr><th>รายการ</th><th>ผล</th></tr><tr><td>ผลทดสอบตามสเปก</td><td>ผ่านครบ 21 ข้อ</td></tr><tr><td>บัญชีที่ใช้ทดสอบ</td><td>พร้อม 5 บัญชี: yolo1–3, cyolo1–2</td></tr><tr><td>ไฟล์ที่ได้</td><td><code>skills/</code> 3 โฟลเดอร์ + <code>TEST-REPORT.md</code></td></tr><tr><td>ทดสอบแบบผู้ใช้จริง</td><td>3 โจทย์ใหม่ ใช้ 3–5 คำสั่งต่อโจทย์ ไม่ต้องเปิดโค้ดของสกิล</td></tr></table></div><div class="col  vc"><table class="" style="font-size:18px"><tr><th>บั๊กที่ Claude พบและแก้เองระหว่างทดสอบ</th><th>วิธีแก้</th></tr><tr><td><code>lead --demo</code> ค้าง</td><td>ลูกทีมถูก kill ตามหัวหน้า → แยก process ลูกทีมออก</td></tr><tr><td>หัวหน้าที่ล้มมี token เป็น 0</td><td>เก็บ usage สะสมจาก stream ลง ledger</td></tr><tr><td>ผู้ตัดสิน debate ตอบผิดรูปแบบ</td><td>ใส่รูปแบบคำตอบลงใน prompt ของผู้ตัดสิน</td></tr></table></div></div></section>
+<section class="slide divider" data-title="ขั้นที่ 2"><div class="big">2</div><h1>ติดตั้งสกิลด้วยการคัดลอกโฟลเดอร์</h1><p>คัดลอก <b>yolo · cyolo · agent-team</b> ลง shared/skills · ไม่ต้องรันสคริปต์ติดตั้ง (43.4 วินาที)</p></section>
+<section class="slide " data-title="ขั้น 2: สกิลเก็บไว้ที่ไหน"><div class="kicker">ขั้นที่ 2 · สกิลเก็บไว้ที่ไหน</div><div class="row"><div class="col c3"><div class="fig "><img src="img/concept-04-skill-storage.png" alt=""></div></div><div class="col c2 vc"><table class="" style="font-size:18px"><tr><th>ที่เก็บ</th><th>ลบ container</th><th>เครื่องใหม่</th></tr><tr><td>โฟลเดอร์สำรอง <code>skills/</code></td><td>ยังอยู่</td><td><b>นำไปติดตั้งได้</b></td></tr><tr><td><code>shared/skills</code> ใน volume</td><td>ยังอยู่</td><td>ไม่ติดไป</td></tr><tr><td>container</td><td>หายไป</td><td>ไม่ติดไป</td></tr></table></div></div></section>
+<section class="slide " data-title="ขั้น 2: ติดตั้ง 2 วิธี"><div class="kicker">ขั้นที่ 2 · ติดตั้งจากโฟลเดอร์สำรอง</div><div class="fig "><img src="img/concept-06-install-methods.png" alt=""></div></section>
+<section class="slide " data-title="ขั้น 2: วิธีที่ 1 พรอมต์"><div class="kicker">ขั้นที่ 2 · วิธีที่ 1 · 💻 Claude Code app</div><div class="row"><div class="col c2"><pre class=""><button class="copy">คัดลอก</button>ติดตั้งสกิลจาก ./skills ลง container multi-account ด้วยการคัดลอกโฟลเดอร์อย่างเดียว
+- คัดลอกโฟลเดอร์ yolo, cyolo และ agent-team ใน ./skills ไปวางที่ /root/ai-accounts/.Claude/shared/skills และ /root/ai-accounts/.Codex/shared/skills ใน container
+- เปิดแต่ละบัญชีหนึ่งครั้งด้วย yoloN --version และ cyoloN --version (wrapper จะเชื่อมสกิลให้แต่ละบัญชีเอง)
+- ตรวจว่าทุกบัญชี yolo1–5 และ cyolo1–5 มองเห็น SKILL.md ของทั้ง 3 สกิล และตรวจความพร้อมด้วยคำสั่ง check ของสกิล agent-team
+สรุปเป็นตาราง สกิล | ฝั่ง Claude | ฝั่ง Codex แล้วหยุด</pre></div><div class="col c3 vc"><div class="fig "><img src="img/step-2-install.png" alt=""></div></div></div></section>
+<section class="slide " data-title="ขั้น 2: ผลจริง"><div class="kicker">ขั้นที่ 2 · ผลจริง</div><h2>43.4 วินาที · 8 คำสั่ง (ล้ม 1) · $0.18</h2><table class="" style="font-size:22px"><tr><th>สกิล</th><th>ฝั่ง Claude (yolo1–5)</th><th>ฝั่ง Codex (cyolo1–5)</th></tr><tr><td>yolo</td><td>เห็น SKILL.md ครบ 5/5</td><td>เห็น SKILL.md ครบ 5/5</td></tr><tr><td>cyolo</td><td>เห็น SKILL.md ครบ 5/5</td><td>เห็น SKILL.md ครบ 5/5</td></tr><tr><td>agent-team</td><td>เห็น SKILL.md ครบ 5/5</td><td>เห็น SKILL.md ครบ 5/5</td></tr><tr><td><b>team.py check</b></td><td>พร้อม 3/5 (yolo4, yolo5 ยังไม่ได้ล็อกอิน)</td><td>พร้อม 2/5 (cyolo3–5 ยังไม่ได้ล็อกอิน)</td></tr></table><div class="note info" style="margin-top:20px">ฝั่ง Claude เห็นทันทีเพราะโฟลเดอร์ skills ของทุกบัญชีชี้ไปที่ shared/skills · ฝั่ง Codex wrapper สร้างลิงก์รายสกิลให้ตอนรัน <code>cyoloN --version</code></div></section>
+<section class="slide " data-title="ขั้น 2: วิธีที่ 2 ลากวาง (.Claude)"><div class="kicker">ขั้นที่ 2 · วิธีที่ 2 · ลากวางใน JupyterLab · ปลายทางที่ 1</div><div class="fig "><img src="img/drag-1-claude.png" alt=""></div><div class="cap">http://localhost:8886/lab/tree/root/ai-accounts/.Claude/shared/skills · ใช้กับ yolo1–5</div></section>
+<section class="slide " data-title="ขั้น 2: วิธีที่ 2 ลากวาง (.Codex)"><div class="kicker">ขั้นที่ 2 · วิธีที่ 2 · ลากวางใน JupyterLab · ปลายทางที่ 2</div><div class="fig "><img src="img/drag-2-codex.png" alt=""></div><div class="cap">http://localhost:8886/lab/tree/root/ai-accounts/.Codex/shared/skills · ใช้กับ cyolo1–5 · ลากครบแล้วเปิด yolo1 และ cyolo1 หนึ่งครั้ง</div></section>
+<section class="slide divider" data-title="ขั้นที่ 3"><div class="big">3</div><h1>รันโจทย์ baseline ซ้ำแล้วเทียบผล</h1><p>วางพรอมต์ชุดเดียวกับหัวข้อ 1.1 ใน <b>Claude Code app</b> · ตอนนี้ใน container มีสกิลแล้ว (เฉลี่ย 353 วินาที)</p></section>
+<section class="slide " data-title="ขั้น 3: ภาพรวม"><div class="kicker">ขั้นที่ 3 · พรอมต์เดียวกับหัวข้อ 1.1 ทุกตัวอักษร</div><div class="fig "><img src="img/step-3-compare.png" alt=""></div></section>
+<section class="slide " data-title="ขั้น 3: กราฟการทำงานเป็นทีม"><div class="kicker">ขั้นที่ 3 · ผลจริง · ไม่ใช้สกิลเทียบกับใช้สกิล</div><div class="fig "><img src="img/result-01-team.png" alt=""></div></section>
+<section class="slide " data-title="ขั้น 3: กราฟคะแนนชุดซ่อน"><div class="kicker">ขั้นที่ 3 · ผลจริง · ความถูกต้อง</div><div class="fig "><img src="img/result-02-score.png" alt=""></div></section>
+<section class="slide " data-title="ขั้น 3: กราฟรายบัญชี"><div class="kicker">ขั้นที่ 3 · ผลจริง · เวลาและ token ของ 3 บัญชี</div><div class="fig "><img src="img/result-03-accounts.png" alt=""></div></section>
+<section class="slide " data-title="ขั้น 3: ตารางเทียบ"><div class="kicker">ขั้นที่ 3 · ตารางเทียบ (ค่าเฉลี่ย 2 รอบ)</div><h2>สกิลช่วยที่การสั่งงาน ไม่ใช่คุณภาพโค้ด</h2><table class="ba" style="font-size:22px"><tr><th>ตัวชี้วัด</th><th>ไม่ใช้สกิล</th><th>ใช้สกิล</th></tr><tr><td>คะแนนชุดซ่อน (เต็ม 90)</td><td>90</td><td>90</td></tr><tr><td>เวลารวม</td><td>6.3 นาที</td><td>5.9 นาที</td></tr><tr><td>คำสั่งของ app</td><td>40</td><td>25</td></tr><tr><td>คำสั่งที่ล้ม</td><td>8.5</td><td>3</td></tr><tr><td>ค่าใช้จ่ายของ app</td><td>$1.29</td><td>$0.80</td></tr><tr><td>แตะไฟล์ credential</td><td>1 ครั้ง</td><td>0 ครั้ง</td></tr></table><div class="note" style="margin-top:18px"><b>อ่านผล:</b> ทั้ง 2 รอบ app สั่ง <code>team.py run --workers yolo1,yolo2,cyolo1</code> ครั้งเดียว · เวลารวมยังสรุปไม่ได้ เพราะวิธีเดียวกันต่างกันระหว่างรอบได้ 90–130 วินาที · รันฝั่งละ 2 รอบเท่านั้น</div></section>
+<section class="slide hook" data-title="ส่วนที่ 2"><div class="pill" style="font-size:24px;padding:8px 22px;background:#0f9d9a;color:#fff">ส่วนที่ 2 จาก 2</div><h1 style="margin-top:26px">ทดลอง feature ของสกิล agent-team</h1><p>บริหารโทเค็นของลูกทีม · สลับหัวหน้าทีม · รูปแบบการทำงานร่วมกัน 5 แบบ · รูปแบบขั้นสูง 5 แบบ กับงาน ticket ชุดเดิม</p></section>
+<section class="slide divider" data-title="การทดลองที่ 1"><div class="big">1</div><h1>หัวหน้าทีมบริหารโทเค็นของลูกทีม</h1><p><b>team.py run --worker-token-budget</b>: ลูกทีมเกินงบ → หยุดรับงานใหม่ → งานในคิวย้ายไปบัญชีอื่น (129.1 วินาที)</p></section>
+<section class="slide " data-title="ทดลอง 1: แนวคิด"><div class="kicker">การทดลองที่ 1 · หัวหน้าทีมบริหารโทเค็นของลูกทีม</div><div class="fig "><img src="img/concept-11-worker-quota.png" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 1: แนวคิด (GIF)"><div class="kicker">การทดลองที่ 1 · หัวหน้าทีมบริหารโทเค็นของลูกทีม</div><div class="row"><div class="col c3"><div class="fig "><img src="img/gif-worker-quota.gif" alt=""></div></div><div class="col c2 vc"><table class="" style="font-size:18px"><tr><th>สถานการณ์</th><th>ตัวจัดคิวทำอะไร</th></tr><tr><td>ก่อนสั่งงาน</td><td>แจกให้บัญชีที่เหลือมากก่อน งานง่ายใช้รุ่นเล็ก</td></tr><tr><td>ใกล้หมด ≥ 80%</td><td><b>หยุดรับงานใหม่</b> · งานในคิวย้าย</td></tr><tr><td>ล้มกลางคัน</td><td>ย้ายงาน + ความคืบหน้าใน msgs/</td></tr><tr><td>ผู้ใช้ระบุบัญชีเอง</td><td>ไม่ย้ายเงียบ ๆ หยุดและรายงาน</td></tr></table></div></div></section>
+<section class="slide " data-title="ทดลอง 1: กรณีศึกษา"><div class="kicker">การทดลองที่ 1 · กรณีศึกษา: งานทำความสะอาด ticket</div><div class="fig "><img src="img/skill-03-worker-quota.png" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 1: พรอมต์"><div class="kicker">การทดลองที่ 1 · 💻 Claude Code app</div><div class="row"><div class="col c2"><pre class=""><button class="copy">คัดลอก</button>ใช้ทีมเอเจนต์ใน container multi-account ทดลองการบริหารโทเค็นของลูกทีม ใช้เฉพาะ 3 บัญชี: yolo1, yolo2 และ cyolo1
+งานของทีม: ข้อมูล /workspace/team-demo/data/tickets.csv มีช่องทาง 3 แบบ (LINE, แอป, อีเมล) แบ่งเป็นงานย่อย 6 ชิ้น: นับจำนวน ticket ของแต่ละช่องทาง (3 ชิ้น) และนับจำนวน ticket ที่คอลัมน์ order_id ว่างของแต่ละช่องทาง (3 ชิ้น) แต่ละชิ้นตอบเป็นตัวเลขตัวเดียว
+- ใช้คำสั่ง run ของสกิล agent-team งานทุกชิ้นใช้ความยาก 1 ไม่ระบุบัญชี ให้ตัวจัดคิวเลือกเอง
+- ให้แต่ละบัญชีรันได้ครั้งละ 1 งาน เพื่อให้มีงานรอในคิว
+- ตั้งงบโทเค็นของ yolo2 ให้ต่ำมาก เพื่อดูว่าเมื่อลูกทีมเกินงบ ตัวจัดคิวทำอย่างไรกับงานที่รันอยู่และงานที่รอในคิว
+สรุปเป็นตาราง: งาน | บัญชีที่ทำ | โทเค็น | คำตอบ จากนั้นบอกว่า yolo2 ทำไปกี่งานก่อนหยุดรับงาน งานไหนถูกย้าย (จากใคร ไปใคร เพราะอะไร) และตรวจว่า 3 ช่องทางรวมกันได้ 1,000</pre></div><div class="col c3 vc"><div class="fig "><img src="img/exp-1-token.png" alt=""></div></div></div></section>
+<section class="slide " data-title="ทดลอง 1: ผลจริง"><div class="kicker">การทดลองที่ 1 · ผลจริง</div><h2>129.1 วินาที · 13 คำสั่ง (ล้ม 2) · $0.36</h2><table class="" style="font-size:20px"><tr><th>เหตุการณ์</th><th>เกิดอะไรขึ้น</th></tr><tr><td>งานที่รันอยู่</td><td><code>yolo2</code> ทำงานแรกจนจบ ผล 336 ใช้ได้ตามปกติ ไม่ถูกตัดกลางทาง</td></tr><tr><td>เกินงบ</td><td>หลังงานจบ ตัวจัดคิวพบว่า <code>yolo2</code> ใช้ไป 15,795 โทเค็น เกินงบที่ตั้งไว้ จึง<b>หยุดรับงานใหม่</b></td></tr><tr><td>งานในคิว</td><td>งานที่วางแผนให้ <code>yolo2</code> ทำต่อ ย้ายไป <code>yolo1</code> ซึ่งเพิ่งว่าง</td></tr><tr><td>ผลงาน</td><td>คำตอบถูก 6 จาก 6 · <code>yolo1</code> 2 งาน · <code>yolo2</code> 1 งาน · <code>cyolo1</code> 3 งาน · 337 + 336 + 327 = 1,000</td></tr></table><div class="note" style="margin-top:16px">app สั่ง <b>team.py run</b> ครั้งเดียวด้วย --workers yolo1,yolo2,cyolo1 --per-account 1 --worker-token-budget yolo2=1 · งบ 1 โทเค็นเป็นสวิตช์จำลอง การใช้งานจริงใช้เกณฑ์โควตา 80%</div></section>
+<section class="slide divider" data-title="การทดลองที่ 2"><div class="big">2</div><h1>สลับหัวหน้าทีมโดยงานไม่หาย</h1><p><b>team.py lead</b> + ตัวจำลอง: หัวหน้าล้ม · หัวหน้าเกินงบ · ลูกทีมเกินงบ ในคำสั่งเดียว (213.3 วินาที)</p></section>
+<section class="slide photo-slide" data-title="ทดลอง 2: ส่งเวรเหมือนพยาบาล" style="background-image:url('img/photo-02-shift-handoff.jpg')"><div class="capbox good"><div class="badge">✓</div><div><b>handoff.md = ใบส่งเวร</b><br><span class="sm">ก่อนออกเวรเขียนว่า ทำอะไรแล้ว · อะไรกำลังทำ · ต้องทำอะไรต่อ</span></div></div><div class="imgnote">ภาพจำลอง</div></section>
+<section class="slide " data-title="ทดลอง 2: แนวคิด"><div class="kicker">การทดลองที่ 2 · สลับหัวหน้าทีมโดยงานไม่หาย</div><div class="fig "><img src="img/concept-09-leader-handoff.png" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 2: แนวคิด (GIF)"><div class="kicker">การทดลองที่ 2 · สลับหัวหน้าทีมโดยงานไม่หาย</div><div class="fig "><img src="img/gif-leader-handoff.gif" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 2: หลักการ"><div class="kicker">การทดลองที่ 2 · สลับหัวหน้าทีมโดยงานไม่หาย</div><h2>หลักการออกแบบ</h2><table class="" style="font-size:21px"><tr><th>หลักการ</th><th>รายละเอียด</th></tr><tr><td>สถานะอยู่ในไฟล์</td><td>state.json · handoff.md</td></tr><tr><td>ผู้ควบคุมเป็นสคริปต์</td><td><code>team.py lead</code> ไม่ใช้โทเค็น · หัวหน้าทำงานเป็นรอบ เขียน checkpoint ทุกรอบ</td></tr><tr><td>ลูกทีมไม่ผูกกับหัวหน้า</td><td>process แยก · หัวหน้าเปลี่ยนตัว งานไม่หาย</td></tr><tr><td>สลับเชิงรุก</td><td>โควตา ≥ 80% หรือเกินงบ → ส่งไม้ตั้งแต่ยังเขียน checkpoint ทัน</td></tr><tr><td>สลับเชิงรับ</td><td>ล้ม · rate limit · เงียบไป → เริ่มคนใหม่จาก checkpoint</td></tr><tr><td>ผู้สืบทอด</td><td>พร้อม + โควตาเหลือมาก · ฝั่งเดียวกันก่อน (หัวหน้าเป็น Codex ได้)</td></tr></table></section>
+<section class="slide " data-title="ทดลอง 2: พรอมต์"><div class="kicker">การทดลองที่ 2 · 💻 Claude Code app</div><div class="row"><div class="col c2"><pre class=""><button class="copy">คัดลอก</button>ใช้ทีมเอเจนต์ใน container multi-account ทดลองการสลับหัวหน้าทีมและการบริหารโทเค็นของลูกทีม
+งานของทีม: สร้างตารางสูตรคูณแม่ 2 ถึงแม่ 9 แบ่งให้ลูกทีมทำคนละแม่ แล้วรวมเป็นไฟล์เดียว /workspace/demo/table.md
+- ใช้คำสั่ง lead ของสกิล agent-team งานทุกชิ้นใช้ความยาก 1
+- ตั้งงบโทเค็นของหัวหน้าให้ต่ำ เพื่อให้เกิดการสลับหัวหน้าแบบเชิงรุกอย่างน้อย 1 ครั้ง
+- จำลองให้หัวหน้าคนหนึ่งล้มกลางคัน เพื่อดูการสลับแบบเชิงรับ
+- ตั้งงบโทเค็นของลูกทีมคนหนึ่งให้ต่ำ เพื่อดูการย้ายงานไปลูกทีมคนอื่น
+สรุปเป็นตาราง: ประวัติการสลับหัวหน้า (จากใคร ไปใคร เพราะอะไร) การย้ายงานของลูกทีม ผลงานครบหรือไม่ และสถิติแยกตามบัญชี</pre></div><div class="col c3 vc"><div class="fig "><img src="img/exp-2-lead.png" alt=""></div></div></div></section>
+<section class="slide " data-title="ทดลอง 2: ผลจริง"><div class="kicker">การทดลองที่ 2 · ผลจริง</div><h2>213.3 วินาที · 16 คำสั่ง (ล้ม 2) · run 90 วินาที</h2><table class="" style="font-size:20px"><tr><th>เหตุการณ์</th><th>เกิดอะไรขึ้น</th></tr><tr><td>สลับหัวหน้า<b>เชิงรับ</b></td><td><code>yolo1</code> สั่งงาน m2–m9 ครบ 8 ชิ้นแล้วถูกจำลองให้ล้ม · ผู้ควบคุมเริ่ม <code>yolo2</code> ต่อจาก handoff.md · งานที่สั่งไปแล้วรันต่อจนเสร็จ</td></tr><tr><td>สลับหัวหน้า<b>เชิงรุก</b></td><td><code>yolo2</code> ใช้ไป 16,994 โทเค็น เกินงบ 2,000 จึงเขียน checkpoint แล้วส่งไม้ให้ <code>yolo3</code> ซึ่งปิดงานจนจบ</td></tr><tr><td>ย้ายงานลูกทีม</td><td><code>cyolo2</code> ทำ m2 เสร็จแล้วเกินงบ จึงหยุดรับงานใหม่ · งาน m7 ย้ายไป <code>yolo2</code></td></tr><tr><td>ผลงาน</td><td>ตารางสูตรคูณครบ 8 แม่ 96 แถว ถูกทุกแถว</td></tr></table><div class="note" style="margin-top:16px"><b>จุดที่ยังไม่เรียบร้อย:</b> app เปิดอ่านโค้ด team.py 2 คำสั่งเพื่อเลือกค่างบ · หัวหน้าคนสุดท้ายสั่งงานซ้ำ 6 ชิ้น เพราะไฟล์ผลของลูกทีมรุ่น haiku ไม่มีตาราง</div></section>
+<section class="slide divider" data-title="การทดลองที่ 3"><div class="big">3</div><h1>รูปแบบการทำงานร่วมกัน 5 แบบ</h1><p>relay · fan-out / fan-in · graph · review loop · board ใน<b>กราฟงานเดียว</b> (369.9 วินาที)</p></section>
+<section class="slide " data-title="ทดลอง 3: รูปแบบ 5 แบบ"><div class="kicker">การทดลองที่ 3 · รูปแบบการทำงานร่วมกัน</div><div class="fig "><img src="img/skill-01-patterns-basic.png" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 3: รูปแบบ (GIF)"><div class="kicker">การทดลองที่ 3 · รูปแบบการทำงานร่วมกัน</div><div class="fig "><img src="img/gif-patterns.gif" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 3: ใช้เมื่อไร"><div class="kicker">การทดลองที่ 3 · รูปแบบการทำงานร่วมกัน</div><h2>ใช้เมื่อไร และส่งข้อมูลอย่างไร</h2><table class="" style="font-size:21px"><tr><th>รูปแบบ</th><th>ใช้เมื่อ</th><th>การส่งข้อมูล</th></tr><tr><td>relay</td><td>งานเป็นลำดับ</td><td><code>{{node}}</code> ค่าสั้นแทรกลง prompt</td></tr><tr><td>fan-out / fan-in</td><td>งานย่อยไม่ขึ้นต่อกัน</td><td>งานรวมผลอ่าน <code>{{file:node}}</code></td></tr><tr><td>graph</td><td>งานขึ้นต่อกันหลายทาง</td><td><code>depends_on</code> ตัวจัดคิวรันงานที่พร้อมให้เอง</td></tr><tr><td>review loop</td><td>ต้องการคุณภาพ</td><td>วนจน <code>APPROVED</code> หรือครบ max_rounds</td></tr><tr><td>board</td><td>แชร์ข้อค้นพบให้ agent ที่มาทีหลัง</td><td>อ่าน board.md ก่อนเริ่ม · เพิ่มต่อท้าย</td></tr></table><div class="note" style="margin-top:18px">ข้อมูลยาวส่งเป็น <b>path ของไฟล์</b> ไม่ยัดลง prompt</div></section>
+<section class="slide " data-title="ทดลอง 3: ภาพรวม"><div class="kicker">การทดลองที่ 3 · กราฟเดียวครบ 5 รูปแบบ</div><div class="fig "><img src="img/exp-3-basic.png" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 3: พรอมต์"><div class="kicker">การทดลองที่ 3 · 💻 Claude Code app · พรอมต์</div><pre class="" style="font-size:15.5px;line-height:1.32"><button class="copy">คัดลอก</button>ใช้ทีมเอเจนต์ใน container multi-account ทดลองรูปแบบการทำงานร่วมกันพื้นฐาน 5 แบบของสกิล agent-team ในกราฟงานเดียว ใช้เฉพาะ 3 บัญชี: yolo1, yolo2 และ cyolo1 งานทุกชิ้นใช้ความยาก 2
+ข้อมูล: /workspace/team-demo/data/tickets.csv (คอลัมน์ id, received_at, order_id, channel, text) โฟลเดอร์งานใหม่: /workspace/patterns-demo ห้ามแก้ไฟล์ใน /workspace/team-demo
+โค้ดใช้ได้เฉพาะ Python มาตรฐานและ pandas ห้ามใส่ id เลขออเดอร์ หรือรหัสของข้อมูลชุดนี้ลงในโค้ด
+
+กราฟงาน
+1. board: cyolo1 สำรวจ tickets.csv แล้วเขียนรูปแบบที่พบของเวลา เลขออเดอร์ และรหัสข้อผิดพลาดลงกระดาน ให้งานถัดไปใช้
+2. fan-out (เริ่มหลังข้อ 1): 3 บัญชีเขียนคนละไฟล์พร้อมกัน
+   - yolo1: clean_time.py ฟังก์ชัน clean_time(received_at) คืนเวลาไทย ปี ค.ศ. รูปแบบ YYYY-MM-DDTHH:MM (ลงท้าย +07:00 คือเวลาไทย · ลงท้าย Z คือ UTC ต้องบวก 7 ชั่วโมง · วัน/เดือน/ปี พ.ศ. คือเวลาไทย)
+   - yolo2: clean_order.py ฟังก์ชัน clean_order(order_id, text) คืน ORD-ตามด้วยเลข 6 หลัก ถ้าคอลัมน์ว่างให้หาในข้อความ ไม่มีเลยคืน None
+   - cyolo1: clean_code.py ฟังก์ชัน clean_code(text) คืนรหัสข้อผิดพลาดรูปแบบ E ตามด้วยเลข 3 หลัก ไม่มีคืน None (เลขพัสดุและเลขออเดอร์ไม่ใช่รหัส)
+3. fan-in + graph: เมื่อครบ 3 ไฟล์ yolo1 เขียน clean.py ที่ python3 clean.py &lt;ไฟล์ csv&gt; พิมพ์ JSON {id: {&quot;time&quot;: ..., &quot;order_id&quot;: ..., &quot;error_code&quot;: ...}} ครบทุกใบ
+4. review loop: yolo2 เป็นผู้แก้ cyolo1 เป็นผู้ตรวจ clean.py (รันกับ tickets.csv จริง) วนจนได้ APPROVED ไม่เกิน 2 รอบ
+5. relay: cyolo1 รัน clean.py แล้วตอบ id ของ ticket 1 ใบที่ผลน่าสงสัยที่สุด (ตอบ id อย่างเดียว) ส่งต่อให้ yolo2 ตรวจใบนั้น ถ้าผิดจริงให้แก้โค้ด แล้วตอบว่า แก้ หรือ ไม่ต้องแก้ พร้อมเหตุผล 1 บรรทัด
+
+สรุปเป็นตาราง: รูปแบบ | งานในกราฟ | บัญชี | เกิดอะไรขึ้นจริง (เช่น ข้อความบนกระดาน จำนวนรอบของ review ค่าที่ส่งต่อใน relay) | เวลา (วินาที) และสถิติโทเค็นแยกตามบัญชี</pre></section>
+<section class="slide " data-title="ทดลอง 3: ผลจริง"><div class="kicker">การทดลองที่ 3 · ผลจริง</div><h2>369.9 วินาที · 21 คำสั่ง (ล้ม 5) · $0.63 · clean.py ได้ 90 เต็มบนชุดซ่อน</h2><table class="" style="font-size:19px"><tr><th>รูปแบบ</th><th>บัญชี</th><th>เกิดอะไรขึ้นจริง</th><th>เวลา (วินาที)</th></tr><tr><td>board</td><td><code>cyolo1</code></td><td>สำรวจครบ 1,000 แถว เขียนกระดาน 7 บรรทัด: เวลา 3 รูปแบบ · เลขออเดอร์ 5 รูปแบบ · รหัส 26 แถว</td><td>71.9</td></tr><tr><td>fan-out</td><td><code>yolo1</code> / <code>yolo2</code> / <code>cyolo1</code></td><td>เริ่มพร้อมกันหลัง board ใช้ข้อมูลจากกระดาน แล้วเขียนผลกลับ</td><td>17.8 / 26.3 / 31.3</td></tr><tr><td>fan-in + graph</td><td><code>yolo1</code></td><td>เริ่มเมื่อครบ 3 ไฟล์ เขียน clean.py ได้ JSON 1,000 ใบ</td><td>12.6</td></tr><tr><td>review loop</td><td><code>yolo2</code> แก้ · <code>cyolo1</code> ตรวจ</td><td>ได้ APPROVED ในรอบที่ 1 จากไม่เกิน 2 รอบ</td><td>49.9</td></tr><tr><td>relay</td><td><code>cyolo1</code> → <code>yolo2</code></td><td>ส่งต่อค่า T0052 เท่านั้น · ตรวจแล้วตอบว่า "ไม่ต้องแก้"</td><td>30.3</td></tr></table><div class="note" style="margin-top:16px"><b>ข้อสังเกต:</b> กระดานทำให้งาน fan-out จบใน 18–31 วินาที · review loop ผ่านตั้งแต่รอบแรกจึงไม่เห็นรอบแก้ไข · relay ไม่เจอจุดผิด</div></section>
+<section class="slide divider" data-title="การทดลองที่ 4"><div class="big">4</div><h1>รูปแบบขั้นสูง 5 แบบ</h1><p>debate · best-of-N + judge · router · failover · human gate (306.8 วินาที)</p></section>
+<section class="slide " data-title="ทดลอง 4: รูปแบบขั้นสูง"><div class="kicker">การทดลองที่ 4 · รูปแบบขั้นสูง</div><div class="fig "><img src="img/concept-10-advanced-patterns.png" alt=""></div><div class="cap">ต่อยอดได้: ทีมซ้อนทีม · โหวตเสียงข้างมาก · map-reduce · hedging · planner–executor–critic</div></section>
+<section class="slide " data-title="ทดลอง 4: ภาพรวม"><div class="kicker">การทดลองที่ 4 · ผลจริงของ 5 รูปแบบ</div><div class="fig "><img src="img/exp-4-advanced.png" alt=""></div></section>
+<section class="slide " data-title="ทดลอง 4: พรอมต์"><div class="kicker">การทดลองที่ 4 · 💻 Claude Code app · พรอมต์</div><pre class="" style="font-size:17px;line-height:1.4"><button class="copy">คัดลอก</button>ใช้ทีมเอเจนต์ใน container multi-account ทดลองรูปแบบขั้นสูง 5 แบบของสกิล agent-team กับงาน ticket ใน /workspace/team-demo (มี clean.py, clean_code.py และ data/tickets.csv จากการทดลองก่อนหน้า) ใช้ได้ 5 บัญชี: yolo1, yolo2, yolo3, cyolo1 และ cyolo2 งานทุกชิ้นใช้ความยาก 2 ห้ามแก้ไฟล์เดิมใน /workspace/team-demo
+
+1. debate: ให้ Claude กับ Codex ถกกันว่าข้อความ &quot;ของ EX 402 ยังไม่มาเลย แอปก็ค้างตลอด&quot; มีรหัสข้อผิดพลาดหรือไม่ (เกณฑ์: รหัสคือ E ตามด้วยเลข 3 หลัก เลขพัสดุไม่ใช่รหัส) แล้วให้ผู้ตัดสินสรุปเป็น มี หรือ ไม่มี พร้อมเหตุผล
+2. best-of-N: ให้ yolo1, yolo2 และ cyolo1 เขียนฟังก์ชัน clean_channel(channel) ที่แปลงชื่อช่องทางเป็น line, app หรือ email (ตอบเป็นโค้ด) แล้วให้ผู้ตัดสินเลือกอันที่ดีที่สุด บันทึกอันที่ชนะเป็น /workspace/advanced-demo/clean_channel.py
+3. router: ส่งงาน 3 ชิ้นโดยไม่ระบุบัญชี ให้ระบบเลือกเอง: งานเขียนโค้ด (เขียน unittest 3 กรณีให้ clean_code) งานตรวจโค้ด (ตรวจ clean.py แล้วบอกจุดเสี่ยง 3 ข้อ) และงานเขียนเอกสาร (เขียน README สั้น ๆ วิธีใช้ clean.py)
+4. failover: จำลองให้ cyolo1 โควตาหมด แล้วดูว่างานของ cyolo1 ถูกย้ายไปบัญชีไหน
+5. human gate: งานสุดท้ายคัดลอก clean.py ไปที่ /workspace/advanced-demo/prod/clean.py ต้องรออนุมัติก่อน เมื่องานหยุดรอ ให้แสดงสถานะที่รออนุมัติให้ผมเห็นก่อน แล้วอนุมัติแทนผมได้เลยในการทดลองนี้
+
+สรุปเป็นตาราง: รูปแบบ | บัญชีที่เกี่ยวข้อง | เกิดอะไรขึ้นจริง | เวลา (วินาที) และสถิติโทเค็นแยกตามบัญชี</pre></section>
+<section class="slide " data-title="ทดลอง 4: ผลจริง"><div class="kicker">การทดลองที่ 4 · ผลจริง</div><h2>306.8 วินาที · 39 คำสั่ง (ล้ม 6) · $1.00 · งานเสร็จทุกชิ้น</h2><table class="" style="font-size:19px"><tr><th>รูปแบบ</th><th>บัญชี</th><th>เกิดอะไรขึ้นจริง</th><th>เวลา (วินาที)</th></tr><tr><td>debate</td><td><code>yolo2</code> กับ <code>cyolo2</code> · ผู้ตัดสิน <code>yolo1</code></td><td>ทั้งสองฝั่งตอบ "ไม่มี" ผู้ตัดสินสรุป <b>ไม่มี</b>: EX 402 เป็นเลขพัสดุ</td><td>21.6</td></tr><tr><td>best-of-N</td><td><code>yolo1</code>, <code>yolo2</code>, <code>cyolo1</code> · ผู้ตัดสิน <code>cyolo2</code></td><td>คะแนน 8 / 7 / <b>9</b> ไฟล์ของ cyolo1 ชนะเพราะใช้ตารางชื่อช่องทางที่ระบุชัด</td><td>41.8</td></tr><tr><td>router</td><td>ระบบเลือกเอง</td><td>เขียนโค้ด → cyolo2 · ตรวจโค้ด → cyolo1 · เอกสาร → yolo2</td><td>33.3</td></tr><tr><td>failover</td><td><code>cyolo1</code> → <code>cyolo2</code></td><td>จำลองโควตาหมด งานล้มใน 0.1 วินาที แล้วย้ายไปฝั่งเดียวกันเอง</td><td>24.1</td></tr><tr><td>human gate</td><td><code>cyolo2</code></td><td>หยุดที่ waiting_approval ใช้ 0 โทเค็น · หลัง approve จึงคัดลอก clean.py</td><td>11.8</td></tr></table><div class="note" style="margin-top:16px"><b>จุดที่ยังไม่เรียบร้อย:</b> debate ไม่มีข้อโต้แย้ง · failover ต้องแยก run เพราะบัญชีที่ระบุเจาะจงไม่ถูกย้ายอัตโนมัติ · app เปิดอ่านโค้ด team.py 2 คำสั่ง · human gate อนุมัติโดย app ตามที่พรอมต์อนุญาต</div></section>
+<section class="slide " data-title="สรุปส่วนที่ 1"><div class="kicker">สรุป · ส่วนที่ 1</div><h2>ไม่มีสกิล vs มีสกิล</h2><table class="ba" style="font-size:20px"><tr><th></th><th>ไม่มีสกิล</th><th>มีสกิล</th></tr><tr><td>วิธีเรียกแต่ละบัญชี</td><td>ลองผิดลองถูก เปิด --help</td><td>สคริปต์ใส่ flag ถูกและตรวจผลให้</td></tr><tr><td>บัญชีไหนใช้ได้</td><td>auth status (ไม่ตรงจริง)</td><td>check ด้วยการเรียกจริง</td></tr><tr><td>ใช้ได้เฉพาะบางบัญชี</td><td>ต้องระวังเองทุกคำสั่ง</td><td>--workers ไม่แตะบัญชีอื่น</td></tr><tr><td>สถิติและโควตา</td><td>รวมตัวเลขเอง บางครั้งอ่านไฟล์ credential</td><td>ledger + โควตาพร้อมเวลาของข้อมูล</td></tr><tr><td>โควตาหมด</td><td>งานค้างหรือหาย</td><td>สลับหัวหน้าและย้ายงาน งานไม่หาย</td></tr><tr><td>เครื่องใหม่ / volume ใหม่</td><td>สร้างสกิลใหม่</td><td>คัดลอกโฟลเดอร์สำรองไปวาง (ขั้นที่ 2)</td></tr><tr><td>โจทย์ baseline (เฉลี่ย 2 รอบ)</td><td>40 คำสั่ง · ล้ม 8.5 · $1.29</td><td>25 คำสั่ง · ล้ม 3 · $0.80</td></tr></table></section>
+<section class="slide " data-title="สรุปส่วนที่ 2"><div class="kicker">สรุป · ส่วนที่ 2</div><h2>feature ของ agent-team ทำงานได้จริงทุกข้อกับงาน ticket</h2><table class="" style="font-size:21px"><tr><th>การทดลอง</th><th>ผลจริง</th><th>เวลาของ app</th><th>คำสั่ง (ล้ม)</th><th>ค่าใช้จ่าย</th></tr><tr><td>1 · บริหารโทเค็นของลูกทีม</td><td><code>yolo2</code> เกินงบ หยุดรับงานใหม่ งานในคิวย้ายไป <code>yolo1</code> · คำตอบถูก 6 จาก 6</td><td>129.1 วินาที</td><td>13 (2)</td><td>$0.36</td></tr><tr><td>2 · สลับหัวหน้าทีม</td><td>สลับเชิงรับ 1 ครั้ง เชิงรุก 1 ครั้ง · ตารางครบ 96 แถว</td><td>213.3 วินาที</td><td>16 (2)</td><td>$0.50</td></tr><tr><td>3 · รูปแบบการทำงานร่วมกัน 5 แบบ</td><td>กราฟเดียว งานผ่าน 8 จาก 8 · clean.py ได้ 90 เต็มบนชุดซ่อน</td><td>369.9 วินาที</td><td>21 (5)</td><td>$0.63</td></tr><tr><td>4 · รูปแบบขั้นสูง 5 แบบ</td><td>งานเสร็จทุกชิ้น ใช้ 3 run</td><td>306.8 วินาที</td><td>39 (6)</td><td>$1.00</td></tr></table><div class="note" style="margin-top:16px"><b>ข้อจำกัด:</b> รันการทดลองละ 1 รอบ · review loop ผ่านตั้งแต่รอบแรก · relay ไม่เจอจุดผิด · debate ไม่มีข้อโต้แย้ง จึงยังไม่เห็นการวนและการถกจริง</div></section>
+<section class="slide divider" data-title="ประเด็นสำคัญ"><div class="kicker" style="color:#7fd3ff;font-size:24px">ประเด็นสำคัญ</div><h1>จำ 3 ข้อนี้</h1><div class="trio"><div><span>1 · ความรู้</span>วิธีใช้ทุกบัญชีอยู่ใน <b>สกิล</b> ไม่ต้องลองผิดลองถูก</div><div class="star"><span>2 · สถานะ</span>งานและใบส่งเวรอยู่ใน <b>ไฟล์</b> โควตาหมดก็ไม่หาย</div><div><span>3 · ต้นฉบับ</span>โฟลเดอร์สำรอง <b>คัดลอกไปวาง</b> ได้ทุกเครื่อง</div></div></section>
+<section class="slide " data-title="ข้อควรรู้"><div class="kicker red">ข้อควรรู้</div><h2>ข้อควรรู้</h2><div class="grid g3"><div class="card"><h3>ล็อกอินเองเสมอ</h3><p class="small">สกิลไม่ล็อกอินแทน และไม่อ่าน .credentials.json / .claude.json / auth.json</p></div><div class="card"><h3>ข้าม permission</h3><p class="small">ใช้กับงานที่อนุญาตเท่านั้น ตรวจผลของ agent อื่นซ้ำเสมอ</p></div><div class="card"><h3>ไม่ retry อัตโนมัติ</h3><p class="small">งานที่ล้มหลังใช้โทเค็นแล้วหยุดและรายงาน</p></div><div class="card"><h3>Git Bash แปลง path</h3><p class="small">ใช้ <code>//root/...</code> ตามตัวอย่างใน SKILL.md ใช้ได้ทั้ง Git Bash และ PowerShell</p></div><div class="card"><h3>แก้ที่ต้นฉบับ</h3><p class="small">แก้ใน skills/ แล้วคัดลอกทับใน shared/skills อีกครั้ง</p></div><div class="card"><h3>ติดตั้งครบ 3 โฟลเดอร์</h3><p class="small">SKILL.md ของแต่ละสกิลอ้างถึงสกิลข้างเคียง ควรติดตั้งให้ครบ</p></div></div></section>
+<section class="slide " data-title="คำสั่งที่ใช้บ่อย"><div class="kicker">คำสั่งที่ใช้บ่อย</div><div class="row"><div class="col "><h3>ใน container</h3><pre class=""><button class="copy">คัดลอก</button>T=/root/ai-accounts/.Claude/shared/skills/agent-team/scripts/team.py
+python3 $T check            # บัญชีไหนใช้ได้ (เรียกจริง)
+python3 $T quota            # โควตาทุกบัญชี + เวลาของข้อมูล
+python3 $T run graph.json   # รันกราฟงานจนจบ แล้วพิมพ์ตาราง + โควตา
+python3 $T status           # ภาพรวมทีม
+python3 $T stats            # สถิติตามบัญชี / รุ่น / run</pre></div><div class="col  vc"><h3>คัดลอกสกิลเอง (จากโฟลเดอร์บท)</h3><pre class=""><button class="copy">คัดลอก</button>for d in .Claude .Codex; do for s in yolo cyolo agent-team; do docker cp ./_solution/skills/$s multi-account:/root/ai-accounts/$d/shared/skills/; done; done
+docker exec multi-account bash -lc &#x27;for n in 1 2 3 4 5; do yolo$n --version; cyolo$n --version; done&#x27;</pre><h3 style="margin-top:16px">จาก host</h3><pre class=""><button class="copy">คัดลอก</button>docker exec multi-account cat //root/ai-accounts/.Claude/shared/skills/agent-team/SKILL.md
+docker exec multi-account python3 //root/ai-accounts/.Claude/shared/skills/agent-team/scripts/team.py stats
+docker exec multi-account python3 //root/ai-accounts/.Claude/shared/skills/agent-team/scripts/team.py lead --demo
+cat graph.json | docker exec -i multi-account python3 //root/ai-accounts/.Claude/shared/skills/agent-team/scripts/team.py run - --workers yolo1,yolo2,cyolo1</pre></div></div></section>
+<section class="slide " data-title="เช็กลิสต์"><div class="kicker">เช็กลิสต์</div><h2>ทำครบหรือยัง?</h2><div id="check" class="steps"><label><input type="checkbox"> มีโฟลเดอร์ <code>skills/</code> ที่มี yolo, cyolo, agent-team (ขั้นที่ 1)</label><label><input type="checkbox"> ทุกบัญชีเห็นสกิลครบ (ขั้นที่ 2)</label><label><input type="checkbox"> โจทย์เดิมใช้คำสั่งน้อยลง ล้มน้อยลง และตัวเลขมาจาก ledger (ขั้นที่ 3)</label><label><input type="checkbox"> ลูกทีมเกินงบแล้วงานในคิวย้ายไปบัญชีอื่น (การทดลองที่ 1)</label><label><input type="checkbox"> เห็นการสลับหัวหน้าทั้งเชิงรุกและเชิงรับ (การทดลองที่ 2)</label><label><input type="checkbox"> กราฟเดียวใช้ครบ 5 รูปแบบ และรูปแบบขั้นสูงทำงานครบ 5 แบบ (การทดลองที่ 3–4)</label></div></section>
+<section class="slide cover" data-title="ปิดท้าย" style="background-image:url('img/slide-cover.jpg')"><div class="shade"></div><div class="inner" style="justify-content:center">
+<div class="kicker" style="color:#7fd3ff">สรุป</div><h1>สอนครั้งเดียว<br>ทุกบัญชีทำงานเป็นทีม</h1>
+<div class="sub">ความรู้อยู่ใน <b>สกิล</b> · สถานะอยู่ใน <b>ไฟล์</b> · ต้นฉบับอยู่ใน <b>โฟลเดอร์สำรอง</b><br>หัวหน้าหรือลูกทีมโควตาหมด งานก็ไม่หาย<br><span style="font-size:22px;color:#9fb6dd">รายละเอียดทุกขั้นตอนและพรอมต์เต็มอยู่ใน README.md</span></div></div></section>
+</div></div>
+
+<div class="zone" id="zl" title="หน้าก่อน"></div><div class="zone" id="zr" title="หน้าถัดไป"></div>
+<div id="bar"></div>
+<div id="help">← → เปลี่ยนหน้า · F เต็มจอ · O ดูทุกหน้า</div>
+<div id="hud"><button id="bp" title="หน้าก่อน (←)">‹</button><span id="count"></span><button id="bn" title="หน้าถัดไป (→)">›</button><button id="bo" title="ดูทุกหน้า (O)">▦</button><button id="bf" title="เต็มจอ (F)">⛶</button></div>
+<div id="ov"></div>
+
+<script>
+(function(){
+  const deck = document.getElementById('deck');
+  const slides = [...deck.querySelectorAll('.slide')];
+  const N = slides.length;
+  let cur = 0;
+  function fit(){
+    const s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  function go(i, push){
+    cur = Math.max(0, Math.min(N - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+    document.getElementById('count').textContent = (cur + 1) + ' / ' + N;
+    document.getElementById('bar').style.width = ((cur + 1) / N * 100) + '%';
+    if (push !== false) history.replaceState(null, '', '#' + (cur + 1));
+    document.querySelectorAll('#ov .th').forEach((t, k) => t.classList.toggle('cur', k === cur));
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1);
+  function fs(){
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+    else document.exitFullscreen && document.exitFullscreen();
+  }
+  function ov(on){ document.body.classList.toggle('ov', on === undefined ? !document.body.classList.contains('ov') : on); }
+  const ovEl = document.getElementById('ov');
+  slides.forEach((s, k) => {
+    const d = document.createElement('div'); d.className = 'th';
+    d.innerHTML = '<span>' + (k + 1) + '</span>' + (s.dataset.title || '');
+    d.onclick = () => { go(k); ov(false); };
+    ovEl.appendChild(d);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT') return;
+    const k = e.key;
+    if (['ArrowRight','PageDown',' ','Enter'].includes(k)) { e.preventDefault(); next(); }
+    else if (['ArrowLeft','PageUp','Backspace'].includes(k)) { e.preventDefault(); prev(); }
+    else if (k === 'Home') go(0);
+    else if (k === 'End') go(N - 1);
+    else if (k === 'f' || k === 'F') fs();
+    else if (k === 'o' || k === 'O') ov();
+    else if (k === 'Escape' && document.body.classList.contains('ov')) ov(false);
+  });
+  document.getElementById('bn').onclick = next;
+  document.getElementById('bp').onclick = prev;
+  document.getElementById('bf').onclick = fs;
+  document.getElementById('bo').onclick = () => ov();
+  document.getElementById('zr').onclick = next;
+  document.getElementById('zl').onclick = prev;
+  let tx = null;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', e => {
+    if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+  });
+  document.querySelectorAll('pre .copy').forEach(b => {
+    b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      const text = b.parentElement.innerText.replace(/^คัดลอก(แล้ว ✓)?\n?/, '');
+      const done = () => { b.textContent = 'คัดลอกแล้ว ✓'; setTimeout(() => b.textContent = 'คัดลอก', 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done); else done();
+    });
+  });
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1)); if (n) go(n - 1, false); });
+  fit();
+  const start = parseInt(location.hash.slice(1));
+  go(start ? start - 1 : 0, false);
+})();
+</script>
+</body>
+</html>

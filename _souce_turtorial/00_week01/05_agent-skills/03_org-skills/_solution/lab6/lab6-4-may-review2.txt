@@ -1,0 +1,1 @@
+plat-ken แก้ PR #4 ใน novatech/org-skills ตามที่ผมขอแล้ว ช่วยรีวิวรอบสอง ถ้าข้อที่เหลือเป็นข้อจำกัดของ Gitea ที่ยอมรับได้ให้ approve (ยังไม่ต้อง merge) token ของผมอยู่ใน .gitea-token

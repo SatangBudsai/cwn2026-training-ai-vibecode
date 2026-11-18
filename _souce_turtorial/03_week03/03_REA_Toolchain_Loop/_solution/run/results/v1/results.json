@@ -1,0 +1,662 @@
+{
+  "baseURL": "http://localhost:5081",
+  "runAt": "2026-10-31T17:45:41.338Z",
+  "results": [
+    {
+      "id": "B01",
+      "title": "ประเภทตั๋ว",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10319
+    },
+    {
+      "id": "B02",
+      "title": "ผู้โดยสาร",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10368
+    },
+    {
+      "id": "B03",
+      "title": "ชั้นโดยสาร",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10648
+    },
+    {
+      "id": "B04",
+      "title": "รายการแนะนำเมืองและสนามบิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10052
+    },
+    {
+      "id": "B05",
+      "title": "ปุ่มเลือกสนามบินหลายแห่ง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10036
+    },
+    {
+      "id": "B06",
+      "title": "สลับต้นทางปลายทางและคงวันที่",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8898
+    },
+    {
+      "id": "B07",
+      "title": "ปฏิทินสองเดือนพร้อมราคา",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9384
+    },
+    {
+      "id": "B08",
+      "title": "ปุ่มเลื่อนวันที่",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9468
+    },
+    {
+      "id": "B09",
+      "title": "ค้นหาได้ 22 รายการ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9496
+    },
+    {
+      "id": "B10",
+      "title": "สลับแท็บดีที่สุดและถูกที่สุด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9362
+    },
+    {
+      "id": "B11",
+      "title": "คำอธิบายการจัดอันดับ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9830
+    },
+    {
+      "id": "B12",
+      "title": "เรียงราคา",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9644
+    },
+    {
+      "id": "B13",
+      "title": "ข้อมูลย่อเที่ยวบิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9459
+    },
+    {
+      "id": "B14",
+      "title": "ขยายรายละเอียดหลายเที่ยวบิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8522
+    },
+    {
+      "id": "B15",
+      "title": "โหลดครบ 300 เที่ยวบิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9258
+    },
+    {
+      "id": "B16",
+      "title": "ตัวกรองบินตรง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10272
+    },
+    {
+      "id": "B17",
+      "title": "ตัวกรองการบินไทยเท่านั้น",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 10138
+    },
+    {
+      "id": "B18",
+      "title": "ตัวกรองสัมภาระ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9800
+    },
+    {
+      "id": "B19",
+      "title": "ตัวกรองราคาสูงสุดหนึ่งหมื่น",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9595
+    },
+    {
+      "id": "B20",
+      "title": "ตัวกรองเวลา 23-24",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8559
+    },
+    {
+      "id": "B21",
+      "title": "ตัวกรองการปล่อยก๊าซต่ำ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8648
+    },
+    {
+      "id": "B22",
+      "title": "ตัวกรองสนามบิน HKG",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8406
+    },
+    {
+      "id": "B23",
+      "title": "ตัวกรองระยะเวลาสั้นสุดไม่มีผลลัพธ์",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9370
+    },
+    {
+      "id": "B24",
+      "title": "แผงตัวกรองทั้งหมด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9541
+    },
+    {
+      "id": "B25",
+      "title": "ล้างตัวกรองคืน 300 รายการ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9206
+    },
+    {
+      "id": "B26",
+      "title": "ประวัติและช่วงราคาปกติ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9478
+    },
+    {
+      "id": "B27",
+      "title": "การ์ดแนะนำวันที่ถูกกว่า",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9479
+    },
+    {
+      "id": "B28",
+      "title": "ติดตามราคาขอล็อกอิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9071
+    },
+    {
+      "id": "B29",
+      "title": "ตารางวันที่",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9367
+    },
+    {
+      "id": "B30",
+      "title": "กราฟราคา",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9416
+    },
+    {
+      "id": "B31",
+      "title": "เลือกเที่ยวบินเข้าหน้าจอง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9054
+    },
+    {
+      "id": "B32",
+      "title": "สรุปการเดินทางและผู้ขาย",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9223
+    },
+    {
+      "id": "B33",
+      "title": "ย้อนกลับหน้าผลลัพธ์",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9257
+    },
+    {
+      "id": "B34",
+      "title": "ดีลและ FAQ หน้าแรก",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9143
+    },
+    {
+      "id": "B35",
+      "title": "ภาษา สถานที่ตั้ง สกุลเงิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9203
+    },
+    {
+      "id": "C01",
+      "title": "ผู้ใหญ่อย่างน้อยหนึ่งคน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9238
+    },
+    {
+      "id": "C02",
+      "title": "ทารกบนตักไม่เกินผู้ใหญ่",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9207
+    },
+    {
+      "id": "C03",
+      "title": "รวมทารกแล้วไม่เกินเก้าคน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8393
+    },
+    {
+      "id": "C04",
+      "title": "แก้จำนวนแล้วกลับมายืนยันได้",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8383
+    },
+    {
+      "id": "C05",
+      "title": "ปลายทางว่างสลับไม่ได้",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9313
+    },
+    {
+      "id": "C06",
+      "title": "เลือกวันที่อดีตไม่ได้",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 9363
+    },
+    {
+      "id": "C07",
+      "title": "ปฏิทินมีราคาประมาณ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8465
+    },
+    {
+      "id": "C08",
+      "title": "เมืองค้นทั้งสองสนามบิน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8073
+    },
+    {
+      "id": "C09",
+      "title": "แจ้งราคารวมภาษีและค่าธรรมเนียม",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8110
+    },
+    {
+      "id": "C10",
+      "title": "เตือนตรวจราคากับผู้ขาย",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8670
+    },
+    {
+      "id": "C11",
+      "title": "คงการเรียงเมื่อสลับแท็บ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8448
+    },
+    {
+      "id": "C12",
+      "title": "เครื่องมือราคาปรากฏเฉพาะดีที่สุดและยอดนิยม",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8646
+    },
+    {
+      "id": "C13",
+      "title": "ตัวกรองทำงานร่วมแบบ AND",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8068
+    },
+    {
+      "id": "C14",
+      "title": "ราคาเริ่มต้นเปลี่ยนตามตัวกรอง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8666
+    },
+    {
+      "id": "C15",
+      "title": "สายการบินเท่านั้นไม่รวมบินร่วม",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8028
+    },
+    {
+      "id": "C16",
+      "title": "สนามบินต่อเครื่องยังคงเที่ยวบินตรง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8615
+    },
+    {
+      "id": "C17",
+      "title": "กระเป๋าถือได้สูงสุดหนึ่งใบ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8763
+    },
+    {
+      "id": "C18",
+      "title": "slider เวลาไม่ซ้อนกัน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8827
+    },
+    {
+      "id": "C19",
+      "title": "ราคาต่ำสุดหนึ่งหมื่นขั้นหนึ่งหมื่น",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8052
+    },
+    {
+      "id": "C20",
+      "title": "ชิปแสดงค่าจำนวนและล้างได้",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8806
+    },
+    {
+      "id": "C21",
+      "title": "กล่องข้อมูลบังการกดจนปิด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8945
+    },
+    {
+      "id": "C22",
+      "title": "ราคาที่เลือกเท่ากับต่ำสุดหน้าจอง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8914
+    },
+    {
+      "id": "C23",
+      "title": "ราคาผู้ขายต่างกันและมีค่าธรรมเนียม",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8722
+    },
+    {
+      "id": "C24",
+      "title": "ติดตามราคาต้องล็อกอินและสวิตช์ไม่เปิด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8086
+    },
+    {
+      "id": "C25",
+      "title": "ยกเลิกตารางวันที่คงวันเดิม",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8730
+    },
+    {
+      "id": "C26",
+      "title": "ย้อนกลับรีเซ็ตรายการที่โหลด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 7937
+    },
+    {
+      "id": "C27",
+      "title": "เปลี่ยนประเภทตั๋วคงวันที่",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8704
+    },
+    {
+      "id": "C28",
+      "title": "[R] ต้นทางปลายทางเหมือนกันไม่ได้",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8676
+    },
+    {
+      "id": "C29",
+      "title": "[R] ข้อมูลไม่ครบค้นหาไม่ได้",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8449
+    },
+    {
+      "id": "C30",
+      "title": "[R] เวลาสนามบินเป็นเวลาท้องถิ่น",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8752
+    },
+    {
+      "id": "C31",
+      "title": "บวกหนึ่งถึงวันถัดไป",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8659
+    },
+    {
+      "id": "F01",
+      "title": "โหลดครบ 300 เที่ยวบินจริง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 7891
+    },
+    {
+      "id": "F02",
+      "title": "โหลดทั้งหมดครั้งเดียวไม่มีหน้าถัดไป",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8678
+    },
+    {
+      "id": "F03",
+      "title": "ผลแรก 22 รายการคงเดิมหลังโหลด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8653
+    },
+    {
+      "id": "F04",
+      "title": "บินตรงครบสิบแปดใบ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 7783
+    },
+    {
+      "id": "F05",
+      "title": "การกระจายจุดแวะครบ 300 ใบ",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8770
+    },
+    {
+      "id": "F06",
+      "title": "ช่วงราคาข้อมูลทั้งชุด",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8820
+    },
+    {
+      "id": "F07",
+      "title": "ช่วงราคาปกติเปลี่ยนตามคำค้น",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 7877
+    },
+    {
+      "id": "F08",
+      "title": "สูตรราคาอ้างอิงภายใน",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8778
+    },
+    {
+      "id": "F09",
+      "title": "ผู้ขายสายการบินและ Gotogate",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8736
+    },
+    {
+      "id": "F10",
+      "title": "แสดงการเปลี่ยนสนามบินต่อเครื่อง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8511
+    },
+    {
+      "id": "F11",
+      "title": "สายการบินผู้ทำการบินจริง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8587
+    },
+    {
+      "id": "F12",
+      "title": "รายละเอียด VZ832 เครื่องบิน ที่วางขา CO2",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 7941
+    },
+    {
+      "id": "F13",
+      "title": "ตารางบินซ้ำราคาแตกต่าง",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8471
+    },
+    {
+      "id": "F14",
+      "title": "ราคาเปลี่ยนได้ตามเวลา",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8746
+    },
+    {
+      "id": "F15",
+      "title": "รายการตัวกรองจากชุดเต็ม",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 8739
+    },
+    {
+      "id": "F16",
+      "title": "telemetry ที่ผู้ใช้ไม่เห็น",
+      "status": "FAIL",
+      "reason": "locator.waitFor: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^ผู้โดยสาร/ }) to be visible\u001b[22m\n",
+      "artifactError": null,
+      "durationMs": 7808
+    }
+  ]
+}

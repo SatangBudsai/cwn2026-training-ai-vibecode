@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+untitled.txt
+*.md
+docker-compose.yml
+workspace

@@ -1,0 +1,46 @@
+{
+  "1_meeting_room": {
+    "dependency_order_valid": true,
+    "node_artifact_hashes_valid": true,
+    "nodes_completed": [
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "N5"
+    ],
+    "context_isolation": false,
+    "parallel_execution": false
+  },
+  "2_expense_claim": {
+    "dependency_order_valid": true,
+    "node_artifact_hashes_valid": true,
+    "nodes_completed": [
+      "N1",
+      "N1b",
+      "N2",
+      "N3",
+      "N4",
+      "N5"
+    ],
+    "context_isolation": false,
+    "parallel_execution": false
+  },
+  "3_clinic_migration": {
+    "dependency_order_valid": true,
+    "node_artifact_hashes_valid": true,
+    "nodes_completed": [
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "N5",
+      "N1-v2",
+      "N3-v2",
+      "N4-v2",
+      "N5-v2"
+    ],
+    "context_isolation": false,
+    "parallel_execution": false
+  }
+}

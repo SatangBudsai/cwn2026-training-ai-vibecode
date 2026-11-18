@@ -1,0 +1,102 @@
+﻿### Result
+"[U11 S05 เริ่ม] line-full-price=ราคาเต็ม1 คน฿800 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม0 แต้ม฿0 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿800 | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=0 ชุด (0 แต้ม) | use-birthday= | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 8 แต้ม || inc.disabled=false confirm.disabled=false\n[U11 S05 แลกสูงสุด E101] line-full-price=ราคาเต็ม1 คน฿800 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿0 | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=16 ชุด (1600 แต้ม) | use-birthday= || inc.disabled=true confirm.disabled=false\nbirthday control count=1\n[U11 16 ชุดแล้วติ๊กเดือนเกิด (เพดานเหลือ 12)] line-full-price=ราคาเต็ม1 คน฿800 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿0 | quote-stale=ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=16 ชุด (1600 แต้ม) | error-points-exceed-service=ส่วนลดจากแต้มเกินค่าบริการ | use-birthday= | birthday-result=ราคานี้ไม่ได้ใช้สิทธิ์เดือนเกิด เพราะส่วนลดอื่นมากกว่า || inc.disabled=true confirm.disabled=true\n[U11 เอาเดือนเกิดออก] line-full-price=ราคาเต็ม1 คน฿800 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿0 | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=16 ชุด (1600 แต้ม) | use-birthday= || inc.disabled=true confirm.disabled=false\n[U11 16 ชุด + รถ H04 E103] line-full-price=ราคาเต็ม1 คน฿800 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-transport=ค่ารถรับส่ง1 คัน฿300 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿300 | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 16 ชุด ชุดละ 100 แต้ม | points-value=16 ชุด (1600 แต้ม) | use-birthday= || inc.disabled=true confirm.disabled=false\n[U11 ย้อนเป็น 3 คน] line-full-price=ราคาเต็ม3 คน฿2,400 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1600 แต้ม−฿800 | line-transport=ค่ารถรับส่ง1 คัน฿300 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿1,900 | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 16 แต้ม || inc.disabled=undefined confirm.disabled=false\n[U11 S05 3 คน 17 ชุด] line-full-price=ราคาเต็ม3 คน฿2,400 | line-discount=ส่วนลด 0%ไม่มีส่วนลด฿0 | line-points=แลกแต้ม1700 แต้ม−฿850 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿1,550 | points-balance=คุณมี 1700 แต้ม แลกได้สูงสุด 17 ชุด ชุดละ 100 แต้ม | points-value=17 ชุด (1700 แต้ม) | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 15 แต้ม || inc.disabled=true confirm.disabled=false\n[U11 จาก 3 คน 17 ชุด ย้อนเป็น 1 คน (เกินเพดาน?)] points-none=ยอดนี้ยังแลกแต้มไม่ได้ | points-value=17 ชุด (1700 แต้ม) | error-points-exceed-service=ส่วนลดจากแต้มเกินค่าบริการ || inc.disabled=true confirm.disabled=true\n[U02 S01 4 คน E139] line-full-price=ราคาเต็ม4 คน฿4,000 | line-discount=ส่วนลด 10%ส่วนลดสมาชิก Platinum−฿400 | line-points=แลกแต้ม0 แต้ม฿0 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿3,600 | points-none=ยอดนี้ยังแลกแต้มไม่ได้ | points-value=0 ชุด (0 แต้ม) | use-birthday= | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 36 แต้ม || inc.disabled=true confirm.disabled=false\n[U02 S01 4 คน เดือนเกิด E140] line-full-price=ราคาเต็ม4 คน฿4,000 | line-discount=ส่วนลด 20%สิทธิ์เดือนเกิด−฿800 | line-points=แลกแต้ม0 แต้ม฿0 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿3,200 | points-none=ยอดนี้ยังแลกแต้มไม่ได้ | points-value=0 ชุด (0 แต้ม) | use-birthday= | birthday-result=ราคานี้ใช้สิทธิ์เดือนเกิดแล้ว | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 32 แต้ม || inc.disabled=true confirm.disabled=false\n[U02 S01 30 มิ.ย. ก่อนติ๊ก] line-full-price=ราคาเต็ม1 คน฿1,000 | line-discount=ส่วนลด 10%ส่วนลดสมาชิก Platinum−฿100 | line-points=แลกแต้ม0 แต้ม฿0 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿900 | use-birthday= | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 9 แต้ม || inc.disabled=undefined confirm.disabled=false\n[U02 S01 30 มิ.ย. ติ๊กเดือนเกิด] line-full-price=ราคาเต็ม1 คน฿1,000 | line-discount=ส่วนลด 20%สิทธิ์เดือนเกิด−฿200 | line-points=แลกแต้ม0 แต้ม฿0 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿800 | use-birthday= | birthday-result=ราคานี้ใช้สิทธิ์เดือนเกิดแล้ว | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 8 แต้ม || inc.disabled=undefined confirm.disabled=false\n[U02 S01 1 ก.ค.] line-full-price=ราคาเต็ม1 คน฿1,000 | line-discount=ส่วนลด 10%ส่วนลดสมาชิก Platinum−฿100 | line-points=แลกแต้ม0 แต้ม฿0 | line-transport=ค่ารถรับส่ง฿0 | line-giftcard=Gift Card฿0 | pay-at-shop=จ่ายหน้าร้าน฿900 | use-birthday= | birthday-reason=วันนัดไม่ได้อยู่ในเดือนเกิดของคุณ | points-earned=เมื่อใช้บริการเสร็จจะได้รับ 9 แต้ม || inc.disabled=undefined confirm.disabled=false\nP01 toggles: booking-quote-need-input=กรอกรายการที่แจ้งเตือนให้ครบเพื่อดูราคา | booking-extra-points=แลกแต้ม | booking-toggle-points=แลกแต้ม | booking-extra-shuttle=รถรับส่งแพ็กเกจนี้ต้องระบุโรงแรมหรือระยะทางเสมอรถรับส่งโรงแร | booking-extra-giftcard=Gift Card | booking-toggle-giftcard=Gift Card\n[U02 P01 ก่อนเลือกรถ] error-distance-required=กรุณาเลือกโรงแรมหรือกรอกระยะทาง || inc.disabled=undefined confirm.disabled=true\nwallet K01 panel: ซื้อคอร์สใหม่\n\nคอร์สกระชับสัดส่วน 10 แถม 1\n\n฿15,000\n\n11 ครั้ง\nอายุ 180 วัน\nไม่มีส่วนลด\nเปิดใช้ทันที\nเป็นการจ่ายจำลอง ไม่มีการเก็บเงินจริง\n\nยืนยันการซื้อคอร์ส ฿15,000\n\nเป็นการจ่ายจำลอง คอร์สเปิดใช้ทันที 11 ครั้ง อายุ 180 วัน ไม่มีส่วนลด\n\nยืนยันซื้อคอร์ส\nยังไม่ซื้อ || birthday-in-panel=false"
+### Ran Playwright code
+```js
+await (async (page) => {
+  const out = [];
+  const sleep = (ms) => page.waitForTimeout(ms);
+  const tid = (t) => page.locator(`[data-testid="${t}"]`);
+  const ready = () => page.waitForFunction(() => document.documentElement.dataset.ready === 'true');
+  const lines = async (label) => {
+    await sleep(500);
+    const s = await page.evaluate(() => [...document.querySelectorAll('[data-testid^=booking-line],[data-testid=booking-pay-at-shop],[data-testid=booking-points-value],[data-testid=booking-points-balance],[data-testid=booking-points-none],[data-testid=booking-giftcard-info],[data-testid=booking-points-earned],[data-testid=booking-quote-stale],[data-testid=booking-birthday-reason],[data-testid=booking-birthday-result],[data-testid=booking-use-birthday],[data-testid^=error-]')].map(e => e.dataset.testid.replace('booking-', '') + '=' + e.textContent.trim()).join(' | ') + ' || inc.disabled=' + document.querySelector('[data-testid=booking-points-inc]')?.disabled + ' confirm.disabled=' + document.querySelector('[data-testid=booking-confirm]')?.disabled);
+    out.push(`[${label}] ${s}`);
+  };
+  const login = async (email, pw) => {
+    await page.evaluate(async ([email, pw]) => { await fetch('/api/auth/logout', { method: 'POST' }); await fetch('/api/auth/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, password: pw }) }); }, [email, pw]);
+  };
+  const flow = async (svc, party, date) => {
+    await page.goto(`http://localhost:3000/th/booking?service=${svc}`); await ready();
+    await tid(`booking-party-${party}`).click();
+    await tid('booking-step1-next').click();
+    await tid('booking-date').fill(date);
+    await tid('booking-slot-10-00').click({ timeout: 5000 });
+    await tid('booking-step2-next').click();
+    await tid('booking-screen-3').waitFor();
+    await sleep(500);
+  };
+  const open = async (x) => { const t = tid(`booking-toggle-${x}`); if (await t.count()) await t.click(); };
+
+  // --- U11 read-only: cap and stale state
+  await page.goto('http://localhost:3000/th/login'); await ready();
+  await login('por@sabai.test', 'Por#2026');
+  await flow('S05', 1, '2026-06-17');
+  await open('points'); await open('birthday');
+  await lines('U11 S05 เริ่ม');
+  await tid('booking-points-max').click(); await lines('U11 S05 แลกสูงสุด E101');
+  await page.screenshot({ path: 'e101-u11-16sets.png', fullPage: true });
+  const inc = tid('booking-points-inc');
+  if (await inc.isEnabled()) { await inc.click(); await lines('U11 กด + เกิน 16'); }
+  const bd = tid('booking-use-birthday');
+  out.push('birthday control count=' + await bd.count());
+  if (await bd.count()) { await bd.click(); await lines('U11 16 ชุดแล้วติ๊กเดือนเกิด (เพดานเหลือ 12)'); await page.screenshot({ path: 'u11-16sets-then-birthday.png', fullPage: true }); await bd.click(); await lines('U11 เอาเดือนเกิดออก'); }
+  await tid('booking-toggle-shuttle').click();
+  await tid('booking-shuttle-toggle').check();
+  await tid('booking-shuttle-hotel').selectOption('H04');
+  await lines('U11 16 ชุด + รถ H04 E103');
+
+  // back and shrink/change service while points kept
+  await tid('booking-step3-back').click(); await sleep(200);
+  await tid('booking-step2-back').click(); await sleep(200);
+  await tid('booking-party-3').click(); await tid('booking-step1-next').click(); await sleep(300);
+  await tid('booking-slot-10-00').click({ timeout: 5000 }).catch(() => out.push('slot10 not present after back'));
+  await tid('booking-step2-next').click(); await sleep(500);
+  await lines('U11 ย้อนเป็น 3 คน');
+
+  await flow('S05', 3, '2026-06-17');
+  await open('points');
+  await tid('booking-points-max').click(); await lines('U11 S05 3 คน 17 ชุด');
+  await tid('booking-step3-back').click(); await sleep(200);
+  await tid('booking-step2-back').click(); await sleep(200);
+  await tid('booking-party-1').click(); await tid('booking-step1-next').click(); await sleep(300);
+  await tid('booking-slot-10-00').click({ timeout: 5000 }).catch(() => out.push('slot10 not present after back'));
+  await tid('booking-step2-next').click(); await sleep(500);
+  await lines('U11 จาก 3 คน 17 ชุด ย้อนเป็น 1 คน (เกินเพดาน?)');
+  await page.screenshot({ path: 'u11-17sets-shrink-to-1.png', fullPage: true });
+
+  // --- U02 read-only
+  await login('ton@sabai.test', 'Ton#2026');
+  await flow('S01', 4, '2026-06-17');
+  await open('birthday'); await open('points');
+  await lines('U02 S01 4 คน E139');
+  if (await bd.count()) { await bd.click(); await lines('U02 S01 4 คน เดือนเกิด E140'); }
+  await page.screenshot({ path: 'e140-u02.png', fullPage: true });
+  await flow('S01', 1, '2026-06-30');
+  await open('birthday');
+  await lines('U02 S01 30 มิ.ย. ก่อนติ๊ก');
+  if (await bd.count()) { await bd.click(); await lines('U02 S01 30 มิ.ย. ติ๊กเดือนเกิด'); }
+  await flow('S01', 1, '2026-07-01');
+  await open('birthday');
+  await lines('U02 S01 1 ก.ค.');
+  await page.goto('http://localhost:3000/th/booking?service=P01'); await ready();
+  await tid('booking-party-1').click(); await tid('booking-step1-next').click();
+  await tid('booking-date').fill('2026-06-17');
+  await tid('booking-slot-10-00').click({ timeout: 5000 });
+  await tid('booking-step2-next').click(); await sleep(600);
+  out.push('P01 toggles: ' + await page.evaluate(() => [...document.querySelectorAll('[data-testid^=booking-toggle],[data-testid^=booking-extra],[data-testid=booking-use-birthday],[data-testid=booking-birthday-reason],[data-testid=booking-quote-need-input]')].map(e => e.dataset.testid + '=' + e.textContent.trim().slice(0, 60)).join(' | ')));
+  await lines('U02 P01 ก่อนเลือกรถ');
+  await page.screenshot({ path: 'e130-u02-p01.png', fullPage: true });
+  await page.goto('http://localhost:3000/th/wallet'); await ready(); await sleep(500);
+  const buy = tid('wallet-buy-course');
+  if (await buy.count()) { await buy.click(); await sleep(300); }
+  out.push('wallet K01 panel: ' + await page.evaluate(() => (document.querySelector('[data-testid=wallet-buy-panel]')?.innerText || 'no panel').slice(0, 300) + ' || birthday-in-panel=' + /เดือนเกิด/.test(document.querySelector('[data-testid=wallet-buy-panel]')?.innerText || '')));
+  await page.screenshot({ path: 'e131-u02-k01.png', fullPage: true });
+  return out.join('\n');
+}
+)(page);
+```
+### Page
+- Page URL: http://localhost:3000/th/wallet
+- Page Title: Wallet ของฉัน · สบายใจ สปา
+### Events
+- New console entries: .playwright-cli\console-2026-11-06T00-45-11-176Z.log#L2-L4

@@ -1,0 +1,167 @@
+{
+  "name": "novatech-skills",
+  "owner": {
+    "name": "ทีมกลาง โนวาเทค (plat-ken)",
+    "email": "plat-ken@novatech.test"
+  },
+  "metadata": {
+    "description": "คลัง skill กลางของโนวาเทค — core ทุกคนติดตั้ง + แพ็กของแผนกตัวเอง",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "./plugins/core",
+      "description": "กติกาที่ทุกคนต้องใช้: นโยบายข้อมูลลูกค้า (PDPA), แบรนด์, ราคาและกฎกำไร, หา skill — ติดตั้งให้พนักงานทุกคน",
+      "version": "1.0.0",
+      "author": {
+        "name": "plat-ken"
+      },
+      "category": "core",
+      "keywords": [
+        "core",
+        "platform"
+      ]
+    },
+    {
+      "name": "shared",
+      "source": "./plugins/shared",
+      "description": "งานข้ามแผนกที่ทุกแผนกทำแบบเดียวกัน เช่น บันทึกการประชุม",
+      "version": "1.0.0",
+      "author": {
+        "name": "plat-ken"
+      },
+      "category": "shared",
+      "keywords": [
+        "shared",
+        "platform"
+      ]
+    },
+    {
+      "name": "exec",
+      "source": "./plugins/exec",
+      "description": "งานผู้บริหาร: พิจารณาอนุมัติดีล และสไลด์ประชุมผู้บริหารต้นเดือน",
+      "version": "1.0.0",
+      "author": {
+        "name": "exec-ploy"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "exec"
+      ]
+    },
+    {
+      "name": "sales",
+      "source": "./plugins/sales",
+      "description": "งานขาย: proposal ลูกค้าธนาคารจาก TOR และอีเมลติดตามลูกค้า",
+      "version": "1.0.0",
+      "author": {
+        "name": "sales-nida"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "sales"
+      ]
+    },
+    {
+      "name": "sa",
+      "source": "./plugins/sa",
+      "description": "งาน SA: แปลง TOR เป็น SPEC + TEST-PLAN และวาด architecture ตามมาตรฐาน",
+      "version": "1.0.0",
+      "author": {
+        "name": "sa-ton"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "sa"
+      ]
+    },
+    {
+      "name": "dev",
+      "source": "./plugins/dev",
+      "description": "งาน Dev: รีวิวโค้ดตาม coding-rules 10 ข้อ และขึ้นโปรเจกต์สมาชิก + ชำระเงิน",
+      "version": "1.0.0",
+      "author": {
+        "name": "dev-pond"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "dev"
+      ]
+    },
+    {
+      "name": "qa",
+      "source": "./plugins/qa",
+      "description": "งาน QA: ทดสอบเว็บ black-box ตาม TEST-PLAN และเขียนรายงานบั๊กที่ทำซ้ำได้",
+      "version": "1.0.0",
+      "author": {
+        "name": "qa-mint"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "qa"
+      ]
+    },
+    {
+      "name": "devops",
+      "source": "./plugins/devops",
+      "description": "งาน DevOps: checklist ขึ้น production และ postmortem แบบไม่โทษคน",
+      "version": "1.0.0",
+      "author": {
+        "name": "ops-art"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "devops"
+      ]
+    },
+    {
+      "name": "mlops",
+      "source": "./plugins/mlops",
+      "description": "งาน ML: บันทึกการทดลองให้เทียบกันได้ และปล่อยโมเดลพร้อมเกณฑ์ rollback",
+      "version": "1.0.0",
+      "author": {
+        "name": "ml-jay"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "mlops"
+      ]
+    },
+    {
+      "name": "hr",
+      "source": "./plugins/hr",
+      "description": "งาน HR: ประกาศรับสมัคร (JD) และชุดต้อนรับพนักงานใหม่",
+      "version": "1.0.0",
+      "author": {
+        "name": "hr-fah"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "hr"
+      ]
+    },
+    {
+      "name": "finance",
+      "source": "./plugins/finance",
+      "description": "งานบัญชี: คิดราคาและกำไรโปรเจกต์ และตรวจใบแจ้งหนี้ก่อนส่งลูกค้า",
+      "version": "1.0.0",
+      "author": {
+        "name": "fin-joy"
+      },
+      "category": "department",
+      "keywords": [
+        "department",
+        "finance"
+      ]
+    }
+  ]
+}

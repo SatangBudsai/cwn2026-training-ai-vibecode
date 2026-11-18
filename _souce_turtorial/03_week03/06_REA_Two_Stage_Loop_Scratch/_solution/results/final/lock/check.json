@@ -1,0 +1,430 @@
+{
+  "visual": {
+    "pixels": 64415,
+    "pct": 5.2395
+  },
+  "guards": {
+    "ok": true,
+    "fails": [],
+    "info": {
+      "checked": 217,
+      "firstRow": {
+        "x": 175,
+        "y": 623,
+        "bottom": 715
+      },
+      "mainContrast": 16.1,
+      "textVars": {
+        "--color-text": "#202124",
+        "--color-text-secondary": "#5f6368",
+        "--color-text-on-primary": "#fff"
+      },
+      "inputs": 5
+    },
+    "hash": "381e1e239c4fd0bb0351b63ed61c5906dd07b00207cb5819429dd4e201294cd1"
+  },
+  "bands": [
+    {
+      "y0": 525,
+      "y1": 600,
+      "red": 7973
+    },
+    {
+      "y0": 0,
+      "y1": 75,
+      "red": 6723
+    },
+    {
+      "y0": 150,
+      "y1": 225,
+      "red": 6679
+    },
+    {
+      "y0": 225,
+      "y1": 300,
+      "red": 6452
+    },
+    {
+      "y0": 450,
+      "y1": 525,
+      "red": 6267
+    },
+    {
+      "y0": 825,
+      "y1": 900,
+      "red": 6100
+    },
+    {
+      "y0": 300,
+      "y1": 375,
+      "red": 5955
+    },
+    {
+      "y0": 375,
+      "y1": 450,
+      "red": 5101
+    },
+    {
+      "y0": 750,
+      "y1": 825,
+      "red": 3703
+    },
+    {
+      "y0": 600,
+      "y1": 675,
+      "red": 3689
+    },
+    {
+      "y0": 675,
+      "y1": 750,
+      "red": 3200
+    },
+    {
+      "y0": 75,
+      "y1": 150,
+      "red": 2573
+    }
+  ],
+  "regions": [
+    {
+      "red": 12590,
+      "x0": 168,
+      "y0": 366,
+      "x1": 1200,
+      "y1": 624,
+      "element": "main.results \"ผลการค้นหามีผลลัพธ์ 21 รายการด\"",
+      "vars": [
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 8675,
+      "x0": 168,
+      "y0": 126,
+      "x1": 1200,
+      "y1": 234,
+      "element": "input.field \"\"",
+      "vars": [
+        "--form-field-height",
+        "--form-field-font-size",
+        "--font-size-md",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 4478,
+      "x0": 168,
+      "y0": 246,
+      "x1": 1200,
+      "y1": 306,
+      "element": "div.filters \"ตัวกรองตัวกรองทั้งหมดจำนวนครั้\"",
+      "vars": [
+        "--chips-margin-top",
+        "--space-6",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 2694,
+      "x0": 510,
+      "y0": 564,
+      "x1": 960,
+      "y1": 600,
+      "element": "div.price-note \"ราคารวมภาษีที่ต้องจ่าย + ค่าธร\"",
+      "vars": [
+        "--list-note-size",
+        "--font-size-sm",
+        "--list-note-color",
+        "--color-text-secondary",
+        "--price-note-size",
+        "--price-note-color",
+        "--space-4"
+      ]
+    },
+    {
+      "red": 2525,
+      "x0": 1260,
+      "y0": 12,
+      "x1": 1350,
+      "y1": 54,
+      "element": "button.icon-btn \"\"",
+      "vars": [
+        "--color-text-secondary",
+        "--header-height"
+      ]
+    },
+    {
+      "red": 2412,
+      "x0": 168,
+      "y0": 828,
+      "x1": 1194,
+      "y1": 900,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 1926,
+      "x0": 168,
+      "y0": 312,
+      "x1": 360,
+      "y1": 360,
+      "element": "button.chip \"สนามบินสำหรับต่อเครื่อง\"",
+      "vars": [
+        "--chip-height",
+        "--chip-font-size",
+        "--font-size-sm",
+        "--chip-font-weight",
+        "--font-weight-medium",
+        "--chip-color",
+        "--color-text-secondary"
+      ]
+    },
+    {
+      "red": 1698,
+      "x0": 396,
+      "y0": 336,
+      "x1": 918,
+      "y1": 360,
+      "element": "div.chips \"ตัวกรองทั้งหมดจำนวนครั้งที่แวะ\"",
+      "vars": [
+        "--chips-margin-top",
+        "--space-6",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 1483,
+      "x0": 198,
+      "y0": 738,
+      "x1": 408,
+      "y1": 780,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 1366,
+      "x0": 0,
+      "y0": 60,
+      "x1": 1368,
+      "y1": 66,
+      "element": "header.header \"SkyThaiข้ามไปที่เนื้อหาหลัก\"",
+      "vars": [
+        "--header-height"
+      ]
+    },
+    {
+      "red": 1212,
+      "x0": 240,
+      "y0": 648,
+      "x1": 396,
+      "y1": 690,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 1155,
+      "x0": 828,
+      "y0": 846,
+      "x1": 978,
+      "y1": 888,
+      "element": "span.row-sub \"ปริมาณการปล่อยก๊าซ -16%\"",
+      "vars": [
+        "--row-sub-size",
+        "--font-size-sm",
+        "--row-sub-color",
+        "--color-text-secondary"
+      ]
+    },
+    {
+      "red": 1145,
+      "x0": 828,
+      "y0": 414,
+      "x1": 1002,
+      "y1": 462,
+      "element": "div.tab \"ถูกที่สุด เริ่มต้น ฿7,635\"",
+      "vars": [
+        "--tabs-height",
+        "--tab-font-size",
+        "--font-size-md",
+        "--tab-font-weight",
+        "--font-weight-medium",
+        "--tab-color",
+        "--color-text-secondary",
+        "--space-2",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 975,
+      "x0": 966,
+      "y0": 576,
+      "x1": 1164,
+      "y1": 606,
+      "element": "button.sort-btn \"จัดเรียงตามเที่ยวบินยอดนิยม\"",
+      "vars": [
+        "--sort-font-size",
+        "--font-size-sm",
+        "--color-text-secondary",
+        "--space-4"
+      ]
+    },
+    {
+      "red": 924,
+      "x0": 864,
+      "y0": 732,
+      "x1": 978,
+      "y1": 768,
+      "element": "span \"CO2e 396กก.\"",
+      "vars": []
+    },
+    {
+      "red": 882,
+      "x0": 276,
+      "y0": 366,
+      "x1": 474,
+      "y1": 384,
+      "element": "h2.results-title \"ผลการค้นหา\"",
+      "vars": [
+        "--font-size-sm",
+        "--font-weight-medium",
+        "--color-text-secondary",
+        "--tabs-margin-top",
+        "--space-4",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 770,
+      "x0": 150,
+      "y0": 12,
+      "x1": 270,
+      "y1": 54,
+      "element": "button.skip-link \"ข้ามไปที่เนื้อหาหลัก\"",
+      "vars": [
+        "--header-nav-font-size",
+        "--font-size-sm",
+        "--color-primary",
+        "--header-nav-height",
+        "--header-height"
+      ]
+    },
+    {
+      "red": 724,
+      "x0": 690,
+      "y0": 846,
+      "x1": 804,
+      "y1": 888,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 693,
+      "x0": 1056,
+      "y0": 726,
+      "x1": 1110,
+      "y1": 768,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 681,
+      "x0": 18,
+      "y0": 18,
+      "x1": 138,
+      "y1": 48,
+      "element": "a.brand \"SkyThai\"",
+      "vars": [
+        "--font-size-xl",
+        "--color-text",
+        "--header-logo-height",
+        "--header-height"
+      ]
+    },
+    {
+      "red": 603,
+      "x0": 168,
+      "y0": 792,
+      "x1": 270,
+      "y1": 822,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 591,
+      "x0": 174,
+      "y0": 84,
+      "x1": 288,
+      "y1": 120,
+      "element": "h1.visually-compact \"การค้นหาเที่ยวบิน\"",
+      "vars": [
+        "--font-size-sm",
+        "--font-weight-medium",
+        "--color-text-secondary",
+        "--space-2",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 580,
+      "x0": 828,
+      "y0": 492,
+      "x1": 966,
+      "y1": 528,
+      "element": "div \"เที่ยวบินยอดนิยมจัดอันดับตามรา\"",
+      "vars": [
+        "--space-4"
+      ]
+    },
+    {
+      "red": 547,
+      "x0": 996,
+      "y0": 342,
+      "x1": 1164,
+      "y1": 360,
+      "element": "div.chips \"ตัวกรองทั้งหมดจำนวนครั้งที่แวะ\"",
+      "vars": [
+        "--chips-margin-top",
+        "--space-6",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 523,
+      "x0": 864,
+      "y0": 660,
+      "x1": 978,
+      "y1": 696,
+      "element": "span.row-sub \"การปล่อยก๊าซโดยเฉลี่ย\"",
+      "vars": [
+        "--row-sub-size",
+        "--font-size-sm",
+        "--row-sub-color",
+        "--color-text-secondary"
+      ]
+    }
+  ]
+}

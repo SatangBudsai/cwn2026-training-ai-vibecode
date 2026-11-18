@@ -1,0 +1,38 @@
+{
+  "reference": "/workspace/rea-flight-v2/exploration/results.png",
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "threshold": 0.1,
+  "includeAA": false,
+  "results": [
+    {
+      "version": "v1",
+      "pixels": 342711,
+      "totalPixels": 1229400,
+      "percent": 27.87628111273792,
+      "initial": 22,
+      "total": 22,
+      "url": "http://localhost:5081/"
+    },
+    {
+      "version": "v2",
+      "pixels": 100641,
+      "totalPixels": 1229400,
+      "percent": 8.186188384577843,
+      "initial": 10,
+      "total": 22,
+      "url": "http://localhost:5082/search?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0"
+    },
+    {
+      "version": "v3",
+      "pixels": 102292,
+      "totalPixels": 1229400,
+      "percent": 8.320481535708476,
+      "initial": 22,
+      "total": 300,
+      "url": "http://localhost:5083/search?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0"
+    }
+  ]
+}

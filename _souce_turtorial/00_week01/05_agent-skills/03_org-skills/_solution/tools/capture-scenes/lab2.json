@@ -1,0 +1,7 @@
+[{"name":"lab2-repo","user":"plat-ken","steps":[
+  {"goto":"/novatech/org-skills","hold":3000,"shot":"lab2-repo"},
+  {"goto":"/novatech/org-skills/src/branch/main/plugins","hold":2500,"shot":"lab2-plugins"},
+  {"goto":"/novatech/org-skills/src/branch/main/plugins/sales/skills/sales-proposal/SKILL.md","hold":3500,"shot":"lab2-sales-skill"}]},
+ {"name":"lab2-codeowners","user":"plat-ken","steps":[
+  {"goto":"/novatech/org-skills/src/branch/main/.gitea/CODEOWNERS","hold":3500,"shot":"lab2-codeowners","full":true},
+  {"goto":"/novatech/org-skills/settings/branches","hold":3500,"shot":"lab2-protect"}]}]

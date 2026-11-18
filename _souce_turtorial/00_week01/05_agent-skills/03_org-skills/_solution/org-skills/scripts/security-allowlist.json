@@ -1,0 +1,77 @@
+{
+  "_comment": "ข้อยกเว้นของ scripts/security_scan.py ที่ทีมกลางรีวิวแล้ว — ทุกข้อต้องมี reason · path เป็น glob · match = ข้อความที่ต้องอยู่ในบรรทัดนั้น (ว่าง = ทั้งไฟล์) · แก้ไฟล์นี้ต้องได้ approve จาก plat-ken (CODEOWNERS)",
+  "allow": [
+    {
+      "path": ".gitea/workflows/ci.yml",
+      "rule": "SEC-CREDFILE",
+      "match": "git ls-files | grep",
+      "reason": "ขั้นตรวจห้าม commit ไฟล์ลับ — ชื่อไฟล์อยู่ใน pattern ที่ใช้ห้าม ไม่ได้อ่านไฟล์"
+    },
+    {
+      "path": "scripts/check_headers.py",
+      "rule": "SEC-ENVVAR",
+      "match": "GITEA_",
+      "reason": "CI ใช้ token ชั่วคราวของ job อ่านว่า owner มีบัญชีจริงใน Gitea ภายใน — ไม่ส่งออกนอกบริษัท"
+    },
+    {
+      "path": "scripts/check_headers.py",
+      "rule": "EXF-DYNAMIC",
+      "match": "urlopen(req",
+      "reason": "เรียก GITEA_API ภายใน (http://gitea:3000) เท่านั้น"
+    },
+    {
+      "path": "scripts/skill_eval.py",
+      "rule": "SEC-ENVVAR",
+      "match": "GITEA_",
+      "reason": "ผู้รีวิวใช้ token Gitea ของตัวเองโพสต์ commit status skill-eval บน Gitea ภายใน — ไม่ได้เก็บไว้ใน CI"
+    },
+    {
+      "path": "scripts/skill_eval.py",
+      "rule": "EXF-DYNAMIC",
+      "match": "urlopen(req",
+      "reason": "เรียก Gitea API ภายในเท่านั้น (ค่าเริ่มต้น http://localhost:3300)"
+    },
+    {
+      "path": "scripts/release.py",
+      "rule": "SEC-ENVVAR",
+      "match": "GITEA_",
+      "reason": "ทีมกลางใช้ token Gitea ของตัวเอง (หรือ CI ใช้ token ชั่วคราวของ job ตอน --plan) อ่าน PR / สร้าง tag / Release ใน Gitea ภายใน"
+    },
+    {
+      "path": "scripts/release.py",
+      "rule": "EXF-DYNAMIC",
+      "match": "urlopen(req",
+      "reason": "เรียก Gitea API ภายในเท่านั้น"
+    },
+    {
+      "path": "scripts/merge_gate.py",
+      "rule": "SEC-ENVVAR",
+      "match": "GITEA_",
+      "reason": "ผู้ merge / CI (token ชั่วคราวของ job) อ่าน PR, review, status, task ของ Actions จาก Gitea ภายในเท่านั้น — อ่านอย่างเดียว"
+    },
+    {
+      "path": "scripts/merge_gate.py",
+      "rule": "EXF-DYNAMIC",
+      "match": "urlopen(r,",
+      "reason": "เรียก Gitea API ภายในเท่านั้น (ค่าเริ่มต้น http://localhost:3300, ใน CI http://gitea:3000)"
+    },
+    {
+      "path": "plugins/qa/skills/test-from-plan/scripts/scaffold-e2e.mjs",
+      "rule": "EXF-DYNAMIC",
+      "match": "fetch(at(",
+      "reason": "เรียก health/reset ของระบบที่ทดสอบตาม baseURL ใน TEST-PLAN (เครื่องทดสอบ) — ไม่ใช่ปลายทางนอกบริษัท"
+    },
+    {
+      "path": "plugins/dev/skills/project-scaffold/templates/src/lib/client/auth-client.ts",
+      "rule": "EXF-DYNAMIC",
+      "match": "credentials: 'same-origin'",
+      "reason": "โค้ดแอปที่ scaffold ออกไป เรียก API ของแอปเอง (same-origin)"
+    },
+    {
+      "path": "scripts/skill_eval.py",
+      "rule": "SEC-ENVDUMP",
+      "match": "if not SECRET_ENV.match(k)",
+      "reason": "คัด env ก่อนส่งให้ claude plugin eval โดยตัด token Gitea/GitHub ออก (ลดสิ่งที่ hook/MCP ของ plugin มองเห็น) — ไม่ได้ส่ง env ออกไปไหน"
+    }
+  ]
+}

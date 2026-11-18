@@ -1,0 +1,102 @@
+{
+  "entities": {
+    "Patient": [
+      "patient_id",
+      "name_raw",
+      "name_key",
+      "phone_raw",
+      "phone_key"
+    ],
+    "Appointment": [
+      "appointment_id",
+      "patient_id",
+      "branch_id",
+      "doctor_id",
+      "service_id",
+      "starts_at",
+      "ends_at",
+      "status"
+    ],
+    "Branch": [
+      "branch_id",
+      "name"
+    ],
+    "Doctor": [
+      "doctor_id",
+      "name"
+    ],
+    "Service": [
+      "service_id",
+      "name",
+      "duration_minutes"
+    ],
+    "SourceRow": [
+      "source_row_id",
+      "source_sheet",
+      "raw_payload",
+      "date_candidates",
+      "disposition",
+      "appointment_id"
+    ],
+    "ReviewIssue": [
+      "issue_id",
+      "source_row_id",
+      "kind",
+      "owner",
+      "decision",
+      "evidence"
+    ],
+    "ConsentRecord": [
+      "consent_id",
+      "patient_id",
+      "purpose",
+      "notice_version",
+      "decision",
+      "recorded_at",
+      "withdrawn_at",
+      "evidence_ref"
+    ],
+    "LineIdentity": [
+      "line_identity_id",
+      "patient_id",
+      "provider_subject",
+      "verification_status"
+    ],
+    "BookingRequest": [
+      "request_id",
+      "line_identity_id",
+      "appointment_id",
+      "idempotency_key",
+      "status"
+    ]
+  },
+  "ui_sections": [
+    "appointments",
+    "booking",
+    "review",
+    "consent",
+    "line-booking"
+  ],
+  "states": {
+    "SourceRow.disposition": [
+      "รอยืนยัน",
+      "พร้อมนำเข้า",
+      "คงแถวอ้างอิงหลังยืนยันซ้ำ"
+    ],
+    "Appointment.status": [
+      "ยืนยันแล้ว",
+      "ยกเลิกแล้ว"
+    ]
+  },
+  "rules": [
+    "ทุก R1–R5 ยังเป็นข้อมูลรอตรวจ ไม่แสดงเป็น Appointment ที่ยืนยันแล้ว",
+    "SourceRow.appointment_id ว่างจนตรวจผ่าน",
+    "ห้ามแต่ง duration, timezone หรือวันที่ยืนยัน",
+    "คนรับผิดชอบ ReviewIssue คือเจ้าหน้าที่สาขาต้นทาง; เป็นข้อเสนอรอยืนยัน"
+  ],
+  "new_information": [
+    "ความยินยอมตามโจทย์",
+    "จองเองผ่าน LINE OA"
+  ],
+  "policy_note": "ต้องยืนยันวัตถุประสงค์ ข้อความ ผลของการให้/ไม่ให้/ถอน และวิธียืนยันตัวตน ไม่อ้างว่าการออกแบบรับรองตามกฎหมาย"
+}

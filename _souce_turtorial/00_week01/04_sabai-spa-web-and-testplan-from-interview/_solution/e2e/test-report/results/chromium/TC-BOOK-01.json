@@ -1,0 +1,81 @@
+{
+  "id": "TC-BOOK-01",
+  "title": "TC-BOOK-01 สมาชิก Gold จอง 1 คนจนจบใน 3 หน้าจอ ยอดตรงกันทุกจุด",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1",
+    "@mobile"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "เมนูแสดงนาทีและราคา: S01 60 นาที ฿1,000 · S02 90 ฿1,400 · S03 60 ฿1,200 · S04 90 ฿2,000 · S05 60 ฿800 · S06 60 ฿1,500 · S07 60 ฿1,800 · P01 120 ฿2,900\nนับจากเลือกบริการถึงยืนยันไม่เกิน 3 หน้าจอ\nยอดหน้าสรุป = หน้ายืนยัน = หลังร้าน = ฿950 ต่างกัน ฿0 (฿1,000 − 5% (฿50) = ฿950 · ถ้าไม่ได้ส่วนลดจะได้ ฿1,000 · ถ้าแลกแต้มเองจะได้ ฿900)\nหลังร้านแสดง S01 · T01 · 17 มิ.ย. 20:00–21:00 ตรงรหัสจองเดียวกัน\nแต้ม U08 ยังเป็น 101 เพราะไม่ได้แลก และยังไม่ได้กดเสร็จ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 163,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §1 ชื่อ นาที ราคา · [D] §4 จองคิว · [D] บ.15 · [R] ⚠️A-41 · [R] ⚠️A-46",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 163,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-01, FR-02, FR-05, NFR-03, NFR-11, BR-21",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 163,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R94",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 163,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 163,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 163,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 33794,
+  "at": "2026-11-06T02:50:31.005Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เข้าสู่ระบบ U08 แล้วเปิดหน้าจอง นับหน้าจอเริ่มที่ 1",
+    "2. ดูรายการเมนูบนหน้าจอ 1 แล้วเลือก S01 1 คน",
+    "3. เลือก 17 มิ.ย. รอบ 20:00 นักบำบัด T01",
+    "4. จดยอดในหน้าสรุป โดยไม่แลกแต้ม",
+    "5. กดยืนยัน จดรหัสจองและยอดในหน้ายืนยัน",
+    "6. เข้า owner ที่ /th/admin ค้นการจองตามรหัส แล้วรีโหลด",
+    "7. กลับบัญชี U08 ดูแต้มและประวัติผ่าน account-history-link"
+  ]
+}

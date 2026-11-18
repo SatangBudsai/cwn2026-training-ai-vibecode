@@ -1,0 +1,1 @@
+ใน container multi-account-devtool ที่ /workspace/arena ช่วยวัดซ้ำแอป v4 (5084) · ขั้นที่ 1 (5091) · ขั้นที่ 2 (5092) ด้วย kit/measure.sh ตัวเดียวกัน ทีละแอป เก็บผลที่ /workspace/arena/final/<ชื่อ> แล้วตรวจตัวกันอ่านไม่ออกทั้ง 3 แอปด้วยตัวตรวจของขั้นที่ 2 ตอบเป็นตาราง: แอป | acceptance | differential | โครงสร้าง% | visual diff% | เที่ยวบิน | Score | gate | ตัวกันอ่านไม่ออก

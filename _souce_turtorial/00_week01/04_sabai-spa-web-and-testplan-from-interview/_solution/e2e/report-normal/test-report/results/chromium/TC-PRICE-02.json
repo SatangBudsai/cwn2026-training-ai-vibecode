@@ -1,0 +1,87 @@
+{
+  "id": "TC-PRICE-02",
+  "title": "TC-PRICE-02 ลำดับคำนวณ 5 ขั้น ตรงกันทุกหน้า",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "แขก: จ่าย ฿1,000 ไม่มีบรรทัดส่วนลด\nU08: (฿1,000 − 5% ฿50 = ฿950 − ฿50 = ฿900) ไม่ใช่ ฿902 (ถ้าหักแต้มก่อน % ได้ (฿1,000 − ฿50) × 95% = ฿902.50 ปัดลง ฿902) · แต้ม 101 − 100 = 1\nU03 ทุกหน้าแสดงเท่ากัน: ราคาเต็ม ฿2,000 → % ฿0 = ฿2,000 → แต้ม −฿100 = ฿1,900 → รถ +฿300 = ฿2,200 → บัตร −฿500 = จ่ายหน้าร้าน ฿1,700 (ถ้าลืมค่ารถได้ ฿1,400 · ถ้าลืมบัตรได้ ฿2,200) · แต้ม 250 − 200 = 50\nขั้น 6: มีข้อความแจ้งว่าใช้บัตรไม่ได้ เพราะบัตรถูกหัก ฿500 ทันทีตอนจองจนเหลือ ฿0 และยอดจ่ายของการจองใหม่ไม่ลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 237,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 ราคา · [R] ⚠️A-22",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 237,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-27, FR-28, FR-29, BR-31",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 237,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "—",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 237,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 237,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 237,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 56168,
+  "at": "2026-11-06T02:37:40.070Z",
+  "attempts": [
+    {
+      "status": "passed",
+      "durationMs": 49812,
+      "at": "2026-11-06T02:17:53.551Z"
+    }
+  ],
+  "errors": [
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('booking-line-discount')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('booking-line-discount') with timeout 6000ms\n  - waiting for getByTestId('booking-line-discount')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n"
+  ],
+  "steps": [
+    "1. แขกเลือก S01 1 คน 12:00 อ่านยอด ไม่ยืนยัน ✗",
+    "2. U08 S01 12:00 แลก 1 ชุด อ่านสรุป ยืนยัน อ่านหน้ายืนยัน",
+    "3. U03 S04 14:00 รถ H04 แลก 2 ชุด GIFT-500 อ่านสรุป ยืนยัน อ่านหน้ายืนยัน",
+    "4. รีโหลดของ U03 และ U08 แล้วดูแต้มคงเหลือ",
+    "5. ดูยอดของ 2 นัดในหลังร้าน",
+    "6. U03 เริ่มจองใหม่แล้วใส่ GIFT-500 อีกครั้ง"
+  ]
+}

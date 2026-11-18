@@ -1,0 +1,353 @@
+npm notice run npx
+npm notice run playwright test tests/5.6- --project=chromium
+
+Running 10 tests using 1 worker
+
+(node:58040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [chromium] › tests\5.6-gift.spec.ts:179:1 › TC-GIFT-01 ฐานแต้มคิดจากค่าบริการหลังหักบัตร ไม่รวมค่ารถ ปัดเศษทิ้ง @P1 @5.6 (1.5m)
+  x   2 [chromium] › tests\5.6-gift.spec.ts:227:1 › TC-GIFT-02 ส่วนที่จ่ายด้วยบัตรไม่เพิ่มยอดสะสม ยอดและแต้มเปลี่ยนตอนร้านกดเสร็จเท่านั้น @P1 @5.6 (1.2m)
+(node:102552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  3 [chromium] › tests\5.6-gift.spec.ts:273:1 › TC-GIFT-03 ยอดจ่ายต่ำสุด ฿0 หักบัตรไม่เกินยอดก่อนหักบัตร เศษคงอยู่ในบัตร @P1 @5.6 (1.2m)
+  ok  4 [chromium] › tests\5.6-gift.spec.ts:318:1 › TC-GIFT-04 บัตรใบเดียวใช้ได้หลายครั้งจนหมด ยอดตรงทุกครั้ง บัตรเหลือ ฿0 ใช้ไม่ได้ @P1 @5.6 (1.0m)
+  ok  5 [chromium] › tests\5.6-gift.spec.ts:381:1 › TC-GIFT-05 ลูกค้า 2 คนจองพร้อมกันด้วยบัตรใบเดียว ห้ามหักเกินยอด @P1 @5.6 (4.4m)
+  ok  6 [chromium] › tests\5.6-gift.spec.ts:475:1 › TC-GIFT-06 บัตรใช้ได้ถึงวันที่ 365 วันซื้อเป็นวันที่ 0 ตรวจจากวันจอง ไม่ใช่วันนัด @P1 @5.6 (56.0s)
+  x   7 [chromium] › tests\5.6-gift.spec.ts:521:1 › TC-GIFT-07 รหัสพิมพ์เล็กใช้ได้ทั้งจองและตรวจยอด กรอกรหัสผิดแล้วลบจนว่าง error ต้องหาย @P1 @5.6 (22.0s)
+(node:62320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  8 [chromium] › tests\5.6-gift.spec.ts:580:1 › TC-GIFT-08 มูลค่าบัตร ฿500–฿10,000 จำนวนเต็ม บังคับทั้งหน้าจอและ API @P1 @5.6 (1.0m)
+  x   9 [chromium] › tests\5.6-gift.spec.ts:669:1 › TC-GIFT-09 ค่าผิดรูปแบบในช่องมูลค่าต้องเตือนก่อนส่ง ตัวอย่างบัตรไม่แสดงค่าผิด @P2 @5.6 (47.6s)
+(node:81972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 10 [chromium] › tests\5.6-gift.spec.ts:731:1 › TC-GIFT-10 ซื้อบัตรเปิดใช้ทันที ส่งแบบจำลอง วันหมดอายุถูก ยอดสะสมไม่เพิ่ม ใช้บัตรจ่ายค่าบัตรหรือคอร์สไม่ได้ @P1 @5.6 (42.1s)
+
+
+  1) [chromium] › tests\5.6-gift.spec.ts:227:1 › TC-GIFT-02 ส่วนที่จ่ายด้วยบัตรไม่เพิ่มยอดสะสม ยอดและแต้มเปลี่ยนตอนร้านกดเสร็จเท่านั้น @P1 @5.6 
+
+    Error: GIFT-BAL-400 หลังกดเสร็จ ยอดสะสม
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 600
+    Received: 1000
+
+      86 |       const want = exp.spend;
+      87 |       await app.check(page.getByTestId('account-spend'), `${label} ยอดสะสม ฿${want.toLocaleString('en-US')} (${when})`, async (el) => {
+    > 88 |         expect.soft(money(await textOf(el)), `${label} ยอดสะสม`).toBe(want);
+         |                                                                  ^
+      89 |       });
+      90 |     }
+      91 |     if (exp.tier) {
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:88:66
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkAccount (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:87:7)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:265:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:264:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:245:5
+
+    Error: GIFT-BAL-400 หลังกดเสร็จ ยอดสะสม
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 600
+    Received: 1000
+
+      86 |       const want = exp.spend;
+      87 |       await app.check(page.getByTestId('account-spend'), `${label} ยอดสะสม ฿${want.toLocaleString('en-US')} (${when})`, async (el) => {
+    > 88 |         expect.soft(money(await textOf(el)), `${label} ยอดสะสม`).toBe(want);
+         |                                                                  ^
+      89 |       });
+      90 |     }
+      91 |     if (exp.tier) {
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:88:66
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkAccount (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:87:7)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:265:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:264:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:245:5
+
+    Error: GIFT-1000 หลังกดเสร็จ ยอดสะสม
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1000
+
+      86 |       const want = exp.spend;
+      87 |       await app.check(page.getByTestId('account-spend'), `${label} ยอดสะสม ฿${want.toLocaleString('en-US')} (${when})`, async (el) => {
+    > 88 |         expect.soft(money(await textOf(el)), `${label} ยอดสะสม`).toBe(want);
+         |                                                                  ^
+      89 |       });
+      90 |     }
+      91 |     if (exp.tier) {
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:88:66
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkAccount (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:87:7)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:265:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:264:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:245:5
+
+    Error: GIFT-1000 หลังกดเสร็จ ยอดสะสม
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1000
+
+      86 |       const want = exp.spend;
+      87 |       await app.check(page.getByTestId('account-spend'), `${label} ยอดสะสม ฿${want.toLocaleString('en-US')} (${when})`, async (el) => {
+    > 88 |         expect.soft(money(await textOf(el)), `${label} ยอดสะสม`).toBe(want);
+         |                                                                  ^
+      89 |       });
+      90 |     }
+      91 |     if (exp.tier) {
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:88:66
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at checkAccount (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:87:7)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:265:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:264:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:245:5
+
+    Error Context: test-results\5.6-chromium\5.6-gift-TC-GIFT-02-ส่วนที-04952-ลี่ยนตอนร้านกดเสร็จเท่านั้น-chromium\error-context.md
+
+  2) [chromium] › tests\5.6-gift.spec.ts:521:1 › TC-GIFT-07 รหัสพิมพ์เล็กใช้ได้ทั้งจองและตรวจยอด กรอกรหัสผิดแล้วลบจนว่าง error ต้องหาย @P1 @5.6 › 3. ลบช่องจนว่าง ดู error ปุ่มยืนยัน และยอดจ่าย 
+
+    Error: error ต้องหายเมื่อลบช่องจนว่าง
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('booking-screen-3').locator('[data-testid^="error-"]')
+    Expected: 0
+    Received: 1
+    Timeout:  1000ms
+
+    Call log:
+      - error ต้องหายเมื่อลบช่องจนว่าง getByTestId('booking-screen-3').locator('[data-testid^="error-"]') with timeout 1000ms
+      - waiting for getByTestId('booking-screen-3').locator('[data-testid^="error-"]')
+        11 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      548 |       await booking.el('booking-giftcard-code').fill('');
+      549 |       await app.check(booking.el('booking-screen-3'), 'ขั้น 3 error หายทันที', async (el) => {
+    > 550 |         await expect.soft(el.locator('[data-testid^="error-"]'), 'error ต้องหายเมื่อลบช่องจนว่าง').toHaveCount(0, { timeout: 1_000 });
+          |                                                                                                    ^
+      551 |       });
+      552 |       await app.check(booking.confirmButton(), 'ขั้น 3 ปุ่มยืนยันกดได้', async (el) => {
+      553 |         await expect.soft(el).toBeEnabled({ timeout: 1_000 });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:550:100)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:549:7
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:547:5
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:539:3
+
+    Error: expect(locator).toBeEnabled() failed
+
+    Locator:  getByTestId('booking-confirm')
+    Expected: enabled
+    Received: disabled
+    Timeout:  1000ms
+
+    Call log:
+      - Expect "soft toBeEnabled" getByTestId('booking-confirm') with timeout 1000ms
+      - waiting for getByTestId('booking-confirm')
+        11 × locator resolved to <button disabled type="button" data-e2e-prev-outline="" data-testid="booking-confirm" class="Hi2WXW_btn Hi2WXW_btn-gold Hi2WXW_btn-lg nv8LGq_actionMain">ยืนยันการจอง</button>
+           - unexpected value "disabled"
+
+
+      551 |       });
+      552 |       await app.check(booking.confirmButton(), 'ขั้น 3 ปุ่มยืนยันกดได้', async (el) => {
+    > 553 |         await expect.soft(el).toBeEnabled({ timeout: 1_000 });
+          |                               ^
+      554 |       });
+      555 |       await checkPay(app, booking, 'ขั้น 3 ยอดจ่าย ฿800', 800);
+      556 |     });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:553:31)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:552:7
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:547:5
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:539:3
+
+    Error Context: test-results\5.6-chromium\5.6-gift-TC-GIFT-07-รหัสพิ-b62bb-ดแล้วลบจนว่าง-error-ต้องหาย-chromium\error-context.md
+
+  3) [chromium] › tests\5.6-gift.spec.ts:669:1 › TC-GIFT-09 ค่าผิดรูปแบบในช่องมูลค่าต้องเตือนก่อนส่ง ตัวอย่างบัตรไม่แสดงค่าผิด @P2 @5.6 
+
+    Error: มูลค่า 1,000 ต้องเตือนก่อนส่ง
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      712 |         });
+      713 |         await app.checkValue(page, `มูลค่า ${value} ไม่มี request ซื้อบัตร`, { sent, warned }, (v) => {
+    > 714 |           expect.soft(v.sent, `มูลค่า ${value} ต้องเตือนก่อนส่ง`).toBe(0);
+          |                                                                   ^
+      715 |         });
+      716 |         await checkNoCardIssued(app, page, `มูลค่า ${value} ไม่ออกบัตร`);
+      717 |       });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:714:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:713:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:695:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error: ตัวอย่างบัตรห้ามแสดง ฿abc
+
+    expect(locator).not.toContainText(expected) failed
+
+    Locator: getByTestId('giftcard-preview')
+    Expected pattern: not /฿\s*abc/
+    Received string: "ตัวอย่างบัตรสบายใจ สปา฿abcGift Card"
+    Timeout: 6000ms
+
+    Call log:
+      - ตัวอย่างบัตรห้ามแสดง ฿abc getByTestId('giftcard-preview') with timeout 6000ms
+      - waiting for getByTestId('giftcard-preview')
+        16 × locator resolved to <div data-e2e-prev-outline="" class="Wp2jEG_previewCol" data-testid="giftcard-preview">…</div>
+           - unexpected value "ตัวอย่างบัตรสบายใจ สปา฿abcGift Card"
+
+
+      689 |         await fillBuy(page, { amount: value });
+      690 |         await app.check(page.getByTestId('giftcard-preview'), `มูลค่า ${value} ตัวอย่างบัตรไม่แสดงค่าผิด`, async (el) => {
+    > 691 |           await expect.soft(el, 'ตัวอย่างบัตรห้ามแสดง ฿abc').not.toContainText(/฿\s*abc/);
+          |                                                                  ^
+      692 |           await expect.soft(el, 'ตัวอย่างบัตรห้ามแสดง ฿-500').not.toContainText(/฿\s*-\s*500/);
+      693 |         });
+      694 |       });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:691:66)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:690:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:688:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error: มูลค่า abc ต้องเตือนก่อนส่ง
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      712 |         });
+      713 |         await app.checkValue(page, `มูลค่า ${value} ไม่มี request ซื้อบัตร`, { sent, warned }, (v) => {
+    > 714 |           expect.soft(v.sent, `มูลค่า ${value} ต้องเตือนก่อนส่ง`).toBe(0);
+          |                                                                   ^
+      715 |         });
+      716 |         await checkNoCardIssued(app, page, `มูลค่า ${value} ไม่ออกบัตร`);
+      717 |       });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:714:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:713:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:695:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error: ตัวอย่างบัตรห้ามแสดง ฿-500
+
+    expect(locator).not.toContainText(expected) failed
+
+    Locator: getByTestId('giftcard-preview')
+    Expected pattern: not /฿\s*-\s*500/
+    Received string: "ตัวอย่างบัตรสบายใจ สปา฿-500Gift Card"
+    Timeout: 6000ms
+
+    Call log:
+      - ตัวอย่างบัตรห้ามแสดง ฿-500 getByTestId('giftcard-preview') with timeout 6000ms
+      - waiting for getByTestId('giftcard-preview')
+        16 × locator resolved to <div data-e2e-prev-outline="" class="Wp2jEG_previewCol" data-testid="giftcard-preview">…</div>
+           - unexpected value "ตัวอย่างบัตรสบายใจ สปา฿-500Gift Card"
+
+
+      690 |         await app.check(page.getByTestId('giftcard-preview'), `มูลค่า ${value} ตัวอย่างบัตรไม่แสดงค่าผิด`, async (el) => {
+      691 |           await expect.soft(el, 'ตัวอย่างบัตรห้ามแสดง ฿abc').not.toContainText(/฿\s*abc/);
+    > 692 |           await expect.soft(el, 'ตัวอย่างบัตรห้ามแสดง ฿-500').not.toContainText(/฿\s*-\s*500/);
+          |                                                                   ^
+      693 |         });
+      694 |       });
+      695 |       await test.step(`มูลค่า ${value} · 3. กดซื้อ ดูข้อความและ request`, async () => {
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:692:67
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:690:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:688:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error: มูลค่า -500 ต้องเตือนก่อนส่ง
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      712 |         });
+      713 |         await app.checkValue(page, `มูลค่า ${value} ไม่มี request ซื้อบัตร`, { sent, warned }, (v) => {
+    > 714 |           expect.soft(v.sent, `มูลค่า ${value} ต้องเตือนก่อนส่ง`).toBe(0);
+          |                                                                   ^
+      715 |         });
+      716 |         await checkNoCardIssued(app, page, `มูลค่า ${value} ไม่ออกบัตร`);
+      717 |       });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:714:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:713:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:695:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error: มูลค่า 0 ต้องเตือนก่อนส่ง
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      712 |         });
+      713 |         await app.checkValue(page, `มูลค่า ${value} ไม่มี request ซื้อบัตร`, { sent, warned }, (v) => {
+    > 714 |           expect.soft(v.sent, `มูลค่า ${value} ต้องเตือนก่อนส่ง`).toBe(0);
+          |                                                                   ^
+      715 |         });
+      716 |         await checkNoCardIssued(app, page, `มูลค่า ${value} ไม่ออกบัตร`);
+      717 |       });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:714:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:713:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:695:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error: มูลค่า 1e3 ต้องเตือนก่อนส่ง
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      712 |         });
+      713 |         await app.checkValue(page, `มูลค่า ${value} ไม่มี request ซื้อบัตร`, { sent, warned }, (v) => {
+    > 714 |           expect.soft(v.sent, `มูลค่า ${value} ต้องเตือนก่อนส่ง`).toBe(0);
+          |                                                                   ^
+      715 |         });
+      716 |         await checkNoCardIssued(app, page, `มูลค่า ${value} ไม่ออกบัตร`);
+      717 |       });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:714:67)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:713:9
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:695:7
+        at guard (C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:16:5)
+        at C:\t\spa04\sabai\e2e\tests\5.6-gift.spec.ts:687:5
+
+    Error Context: test-results\5.6-chromium\5.6-gift-TC-GIFT-09-ค่าผิด-6fa4e-ง-ตัวอย่างบัตรไม่แสดงค่าผิด-chromium\error-context.md
+
+  3 failed
+    [chromium] › tests\5.6-gift.spec.ts:227:1 › TC-GIFT-02 ส่วนที่จ่ายด้วยบัตรไม่เพิ่มยอดสะสม ยอดและแต้มเปลี่ยนตอนร้านกดเสร็จเท่านั้น @P1 @5.6 
+    [chromium] › tests\5.6-gift.spec.ts:521:1 › TC-GIFT-07 รหัสพิมพ์เล็กใช้ได้ทั้งจองและตรวจยอด กรอกรหัสผิดแล้วลบจนว่าง error ต้องหาย @P1 @5.6 
+    [chromium] › tests\5.6-gift.spec.ts:669:1 › TC-GIFT-09 ค่าผิดรูปแบบในช่องมูลค่าต้องเตือนก่อนส่ง ตัวอย่างบัตรไม่แสดงค่าผิด @P2 @5.6 
+  7 passed (13.2m)

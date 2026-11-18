@@ -1,0 +1,12 @@
+import { open, URL, consent, captcha, shot, snap, log, waitResults } from './lib.mjs';
+const { browser, page } = await open();
+await page.goto(URL);
+await consent(page);
+await waitResults(page);
+if (await captcha(page)) process.exit(2);
+log('recon url', page.url());
+await shot(page, '01-results-top');
+await shot(page, '01-results-full', true);
+const y = await snap(page, '01-results-initial');
+console.log(y.slice(0, 15000));
+await browser.close();

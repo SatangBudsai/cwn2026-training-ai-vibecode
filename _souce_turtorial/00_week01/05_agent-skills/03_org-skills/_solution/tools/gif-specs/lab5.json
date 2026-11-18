@@ -1,0 +1,462 @@
+{
+"lab": "LAB 5",
+"steps": [
+{
+"id": "lab5-step01-nida-open-pr",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "MD ตีกลับดีล deal-001 เพราะ proposal ไม่มีภาคผนวก PDPA … แก้ skill sales-proposal ในคลังกลาง ให้ใส่ภาคผนวกนี้ทุกครั้งที่ลูกค้าเป็นธนาคาร แล้วเปิด PR ให้ plat-may และ md-somchai รีวิว",
+"reads": [
+"deals/deal-001/approval.md (เหตุผลที่ MD ตีกลับ)",
+"คลัง org-skills บน Gitea + CODEOWNERS"
+],
+"skill": "แก้ skill sales-proposal",
+"skillNote": "แก้ที่คลังกลาง ไม่ใช่แค่ proposal ฉบับเดียว",
+"time": "2 นาที 36 วินาที",
+"outputs": [
+{
+"file": "PR #2 · commit 244ef3a",
+"note": "เพิ่มภาคผนวก PDPA 3 ข้อ (DPA · ข้อมูลอยู่ในไทย · แจ้งเหตุ 72 ชม.)"
+},
+{
+"file": "เลขเวอร์ชันของแพ็ก",
+"note": "plugin.json ของ sales เป็น 1.1.0 + สร้าง catalog ใหม่"
+},
+{
+"file": "คำถามใน PR",
+"note": "ถาม plat-may ว่ากฎนี้ควรย้ายไป core ไหม"
+}
+],
+"verdict": {
+"kind": "info",
+"text": "เปิด PR #2 แล้ว รอรีวิว",
+"sub": "plat-ken ถูกขอรีวิวอัตโนมัติด้วย เพราะ catalog อยู่ใน plugins/core"
+},
+"next": "➜ plat-may"
+},
+{
+"id": "lab5-step02-may-review1",
+"who": "plat-may",
+"role": "ทีมกลาง",
+"color": "#bfdbfe",
+"portrait": "../../../img/people/plat-may.jpg",
+"prompt": "รีวิว PR #2 ในฐานะเจ้าของนโยบายข้อมูลลูกค้า ถ้ามีจุดที่ต้องแก้ให้ request changes ถ้าดีแล้วให้ approve",
+"reads": [
+"diff ของ PR",
+"นโยบายใน core",
+"approval.md ของ MD"
+],
+"skill": "core:customer-data-policy",
+"skillNote": "Claude หยิบเอง",
+"time": "3 นาที 51 วินาที",
+"outputs": [
+{
+"file": "ขอ 1: ย้ายกฎไป core",
+"note": "ตรวจด้วย skill นโยบายแล้วผ่าน แต่ MD ตีกลับ ผลขัดกัน"
+},
+{
+"file": "ขอ 2: เส้นทางเมื่อทำตามไม่ได้",
+"note": "ให้ plat-may กับ MD ตัดสินร่วมกัน ห้ามยื่นจนกว่าจะได้ข้อสรุป"
+},
+{
+"file": "ขอ 3: ยืนยัน data residency",
+"note": "ให้ SA หรือ DevOps ยืนยันที่เก็บ backup และ log จริง"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "Request changes 3 จุด",
+"sub": "ถ้อยคำภาคผนวก 3 ข้อใช้ได้แล้ว"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab5-step03-md-review1",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "รีวิว PR #2 ในฐานะเจ้าของกฎภาคผนวก PDPA ว่าข้อความตรงกับกติกาของผมไหม",
+"reads": [
+"โน้ตกฎ notes/deal-rules.md",
+"skill exec:deal-approval",
+"diff ของ PR"
+],
+"skill": "เทียบกับกฎของตัวเอง",
+"skillNote": "ไม่ได้เรียก skill · เปิดไฟล์กฎมาเทียบ",
+"time": "2 นาที 5 วินาที",
+"outputs": [
+{
+"file": "ขอบเขตแคบไป",
+"note": "ต้องเป็น \"ธนาคารหรือสถาบันการเงิน\""
+},
+{
+"file": "ถ้อยคำข้อ 1 และ 3",
+"note": "ต้องใช้คำว่า \"ลูกค้า\" ไม่ใช่ \"ธนาคาร\""
+},
+{
+"file": "เงื่อนไขตีกลับ",
+"note": "ต้องรวมกรณีมีไม่ครบ 3 ข้อด้วย"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "Request changes 3 จุด",
+"sub": "แก่นของ 3 ข้อถูกแล้ว"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab5-step04-nida-fix1",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "อ่านคอมเมนต์ทั้งหมดใน PR #2 แล้วแก้ตามนั้นใน PR เดิม push ขึ้นไป แล้วตอบคอมเมนต์ว่าแก้อะไรไปบ้าง",
+"reads": [
+"รีวิวของ plat-may และ md-somchai",
+"ไฟล์ของ skill ทั้งฝั่ง sales และ core"
+],
+"skill": "แก้ตามรีวิว",
+"skillNote": "ขั้นที่ใช้เวลานานสุด: แก้ 2 แพ็กและลองรัน",
+"time": "11 นาที 21 วินาที",
+"outputs": [
+{
+"file": "commit 66ddefa",
+"note": "ย้ายกฎไป core: bank-pdpa-annex.md ไฟล์ใหม่"
+},
+{
+"file": "core เป็น 1.1.0",
+"note": "ฝั่ง sales เหลือแค่ขั้นตอนกับลิงก์ชี้ไป core"
+},
+{
+"file": "ตอบคอมเมนต์",
+"note": "บอกจุดที่ตัดสินใจเอง: ถ้อยคำใช้ตาม MD เพราะเป็นเจ้าของกฎ"
+}
+],
+"verdict": {
+"kind": "info",
+"text": "แก้ครบ 6 ข้อ ส่งกลับรีวิวรอบ 2",
+"sub": "ไม่เก็บสำเนาในแพ็ก sales"
+},
+"next": "➜ plat-may"
+},
+{
+"id": "lab5-step05-may-review2",
+"who": "plat-may",
+"role": "ทีมกลาง",
+"color": "#bfdbfe",
+"portrait": "../../../img/people/plat-may.jpg",
+"prompt": "รีวิว PR #2 รอบใหม่ ในฐานะเจ้าของนโยบายข้อมูลลูกค้า",
+"reads": [
+"commit 66ddefa",
+"ผลลองรันของ sales-nida"
+],
+"skill": "core:customer-data-policy",
+"skillNote": "Claude หยิบเอง",
+"time": "3 นาที 33 วินาที",
+"outputs": [
+{
+"file": "ขอ 1: กรณี \"ยังยืนยันไม่ได้\"",
+"note": "เส้นทางเดิมใช้ได้แค่ \"ทำตามไม่ได้\" ทำให้ทางตัน"
+},
+{
+"file": "ขอ 2: ลำดับขั้นตอนขัดกัน",
+"note": "ต้องจดชื่อผู้ยืนยันก่อนตรวจเช็กลิสต์"
+},
+{
+"file": "ที่ผ่านแล้ว",
+"note": "3 ข้อจากรอบก่อนแก้ครบ"
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "Request changes อีก 2 จุด",
+"sub": "ทั้งสองจุดเจอจากการลองรันจริงของนิดา"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab5-step06-md-review2",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "รีวิว PR #2 รอบใหม่ ว่าข้อความตรงกับกติกาของผมไหม",
+"reads": [
+"โน้ตกฎ notes/deal-rules.md",
+"commit 66ddefa"
+],
+"skill": "เทียบกับกฎของตัวเอง",
+"skillNote": "ไม่ได้เรียก skill",
+"time": "2 นาที 11 วินาที",
+"outputs": [
+{
+"file": "ตารางเทียบกฎ 7 แถว",
+"note": "ตรงครบ: ขอบเขต · 3 ข้อ · ตีกลับ · วันที่มีผล"
+},
+{
+"file": "ข้อสังเกต",
+"note": "ข้อ 2 เขียนกว้างกว่ากฎเล็กน้อย จดไว้คุยกับ plat-may"
+},
+{
+"file": "เตือนเอง",
+"note": "ถ้านิดา push เพิ่ม approve นี้จะล้าสมัย"
+}
+],
+"verdict": {
+"kind": "ok",
+"text": "Approve รอบแรกของ MD",
+"sub": "แต่ plat-may ยังขอแก้อยู่"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab5-step07-nida-fix2",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "อ่านคอมเมนต์ทั้งหมดใน PR #2 แล้วแก้ตามนั้นใน PR เดิม push ขึ้นไป แล้วตอบคอมเมนต์ว่าแก้อะไรไปบ้าง",
+"reads": [
+"รีวิวรอบ 2 ของ plat-may"
+],
+"skill": "แก้ตามรีวิว",
+"skillNote": "ไม่ขึ้นเวอร์ชันซ้ำตามที่ plat-may บอก",
+"time": "3 นาที 26 วินาที",
+"outputs": [
+{
+"file": "commit 467ed43",
+"note": "เส้นทางครอบคลุม \"ยังยืนยันไม่ได้\" ใช้ข้อความที่ขอทุกคำ"
+},
+{
+"file": "สลับขั้นตอน",
+"note": "เขียน internal-notes ก่อน แล้วค่อยตรวจเช็กลิสต์"
+},
+{
+"file": "ถ้อยคำ 3 ข้อ",
+"note": "ไม่เปลี่ยน"
+}
+],
+"verdict": {
+"kind": "info",
+"text": "แก้ครบ ส่งกลับรีวิวรอบ 3",
+"sub": "approve ของ MD ขึ้นว่าล้าสมัยเพราะมี commit ใหม่"
+},
+"next": "➜ plat-may"
+},
+{
+"id": "lab5-step08-may-approve",
+"who": "plat-may",
+"role": "ทีมกลาง",
+"color": "#bfdbfe",
+"portrait": "../../../img/people/plat-may.jpg",
+"prompt": "รีวิว PR #2 รอบใหม่ ในฐานะเจ้าของนโยบายข้อมูลลูกค้า",
+"reads": [
+"commit 467ed43",
+"ผลรันสคริปต์ของตัวเอง"
+],
+"skill": "core:customer-data-policy",
+"skillNote": "Claude หยิบเอง",
+"time": "3 นาที 5 วินาที",
+"outputs": [
+{
+"file": "เทียบคำขอรอบ 2",
+"note": "ตรงกับที่ขอทุกตัวอักษร"
+},
+{
+"file": "รันเองที่ 467ed43",
+"note": "build-catalog --check · plugin validate · scan_pii"
+},
+{
+"file": "ทางตัน",
+"note": "ไม่มีแล้ว"
+}
+],
+"verdict": {
+"kind": "ok",
+"text": "Approve",
+"sub": "ผู้รีวิวรันตรวจเอง ไม่เชื่อแค่สรุป"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab5-step09-md-approve",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "รีวิว PR #2 รอบใหม่ ว่าข้อความตรงกับกติกาของผมไหม",
+"reads": [
+"โน้ตกฎ notes/deal-rules.md",
+"สิ่งที่เปลี่ยนจาก 66ddefa"
+],
+"skill": "เทียบกับกฎของตัวเอง",
+"skillNote": "รีวิวซ้ำเพราะมี commit ใหม่",
+"time": "2 นาที 59 วินาที",
+"outputs": [
+{
+"file": "ข้อความ 3 ข้อ",
+"note": "ไม่เปลี่ยนจากรอบที่เคยอนุมัติ"
+},
+{
+"file": "เส้นทาง \"ยังยืนยันไม่ได้\"",
+"note": "ไม่ได้อยู่ในกฎ แต่ไม่ขัด รับได้"
+},
+{
+"file": "deal-001",
+"note": "ยังห้ามยื่น รอตรวจ LINE, LIC-APM, LIC-WAF"
+}
+],
+"verdict": {
+"kind": "ok",
+"text": "Approve ที่ commit ล่าสุด",
+"sub": "ครบ plat-may + md-somchai"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab5-step10-nida-ask",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "PR #2 ของผม: plat-may กับ md-somchai approve ครบแล้วหรือยัง ถ้าครบให้ merge ได้เลย",
+"reads": [
+"สถานะรีวิวบน Gitea",
+"CODEOWNERS"
+],
+"skill": "ตรวจก่อน merge",
+"skillNote": "Gitea น่าจะยอมให้ merge แต่คนยังไม่ควร",
+"time": "1 นาที 31 วินาที",
+"outputs": [
+{
+"file": "plat-may · md-somchai",
+"note": "Approved ทั้งคู่ ไม่ stale"
+},
+{
+"file": "plat-ken",
+"note": "ยังไม่ได้รีวิว ทั้งที่ PR แก้ plugins/core"
+},
+{
+"file": "คำถาม",
+"note": "รอ plat-ken หรือ merge เลย"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "ยังไม่ merge: หยุดถามคน",
+"sub": "ผู้ประสานงานก็ไม่ตอบแทน · ผู้สอนตอบ \"รอ plat-ken\""
+},
+"next": "➜ plat-ken"
+},
+{
+"id": "lab5-step11-ken-approve",
+"who": "plat-ken",
+"role": "ทีมกลาง",
+"color": "#bfdbfe",
+"portrait": "../../../img/people/plat-ken.jpg",
+"prompt": "รีวิว PR ฝั่ง core ในฐานะ CODEOWNER ถ้าดีให้ approve (ยังไม่ต้อง merge)",
+"reads": [
+"diff ฝั่ง plugins/core",
+"รายชื่อ skill ที่ follow นโยบายนี้"
+],
+"skill": "core:skill-finder",
+"skillNote": "Claude หยิบเอง · ดูว่ากระทบ skill ไหน",
+"time": "1 นาที 33 วินาที",
+"outputs": [
+{
+"file": "ลองรัน skill จริง 3 เอกสาร",
+"note": "ธนาคารไม่มีภาคผนวก 🔴 · เช่าซื้อมี 2 ข้อ 🔴 · ค้าปลีก 🟢"
+},
+{
+"file": "ผลกระทบ",
+"note": "23 skill follow นโยบายนี้ แต่ PR ไม่ได้แก้แถวเดิม"
+},
+{
+"file": "ข้อสังเกตไม่บล็อก",
+"note": "นิยาม \"สถาบันการเงิน\" · CODEOWNERS ของไฟล์ภาคผนวก"
+}
+],
+"verdict": {
+"kind": "ok",
+"text": "Approve ฝั่ง core",
+"sub": "คนแรกที่ลองรัน core:customer-data-policy จริง"
+},
+"next": "➜ sales-nida"
+},
+{
+"id": "lab5-step12-nida-merge",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "plat-may, md-somchai และ plat-ken approve ครบแล้วหรือยัง ถ้าครบให้ merge ได้เลย",
+"reads": [
+"สถานะรีวิว 3 คน",
+"ไม่มี push หลัง approve"
+],
+"skill": "ตรวจแล้ว merge",
+"skillNote": "",
+"time": "1 นาที 11 วินาที",
+"outputs": [
+{
+"file": "merge commit 0d9989f",
+"note": "10 ไฟล์ +43 −10 เข้า main"
+},
+{
+"file": "plugin core และ sales",
+"note": "เป็น 1.1.0"
+},
+{
+"file": "งานต่อ",
+"note": "ต้องแจ้งแผนกให้อัปเดต core และ sales คู่กัน"
+}
+],
+"verdict": {
+"kind": "ok",
+"text": "Merged",
+"sub": "รีวิว 7 ครั้งจาก 3 คน · แก้ 2 รอบ"
+},
+"next": "➜ sales-krit"
+},
+{
+"id": "lab5-step13-krit",
+"who": "sales-krit",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-krit.jpg",
+"prompt": "อัปเดต skill ของบริษัทที่ติดตั้งในโต๊ะนี้ให้เป็นฉบับล่าสุด แล้วบอกว่าอะไรเปลี่ยนบ้าง จากนั้นทำ proposal ตาม TOR ../../company-kit/deal-002/tor-bank-dispute.md เก็บไว้ใน work/deal-002/",
+"reads": [
+"ผล claude plugin update",
+"TOR deal-002",
+"skill ฉบับ 1.1.0 (อ่านจากไฟล์เพราะยังไม่ restart)"
+],
+"skill": "sales:sales-proposal 1.1.0",
+"skillNote": "อัปเดต core และ sales คู่กัน",
+"time": "6 นาที 13 วินาที",
+"outputs": [
+{
+"file": "plugin update",
+"note": "core และ sales: 1.0.0 → 1.1.0"
+},
+{
+"file": "deal-002-proposal-ati.md",
+"note": "2,200,000 บาท · margin 28.2%"
+},
+{
+"file": "ภาคผนวก PDPA",
+"note": "ครบ 3 ข้อ ตรงกับต้นฉบับใน core"
+}
+],
+"verdict": {
+"kind": "ok",
+"text": "krit ได้กฎของ MD โดยไม่ได้แก้อะไรเลย",
+"sub": "ยังยื่นไม่ได้ จนกว่า SA หรือ DevOps ยืนยัน data residency"
+},
+"next": "✔ จบ LAB 5"
+}
+]
+}

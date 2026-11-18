@@ -1,0 +1,9 @@
+ฉันคือ กฤต ธนากร (sales-krit) เซลส์ ฝ่าย Sales · นี่คือโต๊ะของฉัน (novatech/desks/sales-krit/)
+อ่านการ์ดของฉันก่อน: ../../people/sales/sales-krit.md
+1. ลงมือทำงานจริง 1 ชิ้น: เขียนอีเมลติดตามลูกค้า deal-002 หลังประชุมวันที่ 28 ต.ค. 2026
+   ข้อมูลที่ใช้: ../../company-kit/meeting-notes/2026-10-28-bank-meeting.md, ../../company-kit/deal-002/tor-bank-dispute.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ follow-up-email ที่ .claude/skills/follow-up-email/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: sales-krit, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

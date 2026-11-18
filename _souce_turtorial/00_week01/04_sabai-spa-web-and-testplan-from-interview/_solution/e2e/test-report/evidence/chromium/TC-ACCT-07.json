@@ -1,0 +1,130 @@
+{
+  "id": "TC-ACCT-07",
+  "checks": [
+    {
+      "n": 1,
+      "label": "คิว 15 มิ.ย. B05 ฿950",
+      "pass": true,
+      "actual": "฿950",
+      "shot": "shots/chromium/TC-ACCT-07/001.jpg",
+      "actor": "owner",
+      "t": 3130
+    },
+    {
+      "n": 2,
+      "label": "คิว 15 มิ.ย. B06 ฿800",
+      "pass": true,
+      "actual": "฿800",
+      "shot": "shots/chromium/TC-ACCT-07/002.jpg",
+      "actor": "owner",
+      "t": 4204
+    },
+    {
+      "n": 3,
+      "label": "กดเสร็จ B05 สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-07/003.jpg",
+      "actor": "owner",
+      "t": 5796
+    },
+    {
+      "n": 4,
+      "label": "หลังรีโหลด B05 ไม่มีปุ่มใช้บริการเสร็จแล้ว",
+      "pass": true,
+      "actual": "13:00–14:00 SJTEST05 นวดไทย 60 นาที 1 คน คุณวิน สมาชิก 0810000009 พี่มาลี ฿950 เสร็จแล้ว ได้ 9 แต้ม",
+      "shot": "shots/chromium/TC-ACCT-07/004.jpg",
+      "actor": "owner",
+      "t": 7790
+    },
+    {
+      "n": 5,
+      "label": "U09 หลังกดเสร็จ B05: ยอดสะสม ฿10,951",
+      "pass": true,
+      "actual": "฿10,951",
+      "shot": "shots/chromium/TC-ACCT-07/005.jpg",
+      "actor": "main",
+      "t": 11812
+    },
+    {
+      "n": 6,
+      "label": "U09 หลังกดเสร็จ B05: แต้ม 208",
+      "pass": true,
+      "actual": "208",
+      "shot": "shots/chromium/TC-ACCT-07/006.jpg",
+      "actor": "main",
+      "t": 12825
+    },
+    {
+      "n": 7,
+      "label": "กดซ้ำ B05 ได้ HTTP 409",
+      "pass": true,
+      "actual": "409",
+      "shot": "shots/chromium/TC-ACCT-07/007.jpg",
+      "actor": "owner",
+      "t": 12663
+    },
+    {
+      "n": 8,
+      "label": "U09 หลังกดซ้ำ: ยอดสะสม ฿10,951",
+      "pass": true,
+      "actual": "฿10,951",
+      "shot": "shots/chromium/TC-ACCT-07/008.jpg",
+      "actor": "main",
+      "t": 15542
+    },
+    {
+      "n": 9,
+      "label": "U09 หลังกดซ้ำ: แต้ม 208",
+      "pass": true,
+      "actual": "208",
+      "shot": "shots/chromium/TC-ACCT-07/009.jpg",
+      "actor": "main",
+      "t": 16641
+    },
+    {
+      "n": 10,
+      "label": "กดเสร็จ B06 สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-07/010.jpg",
+      "actor": "owner",
+      "t": 17615
+    },
+    {
+      "n": 11,
+      "label": "B06 แขกได้แต้ม 0 ในผลตอบกลับ",
+      "pass": true,
+      "actual": "{\"earned\":[0,0],\"body\":{\"booking\":{\"id\":\"00000000-0000-0000-0000-000000000206\",\"bookingCode\":\"SJTEST06\",\"userId\":null,\"guestName\":\"คุณทดสอบ หนึ่ง\",\"guestPhone\":\"0890000001\",\"serviceId\":\"S05\",\"serviceName\":{\"th\":\"นวดเท้า\",\"en\":\"Foot Massage\",\"zh\":\"足部按摩\"},\"bookingType\":\"SINGLE\",\"partySize\":1,\"date\":\"2026-06-15\",\"time\":\"15:00\",\"endTime\":\"16:00\",\"startAt\":\"2026-06-15T15:00:00+07:00\",\"endAt\":\"2026-06-15T16:00:00+07:00\",\"isCoupleSuite\":false,\"status\":\"COMPLETED\",\"therapists\":[{\"personNo\":1,\"id\":\"T03\",",
+      "shot": "shots/chromium/TC-ACCT-07/011.jpg",
+      "actor": "owner",
+      "t": 18583
+    },
+    {
+      "n": 12,
+      "label": "B06 แขกไม่มียอดสะสม",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-ACCT-07/012.jpg",
+      "actor": "owner",
+      "t": 19613
+    },
+    {
+      "n": 13,
+      "label": "U09 หลังกดเสร็จ B06: แต้ม 208",
+      "pass": true,
+      "actual": "208",
+      "shot": "shots/chromium/TC-ACCT-07/013.jpg",
+      "actor": "main",
+      "t": 22804
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-ACCT-07/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-ACCT-07/owner.webm"
+    }
+  }
+}

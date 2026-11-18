@@ -1,0 +1,478 @@
+/* หน้าแรก (F1) · ใช้ token จาก globals.css · ส่วนที่ต้องชนะ ui.module.css เพิ่มความเจาะจงแทนการพึ่งลำดับไฟล์ */
+
+/* ---------- ส่วนกลางของหน้า ---------- */
+section.roomy { padding-block: clamp(72px, 11vw, 148px); }
+
+.head,
+.headCenter { display: grid; gap: 14px; max-width: 760px; margin-bottom: clamp(36px, 5vw, 64px); }
+.headCenter { margin-inline: auto; text-align: center; justify-items: center; }
+.headTitle { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.25; }
+.headLead { color: var(--text-soft); font-size: 1.08rem; max-width: 58ch; }
+.headLeadDark { color: var(--c-forest-200); font-size: 1.08rem; max-width: 58ch; }
+
+/* เส้นทองบาง มีข้าวหลามตัดกลางเส้น */
+.ornament { position: relative; display: block; width: 96px; height: 1px; margin-top: 8px; background: var(--c-gold-500); }
+.ornament::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  background: var(--c-gold-500);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.moreRow { display: flex; justify-content: center; margin-top: clamp(40px, 5vw, 64px); }
+.buttonRow { display: flex; flex-wrap: wrap; gap: 12px; }
+.dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--c-gold-500); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  /* สูงเท่าจอ · จอเตี้ยมากให้ยืดตามเนื้อหา ข้อความจึงไม่ไปชน header */
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--c-forest-950);
+  color: var(--c-cream-50);
+}
+.heroStage { position: absolute; inset: -48px 0; z-index: -2; }
+
+.slide { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+/* ภาพใหม่ค่อย ๆ จางขึ้นทับภาพเดิมที่ยังทึบอยู่ จึงไม่เห็นพื้นหลังแวบระหว่างเปลี่ยน
+   ใช้ animation ไม่ใช้ transition เพื่อให้เล่นได้แม้ภาพนั้นเพิ่งเป็นภาพก่อนหน้า (กดย้อนกลับ) */
+.slideActive { z-index: 2; opacity: 1; }
+.slideFade { animation: hero-fade 1.8s ease-in-out; }
+.slidePrev { z-index: 1; opacity: 1; }
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.slideActive img,
+.slidePrev img { animation: hero-zoom 16s linear forwards; will-change: transform; }
+.slide:nth-child(2) img { transform-origin: 35% 60%; }
+.slide:nth-child(3) img { transform-origin: 70% 40%; }
+.heroPaused .slide img { animation-play-state: paused; }
+@keyframes hero-zoom {
+  from { transform: scale(1.001); }
+  to { transform: scale(1.1); }
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to top, rgba(15, 32, 24, 0.92) 0%, rgba(15, 32, 24, 0.62) 34%, rgba(15, 32, 24, 0.14) 66%, rgba(15, 32, 24, 0.42) 100%),
+    linear-gradient(to right, rgba(15, 32, 24, 0.5), rgba(15, 32, 24, 0) 62%);
+}
+
+.heroInner {
+  padding-top: calc(var(--header-h) + 24px);
+  padding-bottom: 92px;
+}
+.hero .heroEyebrow { color: var(--c-gold-300); animation: hero-rise 0.9s var(--ease-out) backwards; }
+.heroTitle {
+  margin-block: 14px 20px;
+  color: var(--c-cream-50);
+  font-size: clamp(2.7rem, 7.4vw, 6rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  text-shadow: 0 2px 28px rgba(15, 32, 24, 0.45);
+  animation: hero-rise 1s var(--ease-out) 0.08s backwards;
+}
+.heroLine { display: block; }
+.heroLine + .heroLine { color: var(--c-gold-300); }
+.heroRule {
+  display: block;
+  width: 88px;
+  height: 1px;
+  background: var(--c-gold-300);
+  transform-origin: left;
+  animation: hero-draw 1.2s var(--ease-out) 0.3s backwards;
+}
+.heroLead {
+  max-width: 44ch;
+  margin-top: 20px;
+  color: var(--c-cream-100);
+  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+  text-shadow: 0 1px 14px rgba(15, 32, 24, 0.6);
+  animation: hero-rise 1s var(--ease-out) 0.18s backwards;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  animation: hero-rise 1s var(--ease-out) 0.26s backwards;
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.heroControls { display: flex; align-items: center; gap: 4px; margin-top: 22px; }
+.heroDot {
+  position: relative;
+  width: 44px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.heroDot::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 50%;
+  height: 1px;
+  background: rgba(252, 250, 244, 0.5);
+  transition: background-color 0.3s ease, height 0.3s ease;
+}
+.heroDot:hover::before { background: var(--c-cream-50); }
+.heroDotActive::before { height: 2px; background: var(--c-gold-300); }
+.heroPause {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--c-cream-50);
+  cursor: pointer;
+}
+.iconPause { display: block; width: 9px; height: 11px; border-inline: 2px solid currentColor; }
+.iconPlay { display: block; width: 0; height: 0; border-block: 6px solid transparent; border-left: 10px solid currentColor; }
+
+.heroScroll { display: none; }
+.heroScrollLine { position: relative; display: block; width: 1px; height: 56px; overflow: hidden; background: rgba(226, 205, 155, 0.3); }
+.heroScrollLine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c-gold-300);
+  animation: hero-scroll 2.6s ease-in-out infinite;
+}
+@keyframes hero-scroll {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+@media (max-width: 640px) {
+  .heroActions .heroBtn { flex: 1 1 auto; padding-inline: 20px; }
+}
+@media (min-width: 1041px) {
+  .heroInner { padding-bottom: 64px; }
+}
+@media (min-width: 1041px) and (min-height: 700px) {
+  .heroScroll {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    display: block;
+    padding: 12px 20px 0;
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slideActive img,
+  .slidePrev img,
+  .heroScrollLine::after { animation: none; }
+}
+
+/* ---------- เรื่องราวคุณจันทร์ ---------- */
+.storyGrid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 88px; }
+.storyPhotos { position: relative; isolation: isolate; }
+.storyPhotos::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  z-index: -1;
+  width: 62%;
+  height: 58%;
+  border: 1px solid var(--line-gold);
+  border-radius: var(--radius-md);
+}
+.storyMain { box-shadow: var(--shadow-card); }
+.storyInset { position: absolute; right: 0; bottom: -48px; width: 58%; }
+.storyInset > div {
+  outline: 6px solid var(--bg-page);
+  box-shadow: var(--shadow-float);
+}
+.storyText { display: grid; gap: 28px; align-content: center; }
+.storyText .ornament { margin-top: 18px; }
+.storyText .headTitle { margin-top: 12px; }
+.noBreakPart { display: inline-block; white-space: pre-wrap; }
+.storyQuoteBox { margin: 0; padding-left: 20px; border-left: 1px solid var(--c-gold-500); }
+.storyQuote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--c-forest-800);
+}
+.storySign { margin-top: 10px; font-size: 0.92rem; letter-spacing: 0.04em; color: var(--c-gold-700); }
+.storyBody { display: grid; gap: 14px; color: var(--text-soft); }
+
+@media (min-width: 900px) {
+  .storyGrid {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: clamp(72px, 8vw, 112px);
+    align-items: center;
+  }
+  .storyInset { right: -36px; bottom: -44px; width: 54%; }
+}
+
+/* ---------- ตัวเลข ---------- */
+.statsLabel { margin-bottom: clamp(28px, 4vw, 48px); text-align: center; }
+.statsGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; margin: 0; }
+.stat { display: grid; gap: 8px; justify-items: center; padding-inline: 12px; text-align: center; }
+.stat:nth-child(even) { border-left: 1px solid rgba(226, 205, 155, 0.28); }
+.statNum {
+  grid-row: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 7vw, 5.6rem);
+  line-height: 1.1;
+  color: var(--c-gold-300);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.statLabel { grid-row: 2; color: var(--c-cream-100); font-size: 1.02rem; letter-spacing: 0.04em; }
+@media (min-width: 760px) {
+  .statsGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stat:not(:first-child) { border-left: 1px solid rgba(226, 205, 155, 0.28); }
+}
+
+/* ---------- บริการเด่น ---------- */
+.svcGrid { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(20px, 2.4vw, 30px); }
+.svcItem { min-width: 0; }
+.svcLink { display: block; color: inherit; text-decoration: none; }
+div.svcImage { aspect-ratio: 3 / 2 !important; }
+.svcBody { display: grid; gap: 8px; align-content: start; padding: 22px 22px 26px; }
+.svcName { font-size: 1.28rem; }
+.svcMeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--c-gold-700); font-weight: 500; }
+.svcHerbs { color: var(--text-soft); font-size: 0.92rem; line-height: 1.6; }
+@media (min-width: 640px) {
+  .svcGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1041px) {
+  .svcGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  div.svcImage { aspect-ratio: 4 / 5 !important; }
+  /* การ์ดเหลื่อมกันเป็นจังหวะ · Reveal ใช้ transform ของตัวเอง จึงเลื่อนการ์ดด้านในแทน */
+  .svcItem:nth-child(even) .svcCard { margin-top: 48px; }
+}
+
+/* ---------- Bangkok Relax ---------- */
+.package { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--c-forest-900); color: var(--c-cream-100); }
+.packageText { position: relative; display: flex; align-items: center; order: 2; overflow: clip; }
+.packageInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  width: 100%;
+  padding: clamp(48px, 7vw, 96px) var(--gutter);
+}
+.package :global(.eyebrow) { color: var(--c-gold-300); }
+.packageTitle { color: var(--c-cream-50); font-size: clamp(2rem, 4.2vw, 3.2rem); }
+.packageLead { margin-top: 10px; font-size: 1.1rem; }
+.packagePrice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  color: var(--c-gold-300);
+}
+.packageNote { color: var(--c-forest-200); font-size: 0.95rem; }
+.packageCta { margin-top: 12px; }
+.packageMedia { position: relative; order: 1; aspect-ratio: 3 / 2; overflow: hidden; background: var(--c-forest-800); }
+.packageParallax { position: absolute; inset: -36px 0; }
+@media (min-width: 900px) {
+  .package { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .packageText { order: 1; }
+  .packageInner { padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter))); padding-right: clamp(32px, 5vw, 72px); }
+  .packageMedia { order: 2; min-height: 600px; aspect-ratio: auto; }
+}
+
+/* ---------- ทีมบำบัด ---------- */
+.teamRow { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin: 0; padding: 0; list-style: none; }
+/* flex-grow อยู่นอก media query: ถ้าอยู่ข้างใน ค่าจะเริ่มจาก 0 แล้ววิ่งด้วย transition ทุกครั้งที่ media query สลับ การ์ดจะหดเป็นแถบแคบ */
+.member { flex: 1 1 0; min-width: 0; }
+.memberReveal { height: 100%; }
+.memberCard {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  color: var(--c-cream-50);
+  text-decoration: none;
+  background: var(--c-forest-800);
+}
+div.memberImage { aspect-ratio: 4 / 5 !important; }
+.memberInfo {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 88px 20px 20px;
+  background: linear-gradient(to top, rgba(15, 32, 24, 0.95) 0%, rgba(15, 32, 24, 0.82) 48%, rgba(15, 32, 24, 0));
+}
+h3.memberName { color: var(--c-cream-50); font-size: 1.45rem; }
+.memberTitle { color: var(--c-gold-300); font-size: 0.92rem; }
+.memberDetail { margin-top: 10px; }
+.memberRating { font-weight: 500; }
+.star { color: var(--c-gold-300); }
+.memberCount { font-weight: 400; color: var(--c-cream-200); }
+.memberServices { margin-top: 4px; color: var(--c-cream-100); font-size: 0.88rem; line-height: 1.55; }
+
+@media (min-width: 641px) {
+  .teamRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  div.memberImage { aspect-ratio: 2 / 3 !important; }
+}
+@media (min-width: 900px) {
+  .teamRow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* จอใหญ่ที่มีเมาส์: แถวเดียว ชี้แล้วการ์ดขยาย เห็นคะแนนและบริการ · จอสัมผัสและมือถือแสดงตลอด
+   ใช้ opacity + max-height ไม่ใช้ display:none ข้อความจึงยังอยู่ให้โปรแกรมอ่านหน้าจอ */
+@media (min-width: 1041px) and (hover: hover) {
+  .teamRow { display: flex; height: clamp(480px, 46vw, 620px); gap: 10px; }
+  .member { transition: flex-grow 0.6s var(--ease-out); }
+  .member:hover,
+  .member:focus-within { flex-grow: 2.6; }
+  div.memberImage { height: 100%; aspect-ratio: auto !important; }
+  .memberCard::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 32, 24, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .teamRow:hover .member:not(:hover) .memberCard::after { opacity: 1; }
+  .memberInfo { padding-inline: 18px; }
+  .memberDetail {
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.55s var(--ease-out), opacity 0.4s ease, margin-top 0.4s ease;
+  }
+  /* กว้างเท่าการ์ดตอนขยาย ข้อความจึงไม่ตัดบรรทัดใหม่ระหว่างเคลื่อนไหว */
+  .memberDetailInner { width: calc((min(100vw, var(--max-width)) - 130px) * 0.342 - 36px); }
+  .member:hover .memberDetail,
+  .member:focus-within .memberDetail { margin-top: 10px; max-height: 240px; opacity: 1; }
+}
+
+/* ---------- แกลเลอรี masonry ---------- */
+.masonry { columns: 2; column-gap: 12px; }
+.masonryItem { margin: 0 0 20px; break-inside: avoid; }
+/* มือถือ: รูปสุดท้ายเต็มความกว้าง คอลัมน์จึงไม่เหลือช่องว่างท้ายแกลเลอรี */
+@media (max-width: 899px) {
+  .masonryItem:last-child { column-span: all; margin-top: 20px; margin-bottom: 0; }
+}
+.masonryCaption {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+}
+@media (min-width: 900px) {
+  .masonry { columns: 3; column-gap: 20px; }
+  .masonryItem { margin-bottom: 28px; }
+  .masonryCaption { font-size: 0.98rem; }
+}
+
+/* ---------- รีวิว ---------- */
+.reviewGrid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px, 2.4vw, 28px); }
+.reviewCard,
+.reviewCardWide { display: grid; grid-template-columns: minmax(0, 1fr); height: 100%; }
+.reviewMedia { position: relative; min-width: 0; }
+div.reviewImage { aspect-ratio: 4 / 5 !important; }
+.reviewBadge { position: absolute; top: 12px; left: 12px; z-index: 1; }
+.reviewBody { display: grid; align-content: center; gap: 6px; padding: 24px; }
+.reviewMark { height: 34px; font-family: Georgia, serif; font-size: 3.4rem; line-height: 1; color: var(--c-gold-500); }
+.reviewQuote,
+.reviewQuoteWide {
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--c-forest-800);
+}
+.reviewQuoteWide { font-size: clamp(1.1rem, 1.8vw, 1.36rem); }
+.reviewName { font-weight: 500; color: var(--c-forest-900); }
+.reviewRole { color: var(--text-soft); font-size: 0.92rem; }
+@media (min-width: 860px) {
+  .reviewGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reviewWide { grid-column: 1 / -1; }
+  .reviewCard { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  .reviewCardWide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+  .reviewBody { padding: 26px 28px; }
+  .reviewCardWide .reviewBody { padding: clamp(28px, 4vw, 56px); }
+  div.reviewImage { height: 100%; aspect-ratio: auto !important; }
+}
+
+/* ---------- ปิดท้ายหน้า ---------- */
+.closing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(460px, 78vh, 680px);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--c-forest-950);
+  color: var(--c-cream-50);
+}
+.closingStage { position: absolute; inset: -44px 0; z-index: -2; }
+div.closingImage { height: 100%; aspect-ratio: auto !important; background: var(--c-forest-950); }
+.closingShade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to right, rgba(15, 32, 24, 0.92) 0%, rgba(15, 32, 24, 0.74) 44%, rgba(15, 32, 24, 0.14) 78%),
+    linear-gradient(to top, rgba(15, 32, 24, 0.5), rgba(15, 32, 24, 0) 45%);
+}
+.closingInner {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  padding-block: clamp(64px, 9vw, 112px);
+}
+.closing .closingEyebrow { color: var(--c-gold-300); }
+.closingTitle {
+  /* แคบพอให้หัวข้ออยู่บนส่วนมืดของรูป ไม่วิ่งทับลูกประคบสีขาว */
+  max-width: 9.5em;
+  color: var(--c-cream-50);
+  font-size: clamp(2.1rem, 5vw, 3.8rem);
+  line-height: 1.25;
+  text-shadow: 0 2px 24px rgba(15, 32, 24, 0.45);
+}
+.closingLead { max-width: 46ch; margin-top: 8px; color: var(--c-cream-100); font-size: clamp(1.02rem, 1.5vw, 1.18rem); }
+.closingActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+@media (max-width: 640px) {
+  .closingShade {
+    background: linear-gradient(to top, rgba(15, 32, 24, 0.92) 0%, rgba(15, 32, 24, 0.7) 58%, rgba(15, 32, 24, 0.3) 100%);
+  }
+  .closingActions { width: 100%; }
+  .closingActions > * { flex: 1 1 auto; padding-inline: 20px; }
+}

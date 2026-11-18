@@ -1,0 +1,7 @@
+[
+  {
+    "file": "components/RegisterForm.tsx",
+    "find": "        if (data.errors) setErrors(data.errors);\n        else setFormError(data.error ?? \"สมัครสมาชิกไม่สำเร็จ กรุณาลองใหม่\");",
+    "replace": "        if (res.status === 400) setErrors(data.errors);\n        else setFormError(data.error ?? \"สมัครสมาชิกไม่สำเร็จ กรุณาลองใหม่\");"
+  }
+]

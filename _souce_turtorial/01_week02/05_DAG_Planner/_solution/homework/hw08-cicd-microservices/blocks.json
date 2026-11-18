@@ -1,0 +1,144 @@
+{
+ "goal": "แยกระบบร้านค้าเดิม (monolith) เป็น 3 microservices มี API gateway CI/CD ด้วย GitHub Actions และ deploy ขึ้น Kubernetes ด้วย Helm",
+ "name": "hw08-cicd-microservices",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "กำหนดขอบเขตของ 3 บริการ",
+   "size": "M",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 4,
+   "output": "docs/service-boundaries.md",
+   "done": "ระบุ 3 บริการ ข้อมูลที่แต่ละบริการเป็นเจ้าของ และเหตุผลของเส้นแบ่ง"
+  },
+  {
+   "id": "B02",
+   "title": "สัญญา API ระหว่างบริการ",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "docs/contracts.md",
+   "done": "ระบุ endpoint ของทั้ง 3 บริการ และเหตุการณ์ที่ส่งหากัน"
+  },
+  {
+   "id": "B03",
+   "title": "บริการสินค้า",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "services/catalog/main.py",
+   "done": "ทำงานตาม contracts.md และมี /health"
+  },
+  {
+   "id": "B04",
+   "title": "บริการคำสั่งซื้อ",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "services/order/main.py",
+   "done": "สั่งซื้อแล้วตัดสต็อกผ่านบริการสินค้า ตาม contracts.md และมี /health"
+  },
+  {
+   "id": "B05",
+   "title": "บริการผู้ใช้",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "services/user/main.py",
+   "done": "สมัคร เข้าสู่ระบบ และตรวจ token ตาม contracts.md และมี /health"
+  },
+  {
+   "id": "B06",
+   "title": "API gateway",
+   "size": "S",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "gateway/nginx.conf",
+   "done": "ส่งต่อ path ของทั้ง 3 บริการถูกตาม contracts.md"
+  },
+  {
+   "id": "B07",
+   "title": "Dockerfile และ Docker Compose",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "docker-compose.yml",
+   "done": "มีบริการครบ 3 ตัวและ gateway ตามชื่อใน service-boundaries.md"
+  },
+  {
+   "id": "B08",
+   "title": "แผนย้ายข้อมูลออกจาก monolith",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "docs/migration.md",
+   "done": "ระบุลำดับย้ายตาราง และวิธีย้อนกลับของแต่ละขั้น"
+  },
+  {
+   "id": "B09",
+   "title": "GitHub Actions",
+   "size": "M",
+   "depends_on": [
+    "B07"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": ".github/workflows/ci.yml",
+   "done": "ทดสอบ build image และ push ของทั้ง 3 บริการ"
+  },
+  {
+   "id": "B10",
+   "title": "Helm chart",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B07"
+   ],
+   "skill": "review",
+   "difficulty": 3,
+   "output": "helm/shop/values.yaml",
+   "done": "helm template ผ่าน และมี readiness probe ที่ /health ของทุกบริการ"
+  },
+  {
+   "id": "B11",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B08",
+    "B09",
+    "B10"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "สั่งซื้อผ่าน gateway สำเร็จทั้งใน compose และบน kind ด้วย Helm บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

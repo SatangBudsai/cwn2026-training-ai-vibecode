@@ -1,0 +1,78 @@
+{
+  "id": "TC-GROUP-04",
+  "title": "TC-GROUP-04 Couple Suite ใช้ต่อได้ทันที เตรียมห้อง 0 นาที และห้องซ้อนนับข้ามบริการ",
+  "project": "chromium",
+  "file": "5.2-group.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.2"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "S01 18:30 ✗ (18:30–19:30 คาบ 18:00–19:00)\nS01 19:00 ✓ ฿1,800 (฿2,000 − 10% ฿200) เวลา 19:00–20:00 ห้อง Couple Suite (ถ้าบวกเวลาเตรียมห้อง รอบนี้จะหาย)\nS01 19:30 ✓ ฿1,800\nS06 17:30 ✗ (17:30–18:30 คาบ B09 แม้ T03, T04 ว่าง)\nS06 17:00 ✓ ฿2,700 (฿1,500 × 2 = ฿3,000 − 10% ฿300) เวลา 17:00–18:00 นักบำบัด T03, T04\nจบข้อ 2: Couple Suite วันนั้นมี 2 รายการ `SJTEST09` และ S01 19:00 · จบข้อ 5: มี 2 รายการ `SJTEST09` และ S06 17:00 · ไม่มีรายการเริ่ม 18:30 หรือ 17:30",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 476,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-04",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 476,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-14, BR-06, BR-07",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 476,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R12",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 476,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 476,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 476,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 39184,
+  "at": "2026-11-06T02:18:08.452Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เลือก S01 2 คน ดูรอบ 18:30",
+    "2. จองรอบ 19:00 จนยืนยัน แล้วดูในหลังร้าน",
+    "3. ล็อกกับรีเซ็ต แล้วจองรอบ 19:30 จนยืนยัน",
+    "4. ล็อกกับรีเซ็ต เลือก S06 2 คน ดูรอบ 17:30",
+    "5. จอง S06 รอบ 17:00 จนยืนยัน แล้วดูในหลังร้าน รีโหลด"
+  ]
+}

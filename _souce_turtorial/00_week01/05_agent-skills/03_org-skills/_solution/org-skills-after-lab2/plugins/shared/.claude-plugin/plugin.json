@@ -1,0 +1,13 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "งานข้ามแผนกที่ทุกแผนกทำแบบเดียวกัน เช่น บันทึกการประชุม",
+  "author": {
+    "name": "plat-ken"
+  },
+  "keywords": [
+    "shared",
+    "platform",
+    "meeting-minutes"
+  ]
+}

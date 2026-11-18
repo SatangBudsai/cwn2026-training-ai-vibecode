@@ -1,0 +1,14 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "งาน DevOps: checklist ขึ้น production และ postmortem แบบไม่โทษคน",
+  "author": {
+    "name": "ops-art"
+  },
+  "keywords": [
+    "department",
+    "devops",
+    "deploy-checklist",
+    "postmortem"
+  ]
+}

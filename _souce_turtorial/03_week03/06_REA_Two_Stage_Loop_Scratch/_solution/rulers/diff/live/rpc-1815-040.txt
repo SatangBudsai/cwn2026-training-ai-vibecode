@@ -1,0 +1,7 @@
+# 2026-11-01 18:18:14 200 /_/FlightsFrontendUi/data/batchexecute
+)]}'
+
+577
+[["wrb.fr","H028ib","[[[[3,\"โตเกียว ญี่ปุ่น\",\"โตเกียว\",\"เมืองหลวงของญี่ปุ่น\",\"/m/07dfk\",null,null,null,null,null,null,3,0.9905259013175964],[[[1,\"ท่าอากาศยานนานาชาติโตเกียว\",\"โตเกียว\",null,\"/m/07dfk\",\"HND\",null,null,\"HND\",null,null,1],\"18 กม.\"],[[1,\"ท่าอากาศยานนานาชาตินะริตะ\",\"โตเกียว\",null,\"/m/07dfk\",\"NRT\",null,null,\"NRT\",null,null,1],\"67 กม.\"],[[5,\"Tokyo Station\",\"โตเกียว\",null,\"/m/07dfk\",\"23K\",null,null,\"Tokyo Station\",null,null,5],\"10 กม.\"]]]]]",null,null,null,"generic"],["di",60],["af.httprm",59,"6546119823358155871",5]]
+25
+[["e",4,null,null,849]]

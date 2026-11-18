@@ -1,0 +1,7 @@
+[
+  {
+    "file": "components/ProductDetail.tsx",
+    "find": "const clamp = (n: number) => Math.min(Math.max(1, Math.floor(n) || 1), Math.max(1, stock));",
+    "replace": "const clamp = (n: number) => Math.min(Math.max(1, Math.floor(n) || 1), Math.max(1, stock + 1));"
+  }
+]

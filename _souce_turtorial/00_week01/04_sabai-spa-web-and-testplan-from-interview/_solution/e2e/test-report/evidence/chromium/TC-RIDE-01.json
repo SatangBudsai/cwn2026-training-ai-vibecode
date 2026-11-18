@@ -1,0 +1,211 @@
+{
+  "id": "TC-RIDE-01",
+  "checks": [
+    {
+      "n": 1,
+      "label": "พิมพ์ 4.9 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-01/001.jpg",
+      "actor": "main",
+      "t": 8624
+    },
+    {
+      "n": 2,
+      "label": "พิมพ์ 4.9 · ยอด ฿1,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,000",
+      "shot": "shots/chromium/TC-RIDE-01/002.jpg",
+      "actor": "main",
+      "t": 9628
+    },
+    {
+      "n": 3,
+      "label": "H02 5.0 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-01/003.jpg",
+      "actor": "main",
+      "t": 12991
+    },
+    {
+      "n": 4,
+      "label": "H02 5.0 · ยอด ฿1,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,000",
+      "shot": "shots/chromium/TC-RIDE-01/004.jpg",
+      "actor": "main",
+      "t": 14096
+    },
+    {
+      "n": 5,
+      "label": "H03 5.1 · ค่ารถ ฿300",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿300",
+      "shot": "shots/chromium/TC-RIDE-01/005.jpg",
+      "actor": "main",
+      "t": 17310
+    },
+    {
+      "n": 6,
+      "label": "H03 5.1 · ยอด ฿1,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,300",
+      "shot": "shots/chromium/TC-RIDE-01/006.jpg",
+      "actor": "main",
+      "t": 18337
+    },
+    {
+      "n": 7,
+      "label": "พิมพ์ 14.9 · ค่ารถ ฿300",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿300",
+      "shot": "shots/chromium/TC-RIDE-01/007.jpg",
+      "actor": "main",
+      "t": 21856
+    },
+    {
+      "n": 8,
+      "label": "พิมพ์ 14.9 · ยอด ฿1,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,300",
+      "shot": "shots/chromium/TC-RIDE-01/008.jpg",
+      "actor": "main",
+      "t": 22931
+    },
+    {
+      "n": 9,
+      "label": "H05 15.0 · ค่ารถ ฿300",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿300",
+      "shot": "shots/chromium/TC-RIDE-01/009.jpg",
+      "actor": "main",
+      "t": 26222
+    },
+    {
+      "n": 10,
+      "label": "H05 15.0 · ยอด ฿1,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,300",
+      "shot": "shots/chromium/TC-RIDE-01/010.jpg",
+      "actor": "main",
+      "t": 27363
+    },
+    {
+      "n": 11,
+      "label": "พิมพ์ 5.0 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-01/011.jpg",
+      "actor": "main",
+      "t": 30876
+    },
+    {
+      "n": 12,
+      "label": "พิมพ์ 5.0 · ยอด ฿1,000",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,000",
+      "shot": "shots/chromium/TC-RIDE-01/012.jpg",
+      "actor": "main",
+      "t": 31873
+    },
+    {
+      "n": 13,
+      "label": "พิมพ์ 5.1 · ค่ารถ ฿300",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿300",
+      "shot": "shots/chromium/TC-RIDE-01/013.jpg",
+      "actor": "main",
+      "t": 35341
+    },
+    {
+      "n": 14,
+      "label": "พิมพ์ 5.1 · ยอด ฿1,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,300",
+      "shot": "shots/chromium/TC-RIDE-01/014.jpg",
+      "actor": "main",
+      "t": 36353
+    },
+    {
+      "n": 15,
+      "label": "พิมพ์ 15.0 · ค่ารถ ฿300",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿300",
+      "shot": "shots/chromium/TC-RIDE-01/015.jpg",
+      "actor": "main",
+      "t": 39637
+    },
+    {
+      "n": 16,
+      "label": "พิมพ์ 15.0 · ยอด ฿1,300",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,300",
+      "shot": "shots/chromium/TC-RIDE-01/016.jpg",
+      "actor": "main",
+      "t": 40644
+    },
+    {
+      "n": 17,
+      "label": "H06 15.1 มีข้อความแจ้งว่าไม่รับระยะนี้",
+      "pass": true,
+      "actual": "ระยะเกิน 15.0 กม. ไม่รับรถรับส่ง",
+      "shot": "shots/chromium/TC-RIDE-01/017.jpg",
+      "actor": "main",
+      "t": 42456
+    },
+    {
+      "n": 18,
+      "label": "H06 15.1 กดยืนยันไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-01/018.jpg",
+      "actor": "main",
+      "t": 44139
+    },
+    {
+      "n": 19,
+      "label": "พิมพ์ 15.1 มีข้อความแจ้งว่าไม่รับระยะนี้",
+      "pass": true,
+      "actual": "ระยะเกิน 15.0 กม. ไม่รับรถรับส่ง",
+      "shot": "shots/chromium/TC-RIDE-01/019.jpg",
+      "actor": "main",
+      "t": 46186
+    },
+    {
+      "n": 20,
+      "label": "พิมพ์ 15.1 กดยืนยันไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-01/020.jpg",
+      "actor": "main",
+      "t": 47880
+    },
+    {
+      "n": 21,
+      "label": "คิว 17 มิ.ย. เป็น 0 รายการ",
+      "pass": true,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 17 มิ.ย. 2026 · 0 นัด นักบำบัดทุกคน พี่ศรี ไม่มีคิว พี่มาลี ไม่มีคิว พี่ภูมิ ไม่มีคิว น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด ไม่มีคิวในวันนี้ ลองเลือกวันอื่นเพื่อดูตารางคิว",
+      "shot": "shots/chromium/TC-RIDE-01/021.jpg",
+      "actor": "owner",
+      "t": 3146
+    },
+    {
+      "n": 22,
+      "label": "ข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-RIDE-01/022.jpg",
+      "actor": "main",
+      "t": 53200
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-RIDE-01/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-RIDE-01/main.webm"
+    }
+  }
+}

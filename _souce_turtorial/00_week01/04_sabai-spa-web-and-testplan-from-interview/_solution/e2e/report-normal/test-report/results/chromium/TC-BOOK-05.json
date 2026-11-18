@@ -1,0 +1,78 @@
+{
+  "id": "TC-BOOK-05",
+  "title": "TC-BOOK-05 จองซ้อนนักบำบัดไม่ได้ ทั้งขอบคิว คำขอพร้อมกัน และค้างหน้า ส่วนพัก 0 นาทีจองได้",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "13:00 ✓ จบ 14:00 พอดี · 13:30 ✗ (คาบ 14:00–14:30) · 14:00 ✗ HTTP 409 \"เวลานี้ถูกจองแล้ว\" · 14:30 ✗ (คาบ 14:30–15:00) · 15:00 ✓ พัก 0 นาที · 15:30 ✓\nหน้าจอไม่แสดงรอบ 13:30, 14:00, 14:30 ของ T01 · 13:30 และ 14:30 ที่ยิงตรงถูกปฏิเสธด้วยสถานะ 4xx\nหลังแถว ✗ ทุกแถว: T01 วันนั้นมี 1 คิว คือ B10 14:00–15:00 เวลาเดิม\nคำขอพร้อมกัน 5 รายการ: สำเร็จ 1 · ได้ 409 4 รายการ · T01 มี 2 คิว (B10 + 16:00)\nบริบท A: ขึ้น \"เวลานี้ถูกจองแล้ว\" · T01 มี 2 คิว (B10 + 15:00 ของบริบท B)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 520,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §2 · [D] บ.10 · [R] E25–E30",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 520,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-06, BR-05",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 520,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R06, R07",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 520,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 520,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 520,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 60313,
+  "at": "2026-11-06T02:19:47.116Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เลือก S01 T01 22 มิ.ย. จดรายการรอบ",
+    "2. จองรอบ 15:00 บนหน้าเว็บ เพื่อดึงคำขอจาก Network แล้วล็อกและรีเซ็ตใหม่",
+    "3. ยิงแถว ✗ ตามลำดับ 13:30, 14:00, 14:30 นับคิว T01 แล้วล็อกและรีเซ็ตก่อนแถว ✓ แต่ละแถว",
+    "4. ล็อกและรีเซ็ต แล้วส่ง 5 คำขอพร้อมกันที่ 16:00 แล้วนับคิว T01",
+    "5. เปิด 2 บริบทถึงหน้าสรุป 15:00 บริบท B ยืนยันก่อน แล้วบริบท A ยืนยัน แล้วนับคิว T01"
+  ]
+}

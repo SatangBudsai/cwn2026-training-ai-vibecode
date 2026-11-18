@@ -1,0 +1,132 @@
+{
+  "best": {
+    "pixels": 62379,
+    "pct": 5.0739
+  },
+  "values": {
+    "--font-family": "\"Garuda\", \"Loma\", sans-serif",
+    "--space-6": "27px",
+    "--space-8": "40px",
+    "--space-3": "11px",
+    "--font-size-md": "17px",
+    "--font-size-lg": "17px",
+    "--font-size-xl": "17px",
+    "--font-size-xs": "12px",
+    "--font-weight-medium": "400",
+    "--color-primary": "#1760c4"
+  },
+  "guards": {
+    "ok": true,
+    "fails": [],
+    "info": {
+      "checked": 217,
+      "firstRow": {
+        "x": 178,
+        "y": 631,
+        "bottom": 723
+      },
+      "mainContrast": 16.1,
+      "textVars": {
+        "--color-text": "#202124",
+        "--color-text-secondary": "#5f6368",
+        "--color-text-on-primary": "#fff"
+      },
+      "inputs": 5
+    }
+  },
+  "stats": {
+    "tried": 134,
+    "improved": 17,
+    "rejected": {
+      "structure": 0,
+      "legibility": 5,
+      "exploit": 0
+    },
+    "rejectedSets": 5,
+    "examples": [
+      {
+        "change": "--font-family: \"Liberation Sans\", \"Loma\", sans-serif",
+        "pixels": 63418,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 88×16 < 75% ของ 94.3×23 · span|เริ่มต้น ฿7,635"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 157×16 < 75% ของ 162.1×23 · span|·ดำเนินการโดย Air Japan"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 157×16 < 75% ของ 162.1×23 · span|·ดำเนินการโดย Air Japan#2"
+          }
+        ]
+      },
+      {
+        "change": "--font-family: \"FreeSans\", \"Loma\", sans-serif",
+        "pixels": 63214,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 87×14 < 75% ของ 94.3×23 · span|เริ่มต้น ฿7,635"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 155×14 < 75% ของ 162.1×23 · span|·ดำเนินการโดย Air Japan"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 155×14 < 75% ของ 162.1×23 · span|·ดำเนินการโดย Air Japan#2"
+          }
+        ]
+      },
+      {
+        "change": "--font-family: \"Sawasdee\", \"Loma\", sans-serif",
+        "pixels": 56540,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 125×40 < 75% ของ 126.7×60 · button|ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 363 กิโ"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 125×20 < 75% ของ 126.7×40 · span|การปล่อยก๊าซโดยเฉลี่ย"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 125×40 < 75% ของ 126.7×60 · button|ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 381 กิโ"
+          }
+        ]
+      },
+      {
+        "change": "--space-6: 24px → 20px",
+        "pixels": 63143,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 133×40 < 75% ของ 126.7×60 · button|ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 363 กิโ"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 133×20 < 75% ของ 126.7×40 · span|การปล่อยก๊าซโดยเฉลี่ย"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 133×40 < 75% ของ 126.7×60 · button|ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 381 กิโ"
+          }
+        ]
+      },
+      {
+        "change": "--font-size-xl: 16px → 14px",
+        "pixels": 62466,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 83×24 < 75% ของ 118.7×24 · a|SkyThai"
+          }
+        ]
+      }
+    ]
+  },
+  "seconds": 22
+}

@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-09-17T07:56:07.394222+00:00",
+  "mermaid": [
+    {
+      "index": 1,
+      "rendered": true,
+      "svg": "diagram-1.svg",
+      "png": "diagram-1.png"
+    },
+    {
+      "index": 2,
+      "rendered": true,
+      "svg": "diagram-2.svg",
+      "png": "diagram-2.png"
+    },
+    {
+      "index": 3,
+      "rendered": true,
+      "svg": "diagram-3.svg",
+      "png": "diagram-3.png"
+    },
+    {
+      "index": 4,
+      "rendered": true,
+      "svg": "diagram-4.svg",
+      "png": "diagram-4.png"
+    },
+    {
+      "index": 5,
+      "rendered": true,
+      "svg": "diagram-5.svg",
+      "png": "diagram-5.png"
+    }
+  ],
+  "all_diagrams_rendered": true,
+  "weekday_evidence": {
+    "2026-03-09": "Monday",
+    "2026-09-03": "Thursday"
+  },
+  "phone_normalization": {
+    "081-234-5678": "0812345678",
+    "0812345678": "0812345678",
+    "081 234 5678": "0812345678"
+  },
+  "review_rows_present": {
+    "R1": true,
+    "R2": true,
+    "R3": true,
+    "R4": true,
+    "R5": true
+  },
+  "phase1_body_preserved": true,
+  "critic_criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS"
+  },
+  "semantic_review": "Codex CRITIC compared raw findings, ambiguity, identity matching and change-request coverage; not an independent model review"
+}

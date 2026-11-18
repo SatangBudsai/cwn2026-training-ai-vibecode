@@ -1,0 +1,152 @@
+PR #42 (สมมติ — ไม่มีโค้ดจริงในโต๊ะ จึงสร้างขึ้นเพื่อใช้รีวิว)
+repo: dentdee-clinic · branch: feat/payment-deposit → main · ผู้เปิด: dev-new
+title: feat(payment): จ่ายมัดจำนัดหมายผ่าน ThaiPay GW + รับ webhook
+description:
+  - เพิ่มปุ่ม "จ่ายมัดจำ" ในหน้านัดหมาย → redirect ไป ThaiPay GW
+  - เพิ่ม webhook /api/payment/webhook อัปเดตสถานะ order เป็น paid
+  - เพิ่มตาราง payment_events (migration)
+  - unit test service.ts: coverage 84% (จาก CI)
+  - ยังไม่ได้ทำ E2E เดี๋ยวตามมาใน PR หน้า
+
+diff --git a/src/modules/payment/service.ts b/src/modules/payment/service.ts
+--- a/src/modules/payment/service.ts
++++ b/src/modules/payment/service.ts
+@@ -1,40 +1,78 @@
+ import { logger } from "@/lib/logger";
+ import { paymentRepository } from "./repository";
++import { createHmac } from "node:crypto";
++import { WebhookPayloadSchema, type WebhookPayload } from "./schema";
++
++const WEBHOOK_SECRET = process.env.THAIPAY_WEBHOOK_SECRET || "dev-secret-123";
++
++export async function createDepositOrder(appointmentId: string, amount: number) {
++  const order = await paymentRepository.insertOrder({ appointmentId, amount, status: "pending" });
++  logger.info({ module: "payment", orderId: order.id }, "deposit order created");
++  return order;
++}
++
++export function verifySignature(rawBody: string, signature: string): boolean {
++  const expected = createHmac("sha256", WEBHOOK_SECRET).update(rawBody).digest("hex");
++  return expected === signature;
++}
++
++export async function handleWebhook(input: unknown) {
++  const payload: WebhookPayload = WebhookPayloadSchema.parse(input);
++
++  const seen = await paymentRepository.findEvent(payload.eventId);
++  if (seen) return;
++
++  const order = await paymentRepository.findOrder(payload.orderId);
++  if (!order) throw new Error("order not found");
++
++  try {
++    await paymentRepository.updateOrderStatus(order.id, payload.status);
++    await paymentRepository.insertEvent(payload.eventId, payload);
++  } catch (e) {
++    // ignore, gateway จะส่งมาใหม่เอง
++  }
++}
+
+diff --git a/src/modules/payment/schema.ts b/src/modules/payment/schema.ts
+--- a/src/modules/payment/schema.ts
++++ b/src/modules/payment/schema.ts
+@@ -10,0 +11,9 @@
++export const WebhookPayloadSchema = z.object({
++  eventId: z.string().min(1),
++  orderId: z.string().uuid(),
++  status: z.enum(["paid", "refunded", "failed"]),
++  amount: z.number().int().positive(),
++});
++export type WebhookPayload = z.infer<typeof WebhookPayloadSchema>;
+
+diff --git a/src/modules/payment/index.ts b/src/modules/payment/index.ts
+--- a/src/modules/payment/index.ts
++++ b/src/modules/payment/index.ts
+@@ -1,2 +1,3 @@
+-export { createOrder } from "./service";
++export { createDepositOrder, handleWebhook, verifySignature } from "./service";
++export { PaymentError } from "./errors";
+
+diff --git a/src/app/api/payment/webhook/route.ts b/src/app/api/payment/webhook/route.ts
+new file mode 100644
+--- /dev/null
++++ b/src/app/api/payment/webhook/route.ts
+@@ -0,0 +1,24 @@
++import { NextResponse } from "next/server";
++import { handleWebhook, verifySignature } from "@/modules/payment";
++import { logger } from "@/lib/logger";
++
++export async function POST(req: Request) {
++  const raw = await req.text();
++  const sig = req.headers.get("x-thaipay-signature") ?? "";
++  if (!verifySignature(raw, sig)) {
++    return NextResponse.json({ ok: false, reason: "bad signature" }, { status: 401 });
++  }
++  try {
++    await handleWebhook(JSON.parse(raw));
++    return NextResponse.json({ ok: true });
++  } catch (err) {
++    logger.error({ module: "payment", err }, "webhook failed");
++    return NextResponse.json({ ok: false, reason: String(err), stack: (err as Error).stack }, { status: 500 });
++  }
++}
+
+diff --git a/src/app/appointments/[id]/deposit-button.tsx b/src/app/appointments/[id]/deposit-button.tsx
+new file mode 100644
+--- /dev/null
++++ b/src/app/appointments/[id]/deposit-button.tsx
+@@ -0,0 +1,18 @@
++"use client";
++export function DepositButton({ appointmentId }: { appointmentId: string }) {
++  async function goToGateway() {
++    const res = await fetch(`/api/payment/deposit`, {
++      method: "POST",
++      body: JSON.stringify({ appointmentId }),
++    });
++    const { data } = await res.json();
++    window.location.href = data.gatewayUrl; // ไป ThaiPay GW เลย
++  }
++  return <button onClick={goToGateway}>จ่ายมัดจำ</button>;
++}
+
+diff --git a/src/app/payment/callback/page.tsx b/src/app/payment/callback/page.tsx
+new file mode 100644
+--- /dev/null
++++ b/src/app/payment/callback/page.tsx
+@@ -0,0 +1,12 @@
++import { getSession } from "@/modules/auth";
++import { redirect } from "next/navigation";
++
++export default async function PaymentCallback() {
++  const session = await getSession();
++  if (!session) redirect("/login");
++  const order = session.lastOrder;
++  return <p>สถานะการชำระ: {order?.status}</p>;
++}
+
+diff --git a/prisma/migrations/20261102_add_payment_events/migration.sql b/prisma/migrations/20261102_add_payment_events/migration.sql
+new file mode 100644
+--- /dev/null
++++ b/prisma/migrations/20261102_add_payment_events/migration.sql
+@@ -0,0 +1,7 @@
++-- generated by prisma migrate dev
++CREATE TABLE "payment_events" (
++  "event_id"     TEXT PRIMARY KEY,
++  "received_at"  TIMESTAMPTZ NOT NULL DEFAULT now(),
++  "payload_hash" TEXT NOT NULL
++);
+
+diff --git a/src/modules/payment/__tests__/service.test.ts b/src/modules/payment/__tests__/service.test.ts
+--- a/src/modules/payment/__tests__/service.test.ts
++++ b/src/modules/payment/__tests__/service.test.ts
+@@ -12,0 +13,22 @@
++describe("createDepositOrder", () => {
++  it("creates pending order", async () => { /* ... */ });
++});
++describe("handleWebhook", () => {
++  it("marks order paid", async () => { /* ... */ });
++  it("skips duplicated event", async () => { /* ... */ });
++});
++describe("verifySignature", () => {
++  it("rejects wrong signature", () => { /* ... */ });
++});

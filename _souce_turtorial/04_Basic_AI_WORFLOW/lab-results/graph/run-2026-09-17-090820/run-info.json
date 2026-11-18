@@ -1,0 +1,7 @@
+{
+  "created_utc": "2026-09-17T09:08:21.059451+00:00",
+  "mode": "single-conversation role simulation; sequential nodes; no context isolation or concurrency",
+  "source": "Current Graph prompts from section 2.3",
+  "reused_loop_outputs": false,
+  "verification": "New Chromium/Playwright and Mermaid renders on remote"
+}

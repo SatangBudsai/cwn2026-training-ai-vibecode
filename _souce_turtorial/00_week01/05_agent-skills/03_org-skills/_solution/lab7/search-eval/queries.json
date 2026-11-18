@@ -1,0 +1,302 @@
+[
+  {
+    "q": "ดีลนี้อนุมัติได้ไหม",
+    "expect": "exec:deal-approval",
+    "who": "md-somchai"
+  },
+  {
+    "q": "สรุปความเสี่ยงของดีลนี้ให้หน่อย",
+    "expect": "exec:deal-approval",
+    "who": "md-somchai"
+  },
+  {
+    "q": "กำไรพอไหม ควรรับงานนี้หรือเปล่า",
+    "expect": "exec:deal-approval",
+    "who": "md-somchai"
+  },
+  {
+    "q": "ทำสไลด์ประชุมผู้บริหารเดือนนี้",
+    "expect": "exec:exec-deck",
+    "who": "exec-ploy"
+  },
+  {
+    "q": "สรุป KPI เดือนที่แล้วเป็นสไลด์",
+    "expect": "exec:exec-deck",
+    "who": "exec-ploy"
+  },
+  {
+    "q": "เตรียม deck ให้ MD",
+    "expect": "exec:exec-deck",
+    "who": "exec-ploy"
+  },
+  {
+    "q": "ทำ proposal ให้ลูกค้าธนาคาร",
+    "expect": "sales:sales-proposal",
+    "who": "sales-nida"
+  },
+  {
+    "q": "ร่างข้อเสนอโครงการตาม TOR",
+    "expect": "sales:sales-proposal",
+    "who": "sales-nida"
+  },
+  {
+    "q": "ทำโปรให้ลูกค้าหน่อย",
+    "expect": "sales:sales-proposal",
+    "who": "sales-nida"
+  },
+  {
+    "q": "เขียนอีเมลตามลูกค้าหลังประชุม",
+    "expect": "sales:follow-up-email",
+    "who": "sales-krit"
+  },
+  {
+    "q": "ลูกค้าเงียบไป 2 อาทิตย์ ช่วยตามหน่อย",
+    "expect": "sales:follow-up-email",
+    "who": "sales-krit"
+  },
+  {
+    "q": "ร่างเมลสรุปนัดหมายถัดไป",
+    "expect": "sales:follow-up-email",
+    "who": "sales-krit"
+  },
+  {
+    "q": "ทำ spec จาก TOR นี้",
+    "expect": "sa:req-to-spec",
+    "who": "sa-ton"
+  },
+  {
+    "q": "แตก requirement เป็นหัวข้อให้หน่อย",
+    "expect": "sa:req-to-spec",
+    "who": "sa-ton"
+  },
+  {
+    "q": "เขียน spec พร้อมแผนทดสอบ",
+    "expect": "sa:req-to-spec",
+    "who": "sa-ton"
+  },
+  {
+    "q": "วาด architecture ระบบนี้",
+    "expect": "sa:arch-template",
+    "who": "sa-ice"
+  },
+  {
+    "q": "ออกแบบโครงระบบให้หน่อย",
+    "expect": "sa:arch-template",
+    "who": "sa-ice"
+  },
+  {
+    "q": "ระบบจองคิวควรแบ่ง service ยังไง",
+    "expect": "sa:arch-template",
+    "who": "sa-ice"
+  },
+  {
+    "q": "รีวิวโค้ดนี้ตามมาตรฐานทีม",
+    "expect": "dev:coding-standard",
+    "who": "dev-pond"
+  },
+  {
+    "q": "โค้ดนี้ผิดมาตรฐานตรงไหน",
+    "expect": "dev:coding-standard",
+    "who": "dev-pond"
+  },
+  {
+    "q": "เขียนให้ตรงสไตล์ทีม",
+    "expect": "dev:coding-standard",
+    "who": "dev-pond"
+  },
+  {
+    "q": "ขึ้นโปรเจกต์ใหม่ให้หน่อย",
+    "expect": "dev:project-scaffold",
+    "who": "dev-mew"
+  },
+  {
+    "q": "สร้างโครงระบบสมาชิกกับชำระเงิน",
+    "expect": "dev:project-scaffold",
+    "who": "dev-mew"
+  },
+  {
+    "q": "เริ่มโปรเจกต์ตาม spec",
+    "expect": "dev:project-scaffold",
+    "who": "dev-mew"
+  },
+  {
+    "q": "ทดสอบเว็บตามแผน",
+    "expect": "qa:test-from-plan",
+    "who": "qa-mint"
+  },
+  {
+    "q": "ดูแผนทดสอบแล้วบอกว่าพร้อมรันไหม",
+    "expect": "qa:test-from-plan",
+    "who": "qa-mint"
+  },
+  {
+    "q": "รัน test ตาม TEST-PLAN",
+    "expect": "qa:test-from-plan",
+    "who": "qa-mint"
+  },
+  {
+    "q": "เขียนรายงานบั๊กนี้ให้หน่อย",
+    "expect": "qa:bug-report",
+    "who": "qa-bank"
+  },
+  {
+    "q": "สรุปบั๊กให้ dev แก้ได้",
+    "expect": "qa:bug-report",
+    "who": "qa-bank"
+  },
+  {
+    "q": "แจ้งบั๊กพร้อมขั้นตอนทำซ้ำ",
+    "expect": "qa:bug-report",
+    "who": "qa-bank"
+  },
+  {
+    "q": "เตรียม checklist ขึ้นระบบ",
+    "expect": "devops:deploy-checklist",
+    "who": "ops-art"
+  },
+  {
+    "q": "จะ deploy คืนนี้ ต้องเช็กอะไรบ้าง",
+    "expect": "devops:deploy-checklist",
+    "who": "ops-art"
+  },
+  {
+    "q": "แผน rollback ถ้าพัง",
+    "expect": "devops:deploy-checklist",
+    "who": "ops-art"
+  },
+  {
+    "q": "สรุปเหตุระบบล่มเมื่อคืน",
+    "expect": "devops:postmortem",
+    "who": "ops-fon"
+  },
+  {
+    "q": "เขียน postmortem ให้หน่อย",
+    "expect": "devops:postmortem",
+    "who": "ops-fon"
+  },
+  {
+    "q": "หาต้นเหตุ incident นี้",
+    "expect": "devops:postmortem",
+    "who": "ops-fon"
+  },
+  {
+    "q": "วางแผนทดลองโมเดลพยากรณ์",
+    "expect": "mlops:mlflow-experiment",
+    "who": "ml-jay"
+  },
+  {
+    "q": "บันทึกผลการทดลองรอบนี้",
+    "expect": "mlops:mlflow-experiment",
+    "who": "ml-jay"
+  },
+  {
+    "q": "เทียบโมเดลทั้งสามรอบ",
+    "expect": "mlops:mlflow-experiment",
+    "who": "ml-jay"
+  },
+  {
+    "q": "ปล่อยโมเดลรุ่นใหม่",
+    "expect": "mlops:model-release",
+    "who": "ml-pim"
+  },
+  {
+    "q": "เตรียม release โมเดลพยากรณ์คิว",
+    "expect": "mlops:model-release",
+    "who": "ml-pim"
+  },
+  {
+    "q": "เกณฑ์ rollback โมเดล",
+    "expect": "mlops:model-release",
+    "who": "ml-pim"
+  },
+  {
+    "q": "ทำประกาศรับสมัคร dev",
+    "expect": "hr:jd-writer",
+    "who": "hr-fah"
+  },
+  {
+    "q": "เขียน JD ตำแหน่งนี้ให้หน่อย",
+    "expect": "hr:jd-writer",
+    "who": "hr-fah"
+  },
+  {
+    "q": "โปรเจกต์ใหม่ต้องรับคนเพิ่ม",
+    "expect": "hr:jd-writer",
+    "who": "hr-fah"
+  },
+  {
+    "q": "เตรียมของต้อนรับพนักงานใหม่",
+    "expect": "hr:onboarding-pack",
+    "who": "hr-oat"
+  },
+  {
+    "q": "คนใหม่ฝ่าย dev เข้าวันจันทร์",
+    "expect": "hr:onboarding-pack",
+    "who": "hr-oat"
+  },
+  {
+    "q": "onboarding checklist",
+    "expect": "hr:onboarding-pack",
+    "who": "hr-oat"
+  },
+  {
+    "q": "คิดราคาโปรเจกต์นี้",
+    "expect": "finance:pricing-calc",
+    "who": "fin-joy"
+  },
+  {
+    "q": "ดีลนี้กำไรเท่าไหร่",
+    "expect": "finance:pricing-calc",
+    "who": "fin-joy"
+  },
+  {
+    "q": "ทำใบเสนอราคา",
+    "expect": "finance:pricing-calc",
+    "who": "fin-joy"
+  },
+  {
+    "q": "ออกใบแจ้งหนี้งวดแรก",
+    "expect": "finance:invoice-check",
+    "who": "fin-nok"
+  },
+  {
+    "q": "ตรวจใบแจ้งหนี้นี้ให้หน่อย",
+    "expect": "finance:invoice-check",
+    "who": "fin-nok"
+  },
+  {
+    "q": "ยอดในใบแจ้งหนี้ถูกไหม",
+    "expect": "finance:invoice-check",
+    "who": "fin-nok"
+  },
+  {
+    "q": "มี skill สำหรับเรื่องนี้ไหม",
+    "expect": "core:skill-finder",
+    "who": "plat-ken"
+  },
+  {
+    "q": "แผนกอื่นทำเรื่องนี้ยังไง",
+    "expect": "core:skill-finder",
+    "who": "plat-ken"
+  },
+  {
+    "q": "ถ้าแก้ skill นี้กระทบใคร",
+    "expect": "core:skill-finder",
+    "who": "plat-ken"
+  },
+  {
+    "q": "เอกสารนี้ใส่ข้อมูลลูกค้าได้ไหม",
+    "expect": "core:customer-data-policy",
+    "who": "plat-may"
+  },
+  {
+    "q": "ทำสไลด์ตามแบรนด์บริษัท",
+    "expect": "core:customer-data-policy",
+    "who": "plat-may"
+  },
+  {
+    "q": "เช็ก PDPA ให้หน่อย",
+    "expect": "core:customer-data-policy",
+    "who": "plat-may"
+  }
+]

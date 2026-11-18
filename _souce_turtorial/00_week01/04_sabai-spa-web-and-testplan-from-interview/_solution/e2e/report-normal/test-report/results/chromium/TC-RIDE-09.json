@@ -1,0 +1,87 @@
+{
+  "id": "TC-RIDE-09",
+  "title": "TC-RIDE-09 เครื่องคำนวณ /shuttle ตรงกับหน้าจอง บอกช่องที่ผิด และลิงก์จองพาค่าไปต่อ",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P3",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "4 คน H04 → 1 คัน ฿300 · 5 คน H04 → 2 คัน ฿600 (ถ้า 1 คันจะได้ ฿300) · 5 คน H02 → 2 คัน ฿0 (ถ้าเก็บจะได้ ฿600) · 1 คน H06 → แจ้งว่าไม่รับ เหมือนหน้าจอง\nจำนวนคนผิดทุกค่า → ไม่แสดงจำนวนรถและค่ารถ และข้อความบอกว่าช่องจำนวนคนผิด (ถ้าปัด `1.5` เป็น 2 จะแสดง 1 คัน ฿300)\nหลังกดลิงก์ → หน้าจองยังเป็น 5 คน ติ๊กรถ และเลือก H04 ไว้ (ถ้าค่าไม่ตามมาจะกลับเป็น 1 คน ยอด ฿1,000) · หน้าสรุป S01 ยอด ฿5,100 (฿5,000 − 10% = ฿4,500 + ฿600)\nข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 848,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D][R] กฎเดียวกับหน้าจอง · [R] · F-สร้าง 17 · [R] · F-สร้าง 13",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 848,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-53, BR-36",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 848,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R62, R66, R68",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 848,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Equivalence partition, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 848,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 848,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 100436,
+  "at": "2026-11-06T02:23:52.545Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\nExpected: visible\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toBeVisible\" locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms\n  - waiting for locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\n",
+    "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\nExpected: visible\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toBeVisible\" locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms\n  - waiting for locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\n",
+    "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\nExpected: visible\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toBeVisible\" locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms\n  - waiting for locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\n",
+    "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\nExpected: visible\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toBeVisible\" locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first() with timeout 6000ms\n  - waiting for locator('[data-testid^=\"error-\"]').filter({ hasText: /จำนวนคน/ }).first()\n",
+    "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  getByTestId('booking-party-5')\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveAttribute\" getByTestId('booking-party-5') with timeout 6000ms\n  - waiting for getByTestId('booking-party-5')\n    16 × locator resolved to <button type=\"button\" aria-label=\"5 คน\" aria-pressed=\"false\" class=\"nv8LGq_partyBtn\" data-e2e-prev-outline=\"\" data-testid=\"booking-party-5\">5</button>\n       - unexpected value \"false\"\n",
+    "Error: expect(locator).toBeChecked() failed\n\nLocator:  getByTestId('booking-shuttle-toggle')\nExpected: checked\nReceived: unchecked\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toBeChecked\" getByTestId('booking-shuttle-toggle') with timeout 6000ms\n  - waiting for getByTestId('booking-shuttle-toggle')\n    16 × locator resolved to <input type=\"checkbox\" data-e2e-prev-outline=\"\" data-testid=\"booking-shuttle-toggle\"/>\n       - unexpected value \"unchecked\"\n",
+    "Error: expect(locator).toHaveValue(expected) failed\n\nLocator: getByTestId('booking-shuttle-hotel')\nExpected: \"H04\"\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toHaveValue\" getByTestId('booking-shuttle-hotel') with timeout 6000ms\n  - waiting for getByTestId('booking-shuttle-hotel')\n",
+    "Error: ยอดหน้าสรุป\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5100\nReceived: 1000"
+  ],
+  "steps": [
+    "1. เปิด /th/shuttle ใส่ค่าถูกทีละแถว",
+    "2. ใส่จำนวนคนผิดทีละค่าคู่กับ H04 ✗",
+    "3. ใส่ 5 คน H04 แล้วกดลิงก์จองคิวพร้อมรถรับส่ง",
+    "4. อ่านจำนวนคนและรถที่หน้าจอง เลือก S01 ไปหน้าสรุป ไม่ยืนยัน ✗",
+    "5. เปิดคิว 17 มิ.ย. ที่หลังร้าน"
+  ]
+}

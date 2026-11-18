@@ -1,0 +1,121 @@
+// ตาราง/คอลัมน์ snake_case พหูพจน์ (กติกาข้อ 2) — แก้ schema ผ่าน `prisma migrate dev` เท่านั้น (ข้อ 7)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  member
+  admin
+
+  @@map("user_role")
+}
+
+enum MemberTier {
+  basic
+  silver
+  gold
+
+  @@map("member_tier")
+}
+
+enum OrderStatus {
+  pending
+  paid
+  refunded
+
+  @@map("order_status")
+}
+
+model User {
+  id            String         @id @default(uuid()) @db.Uuid
+  email         String         @unique
+  passwordHash  String         @map("password_hash")
+  role          UserRole       @default(member)
+  createdAt     DateTime       @default(now()) @map("created_at")
+  refreshTokens RefreshToken[]
+  profile       MemberProfile?
+  orders        Order[]
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  familyId  String    @map("family_id") @db.Uuid
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  revokedAt DateTime? @map("revoked_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+  user      User      @relation(fields: [userId], references: [id])
+
+  @@index([familyId])
+  @@map("refresh_tokens")
+}
+
+model MemberProfile {
+  userId      String          @id @map("user_id") @db.Uuid
+  displayName String          @map("display_name")
+  tier        MemberTier      @default(basic)
+  createdAt   DateTime        @default(now()) @map("created_at")
+  updatedAt   DateTime        @updatedAt @map("updated_at")
+  user        User            @relation(fields: [userId], references: [id])
+  consents    MemberConsent[]
+
+  @@map("member_profiles")
+}
+
+model MemberConsent {
+  id             String        @id @default(uuid()) @db.Uuid
+  userId         String        @map("user_id") @db.Uuid
+  consentVersion String        @map("consent_version")
+  acceptedAt     DateTime      @default(now()) @map("accepted_at")
+  profile        MemberProfile @relation(fields: [userId], references: [userId])
+
+  @@unique([userId, consentVersion])
+  @@map("member_consents")
+}
+
+model Order {
+  id           String      @id @default(uuid()) @db.Uuid
+  userId       String      @map("user_id") @db.Uuid
+  amountSatang Int         @map("amount_satang")
+  currency     String      @default("THB")
+  description  String
+  status       OrderStatus @default(pending)
+  createdAt    DateTime    @default(now()) @map("created_at")
+  paidAt       DateTime?   @map("paid_at")
+  refundedAt   DateTime?   @map("refunded_at")
+  user         User        @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@map("orders")
+}
+
+// webhook idempotency: insert ก่อน ถ้าชน unique (event_id) = ตอบ 200 แล้วจบ
+model PaymentEvent {
+  eventId     String   @id @map("event_id")
+  receivedAt  DateTime @default(now()) @map("received_at")
+  payloadHash String   @map("payload_hash")
+
+  @@map("payment_events")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  actorId    String   @map("actor_id")
+  action     String
+  targetType String   @map("target_type")
+  targetId   String   @map("target_id")
+  meta       Json     @default("{}")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([targetType, targetId])
+  @@map("audit_logs")
+}

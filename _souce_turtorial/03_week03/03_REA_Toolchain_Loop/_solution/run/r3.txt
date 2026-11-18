@@ -1,0 +1,7 @@
+สร้าง SkyThai Pro (v3) ในโฟลเดอร์ /workspace/rea-flight-v3/skythai-pro แบบ "ปิดวงจร"
+1. เริ่มจากสำเนาของ /workspace/rea-flight-v2/skythai-plus (Next.js + PostgreSQL) เปลี่ยนให้เว็บเปิดที่พอร์ต 5083 และชื่อ container ไม่ชนกับ v2
+2. ปรับปรุงด้วย flights-all.json (ทุกเที่ยวบินที่โหลดจากเครือข่าย ใส่ลงฐานข้อมูล) และ EXPLORATION.md ส่วน F
+3. วนรอบ: docker compose up -d --build → รัน acceptance test ใน accept/ กับ http://localhost:5083 → อ่าน test ที่ไม่ผ่านและ GIF ของมัน → แก้โค้ด → รันใหม่ ทำสูงสุด 3 รอบ หรือจนผ่านอย่างน้อย 90%
+4. ห้ามแก้ไฟล์ใน accept/ (เป็นของกรรมการ) ห้ามคัดลอกโลโก้ ชื่อ แบรนด์ หรือโค้ดของ Google ข้อมูลยังเป็นข้อมูลจำลอง ณ วันที่เก็บ
+5. เขียน LOOP.md: รอบ | ผ่าน/ทั้งหมด | แก้อะไรไปบ้าง
+ตอบเป็นตาราง LOOP.md และฟีเจอร์ใหม่ที่เพิ่มจาก v2

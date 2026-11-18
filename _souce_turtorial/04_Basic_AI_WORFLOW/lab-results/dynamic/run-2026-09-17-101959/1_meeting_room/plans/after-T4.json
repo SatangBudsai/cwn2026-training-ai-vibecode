@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "replans": 0,
+  "tasks": {
+    "T1": {
+      "description": "วิเคราะห์ข้อกำหนดและกำหนดหน้าจอ/ข้อมูล",
+      "dependencies": [],
+      "status": "DONE"
+    },
+    "T2": {
+      "description": "เขียนตรรกะจองและยกเลิก",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T3": {
+      "description": "สร้าง HTML/CSS",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T4": {
+      "description": "เขียนสคริปต์ตรวจห้าฟีเจอร์และจำนวนคลิก",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T5": {
+      "description": "รวมเว็บ รันทดสอบและประเมิน C1–C3",
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "status": "TODO"
+    }
+  },
+  "reason": "เริ่มจากโจทย์และ C1–C3",
+  "changes": "สร้างแผนเริ่มต้น",
+  "impact": [],
+  "reuse": []
+}

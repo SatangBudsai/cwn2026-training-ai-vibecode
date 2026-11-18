@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ห้องทดลองของเรา: Docker, VS Code และ container devtools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12305e; --teal:#0f9d9a; --teal-soft:#e2f5f4; --orange:#f08a24; --orange-soft:#fff1e3;
+  --red:#dc2626; --red-soft:#fdecec; --green:#15803d; --green-soft:#e7f7ec; --ink:#1f2937; --muted:#5b6b80; --line:#dbe3ee;
+  --bg:#f6f8fb; --card:#ffffff; --code:#0f1b2d;
+  --font:'IBM Plex Sans Thai','Leelawadee UI','Segoe UI',sans-serif; --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0b1424;overflow:hidden;font-family:var(--font);color:var(--ink)}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#deck{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);padding:60px 80px 70px;display:none;flex-direction:column;overflow:hidden;border-radius:6px}
+.slide.active{display:flex;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.kicker{font-size:22px;font-weight:600;color:var(--teal);letter-spacing:.02em;margin-bottom:6px}
+.kicker.red{color:var(--red)}
+h1{font-size:64px;line-height:1.15;margin:0;color:var(--navy);font-weight:700}
+h2{font-size:46px;line-height:1.2;margin:0 0 24px;color:var(--navy);font-weight:700}
+h3{font-size:28px;margin:0 0 10px;color:var(--navy)}
+p,li{font-size:25px;line-height:1.6}
+p{margin:0 0 14px}
+ul,ol{margin:0;padding-left:30px}
+li{margin:6px 0}
+b,strong{color:var(--navy)}
+code{font-family:var(--mono);font-size:.86em;background:#e8eef7;color:#0b3b7a;padding:2px 8px;border-radius:6px}
+.muted{color:var(--muted)}
+.small{font-size:21px;line-height:1.55}
+.cap{font-size:17px;color:var(--muted);margin-top:8px;line-height:1.45}
+.row{display:flex;gap:40px;flex:1;min-height:0}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;min-height:0}
+.c2{flex:2}.c3{flex:3}
+.vc{justify-content:center}
+.fig{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.fig img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;box-shadow:0 10px 30px rgba(18,48,94,.16);background:#fff}
+.fig.flat img{box-shadow:none;background:none}
+.fig.photo img{border-radius:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;box-shadow:0 4px 14px rgba(18,48,94,.06)}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.num{display:inline-flex;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:22px;align-items:center;justify-content:center;flex:none}
+.pill{display:inline-block;background:var(--teal-soft);color:#0b6b69;font-weight:600;padding:6px 16px;border-radius:999px;font-size:19px}
+.pill.or{background:var(--orange-soft);color:#a3530c}
+.pill.gr{background:var(--green-soft);color:var(--green)}
+.pill.rd{background:var(--red-soft);color:var(--red)}
+.note{border-left:6px solid var(--orange);background:var(--orange-soft);padding:14px 20px;border-radius:10px;font-size:21px;line-height:1.55}
+.note.ok{border-color:var(--green);background:var(--green-soft)}
+.note.info{border-color:var(--teal);background:var(--teal-soft)}
+.note.bad{border-color:var(--red);background:var(--red-soft)}
+pre{position:relative;margin:0;background:var(--code);color:#dbe7ff;font-family:var(--mono);font-size:17.5px;line-height:1.6;padding:20px 24px;border-radius:14px;white-space:pre-wrap;word-break:break-word}
+pre,code{font-variant-ligatures:none;font-feature-settings:"liga" 0,"calt" 0}
+pre .copy{position:absolute;top:10px;right:10px;font-family:var(--font);font-size:15px;background:#26406a;color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+pre .copy:hover{background:var(--teal)}
+pre .err{color:#ff8a8a}
+pre .ok{color:#7ee0a8}
+pre .dim{color:#7f93b5}
+pre .hl{background:rgba(240,138,36,.25);border-radius:4px;padding:0 3px}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+th{color:var(--navy);background:#eaf0f8}
+.steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.step p{margin:4px 0 0}
+.quote{font-size:40px;font-weight:700;color:var(--navy);line-height:1.35}
+.quote .mark{color:var(--orange)}
+/* cover / photo slides */
+.cover{padding:0;background:#0b1424 center/cover no-repeat}
+.cover .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,16,32,.95) 0%,rgba(8,16,32,.8) 45%,rgba(8,16,32,.15) 78%)}
+.cover .inner{position:relative;padding:110px 90px;max-width:1180px;color:#fff;display:flex;flex-direction:column;height:100%}
+.cover h1{color:#fff;font-size:64px}
+.cover .sub{font-size:28px;color:#cfe0ff;margin-top:22px;line-height:1.5}
+.cover .hint{margin-top:auto;font-size:20px;color:#9fb6dd}
+.cover b{color:#fff}
+.nw{white-space:nowrap}
+.kbd{display:inline-block;border:1px solid #9fb6dd;border-bottom-width:3px;border-radius:7px;padding:1px 10px;font-family:var(--mono);font-size:18px;margin:0 3px}
+/* dark / divider */
+.divider{background:linear-gradient(135deg,var(--navy) 0%,#163f7a 60%,var(--teal) 140%);color:#fff;justify-content:center}
+.divider .big{font-size:150px;font-weight:700;line-height:1}
+.divider h1{color:#fff;font-size:68px;margin-top:10px}
+.divider p{color:#d5e4ff;font-size:28px;margin-top:18px;max-width:1200px}
+.divider b{color:#fff}
+.hook{background:#0b1424;color:#fff;justify-content:center;align-items:center;text-align:center}
+.hook h1{color:#fff;font-size:60px;max-width:1300px}
+.hook p{color:#b9cbe8;font-size:30px;max-width:1150px;margin:26px auto 0}
+.hook .em{color:var(--orange)}
+/* machine grid (pain 1) */
+.mach{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mach div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:17px;line-height:1.45}
+.mach div b{display:block;font-size:16px;color:var(--muted)}
+.mach .x{border-color:#f3b4b4;background:var(--red-soft)}
+.mach .y{border-color:#f6d3ad;background:var(--orange-soft)}
+/* needs */
+.need{text-align:center;padding:22px 20px;min-height:200px;display:flex;flex-direction:column;justify-content:center}
+.need .ic{font-size:56px;line-height:1}
+.need h3{font-size:28px;margin:18px 0 10px}
+.need p{font-size:22px;line-height:1.5;margin:0;color:var(--muted)}
+/* before/after */
+.ba td:first-child{font-weight:600;color:var(--navy);width:22%}
+.ba td:nth-child(2){color:#9b1c1c;background:#fff7f7}
+.ba td:nth-child(3){color:#0f5132;background:#f4fbf6}
+/* 3 steps strip */
+.trio{display:flex;gap:24px;margin-top:40px}
+.trio div{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:22px;padding:36px 32px;font-size:34px;line-height:1.4;color:#fff;min-height:220px}
+.trio div span{display:block;font-size:22px;color:#9fd8ff;margin-bottom:10px}
+.trio .star{background:rgba(15,157,154,.35);border-color:#7fe0dc}
+/* architecture */
+.arch{display:flex;gap:22px;flex:1;min-height:0}
+.host{flex:1;border:2px dashed #9fb3cf;border-radius:22px;padding:14px 18px;background:#eef3f9;display:flex;flex-direction:column}
+.hosttag{font-size:20px;color:var(--navy);margin-bottom:10px}
+.cbox{flex:1;border:3px solid #2f6fd6;border-radius:18px;background:#fff;padding:12px 16px;display:flex;flex-direction:column}
+.ctag{font-size:20px;color:#1d4ed8;margin-bottom:10px}
+.cin{display:flex;gap:16px;flex:1}
+.layers{flex:3;display:flex;flex-direction:column;gap:7px}
+.ly{background:#e8f0fc;border:1px solid #c6d6f2;border-radius:10px;padding:8px 14px;font-size:19px;color:var(--navy)}
+.ly span{color:var(--muted);font-size:16px;margin-left:6px}
+.ly.base{background:#12305e;color:#fff;border-color:#12305e}
+.ly.add{background:#fff1e3;border:2px dashed var(--orange)}
+.svc{flex:2;display:flex;flex-direction:column;gap:8px}
+.svh{font-size:16px;color:var(--muted)}
+.sv{background:var(--teal-soft);border:1px solid #b7e3e1;border-radius:10px;padding:9px 14px;font-size:19px;color:#0b6b69;font-weight:600}
+.sv span{display:block;font-weight:400;font-size:16px;color:var(--muted)}
+.sv.fold{background:#fff8e6;border-color:#f3dca5;color:#8a5a00}
+.doors{width:300px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.door{background:#fff;border:1px solid var(--line);border-left:6px solid var(--orange);border-radius:12px;padding:12px 16px;font-size:18px;line-height:1.4;color:var(--muted)}
+.door b{display:block;font-size:22px;color:var(--navy);font-family:var(--mono)}
+/* story timeline */
+.story{background:linear-gradient(160deg,#0b1424 0%,#1a1630 100%);color:#fff}
+.story.good{background:linear-gradient(160deg,#0b1f1c 0%,#0d2a3a 100%)}
+.tl{display:flex;flex-direction:column;gap:12px;margin-top:6px;border-left:3px solid rgba(255,255,255,.2);padding-left:26px;margin-left:10px}
+.ev{display:flex;gap:22px;align-items:center;position:relative}
+.ev::before{content:"";position:absolute;left:-36px;width:16px;height:16px;border-radius:50%;background:#7f93b5}
+.ev.bad::before{background:#ff6b6b}.ev.ok::before{background:#5fd68f}.ev.end::before{background:var(--orange);width:20px;height:20px;left:-38px}
+.ev .t{font-family:var(--mono);font-size:24px;color:#9fb6dd;width:86px;flex:none}
+.ev .b{font-size:25px;line-height:1.45;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 20px;color:#e9f0ff}
+.ev.bad .b{border-color:rgba(255,107,107,.45)}
+.ev.ok .b{border-color:rgba(95,214,143,.45)}
+.ev.end .b{background:rgba(240,138,36,.18);border-color:rgba(240,138,36,.6)}
+.ev .who{display:block;font-size:17px;color:#ffb27a;margin-bottom:2px}
+.story b{color:#fff}
+/* root cause */
+.root{display:flex;align-items:center;gap:22px;flex:1}
+.pains{display:flex;flex-direction:column;gap:14px;width:330px}
+.pc{background:var(--red-soft);border:1px solid #f3b4b4;color:#9b1c1c;border-radius:14px;padding:16px 20px;font-size:23px;font-weight:600}
+.arrow{font-size:56px;color:var(--orange);font-weight:700}
+.cause{width:300px;background:var(--navy);color:#dfe8f7;border-radius:22px;padding:30px 26px;font-size:26px;line-height:1.5;text-align:center}
+.cause b{color:#ffcf9e}
+.lbl{font-size:17px;letter-spacing:.06em;color:var(--orange);font-weight:700;margin-bottom:10px}
+.want{flex:1;background:#fff;border:3px solid var(--teal);border-radius:22px;padding:24px 28px}
+.want h3{font-size:34px;color:var(--teal);margin:0 0 10px}
+.want ul{list-style:none;padding:0}
+.want li{font-size:23px;margin:9px 0}
+/* photo story */
+.photo-slide{padding:0;background:#0b1424 center/cover no-repeat}
+.capbox{position:absolute;left:60px;right:60px;bottom:64px;display:flex;gap:24px;align-items:center;background:rgba(10,20,40,.86);color:#fff;border-radius:22px;padding:24px 34px;font-size:31px;line-height:1.45;border-left:10px solid #7fd3ff;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.capbox.bad{border-left-color:#ff6b6b}.capbox.good{border-left-color:#5fd68f}
+.capbox b{color:#ffe1a8}
+.capbox .sm{font-size:23px;color:#c7d6ee}
+.capbox .badge{font-size:60px;line-height:1;color:#7fd3ff;flex:none}
+.capbox.bad .badge{color:#ff8a8a}.capbox.good .badge{color:#7ee0a8}
+.imgnote{position:absolute;right:24px;top:18px;font-size:15px;color:#fff;background:rgba(0,0,0,.4);padding:3px 10px;border-radius:8px}
+/* stacks */
+.stacks{display:flex;gap:24px;align-items:stretch;flex:1}
+.mc{width:430px;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;background:#fff;border:3px solid var(--green)}
+.mc.bad{border-color:var(--red)}
+.mh{font-size:25px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between}
+.mh span{font-size:21px}
+.mc.ok .mh span{color:var(--green)}.mc.bad .mh span{color:var(--red)}
+.ly2{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;background:#eef3f9;border:1px solid var(--line);font-size:23px;color:var(--navy);padding:8px}
+.ly2.app{background:#e2f5f4;border-color:#b7e3e1}
+.ly2.diff{background:var(--red-soft);border:2px solid #f19a9a;color:#9b1c1c}
+.ly2 i{font-size:17px;color:var(--muted);margin-left:6px;font-style:normal}
+.vs{align-self:center;font-size:90px;color:var(--red);font-weight:700}
+.why{flex:1;display:flex;flex-direction:column;justify-content:center}
+/* equations */
+.eqs{display:flex;flex-direction:column;gap:20px;margin-top:6px}
+.eq{border-radius:20px;padding:18px 26px;background:#fff;border:2px solid var(--line)}
+.eq.bad{border-color:#f3b4b4;background:#fffafa}.eq.good{border-color:#a7dcb8;background:#f6fcf8}
+.eq .lab{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.ex{display:flex;align-items:center;gap:18px}
+.tk{flex:1;text-align:center;font-size:27px;font-weight:600;padding:18px 10px;border-radius:14px;background:#eef3f9;color:var(--navy)}
+.tk.r{background:var(--red-soft);color:#9b1c1c}.tk.g{background:var(--green-soft);color:var(--green)}
+.op{font-size:44px;font-weight:700;color:var(--muted)}
+/* chrome */
+#bar{position:fixed;left:0;bottom:0;height:5px;background:var(--orange);transition:width .3s;z-index:5}
+#hud{position:fixed;right:18px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:6;font-family:var(--font)}
+#hud button{background:rgba(18,48,94,.78);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:10px;height:40px;min-width:40px;font-size:18px;cursor:pointer;padding:0 12px}
+#hud button:hover{background:var(--teal)}
+#count{color:#fff;background:rgba(18,48,94,.78);border-radius:10px;padding:9px 10px;font-size:16px;min-width:76px;text-align:center}
+#help{position:fixed;left:18px;bottom:16px;color:#fff;background:rgba(18,48,94,.6);padding:4px 10px;border-radius:8px;font-size:14px;z-index:6}
+.zone{position:fixed;top:0;bottom:60px;width:12%;z-index:4;cursor:pointer}
+#zl{left:0}#zr{right:0}
+body.ov #stage{display:none}
+#ov{display:none;position:fixed;inset:0;overflow:auto;padding:30px;z-index:10;background:#0b1424}
+body.ov #ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-content:start}
+#ov .th{background:#16233a;border:2px solid transparent;border-radius:10px;padding:12px 14px;color:#dbe7ff;cursor:pointer;font-size:16px;line-height:1.4}
+#ov .th:hover,#ov .th.cur{border-color:var(--orange)}
+#ov .th span{color:var(--orange);font-weight:700;margin-right:6px}
+#check label{font-size:24px;display:flex;gap:14px;align-items:center;cursor:pointer;line-height:1.4}
+#check input{width:26px;height:26px;accent-color:var(--teal);flex:none}
+@page{size:1600px 900px;margin:0}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}
+  #hud,#help,#bar,.zone,#ov,pre .copy,.cover .hint{display:none!important}
+  #stage{position:static;display:block}
+  #deck{transform:none!important;width:1600px;height:auto}
+  .slide{display:flex!important;position:relative;width:1600px;height:900px;border-radius:0;animation:none!important;page-break-after:always;break-after:page}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- ================= เปิดเรื่อง (สร้างใหม่) ================= -->
+<section class="slide cover" data-title="ปก" style="background-image:url('assets/slides/cover-student.jpg')">
+  <div class="shade"></div>
+  <div class="inner">
+    <div class="kicker" style="color:#7fd3ff">สัปดาห์ที่ 2 · ก่อนเริ่มทำ LAB</div>
+    <h1><span class="nw">ห้องทดลองของเรา</span></h1>
+    <div class="sub" style="font-size:30px;color:#7fd3ff;margin-top:6px">เตรียมสภาพแวดล้อมทดลองด้วย Docker และ VS Code</div>
+    <div class="sub" style="font-size:32px;color:#fff;margin-top:14px">เราเดฟผ่าน Claude กันอยู่แล้ว<br>แต่ทำไม Claude ควรทำงานใน Linux container?</div>
+    <div class="sub" style="font-size:22px">Docker · VS Code · Claude Code · container <b>devtools</b></div>
+    <div class="hint">กด <span class="kbd">→</span> เพื่อเริ่ม · <span class="kbd">F</span> เต็มจอ · <span class="kbd">O</span> ดูทุกหน้า</div>
+  </div>
+</section>
+
+<section class="slide photo-slide" data-title="เรื่องเล่า ①: รันได้" style="background-image:url('assets/slides/story-1-works.jpg')">
+  <div class="capbox"><span class="badge">①</span><div>เราให้ Claude Code สร้างแอป Python จำแนกรูปภาพ ด้วยโมเดลจาก Hugging Face<br><b>บนเครื่องเรา… รันได้! 🎉</b></div></div>
+  <div class="imgnote">ภาพจำลอง สร้างด้วย Imagegen</div>
+</section>
+
+<section class="slide photo-slide" data-title="เรื่องเล่า ②: เพื่อนรันแล้วพัง" style="background-image:url('assets/slides/story-2-fails.jpg')">
+  <div class="capbox bad"><span class="badge">②</span><div>ส่งโค้ด <b>ชุดเดียวกันทุกบรรทัด</b> ให้เพื่อน… เครื่องเพื่อนขึ้น error เต็มจอ 😱<br><span class="sm">ไม่ใช่แค่ Windows กับ Mac แม้ใช้ OS เดียวกันก็พังได้</span></div></div>
+  <div class="imgnote">ภาพจำลอง สร้างด้วย Imagegen</div>
+</section>
+
+<section class="slide" data-title="ทำไมโค้ดเดียวกันถึงพัง">
+  <div class="kicker red">ทำไม? โค้ดเหมือนกันเป๊ะ</div>
+  <h2>โค้ดเหมือนกัน แต่ "พื้น" ที่โค้ดยืนอยู่ไม่เหมือนกัน</h2>
+  <div class="stacks">
+    <div class="mc ok">
+      <div class="mh">💻 เครื่องเรา <span>✅ รันได้</span></div>
+      <div class="ly2 app"><span>🐍 app.py · แอปจำแนกรูป <i>(โค้ดเดียวกัน)</i></span></div>
+      <div class="ly2"><span>transformers <b>4.46</b> · torch <b>2.5</b></span></div>
+      <div class="ly2"><span>Python <b>3.12</b></span></div>
+      <div class="ly2"><span>Windows 11</span></div>
+    </div>
+    <div class="vs">≠</div>
+    <div class="mc bad">
+      <div class="mh">💻 เครื่องเพื่อน <span>❌ error</span></div>
+      <div class="ly2 app"><span>🐍 app.py · แอปจำแนกรูป <i>(โค้ดเดียวกัน)</i></span></div>
+      <div class="ly2 diff"><span>transformers <b>4.30</b> · torch <b>2.1</b></span></div>
+      <div class="ly2 diff"><span>Python <b>3.9</b></span></div>
+      <div class="ly2 diff"><span>macOS <i>(หรือ Windows อีกเครื่อง)</i></span></div>
+    </div>
+    <div class="why">
+      <div class="note bad small">Claude ใช้ Python และไลบรารีที่ <b>เครื่องนั้นมีอยู่</b> หรือติดตั้งเวอร์ชันที่หาได้ตอนนั้น แต่ละเครื่องจึงได้ชุดเวอร์ชันไม่เหมือนกัน</div>
+      <div class="note info small" style="margin-top:14px">ชั้นสีแดงคือส่วนที่ต่างกัน แค่ชั้นเดียวไม่ตรง แอปก็พังได้ ต่อให้ Claude เก่งแค่ไหนก็ต้องมานั่งไล่แก้ทีละเครื่อง</div>
+      <p class="cap">เลขเวอร์ชันเป็นตัวอย่างประกอบ</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide photo-slide" data-title="เรื่องเล่า ③: ขยะเต็มเครื่อง" style="background-image:url('assets/slides/pain-broken-setup.jpg')">
+  <div class="capbox bad"><span class="badge">③</span><div>ระหว่างไล่แก้ Claude ลงไลบรารีหลายเวอร์ชันทับกัน โหลดโมเดลเก็บไว้หลาย GB<br><span class="sm">สุดท้ายเครื่องหลักเต็มไปด้วยขยะ PATH เละ และมี token ค้างอยู่โดยไม่รู้ตัว</span></div></div>
+  <div class="imgnote">ภาพจำลอง สร้างด้วย Imagegen</div>
+</section>
+
+<section class="slide cover" data-title="จุดหักเห: AI ลงมือเอง" style="background-image:url('assets/slides/pain-ai-robot.jpg')">
+  <div class="shade" style="background:linear-gradient(90deg,rgba(8,16,32,.96) 0%,rgba(8,16,32,.85) 48%,rgba(8,16,32,.2) 80%)"></div>
+  <div class="inner" style="justify-content:center;max-width:980px">
+    <div class="kicker" style="color:#ffb27a">และทั้งหมดนี้เกิดขึ้นเร็วมาก</div>
+    <h1 style="font-size:58px">คนที่พิมพ์คำสั่ง<br>ไม่ใช่เราอีกต่อไปแล้ว</h1>
+    <div class="sub">Claude Code และ Codex ไม่ได้แค่ตอบ แต่ <b>รัน shell เอง</b> ติดตั้งแพ็กเกจ สร้างและลบไฟล์ได้จริง ทั้งตอนที่ทำถูก… และตอนที่พลาด</div>
+    <div class="sub" style="font-size:34px;color:#fff;font-weight:700;margin-top:30px">คำถามคือ เราจะให้มันทำงาน "ที่ไหน"?</div>
+    <div class="sub" style="font-size:18px;color:#9fb6dd;margin-top:26px">Windows และ Mac ใช้ AI ได้ปกติ เราแค่ต้องการพื้นที่ที่ปลอดภัยและเหมือนกันทุกคน · ภาพจำลอง สร้างด้วย Imagegen</div>
+  </div>
+</section>
+
+<section class="slide photo-slide" data-title="เรื่องเล่า ④: พื้นเดียวกัน" style="background-image:url('assets/slides/story-3-shared.jpg')">
+  <div class="capbox good"><span class="badge">④</span><div>ถ้าทุกคนให้ Claude ทำงานใน <b>Linux container เดียวกัน</b><br>โค้ดชุดเดิม… รันได้ทั้งสองเครื่องทันที ✅ <span class="sm">และพังเมื่อไรก็ลบแล้วสร้างใหม่ได้</span></div></div>
+  <div class="imgnote">ภาพจำลอง สร้างด้วย Imagegen</div>
+</section>
+
+<section class="slide" data-title="โค้ด + environment = ผลลัพธ์">
+  <div class="kicker">หัวใจของเรื่องนี้</div>
+  <h2>ผลลัพธ์ไม่ได้ขึ้นกับโค้ดอย่างเดียว</h2>
+  <div class="eqs">
+    <div class="eq bad">
+      <div class="lab">❌ ต่างคนต่างรันบนเครื่องตัวเอง</div>
+      <div class="ex"><span class="tk">📄 โค้ดเดียวกัน</span><span class="op">+</span><span class="tk r">🎲 environment ไม่เหมือนกัน</span><span class="op">=</span><span class="tk r">💥 ผลไม่ตรงกัน</span></div>
+    </div>
+    <div class="eq good">
+      <div class="lab">✅ ทุกคนรันใน container เดียวกัน</div>
+      <div class="ex"><span class="tk">📄 โค้ดเดียวกัน</span><span class="op">+</span><span class="tk g">🐳 environment เดียวกัน</span><span class="op">=</span><span class="tk g">✅ ผลเหมือนกัน</span></div>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:26px;gap:18px">
+    <div class="card small" style="text-align:center">🤝 ส่งโค้ดและพรอมต์ให้เพื่อน รันได้เลย</div>
+    <div class="card small" style="text-align:center">🧪 Claude และขยะทั้งหมดอยู่ในกล่อง</div>
+    <div class="card small" style="text-align:center">🔁 พังแล้วลบ สร้างใหม่ได้ในไม่กี่นาที</div>
+  </div>
+  <div class="quote" style="margin-top:26px;text-align:center;font-size:34px">"environment เดียวกัน" นี้คือ… <span class="mark">→</span></div>
+</section>
+
+<!-- ================= องก์ 2: คำตอบ ================= -->
+<section class="slide divider" data-title="คำตอบ: Linux container">
+  <div class="big">🐳</div>
+  <h1>คำตอบคือ… Linux container</h1>
+  <p>"ห้องทดลอง" Linux ที่ติดตั้งเครื่องมือไว้พร้อม รันบนเครื่องของเราผ่าน Docker Desktop (Windows ใช้ WSL 2 ส่วน Mac ก็มี Docker Desktop) ทุกคนได้ Linux ชุดเดียวกัน แล้วใช้ VS Code ที่คุ้นเคยเข้าไปทำงานข้างใน</p>
+</section>
+
+<section class="slide" data-title="หน้าตาของคำตอบ">
+  <div class="kicker">คำตอบ</div>
+  <h2>ใช้เครื่องมือไหนก็ได้ → container เดียวกัน → ต่อยอดไปข้างนอก</h2>
+  <div class="fig"><img src="assets/00-why-linux-container-v4.png" alt="Windows หรือ macOS ใช้ VS Code, Claude Code หรือ ChatGPT / Codex สั่งงานเข้า Linux container แล้วต่อไปยัง cloud"></div>
+  <div class="cap">ภาพแนวคิด สร้างด้วย Imagegen: Windows หรือ macOS จะสั่งงานผ่าน VS Code, Claude Code หรือ ChatGPT / Codex ก็ได้ ทุกทางเข้า container เดียวกันที่มี Bash, Python, Node.js, Git, Docker, Claude Code / Codex พร้อมใช้ และส่งงานไป AI model, GPU server หรือ deploy ขึ้น cloud ได้</div>
+</section>
+
+<section class="slide" data-title="ก่อน-หลังมี container">
+  <div class="kicker">คำตอบ</div>
+  <h2>ปัญหาเดิม หายไปไหน?</h2>
+  <table class="ba" style="font-size:20px">
+    <tr><th></th><th>❌ ไม่มี container</th><th>✅ มี container devtools</th></tr>
+    <tr><td>เครื่องมือ</td><td>ทุกคนติดตั้งเอง เวอร์ชันไม่ตรงกัน</td><td>เริ่มจาก image ของวิชาเดียวกันทุกคน</td></tr>
+    <tr><td>คำสั่ง LAB</td><td>ต้องแปลคำสั่ง Linux เป็นของ Windows</td><td>เป็น Linux อยู่แล้ว ก๊อปวางได้เลย</td></tr>
+    <tr><td>ทดลองพลาด</td><td>เครื่องหลักพัง ลงใหม่หลายชั่วโมง</td><td>ลบ container แล้วสร้างใหม่จาก image</td></tr>
+    <tr><td>ให้ AI รันคำสั่ง</td><td>รันตรงบนเครื่องหลัก</td><td>รันในกล่องแยก พลาดก็รีเซ็ตได้</td></tr>
+    <tr><td>ส่งงานข้าม OS</td><td>Windows ↔ Mac ต้องแปลงบรรทัด พาธ สคริปต์</td><td>ทุกคนอยู่ใน Linux เดียวกัน แชร์แล้วรันได้เลย</td></tr>
+    <tr><td>ขยะจาก AI</td><td>กระจายในเครื่องหลัก ลบไม่หมด</td><td>อยู่ใน container ลบทีเดียวหมด</td></tr>
+    <tr><td>ไปต่อ cloud</td><td>environment ตอน dev ต่างจากตอน deploy</td><td>Linux เหมือน server ส่วนใหญ่ ย้ายงานง่าย</td></tr>
+  </table>
+  <div class="note small" style="margin-top:22px">แยกพื้นที่ได้ดีขึ้น แต่ไม่ได้รับประกัน 100% โดยเฉพาะชุดนี้ที่ใช้ <code>--privileged</code> เพื่อให้ใช้ Docker ข้างใน container ได้ และถ้าเชื่อมโฟลเดอร์จากเครื่องหลักเข้าไป ไฟล์นั้นก็ถูกแก้ได้</div>
+</section>
+
+<section class="slide" data-title="Image กับ Container">
+  <div class="kicker">ทำไมรีเซ็ตได้</div>
+  <h2>Image = แม่พิมพ์ · Container = ชิ้นงานที่ปั๊มออกมา</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig photo"><img src="assets/slides/image-vs-container.jpg" alt="แม่พิมพ์คุกกี้รูปตู้คอนเทนเนอร์ และคุกกี้สามชิ้นที่ตกแต่งต่างกัน"></div>
+      <div class="cap">ภาพเปรียบเทียบ (ภาพจำลอง สร้างด้วย Imagegen)</div></div>
+    <div class="col c2 vc">
+      <p><b>Image</b> คือแม่พิมพ์ที่ไม่เปลี่ยน เช่น <code>tuchsanai/devtools:2569_1</code></p>
+      <p><b>Container</b> คือชิ้นงานที่ปั๊มจาก image แต่ละชิ้นตกแต่งเพิ่มเองได้ (ติดตั้งของ แก้ไฟล์)</p>
+      <p>ชิ้นไหนเสีย <b>ทิ้งแล้วปั๊มใหม่</b> ได้ทันที แม่พิมพ์ยังอยู่ครบ</p>
+      <div class="note small">ปั๊มใหม่ = กลับไปเหมือนแม่พิมพ์ ของที่แต่งไว้ในชิ้นเดิมไม่ตามมา ไฟล์ใน container หายเมื่อลบ งานสำคัญเก็บด้วย Git / volume / backup</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="devtools มาจากไหน">
+  <div class="kicker">แม่พิมพ์ของวิชา</div>
+  <h2>แล้วแม่พิมพ์ devtools มาจากไหน?</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/00-github-devtool-folder.png" alt="โฟลเดอร์ 00_Devtool_Container บน GitHub"></div>
+      <div class="cap">ภาพจริงจากหน้า GitHub ของวิชา กรอบแดงคือ Dockerfile (เบลออวาตาร์บัญชีไว้)</div></div>
+    <div class="col c2 vc">
+      <p>มาจากโฟลเดอร์ <code>00_Devtool_Container</code> ในรีโปของวิชา ทุกคนเปิดดูได้</p>
+      <ul class="small">
+        <li><b>Dockerfile</b> สูตรทีละขั้น: เริ่มจาก Ubuntu 24.04 แล้วติดตั้ง Python, Node.js, Git, Docker-in-Docker, JupyterLab, SSH</li>
+        <li><b>start.sh</b> เปิดบริการทั้งหมดทุกครั้งที่ container เริ่มทำงาน</li>
+        <li><b>docker-compose.yml</b> ทางเลือก build + run คำสั่งเดียว</li>
+      </ul>
+      <div class="note info small" style="margin-top:14px">สูตรเปิดเผยหมด จึงรู้ว่าในห้องทดลองมีอะไรบ้าง และทำซ้ำได้เหมือนกันทุกเครื่อง</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="สถาปัตยกรรม devtools">
+  <div class="kicker">ข้างในห้องทดลอง</div>
+  <h2>เปิดกล่อง devtools ดูกัน: Linux ธรรมดาที่ลงโปรแกรมไว้ครบ</h2>
+  <div class="arch">
+    <div class="host">
+      <div class="hosttag">💻 เครื่องของเรา · Windows หรือ macOS → <b>Docker Desktop</b></div>
+      <div class="cbox">
+        <div class="ctag">🐳 container <b>devtools</b> · image <code>tuchsanai/devtools:2569_1</code></div>
+        <div class="cin">
+          <div class="layers">
+            <div class="ly add">Claude Code · Codex <span>ติดตั้งเพิ่มตอนสร้างผ่านพรอมต์</span></div>
+            <div class="ly">JupyterLab 4 + ส่วนขยาย · Bash kernel</div>
+            <div class="ly">Node.js 22 + npm</div>
+            <div class="ly">Docker CE · buildx · compose <span>(Docker ข้างใน container)</span></div>
+            <div class="ly">Git รุ่นล่าสุด (git-core PPA)</div>
+            <div class="ly">Python 3 · pip · venv · curl · vim · nano · SSH server</div>
+            <div class="ly base">Ubuntu 24.04 · เวลา Asia/Bangkok</div>
+          </div>
+          <div class="svc">
+            <div class="svh">start.sh เปิดให้ทุกครั้งที่ start</div>
+            <div class="sv">🔐 sshd <span>port 22</span></div>
+            <div class="sv">🐋 dockerd <span>Docker-in-Docker</span></div>
+            <div class="sv">📓 jupyter lab <span>port 8888</span></div>
+            <div class="sv fold">📁 <code>/workspace</code> <span>โฟลเดอร์ทำงาน</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="doors">
+      <div class="door"><b>2222 → 22</b>SSH / Terminal</div>
+      <div class="door"><b>8885 → 8888</b>JupyterLab ในเบราว์เซอร์</div>
+      <div class="door"><b>Attach</b>VS Code เข้าไปทำงานข้างใน</div>
+      <div class="door"><b>docker</b>Claude Code Desktop สั่งสร้าง / เปิด / รันคำสั่ง</div>
+    </div>
+  </div>
+  <p class="cap">วาดจาก Dockerfile และ start.sh จริงในโฟลเดอร์ 00_Devtool_Container · image นี้เป็น <code>linux/amd64</code> บน Mac ชิป Apple Silicon Docker Desktop รันผ่านการจำลองได้ แต่อาจช้ากว่า</p>
+</section>
+
+<section class="slide" data-title="Dockerfile ของจริง">
+  <div class="kicker">ข้างในห้องทดลอง</div>
+  <h2>สูตรจริงใน Dockerfile (ตัดมาเฉพาะส่วนสำคัญ)</h2>
+  <div class="row">
+    <div class="col c3 vc">
+<pre style="font-size:17px;line-height:1.55"><span class="hl">FROM ubuntu:24.04</span>                                   <span class="dim"># ①</span>
+ENV TZ=Asia/Bangkok LANG=C.UTF-8
+
+RUN apt-get install -y curl wget vim nano git \      <span class="dim"># ②</span>
+      openssh-server python3 python3-pip python3-venv …
+RUN add-apt-repository -y ppa:git-core/ppa …         <span class="dim"># ③</span>
+RUN … apt-get install -y docker-ce docker-ce-cli \   <span class="dim"># ④</span>
+      containerd.io docker-buildx-plugin docker-compose-plugin
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+ &amp;&amp; apt-get install -y nodejs                          <span class="dim"># ⑤</span>
+RUN pip install "jupyterlab&gt;=4.3,&lt;5" jupytext jupyterlab-git … <span class="dim"># ⑥</span>
+RUN echo 'root:passwd' | chpasswd …                  <span class="dim"># ⑦</span>
+COPY start.sh /usr/local/bin/start.sh
+EXPOSE 22 8888
+WORKDIR /workspace
+<span class="hl">CMD ["/usr/local/bin/start.sh"]</span>                      <span class="dim"># ⑧</span></pre>
+    </div>
+    <div class="col c2 vc">
+      <table style="font-size:18px">
+        <tr><td>①</td><td>เริ่มจาก Ubuntu 24.04 ตั้งเวลาไทย</td></tr>
+        <tr><td>②</td><td>เครื่องมือพื้นฐาน + Python + SSH server</td></tr>
+        <tr><td>③</td><td>Git รุ่นล่าสุด (ใช้ git worktree ได้ครบ)</td></tr>
+        <tr><td>④</td><td>Docker ข้างใน container (Docker-in-Docker)</td></tr>
+        <tr><td>⑤</td><td>Node.js 22 สำหรับเว็บ Next.js / React / Vite</td></tr>
+        <tr><td>⑥</td><td>JupyterLab และส่วนขยาย</td></tr>
+        <tr><td>⑦</td><td>บัญชี root สำหรับ SSH (รหัสเดียวกันทุกเครื่อง ใช้เรียนบนเครื่องตัวเองเท่านั้น)</td></tr>
+        <tr><td>⑧</td><td>ทุกครั้งที่ start รัน start.sh เปิด sshd, dockerd, JupyterLab</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="cap">ฉบับเต็มอยู่ที่ 00_Devtool_Container/Dockerfile · เครื่องหมาย … คือส่วนที่ตัดออกเพื่อให้อ่านง่าย</p>
+</section>
+
+<section class="slide" data-title="Dockerfile → image → container">
+  <div class="kicker">แม่พิมพ์ของวิชา</div>
+  <h2>สูตร → แม่พิมพ์ → ห้องทดลอง</h2>
+  <div class="fig"><img src="assets/00-dockerfile-to-devtools.png" alt="แผนภาพ Dockerfile เป็น image แล้วเป็น container devtools"></div>
+  <div class="cap">อาจารย์ <b>build</b> สูตรเป็น image <code>tuchsanai/devtools:2569_1</code> ไว้บน Docker Hub แล้ว ผู้เรียนแค่ <b>run</b> ก็ได้ container ทันที อยากลอง build เองดู readme ของโฟลเดอร์ (ภาพแนวคิด สร้างด้วย Imagegen)</div>
+</section>
+
+<section class="slide" data-title="ต่อยอดไป cloud">
+  <div class="kicker">มองไกลกว่าห้องเรียน</div>
+  <h2>ห้องทดลองนี้ คือฐานทำงานกลางของทั้งเทอม</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/00-why-linux-container-flow.gif" alt="ภาพเคลื่อนไหว เครื่องของเรา container cloud"></div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p><b>Dev ในเครื่อง</b><br>ทำงานใน container ที่มีเครื่องมือพร้อม</p></div>
+        <div class="step"><span class="num">2</span><p><b>เรียกใช้ AI / GPU ข้างนอก</b><br>ส่งงานหนักไปประมวลผล แล้วรับผลกลับ</p></div>
+        <div class="step"><span class="num">3</span><p><b>Deploy ขึ้น cloud</b><br>server ส่วนใหญ่เป็น Linux เหมือนกัน</p></div>
+      </div>
+      <div class="note small" style="margin-top:24px">container ไม่ได้ต่อ cloud ให้เอง ทุกบริการต้องมีบัญชี สิทธิ์ และ API key และมีค่าใช้จ่ายตามการใช้งาน</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="devtools = ศูนย์ควบคุม">
+  <div class="kicker">มองไกลกว่าห้องเรียน</div>
+  <h2>devtools เป็น "ศูนย์ควบคุม" ระบบหลายเครื่องได้</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/00-devtools-control-hub.png" alt="สั่งงานจาก Claude Code หรือ VS Code เข้า devtools แล้ว devtools รีโมทไปสร้างและดูแล Frontend, Backend AI Chatbot, Database และโมเดลอื่น"></div>
+      <div class="cap">ภาพแนวคิด สร้างด้วย Imagegen เครื่องข้างนอกเป็นตัวอย่างของระบบใน LAB ถัด ๆ ไป</div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p class="small">เราสั่งงานจาก <b>Claude Code</b> หรือ <b>VS Code</b> บน Windows / Mac</p></div>
+        <div class="step"><span class="num">2</span><p class="small">คำสั่งไปทำงานใน <b>devtools</b> ซึ่งเป็น Linux มีเครื่องมือครบ</p></div>
+        <div class="step"><span class="num">3</span><p class="small">devtools รีโมทออกไปผ่าน <b>SSH / API / deploy</b> เพื่อสร้างและดูแล Frontend, Backend AI chatbot (เช่นโมเดล Qwen บน GPU), Database และโมเดลอื่น ที่เชื่อมกันเป็นเครือข่าย</p></div>
+      </div>
+      <div class="note info small" style="margin-top:20px">ไม่ต้องติดตั้งเครื่องมือดูแลระบบทั้งหมดบนเครื่องหลัก ทุกอย่างคุมจาก container ที่เดียว</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= องก์ 3: ลงมือ ================= -->
+<section class="slide divider" data-title="ลงมือ: 3 ขั้น">
+  <div class="kicker" style="color:#9fd8ff">ลงมือกัน</div>
+  <h1>3 ขั้น ก็ได้ห้องทดลองของตัวเอง</h1>
+  <div class="trio">
+    <div><span>ขั้นที่ 1</span>ติดตั้ง <b>Docker Desktop</b></div>
+    <div><span>ขั้นที่ 2</span>เตรียม <b>VS Code</b></div>
+    <div class="star"><span>ขั้นที่ 3 · พระเอกของวันนี้</span>ให้ <b>Claude Code Desktop</b> สร้าง container ให้</div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 1: ดาวน์โหลดและติดตั้ง">
+  <div class="kicker">ขั้นที่ 1 · Docker Desktop</div>
+  <h2>ดาวน์โหลด → ติดตั้งแบบ WSL 2</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/00-docker-download-menu.png" alt="เมนูดาวน์โหลด Docker Desktop"></div>
+      <div class="cap">ภาพจริงจากเว็บไซต์ Docker</div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p class="small">เปิด <b>docker.com/products/docker-desktop</b> → <b>Download Docker Desktop</b></p></div>
+        <div class="step"><span class="num">2</span><p class="small">Intel / AMD เลือก <b>Windows – AMD64</b> · Windows on Arm เลือก <b>ARM64</b> (ไม่แน่ใจดู Settings → System → About → System type)</p></div>
+        <div class="step"><span class="num">3</span><p class="small">เปิด <code>Docker Desktop Installer.exe</code> จาก Downloads ใช้ค่าเริ่มต้น เลือก <b>Use WSL 2 instead of Hyper-V</b></p></div>
+        <div class="step"><span class="num">4</span><p class="small">กด Close แล้วรีสตาร์ตถ้าระบบขอ</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 1: เปิดและตรวจ (GIF)">
+  <div class="kicker">ขั้นที่ 1 · Docker Desktop</div>
+  <h2>ดับเบิลคลิก → Engine running → ตรวจด้วย PowerShell</h2>
+  <div class="fig"><img src="assets/01-docker-desktop-open-check.gif" alt="ภาพเคลื่อนไหวจริง เปิด Docker Desktop และพิมพ์ docker --version, docker info"></div>
+  <div class="cap">อัดจากหน้าจอจริง (ประมาณ 32 วินาที) พื้นหลังเดสก์ท็อปแทนด้วยวอลเปเปอร์ และเบลอข้อมูลส่วนตัว</div>
+</section>
+
+<section class="slide" data-title="ขั้น 1: ผลที่ต้องได้">
+  <div class="kicker">ขั้นที่ 1 · ผลที่ต้องได้</div>
+  <h2>Engine running + <code style="font-size:.8em">docker info</code> เห็นส่วน Server</h2>
+  <div class="row">
+    <div class="col"><div class="fig"><img src="assets/01-docker-desktop-empty.png" alt="Docker Desktop หน้า Containers ว่าง Engine running"></div>
+      <div class="cap">เพิ่งติดตั้ง หน้า Containers ว่างเป็นเรื่องปกติ กรอบแดง = Engine running</div></div>
+    <div class="col" style="gap:14px">
+<pre><button class="copy">คัดลอก</button>docker --version
+docker info</pre>
+      <div class="fig"><img src="assets/01-powershell-docker-info.png" alt="ผล docker info ใน PowerShell"></div>
+      <p class="small">ถ้าขึ้น <i>error during connect</i> แปลว่า engine ยังไม่พร้อม รอจนขึ้น Engine running แล้วลองใหม่</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 2: VS Code (GIF)">
+  <div class="kicker">ขั้นที่ 2 · VS Code</div>
+  <h2>ติดตั้ง Dev Containers + Container Tools</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/02-vscode-dev-containers-install.gif" alt="ภาพเคลื่อนไหวจริง ติดตั้ง Dev Containers และ Container Tools"></div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p class="small">คลิก <b>Extensions</b> หรือกด <code>Ctrl+Shift+X</code></p></div>
+        <div class="step"><span class="num">2</span><p class="small">ค้นหา <b>Dev Containers</b> ของ Microsoft → <b>Install</b></p></div>
+        <div class="step"><span class="num">3</span><p class="small">ค้นหา <b>Container Tools</b> ของ Microsoft → <b>Install</b></p></div>
+        <div class="step"><span class="num">4</span><p class="small">คลิก <b>ไอคอนรูปกล่อง</b> ที่แถบซ้าย</p></div>
+      </div>
+      <div class="note info small" style="margin-top:20px">ติดตั้ง <b>Claude Code</b> ของ Anthropic แบบเดียวกันไว้ด้วย (ใช้ในวิธีเสริม) แล้วเข้าสู่ระบบด้วยบัญชีของตนเอง</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 2: แถบ Containers">
+  <div class="kicker">ขั้นที่ 2 · ผลที่ต้องได้</div>
+  <h2>แถบ Containers ขึ้นมา = VS Code มองเห็น Docker แล้ว</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/02-container-tools-panel.png" alt="แถบ Containers ของ Container Tools"></div></div>
+    <div class="col c2 vc">
+      <p>เห็นหัวข้อ <b>Containers</b>, <b>Images</b>, <b>Registries</b>, <b>Networks</b></p>
+      <p>ตอนนี้หัวข้อ Containers ยังว่าง เพราะเรายังไม่มีห้องทดลอง…</p>
+      <p class="quote" style="font-size:32px">ขั้นต่อไป เราจะ <span class="mark">พูด</span> ให้มันเกิดขึ้น</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide divider" data-title="ขั้น 3: พระเอก">
+  <div class="kicker" style="color:#9fd8ff">ขั้นที่ 3 · พระเอกของวันนี้</div>
+  <h1>พูดเป็นภาษาคน<br>แล้ว container ก็เกิดขึ้นเอง</h1>
+  <p>ไม่ต้องจำคำสั่ง Docker แค่วางพรอมต์ใน <b>Claude Code Desktop</b> แล้ว Claude จะสร้าง devtools ติดตั้งเครื่องมือ และทดสอบให้ดู</p>
+</section>
+
+<section class="slide" data-title="ขั้น 3: พรอมต์ทำอะไร">
+  <div class="kicker">ขั้นที่ 3 · พรอมต์นี้ฉลาดตรงไหน</div>
+  <h2>พรอมต์เดียว ใช้ได้ตั้งแต่ครั้งแรก และใช้ซ้ำได้</h2>
+  <div class="row">
+    <div class="col">
+      <p class="small">ระบุ image ให้ชัด: <code>tuchsanai/devtools:2569_1</code></p>
+      <div class="grid" style="gap:16px">
+        <div class="card"><span class="pill">ยังไม่มี container</span><p class="small" style="margin:10px 0 0">สร้าง <b>devtools</b> ใหม่จาก image แบบ privileged พร้อมเปิด port SSH และ JupyterLab</p></div>
+        <div class="card"><span class="pill or">มีอยู่แล้ว</span><p class="small" style="margin:10px 0 0">ใช้ตัวเดิม ถ้าปิดอยู่ก็เปิดให้ <b>ไม่ลบของเดิม</b></p></div>
+        <div class="card"><span class="pill gr">จากนั้น</span><p class="small" style="margin:10px 0 0">ติดตั้ง Claude Code กับ Codex ข้างใน ตรวจเวอร์ชัน และลองรันไฟล์ทดสอบ</p></div>
+      </div>
+    </div>
+    <div class="col vc">
+      <table>
+        <tr><th>บริการ</th><th>พอร์ตบนเครื่อง</th><th>ใน container</th></tr>
+        <tr><td>SSH</td><td>2222 หรือเลขว่างถัดไป</td><td>22</td></tr>
+        <tr><td>JupyterLab</td><td>8885 หรือเลขว่างถัดไป</td><td>8888</td></tr>
+      </table>
+      <div class="note" style="margin-top:26px">ก่อนเริ่ม Docker Desktop ต้องขึ้น <b>Engine running</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 3: วางพรอมต์ (GIF)">
+  <div class="kicker">ขั้นที่ 3 · วางพรอมต์</div>
+  <h2>New session → Ctrl+V → Enter</h2>
+  <div class="row">
+    <div class="col"><div class="fig flat"><img src="assets/03-claude-desktop-paste.gif" alt="ภาพเคลื่อนไหว วางพรอมต์ใน Claude Code Desktop"></div>
+      <div class="cap">ภาพเคลื่อนไหวจำลองขั้นตอน (ประมาณ 7 วินาที) ครั้งแรกรอหลายนาที เพราะต้องดาวน์โหลด image และติดตั้งเครื่องมือ</div></div>
+    <div class="col vc">
+<pre style="font-size:15.5px"><button class="copy">คัดลอก</button>ช่วยเตรียม container ชื่อ devtools ในเครื่องผม จาก image tuchsanai/devtools:2569_1
+
+- ถ้ายังไม่มี ให้สร้างใหม่แบบ privileged (เพราะข้างในต้องใช้ Docker ได้)
+  เปิด port 2222 → 22 สำหรับ SSH และ 8885 → 8888 สำหรับ JupyterLab ถ้า port ไหนชน ให้ใช้เลขว่างถัดไป
+- ถ้ามีอยู่แล้ว ให้ใช้ตัวเดิม (ถ้าปิดอยู่ให้เปิด) ห้ามลบของเดิม
+
+จากนั้นเข้าไปทำงานข้างใน container
+1. ติดตั้ง Claude Code และ Codex ถ้ายังไม่มี และทำให้พิมพ์ claude ได้เลย
+2. บอกว่าข้างในเป็น Linux อะไร มี Python, Node.js, Git, Claude Code และ Codex เวอร์ชันไหน
+3. สร้างไฟล์ /workspace/hello.py ให้พิมพ์ว่า Hello from devtools แล้วลองรันให้ดู
+
+สรุปผลเป็นตารางสั้น ๆ พร้อมบอก port ที่ใช้จริง</pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 3: ผลจริง">
+  <div class="kicker">ขั้นที่ 3 · ผลจริง (รันครั้งแรก)</div>
+  <h2>ไม่ได้พิมพ์คำสั่ง Docker สักบรรทัด… แต่ได้ห้องทดลองแล้ว</h2>
+  <div class="row">
+    <div class="col c2"><div class="fig"><img src="assets/slides/claude-result-table.png" alt="ตารางผลจริง port และเวอร์ชัน"></div></div>
+    <div class="col c3 vc">
+      <div class="note ok">ตอนรันยังไม่มี container ในเครื่อง → Claude สร้างใหม่จาก <code>tuchsanai/devtools:2569_1</code> แบบ privileged</div>
+      <ul style="margin-top:18px">
+        <li>port <b>2222 → 22</b> (SSH) และ <b>8885 → 8888</b> (JupyterLab) ตามที่ขอ</li>
+        <li>ติดตั้ง Claude Code 2.1.319 และ codex-cli 0.167.0 พิมพ์ <code>claude</code> ได้ทันที</li>
+        <li>Ubuntu 24.04.5 · Python 3.12.3 · Node.js v22.23.2 · Git 2.55.0</li>
+        <li>รัน <code>/workspace/hello.py</code> ได้ <code>Hello from devtools</code></li>
+      </ul>
+      <p class="cap">ผลจริงจาก Claude Code (Opus) บน Windows เครื่องตัวอย่าง เวอร์ชันที่ผู้เรียนได้อาจใหม่กว่า</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ขั้น 3: นี่ไง container ของเรา">
+  <div class="kicker">ขั้นที่ 3 · เช็กผลใน VS Code</div>
+  <h2>เปิดแถบ Containers… นี่ไง ห้องทดลองของเรา!</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/03-vscode-devtools-running.png" alt="แถบ Containers แสดง devtools กำลังรัน"></div></div>
+    <div class="col c2 vc">
+      <p>ใต้ <b>Individual Containers</b> เห็น <code>tuchsanai/devtools:2569_1 · devtools</code></p>
+      <p>ไอคอน <b style="color:var(--green)">▷ สีเขียว</b> = กำลังรัน</p>
+      <p>ใต้ <b>Images</b> เห็นแม่พิมพ์ <code>docker.io/tuchsanai/devtools</code> ที่ดาวน์โหลดมา</p>
+      <p class="small muted">ยังไม่เห็น กด Refresh ที่หัวแถบ และจดพอร์ตที่ใช้จริงไว้</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= องก์ 4: เข้าไปข้างใน + วิธีเสริม ================= -->
+<section class="slide divider" data-title="เข้าไปทำงานข้างใน">
+  <div class="kicker" style="color:#9fd8ff">ต่อจากนี้</div>
+  <h1>เข้าไปทำงานในห้องทดลอง<br>และวิธีเสริมให้เข้าใจลึกขึ้น</h1>
+  <p>เปิดประตูเข้า container ได้ 2 ทาง (VS Code และ JupyterLab) และดูเบื้องหลังว่า Claude สั่ง Docker อะไรให้เรา</p>
+</section>
+
+<section class="slide" data-title="ประตูที่ 1: Attach VS Code">
+  <div class="kicker">ประตูที่ 1 · VS Code</div>
+  <h2>คลิกขวา devtools → Attach Visual Studio Code</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/04-attach-highlight.png" alt="เมนู Attach Visual Studio Code"></div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p class="small">เปิดแถบ <b>Containers</b> หา <code>devtools</code></p></div>
+        <div class="step"><span class="num">2</span><p class="small">คลิกขวา → <b>Attach Visual Studio Code</b></p></div>
+        <div class="step"><span class="num">3</span><p class="small">หน้าต่างใหม่จะเชื่อมเข้า container แถบล่างซ้ายบอกว่าอยู่ใน Container</p></div>
+      </div>
+      <p class="small" style="margin-top:20px">อีกวิธี: <code>Ctrl+Shift+P</code> แล้วค้นหา</p>
+<pre style="font-size:16px"><button class="copy">คัดลอก</button>Dev Containers: Attach to Running Container...</pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ประตูที่ 1: ตรวจเครื่องมือ">
+  <div class="kicker">ประตูที่ 1 · ตรวจว่าเครื่องมือพร้อม</div>
+  <h2>Terminal → New Terminal แล้วรันทีละคำสั่ง</h2>
+  <div class="row">
+    <div class="col"><div class="fig"><img src="assets/05-connected.jpg" alt="VS Code เชื่อม devtools แล้ว"></div>
+      <div class="cap">แถบล่างซ้ายต้องระบุ Container และ image ของวิชา</div></div>
+    <div class="col" style="gap:14px">
+<pre><button class="copy">คัดลอก</button>whoami
+claude --version
+codex --version</pre>
+      <div class="fig"><img src="assets/05-vscode-cli-versions.jpg" alt="ผลเวอร์ชัน Claude Code และ Codex"></div>
+      <p class="small"><code>whoami</code> ต้องได้ <code>root</code> อีกสองคำสั่งต้องแสดงเวอร์ชัน</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ประตูที่ 2: JupyterLab">
+  <div class="kicker">ประตูที่ 2 · JupyterLab ในเบราว์เซอร์</div>
+  <h2>คลิกขวา devtools → Open in External Browser</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/06-jupyter-open.png" alt="เปิด External Browser เลือกพอร์ต"></div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p class="small">เลือก <b>8888 localhost:8885</b> = พอร์ต 8888 ใน container แมปมาที่ 8885 บนเครื่อง</p></div>
+        <div class="step"><span class="num">2</span><p class="small">เบราว์เซอร์เปิด <code>localhost:8885/lab</code></p></div>
+        <div class="step"><span class="num">3</span><p class="small">ที่ Launcher เลือก <b>Other → Terminal</b> (ไม่เห็นกดปุ่ม <b>+</b>)</p></div>
+      </div>
+      <div class="note info small" style="margin-top:18px">VS Code Terminal และ JupyterLab Terminal คือ shell ของ devtools <b>ตัวเดียวกัน</b> เลือกใช้ตามสะดวก</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ประตูที่ 2: Terminal">
+  <div class="kicker">ประตูที่ 2 · ตรวจเครื่องมือใน JupyterLab</div>
+  <h2>Launcher → Terminal → ตรวจเวอร์ชัน</h2>
+  <div class="row">
+    <div class="col c3" style="gap:14px">
+      <div class="fig"><img src="assets/slides/jupyter-launcher.png" alt="หน้า Launcher ของ JupyterLab"></div>
+      <div class="fig" style="flex:none"><img src="assets/slides/jupyter-versions.png" alt="ผลตรวจเครื่องมือใน Terminal" style="max-height:150px"></div>
+    </div>
+    <div class="col c2 vc" style="gap:14px">
+<pre><button class="copy">คัดลอก</button>whoami
+claude --version
+codex --version</pre>
+      <p class="small">ถ้าขึ้น <code>claude: command not found</code></p>
+<pre><button class="copy">คัดลอก</button>export PATH="$HOME/.local/bin:$PATH"
+claude --version</pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ยังไม่ติดตั้ง vs PATH">
+  <div class="kicker">เข้าใจลึกขึ้น · อาการเดียวกัน สาเหตุต่างกัน</div>
+  <h2>"ยังไม่ได้ติดตั้ง" กับ "ติดตั้งแล้วแต่ PATH ไม่เห็น"</h2>
+  <div class="row">
+    <div class="col c3"><div class="fig"><img src="assets/06-jupyter-path-vs-install.png" alt="เทียบสามสถานะ claude --version"></div>
+      <div class="cap">ภาพจริงจาก Terminal รันต่อเนื่องในหน้าต่างเดียว</div></div>
+    <div class="col c2 vc">
+      <div class="steps">
+        <div class="step"><span class="num" style="background:var(--red)">1</span><p class="small"><b>บรรทัดบน · ยังไม่ติดตั้ง</b> ไม่พบทั้ง claude และ codex → ติดตั้งให้ครบ</p></div>
+        <div class="step"><span class="num" style="background:var(--orange)">2</span><p class="small"><b>บรรทัดกลาง · PATH ยังไม่มี</b> ไฟล์อยู่ที่ <code>~/.local/bin</code> แล้ว แต่ shell ยังไม่รู้จัก</p></div>
+        <div class="step"><span class="num" style="background:var(--green)">3</span><p class="small"><b>บรรทัดล่าง · หลัง export PATH</b> เห็นเวอร์ชันทั้งคู่</p></div>
+      </div>
+      <p class="small" style="margin-top:16px">ตรวจเร็ว: เจอไฟล์แต่เรียกไม่ได้ = ปัญหา PATH</p>
+<pre><button class="copy">คัดลอก</button>ls ~/.local/bin/claude</pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="วิธีเสริม: เบื้องหลังคำสั่ง Docker">
+  <div class="kicker">วิธีเสริม · อยากเห็นเบื้องหลัง</div>
+  <h2>สิ่งที่ Claude สั่งให้เรา หน้าตาเป็นแบบนี้</h2>
+  <div class="row">
+    <div class="col c3 vc">
+<pre style="font-size:19px"><span class="hl">docker run</span> -dit --name <span class="hl">devtools</span> <span class="hl">--privileged</span> \
+  <span class="hl">-p 2222:22</span> <span class="hl">-p 8885:8888</span> \
+  <span class="hl">tuchsanai/devtools:2569_1</span>
+
+<span class="dim"># ติดตั้ง Claude Code และ Codex ข้างใน container</span>
+<span class="hl">docker exec</span> -it devtools bash -c \
+'curl -fsSL https://claude.ai/install.sh | bash &amp;&amp; npm install -g @openai/codex'</pre>
+      <p class="cap">ตัวอย่างจากพรอมต์ในหัวข้อ 4 ของ README ใช้กับ Claude Code ใน VS Code ได้เหมือนกัน (พรอมต์นั้นลบ devtools ตัวเดิมก่อนสร้างใหม่)</p>
+    </div>
+    <div class="col c2 vc">
+      <table style="font-size:19px">
+        <tr><td><code>docker run</code></td><td>ปั๊ม container จาก image</td></tr>
+        <tr><td><code>--name devtools</code></td><td>ตั้งชื่อห้องทดลอง</td></tr>
+        <tr><td><code>--privileged</code></td><td>ให้ใช้ Docker ข้างในได้</td></tr>
+        <tr><td><code>-p 2222:22</code></td><td>port เครื่องเรา : port ใน container (SSH)</td></tr>
+        <tr><td><code>-p 8885:8888</code></td><td>เปิด JupyterLab ที่ localhost:8885</td></tr>
+        <tr><td><code>tuchsanai/devtools:2569_1</code></td><td>แม่พิมพ์ของวิชา</td></tr>
+        <tr><td><code>docker exec</code></td><td>สั่งคำสั่งให้ไปรันข้างใน container</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="เริ่มใช้เครื่องมือ">
+  <div class="kicker">พร้อมใช้งาน</div>
+  <h2>ในห้องทดลอง เริ่ม Claude Code หรือ Codex ได้เลย</h2>
+  <div class="grid g2" style="margin-top:6px">
+    <div class="card"><h3>เริ่ม Claude Code</h3>
+<pre><button class="copy">คัดลอก</button>claude</pre></div>
+    <div class="card"><h3>หรือเปิดอีกแท็บใช้ Codex</h3>
+<pre><button class="copy">คัดลอก</button>codex</pre></div>
+  </div>
+  <div class="note info" style="margin-top:30px">ใช้ครั้งแรกต้อง <b>เข้าสู่ระบบ</b> ตามที่เครื่องมือแสดง การเห็นเลขเวอร์ชันยืนยันแค่ว่าติดตั้งแล้ว ยังไม่ใช่การล็อกอิน</div>
+  <div class="note ok" style="margin-top:16px">จากนี้ไป AI จะรันคำสั่งใน <b>ห้องทดลองของมัน</b> ถ้าพลาด เราลบ container แล้วสร้างใหม่จากแม่พิมพ์ได้เสมอ</div>
+</section>
+
+<!-- ================= ปิดท้าย ================= -->
+<section class="slide" data-title="เช็กลิสต์">
+  <div class="kicker">ก่อนไปทำ LAB</div>
+  <h2>เช็กลิสต์ห้องทดลองของฉัน</h2>
+  <div class="grid g2" id="check" style="gap:16px">
+    <label class="card"><input type="checkbox"><span>Docker Desktop ขึ้น <b>Engine running</b></span></label>
+    <label class="card"><input type="checkbox"><span><code>docker info</code> แสดงส่วน Server ได้</span></label>
+    <label class="card"><input type="checkbox"><span>VS Code มี Dev Containers + Container Tools</span></label>
+    <label class="card"><input type="checkbox"><span>วางพรอมต์ใน Claude Code Desktop สำเร็จ</span></label>
+    <label class="card"><input type="checkbox"><span>แถบ Containers เห็น <b>devtools</b> กำลังรัน</span></label>
+    <label class="card"><input type="checkbox"><span>จดพอร์ต SSH / Jupyter ที่ใช้จริงแล้ว</span></label>
+    <label class="card"><input type="checkbox"><span>Attach VS Code หรือเปิด JupyterLab เข้า devtools ได้</span></label>
+    <label class="card"><input type="checkbox"><span><code>claude --version</code> และ <code>codex --version</code> แสดงเวอร์ชัน</span></label>
+  </div>
+  <p class="cap" style="margin-top:16px">คลิกช่องเพื่อติ๊กระหว่างเรียน (ไม่บันทึกถาวร)</p>
+</section>
+
+<section class="slide" data-title="ปัญหาที่พบบ่อย">
+  <div class="kicker">ถ้าติดขัด</div>
+  <h2>ปัญหาที่พบบ่อย</h2>
+  <table>
+    <tr><th style="width:38%">อาการ</th><th>สาเหตุและวิธีแก้</th></tr>
+    <tr><td><code>docker info</code> ต่อ daemon ไม่ได้</td><td>Engine ยังไม่พร้อม รอ Docker Desktop ขึ้น <b>Engine running</b> แล้วลองใหม่</td></tr>
+    <tr><td>ติดตั้งแล้วแจ้งปัญหา WSL</td><td>ดูคู่มือติดตั้ง Docker Desktop สำหรับ Windows และรีสตาร์ตเครื่องหลังติดตั้ง</td></tr>
+    <tr><td>แถบ Containers ไม่เห็น devtools</td><td>กด <b>Refresh</b> และอ่านสรุปของ Claude ว่าสร้างสำเร็จหรือติดอะไร</td></tr>
+    <tr><td>พอร์ต 2222 / 8885 ถูกใช้อยู่</td><td>ใช้เลขว่างถัดไป แล้วจดเลขที่ใช้จริงไว้เปิด JupyterLab / SSH</td></tr>
+    <tr><td><code>claude: command not found</code></td><td>เช็ก <code>ls ~/.local/bin/claude</code> ถ้ามีไฟล์ให้ <code>export PATH="$HOME/.local/bin:$PATH"</code> ถ้าไม่มีให้ติดตั้งใหม่</td></tr>
+    <tr><td>ลบ container แล้วงานหาย</td><td>ไฟล์ใน container หายเมื่อลบ เก็บงานสำคัญด้วย Git / volume / backup ก่อนลบ</td></tr>
+  </table>
+</section>
+
+<section class="slide cover" data-title="ปิดท้าย" style="background-image:url('assets/slides/pain-ai-robot.jpg')">
+  <div class="shade"></div>
+  <div class="inner" style="justify-content:center">
+    <div class="kicker" style="color:#7fd3ff">กลับไปที่คำถามแรก</div>
+    <h1><span class="nw">40 เครื่อง คำสั่งเดียวกัน…</span><br><span class="nw">ตอนนี้ได้ผลเหมือนกันแล้ว</span></h1>
+    <div class="sub">ทุกคนมีห้องทดลอง Linux ชุดเดียวกัน พังได้ ลองได้ รีเซ็ตได้<br>และปล่อยให้ AI ลงมือทำงานในกล่องของมันได้อย่างสบายใจ 🚀<br><span style="font-size:22px;color:#9fb6dd">รายละเอียดทุกขั้นตอนอยู่ใน README.md · สูตรแม่พิมพ์อยู่ใน 00_Devtool_Container</span></div>
+  </div>
+</section>
+
+</div></div>
+
+<div class="zone" id="zl" title="หน้าก่อน"></div><div class="zone" id="zr" title="หน้าถัดไป"></div>
+<div id="bar"></div>
+<div id="help">← → เปลี่ยนหน้า · F เต็มจอ · O ดูทุกหน้า</div>
+<div id="hud"><button id="bp" title="หน้าก่อน (←)">‹</button><span id="count"></span><button id="bn" title="หน้าถัดไป (→)">›</button><button id="bo" title="ดูทุกหน้า (O)">▦</button><button id="bf" title="เต็มจอ (F)">⛶</button></div>
+<div id="ov"></div>
+
+<script>
+(function(){
+  const deck = document.getElementById('deck');
+  const slides = [...deck.querySelectorAll('.slide')];
+  const N = slides.length;
+  let cur = 0;
+  function fit(){
+    const s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  function go(i, push){
+    cur = Math.max(0, Math.min(N - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+    document.getElementById('count').textContent = (cur + 1) + ' / ' + N;
+    document.getElementById('bar').style.width = ((cur + 1) / N * 100) + '%';
+    if (push !== false) history.replaceState(null, '', '#' + (cur + 1));
+    document.querySelectorAll('#ov .th').forEach((t, k) => t.classList.toggle('cur', k === cur));
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1);
+  function fs(){
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+    else document.exitFullscreen && document.exitFullscreen();
+  }
+  function ov(on){ document.body.classList.toggle('ov', on === undefined ? !document.body.classList.contains('ov') : on); }
+  const ovEl = document.getElementById('ov');
+  slides.forEach((s, k) => {
+    const d = document.createElement('div'); d.className = 'th';
+    d.innerHTML = '<span>' + (k + 1) + '</span>' + (s.dataset.title || '');
+    d.onclick = () => { go(k); ov(false); };
+    ovEl.appendChild(d);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT') return;
+    const k = e.key;
+    if (['ArrowRight','PageDown',' ','Enter'].includes(k)) { e.preventDefault(); next(); }
+    else if (['ArrowLeft','PageUp','Backspace'].includes(k)) { e.preventDefault(); prev(); }
+    else if (k === 'Home') go(0);
+    else if (k === 'End') go(N - 1);
+    else if (k === 'f' || k === 'F') fs();
+    else if (k === 'o' || k === 'O') ov();
+    else if (k === 'Escape' && document.body.classList.contains('ov')) ov(false);
+  });
+  document.getElementById('bn').onclick = next;
+  document.getElementById('bp').onclick = prev;
+  document.getElementById('bf').onclick = fs;
+  document.getElementById('bo').onclick = () => ov();
+  document.getElementById('zr').onclick = next;
+  document.getElementById('zl').onclick = prev;
+  let tx = null;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', e => {
+    if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+  });
+  document.querySelectorAll('pre .copy').forEach(b => {
+    b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      const text = b.parentElement.innerText.replace(/^คัดลอก(แล้ว ✓)?\n?/, '');
+      const done = () => { b.textContent = 'คัดลอกแล้ว ✓'; setTimeout(() => b.textContent = 'คัดลอก', 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done); else done();
+    });
+  });
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1)); if (n) go(n - 1, false); });
+  fit();
+  const start = parseInt(location.hash.slice(1));
+  go(start ? start - 1 : 0, false);
+})();
+</script>
+</body>
+</html>

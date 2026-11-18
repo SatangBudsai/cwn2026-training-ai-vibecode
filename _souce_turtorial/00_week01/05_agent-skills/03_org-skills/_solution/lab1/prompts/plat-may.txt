@@ -1,0 +1,9 @@
+ฉันคือ เมย์ อรุณรัตน์ (plat-may) ทีมกลาง (platform) ฝ่าย ทีมกลาง (platform) · นี่คือโต๊ะของฉัน (novatech/desks/plat-may/)
+อ่านการ์ดของฉันก่อน: ../../people/platform/plat-may.md
+1. ลงมือทำงานจริง 1 ชิ้น: ตรวจใบแจ้งหนี้ INV-2026-0142 ตามนโยบายข้อมูลลูกค้า
+   ข้อมูลที่ใช้: ../../company-kit/customer-data-policy.md, ../../company-kit/invoices/INV-2026-0142.md, ../../company-kit/brand-guide.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ customer-data-policy ที่ .claude/skills/customer-data-policy/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: plat-may, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

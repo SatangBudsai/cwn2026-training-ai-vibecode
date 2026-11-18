@@ -1,0 +1,22 @@
+# 18-dest-typed-tokyo @ 2026-11-01 17:09:24 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- dialog "ป้อนปลายทาง":
+  - combobox "ปลายทาง" [expanded]: โตเกียว
+  - img
+  - button "ปลายทาง, เลือกสนามบินหลายแห่ง":
+    - img
+  - listbox:
+    - option "โตเกียว ญี่ปุ่น":
+      - img
+      - text: โตเกียว ญี่ปุ่น เมืองหลวงของญี่ปุ่น
+    - button "สลับปุ่มเพื่อแสดงรายการสนามบินที่อยู่ใกล้เคียงกับโตเกียว ญี่ปุ่น" [expanded]:
+      - img
+    - option "ท่าอากาศยานนานาชาติโตเกียว (HND)":
+      - img
+      - text: ท่าอากาศยานนานาชาติโตเกียว HND ห่างจากจุดหมาย 18 กม.
+    - option "ท่าอากาศยานนานาชาตินะริตะ (NRT)":
+      - img
+      - text: ท่าอากาศยานนานาชาตินะริตะ NRT ห่างจากจุดหมาย 67 กม.
+    - option "Tokyo Station":
+      - img
+      - text: Tokyo Station ห่างจากจุดหมาย 10 กม.

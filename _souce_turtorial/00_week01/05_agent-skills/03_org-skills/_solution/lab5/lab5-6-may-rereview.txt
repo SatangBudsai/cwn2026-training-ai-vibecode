@@ -1,0 +1,1 @@
+PR #1 ของ sales-nida แก้ตามที่ผมขอแล้ว ช่วยรีวิวรอบสองใน novatech/org-skills (token ของผมอยู่ใน .gitea-token) ถ้าครบแล้ว approve (ยังไม่ต้อง merge)

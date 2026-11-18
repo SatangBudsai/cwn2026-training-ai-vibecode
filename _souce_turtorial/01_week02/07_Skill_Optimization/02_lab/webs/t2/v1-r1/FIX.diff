@@ -1,0 +1,24 @@
+diff -ruN -x node_modules -x .next -x public petshop/lib/catalog.ts petshop/lib/catalog.ts
+--- petshop/lib/catalog.ts	2026-11-11 06:04:17.756138257 +0700
++++ petshop/lib/catalog.ts	2026-11-11 07:05:37.559661269 +0700
+@@ -69,7 +69,7 @@
+   const byPop = (a: Product, b: Product) => b.popularity - a.popularity;
+   const sorters: Record<SortKey, (a: Product, b: Product) => number> = {
+     popular: byPop,
+-    "price-asc": (a, b) => lowestPrice(b) - lowestPrice(a) || byPop(a, b),
++    "price-asc": (a, b) => lowestPrice(a) - lowestPrice(b) || byPop(a, b),
+     "price-desc": (a, b) => lowestPrice(b) - lowestPrice(a) || byPop(a, b),
+     rating: (a, b) => b.rating - a.rating || byPop(a, b),
+   };
+diff -ruN -x node_modules -x .next -x public petshop/lib/validation.ts petshop/lib/validation.ts
+--- petshop/lib/validation.ts	2026-11-11 06:04:17.756138257 +0700
++++ petshop/lib/validation.ts	2026-11-11 07:05:37.559661269 +0700
+@@ -52,7 +52,7 @@
+   if (!input.name.trim()) errors.name = MSG.name;
+   if (!isValidEmail(input.email)) errors.email = MSG.email;
+   if (!isValidPassword(input.password)) errors.password = MSG.password;
+-  else if (input.confirm !== input.password) errors.confirm = MSG.confirm;
++  if (input.confirm !== input.password) errors.confirm = MSG.confirm;
+   if (!input.terms) errors.terms = MSG.terms;
+   return errors;
+ }

@@ -1,0 +1,126 @@
+{
+ "goal": "ระบบจองคิวคลินิกผ่าน LINE chatbot มีแจ้งเตือนก่อนถึงคิว และหน้า dashboard ของเจ้าหน้าที่",
+ "name": "hw03-clinic-line-queue",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์และสัญญา API",
+   "size": "S",
+   "depends_on": [],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "docs/api.md",
+   "done": "มีโครงโฟลเดอร์ และ docs/api.md ระบุ API จองคิว ยกเลิก และดูคิว"
+  },
+  {
+   "id": "B02",
+   "title": "โครงฐานข้อมูลคิว แพทย์ ผู้ป่วย",
+   "size": "M",
+   "depends_on": [],
+   "skill": "review",
+   "difficulty": 3,
+   "output": "db/schema.sql",
+   "done": "สร้างตารางได้ และมีเงื่อนไขกันจองช่วงเวลาเดียวกันซ้ำ"
+  },
+  {
+   "id": "B03",
+   "title": "ข้อความตอบของบอท",
+   "size": "S",
+   "depends_on": [],
+   "skill": "best_of",
+   "difficulty": 1,
+   "output": "bot/messages.json",
+   "done": "JSON ข้อความ 8 สถานการณ์ สุภาพ ไม่เกิน 2 บรรทัดต่อข้อความ"
+  },
+  {
+   "id": "B04",
+   "title": "ภาพ rich menu ของ LINE",
+   "size": "S",
+   "depends_on": [],
+   "skill": "image",
+   "difficulty": 1,
+   "output": "bot/richmenu.png",
+   "done": "PNG มีปุ่ม 3 ปุ่ม จองคิว ดูคิว ยกเลิก"
+  },
+  {
+   "id": "B05",
+   "title": "API จองคิว ยกเลิก ดูคิว",
+   "size": "L",
+   "depends_on": [
+    "B01",
+    "B02"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "api/queue.py",
+   "done": "จองซ้ำช่วงเวลาเดียวกันไม่ได้ และตอบตามรูปแบบใน docs/api.md"
+  },
+  {
+   "id": "B06",
+   "title": "LINE webhook และขั้นตอนสนทนา",
+   "size": "M",
+   "depends_on": [
+    "B01",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "bot/webhook.py",
+   "done": "รับข้อความแล้วเรียก API ตาม docs/api.md และตอบด้วยข้อความจาก messages.json"
+  },
+  {
+   "id": "B07",
+   "title": "ตัวแจ้งเตือนก่อนถึงคิว",
+   "size": "M",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "worker/notify.py",
+   "done": "ส่งข้อความเตือนก่อนถึงคิว 30 นาที และไม่ส่งซ้ำ"
+  },
+  {
+   "id": "B08",
+   "title": "dashboard ของเจ้าหน้าที่",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "web/dashboard.html",
+   "done": "แสดงคิววันนี้ เรียกคิวถัดไป และข้ามคิวได้"
+  },
+  {
+   "id": "B09",
+   "title": "ข้อมูลทดสอบ",
+   "size": "S",
+   "depends_on": [
+    "B02"
+   ],
+   "skill": "cyolo",
+   "difficulty": 1,
+   "output": "tests/seed.sql",
+   "done": "เพิ่มแพทย์ 3 คน และคิวตัวอย่าง 20 คิวลงฐานข้อมูลได้"
+  },
+  {
+   "id": "B10",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "จำลองผู้ป่วยจอง ได้รับแจ้งเตือน และเจ้าหน้าที่เรียกคิว ผ่านครบ บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

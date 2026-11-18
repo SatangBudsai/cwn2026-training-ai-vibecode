@@ -1,0 +1,110 @@
+{
+ "w": 1280,
+ "h": 720,
+ "fps": 6,
+ "outW": 1000,
+ "scenes": [
+  {
+   "img": "l6-all.png",
+   "dur": 7,
+   "browser": "localhost:3300/novatech/org-skills/pulls",
+   "title": "PR ทดสอบด่าน 4 แบบ",
+   "sub": "#9 แก้ผ่านเว็บ ❌ · #8 บัญชีถูกยืม ❌ · #7 ปกติ merge แล้ว ✅ · #6 skill กว้างเกินไป ผ่าน ✅ · #5 งานลวก ❌",
+   "zoom": [
+    80,
+    370,
+    2000,
+    450
+   ],
+   "hl": [
+    [
+     140,
+     380,
+     1900,
+     75
+    ],
+    [
+     140,
+     470,
+     1900,
+     75
+    ],
+    [
+     140,
+     745,
+     1900,
+     75
+    ]
+   ]
+  },
+  {
+   "img": "pr8-security.png",
+   "dur": 9,
+   "browser": "localhost:3300/novatech/org-skills/actions/runs/19",
+   "title": "PR #8 · ด่าน security จับได้ 2 จุด",
+   "sub": "คำสั่งซ่อนในคอมเมนต์ HTML + สคริปต์ส่ง .gitea-token ไป evil.example",
+   "zoom": [
+    40,
+    240,
+    2030,
+    590
+   ],
+   "hl": [
+    [
+     690,
+     670,
+     1320,
+     160
+    ]
+   ]
+  },
+  {
+   "img": "pr9-frontmatter.png",
+   "dur": 7,
+   "browser": "localhost:3300/novatech/org-skills/actions/runs/20",
+   "title": "PR #9 · แก้ผ่านเว็บ ติดด่าน frontmatter",
+   "sub": "หัวไฟล์ไม่ตรงรูปแบบ และแก้ plugin แล้วไม่ขึ้น version · ด่าน security ผ่าน",
+   "zoom": [
+    40,
+    240,
+    2030,
+    570
+   ],
+   "hl": [
+    [
+     730,
+     605,
+     1320,
+     95
+    ]
+   ]
+  },
+  {
+   "img": "l6-tags.png",
+   "dur": 6,
+   "browser": "localhost:3300/novatech/org-skills/tags",
+   "title": "คลังออกเวอร์ชันอัตโนมัติ",
+   "sub": "v1.0.0 หลัง merge CI · v1.0.1 หลัง merge PR #7",
+   "zoom": [
+    80,
+    300,
+    2000,
+    400
+   ],
+   "hl": [
+    [
+     100,
+     480,
+     1900,
+     100
+    ],
+    [
+     100,
+     582,
+     1900,
+     100
+    ]
+   ]
+  }
+ ]
+}

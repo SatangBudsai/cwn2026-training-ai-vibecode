@@ -1,0 +1,98 @@
+{
+  "id": "TC-GIFT-09",
+  "title": "TC-GIFT-09 ค่าผิดรูปแบบในช่องมูลค่าต้องเตือนก่อนส่ง ตัวอย่างบัตรไม่แสดงค่าผิด",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "`abc`, `-500`, `0`: มีคำเตือนที่ช่องมูลค่าก่อนส่ง · ไม่มี request ซื้อบัตร · ไม่ออกบัตร · ตัวอย่างบัตรไม่แสดง \"฿abc\" หรือ \"฿-500\"\n`1e3`: มีคำเตือนก่อนส่ง · ไม่ออกบัตร ฿1,000\n`1,000`: มีคำเตือนก่อนส่ง หรือถ้า F-สร้าง 20 ตอบว่ารับ ต้องออกบัตร ฿1,000 · ห้ามดูปกติแล้วส่งไม่ผ่าน\nทุกค่าที่ถูกเตือน: ไม่มีรหัสบัตรใหม่ · ยอด U03 ฿9,999 · แต้ม 250",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 669,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] · F-สร้าง 20",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 669,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "BR-41, BR-43, FR-47",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 669,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R74",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 669,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 669,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 669,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 47595,
+  "at": "2026-11-06T03:02:26.863Z",
+  "attempts": [],
+  "errors": [
+    "Error: มูลค่า 1,000 ต้องเตือนก่อนส่ง\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+    "Error: ตัวอย่างบัตรห้ามแสดง ฿abc\n\nexpect(locator).not.toContainText(expected) failed\n\nLocator: getByTestId('giftcard-preview')\nExpected pattern: not /฿\\s*abc/\nReceived string: \"ตัวอย่างบัตรสบายใจ สปา฿abcGift Card\"\nTimeout: 6000ms\n\nCall log:\n  - ตัวอย่างบัตรห้ามแสดง ฿abc getByTestId('giftcard-preview') with timeout 6000ms\n  - waiting for getByTestId('giftcard-preview')\n    16 × locator resolved to <div data-e2e-prev-outline=\"\" class=\"Wp2jEG_previewCol\" data-testid=\"giftcard-preview\">…</div>\n       - unexpected value \"ตัวอย่างบัตรสบายใจ สปา฿abcGift Card\"\n",
+    "Error: มูลค่า abc ต้องเตือนก่อนส่ง\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+    "Error: ตัวอย่างบัตรห้ามแสดง ฿-500\n\nexpect(locator).not.toContainText(expected) failed\n\nLocator: getByTestId('giftcard-preview')\nExpected pattern: not /฿\\s*-\\s*500/\nReceived string: \"ตัวอย่างบัตรสบายใจ สปา฿-500Gift Card\"\nTimeout: 6000ms\n\nCall log:\n  - ตัวอย่างบัตรห้ามแสดง ฿-500 getByTestId('giftcard-preview') with timeout 6000ms\n  - waiting for getByTestId('giftcard-preview')\n    16 × locator resolved to <div data-e2e-prev-outline=\"\" class=\"Wp2jEG_previewCol\" data-testid=\"giftcard-preview\">…</div>\n       - unexpected value \"ตัวอย่างบัตรสบายใจ สปา฿-500Gift Card\"\n",
+    "Error: มูลค่า -500 ต้องเตือนก่อนส่ง\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+    "Error: มูลค่า 0 ต้องเตือนก่อนส่ง\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+    "Error: มูลค่า 1e3 ต้องเตือนก่อนส่ง\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1"
+  ],
+  "steps": [
+    "1. U03 เปิด /gift-cards และเปิดดู Network",
+    "มูลค่า 1,000 · 2. พิมพ์ค่า แล้วดูตัวอย่างบัตรก่อนกดซื้อ",
+    "มูลค่า 1,000 · 3. กดซื้อ ดูข้อความและ request ✗",
+    "มูลค่า 1,000 · 4. ล้างช่อง",
+    "มูลค่า abc · 2. พิมพ์ค่า แล้วดูตัวอย่างบัตรก่อนกดซื้อ ✗",
+    "มูลค่า abc · 3. กดซื้อ ดูข้อความและ request ✗",
+    "มูลค่า abc · 4. ล้างช่อง",
+    "มูลค่า -500 · 2. พิมพ์ค่า แล้วดูตัวอย่างบัตรก่อนกดซื้อ ✗",
+    "มูลค่า -500 · 3. กดซื้อ ดูข้อความและ request ✗",
+    "มูลค่า -500 · 4. ล้างช่อง",
+    "มูลค่า 0 · 2. พิมพ์ค่า แล้วดูตัวอย่างบัตรก่อนกดซื้อ",
+    "มูลค่า 0 · 3. กดซื้อ ดูข้อความและ request ✗",
+    "มูลค่า 0 · 4. ล้างช่อง",
+    "มูลค่า 1e3 · 2. พิมพ์ค่า แล้วดูตัวอย่างบัตรก่อนกดซื้อ",
+    "มูลค่า 1e3 · 3. กดซื้อ ดูข้อความและ request ✗",
+    "มูลค่า 1e3 · 4. ล้างช่อง",
+    "5. ดูยอดสะสมและแต้ม U03 แล้วรีโหลด"
+  ]
+}

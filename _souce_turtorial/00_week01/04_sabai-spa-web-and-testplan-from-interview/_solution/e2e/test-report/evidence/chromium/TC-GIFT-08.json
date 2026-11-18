@@ -1,0 +1,298 @@
+{
+  "id": "TC-GIFT-08",
+  "checks": [
+    {
+      "n": 1,
+      "label": "หน้าเว็บ ฿499 ไม่ออกบัตร",
+      "pass": true,
+      "actual": "ข้ามไปยังเนื้อหา สบายใจ สปา บริการ Bangkok Relax นักบำบัด Gift Card เรื่องราวของเรา Wallet บัญชีของฉัน เสียงชั่วคราว TH EN 中文 จองคิว GIFT CARD มอบความสบายใจเป็นของขวัญ เลือกลายที่ใช่ กำหนดมูลค่าเอง แล้วส่งให้คนที่คุณห่วงใย บัตรเปิดใช้ได้ทันทีหลังชำระ เลือกบัตรของคุณ ซื้อ GIFT CARD ออกแบบบัตรของคุณ ตัวอย่างบัตรจะเปลี่ยนตามที่คุณเลือก ตัวอย่างบัตร สบายใจ สปา ฿499 Gift Card 1 เลือกลาย กล้วยไม้ บัว ทอง 2 กำหนดมูลค่า มูลค่า (บาท) จำนวนเต็ม ฿500–฿10,000 ทีละ ฿1 ฿500 ฿1,000 ฿2,000 ฿5,000 ฿10,000 3 ส่งถ",
+      "shot": "shots/chromium/TC-GIFT-08/001.jpg",
+      "actor": "main",
+      "t": 5480
+    },
+    {
+      "n": 2,
+      "label": "หน้าเว็บ ฿10001 ไม่ออกบัตร",
+      "pass": true,
+      "actual": "ข้ามไปยังเนื้อหา สบายใจ สปา บริการ Bangkok Relax นักบำบัด Gift Card เรื่องราวของเรา Wallet บัญชีของฉัน เสียงชั่วคราว TH EN 中文 จองคิว GIFT CARD มอบความสบายใจเป็นของขวัญ เลือกลายที่ใช่ กำหนดมูลค่าเอง แล้วส่งให้คนที่คุณห่วงใย บัตรเปิดใช้ได้ทันทีหลังชำระ เลือกบัตรของคุณ ซื้อ GIFT CARD ออกแบบบัตรของคุณ ตัวอย่างบัตรจะเปลี่ยนตามที่คุณเลือก ตัวอย่างบัตร สบายใจ สปา ฿10,001 Gift Card 1 เลือกลาย กล้วยไม้ บัว ทอง 2 กำหนดมูลค่า มูลค่า (บาท) จำนวนเต็ม ฿500–฿10,000 ทีละ ฿1 ฿500 ฿1,000 ฿2,000 ฿5,000 ฿10,000 3 ส",
+      "shot": "shots/chromium/TC-GIFT-08/002.jpg",
+      "actor": "main",
+      "t": 8256
+    },
+    {
+      "n": 3,
+      "label": "หน้าเว็บ ฿2149.99 ไม่ออกบัตร",
+      "pass": true,
+      "actual": "ข้ามไปยังเนื้อหา สบายใจ สปา บริการ Bangkok Relax นักบำบัด Gift Card เรื่องราวของเรา Wallet บัญชีของฉัน เสียงชั่วคราว TH EN 中文 จองคิว GIFT CARD มอบความสบายใจเป็นของขวัญ เลือกลายที่ใช่ กำหนดมูลค่าเอง แล้วส่งให้คนที่คุณห่วงใย บัตรเปิดใช้ได้ทันทีหลังชำระ เลือกบัตรของคุณ ซื้อ GIFT CARD ออกแบบบัตรของคุณ ตัวอย่างบัตรจะเปลี่ยนตามที่คุณเลือก ตัวอย่างบัตร สบายใจ สปา ฿2149.99 Gift Card 1 เลือกลาย กล้วยไม้ บัว ทอง 2 กำหนดมูลค่า มูลค่า (บาท) จำนวนเต็ม ฿500–฿10,000 ทีละ ฿1 ฿500 ฿1,000 ฿2,000 ฿5,000 ฿10,000 3 ",
+      "shot": "shots/chromium/TC-GIFT-08/003.jpg",
+      "actor": "main",
+      "t": 11042
+    },
+    {
+      "n": 4,
+      "label": "หน้าเว็บ ฿2150.50 ไม่ออกบัตร",
+      "pass": true,
+      "actual": "ข้ามไปยังเนื้อหา สบายใจ สปา บริการ Bangkok Relax นักบำบัด Gift Card เรื่องราวของเรา Wallet บัญชีของฉัน เสียงชั่วคราว TH EN 中文 จองคิว GIFT CARD มอบความสบายใจเป็นของขวัญ เลือกลายที่ใช่ กำหนดมูลค่าเอง แล้วส่งให้คนที่คุณห่วงใย บัตรเปิดใช้ได้ทันทีหลังชำระ เลือกบัตรของคุณ ซื้อ GIFT CARD ออกแบบบัตรของคุณ ตัวอย่างบัตรจะเปลี่ยนตามที่คุณเลือก ตัวอย่างบัตร สบายใจ สปา ฿2150.50 Gift Card 1 เลือกลาย กล้วยไม้ บัว ทอง 2 กำหนดมูลค่า มูลค่า (บาท) จำนวนเต็ม ฿500–฿10,000 ทีละ ฿1 ฿500 ฿1,000 ฿2,000 ฿5,000 ฿10,000 3 ",
+      "shot": "shots/chromium/TC-GIFT-08/004.jpg",
+      "actor": "main",
+      "t": 13806
+    },
+    {
+      "n": 5,
+      "label": "หน้าเว็บ ค่าที่ผิดทุกค่าไม่ได้สร้างบัตรใหม่",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-08/005.jpg",
+      "actor": "main",
+      "t": 14756
+    },
+    {
+      "n": 6,
+      "label": "API ฿499 (ส่งเป็นข้อความ) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/006.jpg",
+      "actor": "main",
+      "t": 15726
+    },
+    {
+      "n": 7,
+      "label": "API ฿499 (ส่งเป็นตัวเลข) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/007.jpg",
+      "actor": "main",
+      "t": 16690
+    },
+    {
+      "n": 8,
+      "label": "API ฿10001 (ส่งเป็นข้อความ) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/008.jpg",
+      "actor": "main",
+      "t": 17639
+    },
+    {
+      "n": 9,
+      "label": "API ฿10001 (ส่งเป็นตัวเลข) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/009.jpg",
+      "actor": "main",
+      "t": 18590
+    },
+    {
+      "n": 10,
+      "label": "API ฿2149.99 (ส่งเป็นข้อความ) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/010.jpg",
+      "actor": "main",
+      "t": 19541
+    },
+    {
+      "n": 11,
+      "label": "API ฿2149.99 (ส่งเป็นตัวเลข) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/011.jpg",
+      "actor": "main",
+      "t": 20489
+    },
+    {
+      "n": 12,
+      "label": "API ฿2150.50 (ส่งเป็นข้อความ) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/012.jpg",
+      "actor": "main",
+      "t": 21441
+    },
+    {
+      "n": 13,
+      "label": "API ฿2150.50 (ส่งเป็นตัวเลข) ถูกปฏิเสธ 4xx เพราะมูลค่าไม่ถูกต้อง",
+      "pass": true,
+      "actual": "{\"status\":422,\"error\":{\"code\":\"giftcard-amount-invalid\",\"message\":\"มูลค่าต้องเป็นจำนวนเต็ม ฿500–฿10,000\"}}",
+      "shot": "shots/chromium/TC-GIFT-08/013.jpg",
+      "actor": "main",
+      "t": 22395
+    },
+    {
+      "n": 14,
+      "label": "หลังถูกปฏิเสธครบ U03 ยอดสะสม ฿9,999 (ทันที)",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-08/014.jpg",
+      "actor": "main",
+      "t": 24007
+    },
+    {
+      "n": 15,
+      "label": "หลังถูกปฏิเสธครบ U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-08/015.jpg",
+      "actor": "main",
+      "t": 24988
+    },
+    {
+      "n": 16,
+      "label": "หลังถูกปฏิเสธครบ U03 ยอดสะสม ฿9,999 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-08/016.jpg",
+      "actor": "main",
+      "t": 26587
+    },
+    {
+      "n": 17,
+      "label": "หลังถูกปฏิเสธครบ U03 แต้ม 250 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-08/017.jpg",
+      "actor": "main",
+      "t": 27571
+    },
+    {
+      "n": 18,
+      "label": "ซื้อ ฿500 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-5B6K8F2H35",
+      "shot": "shots/chromium/TC-GIFT-08/018.jpg",
+      "actor": "main",
+      "t": 30326
+    },
+    {
+      "n": 19,
+      "label": "ซื้อ ฿500 ยอดบัตรตรงมูลค่า",
+      "pass": true,
+      "actual": "฿500",
+      "shot": "shots/chromium/TC-GIFT-08/019.jpg",
+      "actor": "main",
+      "t": 33008
+    },
+    {
+      "n": 20,
+      "label": "ซื้อ ฿501 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-LN4HBNAL3Q",
+      "shot": "shots/chromium/TC-GIFT-08/020.jpg",
+      "actor": "main",
+      "t": 35775
+    },
+    {
+      "n": 21,
+      "label": "ซื้อ ฿501 ยอดบัตรตรงมูลค่า",
+      "pass": true,
+      "actual": "฿501",
+      "shot": "shots/chromium/TC-GIFT-08/021.jpg",
+      "actor": "main",
+      "t": 38474
+    },
+    {
+      "n": 22,
+      "label": "ซื้อ ฿2150 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-UTWAUSKADN",
+      "shot": "shots/chromium/TC-GIFT-08/022.jpg",
+      "actor": "main",
+      "t": 41211
+    },
+    {
+      "n": 23,
+      "label": "ซื้อ ฿2150 ยอดบัตรตรงมูลค่า",
+      "pass": true,
+      "actual": "฿2,150",
+      "shot": "shots/chromium/TC-GIFT-08/023.jpg",
+      "actor": "main",
+      "t": 43907
+    },
+    {
+      "n": 24,
+      "label": "ซื้อ ฿9999 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-RDHBMWUJ8J",
+      "shot": "shots/chromium/TC-GIFT-08/024.jpg",
+      "actor": "main",
+      "t": 46672
+    },
+    {
+      "n": 25,
+      "label": "ซื้อ ฿9999 ยอดบัตรตรงมูลค่า",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-08/025.jpg",
+      "actor": "main",
+      "t": 49373
+    },
+    {
+      "n": 26,
+      "label": "ซื้อ ฿10000 ได้รหัสบัตรใหม่",
+      "pass": true,
+      "actual": "GIFT-LX9DJTTA4F",
+      "shot": "shots/chromium/TC-GIFT-08/026.jpg",
+      "actor": "main",
+      "t": 52155
+    },
+    {
+      "n": 27,
+      "label": "ซื้อ ฿10000 ยอดบัตรตรงมูลค่า",
+      "pass": true,
+      "actual": "฿10,000",
+      "shot": "shots/chromium/TC-GIFT-08/027.jpg",
+      "actor": "main",
+      "t": 54839
+    },
+    {
+      "n": 28,
+      "label": "ยิง ฿500 ไม่มี session (รอคำตอบร้าน ไม่นับเป็นข้อล้ม)",
+      "pass": true,
+      "actual": "สถานะ 201 รหัส GIFT-9PAPJFRGKB",
+      "shot": "shots/chromium/TC-GIFT-08/028.jpg",
+      "actor": "main",
+      "t": 55805
+    },
+    {
+      "n": 29,
+      "label": "หลังซื้อครบ U03 ยอดสะสม ฿9,999 (ทันที)",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-08/029.jpg",
+      "actor": "main",
+      "t": 57421
+    },
+    {
+      "n": 30,
+      "label": "หลังซื้อครบ U03 ระดับ Silver (ทันที)",
+      "pass": true,
+      "actual": "Silver",
+      "shot": "shots/chromium/TC-GIFT-08/030.jpg",
+      "actor": "main",
+      "t": 58403
+    },
+    {
+      "n": 31,
+      "label": "หลังซื้อครบ U03 ยอดสะสม ฿9,999 (หลังรีโหลด)",
+      "pass": true,
+      "actual": "฿9,999",
+      "shot": "shots/chromium/TC-GIFT-08/031.jpg",
+      "actor": "main",
+      "t": 59908
+    },
+    {
+      "n": 32,
+      "label": "หลังซื้อครบ U03 ระดับ Silver (หลังรีโหลด)",
+      "pass": true,
+      "actual": "Silver",
+      "shot": "shots/chromium/TC-GIFT-08/032.jpg",
+      "actor": "main",
+      "t": 60888
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GIFT-08/main.webm"
+    }
+  }
+}

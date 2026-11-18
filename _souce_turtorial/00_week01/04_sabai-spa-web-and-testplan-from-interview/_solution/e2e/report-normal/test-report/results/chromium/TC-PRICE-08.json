@@ -1,0 +1,78 @@
+{
+  "id": "TC-PRICE-08",
+  "title": "TC-PRICE-08 ปีของสิทธิ์เดือนเกิดนับตามปีปฏิทินของวันนัด",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "นัด 20 ม.ค. 2026: ฿1,000 − 20% (฿200) = ฿800\nนัด 25 ม.ค. 2026: ใช้ซ้ำในปี 2026 ไม่ได้ · ฿1,000 − 0% = ฿1,000 (ถ้าไม่กันจะได้ ฿800)\nนัด 5 ม.ค. 2027 จองจากวันที่ 20 ธ.ค. 2026: เลือกได้ · ฿1,000 − 20% (฿200) = ฿800 (ถ้าใช้ปีของวันจองจะได้ ฿1,000)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 741,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-12 · [R] ⚠️TD-04 · [R] ⚠️D-24",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 741,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-33, BR-27",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 741,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "—",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 741,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 741,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 741,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 26503,
+  "at": "2026-11-06T02:26:31.848Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "เตรียม: ล็อก 5 ม.ค. 2026 แล้วรีเซ็ต",
+    "1. U06 จอง S01 20 ม.ค. 2026 เลือกเดือนเกิด ยืนยัน รีโหลด",
+    "2. U06 จอง S01 25 ม.ค. 2026 พยายามเลือกเดือนเกิด ไม่ยืนยัน",
+    "3. ล็อก 20 ธ.ค. 2026 โดยไม่รีเซ็ต",
+    "4. U06 จอง S01 5 ม.ค. 2027 เลือกเดือนเกิด อ่านยอด ยืนยัน รีโหลด"
+  ]
+}

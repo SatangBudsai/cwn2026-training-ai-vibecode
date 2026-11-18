@@ -1,0 +1,6 @@
+# บังคับ LF: start.sh และสคริปต์ที่ COPY เข้า image ต้องไม่มี CRLF (Windows checkout ไม่งั้น container start ไม่ได้)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary

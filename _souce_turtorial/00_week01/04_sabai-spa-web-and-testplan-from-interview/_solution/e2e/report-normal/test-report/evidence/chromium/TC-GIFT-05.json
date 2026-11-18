@@ -1,0 +1,1006 @@
+{
+  "id": "TC-GIFT-05",
+  "checks": [
+    {
+      "n": 1,
+      "label": "กรณี ก รอบ 1 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/001.jpg",
+      "actor": "main",
+      "t": 10005
+    },
+    {
+      "n": 2,
+      "label": "กรณี ก รอบ 1 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/002.jpg",
+      "actor": "U03",
+      "t": 11467
+    },
+    {
+      "n": 3,
+      "label": "กรณี ก รอบ 1 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":\"JGMMEZFS\",\"status\":201},\"U03\":{\"code\":null,\"status\":409}}",
+      "shot": "shots/chromium/TC-GIFT-05/003.jpg",
+      "actor": "main",
+      "t": 13085
+    },
+    {
+      "n": 4,
+      "label": "กรณี ก รอบ 1 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "409",
+      "shot": "shots/chromium/TC-GIFT-05/004.jpg",
+      "actor": "U03",
+      "t": 13798
+    },
+    {
+      "n": 5,
+      "label": "กรณี ก รอบ 1 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง",
+      "shot": "shots/chromium/TC-GIFT-05/005.jpg",
+      "actor": "U03",
+      "t": 14799
+    },
+    {
+      "n": 6,
+      "label": "กรณี ก รอบ 1 บัตรเหลือ ฿200",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/006.jpg",
+      "actor": "main",
+      "t": 17892
+    },
+    {
+      "n": 7,
+      "label": "กรณี ก รอบ 1 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"JGMMEZFS\"]",
+      "shot": "shots/chromium/TC-GIFT-05/007.jpg",
+      "actor": "owner",
+      "t": 19416
+    },
+    {
+      "n": 8,
+      "label": "กรณี ก รอบ 1 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"JGMMEZFS\"]",
+      "shot": "shots/chromium/TC-GIFT-05/008.jpg",
+      "actor": "owner",
+      "t": 21183
+    },
+    {
+      "n": 9,
+      "label": "กรณี ก รอบ 1 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/009.jpg",
+      "actor": "main",
+      "t": 23016
+    },
+    {
+      "n": 10,
+      "label": "กรณี ก รอบ 1 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/010.jpg",
+      "actor": "U03",
+      "t": 24412
+    },
+    {
+      "n": 11,
+      "label": "กรณี ก รอบ 1 บัตรเหลือ ฿200 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/011.jpg",
+      "actor": "main",
+      "t": 27418
+    },
+    {
+      "n": 12,
+      "label": "กรณี ก รอบ 2 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/012.jpg",
+      "actor": "main",
+      "t": 36293
+    },
+    {
+      "n": 13,
+      "label": "กรณี ก รอบ 2 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/013.jpg",
+      "actor": "U03",
+      "t": 37725
+    },
+    {
+      "n": 14,
+      "label": "กรณี ก รอบ 2 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":\"ER6MJGYV\",\"status\":201},\"U03\":{\"code\":null,\"status\":409}}",
+      "shot": "shots/chromium/TC-GIFT-05/014.jpg",
+      "actor": "main",
+      "t": 39313
+    },
+    {
+      "n": 15,
+      "label": "กรณี ก รอบ 2 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "409",
+      "shot": "shots/chromium/TC-GIFT-05/015.jpg",
+      "actor": "U03",
+      "t": 40022
+    },
+    {
+      "n": 16,
+      "label": "กรณี ก รอบ 2 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง",
+      "shot": "shots/chromium/TC-GIFT-05/016.jpg",
+      "actor": "U03",
+      "t": 41025
+    },
+    {
+      "n": 17,
+      "label": "กรณี ก รอบ 2 บัตรเหลือ ฿200",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/017.jpg",
+      "actor": "main",
+      "t": 44013
+    },
+    {
+      "n": 18,
+      "label": "กรณี ก รอบ 2 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"ER6MJGYV\"]",
+      "shot": "shots/chromium/TC-GIFT-05/018.jpg",
+      "actor": "owner",
+      "t": 45478
+    },
+    {
+      "n": 19,
+      "label": "กรณี ก รอบ 2 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"ER6MJGYV\"]",
+      "shot": "shots/chromium/TC-GIFT-05/019.jpg",
+      "actor": "owner",
+      "t": 47234
+    },
+    {
+      "n": 20,
+      "label": "กรณี ก รอบ 2 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/020.jpg",
+      "actor": "main",
+      "t": 49062
+    },
+    {
+      "n": 21,
+      "label": "กรณี ก รอบ 2 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/021.jpg",
+      "actor": "U03",
+      "t": 50322
+    },
+    {
+      "n": 22,
+      "label": "กรณี ก รอบ 2 บัตรเหลือ ฿200 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/022.jpg",
+      "actor": "main",
+      "t": 53261
+    },
+    {
+      "n": 23,
+      "label": "กรณี ก รอบ 3 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/023.jpg",
+      "actor": "main",
+      "t": 62368
+    },
+    {
+      "n": 24,
+      "label": "กรณี ก รอบ 3 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/024.jpg",
+      "actor": "U03",
+      "t": 63830
+    },
+    {
+      "n": 25,
+      "label": "กรณี ก รอบ 3 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":\"4B5G4HNS\",\"status\":201},\"U03\":{\"code\":null,\"status\":409}}",
+      "shot": "shots/chromium/TC-GIFT-05/025.jpg",
+      "actor": "main",
+      "t": 65449
+    },
+    {
+      "n": 26,
+      "label": "กรณี ก รอบ 3 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "409",
+      "shot": "shots/chromium/TC-GIFT-05/026.jpg",
+      "actor": "U03",
+      "t": 66183
+    },
+    {
+      "n": 27,
+      "label": "กรณี ก รอบ 3 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง",
+      "shot": "shots/chromium/TC-GIFT-05/027.jpg",
+      "actor": "U03",
+      "t": 67189
+    },
+    {
+      "n": 28,
+      "label": "กรณี ก รอบ 3 บัตรเหลือ ฿200",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/028.jpg",
+      "actor": "main",
+      "t": 70182
+    },
+    {
+      "n": 29,
+      "label": "กรณี ก รอบ 3 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"4B5G4HNS\"]",
+      "shot": "shots/chromium/TC-GIFT-05/029.jpg",
+      "actor": "owner",
+      "t": 71661
+    },
+    {
+      "n": 30,
+      "label": "กรณี ก รอบ 3 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"4B5G4HNS\"]",
+      "shot": "shots/chromium/TC-GIFT-05/030.jpg",
+      "actor": "owner",
+      "t": 73392
+    },
+    {
+      "n": 31,
+      "label": "กรณี ก รอบ 3 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/031.jpg",
+      "actor": "main",
+      "t": 75179
+    },
+    {
+      "n": 32,
+      "label": "กรณี ก รอบ 3 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/032.jpg",
+      "actor": "U03",
+      "t": 76553
+    },
+    {
+      "n": 33,
+      "label": "กรณี ก รอบ 3 บัตรเหลือ ฿200 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/033.jpg",
+      "actor": "main",
+      "t": 79517
+    },
+    {
+      "n": 34,
+      "label": "กรณี ก รอบ 4 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/034.jpg",
+      "actor": "main",
+      "t": 88195
+    },
+    {
+      "n": 35,
+      "label": "กรณี ก รอบ 4 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/035.jpg",
+      "actor": "U03",
+      "t": 89657
+    },
+    {
+      "n": 36,
+      "label": "กรณี ก รอบ 4 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":\"V55YUSXG\",\"status\":201},\"U03\":{\"code\":null,\"status\":409}}",
+      "shot": "shots/chromium/TC-GIFT-05/036.jpg",
+      "actor": "main",
+      "t": 91267
+    },
+    {
+      "n": 37,
+      "label": "กรณี ก รอบ 4 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "409",
+      "shot": "shots/chromium/TC-GIFT-05/037.jpg",
+      "actor": "U03",
+      "t": 91968
+    },
+    {
+      "n": 38,
+      "label": "กรณี ก รอบ 4 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง",
+      "shot": "shots/chromium/TC-GIFT-05/038.jpg",
+      "actor": "U03",
+      "t": 92953
+    },
+    {
+      "n": 39,
+      "label": "กรณี ก รอบ 4 บัตรเหลือ ฿200",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/039.jpg",
+      "actor": "main",
+      "t": 95931
+    },
+    {
+      "n": 40,
+      "label": "กรณี ก รอบ 4 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"V55YUSXG\"]",
+      "shot": "shots/chromium/TC-GIFT-05/040.jpg",
+      "actor": "owner",
+      "t": 97391
+    },
+    {
+      "n": 41,
+      "label": "กรณี ก รอบ 4 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"V55YUSXG\"]",
+      "shot": "shots/chromium/TC-GIFT-05/041.jpg",
+      "actor": "owner",
+      "t": 99126
+    },
+    {
+      "n": 42,
+      "label": "กรณี ก รอบ 4 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/042.jpg",
+      "actor": "main",
+      "t": 101028
+    },
+    {
+      "n": 43,
+      "label": "กรณี ก รอบ 4 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/043.jpg",
+      "actor": "U03",
+      "t": 102301
+    },
+    {
+      "n": 44,
+      "label": "กรณี ก รอบ 4 บัตรเหลือ ฿200 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/044.jpg",
+      "actor": "main",
+      "t": 105246
+    },
+    {
+      "n": 45,
+      "label": "กรณี ก รอบ 5 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/045.jpg",
+      "actor": "main",
+      "t": 113944
+    },
+    {
+      "n": 46,
+      "label": "กรณี ก รอบ 5 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/046.jpg",
+      "actor": "U03",
+      "t": 115389
+    },
+    {
+      "n": 47,
+      "label": "กรณี ก รอบ 5 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":null,\"status\":409},\"U03\":{\"code\":\"7FY9YZ9R\",\"status\":201}}",
+      "shot": "shots/chromium/TC-GIFT-05/047.jpg",
+      "actor": "main",
+      "t": 116996
+    },
+    {
+      "n": 48,
+      "label": "กรณี ก รอบ 5 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "409",
+      "shot": "shots/chromium/TC-GIFT-05/048.jpg",
+      "actor": "main",
+      "t": 117944
+    },
+    {
+      "n": 49,
+      "label": "กรณี ก รอบ 5 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคาเปลี่ยน กรุณาดูสรุปอีกครั้ง",
+      "shot": "shots/chromium/TC-GIFT-05/049.jpg",
+      "actor": "main",
+      "t": 118930
+    },
+    {
+      "n": 50,
+      "label": "กรณี ก รอบ 5 บัตรเหลือ ฿200",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/050.jpg",
+      "actor": "main",
+      "t": 121630
+    },
+    {
+      "n": 51,
+      "label": "กรณี ก รอบ 5 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"7FY9YZ9R\"]",
+      "shot": "shots/chromium/TC-GIFT-05/051.jpg",
+      "actor": "owner",
+      "t": 123074
+    },
+    {
+      "n": 52,
+      "label": "กรณี ก รอบ 5 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"7FY9YZ9R\"]",
+      "shot": "shots/chromium/TC-GIFT-05/052.jpg",
+      "actor": "owner",
+      "t": 124809
+    },
+    {
+      "n": 53,
+      "label": "กรณี ก รอบ 5 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/053.jpg",
+      "actor": "main",
+      "t": 126611
+    },
+    {
+      "n": 54,
+      "label": "กรณี ก รอบ 5 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/054.jpg",
+      "actor": "U03",
+      "t": 127883
+    },
+    {
+      "n": 55,
+      "label": "กรณี ก รอบ 5 บัตรเหลือ ฿200 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿200",
+      "shot": "shots/chromium/TC-GIFT-05/055.jpg",
+      "actor": "main",
+      "t": 130825
+    },
+    {
+      "n": 56,
+      "label": "กรณี ข รอบ 1 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/056.jpg",
+      "actor": "main",
+      "t": 139430
+    },
+    {
+      "n": 57,
+      "label": "กรณี ข รอบ 1 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/057.jpg",
+      "actor": "U03",
+      "t": 140885
+    },
+    {
+      "n": 58,
+      "label": "กรณี ข รอบ 1 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":null,\"status\":422},\"U03\":{\"code\":\"WRD2CG9B\",\"status\":201}}",
+      "shot": "shots/chromium/TC-GIFT-05/058.jpg",
+      "actor": "main",
+      "t": 142493
+    },
+    {
+      "n": 59,
+      "label": "กรณี ข รอบ 1 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "422",
+      "shot": "shots/chromium/TC-GIFT-05/059.jpg",
+      "actor": "main",
+      "t": 143445
+    },
+    {
+      "n": 60,
+      "label": "กรณี ข รอบ 1 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน",
+      "shot": "shots/chromium/TC-GIFT-05/060.jpg",
+      "actor": "main",
+      "t": 144425
+    },
+    {
+      "n": 61,
+      "label": "กรณี ข รอบ 1 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/061.jpg",
+      "actor": "main",
+      "t": 147143
+    },
+    {
+      "n": 62,
+      "label": "กรณี ข รอบ 1 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"WRD2CG9B\"]",
+      "shot": "shots/chromium/TC-GIFT-05/062.jpg",
+      "actor": "owner",
+      "t": 148591
+    },
+    {
+      "n": 63,
+      "label": "กรณี ข รอบ 1 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"WRD2CG9B\"]",
+      "shot": "shots/chromium/TC-GIFT-05/063.jpg",
+      "actor": "owner",
+      "t": 150322
+    },
+    {
+      "n": 64,
+      "label": "กรณี ข รอบ 1 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/064.jpg",
+      "actor": "main",
+      "t": 152215
+    },
+    {
+      "n": 65,
+      "label": "กรณี ข รอบ 1 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/065.jpg",
+      "actor": "U03",
+      "t": 153467
+    },
+    {
+      "n": 66,
+      "label": "กรณี ข รอบ 1 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/066.jpg",
+      "actor": "main",
+      "t": 156393
+    },
+    {
+      "n": 67,
+      "label": "กรณี ข รอบ 2 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/067.jpg",
+      "actor": "main",
+      "t": 165008
+    },
+    {
+      "n": 68,
+      "label": "กรณี ข รอบ 2 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/068.jpg",
+      "actor": "U03",
+      "t": 166449
+    },
+    {
+      "n": 69,
+      "label": "กรณี ข รอบ 2 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":null,\"status\":422},\"U03\":{\"code\":\"XZXV3TBQ\",\"status\":201}}",
+      "shot": "shots/chromium/TC-GIFT-05/069.jpg",
+      "actor": "main",
+      "t": 168043
+    },
+    {
+      "n": 70,
+      "label": "กรณี ข รอบ 2 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "422",
+      "shot": "shots/chromium/TC-GIFT-05/070.jpg",
+      "actor": "main",
+      "t": 168995
+    },
+    {
+      "n": 71,
+      "label": "กรณี ข รอบ 2 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน",
+      "shot": "shots/chromium/TC-GIFT-05/071.jpg",
+      "actor": "main",
+      "t": 169975
+    },
+    {
+      "n": 72,
+      "label": "กรณี ข รอบ 2 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/072.jpg",
+      "actor": "main",
+      "t": 172658
+    },
+    {
+      "n": 73,
+      "label": "กรณี ข รอบ 2 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"XZXV3TBQ\"]",
+      "shot": "shots/chromium/TC-GIFT-05/073.jpg",
+      "actor": "owner",
+      "t": 174106
+    },
+    {
+      "n": 74,
+      "label": "กรณี ข รอบ 2 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"XZXV3TBQ\"]",
+      "shot": "shots/chromium/TC-GIFT-05/074.jpg",
+      "actor": "owner",
+      "t": 175842
+    },
+    {
+      "n": 75,
+      "label": "กรณี ข รอบ 2 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/075.jpg",
+      "actor": "main",
+      "t": 177741
+    },
+    {
+      "n": 76,
+      "label": "กรณี ข รอบ 2 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/076.jpg",
+      "actor": "U03",
+      "t": 179098
+    },
+    {
+      "n": 77,
+      "label": "กรณี ข รอบ 2 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/077.jpg",
+      "actor": "main",
+      "t": 182061
+    },
+    {
+      "n": 78,
+      "label": "กรณี ข รอบ 3 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/078.jpg",
+      "actor": "main",
+      "t": 191160
+    },
+    {
+      "n": 79,
+      "label": "กรณี ข รอบ 3 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/079.jpg",
+      "actor": "U03",
+      "t": 192579
+    },
+    {
+      "n": 80,
+      "label": "กรณี ข รอบ 3 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":\"4E6LFM3P\",\"status\":201},\"U03\":{\"code\":null,\"status\":422}}",
+      "shot": "shots/chromium/TC-GIFT-05/080.jpg",
+      "actor": "main",
+      "t": 194157
+    },
+    {
+      "n": 81,
+      "label": "กรณี ข รอบ 3 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "422",
+      "shot": "shots/chromium/TC-GIFT-05/081.jpg",
+      "actor": "U03",
+      "t": 194864
+    },
+    {
+      "n": 82,
+      "label": "กรณี ข รอบ 3 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน",
+      "shot": "shots/chromium/TC-GIFT-05/082.jpg",
+      "actor": "U03",
+      "t": 195872
+    },
+    {
+      "n": 83,
+      "label": "กรณี ข รอบ 3 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/083.jpg",
+      "actor": "main",
+      "t": 198826
+    },
+    {
+      "n": 84,
+      "label": "กรณี ข รอบ 3 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"4E6LFM3P\"]",
+      "shot": "shots/chromium/TC-GIFT-05/084.jpg",
+      "actor": "owner",
+      "t": 200252
+    },
+    {
+      "n": 85,
+      "label": "กรณี ข รอบ 3 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"4E6LFM3P\"]",
+      "shot": "shots/chromium/TC-GIFT-05/085.jpg",
+      "actor": "owner",
+      "t": 201986
+    },
+    {
+      "n": 86,
+      "label": "กรณี ข รอบ 3 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/086.jpg",
+      "actor": "main",
+      "t": 203791
+    },
+    {
+      "n": 87,
+      "label": "กรณี ข รอบ 3 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/087.jpg",
+      "actor": "U03",
+      "t": 205066
+    },
+    {
+      "n": 88,
+      "label": "กรณี ข รอบ 3 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/088.jpg",
+      "actor": "main",
+      "t": 208012
+    },
+    {
+      "n": 89,
+      "label": "กรณี ข รอบ 4 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/089.jpg",
+      "actor": "main",
+      "t": 216380
+    },
+    {
+      "n": 90,
+      "label": "กรณี ข รอบ 4 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/090.jpg",
+      "actor": "U03",
+      "t": 217831
+    },
+    {
+      "n": 91,
+      "label": "กรณี ข รอบ 4 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":\"SVY6DP6P\",\"status\":201},\"U03\":{\"code\":null,\"status\":422}}",
+      "shot": "shots/chromium/TC-GIFT-05/091.jpg",
+      "actor": "main",
+      "t": 219442
+    },
+    {
+      "n": 92,
+      "label": "กรณี ข รอบ 4 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "422",
+      "shot": "shots/chromium/TC-GIFT-05/092.jpg",
+      "actor": "U03",
+      "t": 220146
+    },
+    {
+      "n": 93,
+      "label": "กรณี ข รอบ 4 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน",
+      "shot": "shots/chromium/TC-GIFT-05/093.jpg",
+      "actor": "U03",
+      "t": 221131
+    },
+    {
+      "n": 94,
+      "label": "กรณี ข รอบ 4 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/094.jpg",
+      "actor": "main",
+      "t": 224110
+    },
+    {
+      "n": 95,
+      "label": "กรณี ข รอบ 4 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"SVY6DP6P\"]",
+      "shot": "shots/chromium/TC-GIFT-05/095.jpg",
+      "actor": "owner",
+      "t": 225570
+    },
+    {
+      "n": 96,
+      "label": "กรณี ข รอบ 4 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"SVY6DP6P\"]",
+      "shot": "shots/chromium/TC-GIFT-05/096.jpg",
+      "actor": "owner",
+      "t": 227285
+    },
+    {
+      "n": 97,
+      "label": "กรณี ข รอบ 4 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/097.jpg",
+      "actor": "main",
+      "t": 229059
+    },
+    {
+      "n": 98,
+      "label": "กรณี ข รอบ 4 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/098.jpg",
+      "actor": "U03",
+      "t": 230327
+    },
+    {
+      "n": 99,
+      "label": "กรณี ข รอบ 4 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/099.jpg",
+      "actor": "main",
+      "t": 233288
+    },
+    {
+      "n": 100,
+      "label": "กรณี ข รอบ 5 U04 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/100.jpg",
+      "actor": "main",
+      "t": 242357
+    },
+    {
+      "n": 101,
+      "label": "กรณี ข รอบ 5 U03 เห็นยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-GIFT-05/101.jpg",
+      "actor": "U03",
+      "t": 243815
+    },
+    {
+      "n": 102,
+      "label": "กรณี ข รอบ 5 สำเร็จ 1 ราย อีกรายถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"U04\":{\"code\":null,\"status\":422},\"U03\":{\"code\":\"WPEXDMK9\",\"status\":201}}",
+      "shot": "shots/chromium/TC-GIFT-05/102.jpg",
+      "actor": "main",
+      "t": 245423
+    },
+    {
+      "n": 103,
+      "label": "กรณี ข รอบ 5 คนที่ถูกปฏิเสธได้สถานะ 4xx",
+      "pass": true,
+      "actual": "422",
+      "shot": "shots/chromium/TC-GIFT-05/103.jpg",
+      "actor": "main",
+      "t": 246373
+    },
+    {
+      "n": 104,
+      "label": "กรณี ข รอบ 5 คนที่ถูกปฏิเสธเห็นข้อความใช้บัตรไม่ได้หรือยอดเปลี่ยน",
+      "pass": true,
+      "actual": "ราคานี้ยังไม่รวมรายการล่าสุด แก้ไขรายการที่แจ้งเตือนก่อนยืนยัน",
+      "shot": "shots/chromium/TC-GIFT-05/104.jpg",
+      "actor": "main",
+      "t": 247358
+    },
+    {
+      "n": 105,
+      "label": "กรณี ข รอบ 5 บัตรเหลือ ฿0",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/105.jpg",
+      "actor": "main",
+      "t": 250072
+    },
+    {
+      "n": 106,
+      "label": "กรณี ข รอบ 5 หลังร้านมีคิวใหม่ 1 คิว",
+      "pass": true,
+      "actual": "[\"WPEXDMK9\"]",
+      "shot": "shots/chromium/TC-GIFT-05/106.jpg",
+      "actor": "owner",
+      "t": 251518
+    },
+    {
+      "n": 107,
+      "label": "กรณี ข รอบ 5 หลังรีโหลด คิวใหม่ยัง 1 คิว",
+      "pass": true,
+      "actual": "[\"WPEXDMK9\"]",
+      "shot": "shots/chromium/TC-GIFT-05/107.jpg",
+      "actor": "owner",
+      "t": 253253
+    },
+    {
+      "n": 108,
+      "label": "กรณี ข รอบ 5 U04 แต้ม 0 (ทันที)",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-GIFT-05/108.jpg",
+      "actor": "main",
+      "t": 255138
+    },
+    {
+      "n": 109,
+      "label": "กรณี ข รอบ 5 U03 แต้ม 250 (ทันที)",
+      "pass": true,
+      "actual": "250",
+      "shot": "shots/chromium/TC-GIFT-05/109.jpg",
+      "actor": "U03",
+      "t": 256412
+    },
+    {
+      "n": 110,
+      "label": "กรณี ข รอบ 5 บัตรเหลือ ฿0 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿0",
+      "shot": "shots/chromium/TC-GIFT-05/110.jpg",
+      "actor": "main",
+      "t": 259357
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-GIFT-05/main.webm"
+    },
+    "U03": {
+      "file": "videos/TC-GIFT-05/U03.webm"
+    },
+    "owner": {
+      "file": "videos/TC-GIFT-05/owner.webm"
+    }
+  }
+}

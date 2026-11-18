@@ -1,0 +1,148 @@
+{
+  "id": "TC-RIDE-04",
+  "checks": [
+    {
+      "n": 1,
+      "label": "แจ้งให้ระบุโรงแรมหรือระยะ",
+      "pass": true,
+      "actual": "กรุณาเลือกโรงแรมหรือกรอกระยะทาง",
+      "shot": "shots/chromium/TC-RIDE-04/001.jpg",
+      "actor": "main",
+      "t": 4950
+    },
+    {
+      "n": 2,
+      "label": "ไม่ระบุ ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-04/002.jpg",
+      "actor": "main",
+      "t": 6688
+    },
+    {
+      "n": 3,
+      "label": "พิมพ์ 15.1 แจ้งว่าไม่รับระยะนี้",
+      "pass": true,
+      "actual": "ระยะเกิน 15.0 กม. ไม่รับรถรับส่ง",
+      "shot": "shots/chromium/TC-RIDE-04/003.jpg",
+      "actor": "main",
+      "t": 8576
+    },
+    {
+      "n": 4,
+      "label": "พิมพ์ 15.1 ยืนยันไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-04/004.jpg",
+      "actor": "main",
+      "t": 10271
+    },
+    {
+      "n": 5,
+      "label": "H06 แจ้งว่าไม่รับระยะนี้",
+      "pass": true,
+      "actual": "ระยะเกิน 15.0 กม. ไม่รับรถรับส่ง",
+      "shot": "shots/chromium/TC-RIDE-04/005.jpg",
+      "actor": "main",
+      "t": 12284
+    },
+    {
+      "n": 6,
+      "label": "H06 ยืนยันไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-04/006.jpg",
+      "actor": "main",
+      "t": 14003
+    },
+    {
+      "n": 7,
+      "label": "ขั้น 3 คิว 17 มิ.ย. 0 รายการ",
+      "pass": true,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 17 มิ.ย. 2026 · 0 นัด นักบำบัดทุกคน พี่ศรี ไม่มีคิว พี่มาลี ไม่มีคิว พี่ภูมิ ไม่มีคิว น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด ไม่มีคิวในวันนี้ ลองเลือกวันอื่นเพื่อดูตารางคิว",
+      "shot": "shots/chromium/TC-RIDE-04/007.jpg",
+      "actor": "owner",
+      "t": 3042
+    },
+    {
+      "n": 8,
+      "label": "P01 พิมพ์ 14.9 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-04/008.jpg",
+      "actor": "main",
+      "t": 21022
+    },
+    {
+      "n": 9,
+      "label": "P01 พิมพ์ 14.9 · ยอด ฿2,900",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,900",
+      "shot": "shots/chromium/TC-RIDE-04/009.jpg",
+      "actor": "main",
+      "t": 22083
+    },
+    {
+      "n": 10,
+      "label": "P01 H05 15.0 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-04/010.jpg",
+      "actor": "main",
+      "t": 25386
+    },
+    {
+      "n": 11,
+      "label": "P01 H05 15.0 · ยอด ฿2,900",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿2,900",
+      "shot": "shots/chromium/TC-RIDE-04/011.jpg",
+      "actor": "main",
+      "t": 26477
+    },
+    {
+      "n": 12,
+      "label": "ยืนยัน P01 H05",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"D6AMDDWA\"}",
+      "shot": "shots/chromium/TC-RIDE-04/012.jpg",
+      "actor": "main",
+      "t": 28653
+    },
+    {
+      "n": 13,
+      "label": "ขั้น 6 คิว 17 มิ.ย. 1 รายการ",
+      "pass": true,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 17 มิ.ย. 2026 · 1 นัด นักบำบัดทุกคน พี่ศรี 1 คิว 12:00 พี่มาลี ไม่มีคิว พี่ภูมิ ไม่มีคิว น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด เวลา บริการ จำนวนคน ผู้จอง เบอร์ นักบำบัด จ่ายหน้าร้าน สถานะ 12:00–14:00 D6AMDDWA แพ็กเกจ Bangkok Relax 1 คน คุณทดสอบ แขก 0895400001 พี่ศรี ฿2,900 รอรับบริการ ใช้บริการเสร็จ",
+      "shot": "shots/chromium/TC-RIDE-04/013.jpg",
+      "actor": "owner",
+      "t": 16637
+    },
+    {
+      "n": 14,
+      "label": "ยอดในหลังร้าน ฿2,900",
+      "pass": true,
+      "actual": "฿2,900",
+      "shot": "shots/chromium/TC-RIDE-04/014.jpg",
+      "actor": "owner",
+      "t": 17718
+    },
+    {
+      "n": 15,
+      "label": "ขั้น 6 คิว 1 รายการ ยอด ฿2,900",
+      "pass": true,
+      "actual": "{\"count\":1,\"pay\":2900}",
+      "shot": "shots/chromium/TC-RIDE-04/015.jpg",
+      "actor": "main",
+      "t": 33185
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-RIDE-04/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-RIDE-04/main.webm"
+    }
+  }
+}

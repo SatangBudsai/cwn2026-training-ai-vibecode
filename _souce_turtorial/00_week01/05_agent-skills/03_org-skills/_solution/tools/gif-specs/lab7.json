@@ -1,0 +1,75 @@
+{
+ "lab": "LAB 7",
+ "steps": [
+  {
+   "id": "lab7-step1",
+   "who": "hr-fah",
+   "role": "HR",
+   "color": "#fed7aa",
+   "portrait": "../../../img/people/hr-fah.jpg",
+   "prompt": "มี skill ของบริษัทสำหรับทำ proposal ให้ลูกค้าไหม แผนกไหนดูแล ถ้าจะใช้ต้องติดตั้งอะไรบ้าง",
+   "reads": [
+    "catalog.md ของ skill-finder (บัตรรายการ)",
+    "รายการ plugin และ settings ของโต๊ะตัวเอง"
+   ],
+   "skill": "core:skill-finder",
+   "skillNote": "Claude หยิบเอง",
+   "time": "28 วินาที",
+   "outputs": [
+    {
+     "file": "sales:sales-proposal",
+     "note": "แผนก Sales · ดูแลโดย sales-nida"
+    },
+    {
+     "file": "ต้องติดตั้ง",
+     "note": "sales + finance เพราะ proposal เรียกใช้ pricing-calc"
+    },
+    {
+     "file": "คำแนะนำ",
+     "note": "ถ้าแค่ต้องการ proposal สักฉบับ ส่ง TOR ให้ Sales ง่ายกว่า"
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "รู้ข้ามแผนกโดยไม่ต้องติดตั้งก่อน",
+    "sub": "ตอบจากบัตรรายการ ไม่ได้เปิด skill ของแผนกอื่น"
+   },
+   "next": "✔ จบ"
+  },
+  {
+   "id": "lab7-step2",
+   "who": "md-somchai",
+   "role": "MD",
+   "color": "#e9d5ff",
+   "portrait": "../../../img/people/md-somchai.jpg",
+   "prompt": "ถ้าผมจะเปลี่ยนกฎภาคผนวก PDPA ของลูกค้าธนาคาร (เช่น 72 ชั่วโมงเป็น 24 ชั่วโมง) จะกระทบ skill ไหนของบริษัทบ้าง และต้องแจ้งใคร",
+   "reads": [
+    "catalog.md ของ skill-finder",
+    "โน้ตกฎของ MD + plugin core และ exec"
+   ],
+   "skill": "core:skill-finder",
+   "skillNote": "Claude หยิบเอง · แล้วเปิดไฟล์จริงตรวจต่อ",
+   "time": "1 นาที 18 วินาที",
+   "outputs": [
+    {
+     "file": "แก้จริง 3 จุด",
+     "note": "deal-rules.md · bank-pdpa-annex.md · deal-approval"
+    },
+    {
+     "file": "ต้องแจ้ง 4 คน",
+     "note": "plat-may · plat-ken · exec-ploy · sales-nida"
+    },
+    {
+     "file": "ขอบเขตสูงสุด",
+     "note": "23 skill จาก 11 ผู้ดูแล follow นโยบายนี้"
+    }
+   ],
+   "verdict": {
+    "kind": "warn",
+    "text": "บัตรรายการอย่างเดียวตอบไม่ครบ",
+    "sub": "deal-approval กระทบตรง 0 ตัวในบัตร แต่มีเลข 72 ชม. ซ้ำในไฟล์ของตัวเอง"
+   },
+   "next": "✔ จบ"
+  }
+ ]
+}

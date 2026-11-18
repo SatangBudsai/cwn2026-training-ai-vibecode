@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ประชุมผู้บริหาร พ.ย. 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0B2545;--teal:#13A89E;--orange:#F26B38;--cloud:#F4F6F8;--ink:#1F2933;--line:#CBD2D9}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#E9EDF1;color:var(--ink);font-family:"IBM Plex Sans Thai",sans-serif}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px 16px}
+  .slide{position:relative;width:min(1280px,100%);aspect-ratio:16/9;background:#fff;overflow:hidden;
+         container-type:inline-size;box-shadow:0 2px 8px rgba(11,37,69,.12)}
+  .in{position:absolute;inset:0;padding:3.75cqw;display:flex;flex-direction:column}
+  .bar{position:absolute;left:0;top:0;right:0;height:.6cqw;background:var(--navy)}
+  .tag{font-size:1.1cqw;letter-spacing:.08em;color:var(--teal);font-weight:600;text-transform:uppercase}
+  h1{font-size:2.5cqw;line-height:1.3;font-weight:600;color:var(--navy);margin:.6cqw 0 2cqw}
+  p,li,td,th{font-size:1.45cqw;line-height:1.55}
+  ul{margin:0;padding-left:1.6cqw} li{margin:.3cqw 0}
+  .num{font-family:"IBM Plex Mono",monospace;font-weight:600}
+  .ok{color:var(--teal)} .bad{color:var(--orange)}
+  .muted{color:#52606D}
+  table{border-collapse:collapse;width:100%}
+  th{background:var(--navy);color:#fff;font-weight:600;text-align:left;padding:.6cqw 1cqw}
+  td{padding:.55cqw 1cqw;border-bottom:1px solid var(--line)}
+  tr:nth-child(even) td{background:var(--cloud)}
+  td.r,th.r{text-align:right}
+  .logo{position:absolute;right:3.75cqw;bottom:2.2cqw;width:9cqw}
+  .src{position:absolute;left:3.75cqw;bottom:2.4cqw;font-size:1cqw;color:#7B8794}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw}
+  .card{background:var(--cloud);padding:1.6cqw;border-top:.4cqw solid var(--navy)}
+  .card .k{font-size:1.2cqw;color:#52606D}
+  .card .v{font-family:"IBM Plex Mono",monospace;font-size:3.2cqw;font-weight:600;line-height:1.2}
+  .card .s{font-size:1.2cqw}
+  .three{display:flex;flex-direction:column;gap:1.4cqw;margin-top:1cqw}
+  .three div{display:grid;grid-template-columns:12cqw 1fr;gap:1.4cqw;align-items:baseline;
+             padding:1.2cqw 1.6cqw;background:var(--cloud)}
+  .three b{font-size:1.7cqw;color:var(--navy)}
+  .three span{font-size:1.6cqw}
+  .cover{background:var(--navy);color:#fff}
+  .cover h1{color:#fff;font-size:4cqw;margin:0}
+  .cover p{font-size:1.9cqw;margin:.6cqw 0;color:#D9E2EC}
+  .decide{border-left:.5cqw solid var(--orange)}
+  @media print{
+    @page{size:338.67mm 190.5mm;margin:0}
+    html,body{background:#fff}
+    .deck{padding:0;gap:0}
+    .slide{width:338.67mm;box-shadow:none;break-after:page}
+  }
+</style>
+</head>
+<body>
+<main class="deck">
+
+<!-- 1. ปก -->
+<section class="slide cover">
+  <div class="in" style="justify-content:center">
+    <svg viewBox="0 0 240 64" style="width:18cqw;margin-bottom:3cqw" role="img" aria-label="Novatech">
+      <rect x="4" y="8" width="48" height="48" rx="10" fill="#FFFFFF"/>
+      <path d="M16 46V18h6l12 17V18h6v28h-6L22 29v17z" fill="#0B2545"/>
+      <circle cx="46" cy="14" r="5" fill="#13A89E"/>
+      <text x="64" y="43" font-family="IBM Plex Sans Thai, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF">Novatech</text>
+    </svg>
+    <h1>ประชุมผู้บริหาร พฤศจิกายน 2026</h1>
+    <p>ผลการดำเนินงานเดือนตุลาคม 2026</p>
+    <p>วันพุธที่ 4 พฤศจิกายน 2026</p>
+    <p style="margin-top:3cqw;font-size:1.3cqw;color:#9FB3C8">จัดทำโดย พลอยไพลิน ศรีสุข · เอกสารภายใน</p>
+  </div>
+</section>
+
+<!-- 2. สรุป 3 บรรทัด -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">สรุป</div>
+    <h1>ต.ค. รายได้เกินเป้า แต่กำไรขั้นต้นต่ำกว่าเป้า และมี 2 ดีลรอ MD ตอบภายใน 4–5 พ.ย.</h1>
+    <div class="three">
+      <div><b>ดี</b><span>รายได้ <span class="num ok">9.12 ล้าน</span> เกินเป้า 1.3% · Pipeline <span class="num ok">38.9 ล้าน</span> เกินเป้า · ไม่มี Sev 1</span></div>
+      <div><b>น่าห่วง</b><span>กำไรขั้นต้น <span class="num">27.1%</span> (เป้า 30%) จาก DentDee เกินแผน 18 man-day · ปิดดีลได้ 1 จากเป้า 2</span></div>
+      <div class="decide"><b>ต้องตัดสินใจ</b><span>DS-034 รพ.เมืองใหม่ margin <span class="num bad">18.0%</span> ส่วนลด 28.2% ตอบภายใน 4 พ.ย. · DS-031 ภายใน 5 พ.ย.</span></div>
+    </div>
+  </div>
+  <div class="src">ที่มา: monthly-kpi.csv, deal-summaries/</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+<!-- 3. การเงิน -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">การเงิน</div>
+    <h1>รายได้ ต.ค. โต 7.9% เกินเป้า แต่กำไรขั้นต้นลดเหลือ 27.1% กำไรเป็นเงินไม่เพิ่ม</h1>
+    <div class="grid">
+      <div class="card"><div class="k">รายได้ (ไม่รวม VAT)</div><div class="v ok">9.12M</div><div class="s">เป้า 9.00M · ก.ย. 8.45M</div></div>
+      <div class="card"><div class="k">กำไรขั้นต้น (%)</div><div class="v bad">27.1%</div><div class="s">เป้า 30.0% · ก.ย. 29.4%</div></div>
+      <div class="card"><div class="k">กำไรขั้นต้น (บาท)</div><div class="v">2.47M</div><div class="s">ก.ย. 2.48M · เป้า 2.70M</div></div>
+    </div>
+    <ul style="margin-top:2cqw">
+      <li>Margin ลดเพราะโปรเจกต์ DentDee ใช้เกินแผน 18 man-day</li>
+      <li>รายได้ ต.ค. รวมงวด UAT Loan Portal ระยะ 2 (สยามรุ่งเรือง) ซึ่งออกใบแจ้งหนี้ พ.ย. — เงินยังไม่เข้า</li>
+    </ul>
+  </div>
+  <div class="src">ที่มา: monthly-kpi.csv · กำไรขั้นต้น (บาท) = รายได้ × margin</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+<!-- 4. Pipeline -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">Pipeline และดีลที่รออนุมัติ</div>
+    <h1>Pipeline 38.9 ล้าน เกินเป้า แต่ win rate ต.ค. 33% ต่ำกว่าเป้า 50%</h1>
+    <table>
+      <tr><th>ดีล</th><th class="r">มูลค่า (ไม่รวม VAT)</th><th class="r">Margin</th><th>สถานะ</th><th>ตอบภายใน</th></tr>
+      <tr><td>DS-2026-034 รพ.เมืองใหม่ (ลูกค้าใหม่)</td><td class="r num">3,307,000</td><td class="r num bad">18.0%</td><td>15–25% + ส่วนลด 28.2% → MD เท่านั้น</td><td>4 พ.ย.</td></tr>
+      <tr><td>DS-2026-031 ไทยโลจิสติกส์ครบวงจร</td><td class="r num">3,460,000</td><td class="r num ok">31.0%</td><td>ผ่านเกณฑ์ ≥ 25%</td><td>5 พ.ย.</td></tr>
+      <tr><td>deal-001 นครหลวงพัฒนา (จองคิว 120 สาขา)</td><td class="r num">4,800,000</td><td class="r">–</td><td>กำลังทำ proposal</td><td>–</td></tr>
+      <tr><td>deal-002 เอเชียไทยสากล (Card Dispute)</td><td class="r num">2,200,000</td><td class="r">–</td><td>ยื่น proposal 20 พ.ย.</td><td>–</td></tr>
+    </table>
+    <p class="muted" style="margin-top:1.4cqw">ต.ค. ชนะ 1 แพ้ 2 (แพ้ราคา 1 · ลูกค้าเลื่อนโครงการ 1)</p>
+  </div>
+  <div class="src">ที่มา: monthly-kpi.csv, deal-summaries/, meeting-notes/2026-10-28 · เกณฑ์: margin-rules.md</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+<!-- 5. ส่งมอบ -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">การส่งมอบและเหตุขัดข้อง</div>
+    <h1>ส่งมอบตรงเวลา 7 จาก 10 โปรเจกต์ (70%) และไม่มี Sev 1 ในเดือน ต.ค.</h1>
+    <div class="grid">
+      <div class="card"><div class="k">ตรงเวลา</div><div class="v">7/10</div><div class="s">ก.ย. 7/9 (78%)</div></div>
+      <div class="card"><div class="k">Sev 1 / Sev 2</div><div class="v ok">0 / 1</div><div class="s">ก.ย. 1 / 2 · เป้า Sev 1 = 0</div></div>
+      <div class="card"><div class="k">NPS ลูกค้า (รายไตรมาส)</div><div class="v ok">45</div><div class="s">เป้า 40 · ครั้งก่อน 42</div></div>
+    </div>
+    <ul style="margin-top:2cqw">
+      <li>ติดตามจาก Sev 1 ก.ย. (ShopDee ล่ม 47 นาที): มี cert ที่ต่ออายุด้วยมือ 4 ตัว — ตัวถัดไปของ BaanRai หมดอายุ <span class="bad">2 พ.ย.</span> ขอ DevOps ยืนยันว่าต่อแล้ว</li>
+    </ul>
+  </div>
+  <div class="src">ที่มา: monthly-kpi.csv, incident-2026-09.md · on-time = ไม่เลื่อน milestone เกิน 1 สัปดาห์</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+<!-- 6. คน -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">คน</div>
+    <h1>พนักงาน 88 คน (+2) ไม่มีคนลาออก แต่ตำแหน่งว่างเพิ่มเป็น 6</h1>
+    <div class="grid">
+      <div class="card"><div class="k">Headcount</div><div class="v">88</div><div class="s">ก.ย. 86 · รับเข้า Dev 1 QA 1</div></div>
+      <div class="card"><div class="k">ตำแหน่งว่าง</div><div class="v">6</div><div class="s">ก.ย. 4</div></div>
+      <div class="card"><div class="k">ลาออก</div><div class="v ok">0</div><div class="s">ก.ย. 1</div></div>
+    </div>
+    <ul style="margin-top:2cqw">
+      <li>ตำแหน่งใหม่: Senior Full-stack Developer (โปรเจกต์จองคิวธนาคาร) และ ML Engineer — ผูกกับ deal-001</li>
+      <li>ถ้าได้ DS-034 ด้วย tech lead (ปอนด์) จะถือ 3 โปรเจกต์พร้อมกันช่วง ม.ค.–ก.พ. 2027</li>
+    </ul>
+  </div>
+  <div class="src">ที่มา: monthly-kpi.csv, deal-summaries/DS-2026-034</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+<!-- 7. เรื่องให้ MD ตัดสิน -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">เรื่องที่ขอให้ MD ตัดสิน</div>
+    <h1>ขอ MD ตัดสิน 3 เรื่อง เรื่องแรกต้องตอบภายในวันนี้ (4 พ.ย.)</h1>
+    <table>
+      <tr><th style="width:4%">#</th><th style="width:34%">เรื่อง</th><th>ข้อเท็จจริงที่ต้องรู้</th><th style="width:11%">ภายใน</th></tr>
+      <tr><td>1</td><td><b>DS-034 รพ.เมืองใหม่</b> อนุมัติ / ตีกลับ</td><td><span class="bad">margin 18.0%</span> · go-live 3 เดือน (ปกติ 5–6) ไม่มี buffer · HIS ยังไม่มี API · ค่าปรับไม่มีเพดาน · 60% จ่ายหลัง go-live 90 วัน · ยังไม่มี DPA</td><td>4 พ.ย.</td></tr>
+      <tr><td>2</td><td><b>DS-031 ไทยโลจิสติกส์</b> อนุมัติส่งใบเสนอราคา</td><td>margin 31.0% ผ่านเกณฑ์ · ลูกค้าเดิม 5 เดือน มี buffer 10% · ลูกค้าเข้าบอร์ด 12 พ.ย.</td><td>5 พ.ย.</td></tr>
+      <tr><td>3</td><td><b>กำลังคน ม.ค.–ก.พ. 2027</b> เร่งรับ Senior Full-stack หรือปรับ tech lead</td><td>ปอนด์จะถือ 3 โปรเจกต์ถ้าได้ทั้ง DS-034 และจองคิวธนาคาร</td><td>ก่อนตอบ DS-034</td></tr>
+    </table>
+  </div>
+  <div class="src">ที่มา: deal-summaries/, margin-rules.md · รายละเอียดดีลเต็มอยู่ในใบสรุปดีลแต่ละใบ</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+<!-- ภาคผนวก -->
+<section class="slide"><div class="bar"></div>
+  <div class="in">
+    <div class="tag">ภาคผนวก</div>
+    <h1 style="margin-bottom:1cqw">KPI ทั้งหมด ต.ค. 2026 เทียบ ก.ย.</h1>
+    <table style="font-size:.9em">
+      <tr><th>ตัวชี้วัด</th><th class="r">ก.ย.</th><th class="r">ต.ค.</th><th class="r">เป้า/เดือน</th><th>สถานะ</th></tr>
+      <tr><td>รายได้ (บาท)</td><td class="r num">8,450,000</td><td class="r num">9,120,000</td><td class="r num">9,000,000</td><td class="ok">ผ่านเป้า</td></tr>
+      <tr><td>กำไรขั้นต้น</td><td class="r num">29.4%</td><td class="r num">27.1%</td><td class="r num">30.0%</td><td>ต่ำกว่าเป้า</td></tr>
+      <tr><td>Pipeline (บาท)</td><td class="r num">32,500,000</td><td class="r num">38,900,000</td><td class="r num">35,000,000</td><td class="ok">ผ่านเป้า</td></tr>
+      <tr><td>ชนะ / แพ้ / win rate</td><td class="r num">2 / 1 / 66.7%</td><td class="r num">1 / 2 / 33.3%</td><td class="r num">2 / – / 50%</td><td>ต่ำกว่าเป้า</td></tr>
+      <tr><td>ตรงเวลา / ทั้งหมด</td><td class="r num">7 / 9</td><td class="r num">7 / 10</td><td class="r">–</td><td>–</td></tr>
+      <tr><td>Sev 1 / Sev 2</td><td class="r num">1 / 2</td><td class="r num">0 / 1</td><td class="r num">0 / –</td><td class="ok">ผ่านเป้า</td></tr>
+      <tr><td>คน / ว่าง / ลาออก</td><td class="r num">86 / 4 / 1</td><td class="r num">88 / 6 / 0</td><td class="r">–</td><td>–</td></tr>
+      <tr><td>NPS</td><td class="r num">42</td><td class="r num">45</td><td class="r num">40</td><td class="ok">ผ่านเป้า</td></tr>
+    </table>
+  </div>
+  <div class="src">ที่มา: monthly-kpi.csv</div>
+  <img class="logo" alt="Novatech" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Crect x='4' y='8' width='48' height='48' rx='10' fill='%230B2545'/%3E%3Cpath d='M16 46V18h6l12 17V18h6v28h-6L22 29v17z' fill='%23FFFFFF'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%2313A89E'/%3E%3Ctext x='64' y='43' font-family='IBM Plex Sans Thai, sans-serif' font-size='28' font-weight='600' fill='%230B2545'%3ENovatech%3C/text%3E%3C/svg%3E">
+</section>
+
+</main>
+</body>
+</html>

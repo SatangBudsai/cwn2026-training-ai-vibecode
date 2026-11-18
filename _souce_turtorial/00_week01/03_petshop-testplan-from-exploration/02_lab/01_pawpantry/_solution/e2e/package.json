@@ -1,0 +1,15 @@
+{
+  "name": "pawpantry-e2e",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "playwright test",
+    "report": "node scripts/collect.mjs && node scripts/build-report.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

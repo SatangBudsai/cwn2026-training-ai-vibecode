@@ -1,0 +1,9 @@
+[
+ {"name": "t4-original-AUTH03", "who": "เว็บเดิม", "tc": "TC-AUTH-03", "what": "รหัสผ่านอ่อนและยืนยันไม่ตรงกัน", "verdict": "FAIL", "note": "คาดหวัง error 2 ช่อง · ช่องยืนยันรหัสผ่านไม่มี error"},
+ {"name": "t4-noskill-AUTH03", "who": "ไม่มีสกิล", "tc": "TC-AUTH-03", "what": "เว็บที่ Agent แก้แล้ว (Task t4)", "verdict": "FAIL", "note": "Agent ไม่พบ Defect นี้ เว็บจึงยังผิดเหมือนเดิม"},
+ {"name": "t4-v0-AUTH03", "who": "สกิล v0", "tc": "TC-AUTH-03", "what": "เว็บที่ Agent แก้แล้ว (Task t4)", "verdict": "FAIL", "note": "Agent ทดสอบทีละเงื่อนไข จึงไม่พบ Defect นี้"},
+ {"name": "t4-v1-AUTH03", "who": "สกิล v1", "tc": "TC-AUTH-03", "what": "เว็บที่ Agent แก้แล้ว (Task t4)", "verdict": "PASS", "note": "กรอกผิด 2 ช่องพร้อมกัน พบและแก้ Defect แล้ว error ขึ้นครบ 2 ช่อง"},
+ {"name": "t2-original-CART03", "who": "เว็บเดิม", "tc": "TC-CART-03", "what": "ตะกร้า ฿2,680 ต้องส่งฟรี", "verdict": "FAIL", "note": "ค่าส่งขึ้นว่าฟรี แต่แถบสถานะเขียนว่า ซื้อเพิ่มอีก -฿1,681 เพื่อส่งฟรี"},
+ {"name": "t2-v0-CART03", "who": "สกิล v0", "tc": "TC-CART-03", "what": "เว็บที่ Agent แก้แล้ว (Task t2 รอบ 2)", "verdict": "FAIL", "note": "Agent ตรวจเฉพาะตัวเลขค่าส่ง ไม่ได้ตรวจแถบสถานะ"},
+ {"name": "t2-v1-CART03", "who": "สกิล v1", "tc": "TC-CART-03", "what": "เว็บที่ Agent แก้แล้ว (Task t2 รอบ 1)", "verdict": "FAIL", "note": "ยังไม่พบ Defect นี้ → เป็นเป้าหมายของ v2"}
+]

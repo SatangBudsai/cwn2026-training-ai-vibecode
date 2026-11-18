@@ -1,0 +1,148 @@
+{
+  "id": "TC-ACCT-08",
+  "checks": [
+    {
+      "n": 1,
+      "label": "นัด S05 ฿800",
+      "pass": true,
+      "actual": "฿800",
+      "shot": "shots/chromium/TC-ACCT-08/001.jpg",
+      "actor": "main",
+      "t": 9978
+    },
+    {
+      "n": 2,
+      "label": "นัด S01 ฿1,000",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-ACCT-08/002.jpg",
+      "actor": "main",
+      "t": 11000
+    },
+    {
+      "n": 3,
+      "label": "กดเสร็จนัด S05 สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-08/003.jpg",
+      "actor": "owner",
+      "t": 3248
+    },
+    {
+      "n": 4,
+      "label": "U03 หลังกดเสร็จ S05: ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-ACCT-08/004.jpg",
+      "actor": "main",
+      "t": 16366
+    },
+    {
+      "n": 5,
+      "label": "U03 หลังกดเสร็จ S05: ยอดสะสม ฿10,799",
+      "pass": true,
+      "actual": "฿10,799",
+      "shot": "shots/chromium/TC-ACCT-08/005.jpg",
+      "actor": "main",
+      "t": 17356
+    },
+    {
+      "n": 6,
+      "label": "U03 หลังกดเสร็จ S05: แต้ม 258",
+      "pass": true,
+      "actual": "258",
+      "shot": "shots/chromium/TC-ACCT-08/006.jpg",
+      "actor": "main",
+      "t": 18355
+    },
+    {
+      "n": 7,
+      "label": "นัดใหม่ S01 ฿950",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿950",
+      "shot": "shots/chromium/TC-ACCT-08/007.jpg",
+      "actor": "main",
+      "t": 22994
+    },
+    {
+      "n": 8,
+      "label": "นัดเดิม S01 ในบัญชียัง ฿1,000",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-ACCT-08/008.jpg",
+      "actor": "main",
+      "t": 24537
+    },
+    {
+      "n": 9,
+      "label": "นัดเดิม S01 ในคิวหลังร้านยัง ฿1,000",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-ACCT-08/009.jpg",
+      "actor": "owner",
+      "t": 14902
+    },
+    {
+      "n": 10,
+      "label": "แลก 200 แต้ม ลด ฿100 รถ ฿300 บัตร ฿500",
+      "pass": true,
+      "actual": "{\"points\":100,\"transport\":300,\"giftcard\":500}",
+      "shot": "shots/chromium/TC-ACCT-08/010.jpg",
+      "actor": "main",
+      "t": 35819
+    },
+    {
+      "n": 11,
+      "label": "จ่าย ฿1,700",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,700",
+      "shot": "shots/chromium/TC-ACCT-08/011.jpg",
+      "actor": "main",
+      "t": 36804
+    },
+    {
+      "n": 12,
+      "label": "กดเสร็จนัด S04 สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-08/012.jpg",
+      "actor": "owner",
+      "t": 28963
+    },
+    {
+      "n": 13,
+      "label": "U03 หลังกดเสร็จ S04: ระดับ Gold",
+      "pass": true,
+      "actual": "Gold",
+      "shot": "shots/chromium/TC-ACCT-08/013.jpg",
+      "actor": "main",
+      "t": 42020
+    },
+    {
+      "n": 14,
+      "label": "U03 หลังกดเสร็จ S04: ยอดสะสม ฿11,399",
+      "pass": true,
+      "actual": "฿11,399",
+      "shot": "shots/chromium/TC-ACCT-08/014.jpg",
+      "actor": "main",
+      "t": 43031
+    },
+    {
+      "n": 15,
+      "label": "U03 หลังกดเสร็จ S04: แต้ม 64",
+      "pass": true,
+      "actual": "64",
+      "shot": "shots/chromium/TC-ACCT-08/015.jpg",
+      "actor": "main",
+      "t": 44017
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-ACCT-08/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-ACCT-08/owner.webm"
+    }
+  }
+}

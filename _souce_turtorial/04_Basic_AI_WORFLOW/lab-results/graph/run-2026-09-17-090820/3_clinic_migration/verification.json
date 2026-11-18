@@ -1,0 +1,86 @@
+{
+  "timestamp_utc": "2026-09-17T09:15:51.029404+00:00",
+  "phase": "phase2",
+  "diagrams": [
+    {
+      "index": 1,
+      "rendered": true
+    },
+    {
+      "index": 2,
+      "rendered": true
+    },
+    {
+      "index": 3,
+      "rendered": true
+    },
+    {
+      "index": 4,
+      "rendered": true
+    },
+    {
+      "index": 5,
+      "rendered": true
+    }
+  ],
+  "mockup": {
+    "1440": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "consent": true,
+        "line-booking": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "all_source_rows": true,
+        "review_rows": true,
+        "no_auto_merge": true,
+        "consent_not_prechecked": true,
+        "line_simulated": true
+      },
+      "console_page_errors": []
+    },
+    "390": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "consent": true,
+        "line-booking": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "all_source_rows": true,
+        "review_rows": true,
+        "no_auto_merge": true,
+        "consent_not_prechecked": true,
+        "line_simulated": true
+      },
+      "console_page_errors": []
+    }
+  },
+  "automated_scope": "rendering, DOM visibility, selected source/contract checks; semantic review is separate",
+  "weekday_evidence": {
+    "2026-03-09": "Monday",
+    "2026-09-03": "Thursday"
+  },
+  "phone_normalization": {
+    "081-234-5678": "0812345678",
+    "0812345678": "0812345678",
+    "081 234 5678": "0812345678"
+  },
+  "findings_rows": 9,
+  "automated_pass": true,
+  "sha256": {
+    "output.md": "a07b18b10c71d817d0887c275b2578c1a107a45427ea222a85e8934d280e2d4f",
+    "mockup.html": "f76a7a5f7a0daa5784fe3b729c40948caeae85fcbc7ea34132d02ea5f45bf5c6"
+  },
+  "criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS"
+  },
+  "semantic_review": "nodes/N5-v2-review.md"
+}

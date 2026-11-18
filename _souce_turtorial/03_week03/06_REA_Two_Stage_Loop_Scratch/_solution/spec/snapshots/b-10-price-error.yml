@@ -1,0 +1,8 @@
+# captured 2026-11-01 17:49:13 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFgsOoBcAGCAQsI____________AZgBAg&tfu=EgYIABAAGAA&hl=th&gl=TH&curr=THB
+- main:
+  - heading "ผลการค้นหา" [level=2]
+  - text: ไม่พบผลลัพธ์
+  - paragraph: อ๊ะ มีบางอย่างผิดพลาด
+  - paragraph:
+    - button "โหลดซ้ำ"

@@ -1,0 +1,6 @@
+{
+  "created_utc": "2026-09-17T10:20:06.603912+00:00",
+  "mode": "single-conversation Planner/Executor/Evaluator role simulation; not independent model calls",
+  "template": "labs/prompts/dynamic/dynamic-template.md",
+  "source_reuse": "Application/document generator and verifier source adapted from Graph run-2026-09-17-090820; this is a controlled demonstration with known solutions, not a blind independent workflow benchmark. Outputs rendered and tests executed anew. No prior screenshots or PASS logs copied."
+}

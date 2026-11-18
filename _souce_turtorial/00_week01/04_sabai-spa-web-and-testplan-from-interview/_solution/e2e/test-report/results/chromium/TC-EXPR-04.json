@@ -1,0 +1,79 @@
+{
+  "id": "TC-EXPR-04",
+  "title": "TC-EXPR-04 แชตตอบเวลา ราคา และนอกเรื่องตามภาษาที่ถาม ข้อความไม่มีตัวอักษรภาษาตอบภาษาหน้าเว็บ",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "เวลา: ทุกภาษามี 10:00 และ 22:00\nราคา S04: ทุกภาษามี 2,000 (ราคาเต็ม ฿2,000/คน · ถ้าตอบราคา S03 จะได้ 1,200 · ถ้าคิดส่วนลด Gold 5% จะได้ 1,900)\nนอกเรื่องและตอบไม่ได้: ทุกภาษามี 02-123-4567\nภาษา: คำตอบข้อความไทยเป็นภาษาไทย · คำตอบข้อความอังกฤษและจีนมีตัวอักษรไทย 0 จุด\nR105: คำตอบของ `12345` และ `???` มีตัวอักษรไทยอย่างน้อย 1 ตัว และมี 02-123-4567 (คำตอบอังกฤษล้วนถือว่าผิด)\nขั้น 4: ทั้ง 20 รอบเหมือนกันทุกตัวอักษร",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 467,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 หลังร้านและข้อมูลส่วนตัว · [D] บ.9 · [R] ⚠️A-20 · [R] · F-สร้าง 26",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 467,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-58, FR-59, NFR-14",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 467,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R103, R104, R105",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 467,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 467,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 467,
+        "column": 3
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 37522,
+  "at": "2026-11-06T02:52:05.248Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 3\n\n- Array []\n+ Array [\n+   \"How much is Aroma Oil Massage? → S04 Aroma Oil Massage: ฿2,000 per person (90 min)\",\n+ ]"
+  ],
+  "steps": [
+    "1. จาก /th ส่งคำถามเวลา ราคา นอกเรื่องครบ 3 ภาษา รวม 9 ข้อความ",
+    "2. ค้นตัวอักษรไทยในคำตอบของข้อความอังกฤษและจีน ✗",
+    "3. ส่ง 12345 และ ??? จากหน้า /th",
+    "4. ส่งคำถามราคาภาษาไทยซ้ำ 20 รอบแล้วเทียบข้อความ"
+  ]
+}

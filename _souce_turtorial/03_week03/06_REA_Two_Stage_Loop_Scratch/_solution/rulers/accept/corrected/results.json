@@ -1,0 +1,17 @@
+[
+  {
+    "id": "C23",
+    "status": "ไม่ผ่าน",
+    "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'ผลการค้นหา', exact: true }) to be visible\u001b[22m\n",
+    "stage": "standard-route",
+    "durationMs": 22643,
+    "upstreamError": false
+  },
+  {
+    "id": "C32",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4904,
+    "upstreamError": false
+  }
+]

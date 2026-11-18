@@ -1,0 +1,309 @@
+{
+ "queries.json": {
+  "BM25": {
+   "n": 60,
+   "hit1": 100.0,
+   "hit5": 100.0,
+   "miss": []
+  },
+  "Embedding": {
+   "n": 60,
+   "hit1": 85.0,
+   "hit5": 98.3,
+   "miss": [
+    {
+     "q": "โปรเจกต์ใหม่ต้องรับคนเพิ่ม",
+     "expect": "hr:jd-writer",
+     "got": [
+      "dev:project-scaffold",
+      "hr:onboarding-pack",
+      "sa:arch-template"
+     ]
+    }
+   ]
+  },
+  "Hybrid": {
+   "n": 60,
+   "hit1": 96.7,
+   "hit5": 100.0,
+   "miss": []
+  },
+  "Hybrid + Reranker": {
+   "n": 60,
+   "hit1": 98.3,
+   "hit5": 100.0,
+   "miss": []
+  }
+ },
+ "queries-heldout.json": {
+  "BM25": {
+   "n": 75,
+   "hit1": 66.7,
+   "hit5": 88.0,
+   "miss": [
+    {
+     "q": "รีวิว deal summary 3 ตัวสัปดาห์นี้ให้หน่อย จัด priority แล้วบอก go / no-go พร้อมเหตุผลสั้นๆ",
+     "expect": "exec:deal-approval",
+     "got": [
+      "mlops:mlflow-experiment",
+      "exec:pipeline-review",
+      "exec:tech-risk-review"
+     ]
+    },
+    {
+     "q": "คืนวันพฤหัสจะปล่อยเวอร์ชันใหม่ มีเปลี่ยนโครงสร้างฐานข้อมูลด้วย กลัวพลาดเหมือนรอบก่อน ช่วยไล่สิ่งที่ต้องเตรียมแล้วก็แผนถอยกลับให้หน่อย",
+     "expect": "devops:deploy-checklist",
+     "got": [
+      "mlops:model-release",
+      "product:product-sunset",
+      "hr:onboarding-pack"
+     ]
+    },
+    {
+     "q": "ช่วยทำ onboarding kit ให้ new hire หน่อย มี welcome email, first-week schedule แล้วก็ checklist เรื่อง account กับอุปกรณ์",
+     "expect": "hr:onboarding-pack",
+     "got": [
+      "core:skill-finder",
+      "mlops:model-release",
+      "sales:follow-up-email"
+     ]
+    },
+    {
+     "q": "แต่ละแผนกส่ง skill มาให้ทีมกลาง บางอันซ้ำกัน บางอันเขียนไม่ครบ ต้องตรวจให้ได้มาตรฐานก่อนปล่อยเวอร์ชันใหม่ปลายเดือน ช่วยวางขั้นตอนตรวจให้หน่อย",
+     "expect": "core:skill-finder",
+     "got": [
+      "dev:coding-standard",
+      "product:product-sunset",
+      "qa:bug-report"
+     ]
+    },
+    {
+     "q": "ทีม HR จะเก็บข้อมูลผู้สมัครงานใน Google Sheet ต้องทำตาม PDPA ยังไงบ้าง แล้วถ้าจะทำ email template ให้ตรง brand guideline ต้องใช้ font กับ color อะไร",
+     "expect": "core:customer-data-policy",
+     "got": [
+      "hr:jd-writer",
+      "sa:arch-template",
+      "product:product-sunset"
+     ]
+    },
+    {
+     "q": "สรุป feature request เดือนนี้ เรียงตามความสำคัญ",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:exec-deck",
+      "exec:cost-headcount-review",
+      "shared:meeting-minutes"
+     ]
+    },
+    {
+     "q": "ช่วย draft product roadmap Q1 ให้หน่อย แยกเป็น now/next/later พร้อม key milestones กับ success metrics ของแต่ละ initiative จะเอาไป present ให้ leadership สัปดาห์หน้า",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:pipeline-review",
+      "hr:onboarding-pack",
+      "dev:project-scaffold"
+     ]
+    },
+    {
+     "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+     "expect": "product:product-sunset",
+     "got": [
+      "core:customer-data-policy",
+      "qa:bug-report",
+      "exec:deal-approval"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "dev:project-scaffold",
+      "sa:arch-template"
+     ]
+    }
+   ]
+  },
+  "Embedding": {
+   "n": 75,
+   "hit1": 68.0,
+   "hit5": 92.0,
+   "miss": [
+    {
+     "q": "รีวิว PR นี้ให้หน่อย",
+     "expect": "dev:coding-standard",
+     "got": [
+      "product:prd-writer",
+      "hr:jd-writer",
+      "exec:pipeline-review"
+     ]
+    },
+    {
+     "q": "ขอ job description ตำแหน่ง Senior DevOps Engineer มี responsibilities, qualifications, nice-to-have แล้วก็ benefits",
+     "expect": "hr:jd-writer",
+     "got": [
+      "devops:deploy-checklist",
+      "dev:project-scaffold",
+      "exec:cost-headcount-review"
+     ]
+    },
+    {
+     "q": "พรุ่งนี้เช้าผมต้องรายงานบอร์ดเรื่องระบบล่มเมื่อต้นเดือน ลูกค้าได้รับผลกระทบหลายราย แล้วตอนนี้ฝั่ง DevOps กับ Dev ก็ยังเห็นไม่ตรงกันว่าต้นเหตุอยู่ตรงไหน ช่วยรวบรวมข้อมูลจากทั้งสองทีม เรียงไทม์ไลน์ และร่างสรุปให้ผู้บริหารที่ไม่ใช่สายเทคนิคอ่านเข้าใจหน่อย",
+     "expect": "exec:tech-risk-review",
+     "got": [
+      "devops:postmortem",
+      "devops:deploy-checklist",
+      "qa:bug-report"
+     ]
+    },
+    {
+     "q": "ช่วย review tech budget Q1 ของ Dev, QA, DevOps, ML แล้วเทียบกับ headcount plan และ cloud cost ปัจจุบันให้หน่อย อยากรู้ว่าตรงไหน over budget บ้าง พร้อม recommend ว่าควร cut หรือ reallocate ตรงไหนก่อน prepare slide คุยกับ CFO",
+     "expect": "exec:tech-risk-review",
+     "got": [
+      "exec:cost-headcount-review",
+      "devops:deploy-checklist",
+      "mlops:model-release"
+     ]
+    },
+    {
+     "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "exec:pipeline-review",
+      "devops:deploy-checklist"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "exec:deal-approval",
+      "dev:coding-standard"
+     ]
+    }
+   ]
+  },
+  "Hybrid": {
+   "n": 75,
+   "hit1": 72.0,
+   "hit5": 92.0,
+   "miss": [
+    {
+     "q": "แต่ละแผนกส่ง skill มาให้ทีมกลาง บางอันซ้ำกัน บางอันเขียนไม่ครบ ต้องตรวจให้ได้มาตรฐานก่อนปล่อยเวอร์ชันใหม่ปลายเดือน ช่วยวางขั้นตอนตรวจให้หน่อย",
+     "expect": "core:skill-finder",
+     "got": [
+      "dev:coding-standard",
+      "qa:bug-report",
+      "mlops:model-release"
+     ]
+    },
+    {
+     "q": "พรุ่งนี้เช้าผมต้องรายงานบอร์ดเรื่องระบบล่มเมื่อต้นเดือน ลูกค้าได้รับผลกระทบหลายราย แล้วตอนนี้ฝั่ง DevOps กับ Dev ก็ยังเห็นไม่ตรงกันว่าต้นเหตุอยู่ตรงไหน ช่วยรวบรวมข้อมูลจากทั้งสองทีม เรียงไทม์ไลน์ และร่างสรุปให้ผู้บริหารที่ไม่ใช่สายเทคนิคอ่านเข้าใจหน่อย",
+     "expect": "exec:tech-risk-review",
+     "got": [
+      "devops:postmortem",
+      "exec:cost-headcount-review",
+      "exec:exec-deck"
+     ]
+    },
+    {
+     "q": "ช่วย review tech budget Q1 ของ Dev, QA, DevOps, ML แล้วเทียบกับ headcount plan และ cloud cost ปัจจุบันให้หน่อย อยากรู้ว่าตรงไหน over budget บ้าง พร้อม recommend ว่าควร cut หรือ reallocate ตรงไหนก่อน prepare slide คุยกับ CFO",
+     "expect": "exec:tech-risk-review",
+     "got": [
+      "exec:cost-headcount-review",
+      "mlops:model-release",
+      "dev:coding-standard"
+     ]
+    },
+    {
+     "q": "ช่วย draft product roadmap Q1 ให้หน่อย แยกเป็น now/next/later พร้อม key milestones กับ success metrics ของแต่ละ initiative จะเอาไป present ให้ leadership สัปดาห์หน้า",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:pipeline-review",
+      "dev:project-scaffold",
+      "mlops:mlflow-experiment"
+     ]
+    },
+    {
+     "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+     "expect": "product:product-sunset",
+     "got": [
+      "exec:pipeline-review",
+      "qa:bug-report",
+      "devops:deploy-checklist"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "dev:project-scaffold",
+      "exec:pipeline-review"
+     ]
+    }
+   ]
+  },
+  "Hybrid + Reranker": {
+   "n": 75,
+   "hit1": 81.3,
+   "hit5": 97.3,
+   "miss": [
+    {
+     "q": "สรุป feedback ลูกค้าเดือนนี้ให้หน่อย แยกตามฟีเจอร์",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "devops:postmortem",
+      "exec:deal-approval"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "devops:deploy-checklist",
+      "sa:arch-template"
+     ]
+    }
+   ]
+  },
+  "LLM (Claude)": {
+   "n": 75,
+   "hit1": 90.7,
+   "hit5": 96.0,
+   "miss": [
+    {
+     "q": "สรุป feedback ลูกค้าเดือนนี้ให้หน่อย แยกตามฟีเจอร์",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "shared:meeting-minutes",
+      "exec:pipeline-review"
+     ]
+    },
+    {
+     "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "exec:pipeline-review",
+      "exec:tech-risk-review"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "exec:pipeline-review",
+      "sa:req-to-spec"
+     ]
+    }
+   ]
+  }
+ }
+}

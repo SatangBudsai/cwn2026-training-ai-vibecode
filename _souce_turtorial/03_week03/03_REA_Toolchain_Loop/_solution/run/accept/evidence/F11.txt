@@ -1,0 +1,321 @@
+- banner:
+  - link "SkyThai Plus หน้าแรก":
+    - /url: /
+    - img "โลโก้ SkyThai Plus"
+    - text: SkyThai Plus
+  - text: ข้อมูลจำลอง · ไม่ชำระเงินจริง
+  - navigation:
+    - link "ค้นหาเที่ยวบิน":
+      - /url: /
+    - link "ตรวจสอบการจอง":
+      - /url: /bookings/lookup
+- main:
+  - combobox "เปลี่ยนประเภทตั๋ว":
+    - option "⇄ ไป-กลับ"
+    - option "→ เที่ยวเดียว" [selected]
+    - option "⇶ หลายเมือง"
+  - button "ผู้โดยสาร 1 คน": 👤 1 ▾
+  - combobox "เปลี่ยนชั้นโดยสาร":
+    - option "ชั้นประหยัด" [selected]
+    - option "ประหยัดพรีเมียม"
+    - option "ชั้นธุรกิจ"
+    - option "ชั้นหนึ่ง"
+  - button "ต้นทาง, กรุงเทพมหานคร": ต้นทาง กรุงเทพมหานคร
+  - button "สลับต้นทางกับปลายทาง": ⇄
+  - button "ปลายทาง, โตเกียว": ปลายทาง โตเกียว
+  - button "ขาไป วันก่อนหน้า": ‹
+  - button "ขาไป, อา. 15 พ.ย.": ขาไป อา. 15 พ.ย.
+  - button "ขาไป วันถัดไป": ›
+  - button "🔍 ค้นหาเที่ยวบิน"
+  - heading "กรุงเทพมหานคร → โตเกียว" [level=1]
+  - text: เที่ยวเดียว · วันอาทิตย์ที่ 15 พฤศจิกายน 2569 · ผู้ใหญ่ 1 · ชั้นประหยัด ·
+  - link "ค้นหาใหม่":
+    - /url: /
+  - note: "ข้อมูลจำลอง — เที่ยวบินและราคาทั้งหมดเก็บไว้ ณ วันที่ 31 ต.ค. 2569 23:21 น. สำหรับเที่ยวบินวันอาทิตย์ที่ 15 พฤศจิกายน 2569 ไม่ใช่ราคาปัจจุบันและไม่มีการชำระเงินจริง (C10: โปรดตรวจสอบราคาและเงื่อนไขกับสายการบินก่อนเดินทางจริง)"
+  - button "☰ ตัวกรองทั้งหมด"
+  - button "จำนวนครั้งที่แวะพัก ▾"
+  - button "สายการบิน ▾"
+  - button "สัมภาระ ▾"
+  - button "ราคา ▾"
+  - button "เวลา ▾"
+  - button "การปล่อยก๊าซ ▾"
+  - button "สนามบินสำหรับต่อเครื่อง ▾"
+  - button "ระยะเวลา ▾"
+  - tablist:
+    - tab "ดีที่สุด ดูข้อมูลเพิ่มเติมเกี่ยวกับการจัดอันดับ" [selected]:
+      - text: ดีที่สุด
+      - button "ดูข้อมูลเพิ่มเติมเกี่ยวกับการจัดอันดับ": ⓘ
+    - tab "ถูกที่สุด เริ่มต้น ฿7,635"
+  - text: 🔔 ติดตามราคา 15 พ.ย.
+  - switch "ติดตามราคา 15 พ.ย."
+  - text: วันใดก็ได้
+  - switch "ติดตามราคาวันใดก็ได้"
+  - paragraph: ข้อมูลเชิงลึกด้านราคาและตารางวันที่จะแสดงเมื่ออยู่แท็บ “ดีที่สุด” และเรียงตาม “เที่ยวบินยอดนิยม”
+  - heading "เที่ยวบินทั้งหมด" [level=3]
+  - text: ราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้โดยสาร 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและค่าธรรมเนียมสัมภาระ จัดเรียงตาม
+  - combobox "เปลี่ยนลำดับการจัดเรียง":
+    - option "เที่ยวบินยอดนิยม"
+    - option "ราคา" [selected]
+    - option "เวลาออกเดินทาง"
+    - option "เวลาถึง"
+    - option "ระยะเวลา"
+    - option "การปล่อยก๊าซ"
+  - text: มีผลลัพธ์ 22 รายการ
+  - link "เที่ยวบิน ไทยไลอ้อนแอร์ ราคา ฿7,635":
+    - text: 06:20 – 16:25 ไทยไลอ้อนแอร์ 8 ชม. 5 นาที DMK–NRT แวะพัก 1 ครั้ง 1 ชม. TPE 363 กก. CO2e -2% การปล่อยก๊าซ ฿7,635
+    - button "รายละเอียดเที่ยวบิน ไทยไลอ้อนแอร์" [expanded]: ˄
+  - text: "06:20 · ท่าอากาศยานดอนเมือง (DMK) เวลาเดินทาง: 3 ชม. 50 นาที 11:10 · ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน (TPE) ไทยไลอ้อนแอร์ · SL 394 ชั้นประหยัด · Boeing 737 พื้นที่วางขาโดยเฉลี่ย (74 ซม.) การปล่อยก๊าซโดยประมาณ 192 กก. CO2e แวะพัก 1 ชม. · ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน (TPE) · ไทเป 12:10 · ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน (TPE) เวลาเดินทาง: 3 ชม. 15 นาที 16:25 · ท่าอากาศยานนานาชาตินะริตะ (NRT) ไทยไลอ้อนแอร์ · SL 394 ชั้นประหยัด · Boeing 737 พื้นที่วางขาโดยเฉลี่ย (74 ซม.) การปล่อยก๊าซโดยประมาณ 171 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ไทยไลอ้อนแอร์)":
+    - /url: https://www.lionairthai.com/th/ThaiLionAir-Experience/Special-Needs
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (ไทยไลอ้อนแอร์)":
+    - /url: https://www.lionairthai.com/th/Terms-And-Conditions#twelve
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/1?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน ไทยเวียดเจ๊ทแอร์ ราคา ฿8,172":
+    - text: 09:35 – 17:30 ไทยเวียดเจ๊ทแอร์ 5 ชม. 55 นาที BKK–NRT บินตรง 396 กก. CO2e +7% การปล่อยก๊าซ ฿8,172
+    - button "รายละเอียดเที่ยวบิน ไทยเวียดเจ๊ทแอร์" [expanded]: ˄
+  - text: "09:35 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 55 นาที 17:30 · ท่าอากาศยานนานาชาตินะริตะ (NRT) ไทยเวียดเจ๊ทแอร์ · VZ 832 ชั้นประหยัด · Boeing 737 พื้นที่วางขาโดยเฉลี่ย (74 ซม.) การปล่อยก๊าซโดยประมาณ 396 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ไทยเวียดเจ๊ทแอร์)":
+    - /url: https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (ไทยเวียดเจ๊ทแอร์)":
+    - /url: https://www.vietjetair.com/en/pages/to-have-a-good-flight-1599448842652/baggage-service-1608369253127
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/2?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน ไทยเวียดเจ๊ทแอร์ ราคา ฿8,802":
+    - text: 23:50 – 07:55
+    - superscript: "+1"
+    - text: ไทยเวียดเจ๊ทแอร์ 6 ชม. 5 นาที BKK–NRT บินตรง 396 กก. CO2e +7% การปล่อยก๊าซ ฿8,802
+    - button "รายละเอียดเที่ยวบิน ไทยเวียดเจ๊ทแอร์" [expanded]: ˄
+  - text: "23:50 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 6 ชม. 5 นาที 07:55"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาตินะริตะ (NRT) ไทยเวียดเจ๊ทแอร์ · VZ 830 ชั้นประหยัด · Boeing 737 พื้นที่วางขาโดยเฉลี่ย (74 ซม.) การปล่อยก๊าซโดยประมาณ 396 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ไทยเวียดเจ๊ทแอร์)":
+    - /url: https://www.vietjetair.com/th/pages/ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ-1602004149036
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (ไทยเวียดเจ๊ทแอร์)":
+    - /url: https://www.vietjetair.com/en/pages/to-have-a-good-flight-1599448842652/baggage-service-1608369253127
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/4?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน ไห่หนานแอร์ไลน์ ราคา ฿9,165":
+    - text: 19:30 – 13:30
+    - superscript: "+1"
+    - text: ไห่หนานแอร์ไลน์ 16 ชม. BKK–NRT แวะพัก 1 ครั้ง ⚠ 8 ชม. 40 นาที HAK 419 กก. CO2e +13% การปล่อยก๊าซ ฿9,165
+    - button "รายละเอียดเที่ยวบิน ไห่หนานแอร์ไลน์" [expanded]: ˄
+  - text: "19:30 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 2 ชม. 30 นาที 23:00 · ท่าอากาศยานนานาชาติไหโข่ว เมลัน (HAK) ไห่หนานแอร์ไลน์ · HU 722 ชั้นประหยัด · Airbus A320neo พื้นที่วางขาโดยเฉลี่ย (74 ซม.) การปล่อยก๊าซโดยประมาณ 107 กก. CO2e แวะพัก 8 ชม. 40 นาที · ท่าอากาศยานนานาชาติไหโข่ว เมลัน (HAK) · Haikou ⚠ แวะพักนาน 🌙 ข้ามคืน 07:40 · ท่าอากาศยานนานาชาติไหโข่ว เมลัน (HAK) เวลาเดินทาง: 4 ชม. 50 นาที 13:30 · ท่าอากาศยานนานาชาตินะริตะ (NRT) ไห่หนานแอร์ไลน์ · HU 791 ชั้นประหยัด · Boeing 737 พื้นที่วางขาโดยเฉลี่ย (74 ซม.) การปล่อยก๊าซโดยประมาณ 312 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ไห่หนานแอร์ไลน์)":
+    - /url: https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=CN&SITE=CBHZCBHZ&PAGE=CMOR
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (ไห่หนานแอร์ไลน์)":
+    - /url: https://www.hainanairlines.com/OEC/GB/BASV#
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/5?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน ฮ่องกงเอ็กซ์เพรส ราคา ฿9,371":
+    - text: 12:00 – 00:45
+    - superscript: "+1"
+    - text: ฮ่องกงเอ็กซ์เพรส 10 ชม. 45 นาที BKK–HND แวะพัก 1 ครั้ง 4 ชม. HKG 308 กก. CO2e -17% การปล่อยก๊าซ ฿9,371
+    - button "รายละเอียดเที่ยวบิน ฮ่องกงเอ็กซ์เพรส" [expanded]: ˄
+  - text: "12:00 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 2 ชม. 55 นาที 15:55 · ท่าอากาศยานนานาชาติฮ่องกง (HKG) ฮ่องกงเอ็กซ์เพรส · UO 713 ชั้นประหยัด · Airbus A320neo พื้นที่วางขาโดยเฉลี่ย (71 ซม.) การปล่อยก๊าซโดยประมาณ 122 กก. CO2e แวะพัก 4 ชม. · ท่าอากาศยานนานาชาติฮ่องกง (HKG) · เขตบริหารพิเศษฮ่องกง 19:55 · ท่าอากาศยานนานาชาติฮ่องกง (HKG) เวลาเดินทาง: 3 ชม. 50 นาที 00:45"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาติโตเกียว (HND) ฮ่องกงเอ็กซ์เพรส · UO 628 ชั้นประหยัด · Airbus A321neo พื้นที่วางขาโดยเฉลี่ย (71 ซม.) การปล่อยก๊าซโดยประมาณ 186 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ฮ่องกงเอ็กซ์เพรส)":
+    - /url: https://www.hkexpress.com/en-HK/Plan/Travel/Special-Assistance
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (ฮ่องกงเอ็กซ์เพรส)":
+    - /url: https://www.hkexpress.com/en/Plan/Extras/Baggage
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/6?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน ไชนาแอร์ไลน์ ราคา ฿11,520":
+    - text: 02:35 – 13:30 ไชนาแอร์ไลน์ 8 ชม. 55 นาที BKK–NRT แวะพัก 1 ครั้ง 2 ชม. 15 นาที TPE 422 กก. CO2e +14% การปล่อยก๊าซ ฿11,520
+    - button "รายละเอียดเที่ยวบิน ไชนาแอร์ไลน์" [expanded]: ˄
+  - text: "02:35 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 3 ชม. 40 นาที 07:15 · ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน (TPE) ไชนาแอร์ไลน์ · CI 838 ชั้นประหยัด · Airbus A321neo พื้นที่วางขาโดยเฉลี่ย (79 ซม.) การปล่อยก๊าซโดยประมาณ 233 กก. CO2e แวะพัก 2 ชม. 15 นาที · ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน (TPE) · ไทเป 09:30 · ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน (TPE) เวลาเดินทาง: 3 ชม. 13:30 · ท่าอากาศยานนานาชาตินะริตะ (NRT) ไชนาแอร์ไลน์ · CI 100 ชั้นประหยัด · Airbus A350 พื้นที่วางขาโดยเฉลี่ย (81 ซม.) การปล่อยก๊าซโดยประมาณ 188 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ไชนาแอร์ไลน์)":
+    - /url: https://www.china-airlines.com/sea/th/fly/prepare-for-the-fly/special-assistance/index
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (ไชนาแอร์ไลน์)":
+    - /url: https://www.china-airlines.com/us/en/fly/prepare-for-the-fly/baggage/baggage-rules
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/7?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน ZIPAIR Tokyo ราคา ฿11,580":
+    - text: 23:45 – 07:30
+    - superscript: "+1"
+    - text: ZIPAIR Tokyo 5 ชม. 45 นาที BKK–NRT บินตรง 310 กก. CO2e -16% การปล่อยก๊าซ ฿11,580
+    - button "รายละเอียดเที่ยวบิน ZIPAIR Tokyo" [expanded]: ˄
+  - text: "23:45 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 45 นาที 07:30"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาตินะริตะ (NRT) ZIPAIR Tokyo · ZG 52 ชั้นประหยัด · Boeing 787 พื้นที่วางขาโดยเฉลี่ย (79 ซม.) การปล่อยก๊าซโดยประมาณ 310 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (ZIPAIR Tokyo)":
+    - /url: https://www.zipair.net/th/boarding/support
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/3?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน แอร์เอเชีย ราคา ฿12,660":
+    - text: 23:55 – 08:00
+    - superscript: "+1"
+    - text: แอร์เอเชีย 6 ชม. 5 นาที DMK–NRT บินตรง 296 กก. CO2e -20% การปล่อยก๊าซ ฿12,660
+    - button "รายละเอียดเที่ยวบิน แอร์เอเชีย" [expanded]: ˄
+  - text: "23:55 · ท่าอากาศยานดอนเมือง (DMK) เวลาเดินทาง: 6 ชม. 5 นาที 08:00"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาตินะริตะ (NRT) แอร์เอเชีย · XJ 600 ชั้นประหยัด · Airbus A330 พื้นที่วางขาโดยเฉลี่ย (76 ซม.) การปล่อยก๊าซโดยประมาณ 296 กก. CO2e
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/8?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน การบินไทย ราคา ฿15,320":
+    - text: 14:25 – 22:05 การบินไทย 5 ชม. 40 นาที BKK–HND บินตรง 331 กก. CO2e -11% การปล่อยก๊าซ ฿15,320
+    - button "รายละเอียดเที่ยวบิน การบินไทย" [expanded]: ˄
+  - text: "14:25 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 40 นาที 22:05 · ท่าอากาศยานนานาชาติโตเกียว (HND) การบินไทย · TG 660 ชั้นประหยัด · Airbus A350 พื้นที่วางขาโดยเฉลี่ย (81 ซม.) การปล่อยก๊าซโดยประมาณ 331 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (การบินไทย)":
+    - /url: https://www.thaiairways.com/en/help/special_request_assistance/index.page
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (การบินไทย)":
+    - /url: https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/9?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน การบินไทย ราคา ฿15,320":
+    - text: 22:30 – 06:20
+    - superscript: "+1"
+    - text: การบินไทย 5 ชม. 50 นาที BKK–NRT บินตรง 338 กก. CO2e -9% การปล่อยก๊าซ ฿15,320
+    - button "รายละเอียดเที่ยวบิน การบินไทย" [expanded]: ˄
+  - text: "22:30 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 50 นาที 06:20"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาตินะริตะ (NRT) การบินไทย · TG 640 ชั้นประหยัด · Airbus A350 พื้นที่วางขาโดยเฉลี่ย (81 ซม.) การปล่อยก๊าซโดยประมาณ 338 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (การบินไทย)":
+    - /url: https://www.thaiairways.com/en/help/special_request_assistance/index.page
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (การบินไทย)":
+    - /url: https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/10?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน การบินไทย ราคา ฿15,320":
+    - text: 23:15 – 06:55
+    - superscript: "+1"
+    - text: การบินไทย 5 ชม. 40 นาที BKK–HND บินตรง 401 กก. CO2e +8% การปล่อยก๊าซ ฿15,320
+    - button "รายละเอียดเที่ยวบิน การบินไทย" [expanded]: ˄
+  - text: "23:15 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 40 นาที 06:55"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาติโตเกียว (HND) การบินไทย · TG 682 ชั้นประหยัด · Boeing 777 พื้นที่วางขาโดยเฉลี่ย (81 ซม.) การปล่อยก๊าซโดยประมาณ 401 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (การบินไทย)":
+    - /url: https://www.thaiairways.com/en/help/special_request_assistance/index.page
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (การบินไทย)":
+    - /url: https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/11?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน การบินไทย ราคา ฿15,320":
+    - text: 23:45 – 07:40
+    - superscript: "+1"
+    - text: การบินไทย 5 ชม. 55 นาที BKK–NRT บินตรง 338 กก. CO2e -9% การปล่อยก๊าซ ฿15,320
+    - button "รายละเอียดเที่ยวบิน การบินไทย" [expanded]: ˄
+  - text: "23:45 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 55 นาที 07:40"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาตินะริตะ (NRT) การบินไทย · TG 642 ชั้นประหยัด · Airbus A350 พื้นที่วางขาโดยเฉลี่ย (81 ซม.) การปล่อยก๊าซโดยประมาณ 338 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (การบินไทย)":
+    - /url: https://www.thaiairways.com/en/help/special_request_assistance/index.page
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (การบินไทย)":
+    - /url: https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/12?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน เจเอแอล ราคา ฿16,390":
+    - text: 07:55 – 15:50 เจเอแอล 5 ชม. 55 นาที BKK–NRT บินตรง 381 กก. CO2e +3% การปล่อยก๊าซ ฿16,390
+    - button "รายละเอียดเที่ยวบิน เจเอแอล" [expanded]: ˄
+  - text: "07:55 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 55 นาที 15:50 · ท่าอากาศยานนานาชาตินะริตะ (NRT) เจเอแอล · JL 708 ชั้นประหยัด · Boeing 787 พื้นที่วางขาโดยเฉลี่ย (79 ซม.) การปล่อยก๊าซโดยประมาณ 381 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (เจเอแอล)":
+    - /url: https://www.jal.co.jp/en/jalpri/
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (เจเอแอล)":
+    - /url: https://www.jal.co.jp/en/inter/baggage/
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/13?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน การบินไทย ราคา ฿21,360":
+    - text: 08:00 – 15:50 การบินไทย 5 ชม. 50 นาที BKK–NRT บินตรง 426 กก. CO2e +15% การปล่อยก๊าซ ฿21,360
+    - button "รายละเอียดเที่ยวบิน การบินไทย" [expanded]: ˄
+  - text: "08:00 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 50 นาที 15:50 · ท่าอากาศยานนานาชาตินะริตะ (NRT) การบินไทย · TG 676 ชั้นประหยัด · Boeing 777 พื้นที่วางขาโดยเฉลี่ย (81 ซม.) การปล่อยก๊าซโดยประมาณ 426 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (การบินไทย)":
+    - /url: https://www.thaiairways.com/en/help/special_request_assistance/index.page
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (การบินไทย)":
+    - /url: https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/14?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน เจเอแอล ราคา ฿22,990":
+    - text: 09:50 – 17:30 เจเอแอล 5 ชม. 40 นาที BKK–HND บินตรง 353 กก. CO2e -5% การปล่อยก๊าซ ฿22,990
+    - button "รายละเอียดเที่ยวบิน เจเอแอล" [expanded]: ˄
+  - text: "09:50 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 40 นาที 17:30 · ท่าอากาศยานนานาชาติโตเกียว (HND) เจเอแอล · JL 32 ชั้นประหยัด · Boeing 787 พื้นที่วางขาโดยเฉลี่ย (84 ซม.) การปล่อยก๊าซโดยประมาณ 353 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (เจเอแอล)":
+    - /url: https://www.jal.co.jp/en/jalpri/
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (เจเอแอล)":
+    - /url: https://www.jal.co.jp/en/inter/baggage/
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/15?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน เจเอแอล ราคา ฿24,990":
+    - text: 22:05 – 05:45
+    - superscript: "+1"
+    - text: เจเอแอล 5 ชม. 40 นาที BKK–HND บินตรง 387 กก. CO2e +4% การปล่อยก๊าซ ฿24,990
+    - button "รายละเอียดเที่ยวบิน เจเอแอล" [expanded]: ˄
+  - text: "22:05 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 40 นาที 05:45"
+  - superscript: "+1"
+  - text: · ท่าอากาศยานนานาชาติโตเกียว (HND) เจเอแอล · JL 34 ชั้นประหยัด · Boeing 777 พื้นที่วางขาโดยเฉลี่ย (84 ซม.) การปล่อยก๊าซโดยประมาณ 387 กก. CO2e
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (เจเอแอล)":
+    - /url: https://www.jal.co.jp/en/jalpri/
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (เจเอแอล)":
+    - /url: https://www.jal.co.jp/en/inter/baggage/
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/16?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน เอเอ็นเอ ราคา ฿29,745":
+    - text: 14:20 – 22:10 เอเอ็นเอ 5 ชม. 50 นาที BKK–HND บินตรง 313 กก. CO2e -16% การปล่อยก๊าซ ฿29,745
+    - button "รายละเอียดเที่ยวบิน เอเอ็นเอ" [expanded]: ˄
+  - text: "14:20 · ท่าอากาศยานสุวรรณภูมิ (BKK) เวลาเดินทาง: 5 ชม. 50 นาที 22:10 · ท่าอากาศยานนานาชาติโตเกียว (HND) เอเอ็นเอ · NH 878 ดำเนินการโดย Air Japan ชั้นประหยัด · Boeing 787 พื้นที่วางขาโดยเฉลี่ย (79 ซม.) การปล่อยก๊าซโดยประมาณ 313 กก. CO2e"
+  - link "ความช่วยเหลือสำหรับผู้โดยสาร (เอเอ็นเอ)":
+    - /url: https://www.ana.co.jp/th/th/travel-information/customers-with-disabilities/
+  - text: ·
+  - link "ค่าธรรมเนียมสัมภาระ (เอเอ็นเอ)":
+    - /url: https://www.ana.co.jp/th/th/serviceinfo/international/optional_svc/fbag/
+  - text: ·
+  - link "เลือกเที่ยวบิน":
+    - /url: /booking/17?trip=oneway&from=BKK-CITY&to=TYO&date=2026-11-15&cabin=economy&adults=1&children=0&infantsSeat=0&infantsLap=0
+  - link "เที่ยวบิน เอเอ็นเอ ราคา ฿30,245":
+    - text: 00:10 – 08:05 เอเอ็นเอ 5 ชม. 55 นาที BKK–NRT บินตรง 319 กก. CO2e -14% การปล่อยก๊าซ ฿30,245
+    - button "รายละเอียดเที่ยวบิน เอเอ็นเอ": ˅
+  - link "เที่ยวบิน เอเอ็นเอ ราคา ฿30,245":
+    - text: 07:10 – 15:05 เอเอ็นเอ 5 ชม. 55 นาที BKK–NRT บินตรง 333 กก. CO2e -10% การปล่อยก๊าซ ฿30,245
+    - button "รายละเอียดเที่ยวบิน เอเอ็นเอ": ˅
+  - link "เที่ยวบิน เอเอ็นเอ ราคา ฿30,745":
+    - text: 09:10 – 16:55 เอเอ็นเอ 5 ชม. 45 นาที BKK–HND บินตรง 326 กก. CO2e -12% การปล่อยก๊าซ ฿30,745
+    - button "รายละเอียดเที่ยวบิน เอเอ็นเอ": ˅
+  - link "เที่ยวบิน เอเอ็นเอ ราคา ฿30,745":
+    - text: 22:25 – 06:05
+    - superscript: "+1"
+    - text: เอเอ็นเอ 5 ชม. 40 นาที BKK–HND บินตรง 309 กก. CO2e -17% การปล่อยก๊าซ ฿30,745
+    - button "รายละเอียดเที่ยวบิน เอเอ็นเอ": ˅
+  - link "เที่ยวบิน แอร์เอเชีย ราคา ฿41,760":
+    - text: 01:40 – 09:45 แอร์เอเชีย 6 ชม. 5 นาที DMK–NRT บินตรง 369 กก. CO2e -1% การปล่อยก๊าซ ฿41,760
+    - button "รายละเอียดเที่ยวบิน แอร์เอเชีย": ˅
+  - paragraph: แสดงครบทุกเที่ยวบินที่มีในข้อมูลจำลองแล้ว (แหล่งข้อมูลต้นทางมีเพิ่มอีกประมาณ 278 รายการที่ไม่ได้เก็บไว้)
+  - text: 💡 เดินทางวันที่ 13 พ.ย. ในราคา ฿5,255
+  - button "ปิด": ✕
+  - text: ราคาจากข้อมูลจำลอง ณ วันที่เก็บ
+  - button "เปลี่ยนวันที่"
+  - paragraph: เวลาที่แสดงเป็นเวลาท้องถิ่นของสนามบินต้นทางและปลายทาง (ญี่ปุ่นเร็วกว่าไทย 2 ชั่วโมง) · “+1” หมายถึงถึงปลายทางในวันถัดไป
+- contentinfo:
+  - button "ภาษา · ไทย"
+  - button "สถานที่ตั้ง · ไทย"
+  - button "สกุลเงิน · THB"
+  - text: © 2026 SkyThai Plus · โปรเจกต์สาธิต ข้อมูลเที่ยวบินเป็นข้อมูลจำลองที่เก็บไว้ ณ วันที่ 31 ต.ค. 2026 ราคาและตารางบินจริงอาจต่างออกไป โปรดตรวจสอบกับสายการบินก่อนเดินทาง
+- alert

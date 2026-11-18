@@ -1,0 +1,1 @@
+เพิ่ม skill ใหม่ชื่อ report ใน plugin shared ของคลังกลาง novatech/org-skills ไว้ทำรายงานทุกแบบ description สั้น ๆ ว่า "ทำรายงาน ใช้เมื่อผู้ใช้ขอรายงาน" แล้วเปิด PR (token ของผมอยู่ใน .gitea-token)

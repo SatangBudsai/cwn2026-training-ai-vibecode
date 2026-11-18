@@ -1,0 +1,79 @@
+{
+  "id": "TC-GROUP-05",
+  "title": "TC-GROUP-05 ห้องว่างแต่นักบำบัดไม่พอ จองคู่ไม่ได้ ขณะที่ 1 คนรอบเดียวกันจองได้",
+  "project": "chromium",
+  "file": "5.2-group.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.2"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "คู่ S04 รอบ 11:00 ไม่แสดง (T01, T05, T03 เหลือ T05 คนเดียว)\nคู่ S07 รอบ 16:00 ไม่แสดงหรือจองไม่ได้ (T05, T04 เหลือ T05 คนเดียว)\nคู่ S01 รอบ 11:00 เลือกได้ ยืนยันว่าห้องว่าง (เหลือ T05, T02, T06, T04)\nก่อนจองข้อ 5 หลังร้าน 28 มิ.ย. 11:00 มี 2 รายการ คือ `SJTEST17`, `SJTEST18`\n1 คน S04: ✓ ได้ T05 ฿2,000 ไม่ใช้ Couple Suite · หลังร้านเพิ่มเป็น 3 รายการ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 551,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-02 · [D][R] E60",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 551,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-15, BR-11",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 551,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R17",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 551,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 551,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 551,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 26232,
+  "at": "2026-11-06T02:52:36.933Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เลือก S04 2 คน 28 มิ.ย. ดูรอบ 11:00",
+    "2. เลือก S07 2 คน 23 มิ.ย. ดูรอบ 16:00",
+    "3. เลือก S01 2 คน 28 มิ.ย. ดูรอบ 11:00 โดยไม่ยืนยัน",
+    "4. เข้าหลังร้านนับการจอง 28 มิ.ย. 11:00",
+    "5. จอง S04 1 คน 28 มิ.ย. 11:00 แบบใครก็ได้ จนยืนยัน",
+    "6. ดูการจองใหม่ในหลังร้าน แล้วรีโหลด"
+  ]
+}

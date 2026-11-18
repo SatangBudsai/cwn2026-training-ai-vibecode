@@ -1,0 +1,10 @@
+# act_runner: งาน CI รันใน container node:22-bookworm บน network เดียวกับ Gitea
+log:
+  level: info
+runner:
+  file: /data/.runner
+  capacity: 2
+  labels:
+    - "ubuntu-latest:docker://node:22-bookworm"
+container:
+  network: novatech_default

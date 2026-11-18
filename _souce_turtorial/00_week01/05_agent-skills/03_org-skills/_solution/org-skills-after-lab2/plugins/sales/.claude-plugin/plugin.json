@@ -1,0 +1,14 @@
+{
+  "name": "sales",
+  "version": "1.0.0",
+  "description": "งานขาย: proposal ลูกค้าธนาคารจาก TOR และอีเมลติดตามลูกค้า",
+  "author": {
+    "name": "sales-nida"
+  },
+  "keywords": [
+    "department",
+    "sales",
+    "follow-up-email",
+    "sales-proposal"
+  ]
+}

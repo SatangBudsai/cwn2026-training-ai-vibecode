@@ -1,0 +1,377 @@
+[
+ {
+  "q": "สรุปดีลนี้ให้หน่อย ควรอนุมัติไหม",
+  "who": "md-somchai",
+  "expect": "exec:deal-approval"
+ },
+ {
+  "q": "เซลส์ส่งดีลโรงพยาบาลมาให้เซ็น มูลค่า 12 ล้าน แต่ margin ดูต่ำกว่าปกติ ช่วยดูหน่อยว่าความเสี่ยงอยู่ตรงไหน ถ้าจะตีกลับควรให้เขาแก้อะไร",
+  "who": "md-somchai",
+  "expect": "exec:deal-approval"
+ },
+ {
+  "q": "รีวิว deal summary 3 ตัวสัปดาห์นี้ให้หน่อย จัด priority แล้วบอก go / no-go พร้อมเหตุผลสั้นๆ",
+  "who": "md-somchai",
+  "expect": "exec:deal-approval"
+ },
+ {
+  "q": "ทำสไลด์ประชุมผู้บริหารเดือนนี้",
+  "who": "exec-ploy",
+  "expect": "exec:exec-deck"
+ },
+ {
+  "q": "ต้นเดือนอีกแล้ว ต้องรวบตัวเลขยอดขาย สถานะโปรเจกต์ แล้วก็เรื่อง HR มาทำสไลด์ให้ MD ทุกครั้งเสียเวลาครึ่งวัน ช่วยเรียงให้หน่อยว่าควรมีกี่หน้า หน้าไหนใส่อะไร",
+  "who": "exec-ploy",
+  "expect": "exec:exec-deck"
+ },
+ {
+  "q": "ช่วยทำ deck monthly exec meeting ให้หน่อย ขอ executive summary หน้าแรก แล้วตามด้วย KPI dashboard กับ action items",
+  "who": "exec-ploy",
+  "expect": "exec:exec-deck"
+ },
+ {
+  "q": "ร่าง proposal ให้ลูกค้าธนาคาร",
+  "who": "sales-nida",
+  "expect": "sales:sales-proposal"
+ },
+ {
+  "q": "เพิ่งคุยกับลูกค้าบริษัทประกันมา เขาอยากได้ระบบเคลมออนไลน์ งบประมาณราว 5 ล้าน ต้องส่งข้อเสนอภายในวันศุกร์ ช่วยร่างให้หน่อยได้ไหม",
+  "who": "sales-nida",
+  "expect": "sales:sales-proposal"
+ },
+ {
+  "q": "ขอ draft proposal แบบ enterprise มี scope, timeline, pricing, terms ครบ ลูกค้าเป็น retail chain จะทำ loyalty app",
+  "who": "sales-nida",
+  "expect": "sales:sales-proposal"
+ },
+ {
+  "q": "เขียนอีเมลตามลูกค้าหลังประชุมเมื่อเช้า",
+  "who": "sales-krit",
+  "expect": "sales:follow-up-email"
+ },
+ {
+  "q": "บ่ายนี้ไปเจอคุณวิไลที่บริษัทโลจิสติกส์มา เขาสนใจระบบติดตามรถแต่ยังลังเลเรื่องราคา ช่วยเขียนเมลขอบคุณแล้วชวนนัดเดโมรอบหน้าให้หน่อย สุภาพแต่ไม่ต้องทางการมาก",
+  "who": "sales-krit",
+  "expect": "sales:follow-up-email"
+ },
+ {
+  "q": "ช่วยเขียน follow-up email หลัง meeting ให้หน่อย สรุป next steps แล้วแนบ deck ที่ present ไป tone friendly",
+  "who": "sales-krit",
+  "expect": "sales:follow-up-email"
+ },
+ {
+  "q": "แปลง TOR นี้เป็น spec",
+  "who": "sa-ton",
+  "expect": "sa:req-to-spec"
+ },
+ {
+  "q": "ได้ TOR ของหน่วยงานรัฐมา 40 หน้า เรื่องระบบลงทะเบียนออนไลน์ ต้องแตกเป็นรายการ requirement แล้วทำแผนทดสอบให้ QA ด้วย ช่วยเริ่มจากตรงไหนดี",
+  "who": "sa-ton",
+  "expect": "sa:req-to-spec"
+ },
+ {
+  "q": "จาก proposal ที่ sign แล้ว ช่วย breakdown เป็น functional / non-functional requirements พร้อม test plan กับ acceptance criteria ให้หน่อย",
+  "who": "sa-ton",
+  "expect": "sa:req-to-spec"
+ },
+ {
+  "q": "วาด architecture diagram ระบบใหม่",
+  "who": "sa-ice",
+  "expect": "sa:arch-template"
+ },
+ {
+  "q": "โปรเจกต์ใหม่นี้หน้าตาคล้ายระบบที่ทำให้ลูกค้าเก่าเกือบหมด ต่างแค่ต้องต่อ ERP ของเขา ไม่อยากวาดใหม่ตั้งแต่ศูนย์ ช่วยเอาโครงเดิมมาปรับให้หน่อย",
+  "who": "sa-ice",
+  "expect": "sa:arch-template"
+ },
+ {
+  "q": "ขอ architecture diagram แบบ microservices มี API gateway, auth service, payment, notification แล้วก็ deploy บน k8s ทำเป็น mermaid ให้หน่อย",
+  "who": "sa-ice",
+  "expect": "sa:arch-template"
+ },
+ {
+  "q": "รีวิว PR นี้ให้หน่อย",
+  "who": "dev-pond",
+  "expect": "dev:coding-standard"
+ },
+ {
+  "q": "น้องในทีมส่งโค้ดมาอีกแล้ว ตั้งชื่อตัวแปรไม่ตามมาตรฐาน ไม่มี test แล้วก็ catch error เงียบๆ อธิบายไปหลายรอบแล้ว ช่วยรีวิวแล้วเขียนคอมเมนต์ที่อธิบายเหตุผลให้น้องเข้าใจหน่อย",
+  "who": "dev-pond",
+  "expect": "dev:coding-standard"
+ },
+ {
+  "q": "ช่วย code review ตาม coding standard ของทีม เช็ค naming, error handling, test coverage แล้ว comment แบบ constructive",
+  "who": "dev-pond",
+  "expect": "dev:coding-standard"
+ },
+ {
+  "q": "ตั้งโปรเจกต์ระบบสมาชิกกับชำระเงินใหม่",
+  "who": "dev-mew",
+  "expect": "dev:project-scaffold"
+ },
+ {
+  "q": "ปีนี้ทำระบบสมัครสมาชิกพร้อมจ่ายเงินมาสี่รอบแล้ว รอบนี้ลูกค้าเป็นฟิตเนส อยากได้ระบบรายเดือนตัดบัตรอัตโนมัติ ช่วยขึ้นโครงให้หน่อยจะได้ไม่ต้องเริ่มใหม่",
+  "who": "dev-mew",
+  "expect": "dev:project-scaffold"
+ },
+ {
+  "q": "scaffold project ให้หน่อย มี user registration, login, JWT auth แล้วก็ payment gateway integration แบบ subscription",
+  "who": "dev-mew",
+  "expect": "dev:project-scaffold"
+ },
+ {
+  "q": "รันเทสก่อน release",
+  "who": "qa-mint",
+  "expect": "qa:test-from-plan"
+ },
+ {
+  "q": "พรุ่งนี้จะปล่อยระบบให้ลูกค้าแล้ว ช่วยไล่ตามแผนทดสอบให้หน่อยว่าเคสไหนผ่าน เคสไหนยังไม่ได้ทดสอบ แล้วสรุปว่าพร้อมปล่อยหรือยัง",
+  "who": "qa-mint",
+  "expect": "qa:test-from-plan"
+ },
+ {
+  "q": "ขอ test execution ตาม test plan ก่อน go-live แล้วสรุป pass/fail rate กับ blocker ที่เหลือ",
+  "who": "qa-mint",
+  "expect": "qa:test-from-plan"
+ },
+ {
+  "q": "เขียนรายงานบั๊ก test ล้ม",
+  "who": "qa-bank",
+  "expect": "qa:bug-report"
+ },
+ {
+  "q": "เมื่อกี้เทสหน้าชำระเงินแล้วกดจ่ายสองครั้งติดกัน ระบบตัดเงินสองรอบ เกิดทุกครั้งบน Chrome มือถือ ช่วยเขียนรายงานส่งทีม dev ให้หน่อย",
+  "who": "qa-bank",
+  "expect": "qa:bug-report"
+ },
+ {
+  "q": "ช่วยเขียน bug report ให้หน่อย มี steps to reproduce, expected vs actual, severity แล้วก็ environment จาก log ที่แปะไว้",
+  "who": "qa-bank",
+  "expect": "qa:bug-report"
+ },
+ {
+  "q": "เตรียมขึ้น production รอบนี้",
+  "who": "ops-art",
+  "expect": "devops:deploy-checklist"
+ },
+ {
+  "q": "คืนวันพฤหัสจะปล่อยเวอร์ชันใหม่ มีเปลี่ยนโครงสร้างฐานข้อมูลด้วย กลัวพลาดเหมือนรอบก่อน ช่วยไล่สิ่งที่ต้องเตรียมแล้วก็แผนถอยกลับให้หน่อย",
+  "who": "ops-art",
+  "expect": "devops:deploy-checklist"
+ },
+ {
+  "q": "ขอ deployment checklist สำหรับ release นี้ มี pre-deploy, migration, smoke test, rollback plan แล้วก็ monitoring หลัง deploy",
+  "who": "ops-art",
+  "expect": "devops:deploy-checklist"
+ },
+ {
+  "q": "เขียน postmortem ระบบล่มเมื่อคืน",
+  "who": "ops-fon",
+  "expect": "devops:postmortem"
+ },
+ {
+  "q": "เมื่อคืนตีสองเว็บลูกค้าล่มไปชั่วโมงครึ่ง สาเหตุคือดิสก์เต็มเพราะ log ไม่ถูกหมุน ต้องเขียนสรุปเหตุการณ์ส่งหัวหน้ากับลูกค้า ช่วยร่างให้หน่อย",
+  "who": "ops-fon",
+  "expect": "devops:postmortem"
+ },
+ {
+  "q": "ช่วยเขียน incident postmortem แบบ blameless มี timeline, root cause, impact แล้วก็ action items",
+  "who": "ops-fon",
+  "expect": "devops:postmortem"
+ },
+ {
+  "q": "สรุปผลการทดลองโมเดลสัปดาห์นี้",
+  "who": "ml-jay",
+  "expect": "mlops:mlflow-experiment"
+ },
+ {
+  "q": "ทีมทดลองโมเดลกันคนละทาง บางคนจดใน notebook บางคนจดใน sheet จะประชุมวันจันทร์แล้วยังไม่รู้เลยว่าตัวไหนดีที่สุด ช่วยจัดให้เป็นระเบียบหน่อย",
+  "who": "ml-jay",
+  "expect": "mlops:mlflow-experiment"
+ },
+ {
+  "q": "รวม experiment results ของทีมเป็น table เทียบ metrics, hyperparameters, dataset version แล้ว highlight best run ให้หน่อย",
+  "who": "ml-jay",
+  "expect": "mlops:mlflow-experiment"
+ },
+ {
+  "q": "ปล่อยโมเดลเวอร์ชันใหม่",
+  "who": "ml-pim",
+  "expect": "mlops:model-release"
+ },
+ {
+  "q": "เทรนโมเดลแนะนำสินค้ารอบใหม่เสร็จแล้ว ความแม่นดีขึ้นนิดหน่อย อยากเอาขึ้นแทนตัวเก่าแต่กลัวพังกลางทาง ต้องทำอะไรบ้างก่อนปล่อย",
+  "who": "ml-pim",
+  "expect": "mlops:model-release"
+ },
+ {
+  "q": "ช่วยทำ model release checklist ให้หน่อย ตั้งแต่ register model, evaluation เทียบ baseline, canary deploy จนถึง monitoring drift",
+  "who": "ml-pim",
+  "expect": "mlops:model-release"
+ },
+ {
+  "q": "เขียน JD ตำแหน่ง backend dev",
+  "who": "hr-fah",
+  "expect": "hr:jd-writer"
+ },
+ {
+  "q": "ทีม QA มีคนลาออกหนึ่งคน หัวหน้าอยากได้คนที่เขียนเทสอัตโนมัติเป็น ประสบการณ์สัก 2-3 ปี ช่วยเขียนประกาศรับสมัครให้หน่อย",
+  "who": "hr-fah",
+  "expect": "hr:jd-writer"
+ },
+ {
+  "q": "ขอ job description ตำแหน่ง Senior DevOps Engineer มี responsibilities, qualifications, nice-to-have แล้วก็ benefits",
+  "who": "hr-fah",
+  "expect": "hr:jd-writer"
+ },
+ {
+  "q": "เตรียมของต้อนรับพนักงานใหม่",
+  "who": "hr-oat",
+  "expect": "hr:onboarding-pack"
+ },
+ {
+  "q": "วันจันทร์หน้ามีน้องใหม่เข้ามาสามคน เป็น dev สองคน เซลส์หนึ่งคน ต้องเตรียมเอกสาร อีเมลต้อนรับ แล้วก็ตารางสัปดาห์แรกให้ ช่วยหน่อย",
+  "who": "hr-oat",
+  "expect": "hr:onboarding-pack"
+ },
+ {
+  "q": "ช่วยทำ onboarding kit ให้ new hire หน่อย มี welcome email, first-week schedule แล้วก็ checklist เรื่อง account กับอุปกรณ์",
+  "who": "hr-oat",
+  "expect": "hr:onboarding-pack"
+ },
+ {
+  "q": "คิดราคา proposal นี้ให้หน่อย",
+  "who": "fin-joy",
+  "expect": "finance:pricing-calc"
+ },
+ {
+  "q": "เซลส์ส่งขอบเขตงานมา ใช้คน 5 คน 6 เดือน มีค่า server ปีแรกด้วย ลูกค้าขอแบ่งจ่ายเป็นงวด ช่วยคิดราคาแล้วบอกด้วยว่ากำไรเหลือเท่าไร",
+  "who": "fin-joy",
+  "expect": "finance:pricing-calc"
+ },
+ {
+  "q": "ช่วยทำ pricing breakdown ให้หน่อย คิด man-day rate, cost, margin แล้วก็ payment terms สำหรับ proposal ของ Sales",
+  "who": "fin-joy",
+  "expect": "finance:pricing-calc"
+ },
+ {
+  "q": "ออกใบแจ้งหนี้งวดนี้",
+  "who": "fin-nok",
+  "expect": "finance:invoice-check"
+ },
+ {
+  "q": "สิ้นเดือนแล้ว ต้องออกใบแจ้งหนี้งวดที่สองให้ลูกค้าโปรเจกต์โรงงาน แต่ไม่แน่ใจว่ายอดตรงกับสัญญาไหม ช่วยตรวจแล้วร่างให้หน่อย",
+  "who": "fin-nok",
+  "expect": "finance:invoice-check"
+ },
+ {
+  "q": "ขอ check invoice ให้หน่อย ว่า amount, VAT 7%, withholding tax กับ due date ตรงกับ contract milestone ไหม",
+  "who": "fin-nok",
+  "expect": "finance:invoice-check"
+ },
+ {
+  "q": "รวม skill ทุกแผนกแล้วออกเวอร์ชันใหม่",
+  "who": "plat-ken",
+  "expect": "core:skill-finder"
+ },
+ {
+  "q": "แต่ละแผนกส่ง skill มาให้ทีมกลาง บางอันซ้ำกัน บางอันเขียนไม่ครบ ต้องตรวจให้ได้มาตรฐานก่อนปล่อยเวอร์ชันใหม่ปลายเดือน ช่วยวางขั้นตอนตรวจให้หน่อย",
+  "who": "plat-ken",
+  "expect": "core:skill-finder"
+ },
+ {
+  "q": "ช่วย review skill ที่ทีมส่งมา เช็ค frontmatter, description, ไม่ overlap กับตัวอื่น แล้วทำ changelog สำหรับ release ใหม่",
+  "who": "plat-ken",
+  "expect": "core:skill-finder"
+ },
+ {
+  "q": "โลโก้ใช้สีอะไร",
+  "who": "plat-may",
+  "expect": "core:customer-data-policy"
+ },
+ {
+  "q": "ทีมการตลาดถามมาว่าจะเอารูปลูกค้าที่มางานสัมมนาไปลงเฟซบุ๊กบริษัทได้ไหม ต้องขอความยินยอมก่อนหรือเปล่า ช่วยตอบให้หน่อย",
+  "who": "plat-may",
+  "expect": "core:customer-data-policy"
+ },
+ {
+  "q": "ทีม HR จะเก็บข้อมูลผู้สมัครงานใน Google Sheet ต้องทำตาม PDPA ยังไงบ้าง แล้วถ้าจะทำ email template ให้ตรง brand guideline ต้องใช้ font กับ color อะไร",
+  "who": "plat-may",
+  "expect": "core:customer-data-policy"
+ },
+ {
+  "q": "สรุปยอดขายเดือนนี้เทียบเป้า แยกตามทีม",
+  "who": "cco-wit",
+  "expect": "exec:pipeline-review"
+ },
+ {
+  "q": "พรุ่งนี้เช้าต้องเข้าประชุมผู้บริหารเรื่องดีลลูกค้ารายใหญ่ที่ติดอยู่หลายตัว ฝ่ายขายบอกว่าลูกค้ารอ proposal จาก SA ส่วน SA บอกว่ารอ Product ยืนยันฟีเจอร์ ช่วยไล่ให้หน่อยว่าแต่ละดีลค้างอยู่ที่ใคร ค้างมานานแค่ไหน แล้วควรตัดสินใจอะไรก่อน",
+  "who": "cco-wit",
+  "expect": "exec:pipeline-review"
+ },
+ {
+  "q": "ช่วยทำ Q4 pipeline review ให้หน่อย เอา top 10 deals พร้อม win probability กับ risk แต่ละตัว แล้วเช็กด้วยว่า product roadmap ตรงกับที่ sales commit ลูกค้าไว้มั้ย ขอเป็น summary สั้นๆ สำหรับ present ให้ CEO",
+  "who": "cco-wit",
+  "expect": "exec:pipeline-review"
+ },
+ {
+  "q": "สรุปสถานะทุกทีมสัปดาห์นี้ ขอแค่เรื่องเสี่ยงกับงานที่ล่าช้า",
+  "who": "cto-nat",
+  "expect": "exec:tech-risk-review"
+ },
+ {
+  "q": "พรุ่งนี้เช้าผมต้องรายงานบอร์ดเรื่องระบบล่มเมื่อต้นเดือน ลูกค้าได้รับผลกระทบหลายราย แล้วตอนนี้ฝั่ง DevOps กับ Dev ก็ยังเห็นไม่ตรงกันว่าต้นเหตุอยู่ตรงไหน ช่วยรวบรวมข้อมูลจากทั้งสองทีม เรียงไทม์ไลน์ และร่างสรุปให้ผู้บริหารที่ไม่ใช่สายเทคนิคอ่านเข้าใจหน่อย",
+  "who": "cto-nat",
+  "expect": "exec:tech-risk-review"
+ },
+ {
+  "q": "ช่วย review tech budget Q1 ของ Dev, QA, DevOps, ML แล้วเทียบกับ headcount plan และ cloud cost ปัจจุบันให้หน่อย อยากรู้ว่าตรงไหน over budget บ้าง พร้อม recommend ว่าควร cut หรือ reallocate ตรงไหนก่อน prepare slide คุยกับ CFO",
+  "who": "cto-nat",
+  "expect": "exec:tech-risk-review"
+ },
+ {
+  "q": "สรุปงบการเงินเดือนล่าสุดให้หน่อย",
+  "who": "cfo-ying",
+  "expect": "exec:cost-headcount-review"
+ },
+ {
+  "q": "ใกล้ปิดงบสิ้นเดือนแล้ว ฝ่ายบัญชียังตามเอกสารเบิกค่าใช้จ่ายของหลายทีมไม่ครบ แล้วพรุ่งนี้เช้าพี่ต้องรายงาน CEO ด้วย ช่วยดูหน่อยว่ายังค้างรายการไหน ทีมอะไรบ้าง ยอดรวมเท่าไหร่ แล้วร่างข้อความตามงานให้แต่ละทีมด้วย",
+  "who": "cfo-ying",
+  "expect": "exec:cost-headcount-review"
+ },
+ {
+  "q": "ช่วยทำ headcount report ของ Q4 แยกตาม team หน่อย เทียบ actual กับ budget ด้วย ถ้า payroll cost ทีมไหน over budget เกิน 5% ให้ highlight แล้วสรุปเป็น key points สั้นๆ สำหรับ present ใน exec meeting",
+  "who": "cfo-ying",
+  "expect": "exec:cost-headcount-review"
+ },
+ {
+  "q": "สรุป feature request เดือนนี้ เรียงตามความสำคัญ",
+  "who": "pm-beam",
+  "expect": "product:prd-writer"
+ },
+ {
+  "q": "ไตรมาสหน้าทีม dev มีคนจำกัด แต่ฝ่ายขายขอฟีเจอร์ใหม่มาเยอะมาก ส่วนลูกค้าเดิมก็บ่นเรื่องระบบช้าและบั๊กที่ค้างอยู่ ช่วยจัดลำดับสิ่งที่ควรทำก่อนหลังให้หน่อย พร้อมเหตุผลที่เอาไปคุยกับผู้บริหารและทีมขายได้",
+  "who": "pm-beam",
+  "expect": "product:prd-writer"
+ },
+ {
+  "q": "ช่วย draft product roadmap Q1 ให้หน่อย แยกเป็น now/next/later พร้อม key milestones กับ success metrics ของแต่ละ initiative จะเอาไป present ให้ leadership สัปดาห์หน้า",
+  "who": "pm-beam",
+  "expect": "product:prd-writer"
+ },
+ {
+  "q": "สรุป feedback ลูกค้าเดือนนี้ให้หน่อย แยกตามฟีเจอร์",
+  "who": "pm-gift",
+  "expect": "product:product-sunset"
+ },
+ {
+  "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+  "who": "pm-gift",
+  "expect": "product:product-sunset"
+ },
+ {
+  "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+  "who": "pm-gift",
+  "expect": "product:product-sunset"
+ }
+]

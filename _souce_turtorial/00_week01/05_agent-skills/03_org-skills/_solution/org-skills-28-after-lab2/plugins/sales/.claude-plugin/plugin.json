@@ -1,0 +1,11 @@
+{
+  "name": "sales",
+  "version": "1.0.0",
+  "description": "แผนก Sales: proposal และอีเมลติดตามลูกค้า",
+  "author": {
+    "name": "sales-nida"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

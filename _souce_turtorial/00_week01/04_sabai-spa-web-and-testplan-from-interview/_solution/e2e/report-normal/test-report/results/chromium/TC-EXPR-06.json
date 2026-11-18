@@ -1,0 +1,80 @@
+{
+  "id": "TC-EXPR-06",
+  "title": "TC-EXPR-06 วิเคราะห์เซลฟี่ในเครื่อง รูปไม่ออกจากเครื่องและไม่เหลือในเครื่อง",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: มีข้อความบอกว่ารูปวิเคราะห์ในเครื่อง ไม่ส่งออก และไม่เก็บ ก่อนมีการเลือกรูป\nขั้น 2 และ 4 (R111): ผลมีบริการแนะนำ 1 รายการ และมีข้อความว่าเป็นคำแนะนำเบื้องต้น\nขั้น 3 และ 5: request ที่มีข้อมูลรูป 0 รายการ · request POST หรือ PUT ที่มีชื่อไฟล์ base64 หรือ multipart 0 รายการ · request ไปบริการ AI ภายนอก 0 ครั้ง (ถ้าอัปโหลดจริงจะพบอย่างน้อย 1 รายการ)\nlocalStorage, IndexedDB, Cache มีรูป 0 รูป และไม่พบ `data:image` หรือชื่อไฟล์\nขั้น 6: รูปค้างบนหน้า 0 รูป\nขั้น 7: ทั้ง 20 รอบเหมือนกันทุกตัวอักษร\nไม่ตรวจขอบตารางความสว่าง เพราะตารางยังเป็นร่างของทีม (F-ร้าน 21)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 633,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 หลังร้านและข้อมูลส่วนตัว · [R] ⚠️A-26 · F-ร้าน 21",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 633,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-74, FR-75, NFR-09, NFR-14",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 633,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R103, R109, R110, R111",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 633,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Boundary, Security",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 633,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 633,
+        "column": 3
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 38006,
+  "at": "2026-11-06T02:22:04.757Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิด /th/skin อ่านข้อความก่อนเลือกรูป",
+    "2. กดปุ่มรูปตัวอย่าง อ่านผลและข้อความกำกับ",
+    "3. ตรวจ request หลังขั้น 1 และ localStorage, IndexedDB, Cache",
+    "4. รีโหลด อัปโหลด selfie-test.jpg ที่ skin-file อ่านผลและข้อความกำกับ",
+    "5. ตรวจ request และที่เก็บข้อมูลอีกครั้ง",
+    "6. รีโหลดแล้วดูว่ามีรูปหรือผลเดิมค้างบนหน้าหรือไม่",
+    "7. วิเคราะห์รูปตัวอย่างซ้ำ 20 รอบแล้วเทียบข้อความผล"
+  ]
+}

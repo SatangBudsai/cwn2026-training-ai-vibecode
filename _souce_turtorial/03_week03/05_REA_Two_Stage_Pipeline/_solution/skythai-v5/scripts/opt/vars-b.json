@@ -1,0 +1,21 @@
+[
+ {"sel": ".results-container .tab.on", "prop": "background-color", "choices": ["#fffafa", "#e8f0fe", "#ffffff", "#f2f6fc"]},
+ {"sel": ".results-container .tab.on", "prop": "border-bottom-color", "choices": ["#e2453c", "#1a73e8", "#163d7a", "transparent"]},
+ {"sel": ".results-container .tabs", "prop": "border-color", "choices": ["#e3e0dc", "#dadce0", "#1a73e8"]},
+ {"sel": ".mock-pill", "prop": "background-color", "choices": ["#fdf1f4", "#ffffff", "transparent"]},
+ {"sel": ".mock-pill", "prop": "font-size", "step": 1, "min": 12, "max": 15},
+ {"sel": ".header-nav a", "prop": "padding-left", "step": 4, "min": 0, "max": 20},
+ {"sel": ".list-head .list-sub", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".list-head .list-sub", "prop": "line-height", "step": 1, "min": 16, "max": 24},
+ {"sel": ".toast-card .toast-text", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".insight-head h4", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".results-container .list-head h3", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".results-container .sort-select", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".airline-badge", "prop": "border-width", "step": 1, "min": 0, "max": 3},
+ {"sel": ".airline-badge", "prop": "border-radius", "step": 4, "min": 0, "max": 20},
+ {"sel": ".results-container .chip", "prop": "border-color", "choices": ["#e3e0dc", "#dadce0", "#c4c7c5"]},
+ {"sel": ".results-container .others-head", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".brand-text", "prop": "letter-spacing", "step": 0.3, "min": -1.5, "max": 1.5},
+ {"sel": ".times", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6},
+ {"sel": ".flight-row .sub", "prop": "letter-spacing", "step": 0.2, "min": -0.6, "max": 0.6}
+]

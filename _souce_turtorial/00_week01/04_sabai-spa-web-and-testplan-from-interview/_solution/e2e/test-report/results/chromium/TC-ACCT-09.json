@@ -1,0 +1,79 @@
+{
+  "id": "TC-ACCT-09",
+  "title": "TC-ACCT-09 สมัครใหม่แล้ว login ได้ ยอดถึงระดับถัดไปตรงทุกระดับ แก้วันเกิดไม่ได้ ไม่มีปุ่มเปลี่ยนเวลา และฟอร์มไม่มีช่องไฟล์",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "สมาชิกใหม่: Silver · 0 แต้ม · ฿10,000 − ฿0 = \"อีก ฿10,000 ถึง Gold\"\nช่องไฟล์: ฟอร์มสมัคร 0 ช่อง · ฟอร์มจอง 0 ช่อง\nวันเกิด: ไม่มีช่องแก้ · แสดงอย่างเดียว\nU01 → ฿30,000 − ฿12,400 = \"อีก ฿17,600 ถึง Platinum\"\nU03 → ฿10,000 − ฿9,999 = \"อีก ฿1 ถึง Gold\"\nU08 → ฿30,000 − ฿10,000 = \"อีก ฿20,000 ถึง Platinum\" (ถ้าเทียบ ฿10,000 เป็น Silver จะขึ้น \"อีก ฿0 ถึง Gold\")\nU02 → Platinum ไม่แสดงยอด (ถ้าเทียบผิดจะขึ้น \"อีก ฿0 ถึง Platinum\")\nB07: ปุ่มเปลี่ยนเวลา 0 ปุ่ม · มีเฉพาะการยกเลิก",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 896,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 จองคิว · [D] บ.22 · [D][R] E238, E239, E241, E242 · [R] ⚠️A-22 E243 · [R] ⚠️A-12 · [R] ⚠️A-16",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 896,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-12, FR-13, FR-25, FR-34, FR-35, FR-73, NFR-08",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 896,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R115",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 896,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Equivalence partition, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 896,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 896,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 33644,
+  "at": "2026-11-06T02:54:58.716Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิด /th/register นับ input[type=file] แล้วสมัคร",
+    "2. ออกจากระบบ แล้ว login ด้วยบัญชีใหม่ อ่านระดับ แต้ม และยอดถึงระดับถัดไป",
+    "3. เปิดหน้าจอจอง S01 ทุกขั้นจนถึงหน้าจอกรอกข้อมูล นับ input[type=file]",
+    "4. ในบัญชีของสมาชิกใหม่ มองหาช่องแก้วันเกิด",
+    "5. login U01, U03, U08, U02 ทีละคน อ่านยอดถึงระดับถัดไป",
+    "6. U01 เปิดนัด B07 ในบัญชี มองหาปุ่มเปลี่ยนเวลา"
+  ]
+}

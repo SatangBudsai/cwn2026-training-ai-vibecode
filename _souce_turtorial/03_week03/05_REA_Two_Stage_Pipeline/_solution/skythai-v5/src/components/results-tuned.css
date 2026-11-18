@@ -1,0 +1,38 @@
+/* pipe2 — constrained pixel optimizer output (coordinate descent, see REPORT.md) */
+.list-head .list-sub { font-size: 12.75px !important; }
+.brand-text { font-size: 23px !important; }
+.header-nav a { font-size: 16px !important; }
+.toast-card .toast-text { font-size: 15.75px !important; }
+.toast-card .toast-text { line-height: 22px !important; }
+.tab .t { font-size: 14.5px !important; }
+.tab small { font-size: 13px !important; }
+.insight-head h4 { font-size: 17.5px !important; }
+.insight-head h4 { font-weight: 500 !important; }
+.results-container .list-head h3 { font-size: 19.75px !important; }
+.results-container .list-head h3 { font-weight: 400 !important; }
+.results-container .others-head { font-size: 21.5px !important; }
+.times { font-size: 15.75px !important; }
+.flight-row .sub { font-size: 12px !important; }
+.price { font-size: 13.5px !important; }
+.field-btn .val { font-size: 13.5px !important; }
+.field-btn .val { font-weight: 500 !important; }
+.results-container .chip { font-size: 12.63px !important; }
+.results-container .chip { letter-spacing: 0.08px !important; }
+.results-container .sort-select { font-size: 12.25px !important; }
+.results-container .tools-row .btn-secondary { font-size: 15.25px !important; }
+.track-row label { font-size: 12.25px !important; }
+.insight-toggle { font-size: 14.5px !important; }
+.results-strip .page-title { font-size: 12px !important; }
+.results-strip .sub { font-size: 12px !important; }
+.search-bar .select-pill { font-size: 13px !important; }
+/* pass B */
+.results-container .tab.on { border-bottom-color: #1a73e8 !important; }
+.list-head .list-sub { letter-spacing: -0.2px !important; }
+.toast-card .toast-text { letter-spacing: 0.1px !important; }
+.insight-head h4 { letter-spacing: -0.05px !important; }
+.results-container .list-head h3 { letter-spacing: -0.2px !important; }
+.results-container .sort-select { letter-spacing: 0.3px !important; }
+.airline-badge { border-width: 0px !important; }
+.results-container .others-head { letter-spacing: 0.35px !important; }
+.times { letter-spacing: 0.4px !important; }
+.flight-row .sub { letter-spacing: -0.2px !important; }

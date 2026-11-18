@@ -1,0 +1,79 @@
+{
+  "id": "TC-COURSE-10",
+  "title": "TC-COURSE-10 กราฟรอบเอวและประวัติทรีตเมนต์แสดงตัวเลขและลำดับตรง เฉพาะของเจ้าของบัญชี",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: 4 จุดเรียงตามวันที่ 82.0 → 81.0 → 79.5 → 78.0 ซม. · \"ลดลง 4.0 ซม.\" (82.0 − 78.0 = 4.0 · ถ้าเทียบจุดก่อนหน้าจะได้ 1.5)\nขั้น 2: ไม่มีช่องกรอกและไม่มีปุ่มอัปโหลด\nขั้น 3–4: 4 รายการ เรียง B04, B03, B02, B01 (ถ้าเรียงเก่าไปใหม่จะขึ้น B01 ก่อน)\nขั้น 5: ไม่เห็น B01–B04 และไม่เห็นกราฟ 82.0 → 78.0 ของ U01\nขั้น 6: ไปหน้าเข้าสู่ระบบ ไม่เห็นรายการ B01–B04",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 976,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §5 · [D][R] E250, E251 · [R] ⚠️A-22 · [R] ⚠️A-45",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 976,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-43, FR-44, FR-45",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 976,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R83, R96, R98",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 976,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative, Security",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 976,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 976,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 31656,
+  "at": "2026-11-06T02:24:17.571Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U01 เปิด Wallet อ่านกราฟรอบเอวและยอดที่ลดลง",
+    "2. หาช่องกรอกรอบเอวหรือปุ่มอัปโหลดรูปในหน้า Wallet",
+    "3. กด wallet-history-link อ่านรายการประวัติ แล้วรีโหลด",
+    "4. กลับหน้าบัญชี กด account-history-link อ่านรายการอีกครั้ง",
+    "5. ออกจากระบบ เข้า U02 เปิด /th/account/history และ Wallet",
+    "6. ออกจากระบบ เปิด /th/account/history แบบแขก"
+  ]
+}

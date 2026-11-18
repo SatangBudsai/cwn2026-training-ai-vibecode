@@ -1,0 +1,211 @@
+{
+  "id": "TC-PRICE-09",
+  "checks": [
+    {
+      "n": 1,
+      "label": "U08 3 คน ฿3,000 − 5% (฿150) = ฿2,850",
+      "pass": true,
+      "actual": "ราคาเต็ม 3 คน ฿3,000",
+      "shot": "shots/chromium/TC-PRICE-09/001.jpg",
+      "actor": "main",
+      "t": 5040
+    },
+    {
+      "n": 2,
+      "label": "U08 4 คน ฿4,000 − 10% (฿400) = ฿3,600",
+      "pass": true,
+      "actual": "ราคาเต็ม 4 คน ฿4,000",
+      "shot": "shots/chromium/TC-PRICE-09/002.jpg",
+      "actor": "main",
+      "t": 9159
+    },
+    {
+      "n": 3,
+      "label": "U08 S06 ฿1,500 − 5% (฿75) = ฿1,425",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,500",
+      "shot": "shots/chromium/TC-PRICE-09/003.jpg",
+      "actor": "main",
+      "t": 13659
+    },
+    {
+      "n": 4,
+      "label": "U08 S06 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,500",
+      "shot": "shots/chromium/TC-PRICE-09/004.jpg",
+      "actor": "main",
+      "t": 14643
+    },
+    {
+      "n": 5,
+      "label": "U02 4 คน ไม่เลือก ฿4,000 − 10% = ฿3,600",
+      "pass": true,
+      "actual": "ราคาเต็ม 4 คน ฿4,000",
+      "shot": "shots/chromium/TC-PRICE-09/005.jpg",
+      "actor": "main",
+      "t": 19842
+    },
+    {
+      "n": 6,
+      "label": "U02 เดือนเกิด S02 ฿1,120",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,120",
+      "shot": "shots/chromium/TC-PRICE-09/006.jpg",
+      "actor": "main",
+      "t": 25305
+    },
+    {
+      "n": 7,
+      "label": "U02 S02 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,400",
+      "shot": "shots/chromium/TC-PRICE-09/007.jpg",
+      "actor": "main",
+      "t": 26288
+    },
+    {
+      "n": 8,
+      "label": "U02 เดือนเกิด S03 ฿960",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿960",
+      "shot": "shots/chromium/TC-PRICE-09/008.jpg",
+      "actor": "main",
+      "t": 31625
+    },
+    {
+      "n": 9,
+      "label": "U02 S03 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,200",
+      "shot": "shots/chromium/TC-PRICE-09/009.jpg",
+      "actor": "main",
+      "t": 32610
+    },
+    {
+      "n": 10,
+      "label": "U02 เดือนเกิด S04 ฿1,600",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,600",
+      "shot": "shots/chromium/TC-PRICE-09/010.jpg",
+      "actor": "main",
+      "t": 37957
+    },
+    {
+      "n": 11,
+      "label": "U02 S04 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿2,000",
+      "shot": "shots/chromium/TC-PRICE-09/011.jpg",
+      "actor": "main",
+      "t": 38942
+    },
+    {
+      "n": 12,
+      "label": "U02 เดือนเกิด S05 ฿640",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿640",
+      "shot": "shots/chromium/TC-PRICE-09/012.jpg",
+      "actor": "main",
+      "t": 44189
+    },
+    {
+      "n": 13,
+      "label": "U02 S05 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿800",
+      "shot": "shots/chromium/TC-PRICE-09/013.jpg",
+      "actor": "main",
+      "t": 45173
+    },
+    {
+      "n": 14,
+      "label": "U02 เดือนเกิด S06 ฿1,200",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,200",
+      "shot": "shots/chromium/TC-PRICE-09/014.jpg",
+      "actor": "main",
+      "t": 50756
+    },
+    {
+      "n": 15,
+      "label": "U02 S06 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,500",
+      "shot": "shots/chromium/TC-PRICE-09/015.jpg",
+      "actor": "main",
+      "t": 51737
+    },
+    {
+      "n": 16,
+      "label": "U02 เดือนเกิด S07 ฿1,440",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿1,440",
+      "shot": "shots/chromium/TC-PRICE-09/016.jpg",
+      "actor": "main",
+      "t": 57042
+    },
+    {
+      "n": 17,
+      "label": "U02 S07 ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,800",
+      "shot": "shots/chromium/TC-PRICE-09/017.jpg",
+      "actor": "main",
+      "t": 58023
+    },
+    {
+      "n": 18,
+      "label": "U02 4 คน เลือก ฿4,000 − 20% (฿800) = ฿3,200",
+      "pass": true,
+      "actual": "ราคาเต็ม 4 คน ฿4,000",
+      "shot": "shots/chromium/TC-PRICE-09/018.jpg",
+      "actor": "main",
+      "t": 63121
+    },
+    {
+      "n": 19,
+      "label": "U02 4 คน ทุกยอดเป็นบาทเต็ม",
+      "pass": true,
+      "actual": "ราคาเต็ม 4 คน ฿4,000",
+      "shot": "shots/chromium/TC-PRICE-09/019.jpg",
+      "actor": "main",
+      "t": 64121
+    },
+    {
+      "n": 20,
+      "label": "U02 4 คน ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"5LLSZS5J\"}",
+      "shot": "shots/chromium/TC-PRICE-09/020.jpg",
+      "actor": "main",
+      "t": 65507
+    },
+    {
+      "n": 21,
+      "label": "U02 4 คน ยังเป็น ฿3,200 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿3,200",
+      "shot": "shots/chromium/TC-PRICE-09/021.jpg",
+      "actor": "main",
+      "t": 67073
+    },
+    {
+      "n": 22,
+      "label": "หลังร้าน ฿3,200",
+      "pass": true,
+      "actual": "฿3,200",
+      "shot": "shots/chromium/TC-PRICE-09/022.jpg",
+      "actor": "owner",
+      "t": 2354
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-PRICE-09/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-PRICE-09/main.webm"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "wall_s": 369.9,
+ "process_s": 1500.5,
+ "tool_calls": 21,
+ "tool_errors": 5,
+ "num_turns": 4,
+ "cost_usd": 0.633,
+ "is_error": false,
+ "credential_touch": []
+}

@@ -1,0 +1,52 @@
+{
+  "capturedAt": [
+    "2026-11-01 18:16:01",
+    "2026-11-01 18:16:21",
+    "2026-11-01 18:16:59"
+  ],
+  "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&hl=th&gl=TH&curr=THB",
+  "viewport": "1366x900",
+  "options": {
+    "threshold": 0.1,
+    "includeAA": false
+  },
+  "rounds": [
+    {
+      "file": "rounds/round-1.png",
+      "at": "2026-11-01 18:16:01",
+      "rows": 21
+    },
+    {
+      "file": "rounds/round-2.png",
+      "at": "2026-11-01 18:16:21",
+      "rows": 21
+    },
+    {
+      "file": "rounds/round-3.png",
+      "at": "2026-11-01 18:16:59",
+      "rows": 21
+    }
+  ],
+  "pairs": [
+    {
+      "pair": "round-1 vs round-2",
+      "pixels": 0,
+      "diffPct": 0
+    },
+    {
+      "pair": "round-1 vs round-3",
+      "pixels": 0,
+      "diffPct": 0
+    },
+    {
+      "pair": "round-2 vs round-3",
+      "pixels": 0,
+      "diffPct": 0
+    }
+  ],
+  "reference": "rounds/round-1.png (คู่ที่เหมือนกันมากที่สุด: round-1 vs round-2)",
+  "noiseFloorPct": {
+    "min": 0,
+    "max": 0
+  }
+}

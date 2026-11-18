@@ -1,0 +1,100 @@
+{
+  "id": "TC-COURSE-01",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ก่อนจอง: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-01/001.jpg",
+      "actor": "main",
+      "t": 3416
+    },
+    {
+      "n": 2,
+      "label": "หมดอายุ 13 ก.ย. 2026",
+      "pass": true,
+      "actual": "13 ก.ย. 2026",
+      "shot": "shots/chromium/TC-COURSE-01/002.jpg",
+      "actor": "main",
+      "t": 4432
+    },
+    {
+      "n": 3,
+      "label": "ยอดจ่าย ฿0",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿0",
+      "shot": "shots/chromium/TC-COURSE-01/003.jpg",
+      "actor": "main",
+      "t": 9085
+    },
+    {
+      "n": 4,
+      "label": "จองด้วยคอร์สสำเร็จ",
+      "pass": true,
+      "actual": "PJM9LREL",
+      "shot": "shots/chromium/TC-COURSE-01/004.jpg",
+      "actor": "main",
+      "t": 10515
+    },
+    {
+      "n": 5,
+      "label": "หลังจอง ทันที: เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-01/005.jpg",
+      "actor": "main",
+      "t": 12151
+    },
+    {
+      "n": 6,
+      "label": "หลังจอง หลังรีโหลด: เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 6 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-01/006.jpg",
+      "actor": "main",
+      "t": 13829
+    },
+    {
+      "n": 7,
+      "label": "มีปุ่มยกเลิกนัด PJM9LREL",
+      "pass": true,
+      "actual": "1",
+      "shot": "shots/chromium/TC-COURSE-01/007.jpg",
+      "actor": "main",
+      "t": 15249
+    },
+    {
+      "n": 8,
+      "label": "ยกเลิกนัด PJM9LREL สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-COURSE-01/008.jpg",
+      "actor": "main",
+      "t": 16700
+    },
+    {
+      "n": 9,
+      "label": "หลังยกเลิก ทันที: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-01/009.jpg",
+      "actor": "main",
+      "t": 18273
+    },
+    {
+      "n": 10,
+      "label": "หลังยกเลิก หลังรีโหลด: เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 7 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-COURSE-01/010.jpg",
+      "actor": "main",
+      "t": 19914
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-COURSE-01/main.webm"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+name: skythai-s2
+services:
+  app:
+    ports: !override
+      - "5096:3000"

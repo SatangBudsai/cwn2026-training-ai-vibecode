@@ -1,0 +1,109 @@
+{
+  "id": "TC-ACCT-06",
+  "checks": [
+    {
+      "n": 1,
+      "label": "Network มี URL รูป before และ after",
+      "pass": true,
+      "actual": "[\"/_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75\",\"/_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75\"]",
+      "shot": "shots/chromium/TC-ACCT-06/001.jpg",
+      "actor": "main",
+      "t": 4390
+    },
+    {
+      "n": 2,
+      "label": "U01 เปิด /_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75 ได้ 200 image/jpeg",
+      "pass": true,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/002.jpg",
+      "actor": "main",
+      "t": 5443
+    },
+    {
+      "n": 3,
+      "label": "U01 เปิด /_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75 ได้ 200 image/jpeg",
+      "pass": true,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/003.jpg",
+      "actor": "main",
+      "t": 6511
+    },
+    {
+      "n": 4,
+      "label": "แขก เปิด /_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75 ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/004.jpg",
+      "actor": "main",
+      "t": 7577
+    },
+    {
+      "n": 5,
+      "label": "แขก เปิด /_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75 ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/005.jpg",
+      "actor": "main",
+      "t": 8596
+    },
+    {
+      "n": 6,
+      "label": "แขก เปิด /placeholder/nida-before-body.jpg ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/006.jpg",
+      "actor": "main",
+      "t": 9579
+    },
+    {
+      "n": 7,
+      "label": "แขก เปิด /placeholder/nida-after-body.jpg ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/007.jpg",
+      "actor": "main",
+      "t": 10554
+    },
+    {
+      "n": 8,
+      "label": "U02 เปิด /_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75 ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/008.jpg",
+      "actor": "main",
+      "t": 12675
+    },
+    {
+      "n": 9,
+      "label": "U02 เปิด /_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75 ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/009.jpg",
+      "actor": "main",
+      "t": 13657
+    },
+    {
+      "n": 10,
+      "label": "U02 เปิด /placeholder/nida-before-body.jpg ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/010.jpg",
+      "actor": "main",
+      "t": 14679
+    },
+    {
+      "n": 11,
+      "label": "U02 เปิด /placeholder/nida-after-body.jpg ไม่ได้",
+      "pass": false,
+      "actual": "{\"status\":200,\"contentType\":\"image/jpeg\"}",
+      "shot": "shots/chromium/TC-ACCT-06/011.jpg",
+      "actor": "main",
+      "t": 15635
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-ACCT-06/main.webm"
+    }
+  }
+}

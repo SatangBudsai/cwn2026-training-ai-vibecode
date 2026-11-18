@@ -1,0 +1,93 @@
+{
+  "deal": "deal-001-B",
+  "customer": "ธนาคารนครหลวงพัฒนา จำกัด (มหาชน) — ฝ่ายพัฒนาช่องทางสาขา",
+  "project": "ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114) — ฉบับ B (เข้างบ 4.8M)",
+  "prepared_by": "จอย พัฒนสิน (fin-joy)",
+  "date": "2026-11-03",
+  "fixed_price": true,
+  "budget_thb": 4800000,
+  "lines": [
+    {
+      "code": "MD-SA",
+      "qty": 15,
+      "note": "workshop เดือน 1, ตอบ open questions, ADR, คุม integration core/Q-Matic"
+    },
+    {
+      "code": "MD-PM",
+      "qty": 40,
+      "note": "~ครึ่งเวลา 6 เดือน + นำร่อง 10 สาขา/rollout 120 สาขา"
+    },
+    {
+      "code": "MD-DEV-SR",
+      "qty": 55,
+      "note": "tech lead: identity/OTP, slot lock, core-connector mTLS"
+    },
+    {
+      "code": "MD-DEV",
+      "qty": 90,
+      "note": "2 คน: booking, LIFF, branch console, walk-in Q-Matic, report/Excel"
+    },
+    {
+      "code": "MD-UX",
+      "qty": 12,
+      "note": "หน้าจอลูกค้า + branch console + dashboard"
+    },
+    {
+      "code": "MD-QA",
+      "qty": 36,
+      "note": "แผนทดสอบ, UAT ≥ 3 สัปดาห์, retest หลัง pen test, นำร่อง"
+    },
+    {
+      "code": "MD-DEVOPS",
+      "qty": 18,
+      "note": "3 env, CI/CD, observability + alert TLS/mTLS cert"
+    },
+    {
+      "code": "MD-ML",
+      "qty": 20,
+      "note": "โมเดล baseline + MLflow/rollback; ปรับจูนรอบ 2 ย้ายไป MA"
+    },
+    {
+      "code": "CL-M",
+      "qty": 12,
+      "note": "ปีแรก: PostgreSQL HA + Redis (BullMQ) ตาม arch ของ SA"
+    },
+    {
+      "code": "LIC-LINE",
+      "qty": 12,
+      "note": "LINE OA แจ้งเตือน 3 จังหวะต่อคิว"
+    },
+    {
+      "code": "LIC-APM",
+      "qty": 12,
+      "note": "monitoring + log (audit/observability)"
+    },
+    {
+      "code": "LIC-WAF",
+      "qty": 12,
+      "note": "ข้อกำหนดความปลอดภัยธนาคาร"
+    },
+    {
+      "code": "MA-STD",
+      "qty": 1,
+      "note": "8x5 — ใช้ได้ต่อเมื่อธนาคารตกลง Sev 1 ตอบรับ 30 นาทีในเวลาทำการ (Q-15)"
+    }
+  ],
+  "external": [],
+  "discount_thb": 619000,
+  "discount_reason": "ปิดส่วนต่างให้เข้างบ 4.8M · 13.7% > 10% → ต้องให้ MD อนุมัติ",
+  "assumptions": [
+    "man-day ประเมินจาก SPEC ของ SA (sa-ton) + สถาปัตยกรรม (sa-ice) และเทียบดีลที่ชนะ: เกษตรไทย 2025 (40 สาขา 4 เดือน 225 man-day ไม่มี ML)",
+    "ทีมหลัก 8 บทบาท 6 เดือน (~120 วันทำการ) · บวก buffer 10% ทุกบทบาทแล้ว (ไม่แสดงให้ลูกค้าเห็น)",
+    "Hosting CL-M 12 เดือน = ปีแรกตาม TOR ข้อ 6 (env dev/uat ระหว่างพัฒนาอยู่ในก้อนเดียวกัน)",
+    "ค่า SMS/OTP ใช้ gateway ของธนาคาร ธนาคารจ่าย (Q-05) · pen test ธนาคารจ่าย 1 รอบ + retest (Q-14) — ถ้าไม่ใช่ ต้องเพิ่มบรรทัด external",
+    "ไม่รวมค่าอุปกรณ์/ตู้ Q-Matic และ agent ที่สาขา (Q-13)",
+    "ต่างจากฉบับ A: MA-STD แทน MA-PREM, ML 20 man-day, Dev 90 man-day (ก่อน buffer)"
+  ],
+  "decisions": [
+    "แนะนำฉบับนี้: margin หลังลด 27.1% ยังผ่านเกณฑ์ 25% แต่ส่วนลด 13.7% เกิน 10% → ต้องส่ง MD (md-somchai) และเป็นลูกค้าธนาคาร ต้องผ่าน MD อยู่แล้ว",
+    "MA-STD 8x5 ขัดกับ TOR ที่ต้องการ Sev 1 30 นาที ถ้าธนาคารไม่ยอม (Q-15) ต้องกลับไปใช้ MA-PREM แล้วราคาจะเกินงบ 360,000",
+    "ตัด ML ปรับจูนรอบ 2 ออก — เสี่ยง MAPE ไม่ถึง 20% ต้องให้ ml-jay ยืนยัน",
+    "ทางเลือกไม่ลดราคา: เสนอแยก MA ปีแรกเป็นสัญญาต่างหาก (ต้องให้ Sales ถามว่าธนาคารรับได้ไหม)"
+  ]
+}

@@ -1,0 +1,9 @@
+ฉันคือ กิ๊ฟ วรรณศิริ (pm-gift) Product Manager (ดูแลวงจรชีวิตผลิตภัณฑ์) ฝ่าย Product · นี่คือโต๊ะของฉัน (novatech/desks/pm-gift/)
+อ่านการ์ดของฉันก่อน: ../../people/product/pm-gift.md
+1. ลงมือทำงานจริง 1 ชิ้น: วางแผนเลิกให้บริการ NovaQueue v1 พร้อมร่างประกาศแจ้งลูกค้า
+   ข้อมูลที่ใช้: ../../company-kit/product/novaqueue-v1-customers.csv, ../../company-kit/product/product-lifecycle-policy.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ product-sunset ที่ .claude/skills/product-sunset/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: pm-gift, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

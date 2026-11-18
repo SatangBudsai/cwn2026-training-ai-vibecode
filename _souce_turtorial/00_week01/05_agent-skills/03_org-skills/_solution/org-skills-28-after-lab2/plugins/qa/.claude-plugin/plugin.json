@@ -1,0 +1,11 @@
+{
+  "name": "qa",
+  "version": "1.0.0",
+  "description": "แผนก QA: ทดสอบเว็บตามแผน และเขียนรายงานบั๊ก",
+  "author": {
+    "name": "qa-mint"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

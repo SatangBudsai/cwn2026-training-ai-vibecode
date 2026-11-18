@@ -1,0 +1,1 @@
+PR #1 ของผมใน novatech/org-skills: plat-may (เจ้าของนโยบายข้อมูลลูกค้า) กับ md-somchai (เจ้าของกฎ) approve แล้วหรือยัง ถ้าครบสองคนให้ merge ได้เลย ไม่ต้องรอ sales-krit (token ของผมอยู่ใน .gitea-token)

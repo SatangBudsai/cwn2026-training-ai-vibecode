@@ -1,0 +1,355 @@
+{
+ "lab": "LAB 4 (ต่อ)",
+ "steps": [
+  {
+   "id": "lab4b-step01",
+   "who": "sales-nida",
+   "role": "Sales",
+   "color": "#fbcfe8",
+   "portrait": "../../../img/people/sales-nida.jpg",
+   "prompt": "MD ตีกลับดีล deal-001 (เหตุผลใน ../../deals/deal-001/approval.md) ตอนนี้ skill ของบริษัทอัปเดตแล้ว ช่วยแก้ proposal ของดีลนี้ให้ครบตามที่ MD ขอ แล้วส่งกลับให้ MD พิจารณาใหม่ในโฟลเดอร์ดีล",
+   "reads": [
+    "approval.md (MD ตีกลับเพราะไม่มีภาคผนวก PDPA)",
+    "proposal ฉบับเดิม + ผลตรวจราคาของบัญชี"
+   ],
+   "skill": "sales:sales-proposal",
+   "skillNote": "Claude หยิบเอง · ฉบับ 1.2.0 ที่ได้จาก LAB 5",
+   "time": "4 นาที 0 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-proposal-nakhonluang.md",
+     "note": "เพิ่ม ภาคผนวก ก: PDPA 3 ข้อ (DPA · เก็บข้อมูลในไทย · แจ้งเหตุ)"
+    },
+    {
+     "file": "deal-001-pricing-output.md",
+     "note": "เปลี่ยนเป็นราคาฉบับ B: 4,800,000 บาท · margin 27.1%"
+    },
+    {
+     "file": "deal-001-resubmit-to-md.md",
+     "note": "บันทึกส่งกลับ ตอบ MD ทีละข้อ · แก้ผู้อนุมัติเป็น MD"
+    }
+   ],
+   "verdict": {
+    "kind": "info",
+    "text": "ส่งกลับให้ MD พิจารณาใหม่",
+    "sub": "ภาคผนวก PDPA มาจาก skill ที่อัปเดตแล้ว ไม่ได้เขียนเอง"
+   },
+   "next": "➜ md-somchai"
+  },
+  {
+   "id": "lab4b-step02",
+   "who": "md-somchai",
+   "role": "MD",
+   "color": "#e9d5ff",
+   "portrait": "../../../img/people/md-somchai.jpg",
+   "prompt": "ดีล ../../deals/deal-001/ ส่งกลับมาให้พิจารณาใหม่แล้ว อนุมัติได้ไหม เขียนผลไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "โน้ตลับของ MD (notes/deal-rules.md)",
+    "proposal + บันทึกส่งกลับของ Sales"
+   ],
+   "skill": "exec:deal-approval",
+   "skillNote": "Claude หยิบเอง",
+   "time": "2 นาที 6 วินาที",
+   "outputs": [
+    {
+     "file": "approval.md",
+     "note": "❌ ตีกลับรอบ 2 ด้วยข้อเดียว: แผนงาน"
+    },
+    {
+     "file": "approval.md · ข้อ 2 แผนงาน",
+     "note": "เดือน 4 เชื่อมระบบซ้อน pen test · เดือน 5 UAT ซ้อนนำร่อง"
+    },
+    {
+     "file": "approval.md · ภาคผนวก PDPA",
+     "note": "✅ ผ่านแล้วครบ 3 ข้อ · แจ้งเหตุ 24 ชม. ให้ DPO ยืนยัน"
+    }
+   ],
+   "verdict": {
+    "kind": "bad",
+    "text": "ตีกลับรอบ 2 เรื่องแผนงาน",
+    "sub": "ภาคผนวก PDPA ผ่านแล้ว · ส่งให้ SA จัดแผนใหม่ ราคาเท่าเดิม"
+   },
+   "next": "➜ sa-ton"
+  },
+  {
+   "id": "lab4b-step03",
+   "who": "sa-ton",
+   "role": "SA",
+   "color": "#bae6fd",
+   "portrait": "../../../img/people/sa-ton.jpg",
+   "prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "approval.md (ข้อ 2 แผนงาน)",
+    "proposal หัวข้อ 6 แผนงาน + TOR"
+   ],
+   "skill": "— ไม่ได้เรียก skill",
+   "skillNote": "ทำจากไฟล์ดีลและ TOR โดยตรง",
+   "time": "4 นาที 35 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-sa-response-r2.md",
+     "note": "แผนใหม่: เดือน 3 เชื่อมระบบ · เดือน 4 pen test · UAT 26 เม.ย.–14 พ.ค. · นำร่อง 18–31 พ.ค."
+    },
+    {
+     "file": "sa-response · man-day",
+     "note": "ยืนยัน 286 วันแบบมีเงื่อนไข (ข้อสมมติ 8 ข้อ)"
+    },
+    {
+     "file": "sa-response · log ในไทย",
+     "note": "🔴 ไม่ลงนามข้อนี้ เพราะไม่มีหลักฐานว่า log อยู่ในไทย"
+    }
+   ],
+   "verdict": {
+    "kind": "warn",
+    "text": "แผนใหม่ ราคาเท่าเดิม",
+    "sub": "ให้ Sales เอาไปใส่ proposal หัวข้อ 6"
+   },
+   "next": "➜ sales-nida"
+  },
+  {
+   "id": "lab4b-step04",
+   "who": "sales-nida",
+   "role": "Sales",
+   "color": "#fbcfe8",
+   "portrait": "../../../img/people/sales-nida.jpg",
+   "prompt": "MD ตีกลับดีล ../../deals/deal-001/ (ดูผลล่าสุดของ MD ในโฟลเดอร์ดีล) ช่วยแก้ส่วนที่เป็นงานของฉันให้ครบตามที่ MD ขอ แล้ววางไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "approval.md รอบ 2",
+    "แผนใหม่ของ SA (sa-response-r2.md)"
+   ],
+   "skill": "— ไม่ได้เรียก skill",
+   "skillNote": "แก้ตามแผนของ SA โดยตรง",
+   "time": "5 นาที 6 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-proposal-nakhonluang.md",
+     "note": "หัวข้อ 6 ใช้แผนใหม่ของ SA ทั้งตาราง + ข้อสมมติ A1–A3"
+    },
+    {
+     "file": "deal-001-sales-requests-r3.md",
+     "note": "ร่างคำขอถึง DPO · ฝ่ายกฎหมาย · PM office (ยังไม่ได้ส่งจริง)"
+    },
+    {
+     "file": "deal-001-resubmit-to-md.md",
+     "note": "บันทึกส่งกลับรอบ 3"
+    }
+   ],
+   "verdict": {
+    "kind": "info",
+    "text": "ส่งกลับให้ MD รอบ 3",
+    "sub": "ไม่เขียนว่าใครยืนยันแล้วแทนเจ้าตัว"
+   },
+   "next": "➜ md-somchai"
+  },
+  {
+   "id": "lab4b-step05",
+   "who": "md-somchai",
+   "role": "MD",
+   "color": "#e9d5ff",
+   "portrait": "../../../img/people/md-somchai.jpg",
+   "prompt": "ดีล ../../deals/deal-001/ แก้ตามที่ขอแล้ว ช่วยพิจารณาอีกรอบ เขียนผลไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "proposal รอบ 3 + แผนของ SA",
+    "คำขอที่ Sales ร่างไว้"
+   ],
+   "skill": "exec:deal-approval",
+   "skillNote": "Claude หยิบเอง",
+   "time": "2 นาที 39 วินาที",
+   "outputs": [
+    {
+     "file": "approval.md",
+     "note": "🟡 อนุมัติแบบมีเงื่อนไข · margin 27.1%"
+    },
+    {
+     "file": "approval.md · ปิดก่อนยื่น 10 พ.ย.",
+     "note": "C1 log ในไทย · C2 DPO ยืนยัน 24 ชม. · C3 กฎหมาย · C4 เลขเอกสาร · C5 ML man-day"
+    },
+    {
+     "file": "approval.md · ปิดก่อนเซ็น",
+     "note": "C6 ทีม: SA = sa-ton · Tech Lead ต้องไม่ใช่ปอนด์"
+    }
+   ],
+   "verdict": {
+    "kind": "warn",
+    "text": "อนุมัติแบบมีเงื่อนไข",
+    "sub": "ส่งงานต่อให้ 5 แผนกพร้อมกัน"
+   },
+   "next": "➜ 5 แผนก"
+  },
+  {
+   "id": "lab4b-step06",
+   "who": "dev-mew",
+   "role": "Dev",
+   "color": "#fde68a",
+   "portrait": "../../../img/people/dev-mew.jpg",
+   "prompt": "ดีล ../../deals/deal-001/ ผ่าน MD แล้ว ช่วยวางแผนขึ้นโปรเจกต์ตาม spec ในโฟลเดอร์ดีล (ยังไม่ต้องเขียนโค้ด) วางแผนไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "approval.md (อนุมัติแบบมีเงื่อนไข)",
+    "proposal + แผนของ SA"
+   ],
+   "skill": "— ไม่ได้เรียก skill",
+   "skillNote": "เปิดดู project-scaffold แล้วไม่ใช้ เพราะ template เป็นระบบชำระเงิน",
+   "time": "3 นาที 55 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-dev-scaffold-plan.md",
+     "note": "แบ่ง 2 ช่วง: ก่อนเซ็นทำแค่ร่าง · หลังเซ็นขึ้นโครงจริง"
+    },
+    {
+     "file": "dev-scaffold-plan · โครง",
+     "note": "2 repo: nlp-core-connector · nlp-forecast-service"
+    },
+    {
+     "file": "dev-scaffold-plan · deploy",
+     "note": "ห้าม deploy 25–สิ้นเดือน → ระบบนำร่องต้องขึ้นภายใน 18 พ.ค."
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "แผนพร้อม ยังไม่เขียนโค้ด",
+    "sub": "รู้เองว่า skill ของแผนกไม่เหมาะกับงานนี้"
+   },
+   "next": ""
+  },
+  {
+   "id": "lab4b-step07",
+   "who": "ml-jay",
+   "role": "MLOps",
+   "color": "#c7d2fe",
+   "portrait": "../../../img/people/ml-jay.jpg",
+   "prompt": "ดีล ../../deals/deal-001/ มีโมเดลพยากรณ์คิว ช่วยวางแผนการทดลองโมเดล วางไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "proposal (โมเดลพยากรณ์คิว)",
+    "ผลทดลองเดิม r01–r03"
+   ],
+   "skill": "mlops:mlflow-experiment",
+   "skillNote": "Claude หยิบเอง",
+   "time": "3 นาที 32 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-ml-experiment-plan.md",
+     "note": "P0 ทดลองกับข้อมูลเดิม · P1 ใช้ข้อมูลธนาคาร 22 man-day"
+    },
+    {
+     "file": "work/ml/experiment-registry.csv",
+     "note": "ทะเบียน 15 run: เดิม 3 + ที่จะรัน 12"
+    },
+    {
+     "file": "ml-experiment-plan · r03",
+     "note": "MAPE 15.2% ยังนับว่าชนะไม่ได้: เปลี่ยน 3 อย่างพร้อมกัน รันซ้ำไม่ได้"
+    }
+   ],
+   "verdict": {
+    "kind": "warn",
+    "text": "แผนพร้อม แต่ตัวเลขเดิมยังอ้างไม่ได้",
+    "sub": "ร่างคำยืนยัน C5 ให้ MD"
+   },
+   "next": ""
+  },
+  {
+   "id": "lab4b-step08",
+   "who": "qa-mint",
+   "role": "QA",
+   "color": "#d9f99d",
+   "portrait": "../../../img/people/qa-mint.jpg",
+   "prompt": "ดูแผนทดสอบของดีล ../../deals/deal-001/ แล้วบอกว่าพร้อมรันไหม เขียนผลไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "proposal หัวข้อ 6 (แผนทดสอบ)",
+    "หา TEST-PLAN.md ในโฟลเดอร์ดีล ไม่พบ"
+   ],
+   "skill": "— ไม่ได้เรียก skill",
+   "skillNote": "ยังไม่มีระบบให้ทดสอบ จึงตรวจแผนในเอกสารแทน",
+   "time": "1 นาที 52 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-qa-test-readiness.md",
+     "note": "ยังรันไม่ได้: ไม่มี TEST-PLAN.md และยังไม่มีระบบ"
+    },
+    {
+     "file": "qa-test-readiness · จุดที่ต้องแก้",
+     "note": "ไม่มีนิยาม 'ผ่าน UAT' ทั้งที่งวด 2 = 1,435,200 บาท"
+    },
+    {
+     "file": "qa-test-readiness · load test",
+     "note": "ไม่มีเป้าตัวเลข ตัดสินผ่าน/ไม่ผ่านไม่ได้"
+    }
+   ],
+   "verdict": {
+    "kind": "warn",
+    "text": "ยังรันไม่ได้",
+    "sub": "ส่งเรื่องที่ต้องแก้ให้ Sales และ SA"
+   },
+   "next": ""
+  },
+  {
+   "id": "lab4b-step09",
+   "who": "ops-art",
+   "role": "DevOps",
+   "color": "#fecaca",
+   "portrait": "../../../img/people/ops-art.jpg",
+   "prompt": "ดีล ../../deals/deal-001/ ช่วยเตรียม checklist ขึ้นระบบ และยืนยันว่า log กับ backup เก็บในไทยได้ไหม เขียนไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "proposal หัวข้อ 4.1 + ภาคผนวก ก ข้อ 2",
+    "ราคากลาง cloud (price-list)"
+   ],
+   "skill": "devops:deploy-checklist",
+   "skillNote": "Claude หยิบเอง",
+   "time": "3 นาที 24 วินาที",
+   "outputs": [
+    {
+     "file": "deal-001-log-backup-residency.md",
+     "note": "ฐานข้อมูล 🟢 ในไทย · backup 🟡 ต้องขอเอกสาร · log LIC-APM 🔴 ยืนยันไม่ได้"
+    },
+    {
+     "file": "deploy-checklist.md",
+     "note": "🔴 NO-GO: ยังไม่มีโค้ด ไม่มีผล UAT"
+    },
+    {
+     "file": "checklist · ข้อสังเกต",
+     "note": "นำร่อง 18 พ.ค. ไม่มีวันที่ deploy ได้ตามกติกา"
+    }
+   ],
+   "verdict": {
+    "kind": "bad",
+    "text": "log ในไทย ยืนยันไม่ได้ (เงื่อนไข C1)",
+    "sub": "ต้องให้จัดซื้อขอหนังสือยืนยัน ภายใน 9 พ.ย."
+   },
+   "next": ""
+  },
+  {
+   "id": "lab4b-step10",
+   "who": "hr-fah",
+   "role": "HR",
+   "color": "#fed7aa",
+   "portrait": "../../../img/people/hr-fah.jpg",
+   "prompt": "โปรเจกต์ ../../deals/deal-001/ ต้องรับคนเพิ่ม ทำประกาศรับสมัครให้หน่อย วางไว้ในโฟลเดอร์ดีล",
+   "reads": [
+    "proposal หัวข้อ 5 ทีมงาน",
+    "สวัสดิการบริษัท (hr-benefits-faq.md)"
+   ],
+   "skill": "hr:jd-writer",
+   "skillNote": "Claude หยิบเอง",
+   "time": "2 นาที 6 วินาที",
+   "outputs": [
+    {
+     "file": "work/NVT-JOB-2026-021-senior-fullstack.md",
+     "note": "Senior Full-stack Developer · 75,000–105,000 บาท/เดือน"
+    },
+    {
+     "file": "work/NVT-JOB-2026-021-check.md",
+     "note": "ผ่านเช็กก่อนส่ง 7 ข้อ · ไม่มีชื่อธนาคารหรือมูลค่าดีล"
+    },
+    {
+     "file": "check · ต้องตัดสิน",
+     "note": "ดีลยังไม่ชนะ: ลงประกาศเลย หรือรอผลดีล"
+    }
+   ],
+   "verdict": {
+    "kind": "ok",
+    "text": "ประกาศพร้อม",
+    "sub": "ปัดตัวเลขจาก TOR ไม่ให้เดาได้ว่าลูกค้าคือใคร"
+   },
+   "next": ""
+  }
+ ]
+}

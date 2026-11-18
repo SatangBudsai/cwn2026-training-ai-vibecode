@@ -1,0 +1,127 @@
+{
+ "goal": "แอปมือถือบันทึกรายจ่าย สแกนสลิปโอนเงินแล้วกรอกให้อัตโนมัติ มี backend เก็บข้อมูล และสรุปรายจ่ายรายเดือนเป็นกราฟ",
+ "name": "hw07-expense-mobile",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "เลือก framework ของแอปมือถือ",
+   "size": "S",
+   "depends_on": [],
+   "skill": "debate",
+   "difficulty": 3,
+   "output": "docs/framework-decision.md",
+   "done": "ระบุ framework 1 ตัว พร้อมเหตุผล 2 ข้อ และไลบรารีกล้องที่ใช้"
+  },
+  {
+   "id": "B02",
+   "title": "ไอคอนแอป",
+   "size": "S",
+   "depends_on": [],
+   "skill": "image",
+   "difficulty": 1,
+   "output": "assets/icon.png",
+   "done": "PNG สี่เหลี่ยมจัตุรัส รูปกระเป๋าเงิน พื้นสีเดียว"
+  },
+  {
+   "id": "B03",
+   "title": "ชื่อแอปและข้อความ onboarding",
+   "size": "S",
+   "depends_on": [],
+   "skill": "best_of",
+   "difficulty": 1,
+   "output": "assets/onboarding.json",
+   "done": "JSON มีชื่อแอป และข้อความ 3 หน้า หน้าละไม่เกิน 12 คำ"
+  },
+  {
+   "id": "B04",
+   "title": "โครงแอป โครง backend และสัญญา API",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "docs/api.md",
+   "done": "แอปและ backend รันได้เปล่า ๆ และ docs/api.md ระบุ API รายจ่ายกับสแกนสลิป"
+  },
+  {
+   "id": "B05",
+   "title": "API และฐานข้อมูลรายจ่าย",
+   "size": "M",
+   "depends_on": [
+    "B04"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "backend/expenses.py",
+   "done": "เพิ่ม แก้ ลบ และสรุปรายเดือนได้ ตาม docs/api.md"
+  },
+  {
+   "id": "B06",
+   "title": "อ่านสลิปโอนเงิน",
+   "size": "L",
+   "depends_on": [
+    "B04"
+   ],
+   "skill": "review",
+   "difficulty": 4,
+   "output": "backend/slip.py",
+   "done": "คืนยอดเงิน วันที่ และผู้รับ ตาม docs/api.md และคืนค่าว่างเมื่ออ่านไม่ได้"
+  },
+  {
+   "id": "B07",
+   "title": "หน้าบันทึกรายจ่าย",
+   "size": "M",
+   "depends_on": [
+    "B04"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "app/screens/AddExpense.tsx",
+   "done": "กรอกยอด หมวด และวันที่ แล้วบันทึกผ่าน API ได้"
+  },
+  {
+   "id": "B08",
+   "title": "หน้าสแกนสลิป",
+   "size": "M",
+   "depends_on": [
+    "B04"
+   ],
+   "skill": "cyolo",
+   "difficulty": 2,
+   "output": "app/screens/ScanSlip.tsx",
+   "done": "ถ่ายภาพแล้วส่งไป API สแกน และนำผลไปเติมในแบบฟอร์ม"
+  },
+  {
+   "id": "B09",
+   "title": "หน้าสรุปรายเดือนเป็นกราฟ",
+   "size": "M",
+   "depends_on": [
+    "B04"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "app/screens/Summary.tsx",
+   "done": "แสดงกราฟแยกหมวด และยอดรวมของเดือนที่เลือก"
+  },
+  {
+   "id": "B10",
+   "title": "รวมระบบและทดสอบ",
+   "size": "L",
+   "depends_on": [
+    "B02",
+    "B03",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "TEST.md",
+   "done": "บันทึกเอง สแกนสลิป และดูสรุป ผ่านครบบน emulator บันทึกใน TEST.md",
+   "exclusive": true
+  }
+ ]
+}

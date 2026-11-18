@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/catalog.ts",
+    "find": "\"price-asc\": (a, b) => lowestPrice(a) - lowestPrice(b) || byPop(a, b),",
+    "replace": "\"price-asc\": (a, b) => lowestPrice(b) - lowestPrice(a) || byPop(a, b),"
+  }
+]

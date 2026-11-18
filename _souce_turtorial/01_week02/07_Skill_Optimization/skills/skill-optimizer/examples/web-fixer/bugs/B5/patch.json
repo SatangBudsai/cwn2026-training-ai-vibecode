@@ -1,0 +1,7 @@
+[
+  {
+    "file": "app/login/page.tsx",
+    "find": "<LoginForm next={safeNext(sp.next)} />",
+    "replace": "<LoginForm next={safeNext(sp.redirect)} />"
+  }
+]

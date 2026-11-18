@@ -1,0 +1,79 @@
+{
+  "id": "TC-BOOK-09",
+  "title": "TC-BOOK-09 แขกจองด้วยชื่อและเบอร์ 9–10 หลัก ไม่ได้ส่วนลด ฟอร์มผิดจองไม่ได้",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ชื่อว่าง เบอร์ว่าง 8 หลัก 11 หลัก: มีข้อความแจ้งให้แก้ชื่อหรือเบอร์ · ยังอยู่หน้าสรุป · การจองวันที่ 17 มิ.ย. 0 รายการ\nเบอร์ 9 และ 10 หลัก: หน้ายืนยันแสดงรหัสจองและลิงก์ยกเลิก\nยอดหน้ายืนยัน = หลังร้าน = ฿1,000 ต่อการจอง (ไม่ลด เพราะแขกไม่มีส่วนลดสมาชิก · ถ้าได้ส่วนลด Gold จะเห็น ฿950)\nหลังร้าน: 17 มิ.ย. มี 2 รายการ ชื่อ ทดสอบแขก เบอร์ 021111111 และ 0890000601 ตรงตามที่กรอก",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 813,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 จองคิว · [R] R92",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 813,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-05, FR-10",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 813,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R92",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 813,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Boundary, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 813,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 813,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 36357,
+  "at": "2026-11-06T02:22:30.846Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิดหน้าจอง เลือก S01 T01 17 มิ.ย. รอบ 12:00 ไปถึงหน้าสรุป",
+    "2. ลองกดยืนยันด้วยชื่อว่าง เบอร์ว่าง 8 หลัก และ 11 หลัก ทีละค่า",
+    "3. ในบริบท B เปิด /th/admin นับการจองวันที่ 17 มิ.ย. โดยบริบท A ยังค้างหน้าสรุป",
+    "4. กรอกเบอร์ 9 หลักแล้วยืนยัน จดรหัสจอง ยอด และลิงก์ยกเลิก",
+    "5. จองรอบ 13:00 ด้วยเบอร์ 10 หลัก",
+    "6. ในหน้าร้าน ค้นทั้ง 2 รหัสจอง แล้วรีโหลด"
+  ]
+}

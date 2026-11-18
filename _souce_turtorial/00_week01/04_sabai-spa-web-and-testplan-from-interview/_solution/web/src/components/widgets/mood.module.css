@@ -1,0 +1,116 @@
+/* พื้นครีม: ในหน้าแรกอยู่ระหว่างแพ็กเกจกับทีมบำบัดที่เป็นพื้นเขียวเข้มทั้งคู่ จะได้แบ่งจังหวะชัดเจน */
+.section {
+  position: relative;
+  overflow: clip;
+  background: var(--c-cream-100);
+  color: var(--text);
+  padding-block: var(--section-gap);
+}
+.sectionInner { position: relative; z-index: 1; }
+.sectionHead {
+  display: grid;
+  gap: 10px;
+  max-width: 640px;
+  margin: 0 auto clamp(28px, 4vw, 48px);
+  text-align: center;
+  justify-items: center;
+}
+.rule { display: block; width: 64px; height: 1px; background: var(--c-gold-500); margin-block: 4px; }
+.lead { color: var(--text-soft); font-size: 1.05rem; }
+
+.pageWrap {
+  padding-block: clamp(40px, 6vw, 80px) var(--section-gap);
+  background: var(--c-cream-100);
+}
+.page { display: grid; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+}
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--c-forest-800);
+  color: var(--c-cream-50);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-float); }
+/* เส้นทองวางทับภาพ เพื่อไม่ให้ภาพขยับเมื่อเลือก */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(226, 205, 155, 0.28);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: none;
+}
+.cardOn::after { border-color: var(--c-gold-300); box-shadow: inset 0 0 0 2px var(--c-gold-300); }
+.cardImage { object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.card:hover .cardImage { transform: scale(1.04); }
+.cardShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 32, 24, 0.88) 0%, rgba(15, 32, 24, 0.3) 42%, rgba(15, 32, 24, 0) 70%);
+}
+.cardText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 2px;
+  padding: clamp(14px, 2.4vw, 26px);
+}
+.cardLabel { font-family: var(--font-display); font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.3; }
+.cardHint { color: var(--c-gold-300); font-size: 0.95rem; }
+
+.status { min-height: 8px; }
+.loading { margin-top: 20px; text-align: center; color: var(--c-gold-700); }
+.status [role='alert'] { margin-top: 20px; }
+
+.result {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  margin-top: clamp(20px, 3vw, 32px);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-gold);
+  background: var(--bg-card);
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+  animation: resultIn 0.5s var(--ease-out) backwards;
+  scroll-margin-block: 96px 24px;
+}
+@keyframes resultIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.result .resultImage { height: 100%; min-height: 220px; }
+.resultBody {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  justify-items: start;
+  padding: clamp(20px, 3.4vw, 40px);
+}
+.price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; color: var(--text-soft); }
+.price strong { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--c-forest-900); }
+
+@media (max-width: 760px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .card { aspect-ratio: 16 / 10; }
+  .result { grid-template-columns: minmax(0, 1fr); }
+  .result .resultImage { height: auto; min-height: 0; }
+}

@@ -1,0 +1,162 @@
+# 44-footer-currency @ 2026-11-01 17:15:41 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- dialog "เลือกสกุลเงิน":
+  - heading "เลือกสกุลเงิน" [level=1]
+  - text: สกุลเงินที่แนะนำ
+  - radiogroup "สกุลเงินที่แนะนำ":
+    - radio "ดอลลาร์สหรัฐ USD"
+    - text: ดอลลาร์สหรัฐ USD
+    - radio "บาท THB" [checked]
+    - text: บาท THB
+    - radio "ปอนด์สเตอร์ลิง (สหราชอาณาจักร) GBP"
+    - text: ปอนด์สเตอร์ลิง (สหราชอาณาจักร) GBP
+    - radio "ยูโร EUR"
+    - text: ยูโร EUR
+    - radio "เยนญี่ปุ่น JPY"
+    - text: เยนญี่ปุ่น JPY
+  - text: สกุลเงินทั้งหมด
+  - radiogroup "สกุลเงินทั้งหมด":
+    - radio "โกลองคอสตาริกา CRC"
+    - text: โกลองคอสตาริกา CRC
+    - radio "โครนเดนมาร์ก DKK"
+    - text: โครนเดนมาร์ก DKK
+    - radio "โครนนอร์เวย์ NOK"
+    - text: โครนนอร์เวย์ NOK
+    - radio "โครนาสวีเดน SEK"
+    - text: โครนาสวีเดน SEK
+    - radio "โครนาไอซ์แลนด์ ISK"
+    - text: โครนาไอซ์แลนด์ ISK
+    - radio "โครูนาสาธารณรัฐเช็ก CZK"
+    - text: โครูนาสาธารณรัฐเช็ก CZK
+    - radio "ซลอตีโปแลนด์ PLN"
+    - text: ซลอตีโปแลนด์ PLN
+    - radio "ซอลเปรู PEN"
+    - text: ซอลเปรู PEN
+    - radio "ดองเวียดนาม VND"
+    - text: ดองเวียดนาม VND
+    - radio "ดอลลาร์แคนาดา CAD"
+    - text: ดอลลาร์แคนาดา CAD
+    - radio "ดอลลาร์จาเมกา JMD"
+    - text: ดอลลาร์จาเมกา JMD
+    - radio "ดอลลาร์ไต้หวันใหม่ TWD"
+    - text: ดอลลาร์ไต้หวันใหม่ TWD
+    - radio "ดอลลาร์นิวซีแลนด์ NZD"
+    - text: ดอลลาร์นิวซีแลนด์ NZD
+    - radio "ดอลลาร์บาฮามาส BSD"
+    - text: ดอลลาร์บาฮามาส BSD
+    - radio "ดอลลาร์เบอร์มิวดา BMD"
+    - text: ดอลลาร์เบอร์มิวดา BMD
+    - radio "ดอลลาร์สหรัฐ USD"
+    - text: ดอลลาร์สหรัฐ USD
+    - radio "ดอลลาร์สิงคโปร์ SGD"
+    - text: ดอลลาร์สิงคโปร์ SGD
+    - radio "ดอลลาร์ออสเตรเลีย AUD"
+    - text: ดอลลาร์ออสเตรเลีย AUD
+    - radio "ดอลลาร์ฮ่องกง HKD"
+    - text: ดอลลาร์ฮ่องกง HKD
+    - radio "ดีนาร์คูเวต KWD"
+    - text: ดีนาร์คูเวต KWD
+    - radio "ดีนาร์จอร์แดน JOD"
+    - text: ดีนาร์จอร์แดน JOD
+    - radio "ดีนาร์เซอร์เบีย RSD"
+    - text: ดีนาร์เซอร์เบีย RSD
+    - radio "ดีนาร์บาห์เรน BHD"
+    - text: ดีนาร์บาห์เรน BHD
+    - radio "ดีนาร์มาซิโดเนีย MKD"
+    - text: ดีนาร์มาซิโดเนีย MKD
+    - radio "ดีนาร์แอลจีเรีย DZD"
+    - text: ดีนาร์แอลจีเรีย DZD
+    - radio "ดีแรห์มโมร็อกโก MAD"
+    - text: ดีแรห์มโมร็อกโก MAD
+    - radio "เดอร์แฮมสหรัฐอาหรับเอมิเรตส์ AED"
+    - text: เดอร์แฮมสหรัฐอาหรับเอมิเรตส์ AED
+    - radio "แดรมอาร์เมเนีย AMD"
+    - text: แดรมอาร์เมเนีย AMD
+    - radio "เทงเจคาซัคสถาน KZT"
+    - text: เทงเจคาซัคสถาน KZT
+    - radio "นิวเชเกลอิสราเอล ILS"
+    - text: นิวเชเกลอิสราเอล ILS
+    - radio "ไนราไนจีเรีย NGN"
+    - text: ไนราไนจีเรีย NGN
+    - radio "บัลบัวปานามา PAB"
+    - text: บัลบัวปานามา PAB
+    - radio "บาท THB" [checked]
+    - text: บาท THB
+    - radio "ปอนด์เลบานอน LBP"
+    - text: ปอนด์เลบานอน LBP
+    - radio "ปอนด์สเตอร์ลิง (สหราชอาณาจักร) GBP"
+    - text: ปอนด์สเตอร์ลิง (สหราชอาณาจักร) GBP
+    - radio "ปอนด์อียิปต์ EGP"
+    - text: ปอนด์อียิปต์ EGP
+    - radio "เปโซคิวบา CUP"
+    - text: เปโซคิวบา CUP
+    - radio "เปโซโคลอมเบีย COP"
+    - text: เปโซโคลอมเบีย COP
+    - radio "เปโซชิลี CLP"
+    - text: เปโซชิลี CLP
+    - radio "เปโซโดมินิกัน DOP"
+    - text: เปโซโดมินิกัน DOP
+    - radio "เปโซฟิลิปปินส์ PHP"
+    - text: เปโซฟิลิปปินส์ PHP
+    - radio "เปโซเม็กซิโก MXN"
+    - text: เปโซเม็กซิโก MXN
+    - radio "เปโซอาร์เจนตินา ARS"
+    - text: เปโซอาร์เจนตินา ARS
+    - radio "ฟรังก์ซีเอฟพี XPF"
+    - text: ฟรังก์ซีเอฟพี XPF
+    - radio "ฟรังก์สวิส CHF"
+    - text: ฟรังก์สวิส CHF
+    - radio "ฟลอรินอารูบา AWG"
+    - text: ฟลอรินอารูบา AWG
+    - radio "ฟอรินต์ฮังการี HUF"
+    - text: ฟอรินต์ฮังการี HUF
+    - radio "มานัตอาเซอร์ไบจาน AZN"
+    - text: มานัตอาเซอร์ไบจาน AZN
+    - radio "มาร์กบอสเนีย-เฮอร์เซโกวีนา BAM"
+    - text: มาร์กบอสเนีย-เฮอร์เซโกวีนา BAM
+    - radio "ยูโร EUR"
+    - text: ยูโร EUR
+    - radio "เยนญี่ปุ่น JPY"
+    - text: เยนญี่ปุ่น JPY
+    - radio "ริงกิตมาเลเซีย MYR"
+    - text: ริงกิตมาเลเซีย MYR
+    - radio "ริยัลซาอุดีอาระเบีย SAR"
+    - text: ริยัลซาอุดีอาระเบีย SAR
+    - radio "รูเบิลเบลารุส BYN"
+    - text: รูเบิลเบลารุส BYN
+    - radio "รูเบิลรัสเซีย RUB"
+    - text: รูเบิลรัสเซีย RUB
+    - radio "รูปีปากีสถาน PKR"
+    - text: รูปีปากีสถาน PKR
+    - radio "รูปีอินเดีย INR"
+    - text: รูปีอินเดีย INR
+    - radio "รูเปียห์อินโดนีเซีย IDR"
+    - text: รูเปียห์อินโดนีเซีย IDR
+    - radio "เรียลกาตาร์ QAR"
+    - text: เรียลกาตาร์ QAR
+    - radio "เรียลบราซิล BRL"
+    - text: เรียลบราซิล BRL
+    - radio "เรียลอิหร่าน IRR"
+    - text: เรียลอิหร่าน IRR
+    - radio "เรียลโอมาน OMR"
+    - text: เรียลโอมาน OMR
+    - radio "แรนด์แอฟริกาใต้ ZAR"
+    - text: แรนด์แอฟริกาใต้ ZAR
+    - radio "ลารีจอร์เจีย GEL"
+    - text: ลารีจอร์เจีย GEL
+    - radio "ลิวมอลโดวา MDL"
+    - text: ลิวมอลโดวา MDL
+    - radio "ลิวโรมาเนีย RON"
+    - text: ลิวโรมาเนีย RON
+    - radio "ลีราตุรกี TRY"
+    - text: ลีราตุรกี TRY
+    - radio "เลกแอลเบเนีย ALL"
+    - text: เลกแอลเบเนีย ALL
+    - radio "วอนเกาหลีใต้ KRW"
+    - text: วอนเกาหลีใต้ KRW
+    - radio "หยวนจีน CNY"
+    - text: หยวนจีน CNY
+    - radio "ฮรีฟเนียยูเครน UAH"
+    - text: ฮรีฟเนียยูเครน UAH
+  - button "ยกเลิก"
+  - button "ตกลง"

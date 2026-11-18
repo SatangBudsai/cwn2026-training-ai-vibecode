@@ -1,0 +1,52 @@
+[
+  {
+    "state": "01-results",
+    "time": "2026-11-01T10:07:48.976Z",
+    "url": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "03-more",
+    "time": "2026-11-01T10:08:01.121Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "filter-stops",
+    "time": "2026-11-01T10:08:06.343Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "04-nonstop",
+    "time": "2026-11-01T10:08:11.787Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoqEgoyMDI2LTExLTE1KABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "filter-price",
+    "time": "2026-11-01T10:08:13.407Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoqEgoyMDI2LTExLTE1KABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "filter-airlines",
+    "time": "2026-11-01T10:08:15.202Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoqEgoyMDI2LTExLTE1KABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "filter-layover-airports",
+    "time": "2026-11-01T10:08:16.868Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoqEgoyMDI2LTExLTE1KABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "05-nonstop-results",
+    "time": "2026-11-01T10:08:17.763Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoqEgoyMDI2LTExLTE1KABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "06-details",
+    "time": "2026-11-01T10:08:19.271Z",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoqEgoyMDI2LTExLTE1KABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=EgYIABABGAA&hl=th&gl=TH&curr=THB"
+  },
+  {
+    "state": "07-booking",
+    "time": "2026-11-01T10:08:27.609Z",
+    "url": "https://www.google.com/travel/flights/booking?tfs=CBwQAhpLEgoyMDI2LTExLTE1Ih8KA0JLSxIKMjAyNi0xMS0xNRoDTlJUKgJWWjIDODMwKABqDAgCEggvbS8wZm4yZ3IMCAISCC9tLzA3ZGZrQAFIAXABggELCP___________wGYAQI&tfu=CmxDalJJYWxOVk5XSnNUMGhsY0c5QlZrTlRSbEZDUnkwdExTMHRMUzB0TFhObFluQm5PVUZCUVVGQlIzSnVSRFJuUm5JeVFYTkJFZ1ZXV2pnek1Cb0tDT1pHRUFBYUExUklRamdjY1ByUkFRPT0SAggAIgA&hl=th&gl=TH&curr=THB"
+  }
+]

@@ -1,0 +1,15 @@
+metric,unit,2026-09,2026-10,target_monthly,note
+revenue,THB,8450000,9120000,9000000,ต.ค. รวมงวด UAT ของ Loan Portal ระยะ 2 (ธนาคารสยามรุ่งเรือง) ออกใบแจ้งหนี้ พ.ย.
+gross_margin,pct,29.4,27.1,30.0,ต.ค. ลดเพราะโปรเจกต์ DentDee เกินแผน 18 man-day
+pipeline_value,THB,32500000,38900000,35000000,ต.ค. รวม deal-001 นครหลวงพัฒนา 4.8M และ deal-002 เอเชียไทยสากล 2.2M
+deals_won,count,2,1,2,
+deals_lost,count,1,2,,ต.ค. แพ้ราคา 1 ดีล / ลูกค้าเลื่อนโครงการ 1 ดีล
+win_rate,pct,66.7,33.3,50.0,คิดจาก won/(won+lost) ในเดือน
+projects_active,count,9,10,,
+projects_on_time,count,7,7,,on-time = ไม่เลื่อน milestone เกิน 1 สัปดาห์
+incidents_sev1,count,1,0,0,ก.ย. = payment ShopDee ล่ม 47 นาที (TLS cert หมดอายุ)
+incidents_sev2,count,2,1,,
+headcount,people,86,88,,ต.ค. รับเข้า 2 (Dev 1 QA 1)
+open_positions,count,4,6,,ต.ค. เพิ่ม Senior Full-stack Developer (โปรเจกต์จองคิวธนาคาร) และ ML Engineer
+attrition,people,1,0,,
+customer_nps,score,42,45,40,สำรวจรายไตรมาส ใช้ค่าล่าสุด

@@ -1,0 +1,78 @@
+{
+  "best": {
+    "pixels": 62363,
+    "pct": 5.0726
+  },
+  "values": {
+    "--font-family": "\"Garuda\", \"Loma\", sans-serif",
+    "--space-6": "27px",
+    "--space-8": "48px",
+    "--space-3": "11px",
+    "--font-size-md": "17px",
+    "--font-size-lg": "17px",
+    "--font-size-xl": "17px",
+    "--font-size-xs": "12px",
+    "--font-weight-medium": "400",
+    "--color-primary": "#1a6ddf"
+  },
+  "guards": {
+    "ok": true,
+    "fails": [],
+    "info": {
+      "checked": 217,
+      "firstRow": {
+        "x": 178,
+        "y": 631,
+        "bottom": 723
+      },
+      "mainContrast": 16.1,
+      "textVars": {
+        "--color-text": "#202124",
+        "--color-text-secondary": "#5f6368",
+        "--color-text-on-primary": "#fff"
+      },
+      "inputs": 5
+    }
+  },
+  "stats": {
+    "tried": 111,
+    "improved": 2,
+    "rejected": {
+      "structure": 0,
+      "legibility": 2,
+      "exploit": 0
+    },
+    "rejectedSets": 2,
+    "examples": [
+      {
+        "change": "--font-family: \"Sawasdee\", \"Loma\", sans-serif",
+        "pixels": 56513,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 86×24 < 75% ของ 118.7×24 · a|SkyThai"
+          }
+        ]
+      },
+      {
+        "change": "--space-6: 27px → 19px",
+        "pixels": 62305,
+        "fails": [
+          {
+            "guard": "legibility",
+            "why": "ขนาด 133×40 < 75% ของ 126.7×60 · button|ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 363 กิโ"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 133×20 < 75% ของ 126.7×40 · span|การปล่อยก๊าซโดยเฉลี่ย"
+          },
+          {
+            "guard": "legibility",
+            "why": "ขนาด 133×40 < 75% ของ 126.7×60 · button|ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 381 กิโ"
+          }
+        ]
+      }
+    ]
+  },
+  "seconds": 19
+}

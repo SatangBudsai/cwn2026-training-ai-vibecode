@@ -1,0 +1,9 @@
+[
+  {
+    "id": "C55",
+    "status": "ผ่าน",
+    "reason": "ตรวจผ่านหน้าจอจริง",
+    "durationMs": 4695,
+    "upstreamError": false
+  }
+]

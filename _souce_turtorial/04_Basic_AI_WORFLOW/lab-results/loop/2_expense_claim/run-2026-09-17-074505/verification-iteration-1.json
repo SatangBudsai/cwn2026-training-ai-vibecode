@@ -1,0 +1,71 @@
+{
+  "timestamp_utc": "2026-09-17T07:50:32.028272+00:00",
+  "mermaid": [
+    {
+      "index": 1,
+      "rendered": true,
+      "svg": "diagram-1.svg",
+      "png": "diagram-1.png"
+    },
+    {
+      "index": 2,
+      "rendered": true,
+      "svg": "diagram-2.svg",
+      "png": "diagram-2.png"
+    },
+    {
+      "index": 3,
+      "rendered": false,
+      "error": "Page.evaluate: Error: Parse error on line 12:\n...ent_owner=หัวหน้าทีม H->>A: บันทึก deci\n-----------------------^\nExpecting '()', 'SOLID_OPEN_ARROW', 'DOTTED_OPEN_ARROW', 'SOLID_ARROW', 'SOLID_ARROW_TOP', 'SOLID_ARROW_BOTTOM', 'STICK_ARROW_TOP', 'STICK_ARROW_BOTTOM', 'SOLID_ARROW_TOP_DOTTED', 'SOLID_ARROW_BOTTOM_DOTTED', 'STICK_ARROW_TOP_DOTTED', 'STICK_ARROW_BOTTOM_DOTTED', 'SOLID_ARROW_TOP_REVERSE', 'SOLID_ARROW_BOTTOM_REVERSE', 'STICK_ARROW_TOP_REVERSE', 'STICK_ARROW_BOTTOM_REVERSE', 'SOLID_ARROW_TOP_REVERSE_DOTTED', 'SOLID_ARROW_BOTTOM_REVERSE_DOTTED', 'STICK_ARROW_TOP_REVERSE_DOTTED', 'STICK_ARROW_BOTTOM_REVERSE_DOTTED', 'BIDIRECTIONAL_SOLID_ARROW', 'DOTTED_ARROW', 'BIDIRECTIONAL_DOTTED_ARROW', 'SOLID_CROSS', 'DOTTED_CROSS', 'SOLID_POINT', 'DOTTED_POINT', got 'NEWLINE'\n    at Parser.parseError (/usr/local/lib/node_modules/mcp-excalidraw-server/node_modules/mermaid/dist/mermaid.min.js:1895:19870)\n    at Parser.parse (/usr/local/lib/node_modules/mcp-excalidraw-server/node_modules/mermaid/dist/mermaid.min.js:1897:179)\n    at Diagram.fromText (/usr/local/lib/node_modules/mcp-excalidraw-server/node_modules/mermaid/dist/mermaid.min.js:3579:256)\n    at async Object.render (/usr/local"
+    },
+    {
+      "index": 4,
+      "rendered": true,
+      "svg": "diagram-4.svg",
+      "png": "diagram-4.png"
+    }
+  ],
+  "all_diagrams_rendered": false,
+  "mockup": {
+    "sections": {
+      "submit": true,
+      "tracking": true,
+      "review": true
+    },
+    "console_page_errors": [],
+    "labelled_simulated": true,
+    "unconfirmed_policy_visible": true
+  },
+  "source_coverage": {
+    "S01": true,
+    "S02": true,
+    "S03": true,
+    "S04": true,
+    "S05": true,
+    "S06": true,
+    "S07": true,
+    "S08": true,
+    "S09": true,
+    "S10": true
+  },
+  "referenced_attributes": {
+    "Claim.status": true,
+    "Claim.current_owner": true,
+    "Receipt.image_ref": true,
+    "Receipt.receipt_date": true,
+    "Receipt.duplicate_review": true,
+    "Approval.decision": true,
+    "Payment.scheduled_date": true,
+    "Payment.result": true
+  },
+  "state_owners": [
+    "ร่าง / พนักงาน",
+    "รอหัวหน้า / หัวหน้าทีม",
+    "รอยืนยันนโยบาย / หัวหน้าทีม",
+    "รอผู้จัดการ / ผู้จัดการฝ่าย",
+    "รอบัญชีตรวจ / ฝ่ายบัญชี",
+    "รอจ่าย / ฝ่ายบัญชี",
+    "จ่ายแล้ว / ฝ่ายบัญชี",
+    "คืนแก้ / พนักงาน"
+  ]
+}

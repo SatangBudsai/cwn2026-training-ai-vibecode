@@ -1,0 +1,270 @@
+{
+ "w": 1280,
+ "h": 720,
+ "fps": 6,
+ "outW": 1000,
+ "scenes": [
+  {
+   "img": "lab0-gif-intro.png",
+   "dur": 3.5
+  },
+  {
+   "img": "b0005.png",
+   "dur": 4.5,
+   "zoom": [
+    0,
+    0,
+    1500,
+    844
+   ],
+   "hl": [
+    [
+     64,
+     274,
+     346,
+     26
+    ]
+   ],
+   "step": "VS Code จริง",
+   "title": "① เปิดโฟลเดอร์ novatech/ ใน VS Code",
+   "sub": "compose.yml = ใบสั่งตั้งบริษัท บอก Docker ว่าต้องเปิด container อะไรบ้าง"
+  },
+  {
+   "img": "b0008.png",
+   "dur": 4.5,
+   "zoom": [
+    250,
+    230,
+    1050,
+    680
+   ],
+   "hl": [
+    [
+     505,
+     341,
+     150,
+     28
+    ]
+   ],
+   "step": "VS Code จริง",
+   "title": "② คลิก ▷ Run All Services ที่หัวไฟล์",
+   "sub": "= docker compose up -d (หรือคลิกขวา compose.yml → Compose Up ก็ได้ผลเดียวกัน)"
+  },
+  {
+   "img": "b0014.png",
+   "dur": 2.0,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0016.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0018.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0020.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0022.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0026.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0030.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0040.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0060.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0100.png",
+   "dur": 0.9,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "step": "terminal จริง",
+   "title": "③ Docker เปิดทีละขั้น: volume → gitea → init → seed → runner → cleanup",
+   "sub": "init สร้างแอดมิน · seed สร้างพนักงาน 28 คน 12 ทีม และโต๊ะ 28 โต๊ะ"
+  },
+  {
+   "img": "b0135.png",
+   "dur": 6,
+   "zoom": [
+    420,
+    880,
+    840,
+    493
+   ],
+   "zoomInstant": true,
+   "hl": [
+    [
+     455,
+     1103,
+     345,
+     22
+    ],
+    [
+     455,
+     1125,
+     345,
+     44
+    ],
+    [
+     455,
+     1169,
+     345,
+     22
+    ]
+   ],
+   "step": "terminal จริง",
+   "title": "④ เสร็จในราว 1 นาที: up 9/9",
+   "sub": "gitea Healthy = คลังกลางพร้อม · init / seed ทำงานครั้งเดียวแล้วจบ (Exited) · runner = ด่านตรวจ CI · cleanup ลบตัวช่วยทิ้ง"
+  },
+  {
+   "img": "containers-blur.png",
+   "dur": 5,
+   "zoom": [
+    0,
+    0,
+    1000,
+    563
+   ],
+   "hl": [
+    [
+     75,
+     170,
+     340,
+     76
+    ]
+   ],
+   "step": "VS Code จริง",
+   "title": "⑤ แผง Containers: กลุ่ม novatech เหลือทำงาน 2 ตัว",
+   "sub": "gitea (คลังกลาง) + act_runner (CI) · ของอื่นในเครื่องที่ไม่เกี่ยวเบลอไว้"
+  },
+  {
+   "img": "b0158.png",
+   "dur": 5,
+   "zoom": [
+    0,
+    165,
+    1351,
+    760
+   ],
+   "hl": [
+    [
+     64,
+     172,
+     346,
+     752
+    ]
+   ],
+   "step": "VS Code จริง",
+   "title": "⑥ seed สร้างโต๊ะให้พนักงาน 28 คนใน desks/",
+   "sub": "1 โฟลเดอร์ = คอมของพนักงาน 1 คน (มี token ของคนนั้นอยู่ข้างใน) · เปิด Claude Code ที่โต๊ะไหน = เป็นคนนั้น"
+  }
+ ]
+}

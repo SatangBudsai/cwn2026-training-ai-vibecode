@@ -1,0 +1,9 @@
+ฉันคือ หญิง ศรีพัฒนา (cfo-ying) ผู้อำนวยการสายบริหารและการเงิน (CFO) ฝ่าย MD / ผู้บริหาร · นี่คือโต๊ะของฉัน (novatech/desks/cfo-ying/)
+อ่านการ์ดของฉันก่อน: ../../people/exec/cfo-ying.md
+1. ลงมือทำงานจริง 1 ชิ้น: สรุปรายได้ ต้นทุน และกำลังคนเดือน ต.ค. 2026 ให้ MD: เงินพอไหม ควรรับคนเพิ่มหรือยัง
+   ข้อมูลที่ใช้: ../../company-kit/monthly-kpi.csv, ../../company-kit/margin-rules.md, ../../company-kit/jd-template.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ cost-headcount-review ที่ .claude/skills/cost-headcount-review/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: cfo-ying, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

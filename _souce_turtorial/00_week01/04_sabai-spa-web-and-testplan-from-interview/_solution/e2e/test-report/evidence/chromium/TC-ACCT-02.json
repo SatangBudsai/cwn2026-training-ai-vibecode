@@ -1,0 +1,154 @@
+{
+  "id": "TC-ACCT-02",
+  "checks": [
+    {
+      "n": 1,
+      "label": "U12 ก่อนยกเลิก: แต้ม 300",
+      "pass": true,
+      "actual": "300",
+      "shot": "shots/chromium/TC-ACCT-02/001.jpg",
+      "actor": "main",
+      "t": 3097
+    },
+    {
+      "n": 2,
+      "label": "GIFT-REFUND ก่อนยกเลิก ฿500",
+      "pass": true,
+      "actual": "฿500",
+      "shot": "shots/chromium/TC-ACCT-02/002.jpg",
+      "actor": "main",
+      "t": 6198
+    },
+    {
+      "n": 3,
+      "label": "T03 25 มิ.ย. 14:00 ไม่ว่างก่อนยกเลิก",
+      "pass": true,
+      "actual": "เลือกวันและเวลา นวดน้ำมันอโรมา 90 นาที 1 คน วันนัด จองได้ตั้งแต่ 16 มิ.ย. 2026 ถึง 16 ก.ค. 2026 อังคาร 16 พุธ 17 พฤหัส 18 ศุกร์ 19 เสาร์ 20 อาทิตย์ 21 จันทร์ 22 เลือกนักบำบัด ✦ ใครก็ได้ ระบบเลือกคนที่ว่างและคะแนนสูงสุด พี่ศรี ★ 5.0 · 3 รีวิว พี่ภูมิ ★ 4.4 · 5 รีวิว พี่ทิว ★ 4.6 · 5 รีวิว รอบที่ว่าง ช่วงเช้า 10:00 10:30 11:00 11:30 ช่วงบ่าย 12:00 12:30 15:30 16:00 16:30 ช่วงเย็น 17:00 17:30 18:00 18:30 19:00 19:30 20:00 20:30 เลือกวันและรอบก่อนไปหน้าถัดไป ย้อนกลับ ถัดไป",
+      "shot": "shots/chromium/TC-ACCT-02/003.jpg",
+      "actor": "main",
+      "t": 9192
+    },
+    {
+      "n": 4,
+      "label": "ยกเลิก B15 สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-02/004.jpg",
+      "actor": "main",
+      "t": 11267
+    },
+    {
+      "n": 5,
+      "label": "U12 หลังยกเลิก: แต้ม 500",
+      "pass": true,
+      "actual": "500",
+      "shot": "shots/chromium/TC-ACCT-02/005.jpg",
+      "actor": "main",
+      "t": 12807
+    },
+    {
+      "n": 6,
+      "label": "GIFT-REFUND หลังยกเลิก ฿1,000",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-ACCT-02/006.jpg",
+      "actor": "main",
+      "t": 15612
+    },
+    {
+      "n": 7,
+      "label": "T03 25 มิ.ย. 14:00 ว่าง",
+      "pass": true,
+      "actual": "14:00",
+      "shot": "shots/chromium/TC-ACCT-02/007.jpg",
+      "actor": "main",
+      "t": 18668
+    },
+    {
+      "n": 8,
+      "label": "ติ๊กสิทธิ์เดือนเกิดได้ (สิทธิ์คืนแล้ว)",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/chromium/TC-ACCT-02/008.jpg",
+      "actor": "main",
+      "t": 23851
+    },
+    {
+      "n": 9,
+      "label": "สิทธิ์เดือนเกิดคืน S01 ฿800",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿800",
+      "shot": "shots/chromium/TC-ACCT-02/009.jpg",
+      "actor": "main",
+      "t": 25603
+    },
+    {
+      "n": 10,
+      "label": "ยกเลิก B08 สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-ACCT-02/010.jpg",
+      "actor": "main",
+      "t": 27745
+    },
+    {
+      "n": 11,
+      "label": "C06 เหลือ 8 ครั้ง จาก 11 ครั้ง",
+      "pass": true,
+      "actual": "เหลือ 8 ครั้ง จาก 11 ครั้ง",
+      "shot": "shots/chromium/TC-ACCT-02/011.jpg",
+      "actor": "main",
+      "t": 29329
+    },
+    {
+      "n": 12,
+      "label": "ยิงพร้อมกัน: สำเร็จ 1 ครั้ง",
+      "pass": true,
+      "actual": "[200,409]",
+      "shot": "shots/chromium/TC-ACCT-02/012.jpg",
+      "actor": "main",
+      "t": 32829
+    },
+    {
+      "n": 13,
+      "label": "ยิงพร้อมกัน: อีกครั้งถูกปฏิเสธ 4xx",
+      "pass": true,
+      "actual": "[200,409]",
+      "shot": "shots/chromium/TC-ACCT-02/013.jpg",
+      "actor": "main",
+      "t": 33825
+    },
+    {
+      "n": 14,
+      "label": "เหตุที่ปฏิเสธตรงกฎ ยกเลิกแล้วยกเลิกซ้ำไม่ได้",
+      "pass": true,
+      "actual": "{\"error\":{\"code\":\"booking-not-cancellable\",\"message\":\"การจองนี้เสร็จแล้วหรือยกเลิกแล้ว\"}}",
+      "shot": "shots/chromium/TC-ACCT-02/014.jpg",
+      "actor": "main",
+      "t": 34795
+    },
+    {
+      "n": 15,
+      "label": "GIFT-REFUND ยัง ฿1,000 ไม่คืนซ้ำ",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-ACCT-02/015.jpg",
+      "actor": "main",
+      "t": 37678
+    },
+    {
+      "n": 16,
+      "label": "U12 หลังยิงพร้อมกัน: แต้ม 500",
+      "pass": true,
+      "actual": "500",
+      "shot": "shots/chromium/TC-ACCT-02/016.jpg",
+      "actor": "main",
+      "t": 39250
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-ACCT-02/main.webm"
+    }
+  }
+}

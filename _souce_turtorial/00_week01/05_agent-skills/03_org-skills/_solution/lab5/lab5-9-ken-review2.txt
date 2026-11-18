@@ -1,0 +1,1 @@
+plat-may แก้ PR #2 ใน novatech/org-skills ตามที่ผมขอแล้ว ช่วยรีวิวรอบสอง ถ้าครบให้ approve แล้ว merge (token ของผมอยู่ใน .gitea-token)

@@ -1,0 +1,14 @@
+{
+  "name": "mlops",
+  "version": "1.0.0",
+  "description": "งาน ML: บันทึกการทดลองให้เทียบกันได้ และปล่อยโมเดลพร้อมเกณฑ์ rollback",
+  "author": {
+    "name": "ml-jay"
+  },
+  "keywords": [
+    "department",
+    "mlops",
+    "mlflow-experiment",
+    "model-release"
+  ]
+}

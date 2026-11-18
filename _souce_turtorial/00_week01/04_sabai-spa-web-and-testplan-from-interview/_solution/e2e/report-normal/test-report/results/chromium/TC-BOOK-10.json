@@ -1,0 +1,86 @@
+{
+  "id": "TC-BOOK-10",
+  "title": "TC-BOOK-10 รีโหลดหน้าสรุปไม่เสียสิ่งที่เลือก และออกจากระบบกลางทางไม่เจอทางตัน",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "หลังรีโหลด: ยังเป็น S01 · 17 มิ.ย. · 12:00 · T01 · ฿950 (คำตอบผิดที่คาดไว้: กลับหน้าจอ 1 และวัน รอบหาย)\nหลังออกจากระบบ: ไปหน้าเข้าสู่ระบบ หรือเปิดฟอร์มแขกที่มีช่องชื่อและเบอร์ 2 ช่อง (คำตอบผิดที่คาดไว้: ขึ้น \"กรุณากรอกชื่อและเบอร์โทร\" แต่มีช่องกรอก 0 ช่อง)\nก่อนทำต่อ: การจองวันที่ 17 มิ.ย. 0 รายการ · แต้ม U08 101\nจองต่อเป็นแขก: ยอด ฿1,000 ทั้งหน้าจอและหลังร้าน (ถ้าค้างราคาสมาชิกจะเห็น ฿950) · เข้าสู่ระบบ U08 กลับมา: ยอด ฿950\nจบแล้ว 17 มิ.ย. มี 1 รายการ · แต้ม U08 ยังเป็น 101",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 904,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] R56 · F-สร้าง 6 · [R] R57 · F-สร้าง 5",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 904,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-05, FR-10, FR-27, BR-21",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 904,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R56, R57",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 904,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 904,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 904,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 80487,
+  "at": "2026-11-06T02:23:51.475Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('booking-recap-service')\nExpected substring: \"นวดไทย 60 นาที\"\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('booking-recap-service') with timeout 6000ms\n  - waiting for getByTestId('booking-recap-service')\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('booking-recap-when')\nExpected pattern: /17 มิ\\.ย\\..*12:00/\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('booking-recap-when') with timeout 6000ms\n  - waiting for getByTestId('booking-recap-when')\n",
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('booking-recap-therapist')\nExpected substring: \"พี่ศรี\"\nTimeout: 6000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"soft toContainText\" getByTestId('booking-recap-therapist') with timeout 6000ms\n  - waiting for getByTestId('booking-recap-therapist')\n",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 950\nReceived: NaN",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not \"dead-end\""
+  ],
+  "steps": [
+    "1. เข้าสู่ระบบ U08 ไปถึงหน้าสรุป เห็น ฿950",
+    "2. รีโหลดหน้า แล้วจดบริการ วัน รอบ นักบำบัด และยอด ✗",
+    "3. ล็อกและรีเซ็ต ไปถึงหน้าสรุปใหม่โดยไม่รีโหลด แล้วเปิดแท็บที่ 2 กดออกจากระบบ",
+    "4. กลับแท็บแรกซึ่งอยู่หน้าสรุป กดยืนยัน นับช่องกรอกบนหน้าจอ ✗",
+    "ก่อนทำต่อ: การจองวันที่ 17 มิ.ย. 0 รายการ · แต้ม U08 101",
+    "5. ทำต่อตามทางที่เว็บเปิดให้ จนจองสำเร็จ",
+    "6. เข้า /th/admin นับการจองวันที่ 17 มิ.ย. และตรวจยอด แล้วรีโหลด"
+  ]
+}

@@ -1,0 +1,1 @@
+sales-nida เปิด PR #1 ใน novatech/org-skills ให้ skill sales-proposal ใส่ภาคผนวก PDPA ตามกฎของผม ช่วยรีวิวในฐานะเจ้าของกฎว่าข้อความ 3 ข้อตรงกับกติกาของผมไหม ถ้าตรงให้ approve (ยังไม่ต้อง merge) ถ้าไม่ตรงให้ request changes พร้อมเหตุผล (token ของผมอยู่ใน .gitea-token)

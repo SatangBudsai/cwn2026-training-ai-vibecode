@@ -1,0 +1,112 @@
+{
+"lab": "LAB 4 · ดีลเดียววิ่งข้ามแผนก",
+"steps": [
+{
+"id": "lab4-step1-sales",
+"who": "sales-nida",
+"role": "Sales",
+"color": "#fbcfe8",
+"portrait": "../../../img/people/sales-nida.jpg",
+"prompt": "เปิดดีลใหม่: TOR อยู่ที่ ../../company-kit/deal-001/tor-bank-queue.md ช่วยทำ proposal แล้ววางไว้ในโฟลเดอร์กลางของดีล ../../deals/deal-001/",
+"reads": [
+"TOR ของธนาคาร (tor-bank-queue.md)",
+"proposal ที่เคยชนะ 2 ฉบับ",
+"ราคากลาง + กฎกำไร (price-list, margin-rules)"
+],
+"skill": "sales:sales-proposal",
+"skillNote": "Claude หยิบเอง (+ core 3 ตัว: pricing-rules, customer-data-policy, brand-guide)",
+"time": "6 นาที 13 วินาที",
+"outputs": [
+{
+"file": "deal-001-proposal-nakhonluangpattana.md",
+"note": "4,800,000 บาท ก่อน VAT เท่าเพดานงบพอดี"
+},
+{
+"file": "deal-001-pricing-output.md",
+"note": "ส่วนลด 507,000 บาท · margin 28.3%"
+},
+{
+"file": "deal-001-internal-notes.md",
+"note": "โน้ตภายใน: ถามเรื่อง MA 8x5 หรือ 24x7"
+}
+],
+"verdict": {
+"kind": "info",
+"text": "ส่งต่อให้บัญชีตรวจราคา",
+"sub": "⚠️ ไม่มีภาคผนวก PDPA เพราะ skill ของ Sales ไม่รู้กฎนี้"
+},
+"next": "➜ fin-joy"
+},
+{
+"id": "lab4-step2-finance",
+"who": "fin-joy",
+"role": "บัญชี",
+"color": "#bbf7d0",
+"portrait": "../../../img/people/fin-joy.jpg",
+"prompt": "ตรวจราคาและกำไรของดีล ../../deals/deal-001/ แล้ววางผลไว้ในโฟลเดอร์เดียวกัน",
+"reads": [
+"ไฟล์ของ Sales ในโฟลเดอร์ดีล",
+"ราคากลางและกฎกำไรจาก core:pricing-rules",
+"TOR (ดูงบและ SLA)"
+],
+"skill": "finance:pricing-calc",
+"skillNote": "Claude หยิบเอง (+ core:pricing-rules)",
+"time": "3 นาที 30 วินาที",
+"outputs": [
+{
+"file": "deal-001-finance-check.md",
+"note": "ราคาและกำไรถูกทุกบรรทัด · margin 28.3%"
+},
+{
+"file": "ผู้อนุมัติผิด",
+"note": "ส่วนลดจริง 11.9% ของยอดที่ลดได้ และลูกค้าเป็นธนาคาร ต้องผ่าน MD"
+},
+{
+"file": "ความเสี่ยง",
+"note": "reuse โค้ดไม่ได้เลย margin เหลือ 14.9% ต่ำกว่าเกณฑ์ปฏิเสธ 15%"
+}
+],
+"verdict": {
+"kind": "warn",
+"text": "ตัวเลขถูก แต่ผู้อนุมัติผิด",
+"sub": "ดีลนี้ต้องให้ MD อนุมัติ"
+},
+"next": "➜ md-somchai"
+},
+{
+"id": "lab4-step3-md",
+"who": "md-somchai",
+"role": "MD",
+"color": "#e9d5ff",
+"portrait": "../../../img/people/md-somchai.jpg",
+"prompt": "ดีล ../../deals/deal-001/ อนุมัติได้ไหม เขียนผลไว้ในโฟลเดอร์ดีล",
+"reads": [
+"โน้ตลับของ MD (notes/deal-rules.md)",
+"ทุกไฟล์ในโฟลเดอร์ดีล (Sales + บัญชี)"
+],
+"skill": "exec:deal-approval",
+"skillNote": "Claude หยิบเอง",
+"time": "1 นาที 36 วินาที",
+"outputs": [
+{
+"file": "approval.md",
+"note": "ผล: ❌ ตีกลับ"
+},
+{
+"file": "ข้อ 5 ภาคผนวก PDPA",
+"note": "ลูกค้าเป็นธนาคาร แต่ proposal ไม่มีภาคผนวก ตรวจก่อนจึงตีกลับทันที"
+},
+{
+"file": "ส่งกลับให้ sales-nida",
+"note": "เพิ่ม 3 ข้อ: DPA · ข้อมูลอยู่ในไทย · แจ้งเหตุภายใน 72 ชม."
+}
+],
+"verdict": {
+"kind": "bad",
+"text": "ตีกลับ: proposal ไม่มีภาคผนวก PDPA",
+"sub": "กฎนี้อยู่ใน skill ของ MD คนเดียว → แก้ทั้งบริษัทใน LAB 5"
+},
+"next": "➜ LAB 5"
+}
+]
+}

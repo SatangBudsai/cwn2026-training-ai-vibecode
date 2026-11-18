@@ -1,0 +1,64 @@
+{
+  "timestamp_utc": "2026-09-17T10:21:05.789361+00:00",
+  "phase": "phase1",
+  "diagrams": [
+    {
+      "index": 1,
+      "rendered": true
+    },
+    {
+      "index": 2,
+      "rendered": true
+    },
+    {
+      "index": 3,
+      "rendered": true
+    }
+  ],
+  "mockup": {
+    "1440": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "all_source_rows": true,
+        "review_rows": true,
+        "no_auto_merge": true
+      },
+      "console_page_errors": []
+    },
+    "390": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "all_source_rows": true,
+        "review_rows": true,
+        "no_auto_merge": true
+      },
+      "console_page_errors": []
+    }
+  },
+  "automated_scope": "rendering, DOM visibility, selected source/contract checks; semantic review is separate",
+  "weekday_evidence": {
+    "2026-03-09": "Monday",
+    "2026-09-03": "Thursday"
+  },
+  "phone_normalization": {
+    "081-234-5678": "0812345678",
+    "0812345678": "0812345678",
+    "081 234 5678": "0812345678"
+  },
+  "findings_rows": 9,
+  "automated_pass": true,
+  "sha256": {
+    "output.md": "635fbe69aac0514f2f703a17ee6e83aa86240a20c00960cdd54b0c0ae411a33b",
+    "mockup.html": "b6d2fd5afdb4d7c63000f20563e8082ff194fd3b80f590436fe7aa7bad79cbd1"
+  }
+}

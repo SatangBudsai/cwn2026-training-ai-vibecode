@@ -1,0 +1,216 @@
+{
+ "md-somchai": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "exec:deal-approval",
+   "exec:exec-deck"
+  ],
+  "personal": [
+   "deal-approval"
+  ]
+ },
+ "exec-ploy": {
+  "plugin": [
+   "exec:deal-approval",
+   "exec:exec-deck"
+  ],
+  "personal": [
+   "exec-deck"
+  ]
+ },
+ "sales-nida": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "sales:follow-up-email",
+   "sales:sales-proposal"
+  ],
+  "personal": [
+   "sales-proposal"
+  ]
+ },
+ "sales-krit": {
+  "plugin": [
+   "sales:follow-up-email",
+   "sales:sales-proposal"
+  ],
+  "personal": [
+   "follow-up-email"
+  ]
+ },
+ "sa-ton": {
+  "plugin": [
+   "sa:arch-template",
+   "sa:req-to-spec"
+  ],
+  "personal": [
+   "req-to-spec"
+  ]
+ },
+ "sa-ice": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "sa:arch-template",
+   "sa:req-to-spec"
+  ],
+  "personal": [
+   "arch-template"
+  ]
+ },
+ "dev-pond": {
+  "plugin": [
+   "dev:coding-standard",
+   "dev:project-scaffold"
+  ],
+  "personal": [
+   "coding-standard"
+  ]
+ },
+ "dev-mew": {
+  "plugin": [
+   "dev:coding-standard",
+   "dev:project-scaffold"
+  ],
+  "personal": [
+   "project-scaffold"
+  ]
+ },
+ "dev-new": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "dev:coding-standard",
+   "dev:project-scaffold"
+  ],
+  "personal": []
+ },
+ "qa-mint": {
+  "plugin": [
+   "qa:bug-report",
+   "qa:test-from-plan"
+  ],
+  "personal": [
+   "test-from-plan"
+  ]
+ },
+ "qa-bank": {
+  "plugin": [
+   "qa:bug-report",
+   "qa:test-from-plan"
+  ],
+  "personal": [
+   "bug-report"
+  ]
+ },
+ "ops-art": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "devops:deploy-checklist",
+   "devops:postmortem"
+  ],
+  "personal": [
+   "deploy-checklist"
+  ]
+ },
+ "ops-fon": {
+  "plugin": [
+   "devops:deploy-checklist",
+   "devops:postmortem"
+  ],
+  "personal": [
+   "postmortem"
+  ]
+ },
+ "ml-jay": {
+  "plugin": [
+   "mlops:mlflow-experiment",
+   "mlops:model-release"
+  ],
+  "personal": [
+   "mlflow-experiment"
+  ]
+ },
+ "ml-pim": {
+  "plugin": [
+   "mlops:mlflow-experiment",
+   "mlops:model-release"
+  ],
+  "personal": [
+   "model-release"
+  ]
+ },
+ "hr-fah": {
+  "plugin": [
+   "hr:jd-writer",
+   "hr:onboarding-pack"
+  ],
+  "personal": [
+   "jd-writer"
+  ]
+ },
+ "hr-oat": {
+  "plugin": [
+   "hr:jd-writer",
+   "hr:onboarding-pack"
+  ],
+  "personal": [
+   "onboarding-pack"
+  ]
+ },
+ "fin-joy": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "finance:invoice-check",
+   "finance:pricing-calc"
+  ],
+  "personal": [
+   "pricing-calc"
+  ]
+ },
+ "fin-nok": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder",
+   "finance:invoice-check",
+   "finance:pricing-calc"
+  ],
+  "personal": [
+   "invoice-check"
+  ]
+ },
+ "plat-ken": {
+  "plugin": [
+   "shared:meeting-minutes"
+  ],
+  "personal": []
+ },
+ "plat-may": {
+  "plugin": [
+   "core:brand-guide",
+   "core:customer-data-policy",
+   "core:pricing-rules",
+   "core:skill-finder"
+  ],
+  "personal": [
+   "customer-data-policy"
+  ]
+ }
+}

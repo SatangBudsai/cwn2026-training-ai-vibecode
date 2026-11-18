@@ -1,0 +1,7 @@
+คุณเป็น "กรรมการอิสระ" ตรวจแอปจองตั๋ว (ทำงานในโฟลเดอร์ /workspace/rea-flight-v3)
+1. อ่าน EXPLORATION.md (ส่วน B ฟีเจอร์ · C กฎ · F ข้อมูลจากเครือข่าย) แล้วเขียน acceptance test ด้วย Playwright ไว้ในโฟลเดอร์ accept/ ข้อละ 1 ฟีเจอร์หรือ 1 กฎ
+   - หาองค์ประกอบจากสิ่งที่ผู้ใช้เห็น (ข้อความ role label) ห้ามอ่านโค้ดของแอปใด ๆ และห้ามผูกกับ data-testid
+   - บันทึกวิดีโอทุก test แล้วแปลงเป็น GIF เก็บที่ accept/gif/<ชื่อtest>.gif และค้างภาพผลลัพธ์ไว้ 3 วินาทีก่อนจบแต่ละ test
+   - รันกับแอปที่ URL ใน BASE_URL ได้
+2. รันกับ v2 (SkyThai Plus ที่ http://localhost:5082 ถ้ายังไม่เปิด ให้รัน docker compose up -d ใน /workspace/rea-flight-v2/skythai-plus) เป็น baseline แล้วเขียน accept/BASELINE.md: test | ผ่าน/ไม่ผ่าน | เหตุผลสั้น ๆ
+ตอบเป็นตารางสรุป จำนวน test ทั้งหมด ผ่านกี่ข้อ

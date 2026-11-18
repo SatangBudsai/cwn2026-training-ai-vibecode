@@ -1,0 +1,97 @@
+{
+  "id": "TC-ACCT-06",
+  "title": "TC-ACCT-06 รูปร่างกาย before/after ของลูกค้าเปิดตรงจาก URL โดยไม่ login ไม่ได้",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "U01 เปิด URL จาก Network ได้ 200 และเป็น `image/jpeg`\nแขกทุก URL → สถานะไม่ใช่ 200 · เนื้อหาไม่ใช่ `image/jpeg` (จาก EXPLORATION ตอนนี้ได้ 200 จึงคาดว่าข้อนี้ไม่ผ่านจนกว่าจะแก้)\nU02 ทุก URL → สถานะไม่ใช่ 200 · เนื้อหาไม่ใช่ `image/jpeg`",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 647,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] R97 · F-สร้าง 24",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 647,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "NFR-12",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 647,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R97",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 647,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Security, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 647,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 647,
+        "column": 1
+      }
+    },
+    {
+      "type": "pending-answer",
+      "description": "F-สร้าง 24 ผลจริง: {\"U01 /_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75\":\"200 image/jpeg\",\"U01 /_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75\":\"200 image/jpeg\",\"U01 /placeholder/nida-before-body.jpg\":\"200 image/jpeg\",\"U01 /placeholder/nida-after-body.jpg\":\"200 image/jpeg\",\"แขก /_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75\":\"200 image/jpeg\",\"แขก /_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75\":\"200 image/jpeg\",\"แขก /placeholder/nida-before-body.jpg\":\"200 image/jpeg\",\"แขก /placeholder/nida-after-body.jpg\":\"200 image/jpeg\",\"U02 /_next/image?url=%2Fplaceholder%2Fnida-before-body.jpg&w=384&q=75\":\"200 image/jpeg\",\"U02 /_next/image?url=%2Fplaceholder%2Fnida-after-body.jpg&w=384&q=75\":\"200 image/jpeg\",\"U02 /placeholder/nida-before-body.jpg\":\"200 image/jpeg\",\"U02 /placeholder/nida-after-body.jpg\":\"200 image/jpeg\"}"
+    }
+  ],
+  "status": "failed",
+  "durationMs": 16278,
+  "at": "2026-11-06T02:53:13.613Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\"",
+    "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not 200",
+    "Error: expect(received).not.toContain(expected) // indexOf\n\nExpected substring: not \"image/jpeg\"\nReceived string:        \"image/jpeg\""
+  ],
+  "steps": [
+    "1. U01 เปิด Wallet ดึง URL รูปจริงจาก Network แล้วเปิดในชื่อ U01",
+    "2. แขกยิง GET ทุก URL ✗",
+    "3. U02 login แล้วยิง GET ทุก URL ✗"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "TC-ACCT-05",
+  "title": "TC-ACCT-05 เรียก API ที่ต้อง login โดยไม่ login ไม่ได้ข้อมูล และออกจากระบบแล้วกดย้อนกลับไม่เห็นข้อมูลเดิม",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "กดย้อนกลับ → ไม่เห็น \"คุณนิดา\" ฿12,400 หรือ 99 แต้ม\nAPI Wallet และบัญชี → สถานะ 401 · เนื้อหาไม่มี คุณนิดา, 12400, C01 หรือจำนวนครั้ง 7\nAPI คิวหลังร้าน → สถานะ 401 · เนื้อหาไม่มี `SJTEST05` และ `SJTEST06`\nAPI กดเสร็จ B05 → สถานะ 401 · แต้ม U09 ยัง 199 (ถ้าผ่านจะได้ 208)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 543,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] R98 · [R] ⚠️A-46 E252 · [D] §4 หลังร้านและข้อมูลส่วนตัว",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 543,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "NFR-12, FR-12, FR-77",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 543,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R96, R98",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 543,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Security, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 543,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 543,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 23500,
+  "at": "2026-11-06T02:21:10.007Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U01 login กด header-wallet และเปิดบัญชี ดึง URL ของ API",
+    "2. ออกจากระบบแล้วกดย้อนกลับของเบราว์เซอร์",
+    "3. ยิง URL จากขั้น 1 ซ้ำโดยไม่ login",
+    "4. U07 ดูคิว 15 มิ.ย. กดใช้บริการเสร็จของ B06 ดึง URL แล้วออกจากระบบ",
+    "5. ยิง URL คิวและกดเสร็จ B05 โดยไม่ login",
+    "6. U09 login อ่านแต้ม"
+  ]
+}

@@ -1,0 +1,1 @@
+plat-ken แก้ข้อบล็อกของ PR #4 ใน novatech/org-skills แล้ว ช่วยรีวิวรอบสาม ถ้าครบให้รัน skill-eval บน commit ล่าสุดแล้ว approve (ยังไม่ต้อง merge) token ของผมอยู่ใน .gitea-token

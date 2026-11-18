@@ -1,0 +1,4 @@
+[{"name":"lab6-rerun","user":"hr-oat","steps":[
+  {"goto":"/novatech/org-skills/actions/runs/14/jobs/3","hold":2500,"shot":"lab6-rerun-before"},
+  {"click":"button:has-text('Re-run all jobs')","hold":4000},
+  {"goto":"/novatech/org-skills/actions/runs/14/jobs/3","hold":6000,"shot":"lab6-rerun-after"}]}]

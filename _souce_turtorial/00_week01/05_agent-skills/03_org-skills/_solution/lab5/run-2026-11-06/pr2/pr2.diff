@@ -1,0 +1,171 @@
+diff --git a/plugins/core/.claude-plugin/plugin.json b/plugins/core/.claude-plugin/plugin.json
+index 8659013..5f3cef9 100644
+--- a/plugins/core/.claude-plugin/plugin.json
++++ b/plugins/core/.claude-plugin/plugin.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "core",
+-  "version": "1.0.0",
++  "version": "1.1.0",
+   "description": "ของที่ทุกคนต้องใช้: นโยบายข้อมูลลูกค้า แบรนด์ กติการาคา และการหา skill ในคลัง",
+   "author": {
+     "name": "plat-ken"
+diff --git a/plugins/core/skills/customer-data-policy/SKILL.md b/plugins/core/skills/customer-data-policy/SKILL.md
+index ddaa861..5c0df0e 100644
+--- a/plugins/core/skills/customer-data-policy/SKILL.md
++++ b/plugins/core/skills/customer-data-policy/SKILL.md
+@@ -5,7 +5,7 @@ description: |
+ metadata:
+   owner: plat-may
+   layer: core
+-  version: 0.1.0
++  version: 0.2.0
+   uses: []
+   next: [invoice-check, follow-up-email, sales-proposal]
+   follows: []
+diff --git a/plugins/core/skills/customer-data-policy/references/bank-pdpa-annex.md b/plugins/core/skills/customer-data-policy/references/bank-pdpa-annex.md
+new file mode 100644
+index 0000000..0339966
+--- /dev/null
++++ b/plugins/core/skills/customer-data-policy/references/bank-pdpa-annex.md
+@@ -0,0 +1,18 @@
++# ภาคผนวก PDPA (บังคับทุกครั้งเมื่อลูกค้าเป็นธนาคารหรือสถาบันการเงิน)
++
++> เจ้าของกฎ: MD (`deal-rules` v2026.3 ข้อ 2 แถว 5 และข้อ 3) · ไฟล์นี้เป็นต้นฉบับเดียวของข้อความภาคผนวก skill อื่นให้ชี้มาที่นี่ ไม่เก็บสำเนา
++
++กติกาของ MD มีผลตั้งแต่ 1 ก.ค. 2026 ถ้าลูกค้าเป็นธนาคารหรือสถาบันการเงินแล้ว proposal ไม่มีภาคผนวกนี้ หรือมีไม่ครบ 3 ข้อ MD จะตีกลับทันทีโดยไม่พิจารณาข้ออื่นต่อ และกำหนดยื่นที่กระชั้นไม่ใช่เหตุยกเว้น
++
++ใส่ไว้ท้าย proposal ต่อจากหัวข้อ 9 ใช้ชื่อหัวข้อตามนี้ และมี 3 ข้อพอดี
++
++```markdown
++## ภาคผนวก PDPA
++
++1. **DPA:** โนวาเทคเป็นผู้ประมวลผลข้อมูลส่วนบุคคล ลูกค้าเป็นผู้ควบคุมข้อมูลส่วนบุคคล และโนวาเทคประมวลผลตามคำสั่งของลูกค้าเท่านั้น
++2. **Data residency:** ข้อมูลส่วนบุคคลทั้งหมดเก็บใน data center ในประเทศไทยเท่านั้น รวม backup และ log
++3. **Breach notification:** โนวาเทคแจ้งเหตุละเมิดข้อมูลส่วนบุคคลให้ลูกค้าทราบภายใน 72 ชั่วโมงนับจากที่ทราบเหตุ
++```
++
++- เนื้อหาในหัวข้อ 4 ใช้แทนภาคผนวกไม่ได้ แม้จะพูดถึงข้อตกลงประมวลผล hosting หรือ audit log แล้วก็ตาม
++- ถ้าโซลูชันทำตามข้อใดไม่ได้ หรือยังยืนยันไม่ได้ว่าทำตามได้ ห้ามตัดหรือแก้ข้อความเอง ให้แจ้ง `plat-may` และ MD ให้ตัดสินร่วมกัน จดไว้ใน internal-notes และห้ามยื่นจนกว่าจะได้ข้อสรุป
+diff --git a/plugins/core/skills/customer-data-policy/references/doc-type-rules.md b/plugins/core/skills/customer-data-policy/references/doc-type-rules.md
+index 3c9b7c5..6a89f84 100644
+--- a/plugins/core/skills/customer-data-policy/references/doc-type-rules.md
++++ b/plugins/core/skills/customer-data-policy/references/doc-type-rules.md
+@@ -6,6 +6,7 @@
+ |---|---|---|---|
+ | **ใบแจ้งหนี้** | ภายนอก | ผู้ติดต่อลูกค้า = ชื่อ + ตำแหน่ง + อีเมลบริษัท **เท่านั้น** (ห้ามเบอร์มือถือ) · ห้ามชื่อ/ข้อมูลลูกค้าปลายทาง · ห้ามรายละเอียดเคสภายในของลูกค้า (ใช้รหัสเคส/ticket) · เลขผู้เสียภาษีนิติบุคคล + บัญชีรับเงินของบริษัท (ธ.สยามรุ่งเรือง 714-2-08835-1) แสดงได้ · ระวังหมายเหตุที่ระบบ auto-fill ดึงมาจาก call center | invoicing-rules v2026.2 ข้อ 4–5 |
+ | **อีเมลติดตามลูกค้า / proposal / สไลด์** | ภายนอก | ข้อมูลติดต่อจากบันทึกประชุมหรือ TOR **ห้ามคัดลอกเบอร์มือถือ** ลงไป ใช้อีเมลบริษัท · อ้างผลงานลูกค้าเก่าได้แค่ชื่อองค์กร + ตัวเลขผลลัพธ์ ไม่มีข้อมูลลูกค้าปลายทาง | customer-data-policy ข้อ 2 |
++| **proposal ลูกค้าธนาคารหรือสถาบันการเงิน** | ภายนอก | ต้องมีหัวข้อ "ภาคผนวก PDPA" ต่อจากหัวข้อ 9 · ไม่มีภาคผนวกหรือมีไม่ครบ 3 ข้อ (DPA, Data residency, Breach notification) = 🔴 · ข้อความมาตรฐานและเส้นทางเมื่อโซลูชันทำตามไม่ได้หรือยังยืนยันไม่ได้อยู่ใน `references/bank-pdpa-annex.md` · การขาดภาคผนวกไม่นับเป็นเหตุรั่วตามขั้นที่ 4 | deal-rules v2026.3 ข้อ 2 แถว 5 และข้อ 3 |
+ | **บันทึกประชุม** | ภายใน | ไม่ผิดข้อห้ามข้อ 2 (ไม่ได้ส่งออก) แต่เบอร์มือถือควรย้ายไป CRM แล้วลบจากโน้ต = 🟡 · ถ้าจะ **ส่งต่อให้ลูกค้า/คนนอก** ให้ตรวจแบบภายนอกทั้งฉบับ (รวมส่วน "ความรู้สึกหลังประชุม (ภายใน)" ที่ต้องตัดทิ้งด้วย) | customer-data-policy ข้อ 2 |
+ | **TOR จากลูกค้า** | ภายใน (ไดรฟ์ฝ่ายขาย) | เก็บได้ตามที่ลูกค้าส่งมา 5 ปีหลังจบสัญญา · ห้ามคัดลอกเบอร์มือถือผู้ติดต่อใน TOR ไปใส่ proposal/spec | customer-data-policy ข้อ 2, 5 |
+ | **รายงานบั๊ก / ticket** | ภายใน | ใช้ user ทดสอบเท่านั้น ห้ามข้อมูลลูกค้าจริง · screenshot ต้องเบลอ | qa/bug-template.md |
+diff --git a/plugins/core/skills/skill-finder/references/catalog.md b/plugins/core/skills/skill-finder/references/catalog.md
+index b6f9932..5f75c5b 100644
+--- a/plugins/core/skills/skill-finder/references/catalog.md
++++ b/plugins/core/skills/skill-finder/references/catalog.md
+@@ -32,7 +32,7 @@
+ - uses: — · next: — · follows: —
+ 
+ #### `customer-data-policy`
+-- เรียกใช้เป็น: `core:customer-data-policy` · ชั้น: core · เวอร์ชัน: 0.1.0
++- เรียกใช้เป็น: `core:customer-data-policy` · ชั้น: core · เวอร์ชัน: 0.2.0
+ - เจ้าของ skill: `plat-may` · ผู้ดูแล plugin: `@plat-ken`
+ - ทำอะไร: ตรวจเอกสารว่าใส่ข้อมูลลูกค้าได้ไหมตามนโยบายข้อมูลลูกค้า (PDPA) ของโนวาเทค v1.4 — หาเลขบัตรประชาชน เบอร์มือถือ เลขบัญชี/บัตร ชื่อลูกค้าปลายทาง แล้วตัดสินทีละจุด ห้าม/mask/ได้ พร้อมข้อความแทนที่และฉบับแก้ ใช้เมื่อผู้ใช้พิมพ์ "เอกสารนี้ใส่ข้อมูลลูกค้าได้ไหม", "เช็ก PDPA ให้หน่อย", "ข้อมูลนี้ส่งลูกค้าได้ไหม", "ช่วย mask ข้อมูล" หรือส่ง proposal/ใบแจ้งหนี้/อีเมล/สไลด์/รายงานบั๊ก/log มาให้ตรวจก่อนส่ง
+ - uses: — · next: `invoice-check` `follow-up-email` `sales-proposal` · follows: —
+@@ -98,9 +98,9 @@
+ - uses: — · next: `sales-proposal` `pricing-calc` `pipeline-review` · follows: `customer-data-policy` `brand-guide`
+ 
+ #### `sales-proposal`
+-- เรียกใช้เป็น: `sales:sales-proposal` · ชั้น: department · เวอร์ชัน: 1.0.0
++- เรียกใช้เป็น: `sales:sales-proposal` · ชั้น: department · เวอร์ชัน: 1.1.0
+ - เจ้าของ skill: `sales-nida` · ผู้ดูแล plugin: `@sales-nida`
+-- ทำอะไร: ร่าง proposal (ข้อเสนอโครงการ) ลูกค้าองค์กร โดยเฉพาะธนาคาร จาก TOR — โครง 9 หัวข้อแบบที่ชนะมาแล้ว เน้นความปลอดภัยและ SLA คิดราคาจาก price-list พร้อมเช็ก margin/ส่วนลด/งบ และตัดข้อมูลส่วนบุคคลออก ใช้เมื่อผู้ใช้พิมพ์ "ทำ proposal ให้ลูกค้าธนาคาร", "ร่างข้อเสนอโครงการตาม TOR", "ทำโปรให้ลูกค้าหน่อย" หรือขอข้อเสนอ/ใบเสนอโครงการให้ลูกค้า
++- ทำอะไร: ร่าง proposal (ข้อเสนอโครงการ) ลูกค้าองค์กร โดยเฉพาะธนาคาร จาก TOR — โครง 9 หัวข้อแบบที่ชนะมาแล้ว เน้นความปลอดภัยและ SLA ใส่ภาคผนวก PDPA ทุกครั้งเมื่อลูกค้าเป็นธนาคารหรือสถาบันการเงิน คิดราคาจาก price-list พร้อมเช็ก margin/ส่วนลด/งบ และตัดข้อมูลส่วนบุคคลออก ใช้เมื่อผู้ใช้พิมพ์ "ทำ proposal ให้ลูกค้าธนาคาร", "ร่างข้อเสนอโครงการตาม TOR", "ทำโปรให้ลูกค้าหน่อย" หรือขอข้อเสนอ/ใบเสนอโครงการให้ลูกค้า
+ - uses: `pricing-calc` · next: `deal-approval` `follow-up-email` `req-to-spec` · follows: `customer-data-policy` `brand-guide` `pricing-rules`
+ 
+ ### sa
+diff --git a/plugins/sales/.claude-plugin/plugin.json b/plugins/sales/.claude-plugin/plugin.json
+index 3ab258e..ee6b260 100644
+--- a/plugins/sales/.claude-plugin/plugin.json
++++ b/plugins/sales/.claude-plugin/plugin.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "sales",
+-  "version": "1.0.0",
++  "version": "1.1.0",
+   "description": "แผนก Sales: proposal และอีเมลติดตามลูกค้า",
+   "author": {
+     "name": "sales-nida"
+diff --git a/plugins/sales/skills/sales-proposal/SKILL.md b/plugins/sales/skills/sales-proposal/SKILL.md
+index 97b2b4e..7ef1d7d 100644
+--- a/plugins/sales/skills/sales-proposal/SKILL.md
++++ b/plugins/sales/skills/sales-proposal/SKILL.md
+@@ -1,11 +1,11 @@
+ ---
+ name: sales-proposal
+ description: |
+-  ร่าง proposal (ข้อเสนอโครงการ) ลูกค้าองค์กร โดยเฉพาะธนาคาร จาก TOR — โครง 9 หัวข้อแบบที่ชนะมาแล้ว เน้นความปลอดภัยและ SLA คิดราคาจาก price-list พร้อมเช็ก margin/ส่วนลด/งบ และตัดข้อมูลส่วนบุคคลออก ใช้เมื่อผู้ใช้พิมพ์ "ทำ proposal ให้ลูกค้าธนาคาร", "ร่างข้อเสนอโครงการตาม TOR", "ทำโปรให้ลูกค้าหน่อย" หรือขอข้อเสนอ/ใบเสนอโครงการให้ลูกค้า
++  ร่าง proposal (ข้อเสนอโครงการ) ลูกค้าองค์กร โดยเฉพาะธนาคาร จาก TOR — โครง 9 หัวข้อแบบที่ชนะมาแล้ว เน้นความปลอดภัยและ SLA ใส่ภาคผนวก PDPA ทุกครั้งเมื่อลูกค้าเป็นธนาคารหรือสถาบันการเงิน คิดราคาจาก price-list พร้อมเช็ก margin/ส่วนลด/งบ และตัดข้อมูลส่วนบุคคลออก ใช้เมื่อผู้ใช้พิมพ์ "ทำ proposal ให้ลูกค้าธนาคาร", "ร่างข้อเสนอโครงการตาม TOR", "ทำโปรให้ลูกค้าหน่อย" หรือขอข้อเสนอ/ใบเสนอโครงการให้ลูกค้า
+ metadata:
+   owner: sales-nida
+   layer: department
+-  version: 1.0.0
++  version: 1.1.0
+   uses: [pricing-calc]
+   next: [deal-approval, follow-up-email, req-to-spec]
+   follows: [customer-data-policy, brand-guide, pricing-rules]
+@@ -26,12 +26,14 @@ metadata:
+ 3. **เขียน proposal** ตาม `references/proposal-template.md` (9 หัวข้อ ลำดับห้ามสลับ) — ข้อความตัวอย่างดีลที่ชนะอยู่ใน `references/winning-patterns.md`
+    - ธนาคารอ่าน **ความปลอดภัย (4.2)** และ **SLA (8)** ละเอียดที่สุด: ตอบทุกข้อของ TOR ด้วยมาตรการจริง ระบุชั่วโมงที่ SLA ครอบคลุมให้ชัด
+    - ผลงานอ้างอิงเลือกที่ใกล้ TOR ที่สุด ตามจำนวนที่ TOR ขอ
+-4. **ตรวจก่อนส่ง** ด้วย `references/checklist.md` (แบรนด์ + PDPA + ราคา) แก้จนผ่านทุกข้อ
+-5. **เขียน internal-notes**: ตัวเลขภายใน, ผู้อนุมัติ, และ "เรื่องที่ต้องตัดสินใจ" ทุกจุดที่เลือกแทนเจ้าของดีล
++   - **ลูกค้าเป็นธนาคารหรือสถาบันการเงิน → ต้องใส่ "ภาคผนวก PDPA" ทุกครั้ง** ต่อจากหัวข้อ 9 มี 3 ข้อพอดี (DPA, Data residency, Breach notification) คัดลอกข้อความจาก `references/bank-pdpa-annex.md` ของ skill `core:customer-data-policy` · ไม่แน่ใจว่าลูกค้าเป็นธนาคารหรือสถาบันการเงินหรือไม่ ให้ถามเจ้าของดีล
++4. **เขียน internal-notes**: ตัวเลขภายใน, ผู้อนุมัติ, และ "เรื่องที่ต้องตัดสินใจ" ทุกจุดที่เลือกแทนเจ้าของดีล · ถ้าลูกค้าเป็นธนาคารหรือสถาบันการเงิน ให้จดชื่อ SA หรือ DevOps ผู้ยืนยัน data residency หรือข้อสรุปจาก `plat-may` และ MD
++5. **ตรวจก่อนส่ง** ด้วย `references/checklist.md` (แบรนด์ + PDPA + ราคา) แก้จนผ่านทุกข้อ ถ้าการแก้กระทบ internal-notes ให้ปรับให้ตรงกัน
+ 
+ ## กติกาที่ห้ามพลาด
+ - กติการาคาทั้งหมดอยู่ใน skill `core:pricing-rules` อ่านก่อนคิดราคา · margin < 15% = ห้ามส่ง · 15–25% → ส่งต่อ `deal-approval` (MD)
+ - ห้ามต้นทุน/margin ในเอกสารลูกค้า · ห้ามเบอร์มือถือ/เลขบัตร/เลขบัญชี (แม้ TOR จะให้มา) — กติกาอยู่ใน skill `core:customer-data-policy` ส่วนเฉพาะ proposal อยู่ใน `references/pdpa-rules.md`
++- ลูกค้าเป็นธนาคารหรือสถาบันการเงินแต่ไม่มี "ภาคผนวก PDPA" หรือมีไม่ครบ 3 ข้อ = MD ตีกลับทันที หัวข้อ 4 ใช้แทนไม่ได้ และกำหนดยื่นไม่ใช่เหตุยกเว้น · ถ้าโซลูชันทำตามข้อใดไม่ได้หรือยังยืนยันไม่ได้ ใช้เส้นทางใน `references/bank-pdpa-annex.md` ของ skill `core:customer-data-policy`
+ - ห้ามอ้างตัวเลขที่ยังไม่ใช่ผลงานจริง (ผลทดลอง, ต้นแบบ) เป็นคำสัญญา
+ - ไม่รู้ = ถาม หรือเขียนเป็นข้อสมมติใน internal-notes อย่าเดา
+ 
+diff --git a/plugins/sales/skills/sales-proposal/references/checklist.md b/plugins/sales/skills/sales-proposal/references/checklist.md
+index b62d6d9..9562346 100644
+--- a/plugins/sales/skills/sales-proposal/references/checklist.md
++++ b/plugins/sales/skills/sales-proposal/references/checklist.md
+@@ -20,3 +20,6 @@
+ ## PDPA
+ - [ ] ค้นในไฟล์หาเลขแบบ `0[689]\d-\d{3}-\d{4}` / เลข 13 หลัก — ต้องไม่เจอ
+ - [ ] ไม่มีชื่อลูกค้าปลายทาง เลขบัญชี เลขบัตร
++- [ ] ถ้าลูกค้าเป็นธนาคารหรือสถาบันการเงิน: มีหัวข้อชื่อ "ภาคผนวก PDPA" ต่อจากหัวข้อ 9 ครบ 3 ข้อตาม `references/bank-pdpa-annex.md` ของ skill `core:customer-data-policy` (DPA ระบุบทบาทผู้ประมวลผล/ผู้ควบคุม · Data residency รวม backup และ log · Breach notification ภายใน 72 ชั่วโมง)
++- [ ] ถ้าลูกค้าเป็นธนาคารหรือสถาบันการเงิน: หัวข้ออื่นไม่ขัดกับภาคผนวก เช่น ไม่มี backup หรือ log อยู่นอกประเทศไทย
++- [ ] ถ้าลูกค้าเป็นธนาคารหรือสถาบันการเงิน: SA หรือ DevOps ยืนยันแล้วว่าข้อมูลส่วนบุคคล รวม backup และ log ของโซลูชันที่เสนออยู่ในประเทศไทย และจดชื่อผู้ยืนยันไว้ใน internal-notes ถ้ายังไม่มีผู้ยืนยัน ให้ใช้เส้นทางใน `references/bank-pdpa-annex.md` ของ skill `core:customer-data-policy`
+diff --git a/plugins/sales/skills/sales-proposal/references/pdpa-rules.md b/plugins/sales/skills/sales-proposal/references/pdpa-rules.md
+index 92f28d2..10e66b9 100644
+--- a/plugins/sales/skills/sales-proposal/references/pdpa-rules.md
++++ b/plugins/sales/skills/sales-proposal/references/pdpa-rules.md
+@@ -3,3 +3,9 @@
+ กติกาทั้งหมดอยู่ใน skill `core:customer-data-policy` ไฟล์นี้เก็บเฉพาะสิ่งที่ proposal ต้องเขียน
+ 
+ - ในเนื้อหาโซลูชัน: ระบุว่าเลขบัตรประชาชนไม่เก็บแบบข้อความธรรมดา, ข้อมูลเทรนเป็นข้อมูลไม่ระบุตัวตน, ลบสำเนาข้อมูลลูกค้าปลายทางภายใน 90 วันหลังส่งมอบ
++
++## ภาคผนวก PDPA (บังคับทุกครั้งเมื่อลูกค้าเป็นธนาคารหรือสถาบันการเงิน)
++
++proposal ต้องมีหัวข้อ "ภาคผนวก PDPA" ต่อจากหัวข้อ 9 มี 3 ข้อพอดี (DPA, Data residency, Breach notification) ถ้าไม่มีภาคผนวกนี้ หรือมีไม่ครบ 3 ข้อ MD จะตีกลับทันที
++
++กติกาและข้อความมาตรฐานอยู่ใน `references/bank-pdpa-annex.md` ของ skill `core:customer-data-policy` ที่เดียว ให้คัดลอกจากไฟล์นั้น ไฟล์นี้ไม่เก็บสำเนา และเส้นทางเมื่อโซลูชันทำตามข้อใดไม่ได้หรือยังยืนยันไม่ได้ก็อยู่ในไฟล์นั้นเช่นกัน
+diff --git a/plugins/sales/skills/sales-proposal/references/proposal-template.md b/plugins/sales/skills/sales-proposal/references/proposal-template.md
+index 4e8770d..a8a7f72 100644
+--- a/plugins/sales/skills/sales-proposal/references/proposal-template.md
++++ b/plugins/sales/skills/sales-proposal/references/proposal-template.md
+@@ -21,5 +21,8 @@
+ 8. **SLA** — Sev 1: ตอบรับ 30 นาที / แก้ 4 ชม. · Sev 2: 2 ชม. / 1 วันทำการ · Sev 3: 1 วันทำการ / 5 วันทำการ · uptime ≥ 99.5%/เดือน ไม่รวม maintenance แจ้งล่วงหน้า 3 วัน · **ระบุชั่วโมงที่ครอบคลุม** (MA-STD = 8x5, MA-PREM = 24x7)
+ 9. **ทำไมต้องโนวาเทค** — หลักฐาน ไม่ใช่คำโอ้อวด: ผลงานอ้างอิง, สิ่งที่ทำได้จริงแล้ว, ทีมชุดเดียว, รายงานทุกสัปดาห์
+ 
++## ภาคผนวก (ต่อจากหัวข้อ 9)
++- **ภาคผนวก PDPA** — บังคับทุกครั้งเมื่อลูกค้าเป็นธนาคารหรือสถาบันการเงิน · มี 3 ข้อพอดี: DPA, Data residency, Breach notification · คัดลอกข้อความจาก `references/bank-pdpa-annex.md` ของ skill `core:customer-data-policy`
++
+ ## รูปแบบ
+ ฟอนต์ สี ตาราง หัวข้อ และโลโก้ ทำตาม skill `core:brand-guide` ข้อ 1, 2, 5 และ 6

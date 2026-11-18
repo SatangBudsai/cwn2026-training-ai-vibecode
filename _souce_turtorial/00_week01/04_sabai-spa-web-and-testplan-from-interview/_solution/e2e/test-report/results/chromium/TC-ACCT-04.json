@@ -1,0 +1,81 @@
+{
+  "id": "TC-ACCT-04",
+  "title": "TC-ACCT-04 สมาชิกแก้ของคนอื่นไม่ได้: ยกเลิกนัดคนอื่น กดเสร็จเอง เปิดการจองคนอื่น และเข้าหลังร้าน",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "U02 ยกเลิก B07 → ถูกปฏิเสธด้วยสถานะ 403/404 · B07 ยังอยู่ในบัญชี U01 · T02 16 มิ.ย. 10:00 ยังถูกจอง\nU02 เปิด URL B07 → ถูกปฏิเสธ\nU02 เปิด `/th/admin` → มีข้อความแจ้งว่าไม่มีสิทธิ์เข้าถึง และไม่เห็นคิว · ไม่มีปุ่ม `header-admin` · ปฏิเสธครบ 2 จาก 2 ครั้ง\nU09 กดเสร็จ B05 → ถูกปฏิเสธด้วยสถานะ 401/403/404 · แต้มยัง 199 (ถ้าผ่านจะได้ 208) · ยอดยัง ฿10,001 (ถ้าผ่านจะได้ ฿10,951) · U07 ยิง URL เดียวกันสำเร็จ 200 แล้ว U09 แต้ม 208 ยอด ฿10,951 (ยืนยันว่า URL ชี้ B05 จริง)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 424,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-46 E252 · [R] R96 ข้อที่ยังไม่ได้ลองยกเลิกนัดคนอื่น",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 424,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "NFR-12, FR-20, FR-80",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 424,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R96",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 424,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Security, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 424,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 424,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 41772,
+  "at": "2026-11-06T02:52:31.812Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U01 เปิด B07 ในบัญชี ดึงรหัสจาก Network แล้วออกจากระบบ",
+    "2. U02 จอง S01 17 มิ.ย. 12:00 แล้วกดยกเลิกนัดของตัวเอง ดึง URL",
+    "3. เปลี่ยนรหัสเป็น B07 ยิงซ้ำในชื่อ U02",
+    "4. U02 เปิด URL การจอง B07 และเปิด /th/admin",
+    "5. U01 login ดูบัญชี · เริ่มจอง S01 T02 16 มิ.ย. ดูรอบ 10:00",
+    "6. U07 กดใช้บริการเสร็จของ B06 ดึง URL แล้วออกจากระบบ",
+    "7. U09 อ่านรหัส B05 จาก Network แล้วยิงซ้ำในชื่อ U09",
+    "8. อ่านแต้มและยอด U09 · U07 ยิง URL เดียวกัน · U09 อ่านอีกครั้ง"
+  ]
+}

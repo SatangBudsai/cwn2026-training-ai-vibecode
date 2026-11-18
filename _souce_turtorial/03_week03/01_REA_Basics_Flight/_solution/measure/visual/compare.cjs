@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');
+const {setup}=require('../v2/suite.cjs');
+const {PNG}=require('pngjs');const fs=require('fs');const path=require('path');
+(async()=>{const pixelmatch=(await import('pixelmatch')).default;const root=__dirname;const source='/workspace/rea-flight-v2/exploration/results.png';fs.copyFileSync(source,path.join(root,'reference.png'));const ref=PNG.sync.read(fs.readFileSync(source));const browser=await chromium.launch();const results=[];
+for(const [v,port] of [['v1',5081],['v2',5082],['v3',5083]]){const context=await browser.newContext({baseURL:`http://localhost:${port}`,viewport:{width:ref.width,height:ref.height},locale:'th-TH',timezoneId:'Asia/Bangkok'});const page=await context.newPage();await page.goto(`http://localhost:${port}`);
+if(v!=='v1'){await setup(page,'results');await page.getByRole('combobox',{name:'เปลี่ยนประเภทตั๋ว'}).selectOption({label:'→ เที่ยวเดียว'});await page.getByRole('button',{name:/ค้นหาเที่ยวบิน/}).click();await page.getByRole('tab',{name:/ดีที่สุด/}).waitFor();}
+await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(1000);await page.screenshot({path:path.join(root,v+'.png')});fs.writeFileSync(path.join(root,v+'.txt'),await page.locator('body').ariaSnapshot());
+const actual=PNG.sync.read(fs.readFileSync(path.join(root,v+'.png')));const diff=new PNG({width:ref.width,height:ref.height});const pixels=pixelmatch(ref.data,actual.data,diff.data,ref.width,ref.height,{threshold:0.1,includeAA:false});fs.writeFileSync(path.join(root,v+'-diff.png'),PNG.sync.write(diff));
+let initial=await page.getByRole('link',{name:/^เที่ยวบิน .*ราคา/}).count();let total=initial;if(v!=='v1'){await page.getByRole('button',{name:/^ดูเที่ยวบินเพิ่มเติม/}).click();total=await page.getByRole('link',{name:/^เที่ยวบิน .*ราคา/}).count();}else{initial=await page.getByRole('link',{name:'เลือก',exact:true}).count();total=initial;}
+results.push({version:v,pixels,totalPixels:ref.width*ref.height,percent:pixels/(ref.width*ref.height)*100,initial,total,url:page.url()});await context.close();}
+await browser.close();fs.writeFileSync(path.join(root,'metrics.json'),JSON.stringify({reference:source,viewport:{width:ref.width,height:ref.height},threshold:0.1,includeAA:false,results},null,2));console.log(results);})();

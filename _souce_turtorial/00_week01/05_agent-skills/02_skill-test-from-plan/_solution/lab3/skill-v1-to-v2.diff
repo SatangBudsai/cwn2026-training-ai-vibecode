@@ -1,0 +1,300 @@
+diff --git a/.claude/skills/test-from-plan/SKILL.md b/.claude/skills/test-from-plan/SKILL.md
+index 9aedd60..fc48a49 100644
+--- a/.claude/skills/test-from-plan/SKILL.md
++++ b/.claude/skills/test-from-plan/SKILL.md
+@@ -1,12 +1,15 @@
+ ---
+ name: test-from-plan
+-description: ทดสอบเว็บแบบ black-box ตามแผนการทดสอบ (TEST-PLAN.md) ด้วย Playwright + Chromium headless ครบวงจรในรอบเดียว — เปิดเว็บด้วย Docker ตรวจ entry criteria, สร้างห้องทดลอง e2e, เขียน test ทุกข้อในแผนด้วย agent ขนานตัวละ 1 โมดูล (มีจอ agents.html พิสูจน์จำนวนที่ทำพร้อมกัน), รันขนาน, แยก "เว็บผิด/test ผิด", ทำ GIF ≥ 5 วินาทีทุกข้อ + หน้า index.html, เขียน TEST-REPORT.md 6 ส่วน แล้วตัดสิน "ปล่อยได้/ยังไม่ปล่อย" ตามเกณฑ์ในแผน อ่าน URL รายการ test ระดับความสำคัญ และเกณฑ์จากแผนเอง ไม่ผูกกับเว็บใดเว็บหนึ่ง ใช้เมื่อผู้ใช้สั่ง "ทดสอบเว็บตามแผน", "รัน test ตาม TEST-PLAN", "เขียน Playwright test ตามแผน", "ทำรายงานผลทดสอบ/ตัดสินว่าปล่อยได้ไหม" หรือ /test-from-plan
++description: |
++  ทดสอบเว็บแบบ black-box ตามแผนใน TEST-PLAN.md (อ่าน URL, test cases, เกณฑ์จากแผนเอง) ด้วย Playwright headless และ agent ขนาน
++  ได้ test ครบทุกข้อใน e2e/, GIF หลักฐานทุกข้อ, index.html, TEST-REPORT.md และคำตัดสินว่าปล่อยได้ไหม
++  ใช้เมื่อผู้ใช้พูดว่า "ทดสอบเว็บตามแผน", "รัน test ตาม TEST-PLAN", "ทำรายงานผลทดสอบ" หรือ /test-from-plan
+ ---
+ 
+ # ทดสอบเว็บตามแผน (test-from-plan)
+ 
+ ทำเหมือน tester จริง: เห็นแค่ **แผน** กับ **หน้าเว็บที่รันอยู่** ไม่เห็นโค้ด
+-ผลสุดท้าย: `e2e/` (test ทุกข้อ) + `e2e/test-report/` (GIF, index.html, agents.html, TEST-REPORT.md) + คำตัดสินว่าปล่อยได้ไหม
++ผลสุดท้าย: `e2e/` (test ทุกข้อ) + `e2e/test-report/` (GIF, index.html, TEST-REPORT.md) + คำตัดสินว่าปล่อยได้ไหม
+ 
+ `SKILL_DIR` = โฟลเดอร์ของ skill นี้ (`.claude/skills/test-from-plan`) · สคริปต์ทุกตัว **รันโดย cwd = `e2e/`** เช่น `cd e2e && node ../.claude/skills/test-from-plan/scripts/parse-plan.mjs`
+ 
+@@ -16,6 +19,7 @@ description: ทดสอบเว็บแบบ black-box ตามแผน
+ 2. **ในแผนอ่านได้เฉพาะหัวข้อที่ไม่ใช่เฉลย** ห้ามอ่านหัวข้อชื่อ "เฉลย / สำหรับผู้สอน / BUG_MODE / solution / answer" — ห้ามใช้ Read ทั้งไฟล์และห้าม `cat` แผน ให้รัน `parse-plan.mjs` ก่อน มันบอกว่าหัวข้อไหนอ่านได้ แล้วอ่านด้วย Read แบบ `offset/limit` ให้จบก่อนหัวข้อต้องห้าม (หาบรรทัดด้วย `grep -n "^## " TEST-PLAN.md` ซึ่งเห็นแค่ชื่อหัวข้อ)
+ 3. **ห้ามแก้โค้ดเว็บ** ข้อมูลมาจากแผน (หัวข้อ test cases + ข้อมูลทดสอบ) และหน้าเว็บ/HTTP ที่มองเห็นจากภายนอกเท่านั้น
+ 4. **test ล้ม → ห้ามแก้ test ให้ผ่านเฉย ๆ** ดูหลักฐานก่อน แล้วแยก "เว็บผิด" (ห้ามแก้ จดเป็นบั๊ก) กับ "test ผิด" (แก้ test แล้วรันใหม่)
++4.1 **แผนกำกวม → ห้ามเลือกแบบที่ทำให้ test ผ่านแล้วเงียบ** ใช้ความหมายตรงตัวอักษรที่สุดของแผน (ไม่ใช่แบบที่ผ่าน) แล้วจดทุกจุดลง `test-report/interpretations.json` พร้อมผลของการตีความอีกแบบที่ **ลองกับเว็บจริงแล้ว** ไม่ใช่เดา → ขึ้นในรายงานหัวข้อ "ข้อที่ต้องถามผู้ใช้" ทุกครั้ง (ดูขั้น 6)
+ 5. ผลการทดลองอยู่ใน `e2e/` และ **ไม่ขึ้น git** (`.gitignore` ของ e2e กัน `test-report/ test-results/ scratch/ node_modules/`) · ไม่ commit เว้นแต่ผู้ใช้สั่ง
+ 6. ห้ามโหลดเบราว์เซอร์ใหม่ ใช้ Chromium ที่มีใน `ms-playwright` อยู่แล้ว · ไม่ใช้ Chrome ของผู้ใช้ (Playwright MCP) ใช้ headless ทั้งหมด
+ 
+@@ -38,7 +42,7 @@ mkdir -p e2e && cd e2e && node $SKILL_DIR/scripts/parse-plan.mjs --plan ../TEST-
+ 
+ ### 3 · ห้องทดลอง e2e
+ ```bash
+-node $SKILL_DIR/scripts/scaffold-e2e.mjs      # package.json, playwright.config.ts, global-setup.ts, tests/fixtures.ts, .gitignore, agent-log.sh, npm i
++node $SKILL_DIR/scripts/scaffold-e2e.mjs      # package.json, playwright.config.ts, global-setup.ts, tests/fixtures.ts, .gitignore, npm i (+ --agent-monitor ถ้าผู้ใช้ขอดูจอ agent)
+ node $SKILL_DIR/scripts/check-browser.mjs     # exit 1 = Chromium รุ่นที่ต้องการไม่มี / ไม่มี ffmpeg → หยุดถามผู้ใช้ ห้ามโหลดเอง
+ ```
+ 
+@@ -54,12 +58,15 @@ test.describe('<โมดูล>', () => {
+ ไฟล์นี้คือ "แบบ" ให้ agent ทุกตัว
+ 
+ ### 5 · ครบทุกข้อด้วย agent ขนาน (สูงสุด 8 ตัวพร้อมกัน ตัวละ 1 โมดูล)
+-1. `rm -f test-report/agents.log test-report/agents.done` แล้วรันเบื้องหลัง 2 ตัว: `node $SKILL_DIR/scripts/agents-dashboard.mjs` และ `node $SKILL_DIR/scripts/watch-agents.mjs` (ถ่ายจอ agents.html headless แทน Chrome)
+-2. ส่ง agent โมดูลที่เหลือ **8 ตัวแรกใน message เดียว** (Agent tool, `run_in_background: true`, `general-purpose`) ใช้ brief จาก [references/agent-brief.md](references/agent-brief.md) — เติมตาราง test ของโมดูล, ข้อมูลทดสอบ, ไฟล์/โฟลเดอร์ของตัวเอง, ข้อห้ามแชร์ข้อมูล (ดูข้อ 4 ใน decisions)
+-3. ตัวไหนเสร็จ → ส่งตัวใหม่รับโมดูลที่เหลือทันที จนครบ
+-4. เมื่อ agent ตอบกลับ: เช็กว่ายืนยันกติกาแล้ว และ `grep -rlE "<โฟลเดอร์เว็บ>|_solution|<ชื่อหัวข้อเฉลย>" tests scratch` ต้องว่าง ถ้า agent ละเมิดกติกา → ลบงานของตัวนั้น ส่งตัวใหม่ทำใหม่
+-5. ครบแล้ว `touch test-report/agents.done` → `node $SKILL_DIR/scripts/agents-dashboard.mjs --once` อ่านค่า "พร้อมกันสูงสุด / ใช้ทั้งหมด" **รายงานตามจริง** (รอบแรกได้ 6 ไม่ถึง 8 เพราะ agent เปิดห่างกัน ~15 วินาที และโมดูลเล็กเสร็จก่อน — ห้ามเขียนว่า 8 ถ้า log ไม่ได้บอก)
+-6. ตรวจว่าทุก ID ในแผนมี test: `grep -ho "TC-[A-Z]*-[0-9]*" tests/*.spec.ts | sort -u | wc -l` เทียบจำนวนใน plan.json
++1. ส่ง agent โมดูลที่เหลือ **8 ตัวแรกใน message เดียว** (Agent tool, `run_in_background: true`, `general-purpose`) ใช้ brief จาก [references/agent-brief.md](references/agent-brief.md) — เติมตาราง test ของโมดูล, ข้อมูลทดสอบ, ไฟล์/โฟลเดอร์ของตัวเอง, ข้อห้ามแชร์ข้อมูล (ดูข้อ 7 ใน decisions)
++2. ตัวไหนเสร็จ → ส่งตัวใหม่รับโมดูลที่เหลือทันที จนครบ
++3. เมื่อ agent ตอบกลับ: เช็กว่ายืนยันกติกาแล้ว และ `grep -rlE "<โฟลเดอร์เว็บ>|_solution|<ชื่อหัวข้อเฉลย>" tests scratch` ต้องว่าง ถ้า agent ละเมิดกติกา → ลบงานของตัวนั้น ส่งตัวใหม่ทำใหม่ · รวบรวม "การตีความ" ที่ agent รายงานลง `interpretations.json`
++4. ตรวจว่าทุก ID ในแผนมี test: `grep -ho "TC-[A-Z]*-[0-9]*" tests/*.spec.ts | sort -u | wc -l` เทียบจำนวนใน plan.json
++
++**จอดู agent (ค่าเริ่มต้น: ข้าม)** — เป็นของสอนใน LAB 5 ทำเฉพาะเมื่อผู้ใช้ขอ เช่น "ขอดูจอ agent", "พิสูจน์ว่าทำพร้อมกันกี่ตัว" ถ้าขอ:
++- ก่อนส่ง agent: `node $SKILL_DIR/scripts/scaffold-e2e.mjs --agent-monitor` (สร้าง agent-log.sh) · `rm -f test-report/agents.log test-report/agents.done` แล้วรันเบื้องหลัง `node $SKILL_DIR/scripts/agents-dashboard.mjs` และ `node $SKILL_DIR/scripts/watch-agents.mjs` (ถ่ายจอ agents.html headless ทุก 5 วินาที)
++- ใส่ส่วน "FIRST and LAST command" ใน brief (ส่วนเลือกได้ใน agent-brief.md)
++- ครบแล้ว `touch test-report/agents.done` → `node $SKILL_DIR/scripts/agents-dashboard.mjs --once` รายงาน "พร้อมกันสูงสุด / ใช้ทั้งหมด" **ตามที่ log วัดได้จริง** (รอบแรกได้ 6 ไม่ถึง 8)
+ 
+ ### 6 · รันรวม + แยกเว็บผิด/test ผิด
+ ```bash
+@@ -78,6 +85,17 @@ cp test-report/results.json test-report/results-round1.json
+ ความรุนแรง = ระดับของ test ตามแผน · ถ้าไม่มีบั๊กให้เขียน `[]`
+ ตารางสรุป: `ลำดับ | รหัส | รอบแรก | รอบหลังแก้`
+ 
++**จุดที่แผนกำกวม → `test-report/interpretations.json` (ต้องมีทุกรอบ ถ้าไม่มีจริงให้เขียน `[]`)**
++ไล่ทุกข้อที่ผลที่คาดหวังอ่านได้มากกว่า 1 แบบ (จาก agent + ของตัวเอง เช่น "อาหารแมว" รวมขนมไหม, "ทันที" กี่วินาที, "error ทุกช่อง") แล้ว **ลองแบบอื่นกับเว็บจริง** (สคริปต์ใน scratch หรือดูจากหน้าเว็บ) ก่อนเขียน `altResult`:
++```json
++[{ "test": "TC-REC-01", "wording": "อาหารแมวไม่มีไก่",
++   "chosen": "อาหารแมว = สินค้าแมวทุกชิ้น รวมขนม (ตามเมนู \"อาหารแมว\" ของเว็บ)", "chosenResult": "passed",
++   "alternative": "อาหารแมว = อาหารหลัก (เม็ด/เปียก) เท่านั้น", "altResult": "failed",
++   "altEvidence": "ผลลัพธ์มี ขนมแมวเลีย แซลมอน (ประเภทขนม)",
++   "question": "\"อาหารแมว\" ในแผนรวมขนมแมวด้วยไหม" }]
++```
++`altResult` = `passed` / `failed` / `unknown` (ใช้ `unknown` เมื่อลองไม่ได้จริง และบอกเหตุผลใน `altEvidence`)
++
+ ### 7 · หลักฐาน GIF + index
+ ```bash
+ node $SKILL_DIR/scripts/make-gifs.mjs     # exit 2 = มีไฟล์ < 5 วินาที → เพิ่ม waitForTimeout/ค้างผลในข้อนั้น รันข้อนั้นใหม่ แล้วทำ GIF ใหม่ (ห้ามยืดวิดีโอด้วย ffmpeg)
+@@ -89,15 +107,16 @@ node $SKILL_DIR/scripts/build-index.mjs   # test-report/index.html
+ ```bash
+ node $SKILL_DIR/scripts/build-report.mjs --env "<เช่น container X healthy, BUG_MODE=0>"
+ ```
+-ใช้ผลรันล่าสุดเท่านั้น ห้ามรันใหม่หรือแก้ test ระหว่างทำรายงาน · ถ้าสคริปต์เตือนว่ามีข้อที่ล้มแต่ไม่อยู่ใน bugs.json → จัดประเภทให้ครบก่อน
+-รายงาน 6 ส่วน: ข้อมูลรอบทดสอบ · สรุปผล (แยก P) · ผลตามโมดูล · ผลรายข้อ + ลิงก์ GIF · ข้อบกพร่อง · การตัดสินเทียบเกณฑ์ทีละข้อ → "ปล่อยได้"/"ยังไม่ปล่อย" + เหตุผล + ส่วนเผื่อ
++ใช้ผลรันล่าสุดเท่านั้น ห้ามรันใหม่หรือแก้ test ระหว่างทำรายงาน · ถ้าสคริปต์เตือนว่ามีข้อที่ล้มแต่ไม่อยู่ใน bugs.json หรือไม่มี interpretations.json → ทำให้ครบก่อน
++รายงาน 7 ส่วน: ข้อมูลรอบทดสอบ · สรุปผล (แยก P) · ผลตามโมดูล · ผลรายข้อ + ลิงก์ GIF · ข้อบกพร่อง · **ข้อที่ต้องถามผู้ใช้** (ตีความแบบไหน / อีกแบบผลเปลี่ยนไหม / คำตัดสินเปลี่ยนไหม) · การตัดสินเทียบเกณฑ์ทีละข้อ → "ปล่อยได้"/"ยังไม่ปล่อย" + เหตุผล + ส่วนเผื่อ
+ 
+ ### 9 · สรุปให้ผู้ใช้ (ภาษาไทย)
+-- ผลรันแต่ละช่วง (เปิดเว็บ · ลองโมดูลแรก · agent: พร้อมกันสูงสุด/ใช้ทั้งหมด · รันรวม ผ่าน/ล้ม/เวลา · GIF ยาวกี่วินาที · คำตัดสิน)
++- ผลรันแต่ละช่วง (เปิดเว็บ · ลองโมดูลแรก · agent ใช้กี่ตัว · รันรวม ผ่าน/ล้ม/เวลา · GIF ยาวกี่วินาที · คำตัดสิน)
+ - ข้อที่ล้ม + เว็บผิด/test ผิด + เหตุผล · ตาราง รอบแรก/รอบหลังแก้
++- **ข้อที่ต้องถามผู้ใช้** ทุกข้อ (คำถาม · ตีความแบบไหน · อีกแบบผลเป็นอย่างไร · คำตัดสินจะเปลี่ยนไหม) — ห้ามซ่อนไว้แค่ในรายงาน
+ - เวลาที่ใช้ทั้งหมดและแต่ละช่วง
+ - จุดที่ต้องตัดสินใจเองรอบนี้ (ดู decisions) และ **การละเมิดกติกาใด ๆ ที่เกิดขึ้น บอกตรง ๆ**
+-- path เต็มของ TEST-REPORT.md, index.html, agents.html
++- path เต็มของ TEST-REPORT.md, index.html (และ agents.html ถ้าผู้ใช้ขอดูจอ agent)
+ 
+ ## จุดตัดสินใจและกับดักที่เจอแล้ว
+ อ่าน [references/decisions.md](references/decisions.md) ก่อนเริ่ม — รวมทุกเรื่องที่บทเรียนไม่ได้บอกแต่ต้องตัดสินใจ (reset ชนกัน, outputDir ชนกัน, สต็อกชน, GIF ยาวพอ, API evidence, มือถือ, Git Bash แปลง path ฯลฯ)
+diff --git a/.claude/skills/test-from-plan/references/agent-brief.md b/.claude/skills/test-from-plan/references/agent-brief.md
+index b198aea..17f2e9a 100644
+--- a/.claude/skills/test-from-plan/references/agent-brief.md
++++ b/.claude/skills/test-from-plan/references/agent-brief.md
+@@ -9,13 +9,17 @@
+ - `{TESTDATA}` = เนื้อหาหัวข้อ "ข้อมูลทดสอบ" ของแผน (คัดมาเอง)
+ - `{HINTS}` = สิ่งที่รู้แล้วจากหน้าเว็บ (data-testid ที่ใช้บ่อย, ที่เก็บตะกร้า, endpoint ที่เห็นจาก API สาธารณะ) + ข้อห้ามแชร์ข้อมูลกับโมดูลอื่น (เช่น "ห้ามซื้อสินค้า X, Y เพราะ test อื่นตรวจสต็อก") + ข้อเตือนเฉพาะโมดูล (ดู decisions.md: API, มือถือ, สมัครสมาชิก)
+ - `{STRICT}` = การตีความที่ต้องเข้มตามแผน เช่น "error ทุกช่อง = ทุกช่องมี error ของตัวเอง", "ทำจากแซลมอนทั้งหมด = ตรวจทุกรายการ ไม่ใช่แค่จำนวน"
++- `{LOG_BLOCK}` = **ค่าเริ่มต้น: ลบทิ้งทั้งบรรทัด** ใส่เฉพาะเมื่อผู้ใช้ขอดูจอ agent (ดู SKILL.md ขั้น 5) โดยใช้ข้อความนี้:
++  ```text
++  ## FIRST and LAST command (mandatory, proves concurrency)
++  - Very first action: `bash {E2E_ABS}/agent-log.sh START {AID} {MODULE}`
++  - Very last action before your final reply: `bash {E2E_ABS}/agent-log.sh END {AID} {MODULE}`
++  ```
+ 
+ ```text
+ You are agent **{AID}**, module **{MODULE}**. You write Playwright tests (black-box, like a real tester) for the website at {BASE_URL}. Several agents work in parallel, each on one module.
+ 
+-## FIRST and LAST command (mandatory, proves concurrency)
+-- Very first action: `bash {E2E_ABS}/agent-log.sh START {AID} {MODULE}`
+-- Very last action before your final reply: `bash {E2E_ABS}/agent-log.sh END {AID} {MODULE}`
++{LOG_BLOCK}
+ 
+ ## HARD RULES (breaking any = your work gets deleted)
+ - NEVER open, list, read, or grep anything under `{WEB_SRC_ABS}` (web source code) or any `_solution` / solution / answers folder.
+@@ -38,11 +42,14 @@ You are agent **{AID}**, module **{MODULE}**. You write Playwright tests (black-
+ ## Writing tests
+ - One test per plan row. Title starts with the ID: `test('{ID} <what> <expected>', { tag: '@P1' }, async ({ page }) => {...})`, grouped in `test.describe('{MODULE}', ...)`.
+ - Assert exactly what the plan's expected result says (numbers/text). {STRICT}
++- **Ambiguous wording** (an expected result that can be read more than one way, e.g. does "cat food" include cat treats? how fast is "immediately"?): NEVER silently pick the reading that makes the test pass. Use the most literal reading of the plan, put a comment `// INTERPRETATION: ...` above the assertion, and ACTUALLY TRY the other reading against the live site (a scratch script or a temporary assertion — then remove it) so you can say whether the result would change. Report every such point.
+ - Tests must be independent (no serial ordering), robust under parallel runs (unique emails/data, don't depend on absolute stock other than the plan's fixed items), relative URLs. Scroll the asserted element into view at the end so the GIF shows the evidence.
+ - Run ONLY your file, without resetting data and with your own output dir:
+   `cd {E2E_ABS} && SKIP_RESET=1 npx playwright test {SPEC} --reporter=list --output=scratch/{AID}/test-results`
+ - If a test fails: look at the evidence first (error, screenshot/video in scratch/{AID}/test-results; extract frames with ffmpeg and view them). Decide **"test ผิด"** (wrong selector/timing/misunderstanding → fix the test) vs **"เว็บผิด"** (site doesn't meet the plan → keep asserting the plan's expectation, do NOT weaken it, record the bug with evidence). Re-run to confirm.
+ 
+ ## Final reply (short)
+-Table: ID | ผลที่คาดหวัง | ผลจริงบนเว็บ | ผ่าน/ล้ม | (ถ้าล้ม) เว็บผิด/test ผิด + evidence. Plus: number of test-bug fixes, any interpretation you had to choose, and an explicit confirmation that you did not access the web source, solution folders, or the forbidden plan section.
++Table: ID | ผลที่คาดหวัง | ผลจริงบนเว็บ | ผ่าน/ล้ม | (ถ้าล้ม) เว็บผิด/test ผิด + evidence.
++Table of interpretations (write "none" only if there truly was no ambiguous wording): ID | wording in plan | reading chosen + result | other reading + result you observed (passed/failed/unknown + evidence) | question to ask the user.
++Plus: number of test-bug fixes, and an explicit confirmation that you did not access the web source, solution folders, or the forbidden plan section.
+ ```
+diff --git a/.claude/skills/test-from-plan/references/decisions.md b/.claude/skills/test-from-plan/references/decisions.md
+index 80e68ab..45ba748 100644
+--- a/.claude/skills/test-from-plan/references/decisions.md
++++ b/.claude/skills/test-from-plan/references/decisions.md
+@@ -4,9 +4,9 @@
+ 
+ ## A. เรื่องที่บทเรียนสั่ง แต่ทำแบบนั้นไม่ได้ / ไม่ควร
+ 
+-1. **ไม่ใช้ Chrome ของผู้ใช้ (Playwright MCP --extension)** → ใช้ Playwright headless ทั้งหมด ทั้งดูหน้าแรก สำรวจ และ "เปิด agents.html" (ใช้ `watch-agents.mjs` ถ่ายภาพทุก 5 วินาทีเป็นหลักฐานแทน)
+-2. **agents.html ต้องรีเฟรชตัวเองแต่อ่าน log ไม่ได้** — หน้าที่เปิดจาก `file://` fetch ไฟล์ข้าง ๆ ไม่ได้ → `agents-dashboard.mjs` render ข้อมูลจาก log ฝังลง HTML ใหม่ทุก 1 วินาที + `<meta refresh 2>`
+-3. **"agent พร้อมกัน 8 ตัว" อาจไม่ถึง 8** — Agent tool เปิดทีละตัวห่างกัน ~15 วินาที และโมดูลเล็ก (2 ข้อ) เสร็จใน ~30 วินาที ก่อนตัวที่ 8 จะเริ่ม รอบแรกได้สูงสุด 6 ใช้ทั้งหมด 10 → **รายงานค่าจาก log ตามจริง** ถ้าอยากเข้าใกล้ 8: ส่งโมดูลใหญ่ก่อน โมดูลเล็กทีหลัง
++1. **ไม่ใช้ Chrome ของผู้ใช้ (Playwright MCP --extension)** → ใช้ Playwright headless ทั้งหมด ทั้งดูหน้าแรกและสำรวจ
++2. **จอดู agent (agents.log / agents.html / ภาพทุก 5 วินาที) เป็นของสอนใน LAB 5 — ค่าเริ่มต้นข้าม** ทำเฉพาะเมื่อผู้ใช้ขอ ("ขอดูจอ agent") ถ้าขอ: หน้าที่เปิดจาก `file://` fetch log ไม่ได้ → `agents-dashboard.mjs` render ข้อมูลจาก log ฝังลง HTML ใหม่ทุก 1 วินาที + `<meta refresh 2>` และ `watch-agents.mjs` ถ่ายภาพแทนการเปิดใน Chrome
++3. **"agent พร้อมกัน 8 ตัว" อาจไม่ถึง 8** — Agent tool เปิดทีละตัวห่างกัน ~15 วินาที และโมดูลเล็ก (2 ข้อ) เสร็จใน ~30 วินาที ก่อนตัวที่ 8 จะเริ่ม รอบแรกได้สูงสุด 6 ใช้ทั้งหมด 10 → ถ้าวัดด้วยจอ agent ให้ **รายงานค่าจาก log ตามจริง** · ถ้าไม่ได้วัด ห้ามอ้างตัวเลขพร้อมกัน บอกแค่จำนวน agent ที่ใช้ · อยากเข้าใกล้ 8: ส่งโมดูลใหญ่ก่อน โมดูลเล็กทีหลัง
+ 4. **จำนวน agent ทั้งหมด = จำนวนโมดูลที่เหลือ** (ไม่รวมโมดูลที่เขียนเองในขั้น 4) โมดูลที่มีบางข้อทำแล้ว (เช่น คูปองมี CPN-01 ในไฟล์ตะกร้า) ให้ agent ทำเฉพาะข้อที่เหลือในไฟล์ใหม่ และห้ามซ้ำ
+ 
+ ## B. การรันขนานไม่ให้ชนกัน
+@@ -26,11 +26,13 @@
+ 14. **test API ไม่มีหน้าเว็บ** → ใช้ `showApiEvidence()` แสดง method / URL / status (เทียบที่คาดหวัง) / request / response บนหน้าจอ
+ 15. ตรวจด้วยตาอย่างน้อย 2–3 ไฟล์ (เฟรมสุดท้าย) ก่อนบอกว่าเสร็จ
+ 
+-## D. การตีความแผน (เข้มตามตัวอักษร)
++## D. การตีความแผน (เข้มตามตัวอักษร · ห้ามเลือกแบบที่ผ่านแล้วเงียบ)
++
++กติกา: แผนอ่านได้หลายแบบ → ใช้แบบที่ตรงตัวอักษรที่สุด (ไม่ใช่แบบที่ทำให้ผ่าน) · ลองอีกแบบกับเว็บจริง · จดลง `test-report/interpretations.json` → รายงานหัวข้อ "ข้อที่ต้องถามผู้ใช้" + บอกในสรุปทุกครั้ง ข้อ 16–23 คือค่าเริ่มต้นที่ใช้รอบแรก ข้อไหนกำกวมจริงให้จดด้วย
+ 
+ 16. "error ทุกช่อง" = **ทุกช่อง** มี error ของตัวเอง (รอบแรกจับบั๊กได้: ช่องยืนยันรหัสผ่านไม่มี error)
+ 17. "พบ N รายการที่ทำจาก X ทั้งหมด" = ตรวจจำนวน **และ** ตรวจทุกรายการว่าเป็น X จริง (ดูรายละเอียดสินค้า/คุณสมบัติ ไม่ใช่แค่ชื่อ)
+-18. "อาหารแมว" ในระบบแนะนำ = สินค้าทุกชิ้นของแมว (ตามเมนู "อาหารแมว" ของเว็บ) รวมขนม — ถ้าผู้ใช้ตั้งใจแค่อาหารหลัก ข้อ REC-01 จะล้ม → **บอกผู้ใช้ว่าตีความแบบนี้**
++18. **ตัวอย่างที่รอบแรกพลาด:** "อาหารแมว" ในระบบแนะนำ — agent ตีความว่า "สินค้าทุกชิ้นของแมว รวมขนม" แล้ว REC-01 ผ่าน โดยบอกแค่ในข้อความตอบกลับ ไม่ขึ้นในรายงาน ถ้านับแค่อาหารหลัก REC-01 จะล้ม (ขนมแมวเลียอยู่ในผลลัพธ์) และ P1 ล้ม = คำตัดสินเปลี่ยนเป็น "ยังไม่ปล่อย" → **เรื่องแบบนี้ต้องอยู่ใน "ข้อที่ต้องถามผู้ใช้" เสมอ**
+ 19. "คูปองผิด / หมดอายุ" = ทดสอบทั้ง 2 กรณีใน test เดียว และตรวจว่ายอดไม่เปลี่ยน
+ 20. "ตัวเลขลดลงทันที" = ตรวจภายใน ~1 วินาที โดยไม่รีโหลด
+ 21. "สต็อก 3 กด + 5 ครั้ง" = กดครบ 5 ครั้งจริง (แม้ปุ่มจะ disabled) แล้วจำนวนต้องเป็น 3
+@@ -56,6 +58,6 @@
+ 
+ ## G. ส่วนที่คนต้องตัดสินเอง (AI ทำให้ แต่ต้องบอก)
+ 
+-35. คำตัดสินปล่อย/ไม่ปล่อย คำนวณจากเกณฑ์ในแผน แต่ต้องบอก "ส่วนเผื่อ" (ล้มเพิ่มอีกกี่ข้อจะไม่ผ่าน) และบั๊กที่ต้องแก้รอบหน้า
++35. คำตัดสินปล่อย/ไม่ปล่อย คำนวณจากเกณฑ์ในแผน แต่ต้องบอก "ส่วนเผื่อ" (ล้มเพิ่มอีกกี่ข้อจะไม่ผ่าน) บั๊กที่ต้องแก้รอบหน้า และ **ถ้าตีความอีกแบบแล้วคำตัดสินพลิก ต้องบอกว่าคำตัดสินยังไม่เด็ดขาดจนกว่าผู้ใช้จะตอบ**
+ 36. ข้อมูลที่ test ทิ้งไว้ในเว็บ (order, สต็อกที่ลด) — บอกผู้ใช้; reset รอบถัดไปจะล้างให้
+ 37. ถ้าพลาดละเมิดกติกาเอง (เช่น `ls` โฟลเดอร์เว็บ) ให้บอกตรง ๆ ในสรุป
+diff --git a/.claude/skills/test-from-plan/scripts/build-report.mjs b/.claude/skills/test-from-plan/scripts/build-report.mjs
+index ad8c829..c8462bc 100644
+--- a/.claude/skills/test-from-plan/scripts/build-report.mjs
++++ b/.claude/skills/test-from-plan/scripts/build-report.mjs
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env node
+-// สร้าง test-report/TEST-REPORT.md 6 ส่วน จากผลรันล่าสุดเท่านั้น (ไม่รันใหม่ ไม่แก้ test)
++// สร้าง test-report/TEST-REPORT.md 7 ส่วน จากผลรันล่าสุดเท่านั้น (ไม่รันใหม่ ไม่แก้ test)
++// ส่วนที่ 6 "ข้อที่ต้องถามผู้ใช้" มาจาก test-report/interpretations.json (ต้องมีทุกรอบ; ไม่มีจุดกำกวม = [])
+ // ใช้: node build-report.mjs [--env "BUG_MODE=0, container petshop healthy"]   (รันใน e2e/)
+ // ข้อมูล: plan.json · test-report/results.json · test-report/run-info.json (global-setup เขียน)
+ //         test-report/bugs.json (คนหรือ agent หลักเขียน หลังดูหลักฐานแล้ว — ดูรูปแบบใน SKILL.md)
+@@ -13,6 +14,9 @@ const { results, byId } = loadResults(plan);
+ const readJson = (f, d) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : d);
+ const runInfo = readJson('test-report/run-info.json', null);
+ const bugs = readJson('test-report/bugs.json', []);
++const interpFile = 'test-report/interpretations.json';
++const interps = readJson(interpFile, null);
++if (interps === null) console.warn(`⚠️ ไม่มี ${interpFile} — ต้องไล่จุดที่แผนกำกวมแล้วบันทึก (ไม่มีจริงให้เขียน []) ก่อนส่งรายงาน`);
+ const round1 = fs.existsSync('test-report/results-round1.json') ? loadResults(plan, 'test-report/results-round1.json').byId : null;
+ 
+ const { chromium } = playwright();
+@@ -33,13 +37,38 @@ const start = new Date(results.stats.startTime);
+ const secs = rows.map(r => r.sec).filter(Boolean);
+ 
+ // ---- เกณฑ์ ----
+-const crit = [];
+-if (runInfo?.health) crit.push({ name: `เริ่มทดสอบได้: ${runInfo.health.path} ตอบปกติ`, actual: `${runInfo.health.status} ${runInfo.health.body}`, ok: runInfo.health.ok, entry: true });
+-for (const k of plan.exit.mustPass) { const x = byP.find(b => b.k === k) ?? { n: 0, ok: 0, f: 0 }; crit.push({ name: `${k} ผ่านทั้งหมด`, actual: `${x.ok} / ${x.n}`, ok: x.f === 0 }); }
+-crit.push({ name: `อัตราผ่านรวม ≥ ${plan.exit.passRate}%`, actual: `${P} / ${N} = ${pct(P, N)}`, ok: P / N * 100 >= plan.exit.passRate });
++const criteria = rs => {
++  const n = rs.length, ok = rs.filter(r => r.ok).length;
++  const out = [];
++  if (runInfo?.health) out.push({ name: `เริ่มทดสอบได้: ${runInfo.health.path} ตอบปกติ`, actual: `${runInfo.health.status} ${runInfo.health.body}`, ok: runInfo.health.ok, entry: true });
++  for (const k of plan.exit.mustPass) { const x = rs.filter(r => r.priority === k); const xo = x.filter(r => r.ok).length; out.push({ name: `${k} ผ่านทั้งหมด`, actual: `${xo} / ${x.length}`, ok: xo === x.length }); }
++  out.push({ name: `อัตราผ่านรวม ≥ ${plan.exit.passRate}%`, actual: `${ok} / ${n} = ${pct(ok, n)}`, ok: ok / n * 100 >= plan.exit.passRate });
++  return out;
++};
++const crit = criteria(rows);
+ const release = crit.every(c => c.ok);
+ const allowFail = Math.floor(N * (1 - plan.exit.passRate / 100) + 1e-9);
+ 
++// ---- ข้อที่ต้องถามผู้ใช้: ถ้าตีความอีกแบบทุกข้อ ผลและคำตัดสินเป็นอย่างไร ----
++const iList = interps ?? [];
++const flips = iList.filter(i => ['passed', 'failed'].includes(i.altResult) && i.altResult !== (i.chosenResult ?? byId.get(i.test)?.status));
++const altRows = rows.map(r => { const f = flips.find(i => i.test === r.id); return f ? { ...r, ok: f.altResult === 'passed' } : r; });
++const altRelease = criteria(altRows).every(c => c.ok);
++const unknownAlt = iList.filter(i => !['passed', 'failed'].includes(i.altResult));
++const verdictAtRisk = altRelease !== release || unknownAlt.length > 0;
++const resTh = s => ({ passed: '✅ ผ่าน', failed: '❌ ล้ม' }[s] ?? '❔ ยังไม่รู้');
++const interpSection = interps === null
++  ? '> ⚠️ **ยังไม่ได้ตรวจจุดกำกวมของแผน** (ไม่มี `interpretations.json`) — รายงานนี้ยังไม่สมบูรณ์'
++  : !iList.length
++    ? 'ไม่พบจุดที่แผนเขียนกำกวมในรอบนี้ (ตรวจแล้ว)'
++    : `ผลที่คาดหวังข้อต่อไปนี้อ่านได้มากกว่า 1 แบบ ผู้ทดสอบเลือกแบบที่ตรงตัวอักษรที่สุด **ไม่ใช่แบบที่ทำให้ผ่าน** และลองอีกแบบกับเว็บจริงแล้ว
++
++| test | คำในแผน | ตีความแบบที่ใช้ → ผล | ถ้าตีความอีกแบบ → ผล | ผลเปลี่ยนไหม | คำถาม |
++|---|---|---|---|---|---|
++${iList.map(i => { const cur = i.chosenResult ?? byId.get(i.test)?.status; return `| ${i.test} | "${i.wording}" | ${i.chosen} → ${resTh(cur)} | ${i.alternative} → ${resTh(i.altResult)}${i.altEvidence ? ` (${i.altEvidence})` : ''} | ${!['passed', 'failed'].includes(i.altResult) ? '❔ ยังไม่รู้' : i.altResult !== cur ? '**เปลี่ยน**' : 'ไม่เปลี่ยน'} | ${i.question ?? '-'} |`; }).join('\n')}
++
++**ผลต่อคำตัดสิน:** ถ้าใช้การตีความอีกแบบทุกข้อ ผ่าน ${altRows.filter(r => r.ok).length}/${N} (${pct(altRows.filter(r => r.ok).length, N)}) → **${altRelease ? 'ปล่อยได้' : 'ยังไม่ปล่อย'}** ${altRelease === release ? '(คำตัดสินเหมือนเดิม)' : '— ⚠️ **คำตัดสินพลิก** ต้องให้ผู้ใช้/เจ้าของแผนตอบก่อน'}${unknownAlt.length ? `\n\n❔ ยังลองอีกแบบไม่ได้: ${unknownAlt.map(i => i.test).join(', ')} — คำตัดสินอาจเปลี่ยน` : ''}`;
++
+ // ---- ข้อบกพร่อง: ทุกข้อที่ล้มต้องมีใน bugs.json ----
+ const failed = rows.filter(r => !r.ok);
+ const unclassified = failed.filter(r => !bugs.some(b => b.test === r.id));
+@@ -99,7 +128,11 @@ ${bugRows}
+ 
+ ${bugNotes}
+ 
+-## 6. การตัดสิน
++## 6. ข้อที่ต้องถามผู้ใช้
++
++${interpSection}
++
++## 7. การตัดสิน
+ 
+ เทียบเกณฑ์ในแผน (หัวข้อ "${plan.sections.allowed.find(t => /เกณฑ์|criteria|exit/i.test(t)) ?? 'เกณฑ์'}") ทีละข้อ${plan.exit.fromPlan ? '' : ' — ⚠️ แผนไม่ได้ระบุอัตราผ่าน ใช้ค่าเริ่มต้น 95%'}
+ 
+@@ -107,8 +140,8 @@ ${bugNotes}
+ |---|---|---|
+ ${crit.map(c => `| ${c.name} | ${c.actual} | ${c.ok ? '✅' : '❌'} |`).join('\n')}
+ 
+-### สรุป: **${release ? '✅ ปล่อยได้' : '⛔ ยังไม่ปล่อย'}**
+-
++### สรุป: **${release ? '✅ ปล่อยได้' : '⛔ ยังไม่ปล่อย'}**${verdictAtRisk ? ' (ยังไม่เด็ดขาด — รอคำตอบในหัวข้อ 6)' : ''}
++${verdictAtRisk ? `\n> ⚠️ ถ้าตีความแผนอีกแบบ (หัวข้อ 6) คำตัดสิน${altRelease !== release ? `จะเป็น **${altRelease ? 'ปล่อยได้' : 'ยังไม่ปล่อย'}**` : 'อาจเปลี่ยน'} ให้ผู้ใช้ตอบคำถามในหัวข้อ 6 ก่อนปล่อยจริง\n` : ''}
+ ${release
+   ? `เหตุผล: ${plan.exit.mustPass.join(', ')} ผ่านครบทุกข้อ และอัตราผ่านรวม ${pct(P, N)} ไม่ต่ำกว่าเกณฑ์ ${plan.exit.passRate}%${F ? ` ข้อที่ล้ม ${F} ข้อไม่ใช่ระดับที่ต้องผ่านทั้งหมด จึงบันทึกเป็นบั๊กให้แก้ในรอบถัดไป` : ''}
+ 
+@@ -118,3 +151,4 @@ ${F ? `- ต้องส่ง ${bugs.map(b => b.bug).join(', ') || 'บั๊
+ `;
+ fs.writeFileSync('test-report/TEST-REPORT.md', md);
+ console.log(`TEST-REPORT.md: ${N} ข้อ · ผ่าน ${P} · ล้ม ${F} · ${pct(P, N)} → ${release ? 'ปล่อยได้' : 'ยังไม่ปล่อย'}`);
++console.log(interps === null ? '⚠️ ข้อที่ต้องถามผู้ใช้: ยังไม่ได้ตรวจ' : `ข้อที่ต้องถามผู้ใช้: ${iList.length} ข้อ${verdictAtRisk ? ` · ⚠️ ตีความอีกแบบแล้วคำตัดสิน${altRelease !== release ? 'พลิก' : 'อาจเปลี่ยน'}` : ''}`);
+diff --git a/.claude/skills/test-from-plan/scripts/scaffold-e2e.mjs b/.claude/skills/test-from-plan/scripts/scaffold-e2e.mjs
+index f1cdfeb..0c0544d 100644
+--- a/.claude/skills/test-from-plan/scripts/scaffold-e2e.mjs
++++ b/.claude/skills/test-from-plan/scripts/scaffold-e2e.mjs
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env node
+ // สร้างห้องทดลอง e2e จาก plan.json (รันใน e2e/ หลัง parse-plan.mjs)
+-// ใช้: node scaffold-e2e.mjs [--force]
+-// สร้าง: package.json · playwright.config.ts · global-setup.ts · tests/fixtures.ts · .gitignore · agent-log.sh
++// ใช้: node scaffold-e2e.mjs [--force] [--agent-monitor]
++// สร้าง: package.json · playwright.config.ts · global-setup.ts · tests/fixtures.ts · .gitignore (+ agent-log.sh ถ้า --agent-monitor)
+ // ไม่ทับไฟล์ที่มีอยู่แล้ว ยกเว้นใส่ --force (tests/*.spec.ts ไม่แตะเลย)
+ import fs from 'node:fs';
+ import path from 'node:path';
+@@ -123,7 +123,8 @@ export async function showApiEvidence(page: Page, e: { title: string; method: st
+ }
+ `);
+ 
+-write('agent-log.sh', `#!/usr/bin/env bash
++// จอดู agent เป็นของสอน LAB 5 — สร้าง agent-log.sh เฉพาะเมื่อผู้ใช้ขอ (--agent-monitor)
++if (process.argv.includes('--agent-monitor')) write('agent-log.sh', `#!/usr/bin/env bash
+ # ใช้: bash agent-log.sh START|END <agent-id> <โมดูล>  → เพิ่ม 1 บรรทัดใน test-report/agents.log
+ cd "$(dirname "$0")" && mkdir -p test-report && echo "$(date +%Y-%m-%dT%H:%M:%S) $1 $2 $3" >> test-report/agents.log
+ `);

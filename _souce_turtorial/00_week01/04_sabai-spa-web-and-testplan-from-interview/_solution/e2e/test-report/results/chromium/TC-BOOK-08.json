@@ -1,0 +1,93 @@
+{
+  "id": "TC-BOOK-08",
+  "title": "TC-BOOK-08 ใครก็ได้ส่งพร้อมกัน 8 คำขอ ขณะว่าง 6 คน ต้องจองครบ 6 คน",
+  "project": "chromium",
+  "file": "5.1-booking.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.1"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ทุกรอบ: สำเร็จ 6 คำขอ · อีก 2 คำขอถูกปฏิเสธด้วยสถานะ 4xx\nหลังร้านมี 6 รายการ รอบ 12:00–13:00 นักบำบัดไม่ซ้ำกัน ครบ T01, T05, T02, T03, T06, T04\n(คำตอบผิดที่คาดไว้: สำเร็จ 4 รายการ และได้ 409 อีก 4 รายการ ทั้งที่ T06, T04 ว่าง)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 764,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] R08 · F-สร้าง 2 · [R] ⚠️A-06",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 764,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-08, BR-05, BR-11",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 764,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R08",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 764,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 764,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.1-booking.spec.ts",
+        "line": 764,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 63586,
+  "at": "2026-11-06T02:56:19.777Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 6\nReceived: 5",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 2\nReceived: 3",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 6\nReceived: 5\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 5 elements\n       - unexpected value \"5\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 6\nReceived: 5\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 5 elements\n       - unexpected value \"5\"\n",
+    "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 0\n\n@@ -1,7 +1,6 @@\n  Array [\n-   \"น้องฟ้า\",\n    \"น้องแก้ว\",\n    \"พี่ทิว\",\n    \"พี่ภูมิ\",\n    \"พี่มาลี\",\n    \"พี่ศรี\",",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 6\nReceived: 4",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 2\nReceived: 4",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 6\nReceived: 4\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 4 elements\n       - unexpected value \"4\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 6\nReceived: 4\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 4 elements\n       - unexpected value \"4\"\n",
+    "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 2\n+ Received  + 0\n\n  Array [\n-   \"น้องฟ้า\",\n-   \"น้องแก้ว\",\n    \"พี่ทิว\",\n    \"พี่ภูมิ\",\n    \"พี่มาลี\",\n    \"พี่ศรี\",\n  ]",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 6\nReceived: 4",
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 2\nReceived: 4",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 6\nReceived: 4\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 4 elements\n       - unexpected value \"4\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('[data-testid^=\"admin-booking-\"]')\nExpected: 6\nReceived: 4\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" locator('[data-testid^=\"admin-booking-\"]') with timeout 6000ms\n  - waiting for locator('[data-testid^=\"admin-booking-\"]')\n    16 × locator resolved to 4 elements\n       - unexpected value \"4\"\n",
+    "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 2\n+ Received  + 0\n\n  Array [\n-   \"น้องฟ้า\",\n-   \"น้องแก้ว\",\n    \"พี่ทิว\",\n    \"พี่ภูมิ\",\n    \"พี่มาลี\",\n    \"พี่ศรี\",\n  ]"
+  ],
+  "steps": [
+    "1. จอง S01 ใครก็ได้บนหน้าเว็บ เพื่อดึงคำขอจาก Network",
+    "2-4. รอบที่ 1: ล็อกและรีเซ็ต ส่ง 8 คำขอพร้อมกัน แล้วนับคิวหลังร้าน ✗",
+    "2-4. รอบที่ 2: ล็อกและรีเซ็ต ส่ง 8 คำขอพร้อมกัน แล้วนับคิวหลังร้าน ✗",
+    "2-4. รอบที่ 3: ล็อกและรีเซ็ต ส่ง 8 คำขอพร้อมกัน แล้วนับคิวหลังร้าน ✗"
+  ]
+}

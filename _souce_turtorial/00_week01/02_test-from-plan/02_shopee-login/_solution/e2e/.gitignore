@@ -1,0 +1,2 @@
+# Chrome profile from the old CDP approach (may hold a Shopee session) must never go to Git
+.auth/

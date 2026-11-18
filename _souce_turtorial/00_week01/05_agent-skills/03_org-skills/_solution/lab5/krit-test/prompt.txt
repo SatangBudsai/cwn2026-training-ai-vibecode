@@ -1,0 +1,1 @@
+ทำ proposal ตาม TOR ในไฟล์ tor-bank-dispute.md ให้หน่อย เก็บไว้ใน work/

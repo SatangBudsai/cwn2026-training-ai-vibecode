@@ -1,0 +1,7 @@
+[2026-11-01 18:54:58] เจอ "อ๊ะ มีบางอย่างผิดพลาด" → โหลดซ้ำ 1
+[2026-11-01 18:55:16] เจอ "อ๊ะ มีบางอย่างผิดพลาด" → โหลดซ้ำ 2
+[2026-11-01 18:55:52] results url https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTExLTE1agwIAhIIL20vMGZuMmdyDAgDEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&hl=th&gl=TH&curr=THB
+[2026-11-01 18:56:09] เจอ "อ๊ะ มีบางอย่างผิดพลาด" → โหลดซ้ำ 1
+[2026-11-01 18:57:06] เจอ "อ๊ะ มีบางอย่างผิดพลาด" → โหลดซ้ำ 1
+[2026-11-01 18:57:33] ✓ price-max-10000 {"title":"ราคาไม่เกิน ฿10,000","count":7,"resultText":83,"prices":[7635,9062,9842,9335,9335,9952,9957],"airlines":["ไทยไลอ้อนแอร์","ไทยเวียดเจ๊ทแอร์","ไทยเวียดเ
+[2026-11-01 18:57:33] expected.json written initial,cheapest-tab,more,nonstop,thai-only,price-max-10000,depart-23-24,layover-details

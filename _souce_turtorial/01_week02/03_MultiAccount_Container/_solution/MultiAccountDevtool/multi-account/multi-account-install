@@ -1,0 +1,120 @@
+#!/bin/bash
+# สร้างโครงหลายบัญชีใน $BASE_PATH (รันซ้ำได้ทุกครั้งที่ container start)
+#   - สร้างเฉพาะสิ่งที่ยังไม่มี ไม่เขียนทับ credential/config/skill/MCP เดิม
+#   - ไม่แตะ .bashrc หรือ Git และไม่พิมพ์ค่าสุ่มของ skill หรือ secret ใด ๆ
+set -eu
+
+source /usr/local/lib/multi-account/common.sh
+
+# โฟลเดอร์และไฟล์ที่สร้างใหม่อ่านได้เฉพาะเจ้าของ เพราะเป็นที่เก็บ credential
+umask 077
+
+created=0
+kept=0
+
+ensure_dir() {
+    if [ -d "$1" ]; then
+        kept=$((kept + 1))
+    else
+        mkdir -p "$1"
+        created=$((created + 1))
+    fi
+}
+
+# อ่านเนื้อหาจาก stdin แล้วเขียนเฉพาะเมื่อยังไม่มีไฟล์นี้
+write_if_missing() {
+    if [ -e "$1" ] || [ -L "$1" ]; then
+        cat >/dev/null
+        kept=$((kept + 1))
+    else
+        cat >"$1"
+        created=$((created + 1))
+    fi
+}
+
+random_hex() {
+    head -c 8 /dev/urandom | od -An -tx1 | tr -d ' \n'
+}
+
+# ค่าสุ่มอยู่ในเนื้อ SKILL.md เท่านั้น ไม่อยู่ใน description
+# เพื่อให้ได้คำตอบที่ถูกต่อเมื่อ CLI อ่านไฟล์ skill จริง
+write_shared_check_skill() {
+    local tool="$1" skill_dir="$2"
+    ensure_dir "$skill_dir"
+    if [ ! -e "$skill_dir/SKILL.md" ]; then
+        write_if_missing "$skill_dir/SKILL.md" <<EOF
+---
+name: shared-check
+description: Verify that this account can read skills from the shared folder. Use when the user asks to run shared-check.
+---
+
+Reply with exactly this one line and nothing else:
+
+SHARED_SKILL_OK-$tool-$(random_hex)
+EOF
+    else
+        kept=$((kept + 1))
+    fi
+}
+
+write_playwright_mcp() {
+    write_if_missing "$1" <<'EOF'
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "playwright-mcp",
+      "args": [
+        "--browser", "chromium",
+        "--headless",
+        "--isolated",
+        "--no-sandbox",
+        "--output-dir", "/tmp/playwright-mcp-output"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/ms-playwright"
+      }
+    }
+  }
+}
+EOF
+}
+
+# ตรวจเครื่องมือก่อนตั้งค่า ใช้โฟลเดอร์ชั่วคราวเพื่อไม่ให้ CLI สร้าง state ใน ~ หรือในบัญชี
+check_dir="$(mktemp -d)"
+trap 'rm -rf "$check_dir"' EXIT
+if ! claude_version="$(CLAUDE_CONFIG_DIR="$check_dir" claude --version)"; then
+    echo "multi-account-install: เรียก claude --version ไม่ได้" >&2
+    exit 1
+fi
+if ! codex_version="$(CODEX_HOME="$check_dir" codex --version 2>/dev/null)"; then
+    echo "multi-account-install: เรียก codex --version ไม่ได้" >&2
+    exit 1
+fi
+echo "[multi-account-install] $claude_version | $codex_version"
+
+ensure_dir "$BASE_PATH"
+for root in "$CLAUDE_ROOT" "$CODEX_ROOT"; do
+    ensure_dir "$root"
+    ensure_dir "$root/shared"
+    ensure_dir "$root/shared/skills"
+    ensure_dir "$root/shared/mcp"
+done
+
+write_shared_check_skill claude "$CLAUDE_ROOT/shared/skills/shared-check"
+write_shared_check_skill codex "$CODEX_ROOT/shared/skills/shared-check"
+write_playwright_mcp "$CLAUDE_ROOT/shared/mcp/mcp.json"
+write_playwright_mcp "$CODEX_ROOT/shared/mcp/mcp.json"
+
+for n in 1 2 3 4 5; do
+    ensure_dir "$CLAUDE_ROOT/yolo$n"
+    link_shared_skills "$CLAUDE_ROOT" "yolo$n"
+
+    ensure_dir "$CODEX_ROOT/cyolo$n"
+    link_shared_skills "$CODEX_ROOT" "cyolo$n"
+    write_if_missing "$CODEX_ROOT/cyolo$n/config.toml" <<'EOF'
+# เก็บ credential เป็นไฟล์ในโฟลเดอร์ของบัญชีนี้ ($CODEX_HOME/auth.json)
+cli_auth_credentials_store = "file"
+EOF
+done
+
+echo "[multi-account-install] $BASE_PATH: สร้างใหม่ $created รายการ, คงของเดิม $kept รายการ"

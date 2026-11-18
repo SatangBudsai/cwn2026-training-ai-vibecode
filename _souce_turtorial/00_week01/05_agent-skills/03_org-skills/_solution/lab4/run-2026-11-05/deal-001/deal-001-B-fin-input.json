@@ -1,0 +1,44 @@
+{
+  "deal": "deal-001-B",
+  "customer": "ธนาคารนครหลวงพัฒนา จำกัด (มหาชน) — ฝ่ายพัฒนาช่องทางสาขา",
+  "project": "ระบบจองคิวสาขาและพยากรณ์ปริมาณคิว (TOR NLP-PROC-2026-114) — ฉบับ B ของบัญชี (man-day ตามขอบเขต + ส่วนลดพิเศษให้เข้างบ)",
+  "prepared_by": "จอย พัฒนสิน (fin-joy)",
+  "date": "2026-11-05",
+  "fixed_price": true,
+  "budget_thb": 4800000,
+  "lines": [
+    {"code": "MD-SA", "qty": 15, "note": "workshop เดือน 1, ADR, คุม integration core/Q-Matic"},
+    {"code": "MD-PM", "qty": 40, "note": "~ครึ่งเวลา 6 เดือน + นำร่อง 10 สาขา / rollout 120 สาขา"},
+    {"code": "MD-DEV-SR", "qty": 55, "note": "tech lead: identity/OTP, slot lock, core-connector mTLS"},
+    {"code": "MD-DEV", "qty": 90, "note": "2 คน: booking, LIFF, branch console, walk-in Q-Matic, report/Excel"},
+    {"code": "MD-UX", "qty": 12, "note": "หน้าจอลูกค้า + branch console + dashboard"},
+    {"code": "MD-QA", "qty": 36, "note": "UAT ≥ 3 สัปดาห์, retest หลัง pen test, นำร่อง (24.8% ของ Dev+Dev-Sr)"},
+    {"code": "MD-DEVOPS", "qty": 18, "note": "3 env, CI/CD, observability + alert TLS/mTLS cert"},
+    {"code": "MD-ML", "qty": 20, "note": "baseline + gradient boosting + registry/rollback · ปรับจูนรอบ 2 ย้ายไป MA (ml-jay ต้องยืนยัน)"},
+    {"code": "CL-M", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-LINE", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-WAF", "qty": 12, "note": "ปีแรก"},
+    {"code": "LIC-APM", "qty": 12, "note": "ปีแรก"},
+    {"code": "MA-STD", "qty": 1, "note": "8x5 — ใช้ได้ต่อเมื่อธนาคารยอมรับ Sev 1 ตอบรับ 30 นาทีนับในเวลาทำการ"}
+  ],
+  "external": [],
+  "discount_thb": 619000,
+  "discount_reason": "ส่วนลดพิเศษให้เข้างบ 4.8M — ลดจากค่าแรง/license เท่านั้น ไม่ลด MA/CL",
+  "assumptions": [
+    "man-day ตามฉบับบัญชีวันที่ 3 พ.ย. 2026 (286 ก่อน buffer) เทียบดีลที่ชนะ: เกษตรไทย 40 สาขา 4 เดือน 225 md ไม่มี ML, สยามรุ่งเรือง 5 เดือน 325 md",
+    "buffer 10% ทุกบทบาท (script ปัดขึ้น) · ไม่ตัด QA",
+    "Hosting CL-M 12 เดือนนับจากลงนาม · ค่า SMS/OTP และ pen test ธนาคารจ่าย · ไม่รวมอุปกรณ์สาขา"
+  ],
+  "decisions": [
+    "แนะนำฉบับนี้: ราคาเท่ากับงบ 4,800,000 · margin หลังลด 27.1% ผ่าน 25% แต่ส่วนลด 13.7% > 10% → MD (md-somchai) อนุมัติ (ลูกค้าธนาคารต้องผ่าน MD อยู่แล้ว)",
+    "ถ้าต้องใช้ ML 35 md ตาม Sales (ไม่ย้ายงานจูนไป MA): ส่วนลด 908,000 = 18.9% · margin 23.2% → ยังอยู่ในขั้น MD แต่ต่ำกว่า 25% ต้องมีเหตุผลเชิงกลยุทธ์",
+    "ถ้าธนาคารบังคับ 24x7 (MA-PREM): ส่วนลด 979,000 = 21.7% · margin 22.3% → MD · หรือขอวงเงินเพิ่ม",
+    "ใบเสนอราคาที่ลูกค้าเห็นจะมีบรรทัด 'ส่วนลดพิเศษ' 619,000 แยก ไม่ลดในราคาต่อหน่วย"
+  ],
+  "cut_options": [
+    "ตัด LIC-WAF + LIC-APM (240,000) → ส่วนลดเหลือ 379,000 แต่ไม่แนะนำ: ธนาคารถาม WAF ทุกครั้ง และ TOR ข้อ 4 ต้องมี audit/monitoring",
+    "แยก MA ปีแรกเป็นสัญญาต่างหาก (ต้องให้ Sales ถามธนาคาร) → ลดส่วนลดลง 360,000",
+    "ย้าย Executive Dashboard ส่วนส่งออก Excel/ภาค ไปเฟส 2 — ต้องให้ SA ประเมิน man-day ที่ลดได้",
+    "ห้าม: ตัด QA, ตัด buffer, ลดราคา MA/CL"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "TC-RIDE-04",
+  "title": "TC-RIDE-04 Bangkok Relax ต้องระบุโรงแรมหรือระยะ รวมค่ารถถึง 15.0 กม. และไม่รับเกินนั้น",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ไม่ระบุ → ไปต่อไม่ได้ และมีข้อความแจ้งให้ระบุโรงแรมหรือระยะ (ถ้าปล่อยผ่านจะได้การจอง ฿2,900 ที่ไม่มีจุดรับ)\nพิมพ์ 15.1 และ H06 → มีข้อความแจ้งว่าไม่รับระยะนี้ และยืนยันไม่ได้ (ถ้าปล่อยผ่านจะได้ ฿2,900)\nข้อมูลไม่เปลี่ยน: ขั้น 3 คิว 17 มิ.ย. เป็น 0 รายการ\n14.9 กม. → ค่ารถ ฿0 ยอด ฿2,900 (ถ้าเก็บค่ารถจะได้ ฿3,200)\nH05 15.0 → ค่ารถ ฿0 ยอด ฿2,900 (ถ้าใช้ < 15.0 จะถูกปฏิเสธ)\nขั้น 6 คิว 17 มิ.ย. เป็น 1 รายการ ยอด ฿2,900",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 374,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 Bangkok Relax · [R] ⚠️A-33",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 374,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-52, BR-37",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 374,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R63",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 374,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 374,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 374,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 34177,
+  "at": "2026-11-06T02:53:08.412Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เริ่มจอง P01 ไม่ระบุอะไร ลองไปต่อ",
+    "2. พิมพ์ 15.1 แล้วเลือก H06 ลองไปต่อ",
+    "3. เปิดคิว 17 มิ.ย. ใน context แยก โดยไม่ปิดหน้าจองของแขก",
+    "4. กลับมาพิมพ์ 14.9 อ่านยอด",
+    "5. เลือก H05 อ่านยอด แล้วกดยืนยัน",
+    "6. รีโหลด แล้วเปิดคิว 17 มิ.ย. อีกครั้ง"
+  ]
+}

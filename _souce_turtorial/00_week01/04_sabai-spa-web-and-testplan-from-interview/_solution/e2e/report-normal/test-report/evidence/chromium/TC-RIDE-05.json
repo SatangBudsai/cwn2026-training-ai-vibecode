@@ -1,0 +1,175 @@
+{
+  "id": "TC-RIDE-05",
+  "checks": [
+    {
+      "n": 1,
+      "label": "P01 2 คน H04 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-05/001.jpg",
+      "actor": "main",
+      "t": 6084
+    },
+    {
+      "n": 2,
+      "label": "P01 2 คน H04 · ยอด ฿5,800",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿5,800",
+      "shot": "shots/chromium/TC-RIDE-05/002.jpg",
+      "actor": "main",
+      "t": 7119
+    },
+    {
+      "n": 3,
+      "label": "ยืนยัน P01 2 คน",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"A4SVAY86\"}",
+      "shot": "shots/chromium/TC-RIDE-05/003.jpg",
+      "actor": "main",
+      "t": 10067
+    },
+    {
+      "n": 4,
+      "label": "ห้องเป็น Couple Suite",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/chromium/TC-RIDE-05/004.jpg",
+      "actor": "main",
+      "t": 11068
+    },
+    {
+      "n": 5,
+      "label": "P01 3 คน H04 · ค่ารถ ฿0",
+      "pass": true,
+      "actual": "ค่ารถรับส่ง 1 คัน ฿0",
+      "shot": "shots/chromium/TC-RIDE-05/005.jpg",
+      "actor": "main",
+      "t": 17525
+    },
+    {
+      "n": 6,
+      "label": "P01 3 คน H04 · ยอด ฿8,700",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿8,700",
+      "shot": "shots/chromium/TC-RIDE-05/006.jpg",
+      "actor": "main",
+      "t": 18517
+    },
+    {
+      "n": 7,
+      "label": "ยืนยัน P01 3 คน",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"RSKK62E2\"}",
+      "shot": "shots/chromium/TC-RIDE-05/007.jpg",
+      "actor": "main",
+      "t": 21434
+    },
+    {
+      "n": 8,
+      "label": "นักบำบัด T01, T02, T06",
+      "pass": true,
+      "actual": "พี่ศรี, พี่มาลี, น้องแก้ว",
+      "shot": "shots/chromium/TC-RIDE-05/008.jpg",
+      "actor": "owner",
+      "t": 4226
+    },
+    {
+      "n": 9,
+      "label": "P01 4 คน มีข้อความแจ้งว่าเกิน 3 คน",
+      "pass": true,
+      "actual": "เลือกบริการ นวดไทย 60 นาที 60 นาที ฿1,000 ต่อคน นวดไทย 90 นาที 90 นาที ฿1,400 ต่อคน ประคบสมุนไพร 60 นาที ฿1,200 ต่อคน นวดน้ำมันอโรมา 90 นาที ฿2,000 ต่อคน นวดเท้า 60 นาที ฿800 ต่อคน ขัดผิวสมุนไพร 60 นาที ฿1,500 ต่อคน ทรีตเมนต์หน้า 60 นาที ฿1,800 ต่อคน แพ็กเกจ Bangkok Relax 120 นาที ฿2,900 ต่อคน แพ็กเกจ จำนวนคน 1 2 3 4 5 6 7+ จองกลุ่ม บริการเดียวกัน เริ่มพร้อมกัน ระบบจัดนักบำบัดให้ นักบำบัดที่ทำบริการนี้ว่างไม่ครบจำนวนคน บริการนี้รับได้ไม่เกิน 3 คน ถัดไป",
+      "shot": "shots/chromium/TC-RIDE-05/009.jpg",
+      "actor": "main",
+      "t": 30474
+    },
+    {
+      "n": 10,
+      "label": "P01 4 คน ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "ถัดไป",
+      "shot": "shots/chromium/TC-RIDE-05/010.jpg",
+      "actor": "main",
+      "t": 31540
+    },
+    {
+      "n": 11,
+      "label": "คิว 17 มิ.ย. ก่อนรีเซ็ต 0 รายการ",
+      "pass": true,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 17 มิ.ย. 2026 · 0 นัด นักบำบัดทุกคน พี่ศรี ไม่มีคิว พี่มาลี ไม่มีคิว พี่ภูมิ ไม่มีคิว น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด ไม่มีคิวในวันนี้ ลองเลือกวันอื่นเพื่อดูตารางคิว",
+      "shot": "shots/chromium/TC-RIDE-05/011.jpg",
+      "actor": "owner",
+      "t": 12744
+    },
+    {
+      "n": 12,
+      "label": "3 คน 24 มิ.ย. 10:00 จองไม่ได้",
+      "pass": true,
+      "actual": "{\"slotState\":\"ไม่มีรอบ 10:00\",\"created\":false}",
+      "shot": "shots/chromium/TC-RIDE-05/012.jpg",
+      "actor": "main",
+      "t": 37360
+    },
+    {
+      "n": 13,
+      "label": "คิว 24 มิ.ย. 2 รายการ",
+      "pass": true,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 24 มิ.ย. 2026 · 2 นัด นักบำบัดทุกคน พี่ศรี ไม่มีคิว พี่มาลี 1 คิว 10:00 พี่ภูมิ 1 คิว 12:00 น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด เวลา บริการ จำนวนคน ผู้จอง เบอร์ นักบำบัด จ่ายหน้าร้าน สถานะ 10:00–12:00 SJTEST13 แพ็กเกจ Bangkok Relax 1 คน Ms. Test Tourist แขก 0890000005 พี่มาลี ฿2,900 รอรับบริการ ใช้บริการเสร็จ 12:00–13:00 SJTEST14 ขัดผิวสมุนไพร 1 คน คุณทดสอบ สี่ แขก 0890000004 พี่ภูมิ ฿1,500 รอรับ",
+      "shot": "shots/chromium/TC-RIDE-05/013.jpg",
+      "actor": "owner",
+      "t": 18486
+    },
+    {
+      "n": 14,
+      "label": "SJTEST13 10:00–12:00",
+      "pass": true,
+      "actual": "10:00–12:00",
+      "shot": "shots/chromium/TC-RIDE-05/014.jpg",
+      "actor": "owner",
+      "t": 19555
+    },
+    {
+      "n": 15,
+      "label": "SJTEST13 นักบำบัด T02",
+      "pass": true,
+      "actual": "พี่มาลี",
+      "shot": "shots/chromium/TC-RIDE-05/015.jpg",
+      "actor": "owner",
+      "t": 20587
+    },
+    {
+      "n": 16,
+      "label": "SJTEST14 12:00–13:00",
+      "pass": true,
+      "actual": "12:00–13:00",
+      "shot": "shots/chromium/TC-RIDE-05/016.jpg",
+      "actor": "owner",
+      "t": 21574
+    },
+    {
+      "n": 17,
+      "label": "SJTEST14 นักบำบัด T03",
+      "pass": true,
+      "actual": "พี่ภูมิ",
+      "shot": "shots/chromium/TC-RIDE-05/017.jpg",
+      "actor": "owner",
+      "t": 22600
+    },
+    {
+      "n": 18,
+      "label": "ข้อมูลไม่เปลี่ยน: คิว 24 มิ.ย. คือ SJTEST13 และ SJTEST14",
+      "pass": true,
+      "actual": "[\"SJTEST13\",\"SJTEST14\"]",
+      "shot": "shots/chromium/TC-RIDE-05/018.jpg",
+      "actor": "main",
+      "t": 45531
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-RIDE-05/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-RIDE-05/main.webm"
+    }
+  }
+}

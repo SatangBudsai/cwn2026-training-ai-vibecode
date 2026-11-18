@@ -1,0 +1,86 @@
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  min-height: calc(100svh - var(--header-h));
+  background: var(--c-cream-100);
+}
+
+.side {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-forest-950);
+}
+.sideFill { position: absolute; inset: 0; }
+.sideImage { height: 100%; }
+.sideShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 32, 24, 0.84), rgba(15, 32, 24, 0.12) 46%, rgba(15, 32, 24, 0.22));
+}
+.quote {
+  position: absolute;
+  inset-inline: clamp(28px, 4vw, 64px);
+  bottom: clamp(32px, 5vw, 72px);
+  max-width: 26rem;
+  padding-top: 18px;
+  border-top: 1px solid var(--c-gold-500);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  line-height: 1.45;
+  color: var(--c-cream-50);
+}
+
+.pane {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(36px, 6vw, 80px) var(--gutter);
+  overflow: clip;
+}
+.panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 28px;
+  width: 100%;
+  max-width: 440px;
+}
+.head { display: grid; gap: 10px; }
+.title { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+.sub { color: var(--text-soft); }
+.rule { display: block; width: 64px; height: 1px; margin-top: 6px; background: var(--c-gold-500); }
+
+.form { display: grid; gap: 18px; }
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+.fieldBox { min-width: 0; }
+.fieldBox input { background: var(--bg-card); }
+.dateInput { display: block; min-width: 0; max-width: 100%; }
+.hint { font-size: 0.85rem; color: var(--text-soft); }
+.note {
+  padding: 10px 14px;
+  border-inline-start: 2px solid var(--c-gold-500);
+  background: rgba(226, 205, 155, 0.22);
+  font-size: 0.92rem;
+  color: var(--c-teak-900);
+}
+.submit { width: 100%; }
+.switch { text-align: center; font-size: 0.95rem; color: var(--text-soft); }
+.switchLink {
+  margin-inline-start: 8px;
+  color: var(--c-gold-700);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .shell { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .side { aspect-ratio: 16 / 7; }
+  .quote { display: none; }
+  .sideShade { background: linear-gradient(to top, rgba(15, 32, 24, 0.4), rgba(15, 32, 24, 0.05)); }
+  .pane { align-items: flex-start; }
+}

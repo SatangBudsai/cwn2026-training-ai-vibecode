@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "replans": 0,
+  "tasks": {
+    "T1": {
+      "description": "สกัดข้อกำหนดจากบทสัมภาษณ์",
+      "dependencies": [],
+      "status": "TODO"
+    },
+    "T2": {
+      "description": "สร้าง Use Case/Sequence/State",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "TODO"
+    },
+    "T3": {
+      "description": "สร้าง ERD",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "TODO"
+    },
+    "T4": {
+      "description": "สร้าง Mockup สามส่วนและตาราง Pain Point",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "TODO"
+    },
+    "T5": {
+      "description": "รวมเอกสารและตรวจ C1–C3",
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "status": "TODO"
+    }
+  },
+  "reason": "เริ่มจากโจทย์และ C1–C3",
+  "changes": "สร้างแผนเริ่มต้น",
+  "impact": [],
+  "reuse": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "แผนก Dev: รีวิวโค้ดตามมาตรฐานทีม และขึ้นโปรเจกต์ใหม่",
+  "author": {
+    "name": "dev-pond"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

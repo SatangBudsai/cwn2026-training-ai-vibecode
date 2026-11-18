@@ -1,0 +1,167 @@
+{
+ "md-somchai": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "exec:deal-approval",
+  "exec:exec-deck"
+ ],
+ "exec-ploy": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "exec:deal-approval",
+  "exec:exec-deck"
+ ],
+ "sales-nida": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "sales:follow-up-email",
+  "sales:sales-proposal"
+ ],
+ "sales-krit": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "sales:follow-up-email",
+  "sales:sales-proposal"
+ ],
+ "sa-ton": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "sa:arch-template",
+  "sa:req-to-spec"
+ ],
+ "sa-ice": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "sa:arch-template",
+  "sa:req-to-spec"
+ ],
+ "dev-pond": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "dev:coding-standard",
+  "dev:project-scaffold"
+ ],
+ "dev-mew": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "dev:coding-standard",
+  "dev:project-scaffold"
+ ],
+ "dev-new": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "dev:coding-standard",
+  "dev:project-scaffold"
+ ],
+ "qa-mint": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "qa:bug-report",
+  "qa:test-from-plan"
+ ],
+ "qa-bank": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "qa:bug-report",
+  "qa:test-from-plan"
+ ],
+ "ops-art": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "devops:deploy-checklist",
+  "devops:postmortem"
+ ],
+ "ops-fon": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "devops:deploy-checklist",
+  "devops:postmortem"
+ ],
+ "ml-jay": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "mlops:mlflow-experiment",
+  "mlops:model-release"
+ ],
+ "ml-pim": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "mlops:mlflow-experiment",
+  "mlops:model-release"
+ ],
+ "hr-fah": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "hr:jd-writer",
+  "hr:onboarding-pack"
+ ],
+ "hr-oat": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "hr:jd-writer",
+  "hr:onboarding-pack"
+ ],
+ "fin-joy": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "finance:invoice-check",
+  "finance:pricing-calc"
+ ],
+ "fin-nok": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "finance:invoice-check",
+  "finance:pricing-calc"
+ ],
+ "plat-ken": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder",
+  "shared:meeting-minutes"
+ ],
+ "plat-may": [
+  "core:brand-guide",
+  "core:customer-data-policy",
+  "core:pricing-rules",
+  "core:skill-finder"
+ ]
+}

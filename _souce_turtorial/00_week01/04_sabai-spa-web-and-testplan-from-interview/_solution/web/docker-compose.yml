@@ -1,0 +1,36 @@
+name: sabai-web
+
+services:
+  web:
+    build:
+      context: .
+    image: sabai-web:latest
+    container_name: sabai-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgres://sabai:sabai@sabai-db:5432/sabai}
+      HOSTNAME: 0.0.0.0
+      PORT: "3000"
+      TZ: Asia/Bangkok
+      ALLOW_TEST_RESET: ${ALLOW_TEST_RESET:-1}
+      BUG_MODE: ${BUG_MODE:-0}
+      SESSION_SECRET: ${SESSION_SECRET:-sabai-local-dev-session-secret-change-me}
+      FEATURE_SKIN_PREVIEW: ${FEATURE_SKIN_PREVIEW:-1}
+    networks:
+      - sabai-net
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/api/health').then(r=>r.json()).then(j=>process.exit(j.ok&&j.db?0:1)).catch(()=>process.exit(1))"
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+
+networks:
+  sabai-net:
+    external: true

@@ -1,0 +1,151 @@
+# 42-footer-language @ 2026-11-01 17:15:37 (Asia/Bangkok)
+# url: https://www.google.com/travel/flights?hl=th&gl=TH&curr=THB
+- dialog "เลือกภาษาของคุณ":
+  - heading "เลือกภาษาของคุณ" [level=1]
+  - radiogroup "เลือกภาษาของคุณ":
+    - radio "Afrikaans ...แอฟริกานส์"
+    - text: Afrikaans ...แอฟริกานส์
+    - radio "Bosanski ...บอสเนีย"
+    - text: Bosanski ...บอสเนีย
+    - radio "Català ...คาตาลัน"
+    - text: Català ...คาตาลัน
+    - radio "Čeština ...เช็ก"
+    - text: Čeština ...เช็ก
+    - radio "Dansk ...เดนมาร์ก"
+    - text: Dansk ...เดนมาร์ก
+    - radio "Deutsch ...เยอรมัน"
+    - text: Deutsch ...เยอรมัน
+    - radio "Eesti ...เอสโตเนีย"
+    - text: Eesti ...เอสโตเนีย
+    - radio "English (United Kingdom) ...อังกฤษ (สหราชอาณาจักร)"
+    - text: English (United Kingdom) ...อังกฤษ (สหราชอาณาจักร)
+    - radio "English (United States) ...อังกฤษ (สหรัฐอเมริกา)"
+    - text: English (United States) ...อังกฤษ (สหรัฐอเมริกา)
+    - radio "Español (España) ...สเปน (สเปน)"
+    - text: Español (España) ...สเปน (สเปน)
+    - radio "Español (Latinoamérica) ...สเปน (ละตินอเมริกา)"
+    - text: Español (Latinoamérica) ...สเปน (ละตินอเมริกา)
+    - radio "Euskara ...บาสก์"
+    - text: Euskara ...บาสก์
+    - radio "Filipino ...ฟิลิปปินส์"
+    - text: Filipino ...ฟิลิปปินส์
+    - radio "Français ...ฝรั่งเศส"
+    - text: Français ...ฝรั่งเศส
+    - radio "Galego ...กาลิเซีย"
+    - text: Galego ...กาลิเซีย
+    - radio "Hrvatski ...โครเอเชีย"
+    - text: Hrvatski ...โครเอเชีย
+    - radio "Indonesia ...อินโดนีเซีย"
+    - text: Indonesia ...อินโดนีเซีย
+    - radio "Íslenska ...ไอซ์แลนด์"
+    - text: Íslenska ...ไอซ์แลนด์
+    - radio "Italiano ...อิตาลี"
+    - text: Italiano ...อิตาลี
+    - radio "Kiswahili ...สวาฮีลี"
+    - text: Kiswahili ...สวาฮีลี
+    - radio "Latviešu ...ลัตเวีย"
+    - text: Latviešu ...ลัตเวีย
+    - radio "Lietuvių ...ลิทัวเนีย"
+    - text: Lietuvių ...ลิทัวเนีย
+    - radio "Magyar ...ฮังการี"
+    - text: Magyar ...ฮังการี
+    - radio "Melayu ...มาเลย์"
+    - text: Melayu ...มาเลย์
+    - radio "Nederlands ...ดัตช์"
+    - text: Nederlands ...ดัตช์
+    - radio "Norsk ...นอร์เวย์"
+    - text: Norsk ...นอร์เวย์
+    - radio "Polski ...โปแลนด์"
+    - text: Polski ...โปแลนด์
+    - radio "Português (Brasil) ...โปรตุเกส (บราซิล)"
+    - text: Português (Brasil) ...โปรตุเกส (บราซิล)
+    - radio "Português (Portugal) ...โปรตุเกส (โปรตุเกส)"
+    - text: Português (Portugal) ...โปรตุเกส (โปรตุเกส)
+    - radio "Română ...โรมาเนีย"
+    - text: Română ...โรมาเนีย
+    - radio "Shqip ...แอลเบเนีย"
+    - text: Shqip ...แอลเบเนีย
+    - radio "Slovenčina ...สโลวัก"
+    - text: Slovenčina ...สโลวัก
+    - radio "Slovenščina ...สโลวีเนีย"
+    - text: Slovenščina ...สโลวีเนีย
+    - radio "Srpski (latinica) ...เซอร์เบีย (ละติน)"
+    - text: Srpski (latinica) ...เซอร์เบีย (ละติน)
+    - radio "Suomi ...ฟินแลนด์"
+    - text: Suomi ...ฟินแลนด์
+    - radio "Svenska ...สวีเดน"
+    - text: Svenska ...สวีเดน
+    - radio "Tiếng Việt ...เวียดนาม"
+    - text: Tiếng Việt ...เวียดนาม
+    - radio "Türkçe ...ตุรกี"
+    - text: Türkçe ...ตุรกี
+    - radio "Ελληνικά ...กรีก"
+    - text: Ελληνικά ...กรีก
+    - radio "Български ...บัลแกเรีย"
+    - text: Български ...บัลแกเรีย
+    - radio "Македонски ...มาซิโดเนีย"
+    - text: Македонски ...มาซิโดเนีย
+    - radio "Монгол ...มองโกเลีย"
+    - text: Монгол ...มองโกเลีย
+    - radio "Русский ...รัสเซีย"
+    - text: Русский ...รัสเซีย
+    - radio "Српски (ћирилица) ...เซอร์เบีย (ซีริลลิก)"
+    - text: Српски (ћирилица) ...เซอร์เบีย (ซีริลลิก)
+    - radio "Українська ...ยูเครน"
+    - text: Українська ...ยูเครน
+    - radio "Ქართული ...จอร์เจีย"
+    - text: Ქართული ...จอร์เจีย
+    - radio "עברית ...ฮิบรู"
+    - text: עברית ...ฮิบรู
+    - radio "اردو ...อูรดู"
+    - text: اردو ...อูรดู
+    - radio "العربية ...อาหรับ"
+    - text: العربية ...อาหรับ
+    - radio "فارسی ...เปอร์เซีย"
+    - text: فارسی ...เปอร์เซีย
+    - radio "አማርኛ ...อัมฮารา"
+    - text: አማርኛ ...อัมฮารา
+    - radio "नेपाली ...เนปาล"
+    - text: नेपाली ...เนปาล
+    - radio "मराठी ...มราฐี"
+    - text: मराठी ...มราฐี
+    - radio "हिन्दी ...ฮินดี"
+    - text: हिन्दी ...ฮินดี
+    - radio "অসমীয়া ...อัสสัม"
+    - text: অসমীয়া ...อัสสัม
+    - radio "বাংলা ...บังกลา"
+    - text: বাংলা ...บังกลา
+    - radio "ਪੰਜਾਬੀ ...ปัญจาบ"
+    - text: ਪੰਜਾਬੀ ...ปัญจาบ
+    - radio "ગુજરાતી ...คุชราต"
+    - text: ગુજરાતી ...คุชราต
+    - radio "ଓଡ଼ିଆ ...โอดิยา"
+    - text: ଓଡ଼ିଆ ...โอดิยา
+    - radio "தமிழ் ...ทมิฬ"
+    - text: தமிழ் ...ทมิฬ
+    - radio "తెలుగు ...เตลูกู"
+    - text: తెలుగు ...เตลูกู
+    - radio "ಕನ್ನಡ ...กันนาดา"
+    - text: ಕನ್ನಡ ...กันนาดา
+    - radio "മലയാളം ...มาลายาลัม"
+    - text: മലയാളം ...มาลายาลัม
+    - radio "සිංහල ...สิงหล"
+    - text: සිංහල ...สิงหล
+    - radio "ไทย" [checked]
+    - text: ไทย
+    - radio "ລາວ ...ลาว"
+    - text: ລາວ ...ลาว
+    - radio "ខ្មែរ ...เขมร"
+    - text: ខ្មែរ ...เขมร
+    - radio "한국어 ...เกาหลี"
+    - text: 한국어 ...เกาหลี
+    - radio "中文（香港） ...จีน (ฮ่องกง)"
+    - text: 中文（香港） ...จีน (ฮ่องกง)
+    - radio "日本語 ...ญี่ปุ่น"
+    - text: 日本語 ...ญี่ปุ่น
+    - radio "简体中文 ...จีน (ตัวย่อ)"
+    - text: 简体中文 ...จีน (ตัวย่อ)
+    - radio "繁體中文 ...จีน (ตัวเต็ม)"
+    - text: 繁體中文 ...จีน (ตัวเต็ม)
+  - button "ยกเลิก"
+  - button "ตกลง"

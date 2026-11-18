@@ -1,0 +1,261 @@
+{
+  "schema": "rea-flight/ui-evidence@1",
+  "method": {
+    "tool": "REA MCP (rea-cdp-browser v2)",
+    "mode": "read-only/passive",
+    "operations": [
+      "list_browser_targets",
+      "inspect_web_page (include_accessibility_text, observation_ms=1500)",
+      "capture_web_screenshot (viewport only)",
+      "export_evidence_bundle"
+    ],
+    "no_mutation": "ไม่มีการคลิก พิมพ์ เลื่อนหน้า นำทาง หรือ evaluate JavaScript; REA ระบุเองว่า inspect/screenshot ไม่ evaluate JS/ไม่นำทาง"
+  },
+  "target": {
+    "cdp_endpoint": "http://127.0.0.1:9222",
+    "target_id": "A4C056B802BF14B09D2695173957DEE9",
+    "url": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&curr=THB",
+    "title": "กรุงเทพมหานคร ไปยัง โตเกียว | Google Flights",
+    "browser": "Chrome/155.0.8059.12",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1366,
+      "height": 857
+    },
+    "frames": [
+      {
+        "frame_id": "A4C056B802BF14B09D2695173957DEE9",
+        "parent_frame_id": null,
+        "url": "https://www.google.com/travel/flights?q=Flights%20from%20Bangkok%20to%20Tokyo%20on%202026-11-15%20one%20way&hl=th&gl=TH&curr=THB",
+        "origin": "https://www.google.com"
+      },
+      {
+        "frame_id": "36101D3BD9DFA04F11F12A64BCDFAEDD",
+        "parent_frame_id": "A4C056B802BF14B09D2695173957DEE9",
+        "url": "https://www.google.com/_/FlightsFrontendUi/bscframe",
+        "origin": "https://www.google.com"
+      }
+    ]
+  },
+  "evidence_records": [
+    {
+      "id": "ev_6e2786e76e5749802eee7967b69803663d99fa9eeef5ebfcb888483b656134df",
+      "op": "list_browser_targets"
+    },
+    {
+      "id": "ev_08ac3be203db501207c7157085081ce51e6bd9e5a86977ceaad2a03f73954d3e",
+      "op": "inspect_web_page",
+      "capture_window": {
+        "started_at": "2026-10-31T15:52:32.952Z",
+        "ended_at": "2026-10-31T15:52:35.107Z",
+        "observation_ms": 1500
+      },
+      "completeness": "policy_filtered"
+    },
+    {
+      "id": "ev_8021a760280699b54216d8ee93d734b0e30d2850e105218c42d4cff347502fbb",
+      "op": "capture_web_screenshot",
+      "captured_at": "2026-10-31T15:52:35.457Z",
+      "png_sha256": "68324db05caae6527050d072447ed0a0a869ca8589475fa4f8e74e65a1a002c0"
+    }
+  ],
+  "files": {
+    "evidence/viewport.png": {
+      "sha256": "68324db05caae6527050d072447ed0a0a869ca8589475fa4f8e74e65a1a002c0"
+    },
+    "evidence/rea-evidence-bundle.json": {
+      "sha256": "00e4c60acf54a00badd24f563bcb114a89bf9b3d32218e96f4dbc3716443faff"
+    },
+    "flights-snapshot.json": {
+      "sha256": "0e42201b20efa9525ca206abb06fd59991d0e8eb0b10dce87f12fba20c39e631"
+    }
+  },
+  "ui_structure": {
+    "header": {
+      "items": [
+        "เมนูหลัก (button)",
+        "โลโก้ Google (link)",
+        "แท็บผลิตภัณฑ์: สำรวจ / เที่ยวบิน (เลือกอยู่) / โรงแรม / ที่พักให้เช่า (links)",
+        "เปลี่ยนธีมเว็บไซต์",
+        "แอป Google",
+        "เข้าสู่ระบบ (link)"
+      ],
+      "basis": "AX + screenshot"
+    },
+    "search_form": {
+      "heading": "การค้นหาเที่ยวบิน",
+      "fields": [
+        {
+          "label": "เปลี่ยนประเภทตั๋ว",
+          "role": "combobox",
+          "value": "เที่ยวเดียว",
+          "ax": "1309"
+        },
+        {
+          "label": "ผู้โดยสาร",
+          "role": "button(hasPopup)",
+          "value": "1 คน",
+          "ax": "192"
+        },
+        {
+          "label": "เปลี่ยนชั้นโดยสาร",
+          "role": "combobox",
+          "value": "ชั้นประหยัด",
+          "ax": "1531"
+        },
+        {
+          "label": "ต้นทาง",
+          "role": "combobox(autocomplete, editable)",
+          "value_on_screen": "กรุงเทพมหานคร",
+          "ax": "111"
+        },
+        {
+          "label": "ปลายทาง",
+          "role": "combobox(autocomplete, editable)",
+          "value_on_screen": "โตเกียว",
+          "ax": "113"
+        },
+        {
+          "label": "ขาไป",
+          "role": "textbox",
+          "value_on_screen": "อาทิตย์ 15 พ.ย.",
+          "ax": "115",
+          "note": "มีปุ่ม < > เลื่อนวันบนจอ"
+        }
+      ],
+      "swap_button": "เห็นในภาพ (⇄ ระหว่างต้นทาง/ปลายทาง)"
+    },
+    "filters": {
+      "heading": "ตัวกรอง",
+      "buttons": [
+        "ตัวกรองทั้งหมด",
+        "จำนวนครั้งที่แวะพัก",
+        "สายการบิน",
+        "สัมภาระ",
+        "ราคา",
+        "เวลา",
+        "การปล่อยก๊าซ",
+        "สนามบินสำหรับต่อเครื่อง",
+        "ระยะเวลา"
+      ],
+      "state": "ทุกตัว \"ไม่ได้เลือก\"",
+      "note": "\"ระยะเวลา\" อยู่นอกจอ (ถูกตัดขวา)"
+    },
+    "sort": {
+      "tabs": [
+        {
+          "name": "ดีที่สุด",
+          "selected": true
+        },
+        {
+          "name": "ถูกที่สุด",
+          "text": "เริ่มต้น ฿7,635",
+          "selected": false
+        }
+      ],
+      "sort_button": "จัดเรียงตามเที่ยวบินยอดนิยม, เปลี่ยนลำดับการจัดเรียง"
+    },
+    "results": {
+      "heading": "ผลการค้นหา",
+      "sections": [
+        {
+          "name": "เที่ยวบินยอดนิยม",
+          "count": 3
+        },
+        {
+          "name": "เที่ยวบินอื่นๆ",
+          "count": 19
+        }
+      ],
+      "card_fields": [
+        "โลโก้สายการบิน",
+        "เวลาออก–ถึง (+1)",
+        "ชื่อสายการบิน",
+        "ระยะเวลา",
+        "รหัสสนามบิน",
+        "จำนวนจุดแวะ/สนามบินแวะ",
+        "CO2e กก. + ป้ายเทียบค่าเฉลี่ย",
+        "ราคา",
+        "ปุ่มรายละเอียดเที่ยวบิน (expand)"
+      ],
+      "more_button": "ดูเที่ยวบินเพิ่มเติม",
+      "disclaimer": "จัดอันดับตามราคาและความสะดวก; ราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีค่าสัมภาระเพิ่ม"
+    },
+    "price_insights": {
+      "heading": "ข้อมูลเชิงลึกด้านราคา",
+      "status": "ขณะนี้เที่ยวบินมีราคาสูง",
+      "items": [
+        "ดูประวัติราคา",
+        "ติดตามราคา (switch วันที่ 15 พ.ย.)",
+        "ติดตามราคา (switch วันใดก็ได้)",
+        "ตารางวันที่",
+        "กราฟราคา"
+      ],
+      "note": "AX รายงาน switch เป็น checked แต่ภาพดูเหมือนปิด — ไม่สรุปสถานะ"
+    },
+    "popup": {
+      "text": "เดินทางวันที่ 13 พ.ย. ในราคา ฿5,255 / เปลี่ยนวันที่",
+      "basis": "screenshot only"
+    },
+    "footer": [
+      "ภาษา·ไทย",
+      "สถานที่ตั้ง·ไทย",
+      "สกุลเงิน THB",
+      "เกี่ยวกับ Google Travel",
+      "ความเป็นส่วนตัว",
+      "ข้อกำหนด",
+      "ความคิดเห็น",
+      "ศูนย์ช่วยเหลือ"
+    ]
+  },
+  "technology_signals": {
+    "dom_custom_elements": {
+      "C-WIZ": 5,
+      "C-DATA": 5
+    },
+    "dom_attribute_counts": {
+      "jsname": 3169,
+      "jsaction": 1501,
+      "jscontroller": 943,
+      "jsshadow": 213,
+      "jsslot": 213,
+      "data-ved": 139,
+      "data-idom-class": 139,
+      "data-co2currentflight": 132,
+      "data-travelimpactmodelwebsiteurl": 132,
+      "data-easalabelurl": 132
+    },
+    "urls": [
+      "https://www.google.com/_/FlightsFrontendUi/flights_manifest.json",
+      "https://www.google.com/_/FlightsFrontendUi/bscframe (iframe)"
+    ],
+    "scripts": {
+      "count_attributed": 26,
+      "all_inline_on": "https://www.google.com/travel/flights",
+      "external_excluded": "22 ข้ามต้นทาง (disallowed_origin) + 159 ไม่ระบุต้นทาง",
+      "sources_captured": false
+    },
+    "dom_totals": {
+      "dom_nodes": 14126,
+      "ax_nodes": 2757,
+      "svg": 308,
+      "img": 44,
+      "button": 157
+    },
+    "storage": "same-origin storage ว่าง (usage 0 bytes); workers: none",
+    "browser": "HeadlessChrome 155 ผ่าน CDP"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Observation starts when REA attaches; prior network and console activity is unavailable.",
+    "Raw network headers, bodies, cookies, storage values, console objects, and WebSocket payloads are never retained; explicitly requested primitive console text is retained verbatim, while payload captures retain value-free shapes.",
+    "Source maps are reported only as declarative URLs and are not fetched.",
+    "URL-less scripts and console events without an allowed source URL are excluded because their origin cannot be proven.",
+    "CDP discovery omitted the target attachment state; attached is reported as unknown.",
+    "Browser host platform and architecture were not observed.",
+    "network requests ว่าง: observation เริ่มหลังหน้าโหลดเสร็จ",
+    "ไม่ดึง script source / ไม่เลื่อนหน้า — screenshot เห็นเฉพาะ viewport 1366x857",
+    "รหัส IATA ไม่อยู่ใน AX tree (น่าจะ aria-hidden); เห็นจากภาพเฉพาะ 3 การ์ดแรก",
+    "ไม่พบข้อความลักษณะคำสั่ง/prompt injection ในเนื้อหาหน้า"
+  ]
+}

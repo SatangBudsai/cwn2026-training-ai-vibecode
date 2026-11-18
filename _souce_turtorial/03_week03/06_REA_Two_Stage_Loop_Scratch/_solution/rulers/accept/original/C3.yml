@@ -1,0 +1,33 @@
+- search:
+  - dialog "จำนวนผู้โดยสาร":
+    - list:
+      - listitem:
+        - text: ผู้ใหญ่
+        - button "นำผู้ใหญ่ออก" [disabled]:
+          - img
+        - text: "1"
+        - button "เพิ่มผู้ใหญ่":
+          - img
+      - listitem:
+        - text: เด็ก อายุ 2-11 ปี
+        - button "นำเด็กอายุ 2-11 ปีออก" [disabled]:
+          - img
+        - text: "0"
+        - button "เพิ่มเด็กอายุ 2-11 ปี":
+          - img
+      - listitem:
+        - text: ทารกที่โดยสาร ในที่นั่งของตนเอง
+        - button "นำทารกที่โดยสารบนที่นั่งออก" [disabled]:
+          - img
+        - text: "0"
+        - button "เพิ่มทารกที่โดยสารบนที่นั่ง":
+          - img
+      - listitem:
+        - text: ทารกที่โดยสาร บนตัก
+        - button "นำทารกที่โดยสารบนตักออก" [disabled]:
+          - img
+        - text: "0"
+        - button "เพิ่มทารกที่โดยสารบนตัก":
+          - img
+    - button "เสร็จ"
+    - button "ยกเลิก"

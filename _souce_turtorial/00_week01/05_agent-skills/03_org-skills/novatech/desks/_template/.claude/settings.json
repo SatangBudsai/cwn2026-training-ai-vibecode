@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "novatech-skills": {
+      "source": { "source": "git", "url": "http://localhost:3300/novatech/org-skills.git" }
+    }
+  },
+  "enabledPlugins": {
+    "core@novatech-skills": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "TC-COURSE-07",
+  "title": "TC-COURSE-07 จองด้วยคอร์สได้ครั้งละ 1 คน กับ T01 หรือ T05 ครั้งละ 60 นาทีเท่านั้น",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: รายชื่อมีเฉพาะ T01, T05 รวม 2 คน (ถ้าเห็น T02 แปลว่าไม่กรองตามคนทำได้)\nขั้น 2: เลือก 2 คนไม่ได้ หรือมีข้อความแจ้งว่าจองด้วยคอร์สได้ครั้งละ 1 คน\nขั้น 3: เวลานัด 12:00–13:00 (60 นาที) · C01 เหลือ 6\nหลังยกเลิกขั้น 4: C01 เหลือ 7\nขั้น 4–5: ถูกปฏิเสธด้วยสถานะ 4xx · C01 ยังเหลือ 7 · ไม่มีนัดใหม่ (ถ้าตัด 2 ครั้งจาก 2 คนจะเหลือ 5)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 720,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-28 · [D] §1, §2 นาทีและคนทำ · [D][R] E192",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 720,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-39",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 720,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R80, R90",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 720,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 720,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 720,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 25752,
+  "at": "2026-11-06T02:41:46.473Z",
+  "attempts": [
+    {
+      "status": "failed",
+      "durationMs": 26130,
+      "at": "2026-11-06T02:22:54.599Z"
+    },
+    {
+      "status": "passed",
+      "durationMs": 26869,
+      "at": "2026-11-06T02:37:10.580Z"
+    }
+  ],
+  "errors": [],
+  "steps": [
+    "1. กดจองจากคอร์ส C01 ดูตัวเลือกจำนวนคนและรายชื่อนักบำบัด",
+    "2. ลองเลือก 2 คนบนหน้าเว็บ",
+    "3. จอง 1 คน กับ T01 จนเสร็จ จับ URL และคำขอจาก Network",
+    "4. ยกเลิกนัดนี้ แล้วยิงคำขอซ้ำโดยแก้จำนวนคนเป็น 2",
+    "5. ยิงคำขอซ้ำโดยแก้นักบำบัดเป็น T02"
+  ]
+}

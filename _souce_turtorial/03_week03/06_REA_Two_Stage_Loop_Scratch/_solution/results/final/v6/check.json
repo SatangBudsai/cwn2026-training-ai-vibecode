@@ -1,0 +1,443 @@
+{
+  "visual": {
+    "pixels": 58703,
+    "pct": 4.7749
+  },
+  "guards": {
+    "ok": true,
+    "fails": [],
+    "info": {
+      "checked": 217,
+      "firstRow": {
+        "x": 178,
+        "y": 602,
+        "bottom": 694
+      },
+      "mainContrast": 16.1,
+      "textVars": {
+        "--color-text": "#202124",
+        "--color-text-secondary": "#5f6368",
+        "--color-text-on-primary": "#fff"
+      },
+      "inputs": 5
+    },
+    "hash": "381e1e239c4fd0bb0351b63ed61c5906dd07b00207cb5819429dd4e201294cd1"
+  },
+  "bands": [
+    {
+      "y0": 525,
+      "y1": 600,
+      "red": 7377
+    },
+    {
+      "y0": 0,
+      "y1": 75,
+      "red": 6579
+    },
+    {
+      "y0": 450,
+      "y1": 525,
+      "red": 6450
+    },
+    {
+      "y0": 150,
+      "y1": 225,
+      "red": 6378
+    },
+    {
+      "y0": 300,
+      "y1": 375,
+      "red": 5336
+    },
+    {
+      "y0": 825,
+      "y1": 900,
+      "red": 5167
+    },
+    {
+      "y0": 225,
+      "y1": 300,
+      "red": 4846
+    },
+    {
+      "y0": 375,
+      "y1": 450,
+      "red": 4783
+    },
+    {
+      "y0": 675,
+      "y1": 750,
+      "red": 3784
+    },
+    {
+      "y0": 600,
+      "y1": 675,
+      "red": 3056
+    },
+    {
+      "y0": 750,
+      "y1": 825,
+      "red": 2671
+    },
+    {
+      "y0": 75,
+      "y1": 150,
+      "red": 2276
+    }
+  ],
+  "regions": [
+    {
+      "red": 13989,
+      "x0": 168,
+      "y0": 366,
+      "x1": 1200,
+      "y1": 672,
+      "element": "h3.list-title \"เที่ยวบินยอดนิยม\"",
+      "vars": [
+        "--list-heading-size",
+        "--font-size-lg",
+        "--list-heading-weight",
+        "--font-weight-medium",
+        "--space-4"
+      ]
+    },
+    {
+      "red": 5285,
+      "x0": 168,
+      "y0": 132,
+      "x1": 984,
+      "y1": 234,
+      "element": "input.field \"\"",
+      "vars": [
+        "--form-field-height",
+        "--form-field-font-size",
+        "--font-size-md",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 4581,
+      "x0": 168,
+      "y0": 246,
+      "x1": 1200,
+      "y1": 306,
+      "element": "div.filters \"ตัวกรองตัวกรองทั้งหมดจำนวนครั้\"",
+      "vars": [
+        "--chips-margin-top",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 2533,
+      "x0": 1260,
+      "y0": 12,
+      "x1": 1350,
+      "y1": 54,
+      "element": "path \"\"",
+      "vars": [
+        "--row-expand-size",
+        "--color-text-secondary"
+      ]
+    },
+    {
+      "red": 2478,
+      "x0": 168,
+      "y0": 804,
+      "x1": 1194,
+      "y1": 900,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 1600,
+      "x0": 876,
+      "y0": 726,
+      "x1": 1110,
+      "y1": 768,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 1544,
+      "x0": 396,
+      "y0": 342,
+      "x1": 918,
+      "y1": 360,
+      "element": "div.chips \"ตัวกรองทั้งหมดจำนวนครั้งที่แวะ\"",
+      "vars": [
+        "--chips-margin-top",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 1482,
+      "x0": 168,
+      "y0": 312,
+      "x1": 360,
+      "y1": 360,
+      "element": "svg \"\"",
+      "vars": [
+        "--chip-icon-size",
+        "--chip-height",
+        "--chip-font-size",
+        "--font-size-sm",
+        "--chip-font-weight",
+        "--font-weight-medium",
+        "--chip-color",
+        "--color-text-secondary"
+      ]
+    },
+    {
+      "red": 1366,
+      "x0": 0,
+      "y0": 60,
+      "x1": 1368,
+      "y1": 66,
+      "element": "header.header \"SkyThaiข้ามไปที่เนื้อหาหลัก\"",
+      "vars": [
+        "--header-height"
+      ]
+    },
+    {
+      "red": 1166,
+      "x0": 54,
+      "y0": 12,
+      "x1": 258,
+      "y1": 54,
+      "element": "button.skip-link \"ข้ามไปที่เนื้อหาหลัก\"",
+      "vars": [
+        "--header-nav-font-size",
+        "--font-size-sm",
+        "--color-primary",
+        "--header-nav-height",
+        "--header-height"
+      ]
+    },
+    {
+      "red": 1123,
+      "x0": 828,
+      "y0": 414,
+      "x1": 996,
+      "y1": 462,
+      "element": "span.tab-price \"เริ่มต้น ฿7,635\"",
+      "vars": [
+        "--tab-price-size",
+        "--font-size-sm",
+        "--tabs-height",
+        "--tab-font-size",
+        "--font-size-md",
+        "--tab-font-weight",
+        "--font-weight-medium",
+        "--tab-color",
+        "--color-text-secondary",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 969,
+      "x0": 282,
+      "y0": 720,
+      "x1": 402,
+      "y1": 762,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 899,
+      "x0": 240,
+      "y0": 648,
+      "x1": 396,
+      "y1": 690,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 882,
+      "x0": 276,
+      "y0": 366,
+      "x1": 474,
+      "y1": 384,
+      "element": "h2.results-title \"ผลการค้นหา\"",
+      "vars": [
+        "--font-size-sm",
+        "--font-weight-medium",
+        "--color-text-secondary",
+        "--tabs-margin-top",
+        "--space-4",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 825,
+      "x0": 822,
+      "y0": 132,
+      "x1": 1200,
+      "y1": 192,
+      "element": "div.form-options \"เที่ยวเดียว1ชั้นประหยัด\"",
+      "vars": [
+        "--form-options-height",
+        "--form-shadow",
+        "--form-padding",
+        "--space-2",
+        "--space-4",
+        "--space-12",
+        "--form-search-offset",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 790,
+      "x0": 1014,
+      "y0": 564,
+      "x1": 1164,
+      "y1": 594,
+      "element": "button.sort-btn \"จัดเรียงตามเที่ยวบินยอดนิยม\"",
+      "vars": [
+        "--sort-font-size",
+        "--color-text-secondary",
+        "--space-4"
+      ]
+    },
+    {
+      "red": 657,
+      "x0": 978,
+      "y0": 198,
+      "x1": 1182,
+      "y1": 234,
+      "element": "input.field \"\"",
+      "vars": [
+        "--form-field-height",
+        "--form-field-font-size",
+        "--font-size-md",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 603,
+      "x0": 168,
+      "y0": 792,
+      "x1": 270,
+      "y1": 822,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 580,
+      "x0": 828,
+      "y0": 492,
+      "x1": 966,
+      "y1": 528,
+      "element": "h3.list-title \"เที่ยวบินยอดนิยม\"",
+      "vars": [
+        "--list-heading-size",
+        "--font-size-lg",
+        "--list-heading-weight",
+        "--font-weight-medium",
+        "--space-4"
+      ]
+    },
+    {
+      "red": 551,
+      "x0": 690,
+      "y0": 852,
+      "x1": 804,
+      "y1": 888,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 547,
+      "x0": 996,
+      "y0": 342,
+      "x1": 1164,
+      "y1": 360,
+      "element": "div.chips \"ตัวกรองทั้งหมดจำนวนครั้งที่แวะ\"",
+      "vars": [
+        "--chips-margin-top",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 529,
+      "x0": 174,
+      "y0": 90,
+      "x1": 282,
+      "y1": 120,
+      "element": "h1.visually-compact \"การค้นหาเที่ยวบิน\"",
+      "vars": [
+        "--font-size-sm",
+        "--font-weight-medium",
+        "--color-text-secondary",
+        "--space-2",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 495,
+      "x0": 504,
+      "y0": 732,
+      "x1": 582,
+      "y1": 762,
+      "element": "a.row-link \"\"",
+      "vars": [
+        "--row-hover-shadow",
+        "--shadow-raised",
+        "--space-2"
+      ]
+    },
+    {
+      "red": 475,
+      "x0": 690,
+      "y0": 414,
+      "x1": 786,
+      "y1": 450,
+      "element": "div.tab \"ถูกที่สุด เริ่มต้น ฿7,635\"",
+      "vars": [
+        "--tabs-height",
+        "--tab-font-size",
+        "--font-size-md",
+        "--tab-font-weight",
+        "--font-weight-medium",
+        "--tab-color",
+        "--color-text-secondary",
+        "--space-2",
+        "--page-max-width"
+      ]
+    },
+    {
+      "red": 474,
+      "x0": 378,
+      "y0": 12,
+      "x1": 588,
+      "y1": 42,
+      "element": "header.header \"SkyThaiข้ามไปที่เนื้อหาหลัก\"",
+      "vars": [
+        "--header-height"
+      ]
+    }
+  ]
+}

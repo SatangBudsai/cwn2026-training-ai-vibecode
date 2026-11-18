@@ -1,0 +1,30 @@
+{
+  "A": {
+    "1": {"pass": false, "why": "ใช้ NestJS แบ่งชั้นเอง ไม่มี index.ts/service.ts/repository.ts และ src/app ตามกฎ"},
+    "2": {"pass": false, "why": "ไม่กำหนดกติกาการตั้งชื่อ มีเพียงชื่อตารางที่บังเอิญตรง"},
+    "3": {"pass": false, "why": "ใช้ TypeScript แต่ไม่ระบุ strict ห้าม any หรือ Zod"},
+    "4": {"pass": false, "why": "มีคลาส error และห้าม catch เงียบ แต่ไม่ระบุ AppError ที่มี code/httpStatus/message"},
+    "5": {"pass": false, "why": "ไม่มี src/config/env.ts ไม่ใช้ Zod และ .env.example มีแต่ชื่อตัวแปร"},
+    "6": {"pass": false, "why": "บังคับ coverage เฉพาะบางโมดูล ส่วนอื่นไม่บังคับ ขัดกับ 80% ทุกโมดูล"},
+    "7": {"pass": false, "why": "ใช้ Prisma แต่ไม่ระบุ migrate dev ห้ามแก้มือ และ expand → contract"},
+    "8": {"pass": false, "why": "มี JSON log แต่ไม่ระบุ pino, lib/logger.ts และฟิลด์บังคับครบ"},
+    "9": {"pass": false, "why": "ใช้ SameSite=Strict มีช่วงผ่อนผัน reuse 10 วินาที ไม่ refresh ล่วงหน้า 60 วินาทีหรือก่อนจ่ายเงิน"},
+    "10": {"pass": false, "why": "ใช้ RFC 9457 ขัดกับรูปแบบ { data } / { error: { code, message } } และไม่ระบุ Zod"},
+    "11": {"pass": false, "why": "ไม่ refresh ก่อนไป gateway ไม่มี callback อ่าน order_id แบบไร้ session ไม่มี E2E token 5 วินาที"},
+    "12": {"pass": true, "why": "insert event ก่อน ชน unique ตอบ 200 ตรงกลไกโน้ต แต่ไม่ระบุ HMAC-SHA256 และ 3 วินาที"}
+  },
+  "B": {
+    "1": {"pass": true, "why": "ระบุไฟล์โมดูลครบตามกฎ และเรียกข้ามโมดูลผ่าน index.ts เท่านั้น"},
+    "2": {"pass": true, "why": "ระบุ kebab-case และ snake_case พหูพจน์ ส่วน camelCase/PascalCase เห็นเพียงจากตัวอย่าง"},
+    "3": {"pass": true, "why": "ระบุ strict และตรวจ input/env ด้วย Zod แต่ไม่เขียนห้าม any ตรง ๆ"},
+    "4": {"pass": true, "why": "ใช้ AppError มี code/httpStatus/message ห้าม throw ลอยและ catch เงียบ ไม่ส่ง stack"},
+    "5": {"pass": true, "why": "อ่าน env จาก src/config/env.ts ด้วย Zod .env ไม่ขึ้น git และ .env.example ครบ"},
+    "6": {"pass": true, "why": "ระบุ Vitest ทุกโมดูล service.ts ≥ 80% และ E2E login กับจ่ายเงิน"},
+    "7": {"pass": true, "why": "ใช้ prisma migrate dev commit migrations ห้ามแก้มือ/แก้ของเดิม และทำ expand → contract"},
+    "8": {"pass": true, "why": "ใช้ pino JSON ห้าม console ระบุฟิลด์บังคับครบ และ redact ข้อมูลอ่อนไหว"},
+    "9": {"pass": true, "why": "access 15 นาที หมุน refresh, SameSite=Lax, เก็บ hash, reuse เพิกถอน family, refresh ล่วงหน้าและก่อน gateway"},
+    "10": {"pass": true, "why": "ตอบ { data } / { error } ตรวจ input ด้วย Zod มี role และ webhook ตรวจลายเซ็นเก็บ event_id"},
+    "11": {"pass": true, "why": "ครบ 4 ข้อแก้: 15 นาที+หมุน, refresh ก่อน gateway, callback อ่าน order_id, E2E token สั้น"},
+    "12": {"pass": true, "why": "HMAC-SHA256 ก่อน, event_id unique, ซ้ำตอบ 200, ภายใน 3 วินาที, สถานะทางเดียว ตรงโน้ต"}
+  }
+}

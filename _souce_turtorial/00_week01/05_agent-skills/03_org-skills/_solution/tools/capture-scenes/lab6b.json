@@ -1,0 +1,6 @@
+[{"name":"lab6-pr5-sec","admin":true,"steps":[
+  {"goto":"/novatech/org-skills/actions/runs/10/jobs/2","hold":2500},{"click":"text=สแกน ส่งข้อมูลออก","hold":4500,"shot":"lab6-pr5-security"}]},
+ {"name":"lab6-pr8-head","admin":true,"steps":[
+  {"goto":"/novatech/org-skills/actions/runs/16/jobs/1","hold":2500},{"click":".job-step-summary >> nth=2","hold":4500,"shot":"lab6-pr8-headers"}]},
+ {"name":"lab6-pr6-head","admin":true,"video":false,"steps":[
+  {"goto":"/novatech/org-skills/actions/runs/12/jobs/1","hold":2500},{"click":".job-step-summary >> nth=2","hold":3500,"shot":"lab6-pr6-headers"}]}]

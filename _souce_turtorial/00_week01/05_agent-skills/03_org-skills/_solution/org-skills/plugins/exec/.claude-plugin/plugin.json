@@ -1,0 +1,14 @@
+{
+  "name": "exec",
+  "version": "1.0.0",
+  "description": "งานผู้บริหาร: พิจารณาอนุมัติดีล และสไลด์ประชุมผู้บริหารต้นเดือน",
+  "author": {
+    "name": "exec-ploy"
+  },
+  "keywords": [
+    "department",
+    "exec",
+    "deal-approval",
+    "exec-deck"
+  ]
+}

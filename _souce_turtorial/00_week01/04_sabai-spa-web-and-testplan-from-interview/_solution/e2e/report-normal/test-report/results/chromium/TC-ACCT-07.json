@@ -1,0 +1,78 @@
+{
+  "id": "TC-ACCT-07",
+  "title": "TC-ACCT-07 ร้านดูคิวและกดใช้บริการเสร็จผ่านหน้าจอหลังร้านจริง แต้มและยอดเพิ่มครั้งเดียว แขกไม่ได้แต้ม",
+  "project": "chromium",
+  "file": "5.7-account.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.7"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "คิว 15 มิ.ย.: B05 ฿950 (฿1,000 − 5% = ฿950) · B06 ฿800\nB05: แต้ม ฿950 ÷ 100 = 9 → 199 + 9 = 208 (ถ้าคิดจากราคาเต็ม ฿1,000 จะได้ 209) · ยอด ฿10,001 + ฿950 = ฿10,951 (ถ้าคิดจากราคาเต็มจะได้ ฿11,001)\nกดซ้ำ B05 → ✗ HTTP 409 · แต้มยัง 208 (ถ้าให้ซ้ำจะได้ 217) · ยอดยัง ฿10,951\nB06 → แต้ม 0 (ถ้าคิดให้แขกจะได้ ฿800 ÷ 100 = 8) · ไม่มียอดสะสม · แต้ม U09 ยัง 208",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 721,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 แต้มและระดับ · [D][R] E245, E246 · [R] ⚠️A-14 E247",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 721,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-77, FR-78, FR-79, FR-80, BR-15",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 721,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R24, R25",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 721,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 721,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.7-account.spec.ts",
+        "line": 721,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 21773,
+  "at": "2026-11-06T02:21:48.820Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U07 เลือกวันที่ 15 มิ.ย. 2026 อ่านยอดของ B05 และ B06",
+    "2. กด \"ใช้บริการเสร็จ\" ของ B05 ดึง URL",
+    "3. รีโหลดหลังร้าน · U09 อ่านแต้มและยอด",
+    "4. ยิง URL ซ้ำในชื่อ U07 อ่านสถานะ แล้ว U09 อ่านแต้มอีกครั้ง",
+    "5. U07 กด \"ใช้บริการเสร็จ\" ของ B06 อ่านค่าแต้มในผลตอบกลับ"
+  ]
+}

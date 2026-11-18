@@ -1,0 +1,7 @@
+{
+  "name": "skythai-mini-e2e-playlist",
+  "private": true,
+  "type": "module",
+  "scripts": { "playlist": "node playlist.mjs" },
+  "dependencies": { "playwright": "^1.63.0" }
+}

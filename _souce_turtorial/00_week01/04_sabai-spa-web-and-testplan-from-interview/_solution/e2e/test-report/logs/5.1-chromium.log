@@ -1,0 +1,777 @@
+npm notice run npx
+npm notice run playwright test tests/5.1- --project=chromium
+
+Running 10 tests using 1 worker
+
+(node:126568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [chromium] › tests\5.1-booking.spec.ts:163:1 › TC-BOOK-01 สมาชิก Gold จอง 1 คนจนจบใน 3 หน้าจอ ยอดตรงกันทุกจุด @P1 @5.1 @mobile (33.8s)
+  ok  2 [chromium] › tests\5.1-booking.spec.ts:288:1 › TC-BOOK-02 รอบเริ่ม 10:00 ห่าง 30 นาที จบไม่เกิน 22:00 ทั้งรายการรอบและยิงตรง @P1 @5.1 (49.0s)
+  x   3 [chromium] › tests\5.1-booking.spec.ts:359:1 › TC-BOOK-03 ช่วงวันจองคือพรุ่งนี้ถึงวันนี้ + 30 ทั้งหน้าจอและยิงตรง @P1 @5.1 (1.3m)
+(node:103512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   4 [chromium] › tests\5.1-booking.spec.ts:433:1 › TC-BOOK-04 /api/quote ไม่ให้ราคารอบที่ไม่มีจริง และวันอดีตไม่บอกว่าเป็น "วันนี้" @P2 @5.1 (38.3s)
+(node:69340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  5 [chromium] › tests\5.1-booking.spec.ts:520:1 › TC-BOOK-05 จองซ้อนนักบำบัดไม่ได้ ทั้งขอบคิว คำขอพร้อมกัน และค้างหน้า ส่วนพัก 0 นาทีจองได้ @P1 @5.1 (1.0m)
+  ok  6 [chromium] › tests\5.1-booking.spec.ts:628:1 › TC-BOOK-06 ดับเบิลคลิกปุ่มยืนยันต้องเกิดการจองเดียว ทั้งเลือกนักบำบัดและใครก็ได้ @P1 @5.1 (19.6s)
+  ok  7 [chromium] › tests\5.1-booking.spec.ts:691:1 › TC-BOOK-07 รายชื่อนักบำบัดเฉพาะคนทำบริการได้ และใครก็ได้เลือกคนว่างคะแนนสูงสุด @P1 @5.1 (40.4s)
+  x   8 [chromium] › tests\5.1-booking.spec.ts:764:1 › TC-BOOK-08 ใครก็ได้ส่งพร้อมกัน 8 คำขอ ขณะว่าง 6 คน ต้องจองครบ 6 คน @P1 @5.1 (1.1m)
+(node:60712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 [chromium] › tests\5.1-booking.spec.ts:813:1 › TC-BOOK-09 แขกจองด้วยชื่อและเบอร์ 9–10 หลัก ไม่ได้ส่วนลด ฟอร์มผิดจองไม่ได้ @P1 @5.1 (34.8s)
+  x  10 [chromium] › tests\5.1-booking.spec.ts:904:1 › TC-BOOK-10 รีโหลดหน้าสรุปไม่เสียสิ่งที่เลือก และออกจากระบบกลางทางไม่เจอทางตัน @P1 @5.1 (1.3m)
+
+
+  1) [chromium] › tests\5.1-booking.spec.ts:359:1 › TC-BOOK-03 ช่วงวันจองคือพรุ่งนี้ถึงวันนี้ + 30 ทั้งหน้าจอและยิงตรง @P1 @5.1 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('booking-date-range')
+    Expected substring: "15 ก.ค. 2026"
+    Received string:    "จองได้ตั้งแต่ 16 มิ.ย. 2026 ถึง 16 ก.ค. 2026"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('booking-date-range') with timeout 6000ms
+      - waiting for getByTestId('booking-date-range')
+        16 × locator resolved to <p class="nv8LGq_note" data-e2e-prev-outline="" data-testid="booking-date-range">จองได้ตั้งแต่ 16 มิ.ย. 2026 ถึง 16 ก.ค. 2026</p>
+           - unexpected value "จองได้ตั้งแต่ 16 มิ.ย. 2026 ถึง 16 ก.ค. 2026"
+
+
+      389 |     await checkSlots(app, booking, '15 ก.ค. เห็นรอบ 12:00', ['12:00'], []);
+      390 |     await app.check(booking.el('booking-date-range'), '15 ก.ค. เป็นวันสุดท้าย', async (el) => {
+    > 391 |       await expect.soft(el).toContainText('15 ก.ค. 2026');
+          |                             ^
+      392 |     });
+      393 |
+      394 |     await booking.chooseDate(JUL16);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:391:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:390:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:373:3
+
+    Error: รอบ 12:00 ต้องไม่มี
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('booking-slot-12-00')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - รอบ 12:00 ต้องไม่มี getByTestId('booking-slot-12-00') with timeout 6000ms
+      - waiting for getByTestId('booking-slot-12-00')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      121 |   await app.check(booking.el('booking-screen-2'), label, async () => {
+      122 |     for (const t of ok) await expect.soft(booking.slot(t), `รอบ ${t} ต้องมี`).toBeEnabled();
+    > 123 |     for (const t of bad) await expect.soft(booking.slot(t), `รอบ ${t} ต้องไม่มี`).toHaveCount(0);
+          |                                                                                   ^
+      124 |   });
+      125 | }
+      126 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:123:83)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at checkSlots (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:121:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:396:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:373:3
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    201
+
+      103 |   const message: string | null = res.body?.error?.message ?? null;
+      104 |   await app.checkValue(page, label, { status: res.status, code, message }, (v) => {
+    > 105 |     expect.soft(v.status).toBeGreaterThanOrEqual(400);
+          |                           ^
+      106 |     expect.soft(v.status).toBeLessThan(500);
+      107 |     expect.soft(UNRELATED_REASONS).not.toContain(v.code);
+      108 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:105:27)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at checkRejected (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:104:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:417:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:411:3
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      78 |   await admin.open(date);
+      79 |   await app.check(admin.page.getByTestId('admin-page'), `หลังร้าน ${date}${when ? ` ${when}` : ''} มี ${expected} รายการ`, async () => {
+    > 80 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      81 |   });
+      82 |   return readRows(admin);
+      83 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:80:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCount (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:79:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:424:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:421:3
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 0
+    Received: 1
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      87 |   await reloadAdmin(app, admin, date);
+      88 |   await app.check(admin.page.getByTestId('admin-page'), `หลังรีโหลด หลังร้าน ${date} มี ${expected} รายการ`, async () => {
+    > 89 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      90 |   });
+      91 |   return readRows(admin);
+      92 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:89:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCountAfterReload (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:88:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:425:23
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:421:3
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+        "2026-06-14": 0,
+        "2026-06-15": 2,
+        "2026-06-16": 2,
+        "2026-07-15": 1,
+    -   "2026-07-16": 0,
+    +   "2026-07-16": 1,
+      }
+
+      426 |     }
+      427 |     await app.checkValue(page, 'จำนวนการจอง 14 มิ.ย. 0 · 15 มิ.ย. 2 · 16 มิ.ย. 2 · 15 ก.ค. 1 · 16 ก.ค. 0', counts, (v) => {
+    > 428 |       expect.soft(v).toEqual({ [D14]: 0, [D15]: 2, [D16]: 2, [JUL15]: 1, [JUL16]: 0 });
+          |                      ^
+      429 |     });
+      430 |   });
+      431 | });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:428:22)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:427:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:421:3
+
+    Error Context: test-results\5.1-chromium\5.1-booking-TC-BOOK-03-ช่ว-2dc3c-นนี้-30-ทั้งหน้าจอและยิงตรง-chromium\error-context.md
+
+  2) [chromium] › tests\5.1-booking.spec.ts:433:1 › TC-BOOK-04 /api/quote ไม่ให้ราคารอบที่ไม่มีจริง และวันอดีตไม่บอกว่าเป็น "วันนี้" @P2 @5.1 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      103 |   const message: string | null = res.body?.error?.message ?? null;
+      104 |   await app.checkValue(page, label, { status: res.status, code, message }, (v) => {
+    > 105 |     expect.soft(v.status).toBeGreaterThanOrEqual(400);
+          |                           ^
+      106 |     expect.soft(v.status).toBeLessThan(500);
+      107 |     expect.soft(UNRELATED_REASONS).not.toContain(v.code);
+      108 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:105:27)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at checkRejected (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:104:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:475:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:467:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      475 |       await checkRejected(app, page, `quote ${time} ถูกปฏิเสธ 4xx`, res);
+      476 |       await app.checkValue(page, `คำตอบ quote ${time} ไม่มีราคา ฿1,000`, res.text, (v) => {
+    > 477 |         expect.soft(hasFullPrice(v)).toBe(false);
+          |                                      ^
+      478 |       });
+      479 |     }
+      480 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:477:38)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:476:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:467:3
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      103 |   const message: string | null = res.body?.error?.message ?? null;
+      104 |   await app.checkValue(page, label, { status: res.status, code, message }, (v) => {
+    > 105 |     expect.soft(v.status).toBeGreaterThanOrEqual(400);
+          |                           ^
+      106 |     expect.soft(v.status).toBeLessThan(500);
+      107 |     expect.soft(UNRELATED_REASONS).not.toContain(v.code);
+      108 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:105:27)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at checkRejected (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:104:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:475:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:467:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      475 |       await checkRejected(app, page, `quote ${time} ถูกปฏิเสธ 4xx`, res);
+      476 |       await app.checkValue(page, `คำตอบ quote ${time} ไม่มีราคา ฿1,000`, res.text, (v) => {
+    > 477 |         expect.soft(hasFullPrice(v)).toBe(false);
+          |                                      ^
+      478 |       });
+      479 |     }
+      480 |   });
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:477:38)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:476:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:467:3
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('[data-testid^="error-"]').first()
+    Expected substring: not "วันนี้"
+    Received string: "จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567"
+    Timeout: 6000ms
+
+    Call log:
+      - Expect "soft not toContainText" locator('[data-testid^="error-"]').first() with timeout 6000ms
+      - waiting for locator('[data-testid^="error-"]').first()
+        16 × locator resolved to <p role="alert" class="Hi2WXW_error" data-e2e-prev-outline="" data-testid="error-same-day-call">จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567</p>
+           - unexpected value "จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567"
+
+
+      486 |     await app.check(errors, 'ข้อความ 14 มิ.ย. บนหน้าจอถูกปฏิเสธและไม่มีคำว่า "วันนี้"', async (el) => {
+      487 |       await expect.soft(el.first()).toBeVisible();
+    > 488 |       await expect.soft(el.first()).not.toContainText('วันนี้');
+          |                                         ^
+      489 |     });
+      490 |     const text = await errors.first().innerText({ timeout: 1_000 }).catch(() => '');
+      491 |     test.info().annotations.push({ type: 'pending-answer', description: `F-ร้าน 1: ข้อความวันอดีตจะให้โทรร้านหรือไม่ รอคำตอบ · ผลจริงบนหน้าจอ: ${text}` });
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:488:41
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:11)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:486:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:482:3
+
+    Error: expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "วันนี้"
+    Received string:        "{\"error\":{\"code\":\"same-day-call\",\"message\":\"จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567\"}}"
+
+      497 |     await checkRejected(app, page, 'quote 14 มิ.ย. ถูกปฏิเสธ 4xx', quote);
+      498 |     await app.checkValue(page, 'ข้อความ quote 14 มิ.ย. ไม่มีคำว่า "วันนี้"', quote.text, (v) => {
+    > 499 |       expect.soft(v).not.toContain('วันนี้');
+          |                          ^
+      500 |     });
+      501 |     const made = await app.replay(api, bookReq, { date: D14, time: '12:00', ...guest }, { locale: 'th' });
+      502 |     await checkRejected(app, page, 'คำขอจอง 14 มิ.ย. ถูกปฏิเสธ 4xx', made);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:499:26)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:498:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:495:3
+
+    Error: expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "วันนี้"
+    Received string:        "{\"error\":{\"code\":\"same-day-call\",\"message\":\"จองวันนี้ในเว็บไม่ได้ กรุณาโทร 02-123-4567\"}}"
+
+      502 |     await checkRejected(app, page, 'คำขอจอง 14 มิ.ย. ถูกปฏิเสธ 4xx', made);
+      503 |     await app.checkValue(page, 'ข้อความคำขอจอง 14 มิ.ย. ไม่มีคำว่า "วันนี้"', made.text, (v) => {
+    > 504 |       expect.soft(v).not.toContain('วันนี้');
+          |                          ^
+      505 |     });
+      506 |   });
+      507 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:504:26)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:503:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:495:3
+
+    Error Context: test-results\5.1-chromium\5.1-booking-TC-BOOK-04-api-918ac-ันอดีตไม่บอกว่าเป็น-วันนี้--chromium\error-context.md
+
+  3) [chromium] › tests\5.1-booking.spec.ts:764:1 › TC-BOOK-08 ใครก็ได้ส่งพร้อมกัน 8 คำขอ ขณะว่าง 6 คน ต้องจองครบ 6 คน @P1 @5.1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 5
+
+      795 |       }));
+      796 |       await app.checkValue(page, `รอบ ${round} สำเร็จ 6 คำขอ · อีก 2 คำขอ 4xx`, summary, (v) => {
+    > 797 |         expect.soft(v.filter((s) => s.status >= 200 && s.status < 300).length).toBe(6);
+          |                                                                                ^
+      798 |         expect.soft(v.filter((s) => s.status >= 400 && s.status < 500).length).toBe(2);
+      799 |       });
+      800 |       await adminCount(app, admin, D17, 6, `รอบ ${round}`);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:797:80)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:796:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 3
+
+      796 |       await app.checkValue(page, `รอบ ${round} สำเร็จ 6 คำขอ · อีก 2 คำขอ 4xx`, summary, (v) => {
+      797 |         expect.soft(v.filter((s) => s.status >= 200 && s.status < 300).length).toBe(6);
+    > 798 |         expect.soft(v.filter((s) => s.status >= 400 && s.status < 500).length).toBe(2);
+          |                                                                                ^
+      799 |       });
+      800 |       await adminCount(app, admin, D17, 6, `รอบ ${round}`);
+      801 |       const rows = await adminCountAfterReload(app, admin, D17, 6);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:798:80)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:796:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 6
+    Received: 5
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 5 elements
+           - unexpected value "5"
+
+
+      78 |   await admin.open(date);
+      79 |   await app.check(admin.page.getByTestId('admin-page'), `หลังร้าน ${date}${when ? ` ${when}` : ''} มี ${expected} รายการ`, async () => {
+    > 80 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      81 |   });
+      82 |   return readRows(admin);
+      83 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:80:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCount (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:79:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:800:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 6
+    Received: 5
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 5 elements
+           - unexpected value "5"
+
+
+      87 |   await reloadAdmin(app, admin, date);
+      88 |   await app.check(admin.page.getByTestId('admin-page'), `หลังรีโหลด หลังร้าน ${date} มี ${expected} รายการ`, async () => {
+    > 89 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      90 |   });
+      91 |   return readRows(admin);
+      92 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:89:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCountAfterReload (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:88:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:801:20
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+    @@ -1,7 +1,6 @@
+      Array [
+    -   "น้องฟ้า",
+        "น้องแก้ว",
+        "พี่ทิว",
+        "พี่ภูมิ",
+        "พี่มาลี",
+        "พี่ศรี",
+
+      805 |       }, (v) => {
+      806 |         expect.soft(v.times).toEqual(['12:00–13:00']);
+    > 807 |         expect.soft(v.therapists).toEqual(allNames);
+          |                                   ^
+      808 |       });
+      809 |     });
+      810 |   }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:807:35)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:802:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 4
+
+      795 |       }));
+      796 |       await app.checkValue(page, `รอบ ${round} สำเร็จ 6 คำขอ · อีก 2 คำขอ 4xx`, summary, (v) => {
+    > 797 |         expect.soft(v.filter((s) => s.status >= 200 && s.status < 300).length).toBe(6);
+          |                                                                                ^
+      798 |         expect.soft(v.filter((s) => s.status >= 400 && s.status < 500).length).toBe(2);
+      799 |       });
+      800 |       await adminCount(app, admin, D17, 6, `รอบ ${round}`);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:797:80)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:796:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 4
+
+      796 |       await app.checkValue(page, `รอบ ${round} สำเร็จ 6 คำขอ · อีก 2 คำขอ 4xx`, summary, (v) => {
+      797 |         expect.soft(v.filter((s) => s.status >= 200 && s.status < 300).length).toBe(6);
+    > 798 |         expect.soft(v.filter((s) => s.status >= 400 && s.status < 500).length).toBe(2);
+          |                                                                                ^
+      799 |       });
+      800 |       await adminCount(app, admin, D17, 6, `รอบ ${round}`);
+      801 |       const rows = await adminCountAfterReload(app, admin, D17, 6);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:798:80)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:796:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 6
+    Received: 4
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 4 elements
+           - unexpected value "4"
+
+
+      78 |   await admin.open(date);
+      79 |   await app.check(admin.page.getByTestId('admin-page'), `หลังร้าน ${date}${when ? ` ${when}` : ''} มี ${expected} รายการ`, async () => {
+    > 80 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      81 |   });
+      82 |   return readRows(admin);
+      83 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:80:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCount (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:79:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:800:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 6
+    Received: 4
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 4 elements
+           - unexpected value "4"
+
+
+      87 |   await reloadAdmin(app, admin, date);
+      88 |   await app.check(admin.page.getByTestId('admin-page'), `หลังรีโหลด หลังร้าน ${date} มี ${expected} รายการ`, async () => {
+    > 89 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      90 |   });
+      91 |   return readRows(admin);
+      92 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:89:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCountAfterReload (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:88:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:801:20
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+    -   "น้องฟ้า",
+    -   "น้องแก้ว",
+        "พี่ทิว",
+        "พี่ภูมิ",
+        "พี่มาลี",
+        "พี่ศรี",
+      ]
+
+      805 |       }, (v) => {
+      806 |         expect.soft(v.times).toEqual(['12:00–13:00']);
+    > 807 |         expect.soft(v.therapists).toEqual(allNames);
+          |                                   ^
+      808 |       });
+      809 |     });
+      810 |   }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:807:35)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:802:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 4
+
+      795 |       }));
+      796 |       await app.checkValue(page, `รอบ ${round} สำเร็จ 6 คำขอ · อีก 2 คำขอ 4xx`, summary, (v) => {
+    > 797 |         expect.soft(v.filter((s) => s.status >= 200 && s.status < 300).length).toBe(6);
+          |                                                                                ^
+      798 |         expect.soft(v.filter((s) => s.status >= 400 && s.status < 500).length).toBe(2);
+      799 |       });
+      800 |       await adminCount(app, admin, D17, 6, `รอบ ${round}`);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:797:80)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:796:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 4
+
+      796 |       await app.checkValue(page, `รอบ ${round} สำเร็จ 6 คำขอ · อีก 2 คำขอ 4xx`, summary, (v) => {
+      797 |         expect.soft(v.filter((s) => s.status >= 200 && s.status < 300).length).toBe(6);
+    > 798 |         expect.soft(v.filter((s) => s.status >= 400 && s.status < 500).length).toBe(2);
+          |                                                                                ^
+      799 |       });
+      800 |       await adminCount(app, admin, D17, 6, `รอบ ${round}`);
+      801 |       const rows = await adminCountAfterReload(app, admin, D17, 6);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:798:80)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:796:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 6
+    Received: 4
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 4 elements
+           - unexpected value "4"
+
+
+      78 |   await admin.open(date);
+      79 |   await app.check(admin.page.getByTestId('admin-page'), `หลังร้าน ${date}${when ? ` ${when}` : ''} มี ${expected} รายการ`, async () => {
+    > 80 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      81 |   });
+      82 |   return readRows(admin);
+      83 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:80:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCount (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:79:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:800:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-testid^="admin-booking-"]')
+    Expected: 6
+    Received: 4
+    Timeout:  6000ms
+
+    Call log:
+      - Expect "soft toHaveCount" locator('[data-testid^="admin-booking-"]') with timeout 6000ms
+      - waiting for locator('[data-testid^="admin-booking-"]')
+        16 × locator resolved to 4 elements
+           - unexpected value "4"
+
+
+      87 |   await reloadAdmin(app, admin, date);
+      88 |   await app.check(admin.page.getByTestId('admin-page'), `หลังรีโหลด หลังร้าน ${date} มี ${expected} รายการ`, async () => {
+    > 89 |     await expect.soft(admin.rowsLocator()).toHaveCount(expected);
+         |                                            ^
+      90 |   });
+      91 |   return readRows(admin);
+      92 | }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:89:44)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at adminCountAfterReload (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:88:3)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:801:20
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+    -   "น้องฟ้า",
+    -   "น้องแก้ว",
+        "พี่ทิว",
+        "พี่ภูมิ",
+        "พี่มาลี",
+        "พี่ศรี",
+      ]
+
+      805 |       }, (v) => {
+      806 |         expect.soft(v.times).toEqual(['12:00–13:00']);
+    > 807 |         expect.soft(v.therapists).toEqual(allNames);
+          |                                   ^
+      808 |       });
+      809 |     });
+      810 |   }
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:807:35)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:802:7
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:786:5
+
+    Error Context: test-results\5.1-chromium\5.1-booking-TC-BOOK-08-ใคร-a42a6-ณะว่าง-6-คน-ต้องจองครบ-6-คน-chromium\error-context.md
+
+  4) [chromium] › tests\5.1-booking.spec.ts:904:1 › TC-BOOK-10 รีโหลดหน้าสรุปไม่เสียสิ่งที่เลือก และออกจากระบบกลางทางไม่เจอทางตัน @P1 @5.1 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('booking-recap-service')
+    Expected substring: "นวดไทย 60 นาที"
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('booking-recap-service') with timeout 6000ms
+      - waiting for getByTestId('booking-recap-service')
+
+
+      928 |     await app.reload(page);
+      929 |     await app.check(booking.el('booking-recap-service'), 'หลังรีโหลด ยังเป็น S01', async (el) => {
+    > 930 |       await expect.soft(el).toContainText(S01_NAME);
+          |                             ^
+      931 |     });
+      932 |     await app.check(booking.el('booking-recap-when'), 'หลังรีโหลด ยังเป็น 17 มิ.ย. 12:00', async (el) => {
+      933 |       await expect.soft(el).toContainText(/17 มิ\.ย\..*12:00/);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:930:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:929:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:927:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('booking-recap-when')
+    Expected pattern: /17 มิ\.ย\..*12:00/
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('booking-recap-when') with timeout 6000ms
+      - waiting for getByTestId('booking-recap-when')
+
+
+      931 |     });
+      932 |     await app.check(booking.el('booking-recap-when'), 'หลังรีโหลด ยังเป็น 17 มิ.ย. 12:00', async (el) => {
+    > 933 |       await expect.soft(el).toContainText(/17 มิ\.ย\..*12:00/);
+          |                             ^
+      934 |     });
+      935 |     await app.check(booking.el('booking-recap-therapist'), 'หลังรีโหลด ยังเป็น T01', async (el) => {
+      936 |       await expect.soft(el).toContainText(NAME.T01);
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:933:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:932:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:927:3
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('booking-recap-therapist')
+    Expected substring: "พี่ศรี"
+    Timeout: 6000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toContainText" getByTestId('booking-recap-therapist') with timeout 6000ms
+      - waiting for getByTestId('booking-recap-therapist')
+
+
+      934 |     });
+      935 |     await app.check(booking.el('booking-recap-therapist'), 'หลังรีโหลด ยังเป็น T01', async (el) => {
+    > 936 |       await expect.soft(el).toContainText(NAME.T01);
+          |                             ^
+      937 |     });
+      938 |     const pay = await safePay(booking);
+      939 |     await app.check(booking.el('booking-pay-at-shop'), 'หลังรีโหลด ยอด ฿950', async () => {
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:936:29)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:935:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:927:3
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 950
+    Received: NaN
+
+      938 |     const pay = await safePay(booking);
+      939 |     await app.check(booking.el('booking-pay-at-shop'), 'หลังรีโหลด ยอด ฿950', async () => {
+    > 940 |       expect.soft(pay).toBe(950);
+          |                        ^
+      941 |     });
+      942 |   });
+      943 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:940:24)
+        at App.check (C:\t\spa04\sabai\e2e\fixtures\index.ts:420:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:939:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:927:3
+
+    Error: expect(received).not.toBe(expected) // Object.is equality
+
+    Expected: not "dead-end"
+
+      966 |     route = onLogin ? 'login' : inputs === 2 ? 'guest' : 'dead-end';
+      967 |     await app.checkValue(page, 'หลังออกจากระบบ: ไปหน้าเข้าสู่ระบบ หรือมีช่องกรอก 2 ช่อง', { url: new URL(page.url()).pathname, inputs, route }, (v) => {
+    > 968 |       expect.soft(v.route).not.toBe('dead-end');
+          |                                ^
+      969 |     });
+      970 |   });
+      971 |
+        at assertions (C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:968:32)
+        at App.checkValue (C:\t\spa04\sabai\e2e\fixtures\index.ts:451:17)
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:967:5
+        at C:\t\spa04\sabai\e2e\tests\5.1-booking.spec.ts:958:3
+
+    Error Context: test-results\5.1-chromium\5.1-booking-TC-BOOK-10-รีโ-98324-กจากระบบกลางทางไม่เจอทางตัน-chromium\error-context.md
+
+  4 failed
+    [chromium] › tests\5.1-booking.spec.ts:359:1 › TC-BOOK-03 ช่วงวันจองคือพรุ่งนี้ถึงวันนี้ + 30 ทั้งหน้าจอและยิงตรง @P1 @5.1 
+    [chromium] › tests\5.1-booking.spec.ts:433:1 › TC-BOOK-04 /api/quote ไม่ให้ราคารอบที่ไม่มีจริง และวันอดีตไม่บอกว่าเป็น "วันนี้" @P2 @5.1 
+    [chromium] › tests\5.1-booking.spec.ts:764:1 › TC-BOOK-08 ใครก็ได้ส่งพร้อมกัน 8 คำขอ ขณะว่าง 6 คน ต้องจองครบ 6 คน @P1 @5.1 
+    [chromium] › tests\5.1-booking.spec.ts:904:1 › TC-BOOK-10 รีโหลดหน้าสรุปไม่เสียสิ่งที่เลือก และออกจากระบบกลางทางไม่เจอทางตัน @P1 @5.1 
+  6 passed (8.3m)

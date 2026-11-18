@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+# ai-accounts-install — idempotent installer for multi-account Claude Code / Codex.
+#   ai-accounts-install --system   (build time) wrappers + /usr/local/bin links only
+#   ai-accounts-install            (container start) also seeds /root/ai-accounts
+# Never overwrites credentials or existing config. Prints no secrets.
+set -euo pipefail
+BASE=/root/ai-accounts
+LIB=/usr/local/lib/ai-accounts
+mkdir -p "$LIB"
+
+# ---------- system part: wrappers + command links (no data) ----------
+cat > "$LIB/claude-wrapper" <<'EOF'
+#!/usr/bin/env bash
+name=$(basename "$0"); n=${name#yolo}
+BASE=/root/ai-accounts; dir="$BASE/.Claude/yolo$n"
+if [ ! -d "$dir" ]; then echo "ไม่พบโฟลเดอร์บัญชี: $dir  (รัน ai-accounts-install ก่อน)" >&2; exit 1; fi
+export CLAUDE_CONFIG_DIR="$dir" IS_SANDBOX=1
+args=(--dangerously-skip-permissions)
+for f in "$BASE"/.Claude/shared/mcp/*.json; do [ -e "$f" ] && args+=("--mcp-config=$f"); done
+exec claude "${args[@]}" "$@"
+EOF
+cat > "$LIB/codex-wrapper" <<'EOF'
+#!/usr/bin/env bash
+name=$(basename "$0"); n=${name#cyolo}
+BASE=/root/ai-accounts; dir="$BASE/.Codex/cyolo$n"
+if [ ! -d "$dir" ]; then echo "ไม่พบโฟลเดอร์บัญชี: $dir  (รัน ai-accounts-install ก่อน)" >&2; exit 1; fi
+export CODEX_HOME="$dir" IS_SANDBOX=1
+mkdir -p "$dir/skills"
+# per-skill symlinks only (never the whole skills dir: Codex writes skills/.system itself)
+for s in "$BASE"/.Codex/shared/skills/*/; do
+  [ -d "$s" ] || continue; b=$(basename "$s"); [ -e "$dir/skills/$b" ] || ln -s "${s%/}" "$dir/skills/$b"
+done
+cfg=()
+for f in "$BASE"/.Codex/shared/mcp/*.inline; do
+  [ -e "$f" ] || continue; m=$(basename "$f" .inline); cfg+=(-c "mcp_servers.$m=$(cat "$f")")
+done
+case "${1:-}" in
+  mcp|login|logout|exec|resume|help|completion|features) exec codex "${cfg[@]}" "$@" ;;
+  *) exec codex "${cfg[@]}" --dangerously-bypass-approvals-and-sandbox "$@" ;;
+esac
+EOF
+chmod +x "$LIB"/*-wrapper
+for i in 1 2 3 4 5; do
+  ln -sf "$LIB/claude-wrapper" "/usr/local/bin/yolo$i"
+  ln -sf "$LIB/codex-wrapper"  "/usr/local/bin/cyolo$i"
+done
+[ "${1:-}" = "--system" ] && { echo "ai-accounts-install: system part done"; exit 0; }
+
+# ---------- data part: seeds /root/ai-accounts (only what is missing) ----------
+mkdir -p "$BASE"/.Claude/shared/{skills,mcp} "$BASE"/.Codex/shared/{skills,mcp}
+
+# shared MCP: Playwright (browsers live in the image at /opt/ms-playwright)
+PWARGS='"PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright","playwright-mcp","--browser","chromium","--headless","--isolated","--no-sandbox","--output-dir","/tmp/playwright-mcp"'
+[ -e "$BASE/.Claude/shared/mcp/playwright.json" ] || \
+  printf '{"mcpServers":{"playwright":{"command":"env","args":[%s]}}}\n' "$PWARGS" > "$BASE/.Claude/shared/mcp/playwright.json"
+[ -e "$BASE/.Codex/shared/mcp/playwright.inline" ] || \
+  printf '{command="env",args=[%s]}\n' "$PWARGS" > "$BASE/.Codex/shared/mcp/playwright.inline"
+
+# shared skill: shared-check (random token generated once, kept on later runs)
+mkskill() { # $1=tool dir  $2=tool name
+  local f="$BASE/$1/shared/skills/shared-check/SKILL.md"
+  [ -e "$f" ] && return 0
+  mkdir -p "$(dirname "$f")"
+  local tok; tok=$(head -c8 /dev/urandom | od -An -tx1 | tr -d ' \n')
+  cat > "$f" <<EOF
+---
+name: shared-check
+description: Use when the user asks to run shared-check or verify the shared skill. Replies with a fixed verification token.
+---
+When invoked, reply with exactly this token and nothing else:
+
+SHARED_SKILL_OK-$2-$tok
+EOF
+}
+mkskill .Claude claude
+mkskill .Codex codex
+
+# accounts
+for i in 1 2 3 4 5; do
+  mkdir -p "$BASE/.Claude/yolo$i" "$BASE/.Codex/cyolo$i"
+  # Claude: skills dir -> shared (new shared skills appear on next launch). .claude.json is never linked.
+  [ -e "$BASE/.Claude/yolo$i/skills" ] || ln -s "$BASE/.Claude/shared/skills" "$BASE/.Claude/yolo$i/skills"
+  # Codex: file-based credential store, only if no config exists yet
+  [ -e "$BASE/.Codex/cyolo$i/config.toml" ] || printf 'cli_auth_credentials_store = "file"\n' > "$BASE/.Codex/cyolo$i/config.toml"
+done
+echo "ai-accounts-install: done"

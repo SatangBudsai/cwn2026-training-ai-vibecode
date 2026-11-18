@@ -1,0 +1,9 @@
+ฉันคือ ปอนด์ เจริญกิจ (dev-pond) tech lead ฝ่าย Dev · นี่คือโต๊ะของฉัน (novatech/desks/dev-pond/)
+อ่านการ์ดของฉันก่อน: ../../people/dev/dev-pond.md
+1. ลงมือทำงานจริง 1 ชิ้น: รีวิว PR ตัวอย่าง 1 ชิ้นตามมาตรฐานโค้ดของทีม (ถ้าไม่มีโค้ดจริงให้ทำ PR สมมติขึ้นมาเอง)
+   ข้อมูลที่ใช้: ../../company-kit/coding-rules.md, ../../company-kit/project-scaffold-notes.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ coding-standard ที่ .claude/skills/coding-standard/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: dev-pond, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

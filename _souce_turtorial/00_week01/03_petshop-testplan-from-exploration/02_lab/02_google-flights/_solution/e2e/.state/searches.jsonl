@@ -1,0 +1,114 @@
+{"test":"TC-SRCH-01","kind":"search","reason":"TC-SRCH-01 กด \"ค้นหา\" ตามโจทย์ลูกค้า","at":"2026-11-03T02:23:42.003Z"}
+{"test":"TC-SRCH-02","kind":"search","reason":"TC-SRCH-02 กด \"ค้นหา\" เที่ยวเดียว 15 ธ.ค.","at":"2026-11-03T02:25:12.642Z"}
+{"test":"TC-SRCH-03","kind":"search","reason":"TC-SRCH-03 กด \"ค้นหา\" หลังเลื่อนเดือน","at":"2026-11-03T02:27:24.150Z"}
+{"test":"TC-SRCH-04","kind":"search","reason":"TC-SRCH-04 กด \"ค้นหา\" หลังคืนเป็น 1 คน","at":"2026-11-03T02:30:41.432Z"}
+{"test":"TC-SRCH-05","kind":"search","reason":"TC-SRCH-05 กด \"ค้นหา\" หลังทดสอบรายการแนะนำ","at":"2026-11-03T02:33:33.688Z"}
+{"test":"TC-SRCH-06","kind":"search","reason":"TC-SRCH-06 เปิด U1","at":"2026-11-03T02:33:53.809Z"}
+{"test":"TC-SRCH-06","kind":"search","reason":"TC-SRCH-06 \"เสร็จ\" 16 ธ.ค.","at":"2026-11-03T02:34:21.791Z"}
+{"test":"TC-SRCH-06","kind":"search","reason":"TC-SRCH-06 ปุ่ม < ข้างวันที่ 16 → 15 ธ.ค.","at":"2026-11-03T02:34:40.475Z"}
+{"test":"TC-SRCH-06","kind":"search","reason":"TC-SRCH-06 กด ⇄ สลับต้นทาง/ปลายทาง","at":"2026-11-03T02:34:56.973Z"}
+{"test":"TC-SRCH-07","kind":"search","reason":"TC-SRCH-07 เปิด U1","at":"2026-11-03T02:35:43.640Z"}
+{"test":"TC-SRCH-07","kind":"search","reason":"TC-SRCH-07 \"เสร็จ\" ค้นหาวันนี้","at":"2026-11-03T02:36:49.964Z"}
+{"test":"TC-SRCH-08","kind":"search","reason":"TC-SRCH-08 กด \"ค้นหา\" ขณะไม่มีวันที่","at":"2026-11-03T02:39:36.460Z"}
+{"test":"TC-SRCH-08","kind":"search","reason":"TC-SRCH-08 กด \"ค้นหา\" หลังใส่วันที่","at":"2026-11-03T02:40:02.608Z"}
+{"test":"TC-SRCH-09","kind":"search","reason":"TC-SRCH-09 ค้นหา โตเกียว → HND","at":"2026-11-03T02:41:24.348Z"}
+{"test":"TC-SRCH-09","kind":"search","reason":"TC-SRCH-09 เปลี่ยนต้นทางเป็นกรุงเทพมหานคร (อ้างอิง)","at":"2026-11-03T02:41:49.806Z"}
+{"test":"TC-SRCH-09","kind":"search","reason":"TC-SRCH-09 เลือกปลายทาง Tokyo Station","at":"2026-11-03T02:42:12.352Z"}
+{"test":"TC-SRCH-10","kind":"search","reason":"TC-SRCH-10 เปิด U1","at":"2026-11-03T02:42:35.054Z"}
+{"test":"TC-SRCH-10","kind":"search","reason":"TC-SRCH-10 \"เสร็จ\" ค้นหาวันนี้","at":"2026-11-03T02:42:59.305Z"}
+{"test":"TC-SRCH-10","kind":"search","reason":"TC-SRCH-10 \"เสร็จ\" หลังพิมพ์วันที่ผ่านมาแล้ว","at":"2026-11-03T02:43:53.877Z"}
+{"test":"TC-RES-01","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:44:25.023Z"}
+{"test":"TC-RES-01","kind":"search","reason":"ดูเที่ยวบินเพิ่มเติม","at":"2026-11-03T02:44:49.561Z"}
+{"test":"TC-RES-02","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:45:52.205Z"}
+{"test":"TC-RES-03","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:46:57.883Z"}
+{"test":"TC-RES-03","kind":"search","reason":"จัดเรียงตามราคา","at":"2026-11-03T02:47:15.860Z"}
+{"test":"TC-RES-03","kind":"search","reason":"จัดเรียงตามเวลาออกเดินทาง","at":"2026-11-03T02:47:46.540Z"}
+{"test":"TC-RES-04","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:48:11.596Z"}
+{"test":"TC-RES-04","kind":"search","reason":"จัดเรียงตามเวลาถึง","at":"2026-11-03T02:48:32.305Z"}
+{"test":"TC-RES-04","kind":"search","reason":"จัดเรียงตามระยะเวลา","at":"2026-11-03T02:48:55.090Z"}
+{"test":"TC-RES-04","kind":"search","reason":"ดูเที่ยวบินเพิ่มเติม (เรียงตามระยะเวลา)","at":"2026-11-03T02:49:14.045Z"}
+{"test":"TC-RES-05","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:49:54.442Z"}
+{"test":"TC-RES-05","kind":"search","reason":"ดูเที่ยวบินเพิ่มเติม","at":"2026-11-03T02:50:10.019Z"}
+{"test":"TC-RES-06","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:51:33.826Z"}
+{"test":"TC-RES-06","kind":"search","reason":"กดแท็บถูกที่สุด","at":"2026-11-03T02:52:25.305Z"}
+{"test":"TC-RES-06","kind":"search","reason":"ดูเที่ยวบินเพิ่มเติม (แท็บถูกที่สุด)","at":"2026-11-03T02:52:48.827Z"}
+{"test":"TC-RES-06","kind":"search","reason":"ตัวกรองราคา: Home บน slider ราคาสูงสุด","at":"2026-11-03T02:53:20.582Z"}
+{"test":"TC-RES-07","kind":"search","reason":"เปิด U1","at":"2026-11-03T02:53:58.526Z"}
+{"test":"TC-RES-07","kind":"booking","reason":"เลือกเที่ยวบินแถวแวะพักนาน","at":"2026-11-03T02:54:35.163Z"}
+{"test":"TC-FLT-01","kind":"search","reason":"เปิด U1 (TC-FLT-01 ขั้น 1)","at":"2026-11-03T02:55:10.825Z"}
+{"test":"TC-FLT-01","kind":"search","reason":"ตั้ง บินตรงเท่านั้น (TC-FLT-01 ขั้น 2)","at":"2026-11-03T02:55:36.462Z"}
+{"test":"TC-FLT-01","kind":"search","reason":"ตั้งกระเป๋าถือ 1 ใบ (TC-FLT-01 ขั้น 3)","at":"2026-11-03T02:56:01.828Z"}
+{"test":"TC-FLT-01","kind":"search","reason":"ล้างสัมภาระในป๊อปอัป (TC-FLT-01 ขั้น 4)","at":"2026-11-03T02:56:50.260Z"}
+{"test":"TC-FLT-02","kind":"search","reason":"เปิด U1 (TC-FLT-02 ขั้น 1)","at":"2026-11-03T02:57:11.871Z"}
+{"test":"TC-FLT-02","kind":"search","reason":"ตั้งกระเป๋าถือ 1 ใบ (TC-FLT-02 ขั้น 2)","at":"2026-11-03T02:57:42.476Z"}
+{"test":"TC-FLT-03","kind":"search","reason":"เปิด U1 (TC-FLT-03 ขั้น 1)","at":"2026-11-03T02:58:11.590Z"}
+{"test":"TC-FLT-04","kind":"search","reason":"เปิด U1 (TC-FLT-04 ขั้น 1)","at":"2026-11-03T02:58:35.059Z"}
+{"test":"TC-FLT-04","kind":"search","reason":"ตั้งราคาสูงสุด = ค่าต่ำสุดของ slider (TC-FLT-04 ขั้น 2)","at":"2026-11-03T02:58:58.466Z"}
+{"test":"TC-FLT-04","kind":"search","reason":"การปล่อยก๊าซต่ำเท่านั้น (TC-FLT-04 ขั้น 3)","at":"2026-11-03T02:59:23.859Z"}
+{"test":"TC-FLT-04","kind":"search","reason":"ล้างทั้งหมดในแผงตัวกรองทั้งหมด (TC-FLT-04 ขั้น 4)","at":"2026-11-03T02:59:51.834Z"}
+{"test":"TC-FLT-05","kind":"search","reason":"เปิด U1 (TC-FLT-05 ขั้น 1)","at":"2026-11-03T03:00:12.908Z"}
+{"test":"TC-FLT-05","kind":"search","reason":"ตั้งเวลาถึง 00:00–08:00 (TC-FLT-05 ขั้น 2)","at":"2026-11-03T03:00:44.426Z"}
+{"test":"TC-FLT-06","kind":"search","reason":"เปิด U1 (TC-FLT-06 ขั้น 1)","at":"2026-11-03T03:01:38.978Z"}
+{"test":"TC-FLT-06","kind":"search","reason":"ตั้งเวลาถึง 00:00–08:00 (TC-FLT-06 ขั้น 2)","at":"2026-11-03T03:02:33.481Z"}
+{"test":"TC-FLT-07","kind":"search","reason":"เปิด U1 (TC-FLT-07 ขั้น 1)","at":"2026-11-03T03:02:56.360Z"}
+{"test":"TC-FLT-07","kind":"search","reason":"ตั้งราคาสูงสุด = ค่าต่ำสุดของ slider (TC-FLT-07 ขั้น 2)","at":"2026-11-03T03:03:31.676Z"}
+{"test":"TC-FLT-07","kind":"search","reason":"ตั้งเวลาถึง 00:00–08:00 (TC-FLT-07 ขั้น 3)","at":"2026-11-03T03:04:07.520Z"}
+{"test":"TC-PRC-01","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:04:27.135Z"}
+{"test":"TC-PRC-02","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:08:52.118Z"}
+{"test":"TC-PRC-03","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:10:22.880Z"}
+{"test":"TC-PRC-03","kind":"search","reason":"พิมพ์ \"31 ธ.ค. 2026\" + เสร็จ","at":"2026-11-03T03:11:03.483Z"}
+{"test":"TC-PRC-04","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:12:07.516Z"}
+{"test":"TC-PRC-04","kind":"search","reason":"พิมพ์ \"31 ธ.ค. 2026\" + เสร็จ","at":"2026-11-03T03:12:44.057Z"}
+{"test":"TC-BKG-01","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:13:36.604Z"}
+{"test":"TC-BKG-01","kind":"booking","reason":"กด \"เลือกเที่ยวบิน\" แถว A","at":"2026-11-03T03:13:56.760Z"}
+{"test":"TC-BKG-01","kind":"booking","reason":"เปิด UB ในแท็บใหม่","at":"2026-11-03T03:14:21.285Z"}
+{"test":"TC-BKG-02","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:15:37.112Z"}
+{"test":"TC-BKG-03","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:16:28.838Z"}
+{"test":"TC-BKG-03","kind":"booking","reason":"กด \"เลือกเที่ยวบิน\" แถว C 14:00 เวียดเจ็ทแอร์","at":"2026-11-03T03:16:58.871Z"}
+{"test":"TC-BKG-03","kind":"search","reason":"← จากหน้า booking แถว C","at":"2026-11-03T03:17:15.968Z"}
+{"test":"TC-BKG-03","kind":"booking","reason":"กดตัวแถว C อีกครั้ง 14:00 เวียดเจ็ทแอร์","at":"2026-11-03T03:17:33.448Z"}
+{"test":"TC-BKG-03","kind":"search","reason":"Back เบราว์เซอร์จากหน้า booking แถว C","at":"2026-11-03T03:17:44.698Z"}
+{"test":"TC-BKG-04","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:18:05.447Z"}
+{"test":"TC-BKG-04","kind":"booking","reason":"กดตัวแถวที่ 1 14:00 เวียดเจ็ทแอร์","at":"2026-11-03T03:18:20.129Z"}
+{"test":"TC-BKG-04","kind":"search","reason":"เปลี่ยนผู้ใหญ่ 1 → 2 ในหน้า booking แล้วกด \"เสร็จ\"","at":"2026-11-03T03:18:44.064Z"}
+{"test":"TC-BKG-04","kind":"search","reason":"← จากหน้า booking 2 คน","at":"2026-11-03T03:19:09.136Z"}
+{"test":"TC-BKG-05","kind":"booking","reason":"เปิด UB (ตั้งต้น TC-BKG-05)","at":"2026-11-03T03:19:30.973Z"}
+{"test":"TC-BKG-05","kind":"search","reason":"เปลี่ยนผู้ใหญ่ 1 → 2 แล้วกด \"เสร็จ\" (ตั้งต้น)","at":"2026-11-03T03:19:52.705Z"}
+{"test":"TC-BKG-05","kind":"search","reason":"← ไปหน้าผลลัพธ์ 2 คน (ตั้งต้น)","at":"2026-11-03T03:20:03.730Z"}
+{"test":"TC-BKG-05","kind":"search","reason":"← หลัง Back 2 ครั้ง","at":"2026-11-03T03:20:45.918Z"}
+{"test":"TC-BKG-06","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:21:08.227Z"}
+{"test":"TC-BKG-06","kind":"booking","reason":"กด \"เลือกเที่ยวบิน\" แถว X 23:50 ไทยเวียดเจ๊ทแอร์","at":"2026-11-03T03:21:32.440Z"}
+{"test":"TC-BKG-06","kind":"booking","reason":"เปิดลิงก์แชร์ D-BKG-SHARE ในแท็บใหม่","at":"2026-11-03T03:22:00.537Z"}
+{"test":"TC-BKG-06","kind":"search","reason":"← จากหน้า booking แถว X","at":"2026-11-03T03:22:21.544Z"}
+{"test":"TC-LOC-01","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:22:40.926Z"}
+{"test":"TC-LOC-02","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:23:03.431Z"}
+{"test":"TC-LOC-03","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:23:27.077Z"}
+{"test":"TC-BKG-01","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:43:18.392Z"}
+{"test":"TC-LOC-01","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:44:05.958Z"}
+{"test":"TC-LOC-01","kind":"search","reason":"เปลี่ยนสกุลเงิน THB → JPY","at":"2026-11-03T03:44:33.170Z"}
+{"test":"TC-LOC-01","kind":"search","reason":"รีเฟรชหน้าผลลัพธ์ (JPY)","at":"2026-11-03T03:45:06.289Z"}
+{"test":"TC-LOC-01","kind":"search","reason":"เปลี่ยนสกุลเงิน JPY → THB","at":"2026-11-03T03:45:33.668Z"}
+{"test":"TC-LOC-02","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:46:00.450Z"}
+{"test":"TC-LOC-02","kind":"search","reason":"เปลี่ยนสถานที่ตั้ง ไทย → ญี่ปุ่น","at":"2026-11-03T03:46:29.047Z"}
+{"test":"TC-LOC-02","kind":"search","reason":"เปลี่ยนภาษา ไทย → 日本語","at":"2026-11-03T03:47:03.381Z"}
+{"test":"TC-LOC-02","kind":"search","reason":"เปิด U1 เพื่อกลับค่าเดิม","at":"2026-11-03T03:47:34.338Z"}
+{"test":"TC-LOC-03","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:47:53.007Z"}
+{"test":"TC-LOC-03","kind":"search","reason":"เปลี่ยนภาษา ไทย → English (United States)","at":"2026-11-03T03:49:08.002Z"}
+{"test":"TC-LOC-03","kind":"search","reason":"เปลี่ยนภาษา English → 日本語","at":"2026-11-03T03:50:14.523Z"}
+{"test":"TC-LOC-03","kind":"search","reason":"เปลี่ยนสกุลเงินบนหน้าแรก THB → USD (การ์ดโหลดใหม่)","at":"2026-11-03T03:51:34.970Z"}
+{"test":"TC-FLT-03","kind":"search","reason":"เปิด U1 (TC-FLT-03 ขั้น 1)","at":"2026-11-03T03:52:02.093Z"}
+{"test":"TC-FLT-03","kind":"search","reason":"เอเอ็นเอ เท่านั้น (TC-FLT-03 ขั้น 2)","at":"2026-11-03T03:52:38.530Z"}
+{"test":"TC-FLT-03","kind":"search","reason":"ล้างสายการบินด้วย ✕ (TC-FLT-03 ขั้น 3)","at":"2026-11-03T03:52:58.140Z"}
+{"test":"TC-FLT-05","kind":"search","reason":"เปิด U1 (TC-FLT-05 ขั้น 1)","at":"2026-11-03T03:53:18.989Z"}
+{"test":"TC-FLT-05","kind":"search","reason":"ตั้งเวลาถึง 00:00–08:00 (TC-FLT-05 ขั้น 2)","at":"2026-11-03T03:53:50.918Z"}
+{"test":"TC-FLT-05","kind":"search","reason":"ตั้งเวลาออก 06:00–12:00 (TC-FLT-05 ขั้น 3)","at":"2026-11-03T03:54:30.062Z"}
+{"test":"TC-FLT-05","kind":"search","reason":"บินตรงเท่านั้น (TC-FLT-05 ขั้น 4)","at":"2026-11-03T03:54:54.490Z"}
+{"test":"TC-FLT-06","kind":"search","reason":"เปิด U1 (TC-FLT-06 ขั้น 1)","at":"2026-11-03T03:55:16.857Z"}
+{"test":"TC-FLT-06","kind":"search","reason":"ตั้งเวลาถึง 00:00–08:00 (TC-FLT-06 ขั้น 2)","at":"2026-11-03T03:56:11.161Z"}
+{"test":"TC-FLT-06","kind":"search","reason":"ไม่รวมสนามบินต่อเครื่อง HKG (TC-FLT-06 ขั้น 3)","at":"2026-11-03T03:56:33.921Z"}
+{"test":"TC-FLT-06","kind":"search","reason":"ตั้งระยะเวลา ← 1 ขั้น (TC-FLT-06 ขั้น 4)","at":"2026-11-03T03:57:01.730Z"}
+{"test":"TC-PRC-02","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:57:22.208Z"}
+{"test":"TC-PRC-02","kind":"search","reason":"กด \"ตกลง\" ในกราฟราคา → 17 ธ.ค.","at":"2026-11-03T03:58:57.260Z"}
+{"test":"TC-PRC-04","kind":"search","reason":"เปิด U1","at":"2026-11-03T03:59:40.345Z"}
+{"test":"TC-PRC-04","kind":"search","reason":"พิมพ์ \"31 ธ.ค. 2026\" + เสร็จ","at":"2026-11-03T04:00:15.355Z"}
+{"test":"TC-PRC-04","kind":"search","reason":"กด \"ตกลง\" ในตารางวันที่ → Dc 29 ธ.ค.","at":"2026-11-03T04:01:42.832Z"}

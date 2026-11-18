@@ -1,0 +1,24 @@
+ใช้ทีมเอเจนต์ใน container multi-account ทำความสะอาดข้อมูล ticket ของทีม Support งานของทีมทำใน container ผ่าน docker exec เท่านั้น (ใช้ได้เฉพาะ 3 บัญชีนี้เท่านั้นตลอดทุกขั้น: yolo1, yolo2 และ cyolo1 ห้ามเรียกบัญชีอื่นเด็ดขาด)
+เตรียมก่อนเริ่ม (ถ้า container multi-account กำลังรันอยู่แล้ว ข้ามไปได้ ห้ามลบ container / image / volume ที่มีอยู่)
+- ถ้าเครื่องนี้ไม่มีทั้ง image multi-account:1.0 และ tuchsanai/multi-account:1 ให้ docker pull tuchsanai/multi-account:1
+- ถ้ายังไม่มีชื่อ multi-account:1.0 ให้ docker tag tuchsanai/multi-account:1 multi-account:1.0
+- ถ้า container หยุดอยู่ให้ docker start ถ้ายังไม่มีให้ docker run -dit --name multi-account --privileged -p <PORT>:8888 -v ai-accounts:/root/ai-accounts -v <path เต็มของ ../03_MultiAccount_Container/workspace>:/workspace multi-account:1.0 (PORT เริ่มที่ 8886 ถ้าชนใช้เลขว่างถัดไป)
+- ถ้าใน container ยังไม่มี pandas ให้ติดตั้งด้วย pip install pandas
+- ถ้าไม่มีบัญชี Claude หรือ Codex ที่ล็อกอินเลย ให้หยุดและบอกวิธีล็อกอินใน JupyterLab Terminal ห้ามล็อกอินแทนผม
+ก่อนเริ่ม ดูว่าใน container มีสกิลที่ช่วยงานนี้ได้หรือไม่ (/root/ai-accounts/.Claude/shared/skills) ถ้ามีให้อ่านและใช้
+โฟลเดอร์งานใน container: /workspace/team-demo คัดลอก ./baseline/tickets.csv ไปไว้ที่ /workspace/team-demo/data
+
+โจทย์: tickets.csv มี ticket 1,000 ใบ คอลัมน์ id, received_at, order_id, channel, text ข้อมูลเดียวกันถูกเขียนมาหลายรูปแบบ มีเลขไทย การเว้นวรรคหลายแบบ และอักขระที่มองไม่เห็นปนอยู่ ต้องการโปรแกรม Python ที่แปลงให้เป็นรูปแบบเดียว
+- ใช้ได้เฉพาะ Python มาตรฐานและ pandas อ่านไฟล์ด้วย pandas.read_csv โค้ดห้ามเรียก AI และห้ามใช้เน็ต AI มีหน้าที่เขียนโค้ดเท่านั้น
+- โปรแกรมจะถูกตรวจกับ ticket ชุดใหม่ที่ไม่มีใครเห็น ค่าจะต่างจากชุดนี้ จึงห้ามใส่ id เลขออเดอร์ หรือรหัสของข้อมูลชุดนี้ลงในโค้ด
+
+ขั้นที่ 1 แบ่งงาน (fan-out): ให้ 3 บัญชีเขียนคนละไฟล์พร้อมกันใน /workspace/team-demo แต่ละไฟล์มีฟังก์ชันเดียว เจ้าของไฟล์ทดสอบกับ data/tickets.csv เองจนมั่นใจ
+- yolo1 เขียน clean_time.py ฟังก์ชัน clean_time(received_at) คืนเวลาไทย ปี ค.ศ. รูปแบบ YYYY-MM-DDTHH:MM ข้อมูลมี 3 รูปแบบ: ลงท้าย +07:00 คือเวลาไทย · ลงท้าย Z คือ UTC ต้องบวก 7 ชั่วโมง · วัน/เดือน/ปี พ.ศ. ชั่วโมง:นาที คือเวลาไทย
+- yolo2 เขียน clean_order.py ฟังก์ชัน clean_order(order_id, text) คืนเลขออเดอร์รูปแบบ ORD-ตามด้วยเลข 6 หลัก ข้อมูลเขียนมาหลายแบบ เช่น #312364, ord312364, ORD 312364, 312364 ถ้าคอลัมน์ order_id ว่าง เลขออเดอร์จะอยู่ในข้อความ ถ้าไม่มีเลยให้คืน None
+- cyolo1 เขียน clean_code.py ฟังก์ชัน clean_code(text) คืนรหัสข้อผิดพลาดในข้อความ รูปแบบ E ตามด้วยเลข 3 หลัก เช่น E402 ข้อมูลเขียนมาหลายแบบ เช่น E-402, e 402, ERR402, E๔๐๒, อี402 ถ้าไม่มีรหัสให้คืน None เลขพัสดุและเลขออเดอร์ไม่ใช่รหัสข้อผิดพลาด
+
+ขั้นที่ 2 รวมงาน (fan-in): เมื่อครบ 3 ไฟล์ ให้ yolo1 เขียน clean.py ที่เรียกใช้ทั้ง 3 ฟังก์ชัน
+- python3 clean.py <ไฟล์ csv> ต้องพิมพ์ JSON เป็น {id: {"time": ..., "order_id": ..., "error_code": ...}} ครบทุกใบ ค่าที่ไม่มีให้เป็น null
+- รันกับ data/tickets.csv ให้ผ่าน แล้วเขียน report.md สรุปจำนวน ticket ต่อวัน จำนวน ticket ของแต่ละรหัสข้อผิดพลาด และจำนวนใบที่คอลัมน์ order_id ว่าง
+
+ขั้นที่ 3 สรุป: ตาราง บัญชี | งาน | รุ่น | เวลา (วินาที) | input tokens | output tokens | สำเร็จ/ล้ม ตัวเลขต้องมาจากผลจริงของแต่ละบัญชี ห้ามประมาณ และบอกโควตาที่เหลือของแต่ละบัญชีพร้อมเวลาของข้อมูล บันทึกสรุปนี้เป็น /workspace/team-demo/run-summary.md ด้วย

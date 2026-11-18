@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/validation.ts",
+    "find": "  const re = /^0\\d{9}$/;",
+    "replace": "  const re = /^\\+?[\\d\\s-]+$/;"
+  }
+]

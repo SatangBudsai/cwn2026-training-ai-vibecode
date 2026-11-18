@@ -1,0 +1,144 @@
+# captured 2026-11-01 17:15:51 url=https://www.google.com/travel/flights/booking?tfs=CBwQAhpqEgoyMDI2LTExLTE1Ih8KA0RNSxIKMjAyNi0xMS0xNRoDVFBFKgJTTDIDMzk0Ih8KA1RQRRIKMjAyNi0xMS0xNRoDTlJUKgJTTDIDMzk0agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC&tfu=CnRDalJJTVZWcWNtMVJablV5UW05QlUyRmpXa0ZDUnkwdExTMHRMUzF6WlhSc01TMXVNa0ZCUVVGQlIzSnVSVlZqUldGbmVqUkJFZ3RUVERNNU5IeFRURE01TkJvS0NOTTdFQUFhQTFSSVFqZ2NjUEt3QVE9PRICCAAiAA&hl=th&gl=TH&curr=THB
+- banner:
+  - button "ย้อนกลับ":
+    - img
+  - link "Google":
+    - /url: /
+  - button "ข้ามไปที่เนื้อหาหลัก"
+  - button "ความคิดเห็นเกี่ยวกับการช่วยเหลือพิเศษ"
+  - button "เปลี่ยนธีมเว็บไซต์":
+    - img
+  - button "แอป Google"
+  - link "เข้าสู่ระบบ":
+    - /url: https://accounts.google.com/ServiceLogin?service=searchandassistant&passive=1209600&continue=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%2Fbooking%3Ftfs%3DCBwQAhpqEgoyMDI2LTExLTE1Ih8KA0RNSxIKMjAyNi0xMS0xNRoDVFBFKgJTTDIDMzk0Ih8KA1RQRRIKMjAyNi0xMS0xNRoDTlJUKgJTTDIDMzk0agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC%26tfu%3DCnRDalJJTVZWcWNtMVJablV5UW05QlUyRmpXa0ZDUnkwdExTMHRMUzF6WlhSc01TMXVNa0ZCUVVGQlIzSnVSVlZqUldGbmVqUkJFZ3RUVERNNU5IeFRURE01TkJvS0NOTTdFQUFhQTFSSVFqZ2NjUEt3QVE9PRICCAAiAA%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26utm_source%3Dsign_in_ogb&followup=https%3A%2F%2Fwww.google.com%2Ftravel%2Fflights%2Fbooking%3Ftfs%3DCBwQAhpqEgoyMDI2LTExLTE1Ih8KA0RNSxIKMjAyNi0xMS0xNRoDVFBFKgJTTDIDMzk0Ih8KA1RQRRIKMjAyNi0xMS0xNRoDTlJUKgJTTDIDMzk0agwIAhIIL20vMGZuMmdyDAgCEggvbS8wN2Rma0ABSAFwAYIBCwj___________8BmAEC%26tfu%3DCnRDalJJTVZWcWNtMVJablV5UW05QlUyRmpXa0ZDUnkwdExTMHRMUzF6WlhSc01TMXVNa0ZCUVVGQlIzSnVSVlZqUldGbmVqUkJFZ3RUVERNNU5IeFRURE01TkJvS0NOTTdFQUFhQTFSSVFqZ2NjUEt3QVE9PRICCAAiAA%26hl%3Dth%26gl%3DTH%26curr%3DTHB%26utm_source%3Dsign_in_ogb&hl=th&ec=GAZAlQM
+- main:
+  - heading "สรุปแผนการเดินทาง" [level=1]
+  - button "แชร์เที่ยวบินนี้":
+    - img
+    - text: แชร์
+  - text: กรุงเทพมหานคร โตเกียว เที่ยวเดียว·ชั้นประหยัด·
+  - button "ผู้โดยสาร 1 คน เปลี่ยนจำนวนผู้โดยสาร":
+    - img
+    - text: ผู้โดยสาร 1 คน
+    - img
+  - text: ฿7,635 ราคารวมที่ต่ำที่สุด
+  - heading "เที่ยวบินที่เลือก" [level=2]
+  - img
+  - heading "ติดตามราคา" [level=2]
+  - button "ดูข้อมูลเพิ่มเติมเกี่ยวกับราคาที่ติดตาม":
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับราคาที่ติดตาม":
+      - img
+  - switch "ติดตามราคาเที่ยวบินที่เลือก จาก กรุงเทพมหานคร ไป โตเกียว ออกเดินทางวันที่ 2026-11-15":
+    - img
+    - img
+  - list:
+    - listitem:
+      - text: อาทิตย์ 15 พ.ย. · 06:20 – 16:25 ไทยไลอ้อนแอร์ 8 ชม. 5 นาที หยุดพัก 1 ครั้ง 1 ชม. TPE
+      - 'button "ปริมาณการปล่อยก๊าซคาร์บอนโดยประมาณ: 363 กิโลกรัม. การปล่อยก๊าซโดยเฉลี่ย. ดูข้อมูลเพิ่มเติมเกี่ยวกับปริมาณการปล่อยก๊าซนี้"':
+        - img
+      - button "รายละเอียดเที่ยวบิน เที่ยวบินขาไปในวันวันอาทิตย์, พฤศจิกายน 15 ออกเดินทางจาก ท่าอากาศยานดอนเมือง เวลา 06:20 ในวันที่ วันอาทิตย์, พฤศจิกายน 15 และเดินทางถึง ท่าอากาศยานนานาชาตินะริตะ เวลา 16:25 ในวันที่ วันอาทิตย์, พฤศจิกายน 15":
+        - img
+  - heading "ตัวเลือกการจอง" [level=2]
+  - text: จองกับ ไทยไลอ้อนแอร์ สายการบิน ฿7,635
+  - button "ดำเนินการต่อเพื่อจองกับสายการบิน ไทยไลอ้อนแอร์ ในราคา 7635 บาทไทย": ดำเนินการต่อ
+  - text: ราคารวมภาษีที่ต้องจ่าย + ค่าธรรมเนียมสำหรับผู้ใหญ่ 1 ท่าน อาจมีการเรียกเก็บเงินเพิ่มเติมและ
+  - button "ค่าธรรมเนียมสัมภาระ"
+  - heading "ข้อมูลเชิงลึกด้านราคา" [level=3]
+  - heading "฿7,635 อยู่ในช่วงราคาปกติสำหรับชั้นประหยัด" [level=4]
+  - text: โดยปกติแล้ว ราคาขั้นต่ำของเที่ยวบินสำหรับทริปที่คล้ายคลึงกันซึ่งเดินทางสู่โตเกียวจะอยู่ระหว่าง ฿7,600–12,000
+  - button "ดูข้อมูลเพิ่มเติมเกี่ยวกับข้อมูลเชิงลึกด้านราคา":
+    - button "ดูข้อมูลเพิ่มเติมเกี่ยวกับข้อมูลเชิงลึกด้านราคา":
+      - img
+  - text: ฿7,635 อยู่ในช่วงราคา
+  - strong: ปกติ
+  - heading "ประวัติราคาสำหรับเที่ยวบินเหล่านี้" [level=4]
+  - application "กราฟประวัติราคา":
+    - img:
+      - button "60 วันที่ผ่านมา - ฿8,640"
+      - button "59 วันที่ผ่านมา - ฿8,640"
+      - button "58 วันที่ผ่านมา - ฿8,640"
+      - button "57 วันที่ผ่านมา - ฿8,640"
+      - button "56 วันที่ผ่านมา - ฿8,640"
+      - button "55 วันที่ผ่านมา - ฿8,640"
+      - button "54 วันที่ผ่านมา - ฿8,640"
+      - button "53 วันที่ผ่านมา - ฿8,645"
+      - button "52 วันที่ผ่านมา - ฿8,645"
+      - button "51 วันที่ผ่านมา - ฿8,645"
+      - button "50 วันที่ผ่านมา - ฿8,645"
+      - button "49 วันที่ผ่านมา - ฿8,645"
+      - button "48 วันที่ผ่านมา - ฿8,645"
+      - button "47 วันที่ผ่านมา - ฿8,645"
+      - button "46 วันที่ผ่านมา - ฿8,645"
+      - button "45 วันที่ผ่านมา - ฿8,645"
+      - button "44 วันที่ผ่านมา - ฿8,645"
+      - button "43 วันที่ผ่านมา - ฿9,640"
+      - button "42 วันที่ผ่านมา - ฿9,640"
+      - button "41 วันที่ผ่านมา - ฿9,640"
+      - button "40 วันที่ผ่านมา - ฿9,645"
+      - button "39 วันที่ผ่านมา - ฿9,650"
+      - button "38 วันที่ผ่านมา - ฿9,650"
+      - button "37 วันที่ผ่านมา - ฿9,650"
+      - button "36 วันที่ผ่านมา - ฿9,645"
+      - button "35 วันที่ผ่านมา - ฿9,645"
+      - button "34 วันที่ผ่านมา - ฿10,645"
+      - button "33 วันที่ผ่านมา - ฿10,655"
+      - button "32 วันที่ผ่านมา - ฿10,650"
+      - button "31 วันที่ผ่านมา - ฿9,650"
+      - button "30 วันที่ผ่านมา - ฿9,650"
+      - button "29 วันที่ผ่านมา - ฿9,645"
+      - button "28 วันที่ผ่านมา - ฿9,645"
+      - button "27 วันที่ผ่านมา - ฿9,645"
+      - button "26 วันที่ผ่านมา - ฿9,655"
+      - button "25 วันที่ผ่านมา - ฿9,655"
+      - button "24 วันที่ผ่านมา - ฿9,655"
+      - button "23 วันที่ผ่านมา - ฿9,655"
+      - button "22 วันที่ผ่านมา - ฿9,650"
+      - button "21 วันที่ผ่านมา - ฿9,650"
+      - button "20 วันที่ผ่านมา - ฿9,650"
+      - button "19 วันที่ผ่านมา - ฿8,650"
+      - button "18 วันที่ผ่านมา - ฿8,650"
+      - button "17 วันที่ผ่านมา - ฿8,645"
+      - button "16 วันที่ผ่านมา - ฿8,645"
+      - button "15 วันที่ผ่านมา - ฿9,640"
+      - button "14 วันที่ผ่านมา - ฿8,640"
+      - button "13 วันที่ผ่านมา - ฿8,640"
+      - button "12 วันที่ผ่านมา - ฿9,640"
+      - button "11 วันที่ผ่านมา - ฿8,635"
+      - button "10 วันที่ผ่านมา - ฿8,635"
+      - button "9 วันที่ผ่านมา - ฿8,640"
+      - button "8 วันที่ผ่านมา - ฿8,635"
+      - button "7 วันที่ผ่านมา - ฿8,635"
+      - button "6 วันที่ผ่านมา - ฿8,635"
+      - button "5 วันที่ผ่านมา - ฿8,635"
+      - button "4 วันที่ผ่านมา - ฿7,635"
+      - button "3 วันที่ผ่านมา - ฿7,640"
+      - button "2 วันที่ผ่านมา - ฿7,140"
+      - button "1 วันที่ผ่านมา - ฿7,135"
+      - button "วันนี้ - ฿7,635"
+- contentinfo:
+  - button "ภาษา·ไทย":
+    - img
+    - text: ภาษา·ไทย
+  - button "สถานที่ตั้ง·ไทย":
+    - img
+    - text: สถานที่ตั้ง·ไทย
+  - button "สกุลเงิน THB":
+    - img
+  - link "เกี่ยวกับ Google Travel":
+    - /url: https://about.google/?hl=th
+    - text: เกี่ยวกับ
+  - link "ความเป็นส่วนตัว":
+    - /url: https://policies.google.com/privacy?hl=th
+  - link "ข้อกำหนด":
+    - /url: https://policies.google.com/terms?hl=th
+  - link "ความคิดเห็น":
+    - /url: ./#0
+  - link "ศูนย์ช่วยเหลือ":
+    - /url: https://support.google.com/travel/?hl=th#topic=2475360
+  - paragraph:
+    - text: สกุลเงินที่แสดงอาจแตกต่างจากสกุลเงินที่ใช้ในการซื้อเที่ยวบิน
+    - link "ดูข้อมูลเพิ่มเติมเกี่ยวกับสกุลเงิน":
+      - /url: https://www.google.com/googlefinance/disclaimer?hl=th&gl=TH
+      - text: ดูข้อมูลเพิ่มเติม
+  - paragraph: ราคานี้เป็นราคาสุดท้ายซึ่งรวมภาษีและค่าธรรมเนียมทั้งหมดแล้ว โดยคิดรวมค่าธรรมเนียมการชำระเงินสำหรับวิธีการชำระเงินแบบทั่วไปที่ถูกที่สุด (ซึ่งอาจแตกต่างกันตามผู้ให้บริการ) ทั้งนี้ อาจมีการเรียกเก็บเงินเพิ่มเติมสำหรับการชำระเงินประเภทอื่นๆ ค่าสัมภาระ อาหาร WLAN หรือบริการเพิ่มเติมอื่นๆ ระบบจะแสดงรายละเอียดราคา ที่นั่งว่าง และการเดินทางโดยอิงตามข้อมูลล่าสุดที่ได้รับจากพาร์ทเนอร์ ข้อมูลดังกล่าวจะแสดงในผลการค้นหาภายในระยะเวลาไม่เกิน 24 ชั่วโมง และอาจมีเงื่อนไขเพิ่มเติมจากพาร์ทเนอร์ ดังนั้นโปรดตรวจสอบราคาและเงื่อนไขกับผู้ให้บริการก่อนทำการจอง
+- text: โหลดหน้านี้แล้ว

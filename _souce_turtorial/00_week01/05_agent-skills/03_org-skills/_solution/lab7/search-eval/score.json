@@ -1,0 +1,230 @@
+{
+ "seen": {
+  "A": {
+   "n": 60,
+   "hit1": 100,
+   "hit5": 100,
+   "miss": []
+  },
+  "B": {
+   "n": 60,
+   "hit1": 98.3,
+   "hit5": 100,
+   "miss": []
+  }
+ },
+ "heldout": {
+  "A": {
+   "n": 75,
+   "hit1": 66.7,
+   "hit5": 88,
+   "miss": [
+    {
+     "q": "รีวิว deal summary 3 ตัวสัปดาห์นี้ให้หน่อย จัด priority แล้วบอก go / no-go พร้อมเหตุผลสั้นๆ",
+     "expect": "exec:deal-approval",
+     "got": [
+      "mlops:mlflow-experiment",
+      "exec:pipeline-review",
+      "exec:tech-risk-review"
+     ]
+    },
+    {
+     "q": "คืนวันพฤหัสจะปล่อยเวอร์ชันใหม่ มีเปลี่ยนโครงสร้างฐานข้อมูลด้วย กลัวพลาดเหมือนรอบก่อน ช่วยไล่สิ่งที่ต้องเตรียมแล้วก็แผนถอยกลับให้หน่อย",
+     "expect": "devops:deploy-checklist",
+     "got": [
+      "mlops:model-release",
+      "product:product-sunset",
+      "hr:onboarding-pack"
+     ]
+    },
+    {
+     "q": "ช่วยทำ onboarding kit ให้ new hire หน่อย มี welcome email, first-week schedule แล้วก็ checklist เรื่อง account กับอุปกรณ์",
+     "expect": "hr:onboarding-pack",
+     "got": [
+      "core:skill-finder",
+      "mlops:model-release",
+      "sales:follow-up-email"
+     ]
+    },
+    {
+     "q": "แต่ละแผนกส่ง skill มาให้ทีมกลาง บางอันซ้ำกัน บางอันเขียนไม่ครบ ต้องตรวจให้ได้มาตรฐานก่อนปล่อยเวอร์ชันใหม่ปลายเดือน ช่วยวางขั้นตอนตรวจให้หน่อย",
+     "expect": "core:skill-finder",
+     "got": [
+      "dev:coding-standard",
+      "product:product-sunset",
+      "qa:bug-report"
+     ]
+    },
+    {
+     "q": "ทีม HR จะเก็บข้อมูลผู้สมัครงานใน Google Sheet ต้องทำตาม PDPA ยังไงบ้าง แล้วถ้าจะทำ email template ให้ตรง brand guideline ต้องใช้ font กับ color อะไร",
+     "expect": "core:customer-data-policy",
+     "got": [
+      "hr:jd-writer",
+      "sa:arch-template",
+      "product:product-sunset"
+     ]
+    },
+    {
+     "q": "สรุป feature request เดือนนี้ เรียงตามความสำคัญ",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:exec-deck",
+      "exec:cost-headcount-review",
+      "shared:meeting-minutes"
+     ]
+    },
+    {
+     "q": "ช่วย draft product roadmap Q1 ให้หน่อย แยกเป็น now/next/later พร้อม key milestones กับ success metrics ของแต่ละ initiative จะเอาไป present ให้ leadership สัปดาห์หน้า",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:pipeline-review",
+      "hr:onboarding-pack",
+      "dev:project-scaffold"
+     ]
+    },
+    {
+     "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+     "expect": "product:product-sunset",
+     "got": [
+      "core:customer-data-policy",
+      "qa:bug-report",
+      "exec:deal-approval"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "dev:project-scaffold",
+      "sa:arch-template"
+     ]
+    }
+   ]
+  },
+  "B": {
+   "n": 75,
+   "hit1": 60,
+   "hit5": 82.7,
+   "miss": [
+    {
+     "q": "เพิ่งคุยกับลูกค้าบริษัทประกันมา เขาอยากได้ระบบเคลมออนไลน์ งบประมาณราว 5 ล้าน ต้องส่งข้อเสนอภายในวันศุกร์ ช่วยร่างให้หน่อยได้ไหม",
+     "expect": "sales:sales-proposal",
+     "got": [
+      "core:customer-data-policy",
+      "shared:meeting-minutes",
+      "product:product-sunset"
+     ]
+    },
+    {
+     "q": "ได้ TOR ของหน่วยงานรัฐมา 40 หน้า เรื่องระบบลงทะเบียนออนไลน์ ต้องแตกเป็นรายการ requirement แล้วทำแผนทดสอบให้ QA ด้วย ช่วยเริ่มจากตรงไหนดี",
+     "expect": "sa:req-to-spec",
+     "got": [
+      "sa:arch-template",
+      "mlops:mlflow-experiment",
+      "qa:test-from-plan"
+     ]
+    },
+    {
+     "q": "รันเทสก่อน release",
+     "expect": "qa:test-from-plan",
+     "got": [
+      "mlops:mlflow-experiment",
+      "mlops:model-release",
+      "devops:deploy-checklist"
+     ]
+    },
+    {
+     "q": "คืนวันพฤหัสจะปล่อยเวอร์ชันใหม่ มีเปลี่ยนโครงสร้างฐานข้อมูลด้วย กลัวพลาดเหมือนรอบก่อน ช่วยไล่สิ่งที่ต้องเตรียมแล้วก็แผนถอยกลับให้หน่อย",
+     "expect": "devops:deploy-checklist",
+     "got": [
+      "mlops:mlflow-experiment",
+      "mlops:model-release",
+      "core:brand-guide"
+     ]
+    },
+    {
+     "q": "ช่วยทำ onboarding kit ให้ new hire หน่อย มี welcome email, first-week schedule แล้วก็ checklist เรื่อง account กับอุปกรณ์",
+     "expect": "hr:onboarding-pack",
+     "got": [
+      "mlops:model-release",
+      "core:skill-finder",
+      "sales:follow-up-email"
+     ]
+    },
+    {
+     "q": "รวม skill ทุกแผนกแล้วออกเวอร์ชันใหม่",
+     "expect": "core:skill-finder",
+     "got": [
+      "product:product-sunset",
+      "core:brand-guide",
+      "hr:onboarding-pack"
+     ]
+    },
+    {
+     "q": "แต่ละแผนกส่ง skill มาให้ทีมกลาง บางอันซ้ำกัน บางอันเขียนไม่ครบ ต้องตรวจให้ได้มาตรฐานก่อนปล่อยเวอร์ชันใหม่ปลายเดือน ช่วยวางขั้นตอนตรวจให้หน่อย",
+     "expect": "core:skill-finder",
+     "got": [
+      "hr:onboarding-pack",
+      "dev:coding-standard",
+      "product:product-sunset"
+     ]
+    },
+    {
+     "q": "ทีม HR จะเก็บข้อมูลผู้สมัครงานใน Google Sheet ต้องทำตาม PDPA ยังไงบ้าง แล้วถ้าจะทำ email template ให้ตรง brand guideline ต้องใช้ font กับ color อะไร",
+     "expect": "core:customer-data-policy",
+     "got": [
+      "hr:jd-writer",
+      "exec:tech-risk-review",
+      "devops:deploy-checklist"
+     ]
+    },
+    {
+     "q": "ใกล้ปิดงบสิ้นเดือนแล้ว ฝ่ายบัญชียังตามเอกสารเบิกค่าใช้จ่ายของหลายทีมไม่ครบ แล้วพรุ่งนี้เช้าพี่ต้องรายงาน CEO ด้วย ช่วยดูหน่อยว่ายังค้างรายการไหน ทีมอะไรบ้าง ยอดรวมเท่าไหร่ แล้วร่างข้อความตามงานให้แต่ละทีมด้วย",
+     "expect": "exec:cost-headcount-review",
+     "got": [
+      "core:customer-data-policy",
+      "finance:pricing-calc",
+      "exec:tech-risk-review"
+     ]
+    },
+    {
+     "q": "สรุป feature request เดือนนี้ เรียงตามความสำคัญ",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:exec-deck",
+      "exec:cost-headcount-review",
+      "shared:meeting-minutes"
+     ]
+    },
+    {
+     "q": "ช่วย draft product roadmap Q1 ให้หน่อย แยกเป็น now/next/later พร้อม key milestones กับ success metrics ของแต่ละ initiative จะเอาไป present ให้ leadership สัปดาห์หน้า",
+     "expect": "product:prd-writer",
+     "got": [
+      "exec:pipeline-review",
+      "hr:onboarding-pack",
+      "mlops:mlflow-experiment"
+     ]
+    },
+    {
+     "q": "ตอนนี้ฟีเจอร์รายงานอัตโนมัติใกล้ถึงกำหนดปล่อยแล้ว แต่ทีม dev แจ้งว่าน่าจะช้าไปอีกสองสัปดาห์ ส่วนฝ่ายขายก็รับปากลูกค้าไว้แล้ว ช่วยดูให้หน่อยว่าควรตัดอะไรออกจากรอบนี้ได้บ้าง แล้วร่างข้อความแจ้งทุกทีมให้ด้วย",
+     "expect": "product:product-sunset",
+     "got": [
+      "exec:pipeline-review",
+      "core:customer-data-policy",
+      "devops:deploy-checklist"
+     ]
+    },
+    {
+     "q": "ช่วยร่าง PRD สำหรับ feature ใหม่ให้หน่อย ขอมี user story, acceptance criteria แล้วก็ success metrics ครบๆ จะเอาไป review กับทีมพรุ่งนี้ แล้วช่วย prioritize backlog ของ Q1 ด้วย RICE score",
+     "expect": "product:product-sunset",
+     "got": [
+      "product:prd-writer",
+      "hr:jd-writer",
+      "dev:project-scaffold"
+     ]
+    }
+   ]
+  }
+ }
+}

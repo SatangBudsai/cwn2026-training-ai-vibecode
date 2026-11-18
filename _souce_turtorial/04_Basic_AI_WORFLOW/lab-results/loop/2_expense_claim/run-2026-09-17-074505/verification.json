@@ -1,0 +1,78 @@
+{
+  "timestamp_utc": "2026-09-17T07:56:05.121902+00:00",
+  "mermaid": [
+    {
+      "index": 1,
+      "rendered": true,
+      "svg": "diagram-1.svg",
+      "png": "diagram-1.png"
+    },
+    {
+      "index": 2,
+      "rendered": true,
+      "svg": "diagram-2.svg",
+      "png": "diagram-2.png"
+    },
+    {
+      "index": 3,
+      "rendered": true,
+      "svg": "diagram-3.svg",
+      "png": "diagram-3.png"
+    },
+    {
+      "index": 4,
+      "rendered": true,
+      "svg": "diagram-4.svg",
+      "png": "diagram-4.png"
+    }
+  ],
+  "all_diagrams_rendered": true,
+  "mockup": {
+    "sections": {
+      "submit": true,
+      "tracking": true,
+      "review": true
+    },
+    "console_page_errors": [],
+    "labelled_simulated": true,
+    "unconfirmed_policy_visible": true
+  },
+  "source_coverage": {
+    "S01": true,
+    "S02": true,
+    "S03": true,
+    "S04": true,
+    "S05": true,
+    "S06": true,
+    "S07": true,
+    "S08": true,
+    "S09": true,
+    "S10": true
+  },
+  "referenced_attributes": {
+    "Claim.status": true,
+    "Claim.current_owner": true,
+    "Receipt.image_ref": true,
+    "Receipt.receipt_date": true,
+    "Receipt.duplicate_review": true,
+    "Approval.decision": true,
+    "Payment.scheduled_date": true,
+    "Payment.result": true
+  },
+  "state_owners": [
+    "ร่าง / พนักงาน",
+    "รอหัวหน้า / หัวหน้าทีม",
+    "รอยืนยันนโยบาย / หัวหน้าทีม",
+    "รอผู้จัดการ / ผู้จัดการฝ่าย",
+    "รอบัญชีตรวจ / ฝ่ายบัญชี",
+    "รอจ่าย / ฝ่ายบัญชี",
+    "จ่ายแล้ว / ฝ่ายบัญชี",
+    "คืนแก้ / พนักงาน"
+  ],
+  "critic_criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS"
+  },
+  "semantic_review": "Codex CRITIC compared sources, policies, state owners, diagrams and mockup; not an independent model review"
+}

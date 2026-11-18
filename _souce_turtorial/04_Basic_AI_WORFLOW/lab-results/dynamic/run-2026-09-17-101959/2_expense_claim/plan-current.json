@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "replans": 1,
+  "tasks": {
+    "T1": {
+      "description": "สกัดข้อกำหนดจากบทสัมภาษณ์",
+      "dependencies": [],
+      "status": "DONE"
+    },
+    "T2": {
+      "description": "สร้าง Use Case/Sequence/State",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T3": {
+      "description": "สร้าง ERD",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T4": {
+      "description": "สร้าง Mockup สามส่วนและตาราง Pain Point",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    },
+    "T5": {
+      "description": "รวมเอกสารและตรวจ C1–C3",
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4",
+        "T1b"
+      ],
+      "status": "DONE"
+    },
+    "T1b": {
+      "description": "เก็บข้อขัดแย้ง 5,000/10,000 และวงเงินที่พักที่ยังไม่ระบุ",
+      "dependencies": [
+        "T1"
+      ],
+      "status": "DONE"
+    }
+  },
+  "reason": "พบกติกาส่งอนุมัติสองค่าที่ไม่ตรงกัน และ Plan v1 ยังไม่มีงานจัดการข้อขัดแย้ง",
+  "changes": "เพิ่ม T1b และให้ T5 รอ T1b ก่อนตรวจรับ",
+  "impact": [
+    "Open Issues",
+    "Mockup ต้องแสดงรอยืนยันนโยบาย",
+    "T5"
+  ],
+  "reuse": [
+    "T1 ข้อกำหนดและหลักฐานสัมภาษณ์"
+  ]
+}

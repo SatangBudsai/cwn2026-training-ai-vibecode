@@ -1,0 +1,79 @@
+{
+  "id": "TC-GROUP-01",
+  "title": "TC-GROUP-01 สมาชิกจองคู่ใน Couple Suite ไม่มีส่วนลดคู่ และผู้จองรับแต้มกับยอดสะสมของทั้งการจอง",
+  "project": "chromium",
+  "file": "5.2-group.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.2"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "รอบ A: ฿3,600 (฿2,000 × 2 = ฿4,000 − 10% ระดับ ฿400 = ฿3,600) · ไม่มีบรรทัดส่วนลดคู่ · หลังร้านแสดงห้อง Couple Suite เวลา 18:00–19:30 และนักบำบัด 2 คนจาก T01, T05, T03\nรอบ B: ฿1,600 (฿1,000 × 2 = ฿2,000 − 20% ฿400 = ฿1,600) (ถ้าลดคนเดียวจะได้ ฿1,800)\nหลังกดเสร็จรอบ B: U02 แต้ม 0 + (฿1,600 ÷ 100 = 16) = 16 แต้ม · ยอด ฿30,000 + ฿1,600 = ฿31,600 (ถ้าแบ่งครึ่งจะได้ 8 แต้ม และ ฿30,800) · รอบ A ที่ยังไม่เสร็จไม่เพิ่มแต้มหรือยอด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 224,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.12 · [R] ⚠️A-11",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 224,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-14, FR-15, FR-17, FR-31, BR-06, BR-08",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 224,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R10, R13",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 224,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Boundary, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 224,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.2-group.spec.ts",
+        "line": 224,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 33453,
+  "at": "2026-11-06T02:16:40.721Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เข้าระบบ U02 เลือก S04 2 คน 19 มิ.ย. รอบ 18:00",
+    "2. ดูสรุปราคา ยืนยันการจอง แล้วรีโหลดหน้า",
+    "3. เข้าหลังร้านดูการจองนี้",
+    "4. ทำรอบ B ด้วยบัญชี U02",
+    "5. เจ้าของกดเสร็จเฉพาะการจองรอบ B",
+    "6. ดูแต้มและยอดสะสมของ U02 แล้วรีโหลด"
+  ]
+}

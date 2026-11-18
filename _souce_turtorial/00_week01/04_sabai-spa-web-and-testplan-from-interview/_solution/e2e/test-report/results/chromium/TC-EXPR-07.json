@@ -1,0 +1,89 @@
+{
+  "id": "TC-EXPR-07",
+  "title": "TC-EXPR-07 ภาพจำลองก่อนและหลังยังไม่เปิดใช้ที่ /th/skin",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ทุกขั้น: ภาพจำลองก่อน/หลัง 0 ภาพ · ข้อความ \"ภาพจำลอง ผลจริงอาจต่างกัน\" 0 จุด\n(ถ้าฟีเจอร์เปิดอยู่จะเห็นภาพก่อน/หลังทันทีตั้งแต่ขั้น 1 ตามที่พบใน R112)\nการวิเคราะห์ผิวยังใช้งานได้ตาม TC-EXPR-06 ข้อนี้ตรวจเฉพาะภาพจำลอง",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 722,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-23 · F-ร้าน 19 · F-สร้าง 23",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 722,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-76",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 722,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R112",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 722,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Negative, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 722,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 722,
+        "column": 3
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 79440,
+  "at": "2026-11-06T02:55:13.082Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview') with timeout 6000ms\n  - waiting for getByTestId('skin-preview')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview-before')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview-before') with timeout 6000ms\n  - waiting for getByTestId('skin-preview-before')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview-after')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview-after') with timeout 6000ms\n  - waiting for getByTestId('skin-preview-after')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByText('ภาพจำลอง ผลจริงอาจต่างกัน')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByText('ภาพจำลอง ผลจริงอาจต่างกัน') with timeout 6000ms\n  - waiting for getByText('ภาพจำลอง ผลจริงอาจต่างกัน')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview') with timeout 6000ms\n  - waiting for getByTestId('skin-preview')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview-before')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview-before') with timeout 6000ms\n  - waiting for getByTestId('skin-preview-before')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview-after')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview-after') with timeout 6000ms\n  - waiting for getByTestId('skin-preview-after')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByText('ภาพจำลอง ผลจริงอาจต่างกัน')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByText('ภาพจำลอง ผลจริงอาจต่างกัน') with timeout 6000ms\n  - waiting for getByText('ภาพจำลอง ผลจริงอาจต่างกัน')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview') with timeout 6000ms\n  - waiting for getByTestId('skin-preview')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview-before')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview-before') with timeout 6000ms\n  - waiting for getByTestId('skin-preview-before')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('skin-preview-after')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByTestId('skin-preview-after') with timeout 6000ms\n  - waiting for getByTestId('skin-preview-after')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n",
+    "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByText('ภาพจำลอง ผลจริงอาจต่างกัน')\nExpected: 0\nReceived: 1\nTimeout:  6000ms\n\nCall log:\n  - Expect \"soft toHaveCount\" getByText('ภาพจำลอง ผลจริงอาจต่างกัน') with timeout 6000ms\n  - waiting for getByText('ภาพจำลอง ผลจริงอาจต่างกัน')\n    16 × locator resolved to 1 element\n       - unexpected value \"1\"\n"
+  ],
+  "steps": [
+    "1. เปิด /th/skin ยังไม่เลือกรูป นับภาพก่อน/หลังและค้นข้อความกำกับ ✗",
+    "2. กดปุ่มรูปตัวอย่าง แล้วนับอีกครั้ง ✗",
+    "3. รีโหลดแล้วนับอีกครั้ง ✗"
+  ]
+}

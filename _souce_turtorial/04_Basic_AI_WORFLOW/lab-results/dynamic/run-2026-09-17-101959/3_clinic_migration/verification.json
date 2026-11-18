@@ -1,0 +1,86 @@
+{
+  "timestamp_utc": "2026-09-17T10:21:27.691499+00:00",
+  "phase": "phase2",
+  "diagrams": [
+    {
+      "index": 1,
+      "rendered": true
+    },
+    {
+      "index": 2,
+      "rendered": true
+    },
+    {
+      "index": 3,
+      "rendered": true
+    },
+    {
+      "index": 4,
+      "rendered": true
+    },
+    {
+      "index": 5,
+      "rendered": true
+    }
+  ],
+  "mockup": {
+    "1440": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "consent": true,
+        "line-booking": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "all_source_rows": true,
+        "review_rows": true,
+        "no_auto_merge": true,
+        "consent_not_prechecked": true,
+        "line_simulated": true
+      },
+      "console_page_errors": []
+    },
+    "390": {
+      "checks": {
+        "appointments": true,
+        "booking": true,
+        "review": true,
+        "consent": true,
+        "line-booking": true,
+        "simulated_label": true,
+        "no_page_overflow": true,
+        "no_errors": true,
+        "all_source_rows": true,
+        "review_rows": true,
+        "no_auto_merge": true,
+        "consent_not_prechecked": true,
+        "line_simulated": true
+      },
+      "console_page_errors": []
+    }
+  },
+  "automated_scope": "rendering, DOM visibility, selected source/contract checks; semantic review is separate",
+  "weekday_evidence": {
+    "2026-03-09": "Monday",
+    "2026-09-03": "Thursday"
+  },
+  "phone_normalization": {
+    "081-234-5678": "0812345678",
+    "0812345678": "0812345678",
+    "081 234 5678": "0812345678"
+  },
+  "findings_rows": 9,
+  "automated_pass": true,
+  "sha256": {
+    "output.md": "97fcbaa1e7996c472bdee6c708998ede2e72eef47eca44efaf126620fed998ed",
+    "mockup.html": "e7e85d35cf84cc1f520cf43d899e21c00e111fcadca4bd842e01fb7741677cb5"
+  },
+  "criteria": {
+    "C1": "PASS",
+    "C2": "PASS",
+    "C3": "PASS"
+  },
+  "semantic_review": "tasks/T5-v2-review.md"
+}

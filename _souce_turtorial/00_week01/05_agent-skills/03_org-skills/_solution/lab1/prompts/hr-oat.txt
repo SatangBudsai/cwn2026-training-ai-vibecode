@@ -1,0 +1,9 @@
+ฉันคือ โอ๊ต สุขสวัสดิ์ (hr-oat) HR ฝ่าย HR · นี่คือโต๊ะของฉัน (novatech/desks/hr-oat/)
+อ่านการ์ดของฉันก่อน: ../../people/hr/hr-oat.md
+1. ลงมือทำงานจริง 1 ชิ้น: เตรียมชุดต้อนรับ Dev คนใหม่ที่จะเข้างานวันจันทร์ 9 พ.ย. 2026
+   ข้อมูลที่ใช้: ../../company-kit/onboarding-notes.md, ../../company-kit/hr-benefits-faq.md
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ onboarding-pack ที่ .claude/skills/onboarding-pack/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: hr-oat, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

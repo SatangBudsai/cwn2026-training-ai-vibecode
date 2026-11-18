@@ -1,0 +1,198 @@
+[
+  {
+    "rule": "R34",
+    "exploration": "❌",
+    "test": "TC-PRICE-05",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด: เหตุเท็จ \"ส่วนลดอื่นมากกว่า\" และแลกสูงสุดค้าง 16 ชุด"
+  },
+  {
+    "rule": "R56",
+    "exploration": "❌",
+    "test": "TC-BOOK-10",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด: กดยืนยันหลังออกจากระบบ ช่องกรอก 0 ช่อง"
+  },
+  {
+    "rule": "R112",
+    "exploration": "❌",
+    "test": "TC-EXPR-07",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด: skin-preview แสดงทุกขั้น"
+  },
+  {
+    "rule": "R02, R05",
+    "exploration": "⚠️",
+    "test": "TC-BOOK-04",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R08",
+    "exploration": "⚠️",
+    "test": "TC-BOOK-08",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด ทั้ง 3 รอบได้ 4 จาก 6"
+  },
+  {
+    "rule": "R11",
+    "exploration": "⚠️",
+    "test": "TC-GROUP-02",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R16, R91",
+    "exploration": "⚠️",
+    "test": "TC-GROUP-10",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R31",
+    "exploration": "⚠️",
+    "test": "TC-PRICE-03",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R35",
+    "exploration": "⚠️",
+    "test": "TC-PRICE-04",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R45",
+    "exploration": "⚠️",
+    "test": "TC-PRICE-06",
+    "result": "ล้ม",
+    "note": "ส่วน P01 ไม่มีตัวเลือกตรงแผน · ที่ล้มคือติ๊กได้เมื่อเดือนไม่ตรง"
+  },
+  {
+    "rule": "R53",
+    "exploration": "⚠️",
+    "test": "TC-GIFT-07",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R52",
+    "exploration": "⚠️",
+    "test": "TC-GIFT-07",
+    "result": "ล้ม",
+    "note": "พิมพ์เล็กไม่ถูกรับเหมือนตอนสำรวจ เก็บเป็นรอคำตอบ F-ร้าน 7 ตามแผน"
+  },
+  {
+    "rule": "R54, R55",
+    "exploration": "⚠️",
+    "test": "TC-PRICE-10",
+    "result": "ล้ม",
+    "note": "R55 ล้มตรงจุด · R54 กรณีไม่ส่ง expectedPayAtShop แผนไม่ตรวจ"
+  },
+  {
+    "rule": "R57",
+    "exploration": "⚠️",
+    "test": "TC-BOOK-10",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R60",
+    "exploration": "⚠️",
+    "test": "TC-RIDE-07",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R62, R68",
+    "exploration": "⚠️",
+    "test": "TC-RIDE-09",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R65",
+    "exploration": "⚠️",
+    "test": "TC-RIDE-06",
+    "result": "ล้ม",
+    "note": "รอบแรกผ่านหลอกเพราะ regex ยอมรับคำว่า ทศนิยม/ติดลบ แก้ test ให้ตรงแผนแล้วล้มตรงจุด"
+  },
+  {
+    "rule": "R67",
+    "exploration": "⚠️",
+    "test": "TC-RIDE-08",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R70",
+    "exploration": "⚠️",
+    "test": "TC-RIDE-10",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R74",
+    "exploration": "⚠️",
+    "test": "TC-GIFT-09",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R81",
+    "exploration": "⚠️",
+    "test": "TC-COURSE-08",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R82",
+    "exploration": "⚠️",
+    "test": "TC-COURSE-05",
+    "result": "ผ่าน",
+    "note": "ผ่านจริง: แผนไม่นับถ้อยคำเป็นข้อล้มจนกว่า F-ร้าน 14 จะตอบ เก็บข้อความจริงไว้แล้ว"
+  },
+  {
+    "rule": "R97",
+    "exploration": "⚠️",
+    "test": "TC-ACCT-06",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R105",
+    "exploration": "⚠️",
+    "test": "TC-EXPR-04",
+    "result": "ล้ม",
+    "note": "จุดนี้ไม่ซ้ำกับตอนสำรวจ: 12345 และ ??? ตอบไทยทั้งบนจอและ API ทั้งมีและไม่มี x-locale · ข้อนี้ล้มจากเรื่อง ฿ อย่างเดียว"
+  },
+  {
+    "rule": "R107, R108",
+    "exploration": "⚠️",
+    "test": "TC-EXPR-05",
+    "result": "ล้ม",
+    "note": "ล้มตรงจุด"
+  },
+  {
+    "rule": "R111",
+    "exploration": "⚠️",
+    "test": "TC-EXPR-06",
+    "result": "ผ่าน",
+    "note": "ผ่านจริง: ตรวจผลและข้อความกำกับ ไม่ตรวจขอบตารางตามแผน"
+  },
+  {
+    "rule": "R114",
+    "exploration": "⚠️",
+    "test": "TC-EXPR-09",
+    "result": "ผ่าน",
+    "note": "ผ่านจริง: ตอนสำรวจเป็น ⚠️ เพราะลองไม่ครบ รอบนี้วัดครบ 3 ภาษาไม่ล้น"
+  },
+  {
+    "rule": "R115",
+    "exploration": "⚠️",
+    "test": "TC-ACCT-09",
+    "result": "ผ่าน",
+    "note": "ผ่านจริง: ⚠️ เดิมคือยังไม่ได้ให้คนเปิดดูรูป ซึ่งอยู่นอกขอบเขต"
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "id": "TC-COURSE-01",
+  "title": "TC-COURSE-01 จองด้วยคอร์สแล้วกันครั้งทันที และยกเลิกทันเวลาแล้วคืนครั้ง",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: \"เหลือ 7 ครั้ง จาก 11 ครั้ง\" (11 − 4 − 0 = 7) · หมดอายุ 13 ก.ย. 2026\nขั้น 2: ยอดจ่าย ฿0\nขั้น 3: \"เหลือ 6 ครั้ง จาก 11 ครั้ง\" ทั้งทันทีและหลังรีโหลด (11 − 4 − 1 = 6) (ถ้าตัดตอนกดเสร็จเท่านั้นจะยังเห็น 7)\nขั้น 5: \"เหลือ 7 ครั้ง จาก 11 ครั้ง\" ทั้งทันทีและหลังรีโหลด (ถ้าไม่คืนจะค้าง 6)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 222,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 คอร์ส · [D] §5 จำนวนครั้ง · [D][R] E193, E194",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 222,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-38, FR-41",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 222,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R79, R83",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 222,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 222,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 222,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 22717,
+  "at": "2026-11-06T02:50:19.984Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิด Wallet ผ่าน header-wallet อ่านคอร์ส",
+    "2. กดจองจากคอร์ส เลือก 17 มิ.ย. 12:00 T01 แล้วยืนยัน",
+    "3. เปิด Wallet ทันที แล้วรีโหลด",
+    "4. ยกเลิกนัดนี้",
+    "5. เปิด Wallet ทันที แล้วรีโหลด"
+  ]
+}

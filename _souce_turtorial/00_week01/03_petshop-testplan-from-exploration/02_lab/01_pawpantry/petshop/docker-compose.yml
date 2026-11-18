@@ -1,0 +1,11 @@
+services:
+  petshop:
+    build: .
+    image: pawpantry:latest
+    container_name: petshop
+    ports:
+      - "3000:3000"
+    environment:
+      ALLOW_TEST_RESET: "1"
+      BUG_MODE: ${BUG_MODE:-0}
+    restart: unless-stopped

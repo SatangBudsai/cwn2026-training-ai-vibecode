@@ -1,0 +1,15 @@
+{
+  "deal": "deal-001",
+  "note": "ฉบับหลัก MA-STD ตาม proposal ร่าง 0.2 · qty เป็น man-day รวม buffer 10% แล้ว (ตามหัวข้อ 7) · team 9 คน (หัวข้อ 5) · 122 วันทำงาน 4 ม.ค.–2 ก.ค. 2027 หักวันหยุดราชการ",
+  "lines": [
+    {"code": "MD-SA", "qty": 18}, {"code": "MD-PM", "qty": 40}, {"code": "MD-DEV-SR", "qty": 53},
+    {"code": "MD-DEV", "qty": 94}, {"code": "MD-UX", "qty": 11}, {"code": "MD-QA", "qty": 40},
+    {"code": "MD-DEVOPS", "qty": 16}, {"code": "MD-ML", "qty": 31},
+    {"code": "CL-M", "qty": 12}, {"code": "LIC-WAF", "qty": 12}, {"code": "MA-STD", "qty": 1}
+  ],
+  "external": [],
+  "discount": 300000,
+  "claimed": {"price": 4780000, "cost": 3271000},
+  "team_size": 9, "working_days": 122,
+  "buffer_included": true
+}

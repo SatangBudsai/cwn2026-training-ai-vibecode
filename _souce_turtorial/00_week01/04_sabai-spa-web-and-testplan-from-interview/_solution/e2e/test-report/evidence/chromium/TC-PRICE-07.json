@@ -1,0 +1,136 @@
+{
+  "id": "TC-PRICE-07",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ตัวเลือกกดได้และยังไม่ถูกเลือก",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-07/001.jpg",
+      "actor": "main",
+      "t": 5027
+    },
+    {
+      "n": 2,
+      "label": "ขั้น 1 ฿1,000 − 10% = ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-07/002.jpg",
+      "actor": "main",
+      "t": 6741
+    },
+    {
+      "n": 3,
+      "label": "นัด 20 มิ.ย. ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"8S33H9RZ\"}",
+      "shot": "shots/chromium/TC-PRICE-07/003.jpg",
+      "actor": "main",
+      "t": 8143
+    },
+    {
+      "n": 4,
+      "label": "ขั้น 2 ยังใช้สิทธิ์ได้",
+      "pass": true,
+      "actual": "",
+      "shot": "shots/chromium/TC-PRICE-07/004.jpg",
+      "actor": "main",
+      "t": 12987
+    },
+    {
+      "n": 5,
+      "label": "ขั้น 2 ฿1,000 − 20% (฿200) = ฿800",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-07/005.jpg",
+      "actor": "main",
+      "t": 14688
+    },
+    {
+      "n": 6,
+      "label": "นัด 17 มิ.ย. ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"NXP74H46\"}",
+      "shot": "shots/chromium/TC-PRICE-07/006.jpg",
+      "actor": "main",
+      "t": 16055
+    },
+    {
+      "n": 7,
+      "label": "ขั้น 3 ใช้ครั้งที่ 2 ไม่ได้ ฿1,000 − 10% = ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-07/007.jpg",
+      "actor": "main",
+      "t": 21627
+    },
+    {
+      "n": 8,
+      "label": "มีปุ่มยกเลิกนัด 17 มิ.ย.",
+      "pass": true,
+      "actual": "true",
+      "shot": "shots/chromium/TC-PRICE-07/008.jpg",
+      "actor": "main",
+      "t": 24359
+    },
+    {
+      "n": 9,
+      "label": "ยกเลิกนัด 17 มิ.ย. สำเร็จ",
+      "pass": true,
+      "actual": "ยกเลิกนัด NXP74H46 แล้ว · คืนสิทธิ์เดือนเกิด",
+      "shot": "shots/chromium/TC-PRICE-07/009.jpg",
+      "actor": "main",
+      "t": 25469
+    },
+    {
+      "n": 10,
+      "label": "ขั้น 5 สิทธิ์คืนแล้ว ฿1,000 − 20% = ฿800",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-07/010.jpg",
+      "actor": "main",
+      "t": 31034
+    },
+    {
+      "n": 11,
+      "label": "นัด 29 มิ.ย. ยืนยันสำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"ND8UXXUS\"}",
+      "shot": "shots/chromium/TC-PRICE-07/011.jpg",
+      "actor": "main",
+      "t": 32439
+    },
+    {
+      "n": 12,
+      "label": "นัด 29 มิ.ย. ฿800 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿800",
+      "shot": "shots/chromium/TC-PRICE-07/012.jpg",
+      "actor": "main",
+      "t": 34057
+    },
+    {
+      "n": 13,
+      "label": "นัด 20 มิ.ย. ยัง ฿900 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿900",
+      "shot": "shots/chromium/TC-PRICE-07/013.jpg",
+      "actor": "main",
+      "t": 35616
+    },
+    {
+      "n": 14,
+      "label": "ขั้น 6 U05 ได้ระดับ ฿1,000 − 5% = ฿950 ไม่ใช่ ฿800",
+      "pass": true,
+      "actual": "จ่ายหน้าร้าน ฿950",
+      "shot": "shots/chromium/TC-PRICE-07/014.jpg",
+      "actor": "main",
+      "t": 42753
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-PRICE-07/main.webm"
+    }
+  }
+}

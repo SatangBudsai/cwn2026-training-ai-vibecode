@@ -1,0 +1,9 @@
+[{"name":"lab6-pr5","admin":true,"steps":[
+  {"goto":"/novatech/org-skills/pulls/5","hold":2500},{"scroll":2000,"hold":3000,"shot":"lab6-pr5-checks"},
+  {"goto":"/novatech/org-skills/actions/runs/10/jobs/2","hold":5000,"shot":"lab6-pr5-security"}]},
+ {"name":"lab6-pr8","admin":true,"steps":[
+  {"goto":"/novatech/org-skills/actions/runs/16/jobs/1","hold":5000,"shot":"lab6-pr8-headers"}]},
+ {"name":"lab6-pr6","admin":true,"video":false,"steps":[
+  {"goto":"/novatech/org-skills/actions/runs/12/jobs/1","hold":4000,"shot":"lab6-pr6-headers"},
+  {"goto":"/novatech/org-skills/actions","hold":2500,"shot":"lab6-actions"},
+  {"goto":"/novatech/org-skills/releases","hold":2500,"shot":"lab6-releases"}]}]

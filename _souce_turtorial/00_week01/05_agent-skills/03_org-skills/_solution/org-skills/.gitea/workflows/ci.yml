@@ -1,0 +1,222 @@
+# CI ของคลัง org-skills — ทุก PR เข้า main ต้องผ่านด่านเหล่านี้ (กฎตายตัว ไม่ใช้ AI ไม่มี secret)
+#   ci / 1-structure : claude plugin validate --strict (marketplace + ทุก plugin) + build.py --check
+#   ci / 2-headers   : check_headers.py — owner/layer/version ครบ, uses/next/follows ชี้ skill ที่มีจริง, owner มีบัญชี, แก้ skill ต้องเพิ่ม version
+#   ci / 3-security  : security_scan.py — ส่งข้อมูลออกนอกบริษัท, อ่านไฟล์ env/token, prompt injection
+#   ci / 4-review    : merge_gate.py --ci — CODEOWNER ของทุก path approve แล้ว + skill-eval มาจากผู้รีวิวตัวจริง + ด่าน 1–3 เป็น task จริง
+#                      (fail จนกว่าจะได้ approve + skill-eval แล้วกด Re-run job นี้ — Gitea 1.24 ไม่รันใหม่ให้เองเมื่อมีรีวิว)
+# skill-eval (ด่าน eval) ไม่อยู่ใน CI — ผู้รีวิวรัน scripts/skill_eval.py จาก main บนเครื่องตัวเอง
+#
+# ทำไม pull_request_target: Gitea อ่าน workflow นี้จาก main ไม่ใช่จาก PR → PR แก้ ci.yml เพื่อข้ามด่านไม่ได้
+#   และสคริปต์ตรวจ + allowlist ก็ดึงจาก main (/tmp/gate/scripts) แล้วใช้ตรวจ tree ของ PR (ORG_SKILLS_ROOT)
+#   แก้สคริปต์ตรวจใน PR = มีผลหลัง merge เท่านั้น · ไม่มีขั้นไหนรันโค้ดของ PR (validate / compile / node --check อ่านอย่างเดียว)
+#   workflow นี้ไม่ใช้ secret ใด ๆ นอกจาก token ของ job
+# on: pull_request มีไว้ให้ PR ตั้งต้น (main ยังไม่มีไฟล์นี้) เท่านั้น — เมื่อ main มี ci.yml แล้ว job แบบ pull_request จะข้ามทุกขั้น
+#   และ branch protection บังคับเฉพาะ status "(pull_request_target)"
+#
+# runner ป้าย ubuntu-latest = container node:22-bookworm (มี python3 + git + node)
+# ไม่ใช้ actions/checkout: ROOT_URL ของ Gitea (localhost:3300) มองไม่เห็นจาก container ของ job → clone เองผ่าน http://gitea:3000
+# (ตั้ง repo variable GITEA_INTERNAL_URL ทับได้) และไม่พึ่ง github.com
+name: ci
+
+on:
+  pull_request_target:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  SERVER: ${{ vars.GITEA_INTERNAL_URL || 'http://gitea:3000' }}
+  CLAUDE_CODE_VERSION: "2.1.311"   # ใช้ทำ claude plugin validate เท่านั้น (ไม่ต้อง login / ไม่มี token AI)
+  G: /tmp/gate/scripts             # สคริปต์ตรวจจาก main
+
+jobs:
+  1-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout PR + สคริปต์ตรวจจาก main
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ gitea.repository }}
+          PR: ${{ gitea.event.pull_request.number }}
+          HEAD_SHA: ${{ gitea.event.pull_request.head.sha }}
+          BASE: ${{ gitea.base_ref }}
+          EVENT: ${{ gitea.event_name }}
+        run: |
+          host="${SERVER#*://}"; scheme="${SERVER%%://*}"
+          git init -q . && git remote add origin "${scheme}://x-access-token:${TOKEN}@${host}/${REPO}.git"
+          git fetch -q origin "+refs/pull/${PR}/head:refs/remotes/ci/head" "+refs/heads/${BASE}:refs/remotes/origin/${BASE}"
+          git checkout -q --detach "${HEAD_SHA}"
+          echo "PR #${PR} head $(git rev-parse --short HEAD) · base ${BASE} $(git rev-parse --short origin/${BASE}) · event ${EVENT}"
+          echo "ORG_SKILLS_ROOT=${PWD}" >> "${GITHUB_ENV}"
+          mkdir -p /tmp/gate
+          if [ "${EVENT}" = "pull_request" ]; then
+            if git cat-file -e "origin/${BASE}:.gitea/workflows/ci.yml" 2>/dev/null; then
+              echo "GATE_SKIP=1" >> "${GITHUB_ENV}"
+              echo "main มี ci.yml แล้ว → ด่านจริงคือ status (pull_request_target) · job นี้ข้าม"; exit 0
+            fi
+            cp -r scripts /tmp/gate/
+            echo "::warning::PR ตั้งต้น: main ยังไม่มี ci.yml — ใช้ workflow และสคริปต์ตรวจของ PR เอง ผู้รีวิวต้องอ่านเอง"
+          else
+            git cat-file -e "origin/${BASE}:scripts/security_scan.py" || { echo "::error::${BASE} ไม่มีสคริปต์ตรวจ"; exit 1; }
+            git archive "origin/${BASE}" scripts | tar -x -C /tmp/gate
+            echo "สคริปต์ตรวจ + allowlist จาก ${BASE} $(git rev-parse --short origin/${BASE})"
+          fi
+
+      - name: ติดตั้ง Claude Code CLI (สำหรับ validate อย่างเดียว)
+        if: env.GATE_SKIP != '1'
+        run: npm install -g --no-fund --no-audit --loglevel=error "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}" && claude --version
+
+      - name: claude plugin validate — marketplace
+        if: env.GATE_SKIP != '1'
+        run: claude plugin validate . --strict
+
+      - name: claude plugin validate — ทุก plugin
+        if: env.GATE_SKIP != '1'
+        run: |
+          fail=0
+          for p in plugins/*/; do
+            if claude plugin validate "$p" --strict > /tmp/v.txt 2>&1; then echo "✔ $p"; else echo "✘ $p"; cat /tmp/v.txt; fail=1; fi
+          done
+          exit $fail
+
+      - name: build.py --check (ไฟล์ที่สร้าง + กติกาหัวไฟล์)
+        if: env.GATE_SKIP != '1'
+        run: python3 "$G/build.py" --check
+
+      - name: JSON parse ได้ · Python compile ได้ · Node ผ่าน node --check
+        if: env.GATE_SKIP != '1'
+        run: |
+          git ls-files -z '*.json' | xargs -0 -r -n1 python3 -c 'import json,sys; json.load(open(sys.argv[1],encoding="utf-8"))'
+          git ls-files -z '*.py' | xargs -0 -r python3 -c 'import sys; [compile(open(f,encoding="utf-8").read(), f, "exec") for f in sys.argv[1:]]'
+          git ls-files -z '*.mjs' '*.js' ':!:**/templates/**' | xargs -0 -r -n1 node --check
+          echo "ok"
+
+      - name: ห้าม commit ไฟล์ขยะ / ไฟล์ลับ
+        if: env.GATE_SKIP != '1'
+        run: |
+          bad=$(git ls-files | grep -E '(^|/)(__pycache__/|node_modules/|work/)|\.pyc$|(^|/)\.env$|\.gitea-token$|(^|/)evals/results/' || true)
+          if [ -n "$bad" ]; then echo "ไฟล์ที่ไม่ควรอยู่ในคลัง:"; echo "$bad"; exit 1; fi
+          echo "clean"
+
+  2-headers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout PR + สคริปต์ตรวจจาก main
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ gitea.repository }}
+          PR: ${{ gitea.event.pull_request.number }}
+          HEAD_SHA: ${{ gitea.event.pull_request.head.sha }}
+          BASE: ${{ gitea.base_ref }}
+          EVENT: ${{ gitea.event_name }}
+        run: |
+          host="${SERVER#*://}"; scheme="${SERVER%%://*}"
+          git init -q . && git remote add origin "${scheme}://x-access-token:${TOKEN}@${host}/${REPO}.git"
+          git fetch -q origin "+refs/pull/${PR}/head:refs/remotes/ci/head" "+refs/heads/${BASE}:refs/remotes/origin/${BASE}"
+          git checkout -q --detach "${HEAD_SHA}"
+          echo "PR #${PR} head $(git rev-parse --short HEAD) · base ${BASE} $(git rev-parse --short origin/${BASE}) · event ${EVENT}"
+          echo "ORG_SKILLS_ROOT=${PWD}" >> "${GITHUB_ENV}"
+          mkdir -p /tmp/gate
+          if [ "${EVENT}" = "pull_request" ]; then
+            if git cat-file -e "origin/${BASE}:.gitea/workflows/ci.yml" 2>/dev/null; then
+              echo "GATE_SKIP=1" >> "${GITHUB_ENV}"
+              echo "main มี ci.yml แล้ว → ด่านจริงคือ status (pull_request_target) · job นี้ข้าม"; exit 0
+            fi
+            cp -r scripts /tmp/gate/
+            echo "::warning::PR ตั้งต้น: main ยังไม่มี ci.yml — ใช้ workflow และสคริปต์ตรวจของ PR เอง ผู้รีวิวต้องอ่านเอง"
+          else
+            git cat-file -e "origin/${BASE}:scripts/security_scan.py" || { echo "::error::${BASE} ไม่มีสคริปต์ตรวจ"; exit 1; }
+            git archive "origin/${BASE}" scripts | tar -x -C /tmp/gate
+            echo "สคริปต์ตรวจ + allowlist จาก ${BASE} $(git rev-parse --short origin/${BASE})"
+          fi
+
+      - name: หัวไฟล์ครบ + อ้างถึง skill ที่มีจริง + แก้แล้วเพิ่ม version
+        if: env.GATE_SKIP != '1'
+        env:
+          GITEA_API: ${{ env.SERVER }}/api/v1
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 "$G/check_headers.py" --base "origin/${{ gitea.base_ref }}"
+
+  3-security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout PR + สคริปต์ตรวจจาก main
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ gitea.repository }}
+          PR: ${{ gitea.event.pull_request.number }}
+          HEAD_SHA: ${{ gitea.event.pull_request.head.sha }}
+          BASE: ${{ gitea.base_ref }}
+          EVENT: ${{ gitea.event_name }}
+        run: |
+          host="${SERVER#*://}"; scheme="${SERVER%%://*}"
+          git init -q . && git remote add origin "${scheme}://x-access-token:${TOKEN}@${host}/${REPO}.git"
+          git fetch -q origin "+refs/pull/${PR}/head:refs/remotes/ci/head" "+refs/heads/${BASE}:refs/remotes/origin/${BASE}"
+          git checkout -q --detach "${HEAD_SHA}"
+          echo "PR #${PR} head $(git rev-parse --short HEAD) · base ${BASE} $(git rev-parse --short origin/${BASE}) · event ${EVENT}"
+          echo "ORG_SKILLS_ROOT=${PWD}" >> "${GITHUB_ENV}"
+          mkdir -p /tmp/gate
+          if [ "${EVENT}" = "pull_request" ]; then
+            if git cat-file -e "origin/${BASE}:.gitea/workflows/ci.yml" 2>/dev/null; then
+              echo "GATE_SKIP=1" >> "${GITHUB_ENV}"
+              echo "main มี ci.yml แล้ว → ด่านจริงคือ status (pull_request_target) · job นี้ข้าม"; exit 0
+            fi
+            cp -r scripts /tmp/gate/
+            echo "::warning::PR ตั้งต้น: main ยังไม่มี ci.yml — ใช้ workflow และสคริปต์ตรวจของ PR เอง ผู้รีวิวต้องอ่านเอง"
+          else
+            git cat-file -e "origin/${BASE}:scripts/security_scan.py" || { echo "::error::${BASE} ไม่มีสคริปต์ตรวจ"; exit 1; }
+            git archive "origin/${BASE}" scripts | tar -x -C /tmp/gate
+            echo "สคริปต์ตรวจ + allowlist จาก ${BASE} $(git rev-parse --short origin/${BASE})"
+          fi
+
+      - name: สแกน ส่งข้อมูลออก / อ่านความลับ / prompt injection (สแกนเนอร์ + allowlist ของ main)
+        if: env.GATE_SKIP != '1'
+        run: python3 "$G/security_scan.py"
+
+      - name: PR นี้แก้สคริปต์ตรวจ / allowlist / CI ไหม
+        if: env.GATE_SKIP != '1'
+        run: |
+          git diff --name-only "origin/${{ gitea.base_ref }}...HEAD" | grep -E '^(\.gitea/|scripts/)' \
+            && echo "แก้ CI / สคริปต์ตรวจ / allowlist — ไม่มีผลกับด่านของ PR นี้ (ใช้ของ main) · ต้องได้ approve จาก CODEOWNER (ด่าน 4-review)" \
+            || echo "ไม่ได้แก้ CI หรือสคริปต์ตรวจ"
+
+  4-review:
+    needs: [1-structure, 2-headers, 3-security]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout PR + สคริปต์ตรวจจาก main
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ gitea.repository }}
+          PR: ${{ gitea.event.pull_request.number }}
+          HEAD_SHA: ${{ gitea.event.pull_request.head.sha }}
+          BASE: ${{ gitea.base_ref }}
+          EVENT: ${{ gitea.event_name }}
+        run: |
+          host="${SERVER#*://}"; scheme="${SERVER%%://*}"
+          git init -q . && git remote add origin "${scheme}://x-access-token:${TOKEN}@${host}/${REPO}.git"
+          git fetch -q origin "+refs/pull/${PR}/head:refs/remotes/ci/head" "+refs/heads/${BASE}:refs/remotes/origin/${BASE}"
+          git checkout -q --detach "${HEAD_SHA}"
+          echo "PR #${PR} head $(git rev-parse --short HEAD) · base ${BASE} $(git rev-parse --short origin/${BASE}) · event ${EVENT}"
+          echo "ORG_SKILLS_ROOT=${PWD}" >> "${GITHUB_ENV}"
+          mkdir -p /tmp/gate
+          if [ "${EVENT}" = "pull_request" ]; then
+            if git cat-file -e "origin/${BASE}:.gitea/workflows/ci.yml" 2>/dev/null; then
+              echo "GATE_SKIP=1" >> "${GITHUB_ENV}"
+              echo "main มี ci.yml แล้ว → ด่านจริงคือ status (pull_request_target) · job นี้ข้าม"; exit 0
+            fi
+            cp -r scripts /tmp/gate/
+            echo "::warning::PR ตั้งต้น: main ยังไม่มี ci.yml — ใช้ workflow และสคริปต์ตรวจของ PR เอง ผู้รีวิวต้องอ่านเอง"
+          else
+            git cat-file -e "origin/${BASE}:scripts/security_scan.py" || { echo "::error::${BASE} ไม่มีสคริปต์ตรวจ"; exit 1; }
+            git archive "origin/${BASE}" scripts | tar -x -C /tmp/gate
+            echo "สคริปต์ตรวจ + allowlist จาก ${BASE} $(git rev-parse --short origin/${BASE})"
+          fi
+
+      - name: CODEOWNER approve + skill-eval จากผู้รีวิวตัวจริง + ด่าน 1–3 เป็น task จริง
+        if: env.GATE_SKIP != '1'
+        env:
+          GITEA_API: ${{ env.SERVER }}/api/v1
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ gitea.repository }}
+        run: python3 "$G/merge_gate.py" "${{ gitea.event.pull_request.number }}" --ci

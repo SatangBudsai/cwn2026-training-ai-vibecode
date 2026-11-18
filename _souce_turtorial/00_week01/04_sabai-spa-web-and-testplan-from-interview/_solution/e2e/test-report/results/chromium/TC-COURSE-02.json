@@ -1,0 +1,77 @@
+{
+  "id": "TC-COURSE-02",
+  "title": "TC-COURSE-02 ร้านกดใช้บริการเสร็จแล้วตัดครั้งจริงครั้งเดียว ได้ 0 แต้ม และยอดสะสมไม่เพิ่ม",
+  "project": "chromium",
+  "file": "5.5-course.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.5"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: \"เหลือ 6 ครั้ง จาก 11 ครั้ง\"\nขั้น 3: ใช้ 4 + 1 = 5 · เหลือ 11 − 5 = 6 ยังเป็น \"เหลือ 6 ครั้ง จาก 11 ครั้ง\" (ถ้าตัดซ้ำกับที่กันไว้จะเหลือ 5 · ถ้าคืนที่กันไว้แล้วไม่ตัดจะเหลือ 7)\nแต้ม 99 + 0 = 99 (ถ้าให้แต้มจากบริการจะเกิน 99) · ยอดสะสม ฿12,400 + ฿0 = ฿12,400 ยังเป็น Gold\nขั้น 4: นัดนี้แสดงว่าใช้บริการเสร็จแล้ว",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 แต้มและระดับ · [D][R] E195",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-79, FR-38, BR-23",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R79",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "State, Happy path",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.5-course.spec.ts",
+        "line": 276,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 27608,
+  "at": "2026-11-06T02:50:47.602Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. U01 จองด้วยคอร์ส 17 มิ.ย. 12:00 T01 แล้วดู Wallet",
+    "2. เข้า /th/admin ด้วยบัญชีร้าน กดใช้บริการเสร็จที่นัดนี้",
+    "3. U01 เปิด Wallet และหน้าบัญชี แล้วรีโหลด",
+    "4. เปิดนัดนี้ใน /th/admin อีกครั้ง"
+  ]
+}

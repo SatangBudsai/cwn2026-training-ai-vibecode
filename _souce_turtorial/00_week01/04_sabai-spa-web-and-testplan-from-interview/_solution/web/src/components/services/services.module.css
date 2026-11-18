@@ -1,0 +1,368 @@
+/* ===== Hero ===== */
+.hero,
+.heroTall {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--c-forest-950);
+  color: var(--c-cream-50);
+}
+.hero { min-height: clamp(340px, 52vh, 520px); }
+.heroTall { min-height: clamp(520px, 78vh, 760px); }
+.heroMedia { position: absolute; inset: -40px 0; }
+.heroImage { height: 100%; }
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 32, 24, 0.92) 0%, rgba(15, 32, 24, 0.62) 42%, rgba(15, 32, 24, 0.18) 100%);
+}
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  padding-block: clamp(32px, 6vw, 64px);
+}
+.heroInner h1 { color: var(--c-cream-50); max-width: 16em; }
+.heroInner :global(.eyebrow) { color: var(--c-gold-300); }
+.heroSub { max-width: 38em; font-size: 1.1rem; color: var(--c-cream-200); }
+
+/* ===== ราคา ===== */
+.price { display: block; color: var(--c-forest-900); line-height: 1.25; }
+.priceAmount { font-family: var(--font-display); font-size: clamp(1.5rem, 2.4vw, 1.85rem); }
+.priceUnit { font-size: 0.95rem; color: var(--text-soft); }
+.priceLight { color: var(--c-gold-300); }
+.priceLight .priceUnit { color: var(--c-cream-200); }
+
+/* ===== รายชื่อสมุนไพร ===== */
+.chips,
+.chipsLight { display: grid; gap: 8px; }
+.chipsLabel { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--c-gold-700); }
+.chipsLight .chipsLabel { color: var(--c-gold-300); }
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 3px 12px 3px 3px;
+  border: 1px solid var(--line-gold);
+  border-radius: 999px;
+  background: var(--bg-card);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+.chipsLight .chip {
+  background: rgba(252, 250, 244, 0.06);
+  border-color: rgba(226, 205, 155, 0.4);
+  color: var(--c-cream-100);
+}
+.chipImage { flex: none; width: 32px; border-radius: 50%; }
+
+/* ===== แถวเมนู ===== */
+.rows { display: grid; }
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr) minmax(170px, auto);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: start;
+  padding-block: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--line-gold);
+}
+.rows > :last-child .row { border-bottom: 1px solid var(--line-gold); }
+.rowImage { display: block; }
+.rowBody { display: grid; gap: 10px; min-width: 0; }
+.rowMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+.rowIndex { font-family: var(--font-display); color: var(--c-gold-700); }
+.rowDesc { color: var(--text-soft); max-width: 34em; }
+.rowAside { display: grid; gap: 16px; justify-items: end; text-align: right; }
+.actions { display: grid; gap: 10px; justify-items: end; }
+.actions a,
+.featureActions a,
+.detailActions a,
+.ctaActions a,
+.moreActions a { white-space: normal; text-align: center; }
+
+.textLink,
+.textLinkLight {
+  display: inline-block;
+  padding-block: 6px;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-color: var(--c-gold-500);
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+.textLink { color: var(--c-forest-800); }
+.textLink:hover { color: var(--c-gold-700); }
+.textLinkLight { color: var(--c-cream-100); }
+.textLinkLight:hover { color: var(--c-gold-300); }
+
+/* ===== การ์ดแพ็กเกจและคอร์ส ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  align-items: stretch;
+}
+.featureWrap { display: grid; min-width: 0; }
+.feature {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--c-forest-800);
+  border: 1px solid rgba(226, 205, 155, 0.32);
+  border-radius: var(--radius-lg);
+}
+.featureBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(20px, 3vw, 32px);
+}
+.featureMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: var(--c-gold-300);
+}
+.featureDesc { color: var(--c-cream-200); }
+.featureNote { color: var(--c-cream-50); }
+.includeInline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--c-cream-50);
+}
+.includeInline li { position: relative; padding-left: 14px; }
+.includeInline li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  background: var(--c-gold-500);
+  transform: rotate(45deg);
+}
+.featureActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* ===== ปิดท้าย ===== */
+.more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 40px;
+}
+.moreText { display: grid; gap: 8px; max-width: 40em; }
+.moreBody { color: var(--text-soft); }
+.moreActions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ===== รายละเอียดบริการ ===== */
+.detail { padding-block: clamp(24px, 4vw, 48px) var(--section-gap); }
+.back { display: inline-block; margin-bottom: 20px; }
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+}
+.detailPanel {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.detailDesc { font-size: 1.08rem; color: var(--text-soft); }
+.facts { display: grid; margin: 0; border-top: 1px solid var(--line-gold); }
+.fact {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.fact dt { color: var(--text-soft); }
+.fact dd { margin: 0; font-weight: 500; text-align: right; }
+.detailActions { display: flex; flex-wrap: wrap; gap: 12px; }
+.detailNote { font-size: 0.95rem; color: var(--text-soft); }
+.detailIncludes { display: grid; gap: 8px; }
+.detailIncludesLabel { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--c-gold-700); }
+.includeDark { color: var(--c-forest-900); }
+
+.herbTiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.herbTile { display: grid; gap: 10px; }
+.herbTileName { font-family: var(--font-display); font-size: 1.05rem; text-align: center; }
+.sectionLink { margin-top: 24px; }
+
+.therapists {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+}
+.therapist { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.therapist h3 { margin-top: 8px; font-size: 1.15rem; }
+.therapistTitle { font-size: 0.92rem; color: var(--text-soft); }
+.therapistRating { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; }
+.star { color: var(--c-gold-700); }
+.reviewCount { font-size: 0.88rem; color: var(--text-soft); }
+.noReviews { font-size: 0.92rem; color: var(--text-soft); }
+
+/* ===== /herbs ===== */
+.herbGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+}
+.herbCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--line-gold);
+  border-radius: var(--radius-md);
+}
+.herbCardBody { display: grid; gap: 8px; padding: 16px; min-width: 0; }
+.herbCardBody h2 { font-size: 1.25rem; }
+.herbUsed { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--c-gold-700); }
+.herbServices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.herbServiceLink {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.herbServiceLink:hover { border-color: var(--c-gold-600); color: var(--c-gold-700); }
+
+/* ===== /packages/bangkok-relax ===== */
+.heroPrice { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+.heroPrice .priceAmount { font-size: clamp(2rem, 4vw, 2.8rem); }
+.heroDuration { color: var(--c-cream-200); }
+.heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.heroActions a { white-space: normal; text-align: center; }
+
+.includes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.include { display: grid; gap: 10px; align-content: start; }
+.includeNo { font-family: var(--font-display); color: var(--c-gold-700); }
+.include h3 { margin-top: 2px; }
+.includeBody { color: var(--text-soft); }
+
+.rulesGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+.rules { display: grid; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-gold); }
+.rule { display: grid; gap: 2px; padding-block: 14px; border-bottom: 1px solid var(--line-gold); }
+.ruleTitle { font-family: var(--font-display); font-size: 1.12rem; color: var(--c-forest-900); }
+.ruleBody { color: var(--text-soft); }
+.rulesHerbs { margin-top: 24px; }
+
+.shop {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: clamp(10px, 1.6vw, 18px);
+}
+.shop > * { min-width: 0; }
+
+.cta { display: grid; justify-items: center; gap: 12px; text-align: center; }
+.ctaBody { color: var(--c-forest-200); max-width: 34em; }
+.ctaActions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px; }
+
+/* ===== จอกว้างปานกลาง ===== */
+@media (max-width: 1024px) {
+  .herbGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .therapists { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 960px) {
+  .row { grid-template-columns: minmax(0, 36%) minmax(0, 1fr); }
+  .rowAside {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    justify-items: start;
+    text-align: left;
+  }
+  .actions { grid-auto-flow: column; align-items: center; justify-items: start; }
+  .detailGrid { grid-template-columns: minmax(0, 1fr); }
+  .detailPanel { position: static; }
+}
+
+@media (max-width: 860px) {
+  .features { grid-template-columns: minmax(0, 1fr); }
+  .rulesGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ===== มือถือ ===== */
+@media (max-width: 640px) {
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .rowAside { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .actions { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr) auto; width: 100%; align-items: center; }
+  .herbGrid { grid-template-columns: minmax(0, 1fr); }
+  .herbCard { display: grid; grid-template-columns: 104px minmax(0, 1fr); }
+  .herbCard > :first-child { align-self: start; }
+  .therapists { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .includes { grid-template-columns: minmax(0, 1fr); }
+  .shop { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop > :first-child { grid-column: 1 / -1; }
+  .shop > :nth-child(n + 2) { aspect-ratio: 1 / 1 !important; }
+  .more { flex-direction: column; align-items: flex-start; }
+}

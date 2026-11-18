@@ -1,0 +1,86 @@
+{
+  "id": "TC-EXPR-05",
+  "title": "TC-EXPR-05 จองผ่านแชตปฏิเสธรอบผิดทันที รายการบริการมี P01 และจองจริงได้ยอดกับนักบำบัดถูกต้อง",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 2 (R108): รายการมี S01–S07 และ P01 รวม 8 บริการ · ไม่มี K01\nขั้น 3–4 (R107): ทุกรอบถูกปฏิเสธในคำตอบถัดจากเวลาทันที โดยยังไม่ถามจำนวนคน\n10:15 → ไม่อยู่ในรอบทุก 30 นาที · 21:30 → S01 จบ 22:30 เกิน 22:00 · 09:30 → ก่อนรอบแรก 10:00\nหลังถูกปฏิเสธ 3 รอบ คิววันที่ 17 มิ.ย. 2026 เพิ่ม 0 รายการ\nขั้น 5: ได้รหัสจอง 1 รหัส ยอด ฿1,000 (S01 ฿1,000 × 1 คน = ฿1,000 แขกไม่มีส่วนลด · ถ้าคิดส่วนลดระดับจะได้ ฿950 หรือ ฿900)\nขั้น 6: คิววันที่ 17 มิ.ย. 2026 เพิ่ม 1 รายการพอดี รอบ 12:00 นักบำบัด T01 ยอดจ่ายหน้าร้าน ฿1,000",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 540,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] บ.9 · [R] ⚠️A-21 · [R] · F-สร้าง 26 · F-ร้าน 22",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 540,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-60, BR-01, BR-02",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 540,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R106, R107, R108",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 540,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 540,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 540,
+        "column": 3
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 66502,
+  "at": "2026-11-06T02:53:12.559Z",
+  "attempts": [],
+  "errors": [
+    "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 0\n\n@@ -1,7 +1,6 @@\n  Array [\n-   \"P01\",\n    \"S01\",\n    \"S02\",\n    \"S03\",\n    \"S04\",\n    \"S05\",",
+    "Error: expect(locator).not.toHaveText(expected) failed\n\nLocator: locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(3)\nExpected pattern: not /กี่คน|How many|几位|多少人/i\nReceived string: \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft not toHaveText\" locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(3) with timeout 6000ms\n  - waiting for locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(3)\n    16 × locator resolved to <div lang=\"th\" data-role=\"bot\" class=\"raiqoq_bubbleBot\" data-e2e-prev-outline=\"\" data-testid=\"chat-message-7\">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>\n       - unexpected value \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\n",
+    "Error: expect(locator).toHaveText(expected) failed\n\nLocator: locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(3)\nExpected pattern: /30\\s*นาที|ครึ่งชั่วโมง/\nReceived string:  \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toHaveText\" locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(3) with timeout 6000ms\n  - waiting for locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(3)\n    15 × locator resolved to <div lang=\"th\" data-role=\"bot\" class=\"raiqoq_bubbleBot\" data-e2e-prev-outline=\"\" data-testid=\"chat-message-7\">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>\n       - unexpected value \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\n",
+    "Error: expect(locator).not.toHaveText(expected) failed\n\nLocator: locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(4)\nExpected pattern: not /กี่คน|How many|几位|多少人/i\nReceived string: \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft not toHaveText\" locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(4) with timeout 6000ms\n  - waiting for locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(4)\n    16 × locator resolved to <div lang=\"th\" data-role=\"bot\" class=\"raiqoq_bubbleBot\" data-e2e-prev-outline=\"\" data-testid=\"chat-message-9\">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>\n       - unexpected value \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\n",
+    "Error: expect(locator).toHaveText(expected) failed\n\nLocator: locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(4)\nExpected pattern: /22:00|21:00|จบ|เกิน|ปิด/\nReceived string:  \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toHaveText\" locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(4) with timeout 6000ms\n  - waiting for locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(4)\n    16 × locator resolved to <div lang=\"th\" data-role=\"bot\" class=\"raiqoq_bubbleBot\" data-e2e-prev-outline=\"\" data-testid=\"chat-message-9\">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>\n       - unexpected value \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\n",
+    "Error: expect(locator).not.toHaveText(expected) failed\n\nLocator: locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(5)\nExpected pattern: not /กี่คน|How many|几位|多少人/i\nReceived string: \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft not toHaveText\" locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(5) with timeout 6000ms\n  - waiting for locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(5)\n    16 × locator resolved to <div lang=\"th\" data-role=\"bot\" class=\"raiqoq_bubbleBot\" data-e2e-prev-outline=\"\" data-testid=\"chat-message-11\">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>\n       - unexpected value \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\n",
+    "Error: expect(locator).toHaveText(expected) failed\n\nLocator: locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(5)\nExpected pattern: /10:00|ก่อน/\nReceived string:  \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\nTimeout: 6000ms\n\nCall log:\n  - Expect \"soft toHaveText\" locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(5) with timeout 6000ms\n  - waiting for locator('[data-testid^=\"chat-message-\"][data-role=\"bot\"]').nth(5)\n    16 × locator resolved to <div lang=\"th\" data-role=\"bot\" class=\"raiqoq_bubbleBot\" data-e2e-prev-outline=\"\" data-testid=\"chat-message-11\">มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)</div>\n       - unexpected value \"มากี่คน จองได้ 1–6 คน (7 คนขึ้นไปโทร 02-123-4567)\"\n"
+  ],
+  "steps": [
+    "1. เข้าหลังร้านด้วยบัญชีร้าน จดจำนวนคิววันที่ 17 มิ.ย. 2026",
+    "2. เริ่มจองในแชตแล้วอ่านรายการบริการ ✗",
+    "3–4. เลือก S01 วัน 17 มิ.ย. 2026 แล้วพิมพ์รอบผิด 10:15, 21:30, 09:30 ✗",
+    "5. ใช้รอบ 12:00 ระบุ T01 จำนวน 1 คน ชื่อและเบอร์แขก แล้วยืนยัน",
+    "6. เปิดหลังร้านอ่านคิววันที่ 17 มิ.ย. 2026 แล้วรีโหลด"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "TC-RIDE-06",
+  "title": "TC-RIDE-06 ระยะที่พิมพ์รับเฉพาะค่าไม่ติดลบ ทศนิยมไม่เกิน 1 ตำแหน่ง ไม่ปัดเอง",
+  "project": "chromium",
+  "file": "5.4-ride.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.4"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "กลุ่ม ก: `0.0` → ค่ารถ ฿0 ยอด ฿1,000 ไปต่อได้\n`−0.1` → ปฏิเสธเพราะติดลบ\n`5.05` → ปฏิเสธเพราะมีทศนิยม 2 ตำแหน่ง (ถ้าปัดเป็น 5.1 จะได้ ฿1,300 ถ้าปัดเป็น 5.0 จะได้ ฿1,000)\n`abc`, `1e1`, ว่าง, `5.00` → ปฏิเสธ ไปต่อไม่ได้ (ถ้ารับ `1e1` เป็น 10 กม. จะได้ ฿1,300)\nกลุ่ม ข: แต่ละค่าต้องเป็นอย่างใดอย่างหนึ่ง คือ รับแล้วคิดตามค่านั้น หรือ ปฏิเสธโดยข้อความบอกว่ารูปแบบตัวเลขผิด · ปฏิเสธด้วยข้อความที่ไม่บอกเหตุถือว่าไม่ผ่าน\nค่าที่รับได้: `.5`, `5.`, `−0`, `+5`, `๕`, ` 5.0 ` → ค่ารถ ฿0 ยอด ฿1,000 · `00012` → 12 กม. ค่ารถ ฿300 ยอด ฿1,300\nข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 568,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[R] ⚠️A-35 · [R] · F-สร้าง 16",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 568,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-53, BR-38",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 568,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R64, R65",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 568,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Negative, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 568,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.4-ride.spec.ts",
+        "line": 568,
+        "column": 1
+      }
+    }
+  ],
+  "status": "failed",
+  "durationMs": 71409,
+  "at": "2026-11-06T02:42:32.234Z",
+  "attempts": [
+    {
+      "status": "passed",
+      "durationMs": 74580,
+      "at": "2026-11-06T02:21:06.777Z"
+    },
+    {
+      "status": "passed",
+      "durationMs": 71676,
+      "at": "2026-11-06T02:37:55.346Z"
+    }
+  ],
+  "errors": [
+    "Error: กลุ่ม ข ค่า \".5\" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด\n\nexpect(received).toMatch(expected)\n\nExpected pattern: /รูปแบบ|ตัวเลข/\nReceived string:  \"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"",
+    "Error: กลุ่ม ข ค่า \"5.\" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด\n\nexpect(received).toMatch(expected)\n\nExpected pattern: /รูปแบบ|ตัวเลข/\nReceived string:  \"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"",
+    "Error: กลุ่ม ข ค่า \"-0\" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด\n\nexpect(received).toMatch(expected)\n\nExpected pattern: /รูปแบบ|ตัวเลข/\nReceived string:  \"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"",
+    "Error: กลุ่ม ข ค่า \"+5\" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด\n\nexpect(received).toMatch(expected)\n\nExpected pattern: /รูปแบบ|ตัวเลข/\nReceived string:  \"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"",
+    "Error: กลุ่ม ข ค่า \"๕\" ปฏิเสธต้องบอกว่ารูปแบบตัวเลขผิด\n\nexpect(received).toMatch(expected)\n\nExpected pattern: /รูปแบบ|ตัวเลข/\nReceived string:  \"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\""
+  ],
+  "steps": [
+    "1. เริ่มจอง S01 ไปหน้าจอ 3 ติ๊กรถ เลือกโหมดพิมพ์ระยะ",
+    "2-3. กลุ่ม ก ใส่ค่าทีละตัว",
+    "2-3. กลุ่ม ข ใส่ค่าทีละตัว บันทึกผลแยกทีละค่า ✗",
+    "4. เปิดคิว 17 มิ.ย. ที่หลังร้าน"
+  ]
+}

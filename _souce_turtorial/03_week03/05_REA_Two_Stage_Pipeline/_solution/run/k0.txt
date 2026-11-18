@@ -1,0 +1,16 @@
+สร้าง "ชุดวัดกลาง" ที่วัดแอปเวอร์ชันไหนก็ได้ด้วยไม้บรรทัด 5 อัน ทำงานในโฟลเดอร์ /workspace/arena (ไม่ต่ออินเทอร์เน็ตไป Google ห้ามแก้เกณฑ์ของ test)
+
+ของที่มีอยู่แล้ว:
+- แอป v4 (SkyThai Max) ใน base-v4/ รันที่ http://localhost:5084
+- kit/src/ = ต้นฉบับของไม้บรรทัด: ชุดทดสอบ acceptance 82 ข้อ (accept/) · differential S1–S8 พร้อมเฉลยของต้นฉบับแช่แข็งใน diff/diff-results.json (ใช้ runner/stub-frozen.mjs แทนต้นฉบับ ไม่ต้องใช้ HAR) · โครงสร้างหน้า (structure/ + original.yml) · visual diff (visual/reference.png) · runner/ ตัวอย่างตัววัดที่เขียนไว้สำหรับแอปรุ่นแรก (อ่าน runner/NOTES.md)
+- docs/ = ผลสำรวจต้นฉบับ (EXPLORATION.md, API-INVENTORY.md) และผลวัด v4 เดิม (FINAL.md)
+
+งาน:
+1. เขียน kit/measure.sh <BASE_URL> <โฟลเดอร์ผล> ที่วัดแอปเวอร์ชันไหนก็ได้ (ที่มีฟอร์มค้นหา) ครบ 5 อัน:
+   acceptance 82 ข้อ · differential 8 สถานการณ์ · โครงสร้างหน้า (Jaccard + องค์ประกอบสำคัญ 38 อย่าง ถ่ายหน้าผลค้นหาแบบเดียวกับ structure-capture.mjs) · visual diff (pixelmatch threshold 0.1 includeAA false ที่ 1366×900 หน้าผลค้นหา) · เที่ยวบินที่แสดงได้ทั้งหมด (รวมหลังกด "ดูเที่ยวบินเพิ่มเติม")
+2. นอกจากคะแนน ให้ส่งออก "รายการปัญหา" ที่เครื่องอ่านได้ใน <โฟลเดอร์ผล>/report.json: test acceptance ที่ไม่ผ่าน (id + เหตุผล) · สถานการณ์ differential ที่ไม่ตรง · token โครงสร้างที่ต้นฉบับมีแต่เราไม่มี และที่เรามีเกิน · ภาพ diff สีแดง และสัดส่วนพิกเซลแดงในแต่ละแถบความสูง 75 px
+3. คำนวณคะแนนรวม Score = โครงสร้าง% − visual diff% และ gate ว่า acceptance ≥ 74 · differential = 8/8 · เที่ยวบิน = 300 ผ่านหรือไม่
+4. ตรวจความถูกต้อง: รัน measure.sh กับ v4 เก็บผลไว้ที่ /workspace/arena/out/v4 ต้องได้ใกล้ค่าใน docs/FINAL.md (74/82 · 8/8 · 78.6% · 5.13% · 300) ถ้าต่างให้หาสาเหตุและบอกตรง ๆ
+5. ติดตั้งเครื่องมือที่ต้องใช้ไว้ใน kit/.tools (Playwright ต้องใช้ Chromium ที่มีอยู่ใน /ms-playwright) ให้รันซ้ำได้ด้วยคำสั่งเดียว
+
+ตอบเป็นตาราง: ไม้บรรทัด | v4 วัดได้ | ค่าใน FINAL.md | ตรงไหม พร้อมคะแนนรวม Score และ gate และบอกเวลาที่ measure.sh ใช้ 1 รอบ

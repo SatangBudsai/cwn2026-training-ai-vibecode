@@ -1,0 +1,16 @@
+{
+  "name": "sabai-e2e",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "suites": "node scripts/run-suites.mjs",
+    "gifs": "node scripts/make-gifs.mjs",
+    "report": "node scripts/build-report.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

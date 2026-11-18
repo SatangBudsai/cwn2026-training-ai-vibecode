@@ -1,0 +1,114 @@
+- dialog "สายการบิน":
+  - heading "สายการบิน" [level=2]
+  - button "ปิดกล่องโต้ตอบ":
+    - img
+  - text: เลือกสายการบินทั้งหมด
+  - switch "เลือกสายการบินทั้งหมด":
+    - img
+    - img
+  - text: สายการบินที่เป็นพาร์ทเนอร์
+  - list "สายการบินที่เป็นพาร์ทเนอร์":
+    - listitem:
+      - checkbox "Oneworld"
+      - text: Oneworld
+    - listitem:
+      - checkbox "SkyTeam"
+      - text: SkyTeam
+    - listitem:
+      - checkbox "Star Alliance"
+      - text: Star Alliance
+  - text: สายการบิน
+  - list "สายการบิน":
+    - listitem:
+      - checkbox "กาตาร์แอร์เวย์"
+      - text: กาตาร์แอร์เวย์
+    - listitem:
+      - checkbox "การบินไทย" [checked]
+      - text: การบินไทย
+    - listitem:
+      - checkbox "การูดาอินโดนีเซีย"
+      - text: การูดาอินโดนีเซีย
+    - listitem:
+      - checkbox "คาเธ่ย์แปซิฟิคแอร์เวย์"
+      - text: คาเธ่ย์แปซิฟิคแอร์เวย์
+    - listitem:
+      - checkbox "โคเรียนแอร์ไลน์"
+      - text: โคเรียนแอร์ไลน์
+    - listitem:
+      - checkbox "จินแอร์"
+      - text: จินแอร์
+    - listitem:
+      - checkbox "จูนเยาแอร์ไลน์"
+      - text: จูนเยาแอร์ไลน์
+    - listitem:
+      - checkbox "เจจูแอร์"
+      - text: เจจูแอร์
+    - listitem:
+      - checkbox "เจเอแอล"
+      - text: เจเอแอล
+    - listitem:
+      - checkbox "ไชนาเซาเทิร์นแอร์ไลน์"
+      - text: ไชนาเซาเทิร์นแอร์ไลน์
+    - listitem:
+      - checkbox "ไชนาอีสเทิร์นแอร์ไลน์"
+      - text: ไชนาอีสเทิร์นแอร์ไลน์
+    - listitem:
+      - checkbox "ไชนาแอร์ไลน์"
+      - text: ไชนาแอร์ไลน์
+    - listitem:
+      - checkbox "ซานตง แอร์ไลน์"
+      - text: ซานตง แอร์ไลน์
+    - listitem:
+      - checkbox "เซบูแอร์"
+      - text: เซบูแอร์
+    - listitem:
+      - checkbox "เซินเจิ้นแอร์ไลน์"
+      - text: เซินเจิ้นแอร์ไลน์
+    - listitem:
+      - checkbox "เซี่ยงไฮ้แอร์ไลน์"
+      - text: เซี่ยงไฮ้แอร์ไลน์
+    - listitem:
+      - checkbox "เซียะเหมินแอร์"
+      - text: เซียะเหมินแอร์
+    - listitem:
+      - checkbox "เตอร์กิชแอร์ไลน์"
+      - text: เตอร์กิชแอร์ไลน์
+    - listitem:
+      - checkbox "ทรินิตี้ แอร์เวย์ส"
+      - text: ทรินิตี้ แอร์เวย์ส
+    - listitem:
+      - checkbox "ไทยไลอ้อนแอร์"
+      - text: ไทยไลอ้อนแอร์
+    - listitem:
+      - checkbox "ไทยเวียดเจ๊ทแอร์"
+      - text: ไทยเวียดเจ๊ทแอร์
+    - listitem:
+      - checkbox "เนปาลแอร์ไลน์"
+      - text: เนปาลแอร์ไลน์
+    - listitem:
+      - checkbox "บางกอกแอร์เวย์ส"
+      - text: บางกอกแอร์เวย์ส
+    - listitem:
+      - checkbox "ไบแมนบังคลาเทศแอร์ไลน์"
+      - text: ไบแมนบังคลาเทศแอร์ไลน์
+    - listitem:
+      - checkbox "พีชเอวิเอชัน"
+      - text: พีชเอวิเอชัน
+    - listitem:
+      - checkbox "ฟลายไฟร์ฟลาย"
+      - text: ฟลายไฟร์ฟลาย
+    - listitem:
+      - checkbox "ฟิจิแอร์เวย์"
+      - text: ฟิจิแอร์เวย์
+    - listitem:
+      - checkbox "ฟิลิปปินส์แอร์ไลน์"
+      - text: ฟิลิปปินส์แอร์ไลน์
+    - listitem:
+      - checkbox "มาเลเซียแอร์ไลน์"
+      - text: มาเลเซียแอร์ไลน์
+    - listitem:
+      - checkbox "ยูไนเต็ดแอร์ไลน์"
+      - text: ยูไนเต็ดแอร์ไลน์
+    - listitem:
+      - checkbox "รอยัลบรูไนแอร์ไลน์"
+      - text: รอยัลบรูไน

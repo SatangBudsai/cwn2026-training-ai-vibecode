@@ -1,0 +1,78 @@
+{
+  "id": "TC-GIFT-10",
+  "title": "TC-GIFT-10 ซื้อบัตรเปิดใช้ทันที ส่งแบบจำลอง วันหมดอายุถูก ยอดสะสมไม่เพิ่ม ใช้บัตรจ่ายค่าบัตรหรือคอร์สไม่ได้",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ข้อความจำลอง: มูลค่า ฿2,000 ลายบัว หมดอายุ 15 มิ.ย. 2027 (15 มิ.ย. 2026 + 365 · ถ้านับวันซื้อเป็นวันที่ 1 จะได้ 14 มิ.ย. 2027)\nไม่มี request ออกนอกเว็บไป LINE หรือ email\nรหัสใหม่: ยอด ฿2,000 ใช้ได้ทันที หมดอายุ 15 มิ.ย. 2027 · บัตร email ยอด ฿1,000 หมดอายุ 15 มิ.ย. 2027\nหน้าซื้อบัตรและหน้าซื้อคอร์สไม่มีช่องจ่ายด้วยบัตร · การยิงพร้อม GIFT-ACTIVE ต้องไม่หักบัตร ไม่ว่าจะถูกปฏิเสธด้วยสถานะ 4xx หรือไม่สนใจรหัสที่แนบ · GIFT-ACTIVE ยัง ฿2,000 (ถ้าหักบัตรจะเหลือ ฿0)\nยอด U03 ยัง ฿9,999 ระดับ Silver (ถ้านับยอดซื้อจะได้ ฿12,999 และเป็น Gold)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 731,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 Gift Card · [D][R] E253 · [R] ⚠️A-30 · [R] ⚠️A-08 · [R] ⚠️A-27",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 731,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-30, FR-47, FR-48, FR-50, BR-23, BR-45",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 731,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R76, R84",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 731,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Negative",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 731,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 731,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 42135,
+  "at": "2026-11-06T02:31:15.017Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1-2. U03 ซื้อ ฿2,000 ลายบัว ส่ง LINE อ่านข้อความจำลอง ตรวจรายการ request",
+    "4. ซื้อ ฿1,000 ลายทอง ส่ง email แล้วตรวจแบบเดียวกัน",
+    "5. ดูหน้าซื้อบัตรและหน้าซื้อคอร์สว่ามีช่องจ่ายด้วยบัตรไหม",
+    "6. ยิง URL ซื้อบัตรซ้ำโดยเพิ่มรหัส GIFT-ACTIVE ใน body แล้วตรวจยอด",
+    "7. ดูยอดสะสม U03"
+  ]
+}

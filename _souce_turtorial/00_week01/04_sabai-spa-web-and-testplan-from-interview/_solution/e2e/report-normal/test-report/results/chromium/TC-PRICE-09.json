@@ -1,0 +1,77 @@
+{
+  "id": "TC-PRICE-09",
+  "title": "TC-PRICE-09 ใช้ส่วนลด % ที่มากที่สุดอันเดียว และยอดเป็นบาทเต็ม",
+  "project": "chromium",
+  "file": "5.3-price.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.3"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "U08 3 คน: ฿3,000 − 5% (฿150) = ฿2,850 (กลุ่ม 3 คนไม่ลด)\nU08 4 คน: ฿4,000 − 10% (฿400) = ฿3,600 ไม่ใช่ ฿3,400 ที่ซ้อน 15%\nU02 4 คน ไม่เลือก: ฿4,000 − 10% = ฿3,600 ไม่ใช่ ฿3,200 ที่ซ้อน 20%\nU02 4 คน เลือก: ฿4,000 − 20% (฿800) = ฿3,200 ไม่ใช่ ฿2,800 ที่ซ้อน 30% · ยังเป็น ฿3,200 ทั้งหลังรีโหลดและในหลังร้าน\nU08 S06: ฿1,500 − 5% (฿75) = ฿1,425\nU02 เดือนเกิด: S02 ฿1,120 · S03 ฿960 · S04 ฿1,600 · S05 ฿640 · S06 ฿1,200 · S07 ฿1,440\nทุกยอดเป็นบาทเต็ม ไม่มีสตางค์บนหน้าจอ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 ราคา · [D] §4 แต้มและระดับ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-27, BR-28, BR-29, BR-32",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "—",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Equivalence partition, Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด · ในหน้าร้าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.3-price.spec.ts",
+        "line": 809,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 71283,
+  "at": "2026-11-06T02:27:43.137Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. แถว U08",
+    "1. แถว U02 ไม่เลือกเดือนเกิด และเลือกเดือนเกิด S02–S07",
+    "2. แถว U02 4 คน เลือกเดือนเกิด ยืนยัน รีโหลด",
+    "3. ดูยอดนัดนี้ในหลังร้าน"
+  ]
+}

@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.git
+.gitignore
+Dockerfile
+.dockerignore
+docker-compose.yml
+npm-debug.log*
+*.tsbuildinfo
+.env*
+README.md
+SPEC.md
+playwright-report
+test-results

@@ -1,0 +1,9 @@
+ฉันคือ วิทย์ ประภาสกุล (cco-wit) ผู้อำนวยการสายธุรกิจ (CCO) ฝ่าย MD / ผู้บริหาร · นี่คือโต๊ะของฉัน (novatech/desks/cco-wit/)
+อ่านการ์ดของฉันก่อน: ../../people/exec/cco-wit.md
+1. ลงมือทำงานจริง 1 ชิ้น: ทบทวน pipeline ดีลทั้งหมด: ดีลไหนควรเร่ง ส่งต่อ ประคอง หรือตีกลับ
+   ข้อมูลที่ใช้: ../../company-kit/monthly-kpi.csv, ../../company-kit/deal-summaries/, ../../company-kit/deal-001/, ../../company-kit/deal-002/, ../../company-kit/product/
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ pipeline-review ที่ .claude/skills/pipeline-review/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: cco-wit, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

@@ -1,0 +1,36 @@
+# docker-compose.yml — รัน multi-account (หลายบัญชี AI + JupyterLab + Docker-in-Docker · ไม่มี SSH)
+#
+#   docker compose up -d          # ใช้ image multi-account:1.0 (build ถ้ายังไม่มี)
+#   docker compose up -d --build  # build จาก Dockerfile ในโฟลเดอร์นี้ใหม่
+#   docker compose down           # หยุดและลบ container (บัญชีใน volume ยังอยู่)
+#
+# ปรับค่าได้ผ่าน environment หรือไฟล์ .env ข้าง ๆ (ทุกค่ามี default):
+#   JUPYTER_PORT=8888  JUPYTER_PASSWORD=   (ว่าง = ไม่มีรหัสผ่าน)
+#
+# ผูก port กับ 127.0.0.1 เพราะ JupyterLab ไม่มีรหัสผ่าน และ Terminal ในนั้นเข้าถึง credential ทุกบัญชีได้
+# ถ้าจะเปิดให้เครื่องอื่นเข้า ให้ตั้ง JUPYTER_PASSWORD ก่อน
+
+services:
+  multi-account:
+    image: multi-account:1.0
+    build: .
+    container_name: multi-account
+    hostname: multi-account
+    privileged: true            # จำเป็นสำหรับ Docker-in-Docker (dockerd ข้างใน)
+    stdin_open: true            # -i
+    tty: true                   # -t  → start.sh จะเปิด bash ให้เมื่อ attach
+    restart: unless-stopped
+    environment:
+      JUPYTER_PASSWORD: ${JUPYTER_PASSWORD:-}   # ว่าง = JupyterLab ไม่ถามรหัสผ่าน
+    ports:
+      - "127.0.0.1:${JUPYTER_PORT:-8888}:8888"  # JupyterLab → http://localhost:8888
+    volumes:
+      - ./workspace:/workspace              # งานอยู่บน host ไม่หายเมื่อลบ container
+      - accounts:/root/ai-accounts          # credential/config/session ของทุกบัญชี
+      - dind:/var/lib/docker                # image/container ของ Docker-in-Docker
+
+volumes:
+  accounts:
+    name: multi-account-accounts
+  dind:
+    name: multi-account-dind

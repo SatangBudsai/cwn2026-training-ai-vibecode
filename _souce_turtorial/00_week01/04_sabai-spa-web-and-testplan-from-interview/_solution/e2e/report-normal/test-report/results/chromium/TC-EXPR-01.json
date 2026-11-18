@@ -1,0 +1,77 @@
+{
+  "id": "TC-EXPR-01",
+  "title": "TC-EXPR-01 ตัวกรอง 4.5 ดาวขึ้นไปแสดงเฉพาะคนที่ถึงขอบและคงอยู่หลังรีโหลดและจากลิงก์ตรง",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ขั้น 1: แสดง 6 คน · การ์ด T04 มีข้อความ \"ยังไม่มีรีวิว\"\nขั้น 2–4: แสดง 3 คน ตามลำดับ T01, T05, T02 · ไม่แสดง T03, T06, T04\n(ถ้าใช้ มากกว่า 4.5 จะเหลือ 2 คนและหาย T02 · ถ้าใช้ค่าขอบ 4.4 จะได้ 4 คนและมี T03 · ถ้าตัวกรองไม่คงอยู่ ขั้น 3 จะกลับเป็น 6 คน)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 247,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 รีวิว · [D][R] E219–E222 · [D] E226 · [R] ⚠️A-06 ลำดับ",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 247,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-71, BR-47, BR-49",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 247,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R86",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 247,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Happy path, Boundary, State",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 247,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 247,
+        "column": 3
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 10149,
+  "at": "2026-11-06T02:18:23.972Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิด /th/therapists นับการ์ดและอ่านคะแนนของ T04",
+    "2. เปิดตัวกรอง 4.5 ดาวขึ้นไปแล้วอ่านรายชื่อ",
+    "3. รีโหลดแล้วอ่านรายชื่ออีกครั้ง",
+    "4. เปิดแท็บใหม่ที่ /th/therapists?filter=4.5 แล้วอ่านรายชื่อ"
+  ]
+}

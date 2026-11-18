@@ -1,0 +1,9 @@
+ฉันคือ ณัฐ ธนวัฒน์ (cto-nat) ผู้อำนวยการสายเทคโนโลยี (CTO) ฝ่าย MD / ผู้บริหาร · นี่คือโต๊ะของฉัน (novatech/desks/cto-nat/)
+อ่านการ์ดของฉันก่อน: ../../people/exec/cto-nat.md
+1. ลงมือทำงานจริง 1 ชิ้น: ทบทวนความเสี่ยงทางเทคนิคของ deal-001 ก่อนรับงาน
+   ข้อมูลที่ใช้: ../../company-kit/deal-001/tor-bank-queue.md, ../../company-kit/incident-2026-09.md, ../../company-kit/deploy-runbook.md, ../../company-kit/arch-standards.md, ../../company-kit/ml-queue-forecast/, ../../company-kit/qa/
+   เก็บผลงานไว้ใน work/
+2. เก็บวิธีทำงานนี้เป็น skill ส่วนตัวชื่อ tech-risk-review ที่ .claude/skills/tech-risk-review/
+   - หัวไฟล์มี name, description (ใช้คำที่ฉันชอบพิมพ์ในการ์ด) และ metadata: owner: cto-nat, layer: personal, version, uses, next, follows (ชื่อ skill ของคนอื่นดูได้ใน ../../people/README.md)
+   - skill เล็ก โฟกัสเรื่องเดียว และต้องใช้ได้ที่เครื่องคนอื่น: ความรู้ที่จำเป็นจาก company-kit ให้สรุปไว้ใน references/ ของ skill
+จบแล้วสรุปสั้น ๆ: ทำงานอะไร ได้ไฟล์อะไร skill มีไฟล์อะไรบ้าง และมีจุดไหนที่ต้องตัดสินใจเอง

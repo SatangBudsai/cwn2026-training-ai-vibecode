@@ -1,0 +1,5 @@
+# ผลแผนที่ AI สร้างตอนนักศึกษาทำ LAB
+out/
+my_plan/
+__pycache__/
+.ipynb_checkpoints/

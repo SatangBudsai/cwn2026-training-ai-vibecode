@@ -1,0 +1,196 @@
+npm notice run gf-e2e@1.0.0 npx
+npm notice run playwright test --grep TC-FLT-03 |TC-FLT-05 |TC-FLT-06 |TC-PRC-02 |TC-PRC-04 |TC-LOC-04
+
+Running 6 tests using 1 worker
+
+(node:72664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [chromium] › tests\5.3-filters.spec.ts:646:5 › TC-FLT-03 · สายการบิน "เท่านั้น" รวม codeshare + ✕ บนชิป @P2 @5.3 (1.3m)
+(node:109052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [chromium] › tests\5.3-filters.spec.ts:924:5 › TC-FLT-05 · เวลาถึง / เวลาออก ตามเวลาท้องถิ่น จนไม่พบผล @P2 @5.3 (2.0m)
+  ok 3 [chromium] › tests\5.3-filters.spec.ts:1051:5 › TC-FLT-06 · ตัวเลือกแวะพัก + ตัดสนามบินต่อเครื่อง + slider ระยะเวลา @P2 @5.3 (2.1m)
+  ok 4 [chromium] › tests\5.4-price-date-tools.spec.ts:689:5 › TC-PRC-02 · ตารางวันที่และกราฟราคา: ราคา ไฮไลต์ ✦ ยกเลิก/ตกลง @P2 @5.4 (2.3m)
+  ok 5 [chromium] › tests\5.4-price-date-tools.spec.ts:1107:5 › TC-PRC-04 · ราคาบนการ์ดวันที่ถูกกว่า ป้าย "สูง" และช่วงราคาปกติ @P2 @5.4 (2.5m)
+  x  6 [chromium] › tests\5.6-locale-home.spec.ts:1058:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore @P3 @5.6 (17.8s)
+
+
+  1) [chromium] › tests\5.3-filters.spec.ts:646:5 › TC-FLT-03 · สายการบิน "เท่านั้น" รวม codeshare + ✕ บนชิป @P2 @5.3 
+
+    Error: รายการขณะป๊อปอัปเปิดเปลี่ยนจาก B แล้ว
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      693 |       await gf.check('E2 รายการโหลดใหม่ขณะป๊อปอัปเปิด · ชิปเป็นชื่อสายการบิน + ✕', [rowItems(page), c, chipX(page, 'สายการบิน')], async () => {
+      694 |         await expect.soft(dlg, 'ป๊อปอัปยังเปิดอยู่').toBeVisible();
+    > 695 |         expect.soft([...keySet(openRows)].sort().join('\n') !== bKeys, 'รายการขณะป๊อปอัปเปิดเปลี่ยนจาก B แล้ว').toBe(true);
+          |                                                                                                                 ^
+      696 |         const t = await textOf(c);
+      697 |         expect.soft(t, `ชิปแสดงชื่อสายการบินที่เลือก (${al})`).toContain(al);
+      698 |         expect.soft(t, 'ชิปไม่ได้แสดงแค่ชื่อหมวด').not.toBe('สายการบิน');
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:695:113
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:693:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:680:5
+
+    Error: A มีแถว
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      718 |       await gf.check(`E3 ทุกแถวใน A มี "${al}"`, rowItems(page), async () => {
+      719 |         const bad = A.rows.filter((r) => !hasAl(r));
+    > 720 |         expect.soft(A.rows.length, 'A มีแถว').toBeGreaterThan(0);
+          |                                               ^
+      721 |         expect.soft(bad.length, `แถวใน A ที่ไม่มี "${al}": ${show(bad)}`).toBe(0);
+      722 |       });
+      723 |       if (A.complete) {
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:720:47)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:718:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:680:5
+
+    Error: อ่านราคาแท็บ "ถูกที่สุด" (PA) ได้
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+      741 |         const PA = A.cheapest;
+      742 |         const minA = minPrice(A.rows);
+    > 743 |         expect.soft(PA, 'อ่านราคาแท็บ "ถูกที่สุด" (PA) ได้').not.toBeNull();
+          |                                                                  ^
+      744 |         if (PA !== null && minA !== null) {
+      745 |           if (A.complete) expect.soft(PA, `PA (${PA}) = ราคาต่ำสุดใน A (${minA})`).toBe(minA);
+      746 |           else expect.soft(PA, `PA (${PA}) ≤ ราคาต่ำสุดที่แสดง (${minA})`).toBeLessThanOrEqual(minA);
+        at assertion (C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:743:66)
+        at C:\t\gf03v2\e2e\support\gf.ts:296:15
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:740:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:680:5
+
+    Error: แถวใน C ที่ไม่อยู่ใน B: [เวียดเจ็ทแอร์ · 14:00→01:00+1 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติเตินเซินเญิ้ต ในนครโฮจิมินห์ · ฿5900] [ไทยไลอ้อนแอร์ · 06:20→16:25 · ท่าอากาศยานดอนเมือง–ท่าอากาศยานนานาชาตินะริตะ · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติไต้หวันเถา-ยฺเหวียน ในไทเป · ฿7635] [แอร์เอเชีย · 10:25→18:30 · ท่าอากาศยานดอนเมือง–ท่าอากาศยานนานาชาตินะริตะ · บินตรง · ฿8755] [เวียดเจ็ทแอร์ · 20:05→01:00+2 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติเตินเซินเญิ้ต ในนครโฮจิมินห์ · ฿5900] [ฮ่องกงเอ็กซ์เพรส · 12:00→22:45 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติฮ่องกง ในเขตบริหารพิเศษฮ่องกง · ฿7956] [ไชนาเซาเทิร์นแอร์ไลน์ · 02:10→13:35 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติกว่างโจวไป๋-ยฺหวิน ในกว่างโจว · ฿8375] [ไชนาเซาเทิร์นแอร์ไลน์ · 08:10→20:00 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาติโตเกียว · แวะ 1: ที่สนามบิน ท่าอากาศยานนานาชาติกว่างโจวไป๋-ยฺหวิน ในกว่างโจว · ฿8375] [ไทยเวียดเจ๊ทแอร์ · 23:50→07:55+1 · ท่าอากาศยานสุวรรณภูมิ–ท่าอากาศยานนานาชาตินะริตะ · บินตรง · ฿10772] …(+16)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 24
+
+      760 |         const added = multisetMinus(C.rows, B.rows);
+      761 |         expect.soft(gone.length, `แถวใน B ที่ไม่อยู่ใน C: ${show(gone)}`).toBe(0);
+    > 762 |         expect.soft(added.length, `แถวใน C ที่ไม่อยู่ใน B: ${show(added)}`).toBe(0);
+          |                                                                             ^
+      763 |         const pd = priceDiffs(C.rows, B.rows);
+      764 |         expect.soft(pd.length, `แถวที่ราคาเปลี่ยน: ${pd.slice(0, 6).join(' | ')}`).toBe(0);
+      765 |         expect.soft(C.cheapest, `ถูกที่สุด (${C.cheapest}) = P0 (${B.cheapest})`).toBe(B.cheapest);
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:762:77
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:756:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:752:5
+
+    Error: ถูกที่สุด (5900) = P0 (null)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: 5900
+
+      763 |         const pd = priceDiffs(C.rows, B.rows);
+      764 |         expect.soft(pd.length, `แถวที่ราคาเปลี่ยน: ${pd.slice(0, 6).join(' | ')}`).toBe(0);
+    > 765 |         expect.soft(C.cheapest, `ถูกที่สุด (${C.cheapest}) = P0 (${B.cheapest})`).toBe(B.cheapest);
+          |                                                                                   ^
+      766 |       });
+      767 |     });
+      768 |     gf.finishNA();
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:765:83
+        at C:\t\gf03v2\e2e\support\gf.ts:296:9
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:756:7
+        at C:\t\gf03v2\e2e\tests\5.3-filters.spec.ts:752:5
+
+    attachment #1: ตรวจ 01: E1 หัวผลลัพธ์ตรงโจทย์ (image/png) ──────────────────────────────────────
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-01-E1-หัวผลลัพธ์ตรงโจทย์-5ee4834a7554b5eb6fffeb29f0ef9789d96dd7dc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 02: E2 รายการโหลดใหม่ขณะป๊อปอัปเปิด · ชิปเป็นชื่อสายการบิน + ✕ (image/png) ─
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-02-E2-รายการโหลดใหม่ขณะป๊อปอัปเปิด-·-ชิปเป็นชื่อสายการบิน-✕-9d5963589ed2e8b7d940ff1f9f67ad5ad6f5f1c4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 03: E3 ทุกแถวใน A มี "เอเอ็นเอ" (image/png) ────────────────────────────────
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-03-E3-ทุกแถวใน-A-มี-เอเอ็นเอ--120fedf012eb12c5ea967eb144c22a1aba807ef5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 04: E4 ทุกแถวใน B_ANA อยู่ใน A (image/png) ─────────────────────────────────
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-04-E4-ทุกแถวใน-B-ANA-อยู่ใน-A-383e98e0189bc5da6906aadbab8dbf01ad621ad7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: ตรวจ 06: E6 PA = ราคาต่ำสุดของ A และ PA ≥ P0 (image/png) ────────────────────────
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-06-E6-PA-ราคาต่ำสุดของ-A-และ-PA-≥-P0-21b6293575b08f0a92f34963c4aea2293b5405a9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: ตรวจ 07: E7 ชิปกลับเป็น "สายการบิน" ไม่มี ✕ · C = B · ถูกที่สุด = P0 (image/png) 
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\attachments\ตรวจ-07-E7-ชิปกลับเป็น-สายการบิน-ไม่มี-✕-·-C-B-·-ถูกที่สุด-P0-657d16681a07c976689c1d5ed5c42b7e0e11b22d.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-rerun2\5.3-filters-TC-FLT-03-·-สา-06e9a-านั้น-รวม-codeshare-✕-บนชิป-chromium\error-context.md
+
+  2) [chromium] › tests\5.6-locale-home.spec.ts:1058:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore @P3 @5.6 › 2. เปิด U1 (ค้นหาครั้งที่ 1) รอ ≥ 10 วินาที · ตรวจหัวผลลัพธ์ · จดราคาแท็บ "ถูกที่สุด" = P และราคาต่ำสุดในรายการชุดแรก = Pmin (aria-label) · Pref = ค่าที่น้อยกว่า 
+
+    Error: 🛑 งบการค้นหาครบ 105 ครั้งแล้ว (TEST-PLAN 6.6)
+
+       at ..\support\gf.ts:165
+
+      163 |     if (kind === 'search' && totals.search >= SEARCH_CAP) {
+      164 |       writeStop(`งบการค้นหาครบ ${SEARCH_CAP} ครั้ง`, this.testId(), this.page.url());
+    > 165 |       throw new SuiteStopError(`🛑 งบการค้นหาครบ ${SEARCH_CAP} ครั้งแล้ว (TEST-PLAN 6.6)`);
+          |             ^
+      166 |     }
+      167 |     if (kind === 'booking' && totals.booking >= BOOKING_CAP) {
+      168 |       writeStop(`หน้า booking ครบ ${BOOKING_CAP} หน้า`, this.testId(), this.page.url());
+        at GF.log (C:\t\gf03v2\e2e\support\gf.ts:165:13)
+        at GF.searched (C:\t\gf03v2\e2e\support\gf.ts:177:10)
+        at GF.goto (C:\t\gf03v2\e2e\support\gf.ts:197:33)
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1140:7
+        at C:\t\gf03v2\e2e\tests\5.6-locale-home.spec.ts:1139:5
+
+    attachment #1: step1-home (image/png) ──────────────────────────────────────────────────────────
+    test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\attachments\step1-home-2d76b700cf79f9fcda7d53a1d4f953a13f6ecc18.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: ตรวจ 01: E1 ไม่มีสิ่งใดบังฟอร์มค้นหา (image/png) ────────────────────────────────
+    test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\attachments\ตรวจ-01-E1-ไม่มีสิ่งใดบังฟอร์มค้นหา-0c634681398c6f09d9e0665e7e315459f049de62.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: ตรวจ 02: E2 [O] ไม่มี dialog/banner คุกกี้หรือความยินยอม (image/png) ────────────
+    test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\attachments\ตรวจ-02-E2-O-ไม่มี-dialog-banner-คุกกี้หรือความยินยอม-5070b50ad94b2b6aaa0e659b7f5789f906ca74e3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: ตรวจ 03: E3 [O] (ข้อ 1) หน้าแรกเป็น 1 ใน 2 แบบ และฟอร์มค้นหาครบทุกช่อง (image/png) 
+    test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\attachments\ตรวจ-03-E3-O-ข้อ-1-หน้าแรกเป็น-1-ใน-2-แบบ-และฟอร์มค้นหาครบทุกช่อง-ca1773bd451cd577c8d89dd6e61864a6de79b32e.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-rerun2\5.6-locale-home-5-6-ภาษา-ส-ab413-ก-การจำค่าฟอร์ม-และ-Explore-chromium\error-context.md
+
+  2 failed
+    [chromium] › tests\5.3-filters.spec.ts:646:5 › TC-FLT-03 · สายการบิน "เท่านั้น" รวม codeshare + ✕ บนชิป @P2 @5.3 
+    [chromium] › tests\5.6-locale-home.spec.ts:1058:7 › 5.6 ภาษา สกุลเงิน และหน้าแรก › TC-LOC-04 · หน้าแรก การจำค่าฟอร์ม และ Explore @P3 @5.6 
+  4 passed (10.4m)

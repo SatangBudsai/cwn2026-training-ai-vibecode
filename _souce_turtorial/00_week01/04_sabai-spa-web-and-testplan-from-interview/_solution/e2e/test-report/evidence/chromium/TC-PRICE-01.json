@@ -1,0 +1,121 @@
+{
+  "id": "TC-PRICE-01",
+  "checks": [
+    {
+      "n": 1,
+      "label": "฿9,999 U03: ลด 0% (฿0) จ่าย ฿1000",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-01/001.jpg",
+      "actor": "main",
+      "t": 8181
+    },
+    {
+      "n": 2,
+      "label": "฿10,000 U08: ลด 5% (฿50) จ่าย ฿950",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-01/002.jpg",
+      "actor": "main",
+      "t": 14200
+    },
+    {
+      "n": 3,
+      "label": "฿10,001 U09: ลด 5% (฿50) จ่าย ฿950",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-01/003.jpg",
+      "actor": "main",
+      "t": 19944
+    },
+    {
+      "n": 4,
+      "label": "฿29,999 U05: ลด 5% (฿50) จ่าย ฿950",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-01/004.jpg",
+      "actor": "main",
+      "t": 25879
+    },
+    {
+      "n": 5,
+      "label": "฿30,000 U02: ลด 10% (฿100) จ่าย ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-01/005.jpg",
+      "actor": "main",
+      "t": 31992
+    },
+    {
+      "n": 6,
+      "label": "฿30,001 U10: ลด 10% (฿100) จ่าย ฿900",
+      "pass": true,
+      "actual": "ราคาเต็ม 1 คน ฿1,000",
+      "shot": "shots/chromium/TC-PRICE-01/006.jpg",
+      "actor": "main",
+      "t": 38052
+    },
+    {
+      "n": 7,
+      "label": "U08 ยืนยันรอบ 12:00 สำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"9J5YM7EW\"}",
+      "shot": "shots/chromium/TC-PRICE-01/007.jpg",
+      "actor": "main",
+      "t": 43965
+    },
+    {
+      "n": 8,
+      "label": "U02 ยืนยันรอบ 14:00 สำเร็จ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"KP92GZMX\"}",
+      "shot": "shots/chromium/TC-PRICE-01/008.jpg",
+      "actor": "main",
+      "t": 49641
+    },
+    {
+      "n": 9,
+      "label": "นัด U02 ยังเป็น ฿900 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿900",
+      "shot": "shots/chromium/TC-PRICE-01/009.jpg",
+      "actor": "main",
+      "t": 51283
+    },
+    {
+      "n": 10,
+      "label": "นัด U08 ยังเป็น ฿950 หลังรีโหลด",
+      "pass": true,
+      "actual": "฿950",
+      "shot": "shots/chromium/TC-PRICE-01/010.jpg",
+      "actor": "main",
+      "t": 54226
+    },
+    {
+      "n": 11,
+      "label": "หลังร้าน นัด U08 ฿950",
+      "pass": true,
+      "actual": "฿950",
+      "shot": "shots/chromium/TC-PRICE-01/011.jpg",
+      "actor": "owner",
+      "t": 2999
+    },
+    {
+      "n": 12,
+      "label": "หลังร้าน นัด U02 ฿900",
+      "pass": true,
+      "actual": "฿900",
+      "shot": "shots/chromium/TC-PRICE-01/012.jpg",
+      "actor": "owner",
+      "t": 4990
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-PRICE-01/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-PRICE-01/main.webm"
+    }
+  }
+}

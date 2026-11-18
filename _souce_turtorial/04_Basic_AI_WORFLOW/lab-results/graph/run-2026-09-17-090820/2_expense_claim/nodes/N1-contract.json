@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "Employee": [
+      "employee_id",
+      "level"
+    ],
+    "Claim": [
+      "claim_id",
+      "employee_id",
+      "category",
+      "amount",
+      "status",
+      "current_owner",
+      "customer_name",
+      "customer_company"
+    ],
+    "Receipt": [
+      "receipt_id",
+      "claim_id",
+      "image_ref",
+      "receipt_date",
+      "review_status"
+    ],
+    "Approval": [
+      "approval_id",
+      "claim_id",
+      "approver_role",
+      "decision"
+    ],
+    "Payment": [
+      "payment_id",
+      "claim_id",
+      "scheduled_date",
+      "status"
+    ],
+    "LodgingPolicy": [
+      "level",
+      "nightly_limit",
+      "policy_status"
+    ]
+  },
+  "states": {
+    "ร่าง": "พนักงาน",
+    "รอตรวจเอกสาร": "บัญชี",
+    "รอหัวหน้าอนุมัติ": "หัวหน้าทีม",
+    "รอยืนยันนโยบาย": "หัวหน้าทีม",
+    "รอผู้จัดการอนุมัติ": "ผู้จัดการฝ่าย",
+    "รอจ่าย": "บัญชี",
+    "จ่ายแล้ว": "บัญชี"
+  },
+  "screens": [
+    "submit",
+    "tracking",
+    "review"
+  ],
+  "assumptions": [
+    "ขั้นตอนบัญชีตรวจเอกสารก่อนหัวหน้าเป็นข้อเสนอ ต้องยืนยัน",
+    "ชื่อ Entity/Attribute และสถานะเป็นแบบจำลองเสนอ ไม่ใช่ข้อมูลสัมภาษณ์โดยตรง"
+  ]
+}

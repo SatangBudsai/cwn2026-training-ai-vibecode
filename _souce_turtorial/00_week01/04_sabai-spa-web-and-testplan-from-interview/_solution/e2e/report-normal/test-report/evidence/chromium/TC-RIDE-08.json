@@ -1,0 +1,76 @@
+{
+  "id": "TC-RIDE-08",
+  "checks": [
+    {
+      "n": 1,
+      "label": "จอง H01 วันที่ 19 มิ.ย. บนหน้าเว็บ",
+      "pass": true,
+      "actual": "{\"status\":201,\"code\":\"BPZ6F2QZ\"}",
+      "shot": "shots/chromium/TC-RIDE-08/001.jpg",
+      "actor": "main",
+      "t": 7629
+    },
+    {
+      "n": 2,
+      "label": "ค่าควบคุม /api/quote 18 มิ.ย. สำเร็จ",
+      "pass": true,
+      "actual": "200",
+      "shot": "shots/chromium/TC-RIDE-08/002.jpg",
+      "actor": "main",
+      "t": 8635
+    },
+    {
+      "n": 3,
+      "label": "ค่าควบคุมยืนยันการจอง 18 มิ.ย. สำเร็จ",
+      "pass": true,
+      "actual": "201",
+      "shot": "shots/chromium/TC-RIDE-08/003.jpg",
+      "actor": "main",
+      "t": 9670
+    },
+    {
+      "n": 4,
+      "label": "/api/quote ถูกปฏิเสธ 4xx",
+      "pass": false,
+      "actual": "{\"status\":200,\"body\":\"{\\\"serviceId\\\":\\\"S01\\\",\\\"partySize\\\":1,\\\"bookingType\\\":\\\"SINGLE\\\",\\\"isCoupleSuite\\\":false,\\\"lines\\\":{\\\"fullPrice\\\":1000,\\\"discountPercent\\\":0,\\\"discountSource\\\":\\\"NONE\\\",\\\"discountAmount\\\":0,\\\"pointsRedeemed\\\":0,\\\"pointsDiscount\\\":0,\\\"serviceNet\\\":1000,\\\"cars\\\":1,\\\"transportFee\\\":0,\\\"totalBeforeGiftCard\\\":1000,\\\"giftCardAmount\\\":0,\\\"payA\"}",
+      "shot": "shots/chromium/TC-RIDE-08/004.jpg",
+      "actor": "main",
+      "t": 10668
+    },
+    {
+      "n": 5,
+      "label": "POST ยืนยันการจอง ถูกปฏิเสธ 4xx",
+      "pass": false,
+      "actual": "{\"status\":201,\"body\":\"{\\\"booking\\\":{\\\"id\\\":\\\"76eb53c4-0c3a-4e89-8548-85db0cb24569\\\",\\\"bookingCode\\\":\\\"7C75TF7X\\\",\\\"userId\\\":null,\\\"guestName\\\":\\\"คุณทดสอบ\\\",\\\"guestPhone\\\":\\\"0895400003\\\",\\\"serviceId\\\":\\\"S01\\\",\\\"serviceName\\\":{\\\"th\\\":\\\"นวดไทย 60 นาที\\\",\\\"en\\\":\\\"Thai Massage 60\\\",\\\"zh\\\":\\\"泰式按摩 60分钟\\\"},\\\"bookingType\\\":\\\"SINGLE\\\",\\\"partySize\\\":1,\\\"date\\\":\\\"2026-06-17\\\",\\\"ti\"}",
+      "shot": "shots/chromium/TC-RIDE-08/005.jpg",
+      "actor": "main",
+      "t": 11725
+    },
+    {
+      "n": 6,
+      "label": "คิว 17 มิ.ย. 0 รายการ",
+      "pass": false,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 17 มิ.ย. 2026 · 1 นัด นักบำบัดทุกคน พี่ศรี 1 คิว 12:00 พี่มาลี ไม่มีคิว พี่ภูมิ ไม่มีคิว น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด เวลา บริการ จำนวนคน ผู้จอง เบอร์ นักบำบัด จ่ายหน้าร้าน สถานะ 12:00–13:00 7C75TF7X นวดไทย 60 นาที 1 คน คุณทดสอบ แขก 0895400003 พี่ศรี ฿1,000 รอรับบริการ ใช้บริการเสร็จ",
+      "shot": "shots/chromium/TC-RIDE-08/006.jpg",
+      "actor": "owner",
+      "t": 9030
+    },
+    {
+      "n": 7,
+      "label": "ข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ",
+      "pass": false,
+      "actual": "1",
+      "shot": "shots/chromium/TC-RIDE-08/007.jpg",
+      "actor": "main",
+      "t": 22238
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-RIDE-08/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-RIDE-08/owner.webm"
+    }
+  }
+}

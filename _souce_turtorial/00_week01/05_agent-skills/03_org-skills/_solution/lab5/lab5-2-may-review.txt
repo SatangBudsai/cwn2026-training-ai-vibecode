@@ -1,0 +1,2 @@
+รีวิว PR #1 ใน novatech/org-skills (http://localhost:3300 token ของผมอยู่ใน .gitea-token) ในฐานะเจ้าของนโยบายข้อมูลลูกค้า
+ถ้ามีจุดที่ต้องแก้ให้ request changes พร้อมเหตุผลเป็นคอมเมนต์ใน PR ถ้าดีแล้วให้ approve (ยังไม่ต้อง merge)

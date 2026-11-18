@@ -1,0 +1,19 @@
+Two-stage loop · ขั้นที่ 1 (loop โครงสร้าง) · Loop 2: structure compiler + ล็อกโครงสร้าง
+ทำงานใน /workspace/arena6/app (tag s1-loop1 · ผลวัด /workspace/arena6/out/s1-loop1/report.json) อ่าน loop/CONTRACT.md และ app/LOOP.md ก่อน · pixel ยังแช่แข็ง: ห้ามแก้ tokens.css
+
+อัลกอริทึม (loop ที่ 2 = loop สุดท้ายของขั้นนี้):
+1. วินิจฉัยจาก report.json: test ที่ไม่ผ่าน (id + เหตุผล) · สถานการณ์ differential ที่ไม่ตรง · token ที่ขาด/เกิน เทียบ original.yml
+2. ทำ "รายการแก้" 3 กลุ่ม เรียงตามลำดับ: a. ให้ gate ผ่าน (acceptance · differential · เที่ยวบิน) · b. เปลี่ยนชื่อให้ตรงต้นฉบับ · c. เพิ่มส่วนที่ขาด / ลบส่วนที่เกิน · กรองข้อที่ชนกับชื่อที่ข้อสอบใช้ (ดูจากเหตุผลใน report.json) ออก
+3. ทำทีละกลุ่ม: ลองเปิดหน้าเองก่อนวัด → build → kit/measure.sh http://localhost:5095 /workspace/arena6/out/s1-loop2-<กลุ่ม> → เก็บ (commit) ถ้า gate ผ่าน หรือจำนวนข้อที่ผ่านใน gate ดีขึ้นโดยโครงสร้าง% ไม่ลด ไม่งั้น git revert · วัดได้ 1 ครั้งต่อกลุ่ม ห้ามเริ่ม loop 3
+4. ล็อกโครงสร้าง: เขียน loop/aria-lock.mjs <BASE_URL> [--write] เปิดหน้าผลค้นหาแบบเดียวกับ kit แล้วคืน ariaSnapshot() ของ body + SHA-256 (ไม่ใส่ --write = เทียบกับ lock, exit 1 ถ้าไม่ตรง)
+   บันทึก loop/structure.lock (hash + snapshot) · loop/size-baseline.json (กว้าง×สูงของทุก element ที่มีข้อความหรือกดได้) · loop/visual-baseline.json (ตำแหน่งแถวเที่ยวบินแรก · สีของตัวแปร --c-text* · ข้อความในช่องกรอก) ให้ตัวกันของขั้นที่ 2 ใช้
+5. scope-check stage1 pixel-freeze ต้องผ่าน → commit + tag s1-loop2 และ structure-lock
+
+กติกา (ห้ามละเมิด)
+- วัดด้วย kit/measure.sh เท่านั้น ห้ามแก้ kit/ และ rulers/ ห้ามอ่านซอร์สของ rulers/accept และ rulers/diff
+- ถ้าครบ loop 2 แล้ว gate ยังไม่ผ่าน ให้ล็อกตามข้อ 4 แล้วหยุด รายงานตามจริงว่าข้อไหนไม่ผ่านเพราะอะไร ห้ามโกง
+- ห้ามโกง: ห้ามตรวจว่ากำลังโดนทดสอบ ห้ามซ่อนเนื้อหาไว้ให้เฉพาะเครื่องอ่าน ห้ามปลอมข้อมูล ห้ามคัดลอกของ Google หรือโค้ดของ v1–v5
+- ใช้เวลาไม่เกิน 45 นาที
+
+สุดท้ายเขียน app/LOOP.md ส่วน "Loop 2": ตารางทุกกลุ่ม (กลุ่ม | เปลี่ยนอะไร | acceptance | differential | เที่ยวบิน | โครงสร้าง% | visual diff% | Score | เก็บ/ย้อนกลับ) · สิ่งที่ยังไม่ผ่านและทำไม · hash ใน structure.lock
+แล้วตอบเป็นตารางสรุป: Loop 1 vs Loop 2

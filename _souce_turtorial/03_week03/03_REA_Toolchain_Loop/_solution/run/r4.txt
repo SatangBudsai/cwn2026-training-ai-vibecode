@@ -1,0 +1,10 @@
+ตัดสินผลสุดท้าย: แอป 3 เวอร์ชัน เวอร์ชันไหนเก็บฟีเจอร์ของ Google Flights ได้ครบที่สุด (ทำงานในโฟลเดอร์ /workspace/rea-flight-v3)
+- v1 = SkyThai Mini (/workspace/rea-flight/skythai-mini · REA อย่างเดียว) http://localhost:5081
+- v2 = SkyThai Plus (/workspace/rea-flight-v2/skythai-plus · Playwright + REA) http://localhost:5082
+- v3 = SkyThai Pro (/workspace/rea-flight-v3/skythai-pro · HAR + REA + กรรมการอิสระ + วนแก้) http://localhost:5083
+(ถ้าเวอร์ชันไหนยังไม่เปิด ให้รัน docker compose up -d ในโฟลเดอร์ของมัน)
+1. รัน acceptance test ใน accept/ กับทั้ง 3 เวอร์ชัน (ห้ามแก้ test) เก็บ GIF ของแต่ละเคสแยกตามเวอร์ชันใน results/<v>/gif/
+2. เขียน SCOREBOARD.md: ตาราง test | v1 | v2 | v3 และแถวสรุป ผ่าน/ทั้งหมด (%) · จำนวนเที่ยวบินที่แอปแสดงได้ · เวลาที่ใช้สร้างโดยประมาณ
+3. เทียบภาพ (visual diff): ใช้ Playwright ถ่ายหน้าผลค้นหาของ v1 v2 v3 ขนาดจอเดียวกับภาพต้นฉบับ /workspace/rea-flight-v2/exploration/ ภาพหน้าผลค้นหา แล้วใช้ pixelmatch หาเปอร์เซ็นต์ที่ต่างและสร้างภาพไฮไลต์ส่วนที่ต่าง เก็บใน results/visual/ (แอปเราออกแบบหน้าตาเอง ตัวเลขนี้จึงใช้ดูว่าโครงหน้าใกล้กันแค่ไหน ไม่ใช่เป้าหมายให้เหมือน 100%)
+4. สรุปบทเรียน: เครื่องมือแต่ละตัวช่วยเพิ่มอะไร และยังขาดอะไร
+ตอบเป็นตาราง SCOREBOARD (รวมคอลัมน์ visual diff) และคำตัดสิน

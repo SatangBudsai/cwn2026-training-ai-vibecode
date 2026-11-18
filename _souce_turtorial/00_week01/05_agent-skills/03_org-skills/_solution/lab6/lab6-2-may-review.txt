@@ -1,0 +1,1 @@
+รีวิว PR #4 (CI ของคลัง) ใน novatech/org-skills token ของผมอยู่ใน .gitea-token รัน skill-eval ของ PR นี้ด้วยสคริปต์ที่ PR ให้มา ถ้าทุกอย่างดีให้ approve ถ้าไม่ดีให้ request changes พร้อมเหตุผล

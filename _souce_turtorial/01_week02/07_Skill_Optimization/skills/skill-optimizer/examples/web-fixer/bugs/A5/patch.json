@@ -1,0 +1,7 @@
+[
+  {
+    "file": "lib/orders.ts",
+    "find": "for (const [slug, qty] of qtyBySlug) store.stock[slug] -= qty;",
+    "replace": "for (const slug of qtyBySlug.keys()) store.stock[slug] -= 1;"
+  }
+]

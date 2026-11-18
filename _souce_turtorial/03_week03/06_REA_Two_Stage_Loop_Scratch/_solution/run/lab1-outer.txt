@@ -1,0 +1,7 @@
+ใน container multi-account-devtool ที่ /workspace/arena6 ช่วยสำรวจ Google Flights แบบแบ่งกันทำพร้อมกัน 4 บัญชี (Parallel Exploration)
+ส่งงานในไฟล์ _solution/run/ ของบทนี้ ให้ทำพร้อมกันในโฟลเดอร์ของแต่ละคน:
+- x-a.txt → yolo1 (yolo1 -p) ใน explore/a-form
+- x-b.txt → yolo2 (yolo2 -p) ใน explore/b-results
+- x-c.txt → yolo3 (yolo3 -p) ใน explore/c-booking
+- x-d.txt → cyolo1 (cyolo1 exec --skip-git-repo-check) ใน explore/d-network
+ระหว่างรอให้บอกว่าใครเสร็จแล้วบ้าง เมื่อครบทั้ง 4 ให้สรุปเป็นตาราง: ส่วน | บัญชี | เวลา | จำนวนข้อ A/B/C/E | ไฟล์สำคัญ

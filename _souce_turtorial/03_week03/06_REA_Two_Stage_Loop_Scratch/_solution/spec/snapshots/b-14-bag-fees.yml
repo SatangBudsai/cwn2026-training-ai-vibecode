@@ -1,0 +1,40 @@
+- dialog "ค่าธรรมเนียมสัมภาระ":
+  - heading "ค่าธรรมเนียมสัมภาระ" [level=1]
+  - list:
+    - listitem:
+      - link "การบินไทย (เปิดในแท็บใหม่)":
+        - /url: https://www.thaiairways.com/th_TH/plan/travel_information/baggage.page?
+        - text: การบินไทย
+        - img
+    - listitem:
+      - link "เจเอแอล (เปิดในแท็บใหม่)":
+        - /url: https://www.jal.co.jp/en/inter/baggage/
+        - text: เจเอแอล
+        - img
+    - listitem:
+      - link "ไทยไลอ้อนแอร์ (เปิดในแท็บใหม่)":
+        - /url: https://www.lionairthai.com/th/Terms-And-Conditions#twelve
+        - text: ไทยไลอ้อนแอร์
+        - img
+    - listitem:
+      - link "ไทยเวียดเจ๊ทแอร์ (เปิดในแท็บใหม่)":
+        - /url: https://www.vietjetair.com/en/pages/to-have-a-good-flight-1599448842652/baggage-service-1608369253127
+        - text: ไทยเวียดเจ๊ทแอร์
+        - img
+    - listitem:
+      - link "ไห่หนานแอร์ไลน์ (เปิดในแท็บใหม่)":
+        - /url: https://www.hainanairlines.com/OEC/GB/BASV#
+        - text: ไห่หนานแอร์ไลน์
+        - img
+    - listitem:
+      - link "เอเอ็นเอ (เปิดในแท็บใหม่)":
+        - /url: https://www.ana.co.jp/th/th/serviceinfo/international/optional_svc/fbag/
+        - text: เอเอ็นเอ
+        - img
+    - listitem:
+      - link "ฮ่องกงเอ็กซ์เพรส (เปิดในแท็บใหม่)":
+        - /url: https://www.hkexpress.com/en/Plan/Extras/Baggage
+        - text: ฮ่องกงเอ็กซ์เพรส
+        - img
+  - button "ปิดกล่องโต้ตอบ":
+    - img

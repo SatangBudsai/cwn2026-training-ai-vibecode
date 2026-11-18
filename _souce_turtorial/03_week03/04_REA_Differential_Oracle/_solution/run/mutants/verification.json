@@ -1,0 +1,553 @@
+{
+  "source_tests_unchanged": true,
+  "copied_test_files": [
+    {
+      "file": "mutants/runs/base/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/base/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M01/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M02/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M03/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M04/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M05/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M06/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M07/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M08/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M09/accept/report.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/diff/scenarios.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/diff/run.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/diff/report.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/diff/lib/original.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/diff/lib/parse.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/diff/lib/clone.mjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/accept/run.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/accept/suite.cjs",
+      "same": true
+    },
+    {
+      "file": "mutants/runs/M10/accept/report.cjs",
+      "same": true
+    }
+  ],
+  "single_mutations": [
+    {
+      "id": "M01",
+      "changed_source_files": [
+        "src/components/Results.tsx"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M02",
+      "changed_source_files": [
+        "src/components/filters.ts"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M03",
+      "changed_source_files": [
+        "src/components/Results.tsx"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M04",
+      "changed_source_files": [
+        "src/components/Results.tsx"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M05",
+      "changed_source_files": [
+        "src/components/filters.ts"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M06",
+      "changed_source_files": [
+        "src/components/FlightRow.tsx"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M07",
+      "changed_source_files": [
+        "src/components/filters.ts"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M08",
+      "changed_source_files": [
+        "src/components/filters.ts"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M09",
+      "changed_source_files": [
+        "src/components/filters.ts"
+      ],
+      "exactly_one_expected_file": true
+    },
+    {
+      "id": "M10",
+      "changed_source_files": [
+        "src/components/FlightRow.tsx"
+      ],
+      "exactly_one_expected_file": true
+    }
+  ],
+  "remaining_mutation_containers": [],
+  "runs": [
+    {
+      "id": "base",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M01",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M02",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M03",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M04",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M05",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M06",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M07",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M08",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M09",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    },
+    {
+      "id": "M10",
+      "acceptance_total": 82,
+      "acceptance_artifact_errors": [],
+      "differential_total": 8,
+      "oracle_errors": []
+    }
+  ]
+}

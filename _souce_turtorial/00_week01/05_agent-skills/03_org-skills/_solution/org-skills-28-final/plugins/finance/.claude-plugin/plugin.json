@@ -1,0 +1,11 @@
+{
+  "name": "finance",
+  "version": "1.0.0",
+  "description": "แผนกบัญชี / ธุรการ: คิดราคาโปรเจกต์ และตรวจใบแจ้งหนี้",
+  "author": {
+    "name": "fin-joy"
+  },
+  "dependencies": [
+    "core"
+  ]
+}

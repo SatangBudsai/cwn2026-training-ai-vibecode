@@ -1,0 +1,85 @@
+{
+  "id": "TC-GIFT-06",
+  "title": "TC-GIFT-06 บัตรใช้ได้ถึงวันที่ 365 วันซื้อเป็นวันที่ 0 ตรวจจากวันจอง ไม่ใช่วันนัด",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "GIFT-EXP364 วันที่ 364: ใช้ได้ · ฿1,000 − ฿1,000 = จ่าย ฿0 · บัตรเหลือ ฿0\nGIFT-EXP365 วันที่ 365: ใช้ได้ · จ่าย ฿0 · บัตรเหลือ ฿0 (ถ้านับวันซื้อเป็นวันที่ 1 จะกลายเป็นวันที่ 366 และถูกปฏิเสธ)\nGIFT-EXP366 วันที่ 366: มีข้อความว่าหมดอายุ · ยอดจ่ายยัง ฿1,000 · บัตรยัง ฿1,000 · ไม่เกิดการหักบัตร\nGIFT-EXP365 นัด 15 ก.ค. 2026: ใช้ได้ · จ่าย ฿0 · บัตรเหลือ ฿0 (ถ้าตรวจจากวันนัดจะถูกปฏิเสธ เพราะบัตรหมดอายุ 15 มิ.ย. 2026)",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 475,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 Gift Card · [D][R] E205–E207 · [R] ⚠️D-06 · [R] ⚠️A-30 · F-ร้าน 13",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 475,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "BR-44, BR-45",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 475,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R75",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 475,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 475,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 475,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 55526,
+  "at": "2026-11-06T02:28:22.042Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "GIFT-EXP364 นัด 17 มิ.ย. · 1. เข้าระบบ U04 จอง S01",
+    "GIFT-EXP364 นัด 17 มิ.ย. · 2. กรอกบัตร ดูข้อความและยอดจ่าย",
+    "GIFT-EXP364 นัด 17 มิ.ย. · 3. ถ้าบัตรผ่าน กดยืนยัน แล้วตรวจยอดบัตร",
+    "GIFT-EXP365 นัด 17 มิ.ย. · 1. เข้าระบบ U04 จอง S01",
+    "GIFT-EXP365 นัด 17 มิ.ย. · 2. กรอกบัตร ดูข้อความและยอดจ่าย",
+    "GIFT-EXP365 นัด 17 มิ.ย. · 3. ถ้าบัตรผ่าน กดยืนยัน แล้วตรวจยอดบัตร",
+    "GIFT-EXP366 นัด 17 มิ.ย. · 1. เข้าระบบ U04 จอง S01",
+    "GIFT-EXP366 นัด 17 มิ.ย. · 2. กรอกบัตร ดูข้อความและยอดจ่าย",
+    "GIFT-EXP366 นัด 17 มิ.ย. · 3. ถ้าบัตรผ่าน กดยืนยัน แล้วตรวจยอดบัตร",
+    "GIFT-EXP365 นัด 15 ก.ค. · 1. เข้าระบบ U04 จอง S01",
+    "GIFT-EXP365 นัด 15 ก.ค. · 2. กรอกบัตร ดูข้อความและยอดจ่าย",
+    "GIFT-EXP365 นัด 15 ก.ค. · 3. ถ้าบัตรผ่าน กดยืนยัน แล้วตรวจยอดบัตร"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "TC-GIFT-03",
+  "title": "TC-GIFT-03 ยอดจ่ายต่ำสุด ฿0 หักบัตรไม่เกินยอดก่อนหักบัตร เศษคงอยู่ในบัตร",
+  "project": "chromium",
+  "file": "5.6-gift.spec.ts",
+  "tags": [
+    "@P1",
+    "@5.6"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "ยอดก่อนหักบัตรทุกแถว (฿2,000 − แลก 200 แต้ม ฿100 = ฿1,900 + รถ ฿300 = ฿2,200)\nGIFT-2199: หัก ฿2,199 จ่าย ฿1 บัตรเหลือ ฿0\nGIFT-2200: หัก ฿2,200 จ่าย ฿0 บัตรเหลือ ฿0\nGIFT-2201: หัก ฿2,200 จ่าย ฿0 บัตรเหลือ ฿1 (ถ้าหักเต็มใบ บัตรจะเหลือ ฿0 · ถ้าไม่กันขั้นต่ำ จะจ่าย −฿1)\nแต้ม U03 ทุกแถว 250 − 200 = 50",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 273,
+        "column": 1
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §4 ราคา · [D][R] E157–E159",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 273,
+        "column": 1
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "BR-33, FR-29",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 273,
+        "column": 1
+      }
+    },
+    {
+      "type": "rules",
+      "description": "—",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 273,
+        "column": 1
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 273,
+        "column": 1
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.6-gift.spec.ts",
+        "line": 273,
+        "column": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 71952,
+  "at": "2026-11-06T02:22:06.866Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "GIFT-2199 · 1. เข้าระบบ U03 เลือก S04 รถ H04 แลก 200 แต้ม",
+    "GIFT-2199 · 2. กรอกบัตร ดูยอดหน้าสรุป",
+    "GIFT-2199 · 3. ยืนยันการจอง",
+    "GIFT-2199 · 4. ตรวจยอดบัตรที่ /gift-cards แล้วรีโหลด",
+    "GIFT-2200 · 1. เข้าระบบ U03 เลือก S04 รถ H04 แลก 200 แต้ม",
+    "GIFT-2200 · 2. กรอกบัตร ดูยอดหน้าสรุป",
+    "GIFT-2200 · 3. ยืนยันการจอง",
+    "GIFT-2200 · 4. ตรวจยอดบัตรที่ /gift-cards แล้วรีโหลด",
+    "GIFT-2201 · 1. เข้าระบบ U03 เลือก S04 รถ H04 แลก 200 แต้ม",
+    "GIFT-2201 · 2. กรอกบัตร ดูยอดหน้าสรุป",
+    "GIFT-2201 · 3. ยืนยันการจอง",
+    "GIFT-2201 · 4. ตรวจยอดบัตรที่ /gift-cards แล้วรีโหลด"
+  ]
+}

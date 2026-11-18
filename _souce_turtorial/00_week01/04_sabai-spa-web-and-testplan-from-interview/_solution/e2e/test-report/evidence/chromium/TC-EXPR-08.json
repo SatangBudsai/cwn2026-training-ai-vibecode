@@ -1,0 +1,229 @@
+{
+  "id": "TC-EXPR-08",
+  "checks": [
+    {
+      "n": 1,
+      "label": "ขั้น 1 หลังสลับภาษา: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/001.jpg",
+      "actor": "main",
+      "t": 4676
+    },
+    {
+      "n": 2,
+      "label": "ขั้น 2 หน้าจอ 1: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/002.jpg",
+      "actor": "main",
+      "t": 6687
+    },
+    {
+      "n": 3,
+      "label": "ขั้น 3 หน้าจอ 2: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/003.jpg",
+      "actor": "main",
+      "t": 8888
+    },
+    {
+      "n": 4,
+      "label": "ขั้น 3 หน้าจอ 3: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/004.jpg",
+      "actor": "main",
+      "t": 10652
+    },
+    {
+      "n": 5,
+      "label": "ชื่อว่าง: มีข้อความแจ้งเป็นภาษาจีน",
+      "pass": true,
+      "actual": "[\"请填写姓名和电话\"]",
+      "shot": "shots/chromium/TC-EXPR-08/005.jpg",
+      "actor": "main",
+      "t": 12751
+    },
+    {
+      "n": 6,
+      "label": "ขั้น 4 ชื่อว่าง: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/006.jpg",
+      "actor": "main",
+      "t": 13713
+    },
+    {
+      "n": 7,
+      "label": "เบอร์ 12345: มีข้อความแจ้งเป็นภาษาจีน",
+      "pass": true,
+      "actual": "[\"电话号码须为 9–10 位数字\"]",
+      "shot": "shots/chromium/TC-EXPR-08/007.jpg",
+      "actor": "main",
+      "t": 15779
+    },
+    {
+      "n": 8,
+      "label": "ขั้น 4 เบอร์ 12345: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/008.jpg",
+      "actor": "main",
+      "t": 16767
+    },
+    {
+      "n": 9,
+      "label": "ขั้น 4 คิววันที่ 17 มิ.ย. 2026 เพิ่ม 0 รายการ",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-EXPR-08/009.jpg",
+      "actor": "owner",
+      "t": 18175
+    },
+    {
+      "n": 10,
+      "label": "ขั้น 5 แชต \"香薰精油按摩多少钱\": regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/010.jpg",
+      "actor": "main",
+      "t": 20401
+    },
+    {
+      "n": 11,
+      "label": "ขั้น 5 แชต \"明天会下雨吗\": regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/011.jpg",
+      "actor": "main",
+      "t": 22144
+    },
+    {
+      "n": 12,
+      "label": "ขั้น 5 แชต \"12345\": regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/012.jpg",
+      "actor": "main",
+      "t": 23885
+    },
+    {
+      "n": 13,
+      "label": "ขั้น 5 แชต เริ่มจอง: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/013.jpg",
+      "actor": "main",
+      "t": 25248
+    },
+    {
+      "n": 14,
+      "label": "ขั้น 5 แชตจอง \"S01\": regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/014.jpg",
+      "actor": "main",
+      "t": 26647
+    },
+    {
+      "n": 15,
+      "label": "ขั้น 5 แชตจอง \"2026-06-17\": regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/015.jpg",
+      "actor": "main",
+      "t": 28315
+    },
+    {
+      "n": 16,
+      "label": "ขั้น 5 แชตจอง \"10:15\": regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/016.jpg",
+      "actor": "main",
+      "t": 30049
+    },
+    {
+      "n": 17,
+      "label": "ขั้น 6 ยอดจ่ายหน้าร้านก่อนยืนยัน 1,000",
+      "pass": true,
+      "actual": "1000",
+      "shot": "shots/chromium/TC-EXPR-08/017.jpg",
+      "actor": "main",
+      "t": 32541
+    },
+    {
+      "n": 18,
+      "label": "ขั้น 6 ได้รหัสจอง 1 รหัส",
+      "pass": true,
+      "actual": "QCRZLVCB",
+      "shot": "shots/chromium/TC-EXPR-08/018.jpg",
+      "actor": "main",
+      "t": 33965
+    },
+    {
+      "n": 19,
+      "label": "ขั้น 6 หน้ายืนยันยอด 1,000",
+      "pass": true,
+      "actual": "预约成功 我们已为您预留这段时间 预约码 QCRZLVCB 请保存此预约码，取消时需与电话号码一起使用。 服务 泰式按摩 60分钟 时间 2026年6月17日 · 12:00–13:00 理疗师 · 1 人 诗丽 预约人 Test Guest · 0812345678 取消此预约 只能取消整个预约。如需更改时间，请取消后重新预约。 价格明细 原价 1 人 1,000 泰铢 折扣 0% 无折扣 0 泰铢 积分兑换 0 积分 0 泰铢 接送费 0 泰铢 礼品卡 0 泰铢 到店支付 1,000 泰铢 不支持在线付款，余额到店支付。",
+      "shot": "shots/chromium/TC-EXPR-08/019.jpg",
+      "actor": "main",
+      "t": 34962
+    },
+    {
+      "n": 20,
+      "label": "ขั้น 6 นักบำบัด 诗丽",
+      "pass": true,
+      "actual": "诗丽",
+      "shot": "shots/chromium/TC-EXPR-08/020.jpg",
+      "actor": "main",
+      "t": 35946
+    },
+    {
+      "n": 21,
+      "label": "ขั้น 6 หน้ายืนยัน: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/021.jpg",
+      "actor": "main",
+      "t": 36914
+    },
+    {
+      "n": 22,
+      "label": "ขั้น 6 หลังร้านคิววันที่ 17 มิ.ย. 2026 เพิ่ม 1 รายการพอดี",
+      "pass": true,
+      "actual": "1",
+      "shot": "shots/chromium/TC-EXPR-08/022.jpg",
+      "actor": "owner",
+      "t": 38369
+    },
+    {
+      "n": 23,
+      "label": "ขั้น 6 หลังร้านยอด 1,000",
+      "pass": true,
+      "actual": "฿1,000",
+      "shot": "shots/chromium/TC-EXPR-08/023.jpg",
+      "actor": "owner",
+      "t": 39359
+    },
+    {
+      "n": 24,
+      "label": "ขั้น 7 หลังรีโหลด: regex [฀-๿] ได้ 0 จุด",
+      "pass": true,
+      "actual": "[]",
+      "shot": "shots/chromium/TC-EXPR-08/024.jpg",
+      "actor": "main",
+      "t": 41224
+    }
+  ],
+  "videos": {
+    "main": {
+      "file": "videos/TC-EXPR-08/main.webm"
+    },
+    "owner": {
+      "file": "videos/TC-EXPR-08/owner.webm"
+    }
+  }
+}

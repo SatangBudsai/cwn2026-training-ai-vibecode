@@ -1,0 +1,24 @@
+# สร้างโดย scripts/build.py จาก scripts/plugins.json — ห้ามแก้มือ
+# Gitea: pattern เป็น regexp ของ path · ทุกบรรทัดที่ตรงจะถูกขอรีวิว (สะสม ไม่ใช่บรรทัดสุดท้ายชนะ)
+# หัวหน้าแผนก = CODEOWNER ของ plugin แผนกตัวเอง · ทีมกลางดูแล core / shared / ไฟล์กลางของคลัง
+
+\.claude-plugin/.* @plat-ken
+scripts/.* @plat-ken
+\.gitea/.* @plat-ken
+README\.md @plat-ken
+
+plugins/core/.* @plat-ken
+plugins/shared/.* @plat-ken
+plugins/exec/.* @exec-ploy
+plugins/sales/.* @sales-nida
+plugins/sa/.* @sa-ton
+plugins/dev/.* @dev-pond
+plugins/qa/.* @qa-mint
+plugins/devops/.* @ops-art
+plugins/mlops/.* @ml-jay
+plugins/hr/.* @hr-fah
+plugins/finance/.* @fin-joy
+
+plugins/core/skills/pricing-rules/.* @fin-joy
+plugins/core/skills/customer-data-policy/.* @plat-may
+plugins/core/skills/brand-guide/.* @plat-may

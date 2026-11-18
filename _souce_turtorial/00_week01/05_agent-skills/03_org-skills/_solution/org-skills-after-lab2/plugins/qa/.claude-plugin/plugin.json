@@ -1,0 +1,14 @@
+{
+  "name": "qa",
+  "version": "1.0.0",
+  "description": "งาน QA: ทดสอบเว็บ black-box ตาม TEST-PLAN และเขียนรายงานบั๊กที่ทำซ้ำได้",
+  "author": {
+    "name": "qa-mint"
+  },
+  "keywords": [
+    "department",
+    "qa",
+    "bug-report",
+    "test-from-plan"
+  ]
+}

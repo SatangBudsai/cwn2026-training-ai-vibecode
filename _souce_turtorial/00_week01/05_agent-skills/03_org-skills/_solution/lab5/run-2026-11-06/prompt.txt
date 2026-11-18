@@ -1,0 +1,12 @@
+ฉันเป็นผู้ดูแลระบบ ช่วยเดิน LAB 5 (PR แก้ skill sales-proposal) ให้ครบในครั้งเดียว
+แต่ละขั้น = แชตใหม่ของเจ้าของโต๊ะ: รัน claude -p ในโฟลเดอร์ desks/<user>/ ให้เขียนไฟล์และรันคำสั่งได้โดยไม่ต้องถาม (--permission-mode bypassPermissions) เก็บ log แบบ stream-json ไว้ที่ logs/lab5/<ลำดับ>-<user>.jsonl ทำทีละขั้น รอขั้นก่อนจบก่อน
+ต่อท้ายข้อความของทุกขั้นด้วย: "เหมือนพนักงานจริงที่ใช้คอมของตัวเอง ห้ามเปิดโต๊ะของคนอื่น ห้ามเปิด skill ของแผนกอื่นใน ~/.claude/plugins และห้ามเปิด ../../../_solution/ (token ของฉันอยู่ใน .gitea-token)"
+ขั้นตอน (<N> = เลข PR ที่ได้จากขั้น 1):
+1) sales-nida: MD ตีกลับดีล deal-001 เพราะ proposal ไม่มีภาคผนวก PDPA (เหตุผลอยู่ใน ../../deals/deal-001/approval.md) แก้ skill sales-proposal ในคลังกลาง novatech/org-skills ให้ใส่ภาคผนวกนี้ทุกครั้งที่ลูกค้าเป็นธนาคาร แล้วเปิด PR ให้ plat-may และ md-somchai รีวิว
+2) plat-may: รีวิว PR #<N> ใน novatech/org-skills (http://localhost:3300) ในฐานะเจ้าของนโยบายข้อมูลลูกค้า ถ้ามีจุดที่ต้องแก้ให้ request changes พร้อมเหตุผลเป็นคอมเมนต์ใน PR ถ้าดีแล้วให้ approve (ยังไม่ต้อง merge)
+3) md-somchai: รีวิว PR #<N> ใน novatech/org-skills ในฐานะเจ้าของกฎภาคผนวก PDPA ว่าข้อความตรงกับกติกาของผมไหม ถ้าตรงให้ approve (ยังไม่ต้อง merge) ถ้าไม่ตรงให้ request changes พร้อมเหตุผล
+   ถ้าขั้น 2 หรือ 3 ขอแก้: ให้ sales-nida "อ่านคอมเมนต์ทั้งหมดใน PR #<N> แล้วแก้ตามนั้นใน PR เดิม push ขึ้นไป แล้วตอบคอมเมนต์ว่าแก้อะไรไปบ้าง" แล้วให้คนที่ขอแก้รีวิวรอบใหม่ (วนได้ไม่เกิน 3 รอบ)
+4) sales-nida: PR #<N> ของผม: plat-may กับ md-somchai approve ครบแล้วหรือยัง ถ้าครบให้ merge ได้เลย
+5) sales-krit: อัปเดต skill ของบริษัทที่ติดตั้งในโต๊ะนี้ให้เป็นฉบับล่าสุด แล้วบอกว่าอะไรเปลี่ยนบ้าง จากนั้นทำ proposal ตาม TOR ../../company-kit/deal-002/tor-bank-dispute.md เก็บไว้ใน work/deal-002/
+ตัวคุณเองแค่ส่งงานต่อ ห้ามแก้ skill หรือ PR เอง
+จบแล้วสรุปเป็นตาราง: ขั้น · ใคร · ทำอะไร · ผล (approve / request changes / merge) และบอกว่า proposal ของ sales-krit มีภาคผนวก PDPA ครบ 3 ข้อไหม

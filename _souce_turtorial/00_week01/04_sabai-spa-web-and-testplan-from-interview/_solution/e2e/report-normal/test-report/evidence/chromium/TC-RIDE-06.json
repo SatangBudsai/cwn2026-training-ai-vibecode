@@ -1,0 +1,211 @@
+{
+  "id": "TC-RIDE-06",
+  "checks": [
+    {
+      "n": 1,
+      "label": "กลุ่ม ก ค่า \"-0.1\": ถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/001.jpg",
+      "actor": "main",
+      "t": 7548
+    },
+    {
+      "n": 2,
+      "label": "กลุ่ม ก ค่า \"-0.1\": ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-06/002.jpg",
+      "actor": "main",
+      "t": 9223
+    },
+    {
+      "n": 3,
+      "label": "กลุ่ม ก ค่า \"0.0\": ค่ารถ ฿0 ยอด ฿1,000 ไปต่อได้",
+      "pass": true,
+      "actual": "{\"enabled\":true,\"fee\":0,\"pay\":1000,\"errors\":\"\"}",
+      "shot": "shots/chromium/TC-RIDE-06/003.jpg",
+      "actor": "main",
+      "t": 13061
+    },
+    {
+      "n": 4,
+      "label": "กลุ่ม ก ค่า \"5.05\": ถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/004.jpg",
+      "actor": "main",
+      "t": 16859
+    },
+    {
+      "n": 5,
+      "label": "กลุ่ม ก ค่า \"5.05\": ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-06/005.jpg",
+      "actor": "main",
+      "t": 18523
+    },
+    {
+      "n": 6,
+      "label": "กลุ่ม ก ค่า \"abc\": ถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/006.jpg",
+      "actor": "main",
+      "t": 22357
+    },
+    {
+      "n": 7,
+      "label": "กลุ่ม ก ค่า \"abc\": ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-06/007.jpg",
+      "actor": "main",
+      "t": 24025
+    },
+    {
+      "n": 8,
+      "label": "กลุ่ม ก ค่า \"1e1\": ถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/008.jpg",
+      "actor": "main",
+      "t": 27843
+    },
+    {
+      "n": 9,
+      "label": "กลุ่ม ก ค่า \"1e1\": ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-06/009.jpg",
+      "actor": "main",
+      "t": 29476
+    },
+    {
+      "n": 10,
+      "label": "กลุ่ม ก ค่า \"\": ถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"กรุณาเลือกโรงแรมหรือกรอกระยะทาง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/010.jpg",
+      "actor": "main",
+      "t": 33306
+    },
+    {
+      "n": 11,
+      "label": "กลุ่ม ก ค่า \"\": ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-06/011.jpg",
+      "actor": "main",
+      "t": 34973
+    },
+    {
+      "n": 12,
+      "label": "กลุ่ม ก ค่า \"5.00\": ถูกปฏิเสธ",
+      "pass": true,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/012.jpg",
+      "actor": "main",
+      "t": 38790
+    },
+    {
+      "n": 13,
+      "label": "กลุ่ม ก ค่า \"5.00\": ไปต่อไม่ได้",
+      "pass": true,
+      "actual": "{\"disabled\":true,\"created\":false,\"status\":null}",
+      "shot": "shots/chromium/TC-RIDE-06/013.jpg",
+      "actor": "main",
+      "t": 40472
+    },
+    {
+      "n": 14,
+      "label": "กลุ่ม ข ค่า \".5\": ปฏิเสธ",
+      "pass": false,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/014.jpg",
+      "actor": "main",
+      "t": 44270
+    },
+    {
+      "n": 15,
+      "label": "กลุ่ม ข ค่า \"5.\": ปฏิเสธ",
+      "pass": false,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/015.jpg",
+      "actor": "main",
+      "t": 48089
+    },
+    {
+      "n": 16,
+      "label": "กลุ่ม ข ค่า \"-0\": ปฏิเสธ",
+      "pass": false,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/016.jpg",
+      "actor": "main",
+      "t": 51873
+    },
+    {
+      "n": 17,
+      "label": "กลุ่ม ข ค่า \"+5\": ปฏิเสธ",
+      "pass": false,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/017.jpg",
+      "actor": "main",
+      "t": 55671
+    },
+    {
+      "n": 18,
+      "label": "กลุ่ม ข ค่า \"๕\": ปฏิเสธ",
+      "pass": false,
+      "actual": "{\"enabled\":false,\"fee\":0,\"pay\":1000,\"errors\":\"ระยะทางต้องไม่ติดลบ และมีทศนิยมไม่เกิน 1 ตำแหน่ง\"}",
+      "shot": "shots/chromium/TC-RIDE-06/018.jpg",
+      "actor": "main",
+      "t": 59473
+    },
+    {
+      "n": 19,
+      "label": "กลุ่ม ข ค่า \" 5.0 \": รับ",
+      "pass": true,
+      "actual": "{\"enabled\":true,\"fee\":0,\"pay\":1000,\"errors\":\"\"}",
+      "shot": "shots/chromium/TC-RIDE-06/019.jpg",
+      "actor": "main",
+      "t": 63270
+    },
+    {
+      "n": 20,
+      "label": "กลุ่ม ข ค่า \"00012\": รับ",
+      "pass": true,
+      "actual": "{\"enabled\":true,\"fee\":300,\"pay\":1300,\"errors\":\"\"}",
+      "shot": "shots/chromium/TC-RIDE-06/020.jpg",
+      "actor": "main",
+      "t": 67040
+    },
+    {
+      "n": 21,
+      "label": "คิว 17 มิ.ย. 0 รายการ",
+      "pass": true,
+      "actual": "หลังร้าน คิวประจำวัน ตารางคิวของนักบำบัดทุกคน พร้อมยอดจ่ายหน้าร้าน เลือกวัน 17 มิ.ย. 2026 · 0 นัด นักบำบัดทุกคน พี่ศรี ไม่มีคิว พี่มาลี ไม่มีคิว พี่ภูมิ ไม่มีคิว น้องฟ้า ไม่มีคิว พี่ทิว ไม่มีคิว น้องแก้ว ไม่มีคิว รายการนัด ไม่มีคิวในวันนี้ ลองเลือกวันอื่นเพื่อดูตารางคิว",
+      "shot": "shots/chromium/TC-RIDE-06/021.jpg",
+      "actor": "owner",
+      "t": 2346
+    },
+    {
+      "n": 22,
+      "label": "ข้อมูลไม่เปลี่ยน: คิว 17 มิ.ย. 0 รายการ",
+      "pass": true,
+      "actual": "0",
+      "shot": "shots/chromium/TC-RIDE-06/022.jpg",
+      "actor": "main",
+      "t": 70804
+    }
+  ],
+  "videos": {
+    "owner": {
+      "file": "videos/TC-RIDE-06/owner.webm"
+    },
+    "main": {
+      "file": "videos/TC-RIDE-06/main.webm"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "TC-EXPR-02",
+  "title": "TC-EXPR-02 คะแนนเฉลี่ยบนการ์ดตรงกับค่าที่คิดจากรีวิวเก่า",
+  "project": "chromium",
+  "file": "5.8-experience.spec.ts",
+  "tags": [
+    "@P2",
+    "@5.8"
+  ],
+  "annotations": [
+    {
+      "type": "expected",
+      "description": "T01 5.0 ((5+5+5) ÷ 3 = 15 ÷ 3)\nT05 4.6 ((5+5+5+4+4) ÷ 5 = 23 ÷ 5)\nT02 4.5 ((5+4) ÷ 2 = 9 ÷ 2)\nT03 4.4 ((5+5+4+4+4) ÷ 5 = 22 ÷ 5)\nT06 4.0 ((5+3) ÷ 2 = 8 ÷ 2)\n(ถ้าปัดเป็นจำนวนเต็ม T02 จะได้ 5 หรือ 4 · T03 จะได้ 4 · ถ้าไม่ตั้งทศนิยม T01 จะแสดง 5 แทน 5.0)\nค่าที่เหลือเป็น unit test ไม่ตรวจบนเว็บ: 4.44 → 4.4 ไม่ผ่าน · 4.45 → 4.5 ผ่าน · 4.46 → 4.5 ผ่าน · 1 รีวิว 5 ดาว → 5.0 ผ่าน",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 299,
+        "column": 3
+      }
+    },
+    {
+      "type": "source",
+      "description": "[D] §2 ดาว · [D][R] คะแนนใน TEST-DATA · [D][R] E228 · [R] ⚠️A-37",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 299,
+        "column": 3
+      }
+    },
+    {
+      "type": "fr-br",
+      "description": "FR-71, BR-48, BR-49",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 299,
+        "column": 3
+      }
+    },
+    {
+      "type": "rules",
+      "description": "R86, R87",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 299,
+        "column": 3
+      }
+    },
+    {
+      "type": "technique",
+      "description": "Boundary, Equivalence partition",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 299,
+        "column": 3
+      }
+    },
+    {
+      "type": "timing",
+      "description": "ทันที · หลังรีโหลด",
+      "location": {
+        "file": "C:\\t\\spa04\\sabai\\e2e\\tests\\5.8-experience.spec.ts",
+        "line": 299,
+        "column": 3
+      }
+    }
+  ],
+  "status": "passed",
+  "durationMs": 7688,
+  "at": "2026-11-06T02:18:31.666Z",
+  "attempts": [],
+  "errors": [],
+  "steps": [
+    "1. เปิด /th/therapists โดยไม่เปิดตัวกรอง",
+    "2. อ่านคะแนนบนการ์ด T01, T05, T02, T03, T06",
+    "3. รีโหลดแล้วอ่านอีกครั้ง"
+  ]
+}

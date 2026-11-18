@@ -1,0 +1,147 @@
+- dialog "สนามบินสำหรับต่อเครื่อง":
+  - heading "สนามบินสำหรับต่อเครื่อง" [level=2]
+  - button "ปิดกล่องโต้ตอบ":
+    - img
+  - text: ระยะเวลาแวะพัก ทั้งหมด
+  - slider "ระยะเวลาแวะพักขั้นต่ำ": "30"
+  - slider "ระยะเวลาแวะพักสูงสุด": "2010"
+  - separator
+  - text: สนามบินทั้งหมดสำหรับต่อเครื่อง
+  - switch "สนามบินทั้งหมดสำหรับต่อเครื่อง" [checked]:
+    - img
+    - img
+  - text: สนามบิน
+  - list "สนามบิน":
+    - listitem:
+      - checkbox "กว่างโจว (CAN)" [checked]
+      - text: กว่างโจว (CAN)
+      - button "กว่างโจว (CAN) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เก้าสุยง (KHH)" [checked]
+      - text: เก้าสุยง (KHH)
+      - button "เก้าสุยง (KHH) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เขตบริหารพิเศษฮ่องกง (HKG)" [checked]
+      - text: เขตบริหารพิเศษฮ่องกง (HKG)
+      - button "เขตบริหารพิเศษฮ่องกง (HKG) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เขตสหพันธรัฐกัวลาลัมเปอร์ (KUL)" [checked]
+      - text: เขตสหพันธรัฐกัวลาลัมเปอร์ (KUL)
+      - button "เขตสหพันธรัฐกัวลาลัมเปอร์ (KUL) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "โคเบะ (UKB)" [checked]
+      - text: โคเบะ (UKB)
+      - button "โคเบะ (UKB) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "จาการ์ตา (CGK)" [checked]
+      - text: จาการ์ตา (CGK)
+      - button "จาการ์ตา (CGK) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เฉิงตู (TFU)" [checked]
+      - text: เฉิงตู (TFU)
+      - button "เฉิงตู (TFU) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ชิงเต่า (TAO)" [checked]
+      - text: ชิงเต่า (TAO)
+      - button "ชิงเต่า (TAO) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ซัปโปะโระ (CTS)" [checked]
+      - text: ซัปโปะโระ (CTS)
+      - button "ซัปโปะโระ (CTS) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เซินเจิ้น (SZX)" [checked]
+      - text: เซินเจิ้น (SZX)
+      - button "เซินเจิ้น (SZX) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เซี่ยงไฮ (PVG)" [checked]
+      - text: เซี่ยงไฮ (PVG)
+      - button "เซี่ยงไฮ (PVG) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เซี่ยงไฮ (SHA)" [checked]
+      - text: เซี่ยงไฮ (SHA)
+      - button "เซี่ยงไฮ (SHA) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เซี่ยเหมิน (XMN)" [checked]
+      - text: เซี่ยเหมิน (XMN)
+      - button "เซี่ยเหมิน (XMN) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "โซล (GMP)" [checked]
+      - text: โซล (GMP)
+      - button "โซล (GMP) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "โซล (ICN)" [checked]
+      - text: โซล (ICN)
+      - button "โซล (ICN) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ดานัง (DAD)" [checked]
+      - text: ดานัง (DAD)
+      - button "ดานัง (DAD) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "เทศบาลนครภูเก็ต (HKT)" [checked]
+      - text: เทศบาลนครภูเก็ต (HKT)
+      - button "เทศบาลนครภูเก็ต (HKT) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "แทกู (TAE)" [checked]
+      - text: แทกู (TAE)
+      - button "แทกู (TAE) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ไทเป (TPE)" [checked]
+      - text: ไทเป (TPE)
+      - button "ไทเป (TPE) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ไทเป (TSA)" [checked]
+      - text: ไทเป (TSA)
+      - button "ไทเป (TSA) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ธากา (DAC)" [checked]
+      - text: ธากา (DAC)
+      - button "ธากา (DAC) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "นครโฮจิมินห์ (SGN)" [checked]
+      - text: นครโฮจิมินห์ (SGN)
+      - button "นครโฮจิมินห์ (SGN) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "นาโงยะ (NGO)" [checked]
+      - text: นาโงยะ (NGO)
+      - button "นาโงยะ (NGO) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ปักกิ่ง (PEK)" [checked]
+      - text: ปักกิ่ง (PEK)
+      - button "ปักกิ่ง (PEK) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ปักกิ่ง (PKX)" [checked]
+      - text: ปักกิ่ง (PKX)
+      - button "ปักกิ่ง (PKX) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ฟุกุโอะกะ (FUK)" [checked]
+      - text: ฟุกุโอะกะ (FUK)
+      - button "ฟุกุโอะกะ (FUK) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "มะนิลา (MNL)" [checked]
+      - text: มะนิลา (MNL)
+      - button "มะนิลา (MNL) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "สิงคโปร์ (SIN)" [checked]
+      - text: สิงคโปร์ (SIN)
+      - button "สิงคโปร์ (SIN) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "อำเภอเกาะสมุย (USM)" [checked]
+      - text: อำเภอเกาะสมุย (USM)
+      - button "อำเภอเกาะสมุย (USM) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "โอซากะ (ITM)" [checked]
+      - text: โอซากะ (ITM)
+      - button "โอซากะ (ITM) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "โอซากะ (KIX)" [checked]
+      - text: โอซากะ (KIX)
+      - button "โอซากะ (KIX) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "ฮานอย (HAN)" [checked]
+      - text: ฮานอย (HAN)
+      - button "ฮานอย (HAN) เท่านั้น": เท่านั้น
+    - listitem:
+      - checkbox "Haikou (HAK)" [checked]
+      - text: Haikou (HAK)
+      - button "Haikou (HAK) เท่านั้น": เท่านั้น
+  - button "ล้าง สนามบินสำหรับต่อเครื่อง" [disabled]: ล้าง
