@@ -1,0 +1,54 @@
+[
+  {
+    "name": "web-01-login.png",
+    "note": "หน้าเข้าสู่ระบบ (ThaiD จำลอง / เจ้าหน้าที่)"
+  },
+  {
+    "name": "web-02-verify.png",
+    "note": "ตรวจเอกสารโดยไม่ต้องล็อกอิน (ชื่อผู้ยื่นปิดบัง)"
+  },
+  {
+    "name": "web-03-citizen.png",
+    "note": "ประชาชน: รายการคำขอและเริ่มบริการ"
+  },
+  {
+    "name": "web-04-wizard-fee.png",
+    "note": "ยื่นคำขอ SV-03 พื้นที่ 101 ตร.ม. ค่าธรรมเนียม ฿1,010"
+  },
+  {
+    "name": "web-05-citizen-case.png",
+    "note": "ประชาชน: รายละเอียดคำขอ สถานะ ไทม์ไลน์ SLA"
+  },
+  {
+    "name": "web-06-mobile.png",
+    "note": "มือถือ 375px ไม่มี scroll แนวนอน"
+  },
+  {
+    "name": "web-07-queue.png",
+    "note": "เจ้าหน้าที่: คิวงานแยกแผนก เลขบัตรปิดบัง"
+  },
+  {
+    "name": "web-08-notifications.png",
+    "note": "เจ้าหน้าที่: แจ้งเตือน SLA ใกล้ครบกำหนด/เกินกำหนด"
+  },
+  {
+    "name": "web-09-approvals.png",
+    "note": "หัวหน้าฝ่าย: รายการรออนุมัติ"
+  },
+  {
+    "name": "web-10-dashboard.png",
+    "note": "ผู้บริหาร: Dashboard (ไม่มีข้อมูลส่วนบุคคล)"
+  },
+  {
+    "name": "web-11-audit.png",
+    "note": "ผู้ตรวจสอบ: Audit Trail"
+  },
+  {
+    "name": "web-12-admin.png",
+    "note": "ผู้ดูแลระบบ: ค่าธรรมเนียม/SLA"
+  },
+  {
+    "name": "web-13-officer-case.png",
+    "note": "เจ้าหน้าที่: รายละเอียดคำขอและปุ่มดำเนินการ"
+  }
+]

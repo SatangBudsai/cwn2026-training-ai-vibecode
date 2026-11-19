@@ -37,6 +37,52 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 ที่ปรับต่างจากเอกสารสไตล์: ใช้ Open Sans ตามด้วย Noto Sans Thai และลด letter-spacing เหลือ −0.01em เพื่อให้ภาษาไทยอ่านได้ · ใช้เทา `#595959` และน้ำเงินกรมท่าแทน `#8c8c8c`/`#1890ff` เพราะสองสีนั้นผ่าน WCAG AA ไม่ได้ (TC-NFR-02 ตรวจด้วย axe) · ไม่มีรูปสินค้า/hero carousel เพราะเป็นเว็บราชการ
 ไฟล์: `app/public/static/app.css`
 
+<!-- gallery:start -->
+## ภาพประกอบ
+
+### แผนภาพ DAG (LAB 2)
+
+![DAG](docs/img/dag.png)
+
+แผนอ่านได้ที่ [PLAN.md](plan/PLAN.md) · Playwright ทั้งสามชุดไม่มีลูกศรจากบล็อกเว็บ (ทำขนานกัน) · บล็อกรวมและ BUG_MODE เป็น exclusive 🔒
+
+### Timeline (LAB 3)
+
+![Timeline](docs/img/timeline.png)
+
+เวลาในแท่งสีมาจากที่เอเจนต์รายงานตอนจบงาน ส่วนขั้นรวม/แก้ไม่ได้จับเวลา (แท่งลายทแยง) และไม่มีกราฟ "แผน vs จริง" เพราะไม่มี dag-planner ในเครื่อง
+
+### ภาพหน้าเว็บ (13 หน้า)
+
+| | |
+|---|---|
+| **หน้าเข้าสู่ระบบ (ThaiD จำลอง / เจ้าหน้าที่)**<br><img src="docs/img/web-01-login.png" width="460"> | **ตรวจเอกสารโดยไม่ต้องล็อกอิน (ชื่อผู้ยื่นปิดบัง)**<br><img src="docs/img/web-02-verify.png" width="460"> |
+| **ประชาชน: รายการคำขอและเริ่มบริการ**<br><img src="docs/img/web-03-citizen.png" width="460"> | **ยื่นคำขอ SV-03 พื้นที่ 101 ตร.ม. ค่าธรรมเนียม ฿1,010**<br><img src="docs/img/web-04-wizard-fee.png" width="460"> |
+| **ประชาชน: รายละเอียดคำขอ สถานะ ไทม์ไลน์ SLA**<br><img src="docs/img/web-05-citizen-case.png" width="460"> | **มือถือ 375px ไม่มี scroll แนวนอน**<br><img src="docs/img/web-06-mobile.png" width="460"> |
+| **เจ้าหน้าที่: คิวงานแยกแผนก เลขบัตรปิดบัง**<br><img src="docs/img/web-07-queue.png" width="460"> | **เจ้าหน้าที่: แจ้งเตือน SLA ใกล้ครบกำหนด/เกินกำหนด**<br><img src="docs/img/web-08-notifications.png" width="460"> |
+| **หัวหน้าฝ่าย: รายการรออนุมัติ**<br><img src="docs/img/web-09-approvals.png" width="460"> | **ผู้บริหาร: Dashboard (ไม่มีข้อมูลส่วนบุคคล)**<br><img src="docs/img/web-10-dashboard.png" width="460"> |
+| **ผู้ตรวจสอบ: Audit Trail**<br><img src="docs/img/web-11-audit.png" width="460"> | **ผู้ดูแลระบบ: ค่าธรรมเนียม/SLA**<br><img src="docs/img/web-12-admin.png" width="460"> |
+| **เจ้าหน้าที่: รายละเอียดคำขอและปุ่มดำเนินการ**<br><img src="docs/img/web-13-officer-case.png" width="460"> |  |
+
+### GIF ตอน Playwright รัน test ระดับ P1 (24 ไฟล์ · LAB 4)
+
+ทุก test ผ่าน · เปิดรวมทั้งหมดได้ที่ e2e/test-report/index.html
+
+| | | |
+|---|---|---|
+| **TC-AUDIT-01**<br><img src="e2e/test-report/gifs/TC-AUDIT-01.gif" width="300"> | **TC-AUDIT-02**<br><img src="e2e/test-report/gifs/TC-AUDIT-02.gif" width="300"> | **TC-AUDIT-03**<br><img src="e2e/test-report/gifs/TC-AUDIT-03.gif" width="300"> |
+| **TC-AUTH-01**<br><img src="e2e/test-report/gifs/TC-AUTH-01.gif" width="300"> | **TC-AUTH-02**<br><img src="e2e/test-report/gifs/TC-AUTH-02.gif" width="300"> | **TC-AUTH-03**<br><img src="e2e/test-report/gifs/TC-AUTH-03.gif" width="300"> |
+| **TC-DASH-01**<br><img src="e2e/test-report/gifs/TC-DASH-01.gif" width="300"> | **TC-DASH-02**<br><img src="e2e/test-report/gifs/TC-DASH-02.gif" width="300"> | **TC-DASH-04**<br><img src="e2e/test-report/gifs/TC-DASH-04.gif" width="300"> |
+| **TC-FEE-01**<br><img src="e2e/test-report/gifs/TC-FEE-01.gif" width="300"> | **TC-NFR-01**<br><img src="e2e/test-report/gifs/TC-NFR-01.gif" width="300"> | **TC-NFR-02**<br><img src="e2e/test-report/gifs/TC-NFR-02.gif" width="300"> |
+| **TC-NFR-02B**<br><img src="e2e/test-report/gifs/TC-NFR-02B.gif" width="300"> | **TC-PAY-01**<br><img src="e2e/test-report/gifs/TC-PAY-01.gif" width="300"> | **TC-PDPA-01**<br><img src="e2e/test-report/gifs/TC-PDPA-01.gif" width="300"> |
+| **TC-PDPA-03**<br><img src="e2e/test-report/gifs/TC-PDPA-03.gif" width="300"> | **TC-RBAC-01**<br><img src="e2e/test-report/gifs/TC-RBAC-01.gif" width="300"> | **TC-RBAC-02**<br><img src="e2e/test-report/gifs/TC-RBAC-02.gif" width="300"> |
+| **TC-RBAC-03**<br><img src="e2e/test-report/gifs/TC-RBAC-03.gif" width="300"> | **TC-RBAC-05**<br><img src="e2e/test-report/gifs/TC-RBAC-05.gif" width="300"> | **TC-SUBMIT-01**<br><img src="e2e/test-report/gifs/TC-SUBMIT-01.gif" width="300"> |
+| **TC-SUBMIT-02**<br><img src="e2e/test-report/gifs/TC-SUBMIT-02.gif" width="300"> | **TC-UPLOAD-01**<br><img src="e2e/test-report/gifs/TC-UPLOAD-01.gif" width="300"> | **TC-UPLOAD-02**<br><img src="e2e/test-report/gifs/TC-UPLOAD-02.gif" width="300"> |
+
+หมายเหตุ: TC-NFR-02.gif แทบว่าง (5 KB) เพราะ test นั้นสแกน axe หลายหน้าอย่างรวดเร็ว ดู TC-NFR-02B สำหรับภาพการใช้คีย์บอร์ด · อีก 28 ข้อของ P1 เป็น test API อย่างเดียวจึงไม่มีวิดีโอ
+
+<!-- gallery:end -->
+
 ## วิธีรัน
 
 ```powershell
