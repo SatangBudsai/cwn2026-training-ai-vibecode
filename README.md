@@ -24,7 +24,7 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 |---|---|---|
 | LAB 1 เข้าใจโจทย์ ตอบ 3 ข้อ | ✅ | เฉลยด้านล่าง |
 | LAB 2 แผน DAG | ⚠️ ไม่ผ่าน dag-planner (ไม่มีในเครื่อง) · มี blocks.json, dag.png, gantt-plan.png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
-| LAB 3 สร้างเว็บ | ✅ รันแผนจริงรอบ 2 ด้วยเอเจนต์แยกบัญชีสมมติ ([`rerun/`](week02_website/rerun)) 73.5 นาที · ✅ Docker build + รัน test ผ่าน · ⚠️ เวลาแผนเป็นค่าสมมติ · ดู REPORT.md | [`week02_website/app/`](week02_website/app) |
+| LAB 3 สร้างเว็บ | ✅ รันแผนจริงรอบ 2 ด้วยเอเจนต์แยกบัญชีสมมติ ([`rerun/`](week02_website/rerun)) 73.5 นาที · ✅ Docker build + รัน test 61/61 ผ่าน · ⚠️ เวลาแผนเป็นค่าสมมติ · ดู REPORT.md | [`week02_website/app/`](week02_website/app) |
 | LAB 4 TEST-PLAN | ✅ **61/61 ผ่านทั้งเว็บรอบ 1 และเว็บที่สร้างใหม่รอบ 2** (ครอบ 51 TC; รอบ 2 แรกล้ม 12 ข้อ เป็นเว็บผิดทั้งหมด) · GIF P1 24 ไฟล์ | `week02_website/e2e/test-report/` (เปิด `index.html`) |
 | LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12 ทั้งสองรอบ** (รอบ 2: [`rerun/BUG-HUNT.md`](week02_website/rerun/BUG-HUNT.md)) | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
 
@@ -120,7 +120,7 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 
 ![แผน vs จริง](week02_website/docs/img/compare.png)
 
-ข้อควรรู้: (1) TC-PAY-03 ล้มเป็นครั้งคราวด้วย Playwright worker crash บน Windows (code 3221226505 ไม่ใช่ assert ล้ม) ที่เจอในรอบ B08 รอบแรกและในรอบแยก 1 ใน 10 ครั้ง ยังไม่ได้แก้ (2) ระหว่าง X01 เอเจนต์แก้ `wizard.js` ซึ่งเป็นไฟล์ของ F01 เพราะพบบั๊กจริง (แนบไฟล์เร็วหลังสร้างร่างแล้ว file-item หาย) ผิดกติกาแยกไฟล์ แต่เป็นบั๊กของเว็บจริง (3) `rerun/e2e/test-report/results-all.json` ที่เอเจนต์คัดลอกไว้เป็นอีกรอบที่มี 1 ล้ม ผลที่ใช้ยืนยันคือ `results.json` รอบ 61/61 (4) การทำตามขั้น 1–3 ยังไม่ผ่าน dag-planner จริง
+ข้อควรรู้: (1) TC-PAY-03 ล้มเป็นครั้งคราวด้วย Playwright worker crash บน Windows (code 3221226505 ไม่ใช่ assert ล้ม) ที่เจอในรอบ B08 รอบแรกและในรอบแยก 1 ใน 10 ครั้ง แก้โดยเพิ่ม `retries: 1` ใน playwright.config.js ของทั้งสองรอบ ถ้าผ่านรอบสองจะถูกนับเป็น flaky ใน results.json ไม่ซ่อน (ผลล่าสุดของรอบ Docker: flaky 0) (2) ระหว่าง X01 เอเจนต์แก้ `wizard.js` ซึ่งเป็นไฟล์ของ F01 เพราะพบบั๊กจริง (แนบไฟล์เร็วหลังสร้างร่างแล้ว file-item หาย) ผิดกติกาแยกไฟล์ แต่เป็นบั๊กของเว็บจริง (3) `rerun/e2e/test-report/results-all.json` ที่เอเจนต์คัดลอกไว้เป็นอีกรอบที่มี 1 ล้ม ผลที่ใช้ยืนยันคือ `results.json` รอบ 61/61 (4) การทำตามขั้น 1–3 ยังไม่ผ่าน dag-planner จริง
 
 <!-- rerun:end -->
 ## วิธีรัน
@@ -158,6 +158,8 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | TC-NFR-04 | ไฟล์ DB ชื่อ `app.db` แต่ test หา `egov.db` | `app/src/vault.js` |
 | TC-NFR-01, TC-PAY-04 (บางรอบ) | race: แนบไฟล์เร็วก่อนสร้างร่างเสร็จ | `wizard.js` |
 
+**รอบ 2 (เว็บที่สร้างใหม่):** ล้ม 12 ข้อ ทั้งหมดเว็บผิด (otp-step/	haid-error/ee-error/upload-error ค้างใน DOM, /head/approvals เรียก API ผิดตัว, ปุ่มตีกลับสลับเปิดปิด, ค่าธรรมเนียมคิดฝั่ง client, aria-label ไม่ตรงข้อความ, ow-owner, ช่อง from/to ของ Audit UNMASK, issue-btn โชว์ผิดคน) ไม่แก้ test เลย ตารางเต็มใน [REPORT/รายงาน I01](week02_website/plan/REPORT.md)
+
 แก้ test 1 จุด (`upload.spec.js` TC-UPLOAD-01) โดย **เพิ่ม** การตรวจให้ error ชัดขึ้นตอนเปิด B02 ไม่ได้ลดเกณฑ์
 
 ## BUG-HUNT (B01–B12)
@@ -167,8 +169,8 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 
 ## สิ่งที่ต่างจากโจทย์ / ที่ยังไม่ได้ทำ
 
-- **Docker:** `docker compose up --build` ทดสอบแล้ว: build ผ่าน, Playwright กับ container 60 ผ่าน / 1 ข้าม (NFR-03B)
-- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเอง (`plan/PLAN.md`, `plan/blocks.json`) และสร้าง `dag.png`, `gantt-plan.png`, `gantt-actual.png`, `compare.png`, `plan/REPORT.md` ด้วยสคริปต์ `e2e/make-plan-files.js` เวลา "แผน" เป็นค่าสมมติที่ตั้งหลังทำเสร็จ (ตามทางเลือกโควตาสมมติของ PROMPTS) ส่วนเวลา "จริง" คือ duration ที่เอเจนต์รายงาน ไม่ได้รันผ่านสกิล dag-planner งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
+- **Docker:** `docker compose up --build` ทดสอบแล้ว: build ผ่าน และรัน Playwright ครบ **61/61 ผ่าน 0 ข้าม** กับ container (เว็บหลัก + container ที่ปิด TEST_MODE อีกตัวสำหรับ TC-NFR-03B + โฟลเดอร์ข้อมูลที่ mount ให้ TC-NFR-04 ตรวจ DB) · Dockerfile ตั้ง `TEST_MODE=1` เป็นค่าเริ่มต้น ถ้าใช้จริงต้องตั้ง `TEST_MODE=0`
+- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเอง (`plan/PLAN.md`, `plan/blocks.json`) และสร้าง `dag.png`, `gantt-plan.png`, `gantt-actual.png`, `compare.png`, `plan/REPORT.md` ด้วยสคริปต์ `e2e/make-plan-files.js` เวลา "แผน" เป็นค่าสมมติ (ตามทางเลือกโควตาสมมติของ PROMPTS) ส่วนเวลา "จริง" ในรอบ 2 คือ timestamp ที่เอเจนต์บันทึกตอนรันแผนจริง ไม่ได้รันผ่านสกิล dag-planner งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
 - **จำนวน test:** 61 test ครอบ 51 TC เพราะ TC-SLA-01 แยก 9 test (แถว a–i) + TC-NFR-02B, TC-NFR-03B เพิ่ม 2 ข้อ
 - **GIF 24 จาก P1 ทั้งหมด 52:** อีก 28 ข้อเรียก API อย่างเดียว ไม่เปิดเบราว์เซอร์จึงไม่มีวิดีโอ
 - **ไม่มีเกณฑ์ให้คะแนนในชุดโจทย์** ยังไม่ได้เทียบกับเกณฑ์แยกของผู้สอน (ถ้ามี)
@@ -195,6 +197,7 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | โหมดฝังบั๊ก (BUG_MODE=1) | 42 test · ผ่าน 37 · ล้ม 5 (TC-CPN-01, TC-CHK-02, TC-WISH-02, TC-WISH-03, TC-AUTH-02) · ตัดสิน "ไม่ปล่อย" |
 
 รายงาน: `week01/e2e/test-report/` และ `week01/e2e/test-report-bugmode/BUG-REPORT.md`
+
 
 
 

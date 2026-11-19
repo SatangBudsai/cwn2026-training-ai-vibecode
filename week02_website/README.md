@@ -142,7 +142,7 @@ node make-gifs.js                             # ทำ GIF ระดับ P1 �
 
 ## สิ่งที่ต่างจากโจทย์/ที่ยังไม่ได้ทำ
 
-- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเอง (`plan/PLAN.md`, `plan/blocks.json`) และสร้าง `dag.png`, `gantt-plan.png`, `gantt-actual.png`, `compare.png`, `plan/REPORT.md` ด้วยสคริปต์ `e2e/make-plan-files.js` เวลา "แผน" เป็นค่าสมมติที่ตั้งหลังทำเสร็จ (ตามทางเลือกโควตาสมมติของ PROMPTS) ส่วนเวลา "จริง" คือ duration ที่เอเจนต์รายงาน ไม่ได้รันผ่านสกิล dag-planner งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
+- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเอง (`plan/PLAN.md`, `plan/blocks.json`) และสร้าง `dag.png`, `gantt-plan.png`, `gantt-actual.png`, `compare.png`, `plan/REPORT.md` ด้วยสคริปต์ `e2e/make-plan-files.js` เวลา "แผน" เป็นค่าสมมติ (ตามทางเลือกโควตาสมมติของ PROMPTS) ส่วนเวลา "จริง" ในรอบ 2 คือ timestamp ที่เอเจนต์บันทึกตอนรันแผนจริง ไม่ได้รันผ่านสกิล dag-planner งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
 - **จำนวน test:** 61 test ครอบ 51 TC เพราะ TC-SLA-01 แยกเป็น 9 test (แถว a–i) และมี TC-NFR-02B, TC-NFR-03B เพิ่ม 2 ข้อ (TC-NFR-03B ใช้เว็บพอร์ต 3101 ที่ไม่ตั้ง TEST_MODE)
 - **GIF มี 24 จาก test ระดับ P1 ทั้งหมด 52** เพราะอีก 28 ข้อเป็น test ที่เรียก API อย่างเดียว ไม่เปิดเบราว์เซอร์ จึงไม่มีวิดีโอ
 - **ไม่มีเกณฑ์ให้คะแนนในชุดโจทย์** ถ้าผู้สอนมีเกณฑ์แยกต่างหากยังไม่ได้เทียบ
@@ -164,6 +164,7 @@ week02_website/
 ├── app/            เซิร์ฟเวอร์ Node (server.js, src/*.js, public/ = หน้าเว็บ 17 หน้า, API-EXTRAS.md = API ที่เพิ่มจาก CONTRACT)
 └── e2e/            Playwright (tests/*.spec.js, lib/*.js, make-gifs.js, test-report/)
 ```
+
 
 
 
