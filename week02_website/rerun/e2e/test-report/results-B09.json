@@ -1,0 +1,2686 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\playwright.config.js",
+    "rootDir": "D:/ME/cwn2026-training-ai-vibecode/week02_website/rerun/e2e/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/ME/cwn2026-training-ai-vibecode/week02_website/rerun/e2e/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/ME/cwn2026-training-ai-vibecode/week02_website/rerun/e2e/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "test-report/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-report/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "audit.spec.js",
+      "file": "audit.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1625,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:12:57.291Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\audit-TC-AUDIT-01-เหตุการณ์และฟิลด์ใน-Audit-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cb3620ddbaaaeb17db70-45c67fb8e3f544016f68",
+          "file": "audit.spec.js",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "TC-AUDIT-02 Audit แก้/ลบไม่ได้ (405) @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:12:59.038Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\audit-TC-AUDIT-02-Audit-แก้-ลบไม่ได้-405-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cb3620ddbaaaeb17db70-3d1aa25694ca9082c8bd",
+          "file": "audit.spec.js",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "TC-AUDIT-03 กรองช่วงวันที่ตามเวลาไทย @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:12:59.767Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\audit-TC-AUDIT-03-กรองช่วงวันที่ตามเวลาไทย-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cb3620ddbaaaeb17db70-bfd867dd392f0dbea99b",
+          "file": "audit.spec.js",
+          "line": 169,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "auth.spec.js",
+      "file": "auth.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-AUTH-01 เลขบัตร 13 หลัก + checksum @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1556,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:01.303Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\auth-TC-AUTH-01-เลขบัตร-13-หลัก-checksum-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d5ed79a6b333c2ba7209-20fd5bed817eb24ba33e",
+          "file": "auth.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-02 OTP ผิด 3 ครั้งล็อก 15 นาที @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1053,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:02.877Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\auth-TC-AUTH-02-OTP-ผิด-3-ครั้งล็อก-15-นาที-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d5ed79a6b333c2ba7209-960dc97d8d35f0d05354",
+          "file": "auth.spec.js",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-03 ลงทะเบียนครั้งแรก @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1872,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:03.949Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\auth-TC-AUTH-03-ลงทะเบียนครั้งแรก-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d5ed79a6b333c2ba7209-fe938db955ccfe2285da",
+          "file": "auth.spec.js",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-04 เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:05.839Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\auth-TC-AUTH-04-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d5ed79a6b333c2ba7209-6b58a9d88c018d7a1a0f",
+          "file": "auth.spec.js",
+          "line": 179,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "dash.spec.js",
+      "file": "dash.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-DASH-01 Dashboard ตัวเลขเริ่มต้น @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 874,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:08.810Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42e85790ace86756432d-49491391d56d769018f5",
+          "file": "dash.spec.js",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-02 Dashboard ย้อนหลัง @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:09.705Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42e85790ace86756432d-edbffea8fe0156186152",
+          "file": "dash.spec.js",
+          "line": 88,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:11.557Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42e85790ace86756432d-95c03b2a58264a8a4cf4",
+          "file": "dash.spec.js",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-04 ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01 @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 944,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:13.109Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\dash-TC-DASH-04-ค่าขอบ-ทัน-53f38--29-59-16-30-00-16-30-01-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42e85790ace86756432d-68c7889d66d5ab7f723d",
+          "file": "dash.spec.js",
+          "line": 169,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "doc.spec.js",
+      "file": "doc.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-DOC-01 ออกเอกสารและข้อมูลในเอกสาร @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 738,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:14.087Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dac7eaccd64d0b2b0f9a-1cd867e9c584bfe0a442",
+          "file": "doc.spec.js",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "TC-DOC-02 ตรวจเอกสาร /verify @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 510,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:14.850Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dac7eaccd64d0b2b0f9a-2d5c8b0b50d62bc6d194",
+          "file": "doc.spec.js",
+          "line": 72,
+          "column": 1
+        },
+        {
+          "title": "TC-DOC-03 เอกสารหมดอายุและลายเซ็นไม่ตรง @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2979,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:15.390Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dac7eaccd64d0b2b0f9a-30483ab2d19a4c913924",
+          "file": "doc.spec.js",
+          "line": 117,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "fee.spec.js",
+      "file": "fee.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03 @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1452,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:18.412Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\fee-TC-FEE-01-ค่าธรรมเนียม-SV-01-SV-02-SV-03-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b68d5d425644c48f48-d59670ba931656a9e825",
+          "file": "fee.spec.js",
+          "line": 23,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "nfr.spec.js",
+      "file": "nfr.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-NFR-01 Responsive 375/768/1280 @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3253,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:19.962Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-01-Responsive-375-768-1280-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11d18ec26be42a4192da-77a354a0eeb573f7aa24",
+          "file": "nfr.spec.js",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-02 WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:23.249Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-2.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-3.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-1.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-5.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-7.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-4.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-6.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-9.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-10.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-12.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-11.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-8.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-13.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11d18ec26be42a4192da-b02e1acbf372fb692a1a",
+          "file": "nfr.spec.js",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-02B คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง QR @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:35.644Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-02B-คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง-QR-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11d18ec26be42a4192da-5e8edcc1ee32342b7f24",
+          "file": "nfr.spec.js",
+          "line": 150,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-03 Health เวลาโหลด และผลซ้ำได้ @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1727,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:36.544Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11d18ec26be42a4192da-89b6b7bdf1a1c03d2948",
+          "file": "nfr.spec.js",
+          "line": 188,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-03B ปิด hook เมื่อไม่ตั้ง TEST_MODE @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:38.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11d18ec26be42a4192da-30e62a68f68a103b85d1",
+          "file": "nfr.spec.js",
+          "line": 242,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-04 เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 107,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:38.360Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11d18ec26be42a4192da-c47dadadfa95efd2df3d",
+          "file": "nfr.spec.js",
+          "line": 250,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "noti.spec.js",
+      "file": "noti.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-NOTI-01 ผู้รับแจ้งเตือนตามระดับ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1728,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:38.508Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "23f3ed8427fce3b44515-8347edafed963b4c6f69",
+          "file": "noti.spec.js",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2838,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:40.292Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "23f3ed8427fce3b44515-c9f1894e8c0c801d7e81",
+          "file": "noti.spec.js",
+          "line": 51,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pay.spec.js",
+      "file": "pay.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-PAY-01 อายุ QR 15:00 @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1249,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:43.192Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\pay-TC-PAY-01-อายุ-QR-15-00-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d1811a31321b8acde710-0171105ec4e0fe513147",
+          "file": "pay.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-02 ยอดเงินและ callback ซ้ำ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 224,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:44.499Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d1811a31321b8acde710-9050f0188efcaafc8a54",
+          "file": "pay.spec.js",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-03 ชำระพร้อมกัน เลขไม่ซ้ำ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:44.773Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d1811a31321b8acde710-6f46eb85739d0fa46720",
+          "file": "pay.spec.js",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-04 เลขคำขอข้ามปี 2569 -> 2570 @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:45.173Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\pay-TC-PAY-04-เลขคำขอข้ามปี-2569---2570-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d1811a31321b8acde710-f7604ebf2ae6e0132a47",
+          "file": "pay.spec.js",
+          "line": 137,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pdpa.spec.js",
+      "file": "pdpa.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-PDPA-01 ปิดบังเลขบัตรบนจอ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1435,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:46.365Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\pdpa-TC-PDPA-01-ปิดบังเลขบัตรบนจอ-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a12d0c961939a37d6e8a-946de30b1feacd7016d4",
+          "file": "pdpa.spec.js",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม @P1",
+          "ok": false,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 116,
+                  "error": {
+                    "message": "Error: off.reg1 /api/officer/queue?filter=all\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/\\d{13}/\u001b[39m\nReceived string:      \u001b[31m\"{\\\"items\\\":[{\\\"caseNo\\\":\\\"EG-2569-000020\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-11-30T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"overdue\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"\u001b[7m1101700123456\u001b[27m\\\"},{\\\"caseNo\\\":\\\"EG-2569-000022\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-01T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000024\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-02T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000023\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000025\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000026\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000013\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000015\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000027\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000028\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000029\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000030\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000016\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-08T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000018\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000019\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"APPROVED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000012\\\",\\\"serviceId\\\":\\\"SV-03\\\",\\\"serviceName\\\":\\\"ขออนุญาตก่อสร้าง/ต่อเติมอาคาร\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":1,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000021\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"}],\\\"workload\\\":3}\"\u001b[39m",
+                    "stack": "Error: off.reg1 /api/officer/queue?filter=all\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/\\d{13}/\u001b[39m\nReceived string:      \u001b[31m\"{\\\"items\\\":[{\\\"caseNo\\\":\\\"EG-2569-000020\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-11-30T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"overdue\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"\u001b[7m1101700123456\u001b[27m\\\"},{\\\"caseNo\\\":\\\"EG-2569-000022\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-01T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000024\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-02T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000023\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000025\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000026\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000013\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000015\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000027\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000028\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000029\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000030\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000016\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-08T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000018\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000019\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"APPROVED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000012\\\",\\\"serviceId\\\":\\\"SV-03\\\",\\\"serviceName\\\":\\\"ขออนุญาตก่อสร้าง/ต่อเติมอาคาร\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":1,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000021\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"}],\\\"workload\\\":3}\"\u001b[39m\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\tests\\pdpa.spec.js:58:28",
+                    "location": {
+                      "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\tests\\pdpa.spec.js",
+                      "column": 28,
+                      "line": 58
+                    },
+                    "snippet": "  56 |       expect(r.headers['content-type'] || '', label).toContain('application/json');\n  57 |       const s = JSON.stringify(r.json);\n> 58 |       expect(s, label).not.toMatch(/\\d{13}/);\n     |                            ^\n  59 |       expect(s, label).not.toMatch(/\\d-\\d{4}-\\d{5}-\\d{2}-\\d/);\n  60 |       expect(c.deepKeys(r.json), label).not.toContain('idNo');\n  61 |       for (const sec of secrets) expect(s, label).not.toContain(sec);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\tests\\pdpa.spec.js",
+                        "column": 28,
+                        "line": 58
+                      },
+                      "message": "Error: off.reg1 /api/officer/queue?filter=all\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/\\d{13}/\u001b[39m\nReceived string:      \u001b[31m\"{\\\"items\\\":[{\\\"caseNo\\\":\\\"EG-2569-000020\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-11-30T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"overdue\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"\u001b[7m1101700123456\u001b[27m\\\"},{\\\"caseNo\\\":\\\"EG-2569-000022\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-01T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000024\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-02T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000023\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000025\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000026\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000013\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000015\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000027\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000028\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000029\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000030\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"serviceName\\\":\\\"ขอหนังสือรับรอง\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":true,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000016\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-08T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000018\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000019\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"APPROVED\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000012\\\",\\\"serviceId\\\":\\\"SV-03\\\",\\\"serviceName\\\":\\\"ขออนุญาตก่อสร้าง/ต่อเติมอาคาร\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":1,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000021\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"serviceName\\\":\\\"ขออนุญาตประกอบกิจการ\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"dept\\\":\\\"registry\\\",\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"canClaim\\\":false,\\\"idNo\\\":\\\"3100600987659\\\"}],\\\"workload\\\":3}\"\u001b[39m\n\n  56 |       expect(r.headers['content-type'] || '', label).toContain('application/json');\n  57 |       const s = JSON.stringify(r.json);\n> 58 |       expect(s, label).not.toMatch(/\\d{13}/);\n     |                            ^\n  59 |       expect(s, label).not.toMatch(/\\d-\\d{4}-\\d{5}-\\d{2}-\\d/);\n  60 |       expect(c.deepKeys(r.json), label).not.toContain('idNo');\n  61 |       for (const sec of secrets) expect(s, label).not.toContain(sec);\n    at D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\tests\\pdpa.spec.js:58:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:47.849Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\pdpa-TC-PDPA-02-API-JSON-ไม่ส่งเลขบัตรเต็ม-P1\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\pdpa-TC-PDPA-02-API-JSON-ไม่ส่งเลขบัตรเต็ม-P1\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\tests\\pdpa.spec.js",
+                    "column": 28,
+                    "line": 58
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a12d0c961939a37d6e8a-d9eafa20506ff2aa0537",
+          "file": "pdpa.spec.js",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1403,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:49.688Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\pdpa-TC-PDPA-03-แสดงเลขเต็มต้องมีเหตุผลและบันทึก-Audit-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a12d0c961939a37d6e8a-2e767040d3eee049f389",
+          "file": "pdpa.spec.js",
+          "line": 75,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "queue.spec.js",
+      "file": "queue.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-QUEUE-01 ลำดับคิวและขอบเขตแผนก @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1996,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:51.241Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "59a8ffa2e90ba0adcf0d-afa1154da293885fe0cd",
+          "file": "queue.spec.js",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-02 รับเรื่องซ้อน (พร้อมกันและต่อกัน) @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:53.253Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "59a8ffa2e90ba0adcf0d-fd9de7d22e3c70974158",
+          "file": "queue.spec.js",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-03 งานในมือสูงสุด 10 @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2992,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:13:57.203Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "59a8ffa2e90ba0adcf0d-2f148c67eb345bcf36ac",
+          "file": "queue.spec.js",
+          "line": 130,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "rbac.spec.js",
+      "file": "rbac.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 584,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:00.232Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\rbac-TC-RBAC-01-ประชาชนเปิดคำขอคนอื่นไม่ได้-IDOR-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3daf85f29322dc9acb0f-1ed32e9513038aa6bbf6",
+          "file": "rbac.spec.js",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 839,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:00.846Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\rbac-TC-RBAC-02-เจ้าหน้าที-7229b-SV-02-ไม่ได้-ตรวจที่-API-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3daf85f29322dc9acb0f-e93bd5014da8937d7c64",
+          "file": "rbac.spec.js",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-03 ตารางสิทธิ์หน้า/API ตามบทบาท @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4861,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:01.711Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\rbac-TC-RBAC-03-ตารางสิทธิ์หน้า-API-ตามบทบาท-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3daf85f29322dc9acb0f-8bafa8f635f2da777f63",
+          "file": "rbac.spec.js",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2256,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:06.604Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\rbac-TC-RBAC-04-ผู้ดูแลระบ-f0626-ยุด-ผู้ใช้-และยอดที่ล็อก-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3daf85f29322dc9acb0f-74c122055dfd035d153f",
+          "file": "rbac.spec.js",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-05 สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:08.900Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\rbac-TC-RBAC-05-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3daf85f29322dc9acb0f-a18dd626bf81ab24d6a2",
+          "file": "rbac.spec.js",
+          "line": 259,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-06 ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1261,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:10.501Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\rbac-TC-RBAC-06-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3daf85f29322dc9acb0f-23474532068b00b1c282",
+          "file": "rbac.spec.js",
+          "line": 322,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sla.spec.js",
+      "file": "sla.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว a @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 532,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:11.809Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-fd70ae6f82b17ecbef1a",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว b @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 565,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:12.386Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-a80972680d9c921ec834",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว c @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:12.995Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-041d2278d833ad5bffb2",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว d @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 571,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:13.560Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-61f3dfa14b66a953e68b",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว e @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 586,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:14.175Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-f4fc980c742bb59fb59d",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว f @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:14.818Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-84bb4e5fe26ee988730a",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว g @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:15.414Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-c748e62e21de3c62bbaa",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว h @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 536,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:16.007Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-53b4bcd17c296b427f0a",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว i @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:16.586Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-752447dd22b2e5c538e4",
+          "file": "sla.spec.js",
+          "line": 18,
+          "column": 3
+        },
+        {
+          "title": "TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2503,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:17.168Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-87fefdecbfc7831e7cc5",
+          "file": "sla.spec.js",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "TC-SLA-03 ระดับเตือน ปกติ/ใกล้/เกิน @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2952,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:19.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f38715b21f15be715343-c628ad4af3d373c3c649",
+          "file": "sla.spec.js",
+          "line": 126,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "submit.spec.js",
+      "file": "submit.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-SUBMIT-01 ยื่นคำขอ SV-01 ครบวงจร @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:22.743Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\submit-TC-SUBMIT-01-ยื่นคำขอ-SV-01-ครบวงจร-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cb002000b3c306ab6212-5cf4425022a6261aa4a2",
+          "file": "submit.spec.js",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-02 เอกสารบังคับครบก่อนชำระ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1236,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:24.398Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\submit-TC-SUBMIT-02-เอกสารบังคับครบก่อนชำระ-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cb002000b3c306ab6212-378c02beb1768f6dbe51",
+          "file": "submit.spec.js",
+          "line": 82,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-03 ร่าง การลบร่าง และการยกเลิก @P2",
+          "ok": true,
+          "tags": [
+            "P2"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2671,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:25.680Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\submit-TC-SUBMIT-03-ร่าง-การลบร่าง-และการยกเลิก-P2\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cb002000b3c306ab6212-e15d2974a7321fd1e10a",
+          "file": "submit.spec.js",
+          "line": 150,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "upload.spec.js",
+      "file": "upload.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-UPLOAD-01 ขนาดและจำนวนไฟล์ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2697,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:28.401Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\upload-TC-UPLOAD-01-ขนาดและจำนวนไฟล์-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "795c7691ef25a13245f8-991cb20e1013a4e111cb",
+          "file": "upload.spec.js",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "TC-UPLOAD-02 ชนิดไฟล์จากเนื้อไฟล์ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1345,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:31.152Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\rerun\\e2e\\test-results\\upload-TC-UPLOAD-02-ชนิดไฟล์จากเนื้อไฟล์-P1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "795c7691ef25a13245f8-b8050d5dd4637a5ad7b1",
+          "file": "upload.spec.js",
+          "line": 89,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "workflow.spec.js",
+      "file": "workflow.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-WORKFLOW-01 SV-01 อนุมัติ + ออกเอกสาร @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1055,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:32.560Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93da89c2ff21c8134e9c-4ede4e57c668230f59c1",
+          "file": "workflow.spec.js",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-02 SV-02 ผ่านหัวหน้า @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:33.671Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93da89c2ff21c8134e9c-974e95fc5941ccd91118",
+          "file": "workflow.spec.js",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-03 SV-03 สามขั้นตอน @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1828,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:35.934Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93da89c2ff21c8134e9c-cc51a6f4dfd2e4304b1c",
+          "file": "workflow.spec.js",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1930,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:37.820Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93da89c2ff21c8134e9c-63e5e5ebfdb21f442ddb",
+          "file": "workflow.spec.js",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-05 เหตุผล >= 10 ตัวอักษร @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:39.811Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93da89c2ff21c8134e9c-d6aca6e8ca90ec202464",
+          "file": "workflow.spec.js",
+          "line": 251,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-06 เวลาแก้ไข 168 ชั่วโมง @P1",
+          "ok": true,
+          "tags": [
+            "P1"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T09:14:42.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93da89c2ff21c8134e9c-82ffdfa22b8824c51cca",
+          "file": "workflow.spec.js",
+          "line": 320,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-19T09:12:56.592Z",
+    "duration": 108278.98599999999,
+    "expected": 60,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

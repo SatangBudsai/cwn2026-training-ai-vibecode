@@ -5,3 +5,8 @@ app/data/
 e2e/test-results/
 e2e/test-report/html/
 e2e/run*.txt
+rerun/e2e/node_modules/
+rerun/e2e/test-results/
+rerun/e2e/test-report/html/
+rerun/app/data/
+rerun/run-*.txt

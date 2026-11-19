@@ -104,6 +104,25 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 อิงสไตล์ DJI (พื้นขาว การ์ดเหลี่ยมแบนไม่มีเงา ปุ่ม pill ปุ่มรองขอบ 1px KPI ตัวใหญ่ footer เทาถ่าน) ใช้ **น้ำเงินกรมท่าเข้ม `#0B2559`** เพื่อให้ดูทางการ ส้ม `#BE4E04` ใช้เฉพาะเครื่องหมายเล็ก
 ปรับต่างจากเอกสารสไตล์: ใช้ Open Sans ตามด้วย Noto Sans Thai และลด letter-spacing เหลือ −0.01em เพื่อให้ไทยอ่านได้ · ใช้เทา `#595959` กับน้ำเงินกรมท่าแทน `#8c8c8c`/`#1890ff` ที่ไม่ผ่าน WCAG AA (TC-NFR-02 ตรวจด้วย axe) · ไม่มี hero carousel เพราะเป็นเว็บราชการ
 
+<!-- rerun:start -->
+## รันแผนจริงตามโจทย์ (รอบ 2: `week02_website/rerun/`)
+
+เพื่อให้ตรงขั้น 1–5 ของ PROMPTS ผมรันแผน [blocks.json](week02_website/plan/blocks.json) จริงอีกรอบ: เอเจนต์ Claude Code (Sonnet, effort low) แยกตามบัญชีสมมติ acc1/acc2/acc4 บนบัญชีเดียว (ไม่มี container multi-account และ dag-planner) สร้างเว็บใหม่ตั้งแต่ศูนย์จากโจทย์ ห้ามลอกโค้ดรอบก่อน แต่ละบล็อกเขียนไฟล์ของตนเอง (`mod-auth/drafts/sla/vault/cases/reports.js` + `public/`) แล้วรวมกับชุด Playwright รอบก่อน (T01–T03 ใช้ซ้ำ เพราะเป็น black-box)
+
+| ขั้น | ผลที่รันจริง |
+|---|---|
+| I01 รวมและรัน 51 TC | รอบแรก **49 ผ่าน / 12 ล้ม** (ทั้ง 12 ข้อเป็นเว็บผิด ไม่มี test ผิดหรือแผนผิด ไม่ได้แก้ test) แก้จนได้ **61/61 ผ่าน** ผมรันซ้ำเองไม่ตั้ง BUG_MODE ได้ 61 ผ่าน |
+| X01 BUG_MODE B01–B12 | **จับได้ 12 จาก 12** ดู [BUG-HUNT.md](week02_website/rerun/BUG-HUNT.md) · B03 ทำให้ TC-NOTI-02 ล้มด้วย (ไม่อยู่ในรายการ "อาจล้มด้วย" ของ BUGS.md) |
+| เวลาแผน vs จริง | [REPORT.md](week02_website/plan/REPORT.md) · รวม 73.5 นาที (X01 ใช้ 42.1 นาที) · เวลาแผนเป็นค่าสมมติ ไม่ใช่ผลจาก dag-planner |
+| GIF P1 | 24 ไฟล์ที่ `rerun/e2e/test-report/gifs/` |
+
+![Gantt จริง](week02_website/docs/img/gantt-actual.png)
+
+![แผน vs จริง](week02_website/docs/img/compare.png)
+
+ข้อควรรู้: (1) TC-PAY-03 ล้มเป็นครั้งคราวด้วย Playwright worker crash บน Windows (code 3221226505 ไม่ใช่ assert ล้ม) ที่เจอในรอบ B08 รอบแรกและในรอบแยก 1 ใน 10 ครั้ง ยังไม่ได้แก้ (2) ระหว่าง X01 เอเจนต์แก้ `wizard.js` ซึ่งเป็นไฟล์ของ F01 เพราะพบบั๊กจริง (แนบไฟล์เร็วหลังสร้างร่างแล้ว file-item หาย) ผิดกติกาแยกไฟล์ แต่เป็นบั๊กของเว็บจริง (3) `rerun/e2e/test-report/results-all.json` ที่เอเจนต์คัดลอกไว้เป็นอีกรอบที่มี 1 ล้ม ผลที่ใช้ยืนยันคือ `results.json` รอบ 61/61 (4) การทำตามขั้น 1–3 ยังไม่ผ่าน dag-planner จริง
+
+<!-- rerun:end -->
 ## วิธีรัน
 
 ```powershell
@@ -176,5 +195,6 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | โหมดฝังบั๊ก (BUG_MODE=1) | 42 test · ผ่าน 37 · ล้ม 5 (TC-CPN-01, TC-CHK-02, TC-WISH-02, TC-WISH-03, TC-AUTH-02) · ตัดสิน "ไม่ปล่อย" |
 
 รายงาน: `week01/e2e/test-report/` และ `week01/e2e/test-report-bugmode/BUG-REPORT.md`
+
 
 

@@ -1,0 +1,10 @@
+﻿services:
+  web:
+    build: .
+    ports:
+      - "3100:3100"
+    environment:
+      PORT: "3100"
+      TEST_MODE: "1"
+      BUG_MODE: ""
+      DB_PATH: /app/data/app.db
