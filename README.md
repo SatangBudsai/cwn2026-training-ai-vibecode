@@ -23,10 +23,10 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 | ขั้นตาม LAB | สถานะ | หลักฐาน |
 |---|---|---|
 | LAB 1 เข้าใจโจทย์ ตอบ 3 ข้อ | ✅ | เฉลยด้านล่าง |
-| LAB 2 แผน DAG | ⚠️ ทำเองไม่ผ่าน dag-planner · มี blocks.json, dag.png, gantt-plan.png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
-| LAB 3 สร้างเว็บ | ✅ รันได้ด้วย `node server.js` · ✅ Docker build + รัน test ผ่าน · ⚠️ มี REPORT.md/compare.png แต่เวลาแผนเป็นค่าสมมติ | [`week02_website/app/`](week02_website/app) |
-| LAB 4 TEST-PLAN | ✅ **61 test ผ่านครบ 61** (ครอบ 51 TC) · GIF ระดับ P1 24 ไฟล์ | `week02_website/e2e/test-report/` (เปิด `index.html`) |
-| LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12** | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
+| LAB 2 แผน DAG | ⚠️ ไม่ผ่าน dag-planner (ไม่มีในเครื่อง) · มี blocks.json, dag.png, gantt-plan.png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
+| LAB 3 สร้างเว็บ | ✅ รันแผนจริงรอบ 2 ด้วยเอเจนต์แยกบัญชีสมมติ ([`rerun/`](week02_website/rerun)) 73.5 นาที · ✅ Docker build + รัน test ผ่าน · ⚠️ เวลาแผนเป็นค่าสมมติ · ดู REPORT.md | [`week02_website/app/`](week02_website/app) |
+| LAB 4 TEST-PLAN | ✅ **61/61 ผ่านทั้งเว็บรอบ 1 และเว็บที่สร้างใหม่รอบ 2** (ครอบ 51 TC; รอบ 2 แรกล้ม 12 ข้อ เป็นเว็บผิดทั้งหมด) · GIF P1 24 ไฟล์ | `week02_website/e2e/test-report/` (เปิด `index.html`) |
+| LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12 ทั้งสองรอบ** (รอบ 2: [`rerun/BUG-HUNT.md`](week02_website/rerun/BUG-HUNT.md)) | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
 
 **ระดับที่ทำ: ใช้งานได้จริง ไม่ใช่ mock** กฎธุรกิจคำนวณที่ฝั่งเซิร์ฟเวอร์ทั้งหมด (ค่าธรรมเนียม, SLA วันทำการ, RBAC, OTP ล็อก 15 นาที, เลขคำขอ, ลายเซ็น HMAC, แจ้งเตือน, Audit)
 ข้อจำกัด: SQLite เก็บเฉพาะผู้ใช้ (เลขบัตรและเบอร์เข้ารหัส AES-256-GCM) ส่วนคำขอ ร่าง การชำระ ไฟล์ Audit แจ้งเตือนอยู่ในหน่วยความจำ หายเมื่อรีสตาร์ต · PDF เอกสารเป็น ASCII ไม่มีข้อความไทยในไฟล์ · QR เป็นภาพจำลอง
@@ -195,6 +195,7 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | โหมดฝังบั๊ก (BUG_MODE=1) | 42 test · ผ่าน 37 · ล้ม 5 (TC-CPN-01, TC-CHK-02, TC-WISH-02, TC-WISH-03, TC-AUTH-02) · ตัดสิน "ไม่ปล่อย" |
 
 รายงาน: `week01/e2e/test-report/` และ `week01/e2e/test-report-bugmode/BUG-REPORT.md`
+
 
 
 
