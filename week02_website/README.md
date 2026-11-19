@@ -60,7 +60,7 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 
 ![แผน vs จริง](docs/img/compare.png)
 
-⚠️ เวลา "แผน" เป็นค่าสมมติ (โควตา 4 บัญชีสมมติ) ที่ตั้งหลังทำเสร็จ เพราะไม่มี dag-planner · ไฟล์: [blocks.json](plan/blocks.json) · [REPORT.md](plan/REPORT.md)
+⚠️ Gantt แผนและเวลา "แผน" เป็นค่าสมมติ (โควตา 4 บัญชีสมมติ ไม่ใช่ผลจาก dag-planner) ส่วน Gantt จริงและกราฟเทียบมาจากการรันแผนจริงรอบ 2 (โฟลเดอร์ rerun) ที่จับเวลาแต่ละบล็อก · ไฟล์: [blocks.json](plan/blocks.json) · [REPORT.md](plan/REPORT.md)
 
 ### ภาพหน้าเว็บ (13 หน้า)
 
