@@ -11,19 +11,43 @@ for (const t of [tabC, tabS]) t.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const c = t !== tabC; selectTab(c); (c ? tabC : tabS).focus(); }
 });
 
-function showLock(until) {
+function showIdStep() {
   $('#otp-box').hidden = true; $('#otp-box').removeAttribute('data-testid');
+  $('#id-step').hidden = false;
+}
+function showOtpStep() {
+  const d = idDigits();
+  $('#otp-id-mask').textContent = d.length === 13 ? `X-XXXX-XXXXX-${d.slice(10, 12)}-${d.slice(12)}` : '';
+  $('#id-step').hidden = true;
+  $('#otp-box').setAttribute('data-testid', 'otp-step'); $('#otp-box').hidden = false;
+  $('#otp').value = ''; setSlot('#otp-slot', 'otp-error', ''); $('#otp').focus();
+}
+function showLock(until) {
+  showIdStep();
   $('#lock-slot').replaceChildren(h('div', { class: 'alert' },
     h('p', { 'data-testid': 'lock-message', role: 'alert', style: 'margin:0' }, 'ผิดเกินกำหนด เลขบัตรนี้ถูกล็อก 15 นาที'),
     until ? h('p', { style: 'margin:.25rem 0 0' }, 'ปลดล็อกเวลา ', dateEl('span', until, { 'data-testid': 'lock-until' })) : null));
 }
 
+// เลขบัตร: รับเฉพาะตัวเลข และจัดรูปแบบ X-XXXX-XXXXX-XX-X ระหว่างพิมพ์ (ส่งเซิร์ฟเวอร์เป็นตัวเลขล้วน)
+const idDigits = () => $('#idNo').value.replace(/\D/g, '');
+function formatId(d) {
+  const parts = [d.slice(0, 1), d.slice(1, 5), d.slice(5, 10), d.slice(10, 12), d.slice(12, 13)].filter(Boolean);
+  return parts.join('-') + d.slice(13);
+}
+$('#idNo').addEventListener('input', () => {
+  const el = $('#idNo'); const raw = el.value;
+  const hadInvalid = /[^\d-]/.test(raw);
+  const f = formatId(idDigits());
+  if (f !== raw) el.value = f;
+  el.toggleAttribute('data-had-invalid', hadInvalid);
+});
 async function start() {
   setSlot('#thaid-slot', 'thaid-error', ''); $('#lock-slot').replaceChildren();
-  const idNo = $('#idNo').value.trim();
+  const idNo = $('#idNo').hasAttribute('data-had-invalid') ? 'INVALID' : idDigits();
   try {
     await api('/api/auth/thaid/start', { method: 'POST', json: { idNo }, noRedirect: true });
-    $('#otp-box').setAttribute('data-testid', 'otp-step'); $('#otp-box').hidden = false; $('#otp').focus();
+    showOtpStep();
   } catch (e) {
     if (e.code === 'LOCKED') showLock(e.data.lockedUntil);
     else setSlot('#thaid-slot', 'thaid-error', e.code === 'INVALID_ID' ? 'เลขบัตรประชาชนไม่ถูกต้อง' : e.message);
@@ -32,7 +56,7 @@ async function start() {
 async function verify() {
   setSlot('#otp-slot', 'otp-error', '');
   try {
-    const r = await api('/api/auth/thaid/verify', { method: 'POST', json: { idNo: $('#idNo').value.trim(), otp: $('#otp').value.trim() }, noRedirect: true });
+    const r = await api('/api/auth/thaid/verify', { method: 'POST', json: { idNo: idDigits(), otp: $('#otp').value.trim() }, noRedirect: true });
     location.href = r.registered === false ? '/register' : '/citizen';
   } catch (e) {
     if (e.code === 'LOCKED') return showLock(e.data.lockedUntil);
@@ -54,6 +78,8 @@ async function staff() {
   }
 }
 $('#thaid-btn').onclick = start;
+$('#otp-back').onclick = () => { showIdStep(); $('#lock-slot').replaceChildren(); $('#idNo').focus(); };
+$('#otp').addEventListener('input', () => { const el = $('#otp'); const v = el.value.replace(/\D/g, '').slice(0, 6); if (v !== el.value) el.value = v; });
 $('#otp-btn').onclick = verify;
 $('#staff-btn').onclick = staff;
 $('#idNo').addEventListener('keydown', (e) => { if (e.key === 'Enter') start(); });

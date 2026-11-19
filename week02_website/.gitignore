@@ -10,3 +10,4 @@ rerun/e2e/test-results/
 rerun/e2e/test-report/html/
 rerun/app/data/
 rerun/run-*.txt
+app/data/

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ยื่นคำขอ · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main">
+<h1 data-testid="service-name" id="sname"></h1>
+<p><b data-testid="wizard-step" id="wstep">1/3 กรอกข้อมูล</b> · <span>ร่าง: <span data-testid="draft-id" id="did"></span></span></p>
+
+<section id="s1" class="card">
+  <div id="qtyBox" hidden><label for="qty">จำนวนฉบับ (1–5)</label><input id="qty" data-testid="qty-input" inputmode="numeric" autocomplete="off" value="1"></div>
+  <div id="areaBox" hidden><label for="area">พื้นที่ (ตร.ม.)</label><input id="area" data-testid="area-input" inputmode="numeric" autocomplete="off"></div>
+  <p>ค่าธรรมเนียม: <b data-testid="fee-total" id="fee">–</b></p>
+  <p class="error" data-testid="fee-error" id="feeErr" hidden></p>
+  <div class="row"><button class="secondary" data-testid="save-draft-btn" id="save">บันทึกร่าง</button>
+  <button data-testid="to-upload-btn" id="toUp" disabled>ถัดไป: แนบเอกสาร</button></div>
+</section>
+
+<section id="s2" class="card" hidden>
+  <div id="uploads"></div>
+  <p class="error" data-testid="upload-error" id="upErr" hidden></p>
+  <ul class="plain" id="files"></ul>
+  <div id="missing"></div>
+  <div class="row"><button data-testid="to-payment-btn" id="toPay" disabled>ไปชำระเงิน</button></div>
+</section>
+
+<section id="s3" class="card" hidden>
+  <p>ยอดที่ต้องชำระ: <b data-testid="payment-amount" id="pamt"></b></p>
+  <div id="qrBox"></div>
+  <div id="payBox" hidden>
+    <p>สถานะ: <b data-testid="payment-status" id="pst"></b></p>
+    <div id="qexp"></div>
+    <div class="row"><button class="secondary" data-testid="refresh-payment-btn" id="refresh">ตรวจสอบการชำระเงิน</button><span id="regenBox"></span></div>
+  </div>
+  <div id="receipt"></div>
+</section>
+</main>
+<script src="/app.js"></script>
+<script>
+var $ = function (i) { return document.getElementById(i); };
+var svcId = location.pathname.split("/").pop();
+var draftId = new URLSearchParams(location.search).get("draft");
+var draft = null, svcInfo = null, feeValid = false, seq = 0, pay = null, timer = null;
+var STEP = { 1: "1/3 กรอกข้อมูล", 2: "2/3 แนบเอกสาร", 3: "3/3 ชำระเงิน" };
+function go(n) { $("wstep").textContent = STEP[n]; [1, 2, 3].forEach(function (i) { $("s" + i).hidden = i !== n; }); if (n === 3) renderPay(); }
+
+function calcFee() {
+  var my = ++seq, q = "serviceId=" + svcId;
+  if (svcId === "SV-01") q += "&qty=" + encodeURIComponent($("qty").value.trim());
+  if (svcId === "SV-03") q += "&areaSqm=" + encodeURIComponent($("area").value.trim());
+  return EG.api("GET", "/api/fee?" + q).then(function (r) {
+    if (my !== seq) return;
+    if (r.ok) { feeValid = true; $("fee").textContent = EG.money(r.data.fee); $("feeErr").hidden = true; $("feeErr").textContent = ""; }
+    else { feeValid = false; $("fee").textContent = "–"; $("feeErr").textContent = EG.failMsg(r); $("feeErr").hidden = false; }
+    $("toUp").disabled = !feeValid;
+  });
+}
+function body() {
+  var b = { serviceId: svcId };
+  if (svcId === "SV-01") b.qty = Number($("qty").value.trim());
+  if (svcId === "SV-03") b.areaSqm = Number($("area").value.trim());
+  return b;
+}
+function saveDraft() {
+  var p = draft ? EG.api("PUT", "/api/drafts/" + draft.draftId, body()) : EG.api("POST", "/api/drafts", body());
+  return p.then(function (r) {
+    if (!r.ok) { EG.show("action-error", EG.failMsg(r)); return null; }
+    draft = r.data; $("did").textContent = draft.draftId; return draft;
+  });
+}
+["qty", "area"].forEach(function (i) { if ($(i)) ["input", "change", "blur"].forEach(function (ev) { $(i).addEventListener(ev, calcFee); }); });
+$("save").addEventListener("click", function () {
+  EG.clearMsg();
+  if (!feeValid) { EG.show("action-error", $("feeErr").textContent || "กรุณากรอกข้อมูลให้ถูกต้อง"); return; }
+  saveDraft().then(function (d) { if (d) EG.show("action-success", "บันทึกร่างแล้ว"); });
+});
+$("toUp").addEventListener("click", function () {
+  EG.clearMsg();
+  saveDraft().then(function (d) { if (d) { renderUploads(); go(2); } });
+});
+
+/* ---- ขั้น 2 ---- */
+function renderUploads() {
+  var docs = svcInfo.docs;
+  $("uploads").innerHTML = docs.map(function (d) {
+    return "<div><label for=\"up-" + d.key + "\">" + EG.esc(d.name) + (d.required ? " ✱" : "") + (d.pdfOnly ? " (PDF เท่านั้น)" : "") + "</label><input type=\"file\" id=\"up-" + d.key + "\" data-testid=\"upload-input-" + d.key + "\" data-key=\"" + d.key + "\"></div>";
+  }).join("") + "<div><label for=\"up-extra\">เอกสารเพิ่มเติม</label><input type=\"file\" multiple id=\"up-extra\" data-testid=\"upload-input-extra\" data-key=\"extra\"></div>";
+  $("uploads").querySelectorAll("input[type=file]").forEach(function (inp) {
+    inp.addEventListener("change", function () {
+      var files = Array.prototype.slice.call(inp.files), key = inp.dataset.key;
+      $("upErr").hidden = true; $("upErr").textContent = "";
+      files.reduce(function (p, f) {
+        return p.then(function () {
+          var fd = new FormData(); fd.append("file", f, f.name); fd.append("docKey", key);
+          return EG.api("POST", "/api/drafts/" + draft.draftId + "/files", fd).then(function (r) {
+            if (!r.ok) { $("upErr").textContent = EG.failMsg(r); $("upErr").hidden = false; }
+          });
+        });
+      }, Promise.resolve()).then(function () { inp.value = ""; refreshDraft(); });
+    });
+  });
+  refreshDraft();
+}
+function refreshDraft() {
+  return EG.api("GET", "/api/drafts/" + draft.draftId).then(function (r) {
+    if (!r.ok) return; draft = r.data;
+    $("files").innerHTML = draft.files.map(function (f) {
+      return "<li data-testid=\"file-item\" data-name=\"" + EG.esc(f.name) + "\" data-doc-key=\"" + f.docKey + "\">" + EG.esc(f.name) + " <button class=\"danger\" data-testid=\"file-remove-btn\" data-id=\"" + f.fileId + "\">ลบ</button></li>";
+    }).join("");
+    $("missing").innerHTML = (draft.missing && draft.missing.length) ? "<p data-testid=\"missing-docs\">ยังขาดเอกสาร: " + EG.esc(draft.missing.join(", ")) + "</p>" : "";
+    $("toPay").disabled = !!(draft.missing && draft.missing.length);
+  });
+}
+$("files").addEventListener("click", function (ev) {
+  var b = ev.target.closest("[data-testid=file-remove-btn]"); if (!b) return;
+  $("upErr").hidden = true;
+  EG.api("DELETE", "/api/drafts/" + draft.draftId + "/files/" + b.dataset.id).then(refreshDraft);
+});
+$("toPay").addEventListener("click", function () { refreshDraft().then(function () { if (!draft.missing.length) go(3); }); });
+
+/* ---- ขั้น 3 ---- */
+function renderPay() {
+  var amt = draft.lockedAmount != null ? draft.lockedAmount : draft.fee;
+  pay = draft.payment || null;
+  $("pamt").textContent = EG.money(pay ? pay.amount : amt);
+  paintPay();
+}
+function paintPay() {
+  var qr = $("qrBox");
+  if (!pay) { qr.innerHTML = "<button data-testid=\"create-qr-btn\" id=\"mk\">สร้าง QR</button>"; $("mk").addEventListener("click", makeQr); $("payBox").hidden = true; $("receipt").innerHTML = ""; return; }
+  qr.innerHTML = "<p><img data-testid=\"qr-image\" alt=\"QR ชำระเงิน (จำลอง)\" width=\"200\" height=\"200\" src=\"" + EG.esc(pay.qrImageUrl) + "\"></p><p>เลขอ้างอิง: <b data-testid=\"qr-ref\">" + EG.esc(pay.ref) + "</b></p><p data-testid=\"qr-expires\" data-iso=\"" + pay.qrExpiresAt + "\">หมดอายุ " + EG.dt(pay.qrExpiresAt) + "</p>";
+  $("payBox").hidden = false;
+  var st = $("pst"); st.textContent = { PENDING: "รอชำระ", PAID: "ชำระแล้ว", EXPIRED: "QR หมดอายุ" }[pay.status] || pay.status; st.setAttribute("data-status", pay.status);
+  $("qexp").innerHTML = pay.status === "EXPIRED" ? "<p class=\"error\" data-testid=\"qr-expired-msg\">QR หมดอายุ กรุณาสร้าง QR ใหม่</p>" : "";
+  $("regenBox").innerHTML = pay.status === "EXPIRED" ? "<button data-testid=\"regenerate-qr-btn\" id=\"rg\">สร้าง QR ใหม่</button>" : "";
+  if ($("rg")) $("rg").addEventListener("click", makeQr);
+  $("refresh").hidden = pay.status === "PAID";
+  var rc = $("receipt");
+  if (pay.status === "PAID") {
+    var cn = pay.caseNo || draft.caseNo || "";
+    rc.innerHTML = "<div class=\"card\"><p>เลขคำขอ: <b data-testid=\"submitted-case-no\">" + EG.esc(cn) + "</b></p><p>เลขใบเสร็จ: <b data-testid=\"receipt-no\">" + EG.esc(pay.receiptNo || "") + "</b></p><p>ยอดชำระ: <b data-testid=\"receipt-amount\">" + EG.money(pay.amount) + "</b></p><p>ชำระเมื่อ: <b data-testid=\"receipt-paid-at\" data-iso=\"" + EG.esc(pay.paidAt) + "\">" + EG.dt(pay.paidAt) + "</b></p><a class=\"btn\" data-testid=\"go-case-btn\" href=\"/citizen/cases/" + encodeURIComponent(cn) + "\">ดูคำขอ</a></div>";
+    clearInterval(timer); timer = null;
+  } else { rc.innerHTML = ""; if (!timer) timer = setInterval(poll, 2000); }
+}
+function makeQr() {
+  EG.clearMsg();
+  EG.api("POST", "/api/drafts/" + draft.draftId + "/payment").then(function (r) {
+    if (!r.ok) { EG.show("action-error", EG.failMsg(r)); return; }
+    EG.api("GET", "/api/payments/" + r.data.ref).then(function (p) { pay = p.data; paintPay(); });
+  });
+}
+function poll() {
+  if (!pay) return;
+  EG.api("GET", "/api/payments/" + pay.ref).then(function (r) { if (r.ok && pay) { pay = r.data; paintPay(); } });
+}
+$("refresh").addEventListener("click", poll);
+
+EG.boot(function () {
+  $("sname").textContent = EG.SERVICE[svcId] || svcId;
+  if (svcId !== "SV-01") $("qtyBox").remove(); else $("qtyBox").hidden = false;
+  if (svcId !== "SV-03") $("areaBox").remove(); else $("areaBox").hidden = false;
+  EG.api("GET", "/api/services").then(function (r) {
+    svcInfo = (r.data.items || []).filter(function (s) { return s.id === svcId; })[0] || { docs: [] };
+    if (svcInfo.name) $("sname").textContent = svcInfo.name;
+    if (!draftId) return calcFee();
+    return EG.api("GET", "/api/drafts/" + encodeURIComponent(draftId)).then(function (d) {
+      if (!d.ok) { location.href = "/citizen"; return; }
+      draft = d.data; $("did").textContent = draft.draftId;
+      if (draft.qty != null) $("qty").value = draft.qty;
+      if (draft.areaSqm != null) $("area").value = draft.areaSqm;
+      return calcFee().then(function () {
+        if (draft.status === "PENDING_PAYMENT" || draft.status === "SUBMITTED" || draft.payment) { renderUploads(); go(3); }
+      });
+    });
+  });
+});
+</script></body></html>

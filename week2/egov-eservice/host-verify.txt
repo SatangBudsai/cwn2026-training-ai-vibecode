@@ -1,0 +1,3 @@
+  79 passed (1.1m)
+B01: SV-03 พื้นที่ 101 ; 1 failed; 78 passed (1.4m);
+B12: TC-WORKFLOW-04 ส่วน A · SV-01 ตีกลับครั้งที่ 3 ไม่ได้ (จับ B12) ;TC-WORKFLOW-04 ส่วน B · seed …000023 ตีกลับครบแล้ว ; 2 failed; 77 passed (1.2m);

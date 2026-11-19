@@ -31,6 +31,7 @@ test('TC-NFR-01 Responsive 375/768/1280 @P1', async ({ page }) => {
     ['admin1', 'staff', ['/admin/services']],
   ];
   for (const [who, kind, paths] of groups) {
+    await page.goto('about:blank'); // ออกจากหน้าเดิมก่อนล้าง cookie (กัน redirect 401 มาชน)
     await page.context().clearCookies();
     if (kind === 'citizen') await c.uiLoginCitizen(page, c.ID.somchai);
     else if (kind === 'staff') await c.uiLoginStaff(page, who);
@@ -198,10 +199,12 @@ test('TC-NFR-03 Health เวลาโหลด และผลซ้ำได�
     ['/login', null], ['/citizen', 'citizen'], ['/officer/queue', 'off.reg1'], ['/dashboard', 'exec1'], ['/audit', 'audit1'],
   ];
   for (const [p, who] of loads) {
+    await page.goto('about:blank'); // ออกจากหน้าเดิมก่อน ไม่ให้สคริปต์หน้าเดิมเจอ 401 แล้ว redirect มาชน goto ถัดไป
     await page.context().clearCookies();
     if (who === 'citizen') await c.uiLoginCitizen(page, c.ID.somchai);
     else if (who) await c.uiLoginStaff(page, who);
     await page.goto(p, { waitUntil: 'load' });
+    await page.waitForLoadState('networkidle'); // ให้สคริปต์หน้าแรกทำงานเสร็จก่อน จะได้ไม่มี navigation ค้างมาชนตอนจับเวลา
     const t0 = Date.now();
     await page.goto(p, { waitUntil: 'load' });
     const ms = Date.now() - t0;

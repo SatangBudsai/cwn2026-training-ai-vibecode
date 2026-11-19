@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>รออนุมัติ · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>รออนุมัติ</h1>
+<div class="table-wrap"><table><thead><tr><th>เลขคำขอ</th><th>บริการ</th><th>ผู้ยื่น</th><th>กำหนดเสร็จ</th><th></th></tr></thead><tbody id="b"></tbody></table></div>
+</main>
+<script src="/app.js"></script>
+<script>
+
+EG.boot(function () {
+  EG.api("GET", "/api/head/approvals").then(function (r) {
+    document.getElementById("b").innerHTML = (r.data.items || []).map(function (c) {
+      return "<tr data-testid=\"approval-row\" data-case-no=\"" + c.caseNo + "\"><td data-testid=\"row-case-no\">" + c.caseNo + "</td><td data-testid=\"row-service\">" + EG.esc(c.serviceId + " " + (EG.SERVICE[c.serviceId] || "")) + "</td><td data-testid=\"row-applicant\">" + EG.esc(c.applicantName) + "</td><td data-testid=\"row-due\"" + (c.dueAt ? " data-iso=\"" + c.dueAt + "\"" : "") + ">" + EG.dt(c.dueAt) + "</td><td><a data-testid=\"approval-open\" href=\"/officer/cases/" + c.caseNo + "\">เปิดคำขอ</a></td></tr>";
+    }).join("");
+  });
+});
+</script></body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คิวงาน · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>คิวงาน</h1>
+<div class="row"><label for="flt">กรอง</label><select id="flt" data-testid="queue-filter"><option value="all">ทั้งหมด</option><option value="unclaimed">ยังไม่มีผู้รับ</option><option value="mine">ของฉัน</option></select>
+<span id="wl" hidden>งานในมือของฉัน: <b data-testid="workload-count">0</b></span></div>
+<div class="table-wrap"><table data-testid="queue-table"><thead><tr><th>เลขคำขอ</th><th>บริการ</th><th>ผู้ยื่น</th><th>เลขบัตร</th><th>สถานะ</th><th>กำหนดเสร็จ</th><th>ระดับ</th><th>ผู้ถือเรื่อง</th><th></th></tr></thead><tbody id="b"></tbody></table></div>
+<p data-testid="queue-empty" id="empty" hidden>ไม่มีงานในคิว</p>
+</main>
+<script src="/app.js"></script>
+<script>
+
+var ME;
+function load() {
+  EG.api("GET", "/api/officer/queue?filter=" + document.getElementById("flt").value).then(function (r) {
+    var items = r.data.items || [];
+    if (ME.role === "officer") { document.getElementById("wl").hidden = false; EG.tid("workload-count").textContent = r.data.workloadCount != null ? r.data.workloadCount : (typeof r.data.workload === "number" ? r.data.workload : 0); }
+    document.getElementById("empty").hidden = items.length > 0;
+    document.getElementById("b").innerHTML = items.map(function (c) {
+      return "<tr data-testid=\"queue-row\" data-case-no=\"" + c.caseNo + "\" data-owner=\"" + EG.esc(c.owner || "") + "\" data-status=\"" + c.status + "\" data-sla-level=\"" + c.slaLevel + "\">" +
+        "<td data-testid=\"row-case-no\"><a href=\"/officer/cases/" + c.caseNo + "\">" + c.caseNo + "</a></td>" +
+        "<td data-testid=\"row-service\">" + EG.esc(c.serviceId + " " + (EG.SERVICE[c.serviceId] || "")) + "</td>" +
+        "<td data-testid=\"row-applicant\">" + EG.esc(c.applicantName) + "</td><td data-testid=\"row-id-masked\">" + EG.esc(c.idMasked) + "</td>" +
+        "<td data-testid=\"row-status\" data-status=\"" + c.status + "\">" + (EG.STATUS[c.status] || c.status) + "</td>" +
+        "<td data-testid=\"row-due\"" + (c.dueAt ? " data-iso=\"" + c.dueAt + "\"" : "") + ">" + EG.dt(c.dueAt) + "</td>" +
+        "<td data-testid=\"row-sla-level\" data-level=\"" + c.slaLevel + "\">" + (EG.LEVEL[c.slaLevel] || c.slaLevel) + "</td>" +
+        "<td data-testid=\"row-owner\">" + EG.esc(c.owner || "ยังไม่มีผู้รับ") + "</td>" +
+        "<td>" + (c.canClaim ? "<button data-testid=\"claim-btn\" data-case=\"" + c.caseNo + "\">รับเรื่อง</button>" : "") + "</td></tr>";
+    }).join("");
+  });
+}
+document.getElementById("b").addEventListener("click", function (ev) {
+  var b = ev.target.closest("[data-testid=claim-btn]"); if (!b) return;
+  EG.api("POST", "/api/officer/cases/" + b.dataset.case + "/claim").then(function (r) {
+    if (r.ok) { EG.show("action-success", "รับเรื่องแล้ว"); } else EG.show("action-error", EG.failMsg(r));
+    load();
+  });
+});
+document.getElementById("flt").addEventListener("change", load);
+EG.boot(function (me) { ME = me; load(); });
+</script></body></html>

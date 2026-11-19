@@ -1,12 +1,12 @@
 {
   "config": {
     "argv": [
-      "C:\\Program Files\\nodejs\\node.exe",
-      "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\node_modules\\@playwright\\test\\cli.js",
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\node_modules\\@playwright\\test\\cli.js",
       "test"
     ],
-    "configFile": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\playwright.config.js",
-    "rootDir": "D:/ME/cwn2026-training-ai-vibecode/week02_website/e2e/tests",
+    "configFile": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\playwright.config.js",
+    "rootDir": "C:/Me/PersonalCoding/cwn2026-training-ai-vibecode/week02_website/e2e/tests",
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": false,
@@ -22,15 +22,15 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "D:/ME/cwn2026-training-ai-vibecode/week02_website/e2e/test-results",
+        "outputDir": "C:/Me/PersonalCoding/cwn2026-training-ai-vibecode/week02_website/e2e/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
           "actualWorkers": 1
         },
         "id": "",
         "name": "",
-        "testDir": "D:/ME/cwn2026-training-ai-vibecode/week02_website/e2e/tests",
+        "testDir": "C:/Me/PersonalCoding/cwn2026-training-ai-vibecode/week02_website/e2e/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -95,18 +95,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1610,
+                  "duration": 2098,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:47.862Z",
+                  "startTime": "2026-11-19T13:50:33.435Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-01-เหตุการณ์และฟิลด์ใน-Audit-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-01-เหตุการณ์และฟิลด์ใน-Audit-P1\\video.webm"
                     }
                   ]
                 }
@@ -137,18 +137,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 569,
+                  "duration": 792,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:49.598Z",
+                  "startTime": "2026-11-19T13:50:35.646Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-02-Audit-แก้-ลบไม่ได้-405-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-02-Audit-แก้-ลบไม่ได้-405-P1\\video.webm"
                     }
                   ]
                 }
@@ -179,18 +179,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1549,
+                  "duration": 1525,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:50.181Z",
+                  "startTime": "2026-11-19T13:50:36.453Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-03-กรองช่วงวันที่ตามเวลาไทย-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-03-กรองช่วงวันที่ตามเวลาไทย-P1\\video.webm"
                     }
                   ]
                 }
@@ -229,18 +229,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1589,
+                  "duration": 1951,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:51.757Z",
+                  "startTime": "2026-11-19T13:50:38.001Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-01-เลขบัตร-13-หลัก-checksum-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-01-เลขบัตร-13-หลัก-checksum-P1\\video.webm"
                     }
                   ]
                 }
@@ -271,18 +271,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1109,
+                  "duration": 1339,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:53.364Z",
+                  "startTime": "2026-11-19T13:50:39.974Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-02-OTP-ผิด-3-ครั้งล็อก-15-นาที-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-02-OTP-ผิด-3-ครั้งล็อก-15-นาที-P1\\video.webm"
                     }
                   ]
                 }
@@ -313,18 +313,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2032,
+                  "duration": 2306,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:54.492Z",
+                  "startTime": "2026-11-19T13:50:41.335Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-03-ลงทะเบียนครั้งแรก-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-03-ลงทะเบียนครั้งแรก-P1\\video.webm"
                     }
                   ]
                 }
@@ -355,18 +355,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3286,
+                  "duration": 3710,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:56.544Z",
+                  "startTime": "2026-11-19T13:50:43.665Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-04-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-04-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-P2\\video.webm"
                     }
                   ]
                 }
@@ -405,18 +405,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 906,
+                  "duration": 920,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:05:59.862Z",
+                  "startTime": "2026-11-19T13:50:47.403Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\\video.webm"
                     }
                   ]
                 }
@@ -447,18 +447,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1236,
+                  "duration": 1220,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:00.786Z",
+                  "startTime": "2026-11-19T13:50:48.349Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\\video.webm"
                     }
                   ]
                 }
@@ -489,18 +489,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1524,
+                  "duration": 1656,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:02.042Z",
+                  "startTime": "2026-11-19T13:50:49.595Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\\video.webm"
                     }
                   ]
                 }
@@ -531,18 +531,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 897,
+                  "duration": 1318,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:03.592Z",
+                  "startTime": "2026-11-19T13:50:51.283Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-04-ค่าขอบ-ทัน-53f38--29-59-16-30-00-16-30-01-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-04-ค่าขอบ-ทัน-53f38--29-59-16-30-00-16-30-01-P1\\video.webm"
                     }
                   ]
                 }
@@ -581,12 +581,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 694,
+                  "duration": 911,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:04.526Z",
+                  "startTime": "2026-11-19T13:50:52.638Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -617,12 +617,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 408,
+                  "duration": 488,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:05.243Z",
+                  "startTime": "2026-11-19T13:50:53.582Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -653,12 +653,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2774,
+                  "duration": 2980,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:05.680Z",
+                  "startTime": "2026-11-19T13:50:54.105Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -697,18 +697,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1293,
+                  "duration": 1694,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:08.497Z",
+                  "startTime": "2026-11-19T13:50:57.132Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\fee-TC-FEE-01-ค่าธรรมเนียม-SV-01-SV-02-SV-03-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\fee-TC-FEE-01-ค่าธรรมเนียม-SV-01-SV-02-SV-03-P1\\video.webm"
                     }
                   ]
                 }
@@ -747,18 +747,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3639,
+                  "duration": 7896,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:09.896Z",
+                  "startTime": "2026-11-19T13:50:58.910Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-01-Responsive-375-768-1280-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-01-Responsive-375-768-1280-P1\\video.webm"
                     }
                   ]
                 }
@@ -789,83 +789,83 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 12820,
+                  "duration": 12754,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:13.586Z",
+                  "startTime": "2026-11-19T13:51:06.847Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-1.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-3.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-2.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-2.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-3.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-1.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-4.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-4.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-6.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-5.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-5.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-7.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-7.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-8.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-8.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-6.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-10.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-11.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-13.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-9.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-9.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-12.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-11.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-10.webm"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-12.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-13.webm"
                     }
                   ]
                 }
@@ -875,7 +875,7 @@
           ],
           "id": "11d18ec26be42a4192da-b02e1acbf372fb692a1a",
           "file": "nfr.spec.js",
-          "line": 105,
+          "line": 106,
           "column": 1
         },
         {
@@ -896,18 +896,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 723,
+                  "duration": 967,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:26.441Z",
+                  "startTime": "2026-11-19T13:51:19.646Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02B-คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง-QR-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02B-คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง-QR-P1\\video.webm"
                     }
                   ]
                 }
@@ -917,7 +917,7 @@
           ],
           "id": "11d18ec26be42a4192da-5e8edcc1ee32342b7f24",
           "file": "nfr.spec.js",
-          "line": 150,
+          "line": 151,
           "column": 1
         },
         {
@@ -938,18 +938,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1677,
+                  "duration": 5281,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:27.198Z",
+                  "startTime": "2026-11-19T13:51:20.651Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\\video.webm"
                     }
                   ]
                 }
@@ -959,7 +959,7 @@
           ],
           "id": "11d18ec26be42a4192da-89b6b7bdf1a1c03d2948",
           "file": "nfr.spec.js",
-          "line": 188,
+          "line": 189,
           "column": 1
         },
         {
@@ -980,12 +980,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 23,
+                  "duration": 29,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:28.906Z",
+                  "startTime": "2026-11-19T13:51:25.977Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -995,7 +995,7 @@
           ],
           "id": "11d18ec26be42a4192da-30e62a68f68a103b85d1",
           "file": "nfr.spec.js",
-          "line": 242,
+          "line": 245,
           "column": 1
         },
         {
@@ -1016,12 +1016,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 304,
+                  "duration": 237,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:28.970Z",
+                  "startTime": "2026-11-19T13:51:26.053Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1031,7 +1031,7 @@
           ],
           "id": "11d18ec26be42a4192da-c47dadadfa95efd2df3d",
           "file": "nfr.spec.js",
-          "line": 250,
+          "line": 253,
           "column": 1
         }
       ]
@@ -1060,12 +1060,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1741,
+                  "duration": 2020,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:29.311Z",
+                  "startTime": "2026-11-19T13:51:26.346Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1096,12 +1096,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2339,
+                  "duration": 3170,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:31.098Z",
+                  "startTime": "2026-11-19T13:51:28.423Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1140,18 +1140,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1196,
+                  "duration": 2362,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:33.495Z",
+                  "startTime": "2026-11-19T13:51:31.662Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-01-อายุ-QR-15-00-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-01-อายุ-QR-15-00-P1\\video.webm"
                     }
                   ]
                 }
@@ -1182,12 +1182,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 180,
+                  "duration": 524,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:34.735Z",
+                  "startTime": "2026-11-19T13:51:34.086Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1218,12 +1218,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 426,
+                  "duration": 708,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:34.952Z",
+                  "startTime": "2026-11-19T13:51:34.674Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1254,18 +1254,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1248,
+                  "duration": 1567,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:35.426Z",
+                  "startTime": "2026-11-19T13:51:35.458Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-04-เลขคำขอข้ามปี-2569---2570-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-04-เลขคำขอข้ามปี-2569---2570-P2\\video.webm"
                     }
                   ]
                 }
@@ -1304,18 +1304,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1386,
+                  "duration": 1872,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:36.732Z",
+                  "startTime": "2026-11-19T13:51:37.121Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-01-ปิดบังเลขบัตรบนจอ-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-01-ปิดบังเลขบัตรบนจอ-P1\\video.webm"
                     }
                   ]
                 }
@@ -1346,12 +1346,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 217,
+                  "duration": 395,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:38.173Z",
+                  "startTime": "2026-11-19T13:51:39.083Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1382,18 +1382,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1310,
+                  "duration": 1556,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:38.443Z",
+                  "startTime": "2026-11-19T13:51:39.546Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-03-แสดงเลขเต็มต้องมีเหตุผลและบันทึก-Audit-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-03-แสดงเลขเต็มต้องมีเหตุผลและบันทึก-Audit-P1\\video.webm"
                     }
                   ]
                 }
@@ -1432,12 +1432,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2120,
+                  "duration": 3052,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:39.817Z",
+                  "startTime": "2026-11-19T13:51:41.184Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1468,12 +1468,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2817,
+                  "duration": 3356,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:41.999Z",
+                  "startTime": "2026-11-19T13:51:44.330Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1504,12 +1504,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2301,
+                  "duration": 3214,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:44.888Z",
+                  "startTime": "2026-11-19T13:51:47.778Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1548,18 +1548,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 636,
+                  "duration": 799,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:47.271Z",
+                  "startTime": "2026-11-19T13:51:51.095Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-01-ประชาชนเปิดคำขอคนอื่นไม่ได้-IDOR-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-01-ประชาชนเปิดคำขอคนอื่นไม่ได้-IDOR-P1\\video.webm"
                     }
                   ]
                 }
@@ -1590,18 +1590,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 874,
+                  "duration": 1371,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:47.976Z",
+                  "startTime": "2026-11-19T13:51:51.985Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-02-เจ้าหน้าที-7229b-SV-02-ไม่ได้-ตรวจที่-API-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-02-เจ้าหน้าที-7229b-SV-02-ไม่ได้-ตรวจที่-API-P1\\video.webm"
                     }
                   ]
                 }
@@ -1632,18 +1632,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5348,
+                  "duration": 8728,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:48.918Z",
+                  "startTime": "2026-11-19T13:51:53.471Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-03-ตารางสิทธิ์หน้า-API-ตามบทบาท-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-03-ตารางสิทธิ์หน้า-API-ตามบทบาท-P1\\video.webm"
                     }
                   ]
                 }
@@ -1674,18 +1674,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2387,
+                  "duration": 2649,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:54.345Z",
+                  "startTime": "2026-11-19T13:52:02.300Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-04-ผู้ดูแลระบ-f0626-ยุด-ผู้ใช้-และยอดที่ล็อก-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-04-ผู้ดูแลระบ-f0626-ยุด-ผู้ใช้-และยอดที่ล็อก-P2\\video.webm"
                     }
                   ]
                 }
@@ -1716,18 +1716,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1271,
+                  "duration": 1673,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:56.828Z",
+                  "startTime": "2026-11-19T13:52:05.058Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-05-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-05-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-P1\\video.webm"
                     }
                   ]
                 }
@@ -1758,18 +1758,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1453,
+                  "duration": 1605,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:58.209Z",
+                  "startTime": "2026-11-19T13:52:06.848Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-06-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-06-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-P2\\video.webm"
                     }
                   ]
                 }
@@ -1808,12 +1808,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 608,
+                  "duration": 838,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:06:59.814Z",
+                  "startTime": "2026-11-19T13:52:08.584Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1844,12 +1844,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 558,
+                  "duration": 911,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:00.534Z",
+                  "startTime": "2026-11-19T13:52:09.532Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1880,12 +1880,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 589,
+                  "duration": 959,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:01.184Z",
+                  "startTime": "2026-11-19T13:52:10.607Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1916,12 +1916,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 569,
+                  "duration": 922,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:01.867Z",
+                  "startTime": "2026-11-19T13:52:11.714Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1952,12 +1952,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 576,
+                  "duration": 756,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:02.524Z",
+                  "startTime": "2026-11-19T13:52:12.783Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1988,12 +1988,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 638,
+                  "duration": 785,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:03.204Z",
+                  "startTime": "2026-11-19T13:52:13.689Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2024,12 +2024,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 589,
+                  "duration": 771,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:03.946Z",
+                  "startTime": "2026-11-19T13:52:14.611Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2060,12 +2060,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 634,
+                  "duration": 727,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:04.636Z",
+                  "startTime": "2026-11-19T13:52:15.515Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2096,12 +2096,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 610,
+                  "duration": 695,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:05.377Z",
+                  "startTime": "2026-11-19T13:52:16.362Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2132,12 +2132,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2863,
+                  "duration": 3524,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:06.097Z",
+                  "startTime": "2026-11-19T13:52:17.181Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2168,12 +2168,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3537,
+                  "duration": 4278,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:09.073Z",
+                  "startTime": "2026-11-19T13:52:20.855Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2212,18 +2212,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1915,
+                  "duration": 2398,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:12.733Z",
+                  "startTime": "2026-11-19T13:52:25.274Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-01-ยื่นคำขอ-SV-01-ครบวงจร-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-01-ยื่นคำขอ-SV-01-ครบวงจร-P1\\video.webm"
                     }
                   ]
                 }
@@ -2254,18 +2254,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1548,
+                  "duration": 2215,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:14.752Z",
+                  "startTime": "2026-11-19T13:52:27.827Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-02-เอกสารบังคับครบก่อนชำระ-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-02-เอกสารบังคับครบก่อนชำระ-P1\\video.webm"
                     }
                   ]
                 }
@@ -2296,18 +2296,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2758,
+                  "duration": 3907,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:16.410Z",
+                  "startTime": "2026-11-19T13:52:30.181Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-03-ร่าง-การลบร่าง-และการยกเลิก-P2\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-03-ร่าง-การลบร่าง-และการยกเลิก-P2\\video.webm"
                     }
                   ]
                 }
@@ -2346,18 +2346,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3097,
+                  "duration": 3753,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:19.276Z",
+                  "startTime": "2026-11-19T13:52:34.229Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-01-ขนาดและจำนวนไฟล์-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-01-ขนาดและจำนวนไฟล์-P1\\video.webm"
                     }
                   ]
                 }
@@ -2388,18 +2388,18 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1485,
+                  "duration": 2403,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:22.485Z",
+                  "startTime": "2026-11-19T13:52:38.132Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-02-ชนิดไฟล์จากเนื้อไฟล์-P1\\video.webm"
+                      "path": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-02-ชนิดไฟล์จากเนื้อไฟล์-P1\\video.webm"
                     }
                   ]
                 }
@@ -2438,12 +2438,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1305,
+                  "duration": 1459,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:24.089Z",
+                  "startTime": "2026-11-19T13:52:40.675Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2474,12 +2474,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2556,
+                  "duration": 3116,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:25.517Z",
+                  "startTime": "2026-11-19T13:52:42.289Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2510,12 +2510,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2199,
+                  "duration": 2581,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:28.189Z",
+                  "startTime": "2026-11-19T13:52:45.557Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2546,12 +2546,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2106,
+                  "duration": 2827,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:30.508Z",
+                  "startTime": "2026-11-19T13:52:48.281Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2582,12 +2582,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3131,
+                  "duration": 4051,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:32.740Z",
+                  "startTime": "2026-11-19T13:52:51.264Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2618,12 +2618,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1693,
+                  "duration": 2186,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-19T07:07:35.986Z",
+                  "startTime": "2026-11-19T13:52:55.502Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -2641,8 +2641,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-19T07:05:47.299Z",
-    "duration": 112056.20499999999,
+    "startTime": "2026-11-19T13:50:32.885Z",
+    "duration": 146704.239,
     "expected": 61,
     "skipped": 0,
     "unexpected": 0,

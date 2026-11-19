@@ -76,8 +76,18 @@ async function tryCitizenLogin(ctx, idNo, otp) {
 }
 
 // ---------- UI login ----------
+
+// ไปหน้า login แบบทนต่อ navigation ค้างจากหน้าเดิม (เช่นสคริปต์หน้าเดิมได้ 401 แล้ว redirect มาที่ /login พร้อมกัน)
+async function gotoLogin(page) {
+  await page.goto('about:blank');
+  for (let i = 0; ; i++) {
+    try { return await page.goto('/login'); } catch (e) {
+      if (i >= 2 || !/ERR_ABORTED|interrupted by another navigation/.test(String(e))) throw e;
+    }
+  }
+}
 async function uiLoginCitizen(page, idNo = ID.somchai, otp = OTP) {
-  await page.goto('/login');
+  await gotoLogin(page);
   const tab = page.getByTestId('login-tab-citizen');
   if (await tab.count()) await tab.click();
   await page.getByTestId('thaid-id-input').fill(idNo);
@@ -89,7 +99,7 @@ async function uiLoginCitizen(page, idNo = ID.somchai, otp = OTP) {
 }
 
 async function uiLoginStaff(page, username, password = STAFF_PASSWORD) {
-  await page.goto('/login');
+  await gotoLogin(page);
   await page.getByTestId('login-tab-staff').click();
   await page.getByTestId('staff-username').fill(username);
   await page.getByTestId('staff-password').fill(password);
@@ -267,6 +277,7 @@ async function createPaidCase(api, opts = {}) {
 }
 
 module.exports = {
+  gotoLogin,
   BASE_URL, OTP, STAFF_PASSWORD, ID, NAME,
   newApi, reset, setClock, getClock, apiCitizen, apiStaff, tryCitizenLogin,
   uiLoginCitizen, uiLoginStaff, uiLogout,

@@ -1,0 +1,231 @@
+npm notice run egov-eservice-e2e@1.0.0 npx
+npm notice run 'playwright' test --reporter=list
+
+Running 79 tests using 1 worker
+
+  ✓   1 [chromium] › tests/a.spec.js:324:3 › AUTH › TC-AUTH-01 · เลขบัตร 13 หลัก + checksum (1.9s)
+  ✓   2 [chromium] › tests/a.spec.js:361:3 › AUTH › TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที (1.7s)
+  ✓   3 [chromium] › tests/a.spec.js:445:3 › AUTH › TC-AUTH-03 · ลงทะเบียนครั้งแรก (1.8s)
+  ✓   4 [chromium] › tests/a.spec.js:516:3 › AUTH › TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น (3.1s)
+  ✓   5 [chromium] › tests/a.spec.js:574:3 › FEE › TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03 (1.5s)
+  ✓   6 [chromium] › tests/a.spec.js:652:3 › SUBMIT › TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร (1.2s)
+  ✓   7 [chromium] › tests/a.spec.js:728:3 › SUBMIT › TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ (1.1s)
+  ✓   8 [chromium] › tests/a.spec.js:798:3 › SUBMIT › TC-SUBMIT-03 · ร่าง และการยกเลิก (2.6s)
+  ✓   9 [chromium] › tests/a.spec.js:923:3 › UPLOAD › TC-UPLOAD-01 · ขนาดและจำนวนไฟล์ (2.8s)
+  ✓  10 [chromium] › tests/a.spec.js:980:3 › UPLOAD › TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์ (1.1s)
+  ✓  11 [chromium] › tests/a.spec.js:1042:3 › PAY › TC-PAY-01 · อายุ QR 15:00 (907ms)
+  ✓  12 [chromium] › tests/a.spec.js:1090:3 › PAY › TC-PAY-02 · ยอดเงินและ callback ซ้ำ (396ms)
+  ✓  13 [chromium] › tests/a.spec.js:1125:3 › PAY › TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ (866ms)
+  ✓  14 [chromium] › tests/a.spec.js:1160:3 › PAY › TC-PAY-04 · เลขคำขอข้ามปี (954ms)
+  ✓  15 [chromium] › tests/b.spec.js:53:3 › QUEUE › TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก (755ms)
+  ✓  16 [chromium] › tests/b.spec.js:121:3 › QUEUE › TC-QUEUE-02 ส่วน 1 · รับเรื่องพร้อมกันผ่าน UI (443ms)
+  ✓  17 [chromium] › tests/b.spec.js:153:3 › QUEUE › TC-QUEUE-02 ส่วน 2 · ยิง API claim พร้อมกัน 10 ครั้ง (161ms)
+  ✓  18 [chromium] › tests/b.spec.js:177:3 › QUEUE › TC-QUEUE-02 ส่วน 3 · รับเรื่องต่อกัน (จับ B08) (232ms)
+  ✓  19 [chromium] › tests/b.spec.js:196:3 › QUEUE › TC-QUEUE-03 · งานในมือสูงสุด 10 (1.8s)
+  ✓  20 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว a · SV-01 ชำระ 2026-12-01T09:00:00+07:00 → 2026-12-04T16:30:00+07:00 (198ms)
+  ✓  21 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว b · SV-01 ชำระ 2026-12-01T16:29:00+07:00 → 2026-12-04T16:30:00+07:00 (217ms)
+  ✓  22 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว c · SV-01 ชำระ 2026-12-01T16:30:00+07:00 → 2026-12-08T16:30:00+07:00 (242ms)
+  ✓  23 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว d · SV-01 ชำระ 2026-12-04T10:00:00+07:00 → 2026-12-11T16:30:00+07:00 (224ms)
+  ✓  24 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว e · SV-01 ชำระ 2026-12-05T10:00:00+07:00 → 2026-12-14T16:30:00+07:00 (211ms)
+  ✓  25 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว f · SV-02 ชำระ 2026-12-01T09:00:00+07:00 → 2026-12-17T16:30:00+07:00 (212ms)
+  ✓  26 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว g · SV-03 ชำระ 2026-12-01T09:00:00+07:00 → 2026-12-24T16:30:00+07:00 (263ms)
+  ✓  27 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว h · SV-01 ชำระ 2026-12-29T10:00:00+07:00 → 2027-01-05T16:30:00+07:00 (203ms)
+  ✓  28 [chromium] › tests/b.spec.js:278:5 › SLA › TC-SLA-01 แถว i · SV-01 ชำระ 2026-12-31T23:59:00+07:00 → 2027-01-07T16:30:00+07:00 (214ms)
+  ✘  29 [chromium] › tests/b.spec.js:290:3 › SLA › TC-SLA-02 ส่วน 1 · ตีกลับ 2 ธ.ค. ส่งแก้ 3 ธ.ค. → หยุดนับ 1 วัน (16.0s)
+  ✘  30 [chromium] › tests/b.spec.js:324:3 › SLA › TC-SLA-02 ส่วน 2 · seed …000017 ส่งแก้ 1 ธ.ค. 09:00 (จับ B04) (15.6s)
+  ✘  31 [chromium] › tests/b.spec.js:342:3 › SLA › TC-SLA-02 ส่วน 3 · seed …000017 ส่งแก้ 4 ธ.ค. 10:00 → หยุดนับ 5 วัน (297ms)
+  ✓  32 [chromium] › tests/b.spec.js:355:3 › SLA › TC-SLA-02 ส่วน 4 · ตีกลับและส่งแก้วันเดียวกัน → ไม่หยุดนับ (343ms)
+  ✘  33 [chromium] › tests/b.spec.js:368:3 › SLA › TC-SLA-02 ส่วน 5 · คร่อมสุดสัปดาห์/วันหยุด ส่งแก้หลัง 16:30 (368ms)
+  ✓  34 [chromium] › tests/b.spec.js:385:3 › SLA › TC-SLA-03 ส่วน A · คำขอใหม่ กำหนด ศ. 4 ธ.ค. 16:30 (1.3s)
+  ✓  35 [chromium] › tests/b.spec.js:410:3 › SLA › TC-SLA-03 ส่วน B · seed …000016 กำหนด อ. 8 ธ.ค. (คั่นวันหยุด) (596ms)
+  ✓  36 [chromium] › tests/b.spec.js:430:3 › SLA › TC-SLA-03 ส่วน C · ระดับของ seed ที่ 09:00 และขอบ 16:30/16:31 (1.2s)
+  ✓  37 [chromium] › tests/b.spec.js:494:3 › NOTI › TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ (870ms)
+  ✓  38 [chromium] › tests/b.spec.js:498:3 › NOTI › TC-NOTI-02 ส่วน A · ไม่แจ้งซ้ำ (2.0s)
+  ✓  39 [chromium] › tests/b.spec.js:523:3 › NOTI › TC-NOTI-02 ส่วน B · ข้ามระดับ (request แรกที่ ส. 5 ธ.ค. 10:00) (591ms)
+  ✓  40 [chromium] › tests/b.spec.js:538:3 › NOTI › TC-NOTI-02 ส่วน C · ขั้นรออนุมัติและรอออกเอกสาร (424ms)
+  ✓  41 [chromium] › tests/b.spec.js:576:3 › WORKFLOW › TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร (516ms)
+  ✓  42 [chromium] › tests/b.spec.js:628:3 › WORKFLOW › TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า (1.6s)
+  ✓  43 [chromium] › tests/b.spec.js:693:3 › WORKFLOW › TC-WORKFLOW-03 · SV-03 สามขั้นตอน (1.4s)
+  ✓  44 [chromium] › tests/b.spec.js:755:3 › WORKFLOW › TC-WORKFLOW-04 ส่วน A · SV-01 ตีกลับครั้งที่ 3 ไม่ได้ (จับ B12) (1.0s)
+  ✓  45 [chromium] › tests/b.spec.js:788:3 › WORKFLOW › TC-WORKFLOW-04 ส่วน B · seed …000023 ตีกลับครบแล้ว (226ms)
+  ✓  46 [chromium] › tests/b.spec.js:802:3 › WORKFLOW › TC-WORKFLOW-04 ส่วน C · SV-02 หลังตีกลับครบ 2 ครั้ง (601ms)
+  ✓  47 [chromium] › tests/b.spec.js:838:3 › WORKFLOW › TC-WORKFLOW-05 ส่วน A · เหตุผลตีกลับ ≥ 10 ตัวอักษร (796ms)
+  ✓  48 [chromium] › tests/b.spec.js:861:3 › WORKFLOW › TC-WORKFLOW-05 ส่วน B · ไม่อนุมัติ SV-01 โดยผู้ถือเรื่อง (597ms)
+  ✓  49 [chromium] › tests/b.spec.js:887:3 › WORKFLOW › TC-WORKFLOW-05 ส่วน C · หัวหน้าไม่อนุมัติ …000011 (460ms)
+  ✓  50 [chromium] › tests/b.spec.js:901:3 › WORKFLOW › TC-WORKFLOW-06 ตั้งต้น · หน้า NEED_FIX ของ …000017 (190ms)
+  ✓  51 [chromium] › tests/b.spec.js:912:3 › WORKFLOW › TC-WORKFLOW-06 รอบ A · 167:59 ยังส่งแก้ได้ (232ms)
+  ✓  52 [chromium] › tests/b.spec.js:924:3 › WORKFLOW › TC-WORKFLOW-06 รอบ B · 168:00 ถูกยกเลิกอัตโนมัติ (220ms)
+  ✓  53 [chromium] › tests/b.spec.js:973:3 › DOC › TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร (398ms)
+  ✓  54 [chromium] › tests/b.spec.js:1018:3 › DOC › TC-DOC-02 · ตรวจเอกสาร /verify (ไม่ล็อกอิน) (325ms)
+  ✓  55 [chromium] › tests/b.spec.js:1055:3 › DOC › TC-DOC-03 ส่วน A · SV-01 อายุ 90 วัน (ถึง 28 ก.พ. 2570) (282ms)
+  ✓  56 [chromium] › tests/b.spec.js:1064:3 › DOC › TC-DOC-03 ส่วน B · SV-02 อายุ 1 ปี (ถึง 30 พ.ย. 2570) (276ms)
+  ✓  57 [chromium] › tests/b.spec.js:1073:3 › DOC › TC-DOC-03 ส่วน C · seed K7M2Q9XA ใช้ได้ถึง 2 ก.พ. 2570 (263ms)
+  ✓  58 [chromium] › tests/b.spec.js:1081:3 › DOC › TC-DOC-03 ส่วน D · ลายเซ็นไม่ตรง (tamper) (262ms)
+  ✓  59 [chromium] › tests/b.spec.js:1095:3 › DOC › TC-DOC-03 ส่วน E · ออกเอกสารวันที่ 29 ก.พ. 2571 (775ms)
+  ✓  60 [chromium] › tests/c.spec.js:485:3 › PDPA › TC-PDPA-01 · ปิดบังเลขบัตรบนจอ (736ms)
+  ✓  61 [chromium] › tests/c.spec.js:524:3 › PDPA › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม (165ms)
+  ✓  62 [chromium] › tests/c.spec.js:561:3 › PDPA › TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit (787ms)
+  ✓  63 [chromium] › tests/c.spec.js:628:3 › DASH › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น (378ms)
+  ✓  64 [chromium] › tests/c.spec.js:668:3 › DASH › TC-DASH-02 · Dashboard ย้อนหลัง พ.ย. ต.ค. รายปี (705ms)
+  ✓  65 [chromium] › tests/c.spec.js:694:3 › DASH › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ และไม่มีข้อมูลส่วนบุคคล (808ms)
+  ✓  66 [chromium] › tests/c.spec.js:762:3 › DASH › TC-DASH-04 · ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 (678ms)
+  ✓  67 [chromium] › tests/c.spec.js:824:3 › AUDIT › TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit (885ms)
+  ✓  68 [chromium] › tests/c.spec.js:948:3 › AUDIT › TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405) (280ms)
+  ✓  69 [chromium] › tests/c.spec.js:996:3 › AUDIT › TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย (947ms)
+  ✓  70 [chromium] › tests/c.spec.js:1046:3 › RBAC › TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) (243ms)
+  ✓  71 [chromium] › tests/c.spec.js:1076:3 › RBAC › TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (API) (550ms)
+  ✓  72 [chromium] › tests/c.spec.js:1116:3 › RBAC › TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท (4.3s)
+  ✓  73 [chromium] › tests/c.spec.js:1211:3 › RBAC › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก (1.5s)
+  ✓  74 [chromium] › tests/c.spec.js:1319:3 › RBAC › TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ (862ms)
+  ✓  75 [chromium] › tests/c.spec.js:1409:3 › RBAC › TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ (1.2s)
+  ✓  76 [chromium] › tests/c.spec.js:1500:3 › NFR › TC-NFR-01 · Responsive 375/768/1280 (3.2s)
+  ✓  77 [chromium] › tests/c.spec.js:1562:3 › NFR › TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว (9.7s)
+  ✓  78 [chromium] › tests/c.spec.js:1734:3 › NFR › TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้ (896ms)
+
+  ✓  79 [chromium] › tests/c.spec.js:1800:3 › NFR › TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) (342ms)
+
+
+  1) [chromium] › tests/b.spec.js:290:3 › SLA › TC-SLA-02 ส่วน 1 · ตีกลับ 2 ธ.ค. ส่งแก้ 3 ธ.ค. → หยุดนับ 1 วัน 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('sla-due')
+    Expected: "2026-12-08T16:30:00+07:00"
+    Received: "2026-12-04T16:30:00+07:00"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('sla-due') with timeout 15000ms
+      - waiting for getByTestId('sla-due')
+        34 × locator resolved to <span data-testid="sla-due" data-iso="2026-12-04T16:30:00+07:00">4 ธ.ค. 2569 16:30</span>
+           - unexpected value "2026-12-04T16:30:00+07:00"
+
+
+      312 |     await expectStatus(sp2, 'IN_REVIEW');
+      313 |     await sp2.reload();
+    > 314 |     await expect(sp2.getByTestId('sla-due')).toHaveAttribute('data-iso', '2026-12-08T16:30:00+07:00', T);
+          |                                              ^
+      315 |     await expect(sp2.getByTestId('sla-due')).toHaveText('8 ธ.ค. 2569 16:30', T);
+      316 |     await expectSlaLevel(sp2, 'normal');
+      317 |     expect((await getCase(som2, caseNo)).dueAt).toBe('2026-12-08T16:30:00+07:00');
+        at /workspace/plans/egov-eservice/app/e2e/tests/b.spec.js:314:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-1-·-ต-dd65b-่งแก้-3-ธ-ค-→-หยุดนับ-1-วัน-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-1-·-ต-dd65b-่งแก้-3-ธ-ค-→-หยุดนับ-1-วัน-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-1-·-ต-dd65b-่งแก้-3-ธ-ค-→-หยุดนับ-1-วัน-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/b-SLA-TC-SLA-02-ส่วน-1-·-ต-dd65b-่งแก้-3-ธ-ค-→-หยุดนับ-1-วัน-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-1-·-ต-dd65b-่งแก้-3-ธ-ค-→-หยุดนับ-1-วัน-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/b-SLA-TC-SLA-02-ส่วน-1-·-ต-dd65b-่งแก้-3-ธ-ค-→-หยุดนับ-1-วัน-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/b.spec.js:324:3 › SLA › TC-SLA-02 ส่วน 2 · seed …000017 ส่งแก้ 1 ธ.ค. 09:00 (จับ B04) 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByTestId('sla-due')
+    Expected: "2026-12-01T16:30:00+07:00"
+    Received: "2026-11-27T16:30:00+07:00"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByTestId('sla-due') with timeout 15000ms
+      - waiting for getByTestId('sla-due')
+        34 × locator resolved to <span data-testid="sla-due" data-iso="2026-11-27T16:30:00+07:00">27 พ.ย. 2569 16:30</span>
+           - unexpected value "2026-11-27T16:30:00+07:00"
+
+
+      331 |     await expectStatus(page, 'IN_REVIEW');
+      332 |     await page.reload();
+    > 333 |     await expect(page.getByTestId('sla-due')).toHaveAttribute('data-iso', '2026-12-01T16:30:00+07:00', T);
+          |                                               ^
+      334 |     await expectSlaLevel(page, 'near');
+      335 |     const c = await getCase(som, C(17));
+      336 |     expect(c.dueAt).toBe('2026-12-01T16:30:00+07:00');
+        at /workspace/plans/egov-eservice/app/e2e/tests/b.spec.js:333:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-2-·-s-85a9e-ส่งแก้-1-ธ-ค-09-00-จับ-B04--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/b-SLA-TC-SLA-02-ส่วน-2-·-s-85a9e-ส่งแก้-1-ธ-ค-09-00-จับ-B04--chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-2-·-s-85a9e-ส่งแก้-1-ธ-ค-09-00-จับ-B04--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/b-SLA-TC-SLA-02-ส่วน-2-·-s-85a9e-ส่งแก้-1-ธ-ค-09-00-จับ-B04--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/b.spec.js:342:3 › SLA › TC-SLA-02 ส่วน 3 · seed …000017 ส่งแก้ 4 ธ.ค. 10:00 → หยุดนับ 5 วัน 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2026-12-04T16:30:00+07:00"
+    Received: "2026-11-27T16:30:00+07:00"
+
+      347 |     expect(j.status).toBe('IN_REVIEW');
+      348 |     const c = await getCase(som, C(17));
+    > 349 |     expect(c.dueAt).toBe('2026-12-04T16:30:00+07:00');
+          |                     ^
+      350 |     expect(c.slaLevel).toBe('near');
+      351 |     const { page } = await eg.page(som, `/citizen/cases/${C(17)}`);
+      352 |     await expectSlaLevel(page, 'near');
+        at /workspace/plans/egov-eservice/app/e2e/tests/b.spec.js:349:21
+
+    Error Context: test-results/b-SLA-TC-SLA-02-ส่วน-3-·-s-11ff1-4-ธ-ค-10-00-→-หยุดนับ-5-วัน-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-3-·-s-11ff1-4-ธ-ค-10-00-→-หยุดนับ-5-วัน-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/b-SLA-TC-SLA-02-ส่วน-3-·-s-11ff1-4-ธ-ค-10-00-→-หยุดนับ-5-วัน-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/b.spec.js:368:3 › SLA › TC-SLA-02 ส่วน 5 · คร่อมสุดสัปดาห์/วันหยุด ส่งแก้หลัง 16:30 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2026-12-08T16:30:00+07:00"
+    Received: "2026-12-04T16:30:00+07:00"
+
+      377 |     await okJson(await resubmitApi(som, caseNo));
+      378 |     const c = await getCase(som, caseNo);
+    > 379 |     expect(c.dueAt).toBe('2026-12-08T16:30:00+07:00');
+          |                     ^
+      380 |     expect(c.slaLevel).toBe('overdue');
+      381 |     const { page } = await eg.page(som, `/citizen/cases/${caseNo}`);
+      382 |     await expectSlaLevel(page, 'overdue');
+        at /workspace/plans/egov-eservice/app/e2e/tests/b.spec.js:379:21
+
+    Error Context: test-results/b-SLA-TC-SLA-02-ส่วน-5-·-ค-56f87-ห์-วันหยุด-ส่งแก้หลัง-16-30-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/b-SLA-TC-SLA-02-ส่วน-5-·-ค-56f87-ห์-วันหยุด-ส่งแก้หลัง-16-30-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/b-SLA-TC-SLA-02-ส่วน-5-·-ค-56f87-ห์-วันหยุด-ส่งแก้หลัง-16-30-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/b.spec.js:290:3 › SLA › TC-SLA-02 ส่วน 1 · ตีกลับ 2 ธ.ค. ส่งแก้ 3 ธ.ค. → หยุดนับ 1 วัน 
+    [chromium] › tests/b.spec.js:324:3 › SLA › TC-SLA-02 ส่วน 2 · seed …000017 ส่งแก้ 1 ธ.ค. 09:00 (จับ B04) 
+    [chromium] › tests/b.spec.js:342:3 › SLA › TC-SLA-02 ส่วน 3 · seed …000017 ส่งแก้ 4 ธ.ค. 10:00 → หยุดนับ 5 วัน 
+    [chromium] › tests/b.spec.js:368:3 › SLA › TC-SLA-02 ส่วน 5 · คร่อมสุดสัปดาห์/วันหยุด ส่งแก้หลัง 16:30 
+  75 passed (2.1m)

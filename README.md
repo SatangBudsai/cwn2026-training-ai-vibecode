@@ -1,4 +1,4 @@
-﻿# cwn2026-training-ai-vibecode
+# cwn2026-training-ai-vibecode
 
 งานฝึกอบรม CWN 2026 (AI + vibe coding) สรุปผลทั้งหมดไว้ที่ไฟล์นี้
 
@@ -6,7 +6,8 @@
 |---|---|---|---|
 | 1 | ทดสอบเว็บร้านสัตว์เลี้ยง PawPantry ด้วย Playwright ตาม test plan | [`week01/`](week01) | 41/42 ผ่านโหมดปกติ · เจอบั๊กจริง 1 · BUG_MODE ล้ม 5 |
 | 1 | เว็บสุ่มร้านอาหาร (lunch-draw) | [`week01_website/`](week01_website) | – |
-| 2 | **e-Service กลาง เทศบาลนครตัวอย่าง** (การบ้านหลัก) | [`week02_website/`](week02_website) | **61/61 ผ่าน · จับบั๊กได้ 12/12** |
+| 2 | **e-Service กลาง เทศบาลนครตัวอย่าง** (การบ้านหลัก) | [`week02_website/`](week02_website) | **Docker: 61/61 ผ่านรอบเดียว · BUG_MODE จับได้ 12/12** |
+| 2 | **LAB 2–3 ทีมเอเจนต์ (dag-planner + agent-team)** | [`week2/egov-eservice/`](week2/egov-eservice) | **13/13 บล็อก · เว็บของทีม 79/79 · BUG_MODE 12/12** |
 | 2 | ชุดโจทย์จากผู้สอน (อ่านอย่างเดียว) | [`week2_student/`](week2_student) | – |
 
 อ่านรายละเอียดของ Week 2 เพิ่มได้ที่ [`week02_website/README.md`](week02_website/README.md)
@@ -23,10 +24,10 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 | ขั้นตาม LAB | สถานะ | หลักฐาน |
 |---|---|---|
 | LAB 1 เข้าใจโจทย์ ตอบ 3 ข้อ | ✅ | เฉลยด้านล่าง |
-| LAB 2 แผน DAG | ⚠️ ไม่ผ่าน dag-planner (ไม่มีในเครื่อง) · มี blocks.json, dag.png, gantt-plan.png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
-| LAB 3 สร้างเว็บ | ✅ รันแผนจริงรอบ 2 ด้วยเอเจนต์แยกบัญชีสมมติ ([`rerun/`](week02_website/rerun)) 73.5 นาที · ✅ Docker build + รัน test 61/61 ผ่าน · ⚠️ เวลาแผนเป็นค่าสมมติ · ดู REPORT.md | [`week02_website/app/`](week02_website/app) |
-| LAB 4 TEST-PLAN | ✅ **61/61 ผ่านทั้งเว็บรอบ 1 และเว็บที่สร้างใหม่รอบ 2** (ครอบ 51 TC; รอบ 2 แรกล้ม 12 ข้อ เป็นเว็บผิดทั้งหมด) · GIF P1 24 ไฟล์ | `week02_website/e2e/test-report/` (เปิด `index.html`) |
-| LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12 ทั้งสองรอบ** (รอบ 2: [`rerun/BUG-HUNT.md`](week02_website/rerun/BUG-HUNT.md)) | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
+| LAB 2 แผน DAG | ✅ **dag-planner ใน container `multi-account`** · โควตาจริง yolo1–3 · 13 บล็อก · แผน 112.5 นาที · สายวิกฤต B01→B03→B05→B07→I01→X01 | [`week2/egov-eservice/`](week2/egov-eservice/README.md) (blocks.json · dag.png · gantt-plan.png · PLAN.md) |
+| LAB 3 สร้างเว็บ | ✅ **agent-team รันแผนจริง เสร็จ 13/13 บล็อก** · 2,417,922 tokens · เวลาจริง 341.7 นาที (รวมรอโควตารีเซ็ต ~4 ชม.) · เว็บที่ทีมสร้างรันซ้ำบนเครื่องด้วย Docker **79/79 ผ่าน** · B01/B12 ล้มตรง TC | [`week2/egov-eservice/`](week2/egov-eservice/README.md) (gantt-actual.png · compare.png · REPORT.md · app/) |
+| LAB 4 TEST-PLAN | ✅ **61/61 ผ่านในรอบเดียวกับ container Docker** (ครอบ 51 TC · 0 flaky · 2.4 นาที) · GIF P1 24 ไฟล์ · ข้อที่เคยล้มแยกเป็นเว็บผิด/test ผิด/สภาพแวดล้อม ใน README ของ week02 | `week02_website/e2e/test-report/` (เปิด `index.html`) |
+| LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12 ใน Docker** (สร้าง container ใหม่ทุกบั๊ก · retries 0) + รวมบั๊ก 2 ชุดได้ผลรวมพอดี | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
 
 **ระดับที่ทำ: ใช้งานได้จริง ไม่ใช่ mock** กฎธุรกิจคำนวณที่ฝั่งเซิร์ฟเวอร์ทั้งหมด (ค่าธรรมเนียม, SLA วันทำการ, RBAC, OTP ล็อก 15 นาที, เลขคำขอ, ลายเซ็น HMAC, แจ้งเตือน, Audit)
 ข้อจำกัด: SQLite เก็บเฉพาะผู้ใช้ (เลขบัตรและเบอร์เข้ารหัส AES-256-GCM) ส่วนคำขอ ร่าง การชำระ ไฟล์ Audit แจ้งเตือนอยู่ในหน่วยความจำ หายเมื่อรีสตาร์ต · PDF เอกสารเป็น ASCII ไม่มีข้อความไทยในไฟล์ · QR เป็นภาพจำลอง
@@ -34,27 +35,31 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 <!-- gallery:start -->
 ## ภาพประกอบ
 
-### แผนภาพ DAG (LAB 2)
+### แผนภาพ DAG จาก dag-planner (LAB 2)
 
-![DAG](week02_website/docs/img/dag.png)
+![DAG](week2/egov-eservice/dag.png)
 
-แผนอ่านได้ที่ [PLAN.md](week02_website/plan/PLAN.md) · Playwright ทั้งสามชุดไม่มีลูกศรจากบล็อกเว็บ (ทำขนานกัน) · บล็อกรวมและ BUG_MODE เป็น exclusive 🔒
+แผนจากโควตาจริงของ yolo1–3 · [PLAN.md](week2/egov-eservice/PLAN.md) · [blocks.json](week2/egov-eservice/blocks.json)
 
-### Timeline (LAB 3)
+### ผล Playwright (LAB 4)
 
-![Timeline](week02_website/docs/img/timeline.png)
+![ผล test](week02_website/docs/img/tests.png)
 
-เวลาในแท่งสีมาจากที่เอเจนต์รายงานตอนจบงาน ส่วนขั้นรวม/แก้ไม่ได้จับเวลา (แท่งลายทแยง)
+### BUG_MODE (LAB 5)
 
-### Gantt แผน / Gantt จริง / แผน vs จริง (LAB 2–3)
+![BUG-HUNT](week02_website/docs/img/bughunt.png)
 
-![Gantt แผน](week02_website/docs/img/gantt-plan.png)
+รายละเอียด expected → received ทุกบั๊ก: [BUG-HUNT.md](week02_website/BUG-HUNT.md)
 
-![Gantt จริง](week02_website/docs/img/gantt-actual.png)
+### Gantt แผน / Gantt จริง / แผน vs จริง จาก dag-planner (LAB 2–3)
 
-![แผน vs จริง](week02_website/docs/img/compare.png)
+![Gantt แผน](week2/egov-eservice/gantt-plan.png)
 
-⚠️ Gantt แผนและเวลา "แผน" เป็นค่าสมมติ (โควตา 4 บัญชีสมมติ ไม่ใช่ผลจาก dag-planner) ส่วน Gantt จริงและกราฟเทียบมาจากการรันแผนจริงรอบ 2 (โฟลเดอร์ rerun) ที่จับเวลาแต่ละบล็อก · ไฟล์: [blocks.json](week02_website/plan/blocks.json) · [REPORT.md](week02_website/plan/REPORT.md)
+![Gantt จริง](week2/egov-eservice/gantt-actual.png)
+
+![แผน vs จริง](week2/egov-eservice/compare.png)
+
+เสร็จ 13/13 บล็อก · เวลาจริงรวมช่วงรอโควตารีเซ็ต · [REPORT.md](week2/egov-eservice/REPORT.md)
 
 ### ภาพหน้าเว็บ (13 หน้า)
 
@@ -99,28 +104,30 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 | ผู้ดูแลระบบ | ค่าธรรมเนียม/SLA · วันหยุด · ผู้ใช้/บทบาท |
 | ทุกคน | `/verify/<รหัส>` ตรวจเอกสารโดยไม่ล็อกอิน · `/api/health` |
 
-## Theme
+## ดีไซน์
 
-อิงสไตล์ DJI (พื้นขาว การ์ดเหลี่ยมแบนไม่มีเงา ปุ่ม pill ปุ่มรองขอบ 1px KPI ตัวใหญ่ footer เทาถ่าน) ใช้ **น้ำเงินกรมท่าเข้ม `#0B2559`** เพื่อให้ดูทางการ ส้ม `#BE4E04` ใช้เฉพาะเครื่องหมายเล็ก
-ปรับต่างจากเอกสารสไตล์: ใช้ Open Sans ตามด้วย Noto Sans Thai และลด letter-spacing เหลือ −0.01em เพื่อให้ไทยอ่านได้ · ใช้เทา `#595959` กับน้ำเงินกรมท่าแทน `#8c8c8c`/`#1890ff` ที่ไม่ผ่าน WCAG AA (TC-NFR-02 ตรวจด้วย axe) · ไม่มี hero carousel เพราะเป็นเว็บราชการ
+อิง design spec แบบ showroom (พื้นขาว ปุ่มแคปซูลน้ำเงิน `#0070D5` สีเดียว ตัวอักษรหมึก `#262626` footer เทาถ่านติดล่างจอ) · ฟอนต์ไทย IBM Plex Sans Thai (ไฟล์ในโปรเจกต์) · มุมมน · หน้า login สองฝั่งพร้อมขั้น OTP แยก · ช่องเลขบัตรจัดรูปแบบอัตโนมัติ · ปุ่ม "จำลองสแกนจ่าย PromptPay" (เมื่อ TEST_MODE=1) · ตราสัญลักษณ์ออกแบบใหม่สำหรับเทศบาลนครตัวอย่าง (ไม่ใช้ตราหน่วยงานจริง) · ผ่าน WCAG AA (TC-NFR-02) · รายละเอียดและวิธีเข้าระบบด้วยบัญชีทดสอบ: [`week02_website/README.md`](week02_website/README.md#วิธีเข้าระบบ-บัญชีทดสอบจาก-test-data)
 
 <!-- rerun:start -->
-## รันแผนจริงตามโจทย์ (รอบ 2: `week02_website/rerun/`)
+## LAB 2–3 · ทีมเอเจนต์ใน container `multi-account` (dag-planner + agent-team)
 
-เพื่อให้ตรงขั้น 1–5 ของ PROMPTS ผมรันแผน [blocks.json](week02_website/plan/blocks.json) จริงอีกรอบ: เอเจนต์ Claude Code (Sonnet, effort low) แยกตามบัญชีสมมติ acc1/acc2/acc4 บนบัญชีเดียว (ไม่มี container multi-account และ dag-planner) สร้างเว็บใหม่ตั้งแต่ศูนย์จากโจทย์ ห้ามลอกโค้ดรอบก่อน แต่ละบล็อกเขียนไฟล์ของตนเอง (`mod-auth/drafts/sla/vault/cases/reports.js` + `public/`) แล้วรวมกับชุด Playwright รอบก่อน (T01–T03 ใช้ซ้ำ เพราะเป็น black-box)
+รันพรอมต์ขั้น 0–3 ของ PROMPTS จริงใน container `multi-account` ด้วยบัญชี Claude yolo1–yolo3 ที่ผู้ใช้ล็อกอินเอง รายละเอียดเต็ม: [`week2/egov-eservice/README.md`](week2/egov-eservice/README.md)
 
 | ขั้น | ผลที่รันจริง |
 |---|---|
-| I01 รวมและรัน 51 TC | รอบแรก **49 ผ่าน / 12 ล้ม** (ทั้ง 12 ข้อเป็นเว็บผิด ไม่มี test ผิดหรือแผนผิด ไม่ได้แก้ test) แก้จนได้ **61/61 ผ่าน** ผมรันซ้ำเองไม่ตั้ง BUG_MODE ได้ 61 ผ่าน |
-| X01 BUG_MODE B01–B12 | **จับได้ 12 จาก 12** ดู [BUG-HUNT.md](week02_website/rerun/BUG-HUNT.md) · B03 ทำให้ TC-NOTI-02 ล้มด้วย (ไม่อยู่ในรายการ "อาจล้มด้วย" ของ BUGS.md) |
-| เวลาแผน vs จริง | [REPORT.md](week02_website/plan/REPORT.md) · รวม 73.5 นาที (X01 ใช้ 42.1 นาที) · เวลาแผนเป็นค่าสมมติ ไม่ใช่ผลจาก dag-planner |
-| GIF P1 | 24 ไฟล์ที่ `rerun/e2e/test-report/gifs/` |
+| ขั้น 0 · doctor | Python · base skill agent-team/yolo/cyolo · ตัววาด PNG ✅ พร้อมใช้ · ชุดโจทย์ครบ 10 ไฟล์ใน `/workspace/egov-brief` |
+| ขั้น 1 · `dag` + `plan` | 13 บล็อก · agent สูงสุด 4 · แผน 112.5 นาที · สายวิกฤต B01→B03→B05→B07→I01→X01 · KC-QUEST แจกงานจากโควตาจริง |
+| ขั้น 2 · ตรวจแผน | Playwright ไม่มีลูกศรจากบล็อกเว็บ ✅ · บล็อกสุดท้าย exclusive 🔒 ✅ · output ไม่ซ้ำ ✅ · ทุกบล็อกมีบัญชี ✅ |
+| ขั้น 3 · `export` `run` `report` | **13/13 บล็อก ok** · 2,417,922 tokens · จริง 341.7 นาที (รวมรอโควตารีเซ็ต ~4 ชม.) · resume 2 ครั้ง: timeout 600 s → ตั้ง timeout ต่อบล็อก, โควตา session ถึง 97% → รอรีเซ็ตแล้วใช้ sonnet/low |
+| I01 (ในทีม) | 79 test ครอบ 51 TC ผ่าน 79/79 · ข้อที่ล้มระหว่างทางจำแนกเป็นเว็บผิดทั้งหมด |
+| X01 (ในทีม) | BUG_MODE จับได้ 12/12 · รวมบั๊ก 2 ชุดได้ผลรวมพอดี |
+| รันซ้ำบนเครื่อง | `docker compose up` → Playwright **79 passed (1.1m)** · B01 → TC-FEE-01 ล้ม · B12 → TC-WORKFLOW-04 ล้ม |
 
-![Gantt จริง](week02_website/docs/img/gantt-actual.png)
+![DAG dag-planner](week2/egov-eservice/dag.png)
 
-![แผน vs จริง](week02_website/docs/img/compare.png)
+![Gantt จริง dag-planner](week2/egov-eservice/gantt-actual.png)
 
-ข้อควรรู้: (1) TC-PAY-03 ล้มเป็นครั้งคราวด้วย Playwright worker crash บน Windows (code 3221226505 ไม่ใช่ assert ล้ม) ที่เจอในรอบ B08 รอบแรกและในรอบแยก 1 ใน 10 ครั้ง แก้โดยเพิ่ม `retries: 1` ใน playwright.config.js ของทั้งสองรอบ ถ้าผ่านรอบสองจะถูกนับเป็น flaky ใน results.json ไม่ซ่อน (ผลล่าสุดของรอบ Docker: flaky 0) (2) ระหว่าง X01 เอเจนต์แก้ `wizard.js` ซึ่งเป็นไฟล์ของ F01 เพราะพบบั๊กจริง (แนบไฟล์เร็วหลังสร้างร่างแล้ว file-item หาย) ผิดกติกาแยกไฟล์ แต่เป็นบั๊กของเว็บจริง (3) `rerun/e2e/test-report/results-all.json` ที่เอเจนต์คัดลอกไว้เป็นอีกรอบที่มี 1 ล้ม ผลที่ใช้ยืนยันคือ `results.json` รอบ 61/61 (4) การทำตามขั้น 1–3 ยังไม่ผ่าน dag-planner จริง
+![แผน vs จริง dag-planner](week2/egov-eservice/compare.png)
 
 <!-- rerun:end -->
 ## วิธีรัน
@@ -171,7 +178,7 @@ ow-owner, ช่อง from/to ของ Audit UNMASK, issue-btn โชว์ผ
 ## สิ่งที่ต่างจากโจทย์ / ที่ยังไม่ได้ทำ
 
 - **Docker:** `docker compose up --build` ทดสอบแล้ว: build ผ่าน และรัน Playwright ครบ **61/61 ผ่าน 0 ข้าม** กับ container (เว็บหลัก + container ที่ปิด TEST_MODE อีกตัวสำหรับ TC-NFR-03B + โฟลเดอร์ข้อมูลที่ mount ให้ TC-NFR-04 ตรวจ DB) · Dockerfile ตั้ง `TEST_MODE=1` เป็นค่าเริ่มต้น ถ้าใช้จริงต้องตั้ง `TEST_MODE=0`
-- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเอง (`plan/PLAN.md`, `plan/blocks.json`) และสร้าง `dag.png`, `gantt-plan.png`, `gantt-actual.png`, `compare.png`, `plan/REPORT.md` ด้วยสคริปต์ `e2e/make-plan-files.js` เวลา "แผน" เป็นค่าสมมติ (ตามทางเลือกโควตาสมมติของ PROMPTS) ส่วนเวลา "จริง" ในรอบ 2 คือ timestamp ที่เอเจนต์บันทึกตอนรันแผนจริง ไม่ได้รันผ่านสกิล dag-planner งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
+- **LAB 2–3:** รันจริงด้วย dag-planner + agent-team ใน container `multi-account` (ด้านบน) · บล็อกกฎตัวเลขใช้ `yolo` แทน `review` เพราะไม่มีบัญชี Codex · F01 ส่งมาแค่ `login.html` I01 จึงสร้างหน้าที่เหลือ · โฟลเดอร์ `week02_website/plan/` และ `rerun/` เป็นรอบก่อนที่ยังไม่มี container เก็บไว้เป็นประวัติ
 - **จำนวน test:** 61 test ครอบ 51 TC เพราะ TC-SLA-01 แยก 9 test (แถว a–i) + TC-NFR-02B, TC-NFR-03B เพิ่ม 2 ข้อ
 - **GIF 24 จาก P1 ทั้งหมด 52:** อีก 28 ข้อเรียก API อย่างเดียว ไม่เปิดเบราว์เซอร์จึงไม่มีวิดีโอ
 - **ไม่มีเกณฑ์ให้คะแนนในชุดโจทย์** ยังไม่ได้เทียบกับเกณฑ์แยกของผู้สอน (ถ้ามี)

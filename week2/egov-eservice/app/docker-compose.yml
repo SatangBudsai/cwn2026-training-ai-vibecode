@@ -1,0 +1,18 @@
+# รัน: TEST_MODE=1 BUG_MODE= docker compose up --build -d   → http://localhost:3100  (ไม่ตั้ง TEST_MODE = ปิด /api/test/*)
+services:
+  web:
+    build: .
+    image: egov-eservice:latest
+    ports:
+      - "${PORT:-3100}:3100"
+    environment:
+      TEST_MODE: "${TEST_MODE:-}"
+      BUG_MODE: "${BUG_MODE:-}"
+      DB_PATH: "${DB_PATH:-/data/app.db}"
+      BASE_URL: "${BASE_URL:-http://localhost:3100}"
+      PORT: "3100"
+    volumes:
+      - egov-data:/data
+    restart: unless-stopped
+volumes:
+  egov-data:

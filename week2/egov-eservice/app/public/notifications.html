@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แจ้งเตือน · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>แจ้งเตือน</h1>
+<ul class="plain" id="l"></ul><p data-testid="noti-empty" id="e" hidden>ไม่มีแจ้งเตือน</p>
+</main>
+<script src="/app.js"></script>
+<script>
+
+EG.boot(function () {
+  EG.api("GET", "/api/notifications").then(function (r) {
+    var items = r.data.items || [];
+    document.getElementById("e").hidden = items.length > 0;
+    document.getElementById("l").innerHTML = items.map(function (n) {
+      return "<li data-testid=\"noti-item\" data-case-no=\"" + n.caseNo + "\" data-level=\"" + n.level + "\"><a href=\"/officer/cases/" + n.caseNo + "\">" + EG.esc(n.text) + "</a></li>";
+    }).join("");
+  });
+});
+</script></body></html>

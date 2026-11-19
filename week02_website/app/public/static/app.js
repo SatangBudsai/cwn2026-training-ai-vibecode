@@ -150,9 +150,10 @@ export function renderHeader(me, { bare = false } = {}) {
   if (!host) { host = h('div', { id: 'hdr' }); document.body.insertBefore(host, document.body.firstChild); }
   const items = bare ? [] : navFor(me.role).map((n) => h('a', { href: n.href, 'data-testid': n.id }, n.label,
     n.id === 'nav-bell' ? h('span', { class: 'bell-count', 'data-testid': 'bell-count', 'aria-label': 'จำนวนแจ้งเตือน' }, String(me.bellCount ?? 0)) : null));
-  host.replaceChildren(h('header', { class: 'app-header', 'data-testid': 'app-header' },
+  const logo = h('img', { src: '/static/emblem.svg', alt: '', width: '40', height: '40' });
+  host.replaceChildren(h('div', { class: 'announce' }, 'ยื่นคำขอ ชำระเงิน และรับเอกสารดิจิทัลได้ครบในที่เดียว'), h('header', { class: 'app-header', 'data-testid': 'app-header' },
     h('div', { class: 'inner' },
-      h('span', { class: 'brand' }, 'e-Service กลาง เทศบาลนครตัวอย่าง'),
+      h('span', { class: 'brand' }, logo, h('span', null, 'e-Service กลาง', h('small', null, 'เทศบาลนครตัวอย่าง'))),
       h('nav', { 'aria-label': 'เมนูหลัก' }, items),
       h('div', { class: 'userbox' },
         h('span', { 'data-testid': 'user-name' }, me.name || me.username),

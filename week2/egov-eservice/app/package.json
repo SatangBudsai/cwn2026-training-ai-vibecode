@@ -1,0 +1,12 @@
+{
+  "name": "egov-eservice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "e-Service กลาง เทศบาลนครตัวอย่าง (ไม่มี dependency ภายนอก)",
+  "main": "server.js",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "TEST_MODE=1 DB_PATH=./data/app.db node server.js"
+  }
+}

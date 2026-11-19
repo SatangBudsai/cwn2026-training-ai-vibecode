@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ค่าธรรมเนียมและ SLA · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>ค่าธรรมเนียมและ SLA</h1>
+<div id="b"></div>
+</main>
+<script src="/app.js"></script>
+<script>
+
+function row(s) {
+  var sv03 = s.id === "SV-03";
+  var feeInput = sv03
+    ? "<label>ค่าธรรมเนียมฐาน (฿)<input type=\"number\" data-testid=\"svc-fee-SV-03\" value=\"" + (s.feeBase != null ? s.feeBase : s.fee) + "\"></label><label>฿ ต่อ ตร.ม. ส่วนเกิน 100<input type=\"number\" data-testid=\"svc-fee-per-sqm-SV-03\" value=\"" + (s.feePerSqm || 0) + "\"></label>"
+    : "<label>ค่าธรรมเนียม (฿" + (s.id === "SV-01" ? " ต่อฉบับ" : "") + ")<input type=\"number\" data-testid=\"svc-fee-" + s.id + "\" value=\"" + s.fee + "\"></label>";
+  return "<section class=\"card\" data-testid=\"service-row\" data-service-id=\"" + s.id + "\"><h2>" + s.id + " " + EG.esc(s.name) + "</h2>" + feeInput +
+    "<label>SLA (วันทำการ)<input type=\"number\" data-testid=\"svc-sla-" + s.id + "\" value=\"" + s.sla + "\"></label>" +
+    "<div class=\"row\"><button data-testid=\"svc-save-" + s.id + "\" data-id=\"" + s.id + "\">บันทึก</button></div></section>";
+}
+function load() { EG.api("GET", "/api/admin/services").then(function (r) { document.getElementById("b").innerHTML = (r.data.items || []).map(row).join(""); }); }
+document.getElementById("b").addEventListener("click", function (ev) {
+  var b = ev.target.closest("button[data-id]"); if (!b) return;
+  var id = b.dataset.id, sec = b.closest("section");
+  var val = function (t) { var el = EG.tid(t, sec); return el ? el.value.trim() : ""; };
+  var body = { sla: val("svc-sla-" + id) === "" ? null : Number(val("svc-sla-" + id)) };
+  if (id === "SV-03") { body.feeBase = val("svc-fee-SV-03") === "" ? null : Number(val("svc-fee-SV-03")); body.feePerSqm = val("svc-fee-per-sqm-SV-03") === "" ? null : Number(val("svc-fee-per-sqm-SV-03")); }
+  else body.fee = val("svc-fee-" + id) === "" ? null : Number(val("svc-fee-" + id));
+  EG.api("PUT", "/api/admin/services/" + id, body).then(function (r) {
+    if (r.ok) EG.show("action-success", "บันทึกแล้ว"); else EG.show("action-error", EG.failMsg(r));
+  });
+});
+EG.boot(load);
+</script></body></html>

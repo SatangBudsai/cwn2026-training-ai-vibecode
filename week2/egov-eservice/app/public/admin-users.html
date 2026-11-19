@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ผู้ใช้และบทบาท · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>ผู้ใช้และบทบาท</h1>
+<div class="table-wrap"><table><thead><tr><th>ผู้ใช้</th><th>ชื่อ</th><th>บทบาท</th><th>แผนก</th><th></th></tr></thead><tbody id="b"></tbody></table></div>
+</main>
+<script src="/app.js"></script>
+<script>
+
+var ROLES = ["citizen", "officer", "head", "executive", "auditor", "admin"];
+function opt(list, v) { return list.map(function (x) { return "<option value=\"" + x[0] + "\"" + (x[0] === v ? " selected" : "") + ">" + x[1] + "</option>"; }).join(""); }
+function load() {
+  EG.api("GET", "/api/admin/users").then(function (r) {
+    document.getElementById("b").innerHTML = (r.data.items || []).map(function (u) {
+      return "<tr data-testid=\"user-row\" data-username=\"" + EG.esc(u.username) + "\"><td>" + EG.esc(u.username) + "</td><td>" + EG.esc(u.name) + "</td>" +
+        "<td><select data-testid=\"user-role-select\" aria-label=\"บทบาท " + EG.esc(u.username) + "\">" + opt(ROLES.map(function (x) { return [x, x]; }), u.role) + "</select></td>" +
+        "<td><select data-testid=\"user-dept-select\" aria-label=\"แผนก " + EG.esc(u.username) + "\">" + opt([["", "(ไม่มี)"], ["registry", "registry"], ["works", "works"]], u.dept || "") + "</select></td>" +
+        "<td><button data-testid=\"user-save-btn\">บันทึก</button></td></tr>";
+    }).join("");
+  });
+}
+document.getElementById("b").addEventListener("click", function (ev) {
+  var b = ev.target.closest("[data-testid=user-save-btn]"); if (!b) return;
+  var tr = b.closest("tr");
+  EG.api("PUT", "/api/admin/users/" + encodeURIComponent(tr.dataset.username), { role: EG.tid("user-role-select", tr).value, dept: EG.tid("user-dept-select", tr).value }).then(function (r) {
+    if (r.ok) EG.show("action-success", "บันทึกแล้ว"); else EG.show("action-error", EG.failMsg(r));
+  });
+});
+EG.boot(load);
+</script></body></html>

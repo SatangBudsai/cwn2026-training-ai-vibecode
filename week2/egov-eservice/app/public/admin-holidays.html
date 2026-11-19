@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>วันหยุด · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>วันหยุด</h1>
+<div class="card row"><label for="hd">วันที่</label><input id="hd" type="text" placeholder="YYYY-MM-DD" data-testid="holiday-date-input"><label for="hn">ชื่อวันหยุด</label><input id="hn" data-testid="holiday-name-input"><button data-testid="holiday-add-btn" id="add">เพิ่ม</button></div>
+<div class="table-wrap"><table><tbody id="b"></tbody></table></div>
+</main>
+<script src="/app.js"></script>
+<script>
+
+function load() {
+  EG.api("GET", "/api/admin/holidays").then(function (r) {
+    document.getElementById("b").innerHTML = (r.data.items || []).map(function (h) {
+      return "<tr data-testid=\"holiday-row\" data-date=\"" + EG.esc(h.date) + "\"><td>" + EG.esc(h.date) + "</td><td>" + EG.esc(h.name) + "</td><td><button class=\"danger\" data-testid=\"holiday-delete-btn\" data-date=\"" + EG.esc(h.date) + "\">ลบ</button></td></tr>";
+    }).join("");
+  });
+}
+document.getElementById("add").addEventListener("click", function () {
+  EG.api("POST", "/api/admin/holidays", { date: document.getElementById("hd").value.trim(), name: document.getElementById("hn").value.trim() }).then(function (r) {
+    if (r.ok) { EG.show("action-success", "เพิ่มวันหยุดแล้ว"); document.getElementById("hd").value = ""; document.getElementById("hn").value = ""; load(); } else EG.show("action-error", EG.failMsg(r));
+  });
+});
+document.getElementById("b").addEventListener("click", function (ev) {
+  var b = ev.target.closest("[data-testid=holiday-delete-btn]"); if (!b) return;
+  EG.api("DELETE", "/api/admin/holidays/" + encodeURIComponent(b.dataset.date)).then(function (r) {
+    if (r.ok) { EG.show("action-success", "ลบวันหยุดแล้ว"); load(); } else EG.show("action-error", EG.failMsg(r));
+  });
+});
+EG.boot(load);
+</script></body></html>

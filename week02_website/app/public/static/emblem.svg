@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ตราเทศบาลนครตัวอย่าง">
+  <!-- ตราสัญลักษณ์ออกแบบใหม่สำหรับ "เทศบาลนครตัวอย่าง" (ไม่ใช่ตราของหน่วยงานจริง) -->
+  <circle cx="32" cy="32" r="30" fill="#0070d5"/>
+  <circle cx="32" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <!-- ศาลาหลังคาซ้อน -->
+  <path d="M32 11 L44 21 H20 Z" fill="#fff"/>
+  <path d="M32 17 L48 28 H16 Z" fill="#fff" opacity=".9"/>
+  <rect x="20" y="29" width="24" height="2.5" fill="#fff"/>
+  <rect x="22" y="32" width="3" height="12" fill="#fff"/>
+  <rect x="30.5" y="32" width="3" height="12" fill="#fff"/>
+  <rect x="39" y="32" width="3" height="12" fill="#fff"/>
+  <rect x="17" y="44.5" width="30" height="3" fill="#fff"/>
+  <!-- ใบไม้สองข้าง -->
+  <path d="M12 40 q4 10 14 13" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M52 40 q-4 10 -14 13" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="32" cy="53" r="2" fill="#be4e04"/>
+</svg>

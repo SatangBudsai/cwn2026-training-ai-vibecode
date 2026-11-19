@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ลงทะเบียน · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>ลงทะเบียน</h1>
+<form id="f" class="card" novalidate>
+<label for="n">ชื่อ-สกุล (จาก ThaiD)</label><input id="n" data-testid="reg-name" readonly>
+<label for="m">เบอร์มือถือ</label><input id="m" data-testid="reg-mobile" inputmode="numeric" autocomplete="off">
+<p class="error" data-testid="reg-error-mobile" id="em" hidden></p>
+<label for="e">อีเมล (ไม่บังคับ)</label><input id="e" data-testid="reg-email" type="text" autocomplete="off">
+<label><input type="checkbox" id="c" data-testid="reg-consent" style="min-height:auto"> ข้าพเจ้ายินยอมให้ประมวลผลข้อมูลส่วนบุคคล (PDPA)</label>
+<p class="error" data-testid="reg-error-consent" id="ec" hidden></p>
+<button type="submit" data-testid="reg-submit">ลงทะเบียน</button></form>
+</main>
+<script src="/app.js"></script>
+<script>
+
+EG.boot(function (me) {
+  document.getElementById("n").value = me.name;
+  var f = document.getElementById("f"), em = document.getElementById("em"), ec = document.getElementById("ec");
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault(); em.hidden = ec.hidden = true; EG.clearMsg();
+    EG.api("POST", "/api/auth/register", { mobile: document.getElementById("m").value.trim(), email: document.getElementById("e").value.trim(), consent: document.getElementById("c").checked }).then(function (r) {
+      if (r.ok) { location.href = "/citizen"; return; }
+      var code = r.data.code;
+      if (code === "INVALID_MOBILE") { em.textContent = r.data.message; em.hidden = false; }
+      else if (code === "CONSENT_REQUIRED") { ec.textContent = r.data.message; ec.hidden = false; }
+      else EG.show("action-error", EG.failMsg(r));
+    });
+  });
+});
+</script></body></html>

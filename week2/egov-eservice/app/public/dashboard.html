@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>Dashboard</h1>
+<div class="card row"><label for="p">ช่วงเวลา</label><select id="p" data-testid="period-select"><option value="2026-12">ธ.ค. 2569</option><option value="2026-11">พ.ย. 2569</option><option value="2026-10">ต.ค. 2569</option><option value="2026">ทั้งปี 2569</option></select>
+<label for="s">บริการ</label><select id="s" data-testid="service-select"><option value="ALL">ทั้งหมด</option><option value="SV-01">SV-01</option><option value="SV-02">SV-02</option><option value="SV-03">SV-03</option></select>
+<button data-testid="export-xlsx-btn" id="x">ส่งออก Excel</button><button data-testid="export-pdf-btn" id="d">ส่งออก PDF</button></div>
+<div class="grid"><div class="kpi">รับเรื่อง<b data-testid="kpi-received">0</b></div><div class="kpi">ปิดงาน<b data-testid="kpi-closed">0</b></div><div class="kpi">ทันกำหนด %<b data-testid="kpi-ontime-pct">–</b></div><div class="kpi">งานคงค้าง<b data-testid="kpi-backlog">0</b></div><div class="kpi">เกินกำหนดคงค้าง<b data-testid="kpi-overdue">0</b></div></div>
+<h2>งานในมือรายเจ้าหน้าที่</h2><table><tbody id="w"></tbody></table>
+</main>
+<script src="/app.js"></script>
+<script>
+
+var first = true;
+function load() {
+  var p = document.getElementById("p"), s = document.getElementById("s");
+  var url = "/api/dashboard?service=" + s.value + (first ? "" : "&period=" + p.value);
+  EG.api("GET", url).then(function (r) {
+    var d = r.data;
+    if (first) { first = false; if (d.period) { if (![].some.call(p.options, function (o) { return o.value === d.period; })) { var o = document.createElement("option"); o.value = d.period; o.textContent = d.period; p.insertBefore(o, p.firstChild); } p.value = d.period; } }
+    EG.tid("kpi-received").textContent = d.received;
+    EG.tid("kpi-closed").textContent = d.closed;
+    EG.tid("kpi-ontime-pct").textContent = (d.closed === 0 || d.ontimePct == null) ? "–" : Number(d.ontimePct).toFixed(1) + "%";
+    EG.tid("kpi-backlog").textContent = d.backlog;
+    EG.tid("kpi-overdue").textContent = d.overdue;
+    document.getElementById("w").innerHTML = (d.workload || []).map(function (x) {
+      return "<tr data-testid=\"workload-row\" data-username=\"" + EG.esc(x.username) + "\"><td>" + EG.esc(x.username) + "</td><td data-testid=\"workload-value\">" + x.count + "</td></tr>";
+    }).join("");
+  });
+}
+function exp(f) { location.href = "/api/dashboard/export?format=" + f + "&period=" + document.getElementById("p").value + "&service=" + document.getElementById("s").value; }
+document.getElementById("p").addEventListener("change", load);
+document.getElementById("s").addEventListener("change", load);
+document.getElementById("x").addEventListener("click", function () { exp("xlsx"); });
+document.getElementById("d").addEventListener("click", function () { exp("pdf"); });
+EG.boot(load);
+</script></body></html>

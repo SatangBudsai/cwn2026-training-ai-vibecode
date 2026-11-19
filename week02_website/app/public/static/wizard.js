@@ -218,6 +218,15 @@ async function init() {
     pay.replaceChildren(...kids);
     const acts = [];
     if (status === 'PENDING') acts.push(h('button', { type: 'button', class: 'btn secondary', 'data-testid': 'refresh-payment-btn', onclick: () => check(p.ref) }, 'ตรวจสอบการชำระเงิน'));
+    // ปุ่มจำลองสแกนจ่าย: เรียก callback ของธนาคารจำลอง (/api/test/...) ด้วยยอดเต็ม ใช้ได้เมื่อเปิด TEST_MODE เท่านั้น
+    if (status === 'PENDING') acts.push(h('button', {
+      type: 'button', class: 'btn', id: 'mock-pay-btn',
+      onclick: async () => {
+        clearError();
+        try { await api(`/api/test/payments/${p.ref}/pay`, { method: 'POST', json: { amount: draft.fee }, noRedirect: true }); await check(p.ref); }
+        catch (e) { showError(e.status === 404 ? 'ปุ่มจำลองจ่ายใช้ได้เฉพาะโหมดทดสอบ (TEST_MODE=1)' : msgOf(e)); }
+      },
+    }, 'จำลองสแกนจ่าย PromptPay'));
     if (status === 'EXPIRED') acts.push(btnCreate('สร้าง QR ใหม่', 'regenerate-qr-btn'));
     if (status !== 'PAID') acts.unshift(btnBack());
     actions.replaceChildren(...acts);

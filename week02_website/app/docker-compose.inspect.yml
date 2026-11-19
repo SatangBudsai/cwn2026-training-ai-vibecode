@@ -1,0 +1,8 @@
+# ใช้เฉพาะตอนตรวจ TC-NFR-04 (inspection): เอาไฟล์ DB ออกมาไว้ที่ app/data/egov.db บนเครื่อง
+# docker compose -f docker-compose.yml -f docker-compose.inspect.yml up -d
+# ไม่ใช้เป็นค่าเริ่มต้น เพราะ bind mount บน Windows ทำให้ SQLite ช้า และ TC-NFR-03 ล้มแบบสุ่ม
+services:
+  web:
+    tmpfs: !reset []
+    volumes:
+      - ./data:/data

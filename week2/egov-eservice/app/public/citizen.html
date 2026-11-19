@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คำขอของฉัน · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>คำขอของฉัน</h1>
+<p data-testid="citizen-welcome" id="w"></p>
+<div class="card row"><button data-testid="start-service-SV-01" class="start" data-s="SV-01">ขอหนังสือรับรอง</button>
+<button data-testid="start-service-SV-02" class="start" data-s="SV-02">ขออนุญาตประกอบกิจการ</button>
+<button data-testid="start-service-SV-03" class="start" data-s="SV-03">ขออนุญาตก่อสร้าง/ต่อเติมอาคาร</button></div>
+<h2>ร่างและรอชำระ</h2><div class="table-wrap"><table><tbody id="drafts"></tbody></table></div>
+<h2>คำขอของฉัน</h2><div class="table-wrap"><table><thead><tr><th>เลขคำขอ</th><th>บริการ</th><th>สถานะ</th><th>กำหนดเสร็จ</th></tr></thead><tbody id="cases"></tbody></table></div>
+</main>
+<script src="/app.js"></script>
+<script>
+
+EG.boot(function (me) {
+  document.getElementById("w").textContent = "สวัสดี " + me.name;
+  document.querySelectorAll(".start").forEach(function (b) { b.addEventListener("click", function () { location.href = "/citizen/new/" + b.dataset.s; }); });
+  EG.api("GET", "/api/drafts").then(function (r) {
+    document.getElementById("drafts").innerHTML = (r.data.items || []).map(function (d) {
+      return "<tr data-testid=\"my-draft-row\" data-draft-id=\"" + d.draftId + "\" data-status=\"" + d.status + "\"><td data-testid=\"row-draft-id\">" + d.draftId + "</td><td data-testid=\"row-service\">" + EG.esc(d.serviceId + " " + (EG.SERVICE[d.serviceId] || "")) + "</td><td data-testid=\"row-status\" data-status=\"" + d.status + "\">" + (EG.STATUS[d.status] || d.status) + "</td><td><button class=\"secondary\" data-testid=\"open-draft-btn\" onclick=\"location.href=\x27/citizen/new/" + d.serviceId + "?draft=" + d.draftId + "\x27\">เปิดร่าง</button></td></tr>";
+    }).join("");
+  });
+  EG.api("GET", "/api/cases").then(function (r) {
+    var items = (r.data.items || []).slice().sort(function (a, b) { return a.caseNo < b.caseNo ? 1 : -1; });
+    document.getElementById("cases").innerHTML = items.map(function (c) {
+      return "<tr data-testid=\"my-case-row\" data-case-no=\"" + c.caseNo + "\" data-status=\"" + c.status + "\"><td data-testid=\"row-case-no\"><a href=\"/citizen/cases/" + c.caseNo + "\">" + c.caseNo + "</a></td><td data-testid=\"row-service\">" + EG.esc(c.serviceId + " " + (EG.SERVICE[c.serviceId] || "")) + "</td><td data-testid=\"row-status\" data-status=\"" + c.status + "\">" + (EG.STATUS[c.status] || c.status) + "</td><td data-testid=\"row-due\"" + (c.dueAt ? " data-iso=\"" + c.dueAt + "\"" : "") + ">" + EG.dt(c.dueAt) + "</td></tr>";
+    }).join("");
+  });
+});
+</script></body></html>

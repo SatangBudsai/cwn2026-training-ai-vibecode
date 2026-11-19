@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ตรวจสอบเอกสาร · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>ตรวจสอบเอกสาร</h1>
+<div class="card"><p><b data-testid="verify-result" id="r">กำลังตรวจสอบ…</b></p><dl id="d"></dl></div></main>
+<script src="/app.js"></script>
+<script>
+var TXT = { VALID: "เอกสารถูกต้อง", EXPIRED: "เอกสารหมดอายุ", TAMPERED: "ลายเซ็นไม่ถูกต้อง", NOT_FOUND: "ไม่พบเอกสาร" };
+var code = decodeURIComponent(location.pathname.split("/").pop());
+EG.api("GET", "/api/verify/" + encodeURIComponent(code)).then(function (r) {
+  var d = r.data, res = d.result || "NOT_FOUND", el = EG.tid("verify-result");
+  el.textContent = TXT[res] || TXT.NOT_FOUND; el.setAttribute("data-result", res);
+  if (res === "VALID" || res === "EXPIRED") {
+    var dd = function (l, id, v, iso) { return "<dt>" + l + "</dt><dd data-testid=\"" + id + "\"" + (iso ? " data-iso=\"" + EG.esc(iso) + "\"" : "") + ">" + EG.esc(v) + "</dd>"; };
+    document.getElementById("d").innerHTML = dd("เลขเอกสาร", "verify-doc-no", d.docNo) + dd("ผู้ยื่น", "verify-applicant", d.applicantMasked) +
+      dd("บริการ", "verify-service", d.serviceId + " " + (EG.SERVICE[d.serviceId] || "")) + dd("วันที่ออก", "verify-issued", EG.dt(d.issuedAt), d.issuedAt) +
+      dd("ผู้ลงนาม", "verify-signer", d.signer) + dd("ใช้ได้ถึง", "verify-expires", EG.dOnly(d.validUntil), String(d.validUntil).slice(0, 10));
+  }
+});
+</script></body></html>

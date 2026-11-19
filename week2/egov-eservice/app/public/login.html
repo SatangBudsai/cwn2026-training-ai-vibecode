@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เข้าสู่ระบบ · e-Service เทศบาลนครตัวอย่าง</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { font-size: 16px; }
+  body {
+    margin: 0; min-height: 100vh;
+    font-family: "Sarabun", "Noto Sans Thai", "Leelawadee UI", "Tahoma", system-ui, sans-serif;
+    line-height: 1.6; color: #1a202c; background: #eef2f7;
+  }
+  .site-header { background: #0b3d6e; color: #fff; padding: .75rem 1rem; }
+  .site-header .brand { margin: 0; font-size: 1.125rem; font-weight: 700; }
+  .site-header .sub { margin: 0; font-size: .875rem; color: #e2ecf7; }
+  main { display: flex; justify-content: center; padding: 1.5rem 1rem 3rem; }
+  .card {
+    width: 100%; max-width: 30rem; background: #fff; border-radius: .75rem;
+    box-shadow: 0 2px 12px rgba(15, 35, 70, .12); padding: 1.25rem;
+  }
+  h1 { font-size: 1.375rem; margin: 0 0 1rem; color: #0b3d6e; }
+  h2 { font-size: 1.0625rem; margin: 0 0 .75rem; }
+  .tabs { display: flex; gap: .25rem; border-bottom: 2px solid #c9d3e0; margin-bottom: 1.25rem; }
+  .tab {
+    flex: 1; min-height: 2.75rem; padding: .5rem .75rem; font: inherit; font-weight: 600;
+    background: transparent; color: #3b4a5e; border: 0; border-bottom: 3px solid transparent;
+    margin-bottom: -2px; cursor: pointer; border-radius: .375rem .375rem 0 0;
+  }
+  .tab[aria-selected="true"] { color: #0b3d6e; border-bottom-color: #0b3d6e; background: #e8f0fa; }
+  .tab:hover { background: #f0f4f9; }
+  .field { margin-bottom: 1rem; }
+  label { display: block; font-weight: 600; margin-bottom: .25rem; }
+  .hint { display: block; font-size: .875rem; color: #4a5568; margin-top: .25rem; }
+  input[type="text"], input[type="password"] {
+    width: 100%; min-height: 2.75rem; padding: .5rem .75rem; font: inherit; color: #1a202c;
+    background: #fff; border: 1px solid #6b7a90; border-radius: .375rem;
+  }
+  input[aria-invalid="true"] { border-color: #b42318; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 100%;
+    min-height: 2.75rem; padding: .5rem 1rem; font: inherit; font-weight: 700;
+    color: #fff; background: #0b3d6e; border: 2px solid #0b3d6e; border-radius: .375rem; cursor: pointer;
+  }
+  .btn:hover { background: #082e54; }
+  .btn[disabled] { opacity: .7; cursor: progress; }
+  :focus-visible, .tab:focus, .btn:focus, input:focus {
+    outline: 3px solid #f0a500; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(240, 165, 0, .35);
+  }
+  .error {
+    margin: .5rem 0 0; padding: .5rem .75rem; color: #8a1c13; background: #fdecea;
+    border-left: 4px solid #b42318; border-radius: .25rem; font-weight: 600;
+  }
+  .error:empty { display: none; }
+  .lock { margin-top: .75rem; padding: .75rem; background: #fff4e5; border-left: 4px solid #b54708; color: #6b2e05; border-radius: .25rem; }
+  .lock p { margin: 0; }
+  .lock .lock-msg { font-weight: 700; }
+  .otp-step { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed #c9d3e0; }
+  .note { font-size: .875rem; color: #4a5568; margin: 1.25rem 0 0; }
+  [hidden] { display: none !important; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  @media (min-width: 768px) {
+    .site-header { padding: 1rem 2rem; }
+    .site-header .brand { font-size: 1.375rem; }
+    main { padding-top: 3rem; }
+    .card { padding: 2rem; }
+    h1 { font-size: 1.625rem; }
+  }
+  @media (min-width: 1280px) { .card { max-width: 34rem; } }
+  @media (forced-colors: active) {
+    .tab[aria-selected="true"] { border-bottom-color: Highlight; }
+    .error, .lock { border: 1px solid CanvasText; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <p class="brand">e-Service กลาง เทศบาลนครตัวอย่าง</p>
+  <p class="sub">บริการออนไลน์สำหรับประชาชนและเจ้าหน้าที่</p>
+</header>
+
+<main id="main">
+  <div class="card">
+    <h1>เข้าสู่ระบบ</h1>
+
+    <div class="tabs" role="tablist" aria-label="ประเภทผู้ใช้">
+      <button type="button" class="tab" role="tab" id="tab-citizen" data-testid="login-tab-citizen"
+              aria-selected="true" aria-controls="panel-citizen">ประชาชน</button>
+      <button type="button" class="tab" role="tab" id="tab-staff" data-testid="login-tab-staff"
+              aria-selected="false" aria-controls="panel-staff" tabindex="-1">เจ้าหน้าที่</button>
+    </div>
+
+    <!-- ประชาชน: ThaiD จำลอง -->
+    <section id="panel-citizen" role="tabpanel" aria-labelledby="tab-citizen">
+      <h2>ประชาชน (ThaiD จำลอง)</h2>
+      <form id="thaid-form" novalidate>
+        <div class="field">
+          <label for="thaid-id">เลขบัตรประชาชน 13 หลัก</label>
+          <input type="text" id="thaid-id" name="idNo" data-testid="thaid-id-input"
+                 inputmode="numeric" autocomplete="off" aria-describedby="thaid-id-hint thaid-error">
+          <span class="hint" id="thaid-id-hint">กรอกตัวเลข 13 หลัก ไม่ต้องใส่ขีด</span>
+          <p class="error" id="thaid-error" data-testid="thaid-error" role="alert" hidden></p>
+        </div>
+        <button type="submit" class="btn" id="thaid-submit" data-testid="thaid-submit">เข้าสู่ระบบด้วย ThaiD (จำลอง)</button>
+      </form>
+
+      <div class="otp-step" id="otp-step" data-testid="otp-step" hidden>
+        <form id="otp-form" novalidate>
+          <p id="otp-info">ส่งรหัส OTP ไปยังแอป ThaiD (จำลอง) แล้ว กรุณากรอกรหัส 6 หลัก</p>
+          <div class="field">
+            <label for="otp-input">รหัส OTP</label>
+            <input type="text" id="otp-input" name="otp" data-testid="otp-input"
+                   inputmode="numeric" autocomplete="one-time-code" aria-describedby="otp-info otp-error">
+            <div id="otp-error-box" role="alert">
+              <p class="error" id="otp-error" data-testid="otp-error" hidden></p>
+              <p class="hint" id="otp-attempts-left" data-testid="otp-attempts-left" hidden></p>
+            </div>
+          </div>
+          <button type="submit" class="btn" id="otp-submit" data-testid="otp-submit">ยืนยัน OTP</button>
+        </form>
+      </div>
+
+      <div class="lock" id="lock-box" role="alert" hidden>
+        <p class="lock-msg" data-testid="lock-message" id="lock-message">ผิดเกินกำหนด เลขบัตรนี้ถูกล็อก 15 นาที</p>
+        <p>ลองใหม่ได้หลัง <time data-testid="lock-until" id="lock-until"></time></p>
+      </div>
+    </section>
+
+    <!-- เจ้าหน้าที่: SSO ภาครัฐ จำลอง -->
+    <section id="panel-staff" role="tabpanel" aria-labelledby="tab-staff" hidden>
+      <h2>เจ้าหน้าที่ (SSO ภาครัฐ จำลอง)</h2>
+      <form id="staff-form" novalidate>
+        <div class="field">
+          <label for="staff-username">ชื่อผู้ใช้</label>
+          <input type="text" id="staff-username" name="username" data-testid="staff-username"
+                 autocomplete="username" autocapitalize="none" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="staff-password">รหัสผ่าน</label>
+          <input type="password" id="staff-password" name="password" data-testid="staff-password"
+                 autocomplete="current-password" aria-describedby="staff-error">
+        </div>
+        <p class="error" id="staff-error" data-testid="staff-error" role="alert" hidden></p>
+        <button type="submit" class="btn" id="staff-submit" data-testid="staff-submit">เข้าสู่ระบบเจ้าหน้าที่ (SSO ภาครัฐ จำลอง)</button>
+      </form>
+    </section>
+
+    <p class="note">ระบบนี้เป็นระบบจำลองของเทศบาลนครตัวอย่าง (ThaiD และ SSO เป็นตัวจำลอง)</p>
+  </div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  var MSG = {
+    INVALID_ID: 'เลขบัตรประชาชนไม่ถูกต้อง',
+    OTP_INVALID: 'รหัส OTP ไม่ถูกต้อง',
+    LOCKED: 'ผิดเกินกำหนด เลขบัตรนี้ถูกล็อก 15 นาที',
+    INVALID_CREDENTIALS: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
+    NETWORK: 'ไม่สามารถเชื่อมต่อระบบได้ กรุณาลองใหม่'
+  };
+  var LANDING = {
+    citizen: '/citizen', officer: '/officer/queue', head: '/head/approvals',
+    executive: '/dashboard', auditor: '/audit', admin: '/admin/services'
+  };
+  var TH_MONTHS = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+
+  // ---------- helpers ----------
+  function show(el, text) { if (text !== undefined) el.textContent = text; el.hidden = false; }
+  function hide(el) { el.hidden = true; el.textContent = ''; }
+
+  function postJSON(url, body) {
+    return fetch(url, {
+      method: 'POST', credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      return res.text().then(function (t) {
+        var data = {};
+        try { data = t ? JSON.parse(t) : {}; } catch (e) { data = {}; }
+        return { status: res.status, ok: res.ok, data: data };
+      });
+    });
+  }
+
+  // ISO → เวลาไทย (UTC+7) เช่น "1 ธ.ค. 2569 09:15" และ ISO รูปแบบ +07:00
+  function bkkParts(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return null;
+    var b = new Date(d.getTime() + 7 * 3600 * 1000);
+    return { y: b.getUTCFullYear(), mo: b.getUTCMonth(), d: b.getUTCDate(), h: b.getUTCHours(), mi: b.getUTCMinutes(), s: b.getUTCSeconds() };
+  }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function thaiDate(iso) {
+    var p = bkkParts(iso);
+    if (!p) return iso || '';
+    return p.d + ' ' + TH_MONTHS[p.mo] + ' ' + (p.y + 543) + ' ' + pad(p.h) + ':' + pad(p.mi);
+  }
+  function isoBkk(iso) {
+    if (typeof iso === 'string' && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\+07:00$/.test(iso)) return iso;
+    var p = bkkParts(iso);
+    if (!p) return iso || '';
+    return p.y + '-' + pad(p.mo + 1) + '-' + pad(p.d) + 'T' + pad(p.h) + ':' + pad(p.mi) + ':' + pad(p.s) + '+07:00';
+  }
+
+  // ---------- tabs ----------
+  var tabs = [
+    { tab: $('tab-citizen'), panel: $('panel-citizen'), focus: 'thaid-id' },
+    { tab: $('tab-staff'), panel: $('panel-staff'), focus: 'staff-username' }
+  ];
+  function selectTab(i, moveFocus) {
+    tabs.forEach(function (t, j) {
+      var on = i === j;
+      t.tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tab.tabIndex = on ? 0 : -1;
+      t.panel.hidden = !on;
+    });
+    if (moveFocus) tabs[i].tab.focus();
+    
+  }
+  tabs.forEach(function (t, i) {
+    t.tab.addEventListener('click', function () { selectTab(i, false); });
+    t.tab.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') n = (i + 1) % tabs.length;
+      else if (e.key === 'Home') n = 0;
+      else if (e.key === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); selectTab(n, true); }
+    });
+  });
+  if (location.hash === '#staff') selectTab(1, false);
+
+  // ---------- ThaiD ----------
+  var idInput = $('thaid-id'), thaidErr = $('thaid-error'), thaidBtn = $('thaid-submit');
+  var otpStep = $('otp-step'), otpInput = $('otp-input'), otpErr = $('otp-error'),
+      otpLeft = $('otp-attempts-left'), otpBtn = $('otp-submit');
+  var lockBox = $('lock-box'), lockUntil = $('lock-until');
+  var currentId = '';
+
+  function clearOtpMsgs() { hide(otpErr); hide(otpLeft); }
+  function hideLock() { lockBox.hidden = true; lockUntil.textContent = ''; lockUntil.removeAttribute('data-iso'); lockUntil.removeAttribute('datetime'); }
+  function showLock(until) {
+    clearOtpMsgs();
+    if (until) {
+      var iso = isoBkk(until);
+      lockUntil.setAttribute('data-iso', iso);
+      lockUntil.setAttribute('datetime', iso);
+      lockUntil.textContent = thaiDate(until);
+    } else {
+      lockUntil.removeAttribute('data-iso');
+      lockUntil.textContent = '15 นาที';
+    }
+    lockBox.hidden = false;
+  }
+
+  $('thaid-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var idNo = idInput.value.trim();
+    hide(thaidErr); idInput.removeAttribute('aria-invalid');
+    hideLock(); clearOtpMsgs();
+    thaidBtn.disabled = true;
+    postJSON('/api/auth/thaid/start', { idNo: idNo }).then(function (r) {
+      if (r.ok) {
+        currentId = idNo;
+        otpStep.hidden = false;
+        otpInput.value = '';
+        otpInput.focus();
+        return;
+      }
+      otpStep.hidden = true;
+      if (r.status === 423 || r.data.code === 'LOCKED') {
+        currentId = idNo;
+        showLock(r.data.lockedUntil);
+        return;
+      }
+      idInput.setAttribute('aria-invalid', 'true');
+      show(thaidErr, r.data.code === 'INVALID_ID' || r.status === 400 ? MSG.INVALID_ID : (r.data.message || MSG.INVALID_ID));
+    }).catch(function () {
+      show(thaidErr, MSG.NETWORK);
+    }).then(function () { thaidBtn.disabled = false; });
+  });
+
+  // เปลี่ยนเลขบัตร → ต้องขอ OTP ใหม่
+  idInput.addEventListener('input', function () {
+    if (currentId && idInput.value.trim() !== currentId) { otpStep.hidden = true; hideLock(); clearOtpMsgs(); currentId = ''; }
+  });
+
+  $('otp-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var otp = otpInput.value.trim();
+    var idNo = currentId || idInput.value.trim();
+    clearOtpMsgs(); otpInput.removeAttribute('aria-invalid');
+    otpBtn.disabled = true;
+    postJSON('/api/auth/thaid/verify', { idNo: idNo, otp: otp }).then(function (r) {
+      if (r.ok) {
+        hideLock();
+        window.location.assign(r.data.registered === false ? '/register' : '/citizen');
+        return;
+      }
+      if (r.status === 423 || r.data.code === 'LOCKED') {
+        showLock(r.data.lockedUntil);
+        return;
+      }
+      hideLock();
+      otpInput.setAttribute('aria-invalid', 'true');
+      show(otpErr, r.data.code === 'OTP_INVALID' || r.status === 401 ? MSG.OTP_INVALID : (r.data.message || MSG.OTP_INVALID));
+      if (typeof r.data.attemptsLeft === 'number') {
+        show(otpLeft, 'เหลือ ' + r.data.attemptsLeft + ' ครั้ง');
+      }
+      otpInput.select();
+    }).catch(function () {
+      show(otpErr, MSG.NETWORK);
+    }).then(function () { otpBtn.disabled = false; });
+  });
+
+  // ---------- Staff ----------
+  var staffErr = $('staff-error'), staffBtn = $('staff-submit');
+  $('staff-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    hide(staffErr);
+    staffBtn.disabled = true;
+    postJSON('/api/auth/staff/login', {
+      username: $('staff-username').value.trim(),
+      password: $('staff-password').value
+    }).then(function (r) {
+      if (r.ok) {
+        window.location.assign(r.data.landing || LANDING[r.data.role] || '/');
+        return;
+      }
+      $('staff-password').value = '';
+      show(staffErr, r.status === 401 || r.data.code === 'INVALID_CREDENTIALS' ? MSG.INVALID_CREDENTIALS : (r.data.message || MSG.INVALID_CREDENTIALS));
+    }).catch(function () {
+      show(staffErr, MSG.NETWORK);
+    }).then(function () { staffBtn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

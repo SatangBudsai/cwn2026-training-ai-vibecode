@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Trail · e-Service เทศบาลนครตัวอย่าง</title><link rel="stylesheet" href="/app.css"></head>
+<body><main id="main"><h1>Audit Trail</h1>
+<div class="card row"><label for="a">ผู้ใช้</label><input id="a" data-testid="audit-filter-actor">
+<label for="ev">เหตุการณ์</label><select id="ev" data-testid="audit-filter-event"><option value="">ทั้งหมด</option><option>STAFF_LOGIN</option><option>CLAIM</option><option>RETURN</option><option>FORWARD</option><option>APPROVE</option><option>REJECT</option><option>ISSUE</option><option>UNMASK</option><option>EXPORT</option><option>ADMIN_CHANGE</option></select>
+<label for="f">ตั้งแต่</label><input id="f" type="date" data-testid="audit-filter-from"><label for="t">ถึง</label><input id="t" type="date" data-testid="audit-filter-to">
+<button data-testid="audit-apply-btn" id="go">ค้นหา</button><button class="secondary" data-testid="audit-export-csv-btn" id="csv">ส่งออก CSV</button></div>
+<p>จำนวนรายการ: <b data-testid="audit-count" id="cnt">0</b></p>
+<div class="table-wrap"><table><thead><tr><th>เวลา</th><th>ผู้ใช้</th><th>บทบาท</th><th>เหตุการณ์</th><th>คำขอ</th><th>สถานะ</th><th>รายละเอียด</th></tr></thead><tbody id="b"></tbody></table></div>
+</main>
+<script src="/app.js"></script>
+<script>
+
+function qs() {
+  var p = new URLSearchParams();
+  [["actor", "a"], ["event", "ev"], ["from", "f"], ["to", "t"]].forEach(function (x) { var v = document.getElementById(x[1]).value.trim(); if (v) p.set(x[0], v); });
+  return p.toString();
+}
+function load() {
+  EG.api("GET", "/api/audit?" + qs()).then(function (r) {
+    var items = r.data.items || [];
+    document.getElementById("cnt").textContent = r.data.count != null ? r.data.count : items.length;
+    document.getElementById("b").innerHTML = items.map(function (a) {
+      return "<tr data-testid=\"audit-row\" data-id=\"" + a.id + "\" data-event=\"" + EG.esc(a.event) + "\" data-actor=\"" + EG.esc(a.username) + "\" data-case-no=\"" + EG.esc(a.caseNo || "") + "\">" +
+        "<td data-testid=\"audit-time\" data-iso=\"" + EG.esc(a.time) + "\">" + EG.dt(a.time) + "</td><td data-testid=\"audit-actor\">" + EG.esc(a.username) + "</td>" +
+        "<td data-testid=\"audit-role\">" + EG.esc(a.role) + "</td><td data-testid=\"audit-event\">" + EG.esc(a.event) + "</td><td data-testid=\"audit-case-no\">" + EG.esc(a.caseNo || "–") + "</td>" +
+        "<td data-testid=\"audit-transition\">" + (a.fromStatus || a.toStatus ? EG.esc((a.fromStatus || "–") + " → " + (a.toStatus || "–")) : "–") + "</td>" +
+        "<td data-testid=\"audit-detail\">" + EG.esc(a.detail || "") + "</td></tr>";
+    }).join("");
+  });
+}
+document.getElementById("go").addEventListener("click", load);
+document.getElementById("csv").addEventListener("click", function () { location.href = "/api/audit/export.csv?" + qs(); setTimeout(load, 1500); });
+EG.boot(load);
+</script></body></html>

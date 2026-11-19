@@ -1,0 +1,186 @@
+{
+ "goal": "สร้างเว็บ e-Service กลาง เทศบาลนครตัวอย่าง ตามชุดโจทย์ /workspace/egov-brief (README REQUIREMENTS CONTRACT TEST-DATA DECISIONS) รันด้วย docker compose คำสั่งเดียว รองรับ TEST_MODE=1 และ BUG_MODE ตาม BUGS.md พร้อมชุด Playwright ครบทุก TC ใน TEST-PLAN.md",
+ "name": "egov-eservice",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครง + compose + DB + test hook",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "server.js",
+   "done": "docker compose up ได้ GET /api/health = {status:ok} และ POST /api/test/reset + PUT /api/test/clock ทำงานเมื่อ TEST_MODE=1 (ไม่ตั้ง = 404)",
+   "detail": "Node.js ไม่มี framework: server.js + src/store.js (ข้อมูล seed ครบตาม TEST-DATA.md) + src/time.js (นาฬิกาจำลอง Asia/Bangkok) + Dockerfile + docker-compose.yml (พอร์ต 3100, env TEST_MODE BUG_MODE DB_PATH) อ่าน CONTRACT ข้อ 0 และ TEST-DATA.md",
+   "timeout": 2400
+  },
+  {
+   "id": "B02",
+   "title": "ThaiD/OTP/ล็อก + SSO + RBAC",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "src/auth.js",
+   "done": "checksum เลขบัตร, OTP ผิด 3 ครั้งล็อก 15 นาที, staff login, 401/403 ตามบทบาท ตาม CONTRACT",
+   "detail": "อ่าน REQUIREMENTS (FR ยืนยันตัวตน/สิทธิ์) CONTRACT ส่วน auth DECISIONS · export ฟังก์ชัน route ให้ server.js ใช้",
+   "timeout": 2400
+  },
+  {
+   "id": "B03",
+   "title": "ร่าง ค่าธรรมเนียม แนบไฟล์ ชำระเงิน",
+   "size": "L",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "src/drafts.js",
+   "done": "ค่าธรรมเนียมตาม BR (SV-03 101 ตร.ม. = ฿1,010), ไฟล์ ≤5,242,880 ไบต์ ≤5 ไฟล์ ตรวจ magic bytes, QR หมดอายุ 15:00 นาทีพอดี = 410, เลข EG-2569-xxxxxx",
+   "detail": "กฎตัวเลขเยอะ ตรวจทุกขอบเขตใน REQUIREMENTS/DECISIONS · ใส่จุดเปิดบั๊ก B01 B02 B05 ตาม BUGS.md",
+   "timeout": 3600
+  },
+  {
+   "id": "B04",
+   "title": "SLA วันทำการ + แจ้งเตือน",
+   "size": "L",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "src/sla.js",
+   "done": "dueAt นับวันทำการข้ามวันหยุดในตาราง เริ่มนับหลัง 16:30 = วันถัดไป หยุดนับตอนรอแก้ไข ระดับ near/overdue และแจ้งเตือนตาม TEST-DATA",
+   "detail": "ใส่จุดเปิดบั๊ก B03 B04 ตาม BUGS.md",
+   "timeout": 3600
+  },
+  {
+   "id": "B05",
+   "title": "Workflow + เอกสารดิจิทัล",
+   "size": "L",
+   "depends_on": [
+    "B02",
+    "B03",
+    "B04"
+   ],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "src/workflow.js",
+   "done": "รับเรื่อง (ครั้งละ 1 คน ≤10 งาน) ตีกลับ ≤2 ครั้ง ส่งต่อ SV-03 3 ขั้น อนุมัติ/ไม่อนุมัติ เหตุผล ≥10 ตัวอักษร ออกเอกสารลายเซ็น HMAC /verify",
+   "detail": "ใส่จุดเปิดบั๊ก B07 B08 B12",
+   "timeout": 3600
+  },
+  {
+   "id": "B06",
+   "title": "PDPA ปิดบัง + เข้ารหัส",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "src/vault.js",
+   "done": "เลขบัตร/เบอร์เข้ารหัส AES-256-GCM ใน SQLite ที่ DB_PATH, API ไม่ส่งเลขบัตรเต็ม, unmask ต้องมีเหตุผลและลง Audit",
+   "detail": "ใส่จุดเปิดบั๊ก B06 B09 B11",
+   "timeout": 1200
+  },
+  {
+   "id": "B07",
+   "title": "Dashboard + Audit + Admin",
+   "size": "M",
+   "depends_on": [
+    "B05"
+   ],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "src/reports.js",
+   "done": "KPI ทันกำหนด % ทศนิยม 1 ตำแหน่ง (หารด้วยงานปิด), ส่งออก xlsx/pdf ไม่มีข้อมูลส่วนบุคคล, Audit CSV แก้/ลบไม่ได้ (405), แก้ค่าธรรมเนียม/วันหยุด",
+   "detail": "ใส่จุดเปิดบั๊ก B10",
+   "timeout": 2400
+  },
+  {
+   "id": "F01",
+   "title": "หน้าเว็บ 17 หน้าตาม CONTRACT",
+   "size": "L",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "public/login.html",
+   "done": "ทุกหน้าใน CONTRACT มี data-testid ครบ ภาษาไทย responsive 375/768/1280 ผ่าน axe ไม่มี serious",
+   "detail": "อ่าน CONTRACT ส่วน data-testid และ API เท่านั้น เขียนไฟล์ใน public/ (html + static/*.js + app.css) เรียก API ตาม CONTRACT",
+   "timeout": 3600
+  },
+  {
+   "id": "T01",
+   "title": "Playwright A: AUTH FEE SUBMIT UPLOAD PAY",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "e2e/tests/a.spec.js",
+   "done": "มี test ทุก TC ของหมวด AUTH FEE SUBMIT UPLOAD PAY ชื่อขึ้นต้นด้วยรหัส TC",
+   "detail": "อ่านได้แค่ TEST-PLAN.md CONTRACT.md TEST-DATA.md ห้ามอ่านโค้ดเว็บ · มี e2e/package.json playwright.config.js และ e2e/lib/a.js ของตัวเอง",
+   "timeout": 2400
+  },
+  {
+   "id": "T02",
+   "title": "Playwright B: QUEUE SLA NOTI WORKFLOW DOC",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "e2e/tests/b.spec.js",
+   "done": "มี test ทุก TC ของหมวด QUEUE SLA NOTI WORKFLOW DOC",
+   "detail": "อ่านได้แค่ TEST-PLAN.md CONTRACT.md TEST-DATA.md ห้ามอ่านโค้ดเว็บ · helper ของตัวเองใน e2e/lib/b.js",
+   "timeout": 2400
+  },
+  {
+   "id": "T03",
+   "title": "Playwright C: PDPA DASH AUDIT RBAC NFR",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "e2e/tests/c.spec.js",
+   "done": "มี test ทุก TC ของหมวด PDPA DASH AUDIT RBAC NFR",
+   "detail": "อ่านได้แค่ TEST-PLAN.md CONTRACT.md TEST-DATA.md ห้ามอ่านโค้ดเว็บ · helper ของตัวเองใน e2e/lib/c.js",
+   "timeout": 2400
+  },
+  {
+   "id": "I01",
+   "title": "รวม + รัน Playwright เต็ม",
+   "size": "L",
+   "depends_on": [
+    "B05",
+    "B06",
+    "B07",
+    "F01",
+    "T01",
+    "T02",
+    "T03"
+   ],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "I01-REPORT.md",
+   "done": "docker compose up แล้ว Playwright ครบ 51 TC ผ่านทั้งหมด ข้อที่ล้มระหว่างทางจำแนก เว็บผิด/test ผิด/แผนผิด ห้ามแก้ผลที่คาดหวังให้ตรงหน้าจอ",
+   "exclusive": true,
+   "timeout": 5400
+  },
+  {
+   "id": "X01",
+   "title": "BUG_MODE B01–B12 ทีละตัว",
+   "size": "M",
+   "depends_on": [
+    "I01"
+   ],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "BUG-HUNT.md",
+   "done": "รัน Playwright เต็ม 12 รอบ BUG_MODE=B01..B12 ตาราง triage ตาม BUGS.md บอกว่าจับได้กี่ตัวจาก 12",
+   "exclusive": true,
+   "timeout": 5400
+  }
+ ]
+}

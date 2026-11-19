@@ -1,0 +1,15 @@
+{
+ "history": [
+  {
+   "run_id": "egov-eservice-20261119-222310",
+   "started": "2026-11-19T22:23:10+07:00",
+   "detach": true,
+   "accounts": [
+    "yolo1",
+    "yolo2",
+    "yolo3"
+   ]
+  }
+ ],
+ "run_id": "egov-eservice-20261119-222310"
+}

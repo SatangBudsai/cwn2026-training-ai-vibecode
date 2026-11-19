@@ -1,0 +1,220 @@
+
+Running 60 tests using 1 worker
+
+[1/60] tests\audit.spec.js:28:1 › TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit @P1
+[2/60] tests\audit.spec.js:128:1 › TC-AUDIT-02 Audit แก้/ลบไม่ได้ (405) @P1
+[3/60] tests\audit.spec.js:169:1 › TC-AUDIT-03 กรองช่วงวันที่ตามเวลาไทย @P1
+[4/60] tests\auth.spec.js:6:1 › TC-AUTH-01 เลขบัตร 13 หลัก + checksum @P1
+[5/60] tests\auth.spec.js:41:1 › TC-AUTH-02 OTP ผิด 3 ครั้งล็อก 15 นาที @P1
+[6/60] tests\auth.spec.js:115:1 › TC-AUTH-03 ลงทะเบียนครั้งแรก @P1
+[7/60] tests\auth.spec.js:179:1 › TC-AUTH-04 เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น @P2
+[8/60] tests\dash.spec.js:25:1 › TC-DASH-01 Dashboard ตัวเลขเริ่มต้น @P1
+  1) tests\dash.spec.js:25:1 › TC-DASH-01 Dashboard ตัวเลขเริ่มต้น @P1 ─────────────────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('kpi-ontime-pct')
+    Expected: "–"
+    Received: "0.0%"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 5000ms
+      - waiting for getByTestId('kpi-ontime-pct')
+        14 × locator resolved to <div class="kpi" data-testid="kpi-ontime-pct">0.0%</div>
+           - unexpected value "0.0%"
+
+
+      17 |   await expect(page.getByTestId('kpi-received')).toHaveText(exp.received);
+      18 |   await expect(page.getByTestId('kpi-closed')).toHaveText(exp.closed);
+    > 19 |   await expect(page.getByTestId('kpi-ontime-pct')).toHaveText(exp.pct);
+         |                                                    ^
+      20 |   if (exp.backlog !== undefined) await expect(page.getByTestId('kpi-backlog')).toHaveText(exp.backlog);
+      21 |   if (exp.overdue !== undefined) await expect(page.getByTestId('kpi-overdue')).toHaveText(exp.overdue);
+      22 | }
+        at selectAndWait (C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:19:52)
+        at C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:31:3
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[9/60] tests\dash.spec.js:88:1 › TC-DASH-02 Dashboard ย้อนหลัง @P1
+  2) tests\dash.spec.js:88:1 › TC-DASH-02 Dashboard ย้อนหลัง @P1 ───────────────────────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('kpi-ontime-pct')
+    Expected: "85.7%"
+    Received: "23.1%"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 5000ms
+      - waiting for getByTestId('kpi-ontime-pct')
+        14 × locator resolved to <div class="kpi" data-testid="kpi-ontime-pct">23.1%</div>
+           - unexpected value "23.1%"
+
+
+      17 |   await expect(page.getByTestId('kpi-received')).toHaveText(exp.received);
+      18 |   await expect(page.getByTestId('kpi-closed')).toHaveText(exp.closed);
+    > 19 |   await expect(page.getByTestId('kpi-ontime-pct')).toHaveText(exp.pct);
+         |                                                    ^
+      20 |   if (exp.backlog !== undefined) await expect(page.getByTestId('kpi-backlog')).toHaveText(exp.backlog);
+      21 |   if (exp.overdue !== undefined) await expect(page.getByTestId('kpi-overdue')).toHaveText(exp.overdue);
+      22 | }
+        at selectAndWait (C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:19:52)
+        at C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:94:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[10/60] tests\dash.spec.js:106:1 › TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ @P2
+  3) tests\dash.spec.js:106:1 › TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ @P2 ─────────────────────────
+
+    Error: 2026-11 B4
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "85.7%"
+    Received: "23.1%"
+
+      126 |     LABELS.forEach((l, i) => {
+      127 |       expect(x.cells['A' + (i + 2)], `${period} A${i + 2}`).toBe(l);
+    > 128 |       expect(x.cells['B' + (i + 2)], `${period} B${i + 2}`).toBe(exp[i]);
+          |                                                             ^
+      129 |     });
+      130 |     expect([screen.received, screen.closed, screen.pct, screen.backlog, screen.overdue]).toEqual(exp);
+      131 |     PII(x.allText); names(x.allText);
+        at forEach (C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:128:61)
+        at xlsx (C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:126:12)
+        at C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\dash.spec.js:133:3
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[11/60] tests\dash.spec.js:169:1 › TC-DASH-04 ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 @P1
+[12/60] tests\doc.spec.js:22:1 › TC-DOC-01 ออกเอกสารและข้อมูลในเอกสาร @P1
+[13/60] tests\doc.spec.js:72:1 › TC-DOC-02 ตรวจเอกสาร /verify @P1
+[14/60] tests\doc.spec.js:117:1 › TC-DOC-03 เอกสารหมดอายุและลายเซ็นไม่ตรง @P1
+[15/60] tests\fee.spec.js:23:1 › TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03 @P1
+[16/60] tests\nfr.spec.js:20:1 › TC-NFR-01 Responsive 375/768/1280 @P1
+[17/60] tests\nfr.spec.js:105:1 › TC-NFR-02 WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว @P1
+[18/60] tests\nfr.spec.js:150:1 › TC-NFR-02B คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง QR @P1
+[19/60] tests\nfr.spec.js:188:1 › TC-NFR-03 Health เวลาโหลด และผลซ้ำได้ @P2
+  4) tests\nfr.spec.js:188:1 › TC-NFR-03 Health เวลาโหลด และผลซ้ำได้ @P2 ───────────────────────────
+
+    Error: page.goto: net::ERR_ABORTED at http://localhost:3100/login
+    Call log:
+      - navigating to "http://localhost:3100/login", waiting until "load"
+
+
+       at ..\lib\common.js:92
+
+      90 |
+      91 | async function uiLoginStaff(page, username, password = STAFF_PASSWORD) {
+    > 92 |   await page.goto('/login');
+         |              ^
+      93 |   await page.getByTestId('login-tab-staff').click();
+      94 |   await page.getByTestId('staff-username').fill(username);
+      95 |   await page.getByTestId('staff-password').fill(password);
+        at Object.uiLoginStaff (C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\lib\common.js:92:14)
+        at C:\Me\PersonalCoding\cwn2026-training-ai-vibecode\week02_website\e2e\tests\nfr.spec.js:203:27
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[20/60] tests\nfr.spec.js:242:1 › TC-NFR-03B ปิด hook เมื่อไม่ตั้ง TEST_MODE @P2
+[21/60] tests\noti.spec.js:8:1 › TC-NOTI-01 ผู้รับแจ้งเตือนตามระดับ @P1
+[22/60] tests\noti.spec.js:51:1 › TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร @P1
+[23/60] tests\pay.spec.js:6:1 › TC-PAY-01 อายุ QR 15:00 @P1
+[24/60] tests\pay.spec.js:53:1 › TC-PAY-02 ยอดเงินและ callback ซ้ำ @P1
+[25/60] tests\pay.spec.js:96:1 › TC-PAY-03 ชำระพร้อมกัน เลขไม่ซ้ำ @P1
+[26/60] tests\pay.spec.js:137:1 › TC-PAY-04 เลขคำขอข้ามปี 2569 -> 2570 @P2
+[27/60] tests\pdpa.spec.js:7:1 › TC-PDPA-01 ปิดบังเลขบัตรบนจอ @P1
+[28/60] tests\pdpa.spec.js:39:1 › TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม @P1
+[29/60] tests\pdpa.spec.js:75:1 › TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit @P1
+[30/60] tests\queue.spec.js:7:1 › TC-QUEUE-01 ลำดับคิวและขอบเขตแผนก @P1
+[31/60] tests\queue.spec.js:65:1 › TC-QUEUE-02 รับเรื่องซ้อน (พร้อมกันและต่อกัน) @P1
+[32/60] tests\queue.spec.js:130:1 › TC-QUEUE-03 งานในมือสูงสุด 10 @P1
+[33/60] tests\rbac.spec.js:7:1 › TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) @P1
+[34/60] tests\rbac.spec.js:36:1 › TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) @P1
+[35/60] tests\rbac.spec.js:100:1 › TC-RBAC-03 ตารางสิทธิ์หน้า/API ตามบทบาท @P1
+[36/60] tests\rbac.spec.js:156:1 › TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก @P2
+[37/60] tests\rbac.spec.js:259:1 › TC-RBAC-05 สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ @P1
+[38/60] tests\rbac.spec.js:322:1 › TC-RBAC-06 ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ @P2
+[39/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว a @P1
+[40/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว b @P1
+[41/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว c @P1
+[42/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว d @P1
+[43/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว e @P1
+[44/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว f @P1
+[45/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว g @P1
+[46/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว h @P1
+[47/60] tests\sla.spec.js:18:3 › TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว i @P1
+[48/60] tests\sla.spec.js:32:1 › TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข @P1
+[49/60] tests\sla.spec.js:126:1 › TC-SLA-03 ระดับเตือน ปกติ/ใกล้/เกิน @P1
+[50/60] tests\submit.spec.js:7:1 › TC-SUBMIT-01 ยื่นคำขอ SV-01 ครบวงจร @P1
+[51/60] tests\submit.spec.js:82:1 › TC-SUBMIT-02 เอกสารบังคับครบก่อนชำระ @P1
+[52/60] tests\submit.spec.js:150:1 › TC-SUBMIT-03 ร่าง การลบร่าง และการยกเลิก @P2
+[53/60] tests\upload.spec.js:25:1 › TC-UPLOAD-01 ขนาดและจำนวนไฟล์ @P1
+[54/60] tests\upload.spec.js:89:1 › TC-UPLOAD-02 ชนิดไฟล์จากเนื้อไฟล์ @P1
+[55/60] tests\workflow.spec.js:8:1 › TC-WORKFLOW-01 SV-01 อนุมัติ + ออกเอกสาร @P1
+[56/60] tests\workflow.spec.js:60:1 › TC-WORKFLOW-02 SV-02 ผ่านหัวหน้า @P1
+[57/60] tests\workflow.spec.js:119:1 › TC-WORKFLOW-03 SV-03 สามขั้นตอน @P1
+[58/60] tests\workflow.spec.js:175:1 › TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ @P1
+[59/60] tests\workflow.spec.js:251:1 › TC-WORKFLOW-05 เหตุผล >= 10 ตัวอักษร @P1
+[60/60] tests\workflow.spec.js:320:1 › TC-WORKFLOW-06 เวลาแก้ไข 168 ชั่วโมง @P1
+  4 failed
+    tests\dash.spec.js:25:1 › TC-DASH-01 Dashboard ตัวเลขเริ่มต้น @P1 ──────────────────────────────
+    tests\dash.spec.js:88:1 › TC-DASH-02 Dashboard ย้อนหลัง @P1 ────────────────────────────────────
+    tests\dash.spec.js:106:1 › TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ @P2 ──────────────────────────
+    tests\nfr.spec.js:188:1 › TC-NFR-03 Health เวลาโหลด และผลซ้ำได้ @P2 ────────────────────────────
+  56 passed (1.8m)

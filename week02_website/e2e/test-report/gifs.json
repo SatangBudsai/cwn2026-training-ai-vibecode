@@ -5,7 +5,7 @@
     "prio": "P1",
     "title": "TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-01-เหตุการณ์และฟิลด์ใน-Audit-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-01-เหตุการณ์และฟิลด์ใน-Audit-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -14,7 +14,7 @@
     "prio": "P1",
     "title": "TC-AUDIT-02 Audit แก้/ลบไม่ได้ (405) @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-02-Audit-แก้-ลบไม่ได้-405-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-02-Audit-แก้-ลบไม่ได้-405-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -23,7 +23,7 @@
     "prio": "P1",
     "title": "TC-AUDIT-03 กรองช่วงวันที่ตามเวลาไทย @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-03-กรองช่วงวันที่ตามเวลาไทย-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\audit-TC-AUDIT-03-กรองช่วงวันที่ตามเวลาไทย-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -32,7 +32,7 @@
     "prio": "P1",
     "title": "TC-AUTH-01 เลขบัตร 13 หลัก + checksum @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-01-เลขบัตร-13-หลัก-checksum-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-01-เลขบัตร-13-หลัก-checksum-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -41,7 +41,7 @@
     "prio": "P1",
     "title": "TC-AUTH-02 OTP ผิด 3 ครั้งล็อก 15 นาที @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-02-OTP-ผิด-3-ครั้งล็อก-15-นาที-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-02-OTP-ผิด-3-ครั้งล็อก-15-นาที-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -50,7 +50,7 @@
     "prio": "P1",
     "title": "TC-AUTH-03 ลงทะเบียนครั้งแรก @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-03-ลงทะเบียนครั้งแรก-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-03-ลงทะเบียนครั้งแรก-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -59,7 +59,7 @@
     "prio": "P2",
     "title": "TC-AUTH-04 เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-04-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\auth-TC-AUTH-04-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -68,7 +68,7 @@
     "prio": "P1",
     "title": "TC-DASH-01 Dashboard ตัวเลขเริ่มต้น @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -77,7 +77,7 @@
     "prio": "P1",
     "title": "TC-DASH-02 Dashboard ย้อนหลัง @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-02-Dashboard-ย้อนหลัง-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -86,7 +86,7 @@
     "prio": "P2",
     "title": "TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-03-ส่งออก-Excel-PDF-เท่าหน้าจอ-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -95,7 +95,7 @@
     "prio": "P1",
     "title": "TC-DASH-04 ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01 @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-04-ค่าขอบ-ทัน-53f38--29-59-16-30-00-16-30-01-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\dash-TC-DASH-04-ค่าขอบ-ทัน-53f38--29-59-16-30-00-16-30-01-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -128,7 +128,7 @@
     "prio": "P1",
     "title": "TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03 @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\fee-TC-FEE-01-ค่าธรรมเนียม-SV-01-SV-02-SV-03-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\fee-TC-FEE-01-ค่าธรรมเนียม-SV-01-SV-02-SV-03-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -137,8 +137,8 @@
     "prio": "P1",
     "title": "TC-NFR-01 Responsive 375/768/1280 @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-01-Responsive-375-768-1280-P1\\video.webm",
-    "gifSeconds": 5.51
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-01-Responsive-375-768-1280-P1\\video.webm",
+    "gifSeconds": 8.63
   },
   {
     "id": "TC-NFR-02",
@@ -146,8 +146,8 @@
     "prio": "P1",
     "title": "TC-NFR-02 WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video-1.webm",
-    "gifSeconds": 5.51
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02-WCAG-axe-คีย-aa2d3--สถานะไม่ใช้สีอย่างเดียว-P1\\video.webm",
+    "gifSeconds": 13.51
   },
   {
     "id": "TC-NFR-02B",
@@ -155,7 +155,7 @@
     "prio": "P1",
     "title": "TC-NFR-02B คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง QR @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02B-คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง-QR-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-02B-คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง-QR-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -164,7 +164,7 @@
     "prio": "P2",
     "title": "TC-NFR-03 Health เวลาโหลด และผลซ้ำได้ @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\nfr-TC-NFR-03-Health-เวลาโหลด-และผลซ้ำได้-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -205,7 +205,7 @@
     "prio": "P1",
     "title": "TC-PAY-01 อายุ QR 15:00 @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-01-อายุ-QR-15-00-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-01-อายุ-QR-15-00-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -230,7 +230,7 @@
     "prio": "P2",
     "title": "TC-PAY-04 เลขคำขอข้ามปี 2569 -> 2570 @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-04-เลขคำขอข้ามปี-2569---2570-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pay-TC-PAY-04-เลขคำขอข้ามปี-2569---2570-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -239,7 +239,7 @@
     "prio": "P1",
     "title": "TC-PDPA-01 ปิดบังเลขบัตรบนจอ @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-01-ปิดบังเลขบัตรบนจอ-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-01-ปิดบังเลขบัตรบนจอ-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -256,7 +256,7 @@
     "prio": "P1",
     "title": "TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-03-แสดงเลขเต็มต้องมีเหตุผลและบันทึก-Audit-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\pdpa-TC-PDPA-03-แสดงเลขเต็มต้องมีเหตุผลและบันทึก-Audit-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -289,7 +289,7 @@
     "prio": "P1",
     "title": "TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-01-ประชาชนเปิดคำขอคนอื่นไม่ได้-IDOR-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-01-ประชาชนเปิดคำขอคนอื่นไม่ได้-IDOR-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -298,7 +298,7 @@
     "prio": "P1",
     "title": "TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-02-เจ้าหน้าที-7229b-SV-02-ไม่ได้-ตรวจที่-API-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-02-เจ้าหน้าที-7229b-SV-02-ไม่ได้-ตรวจที่-API-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -307,8 +307,8 @@
     "prio": "P1",
     "title": "TC-RBAC-03 ตารางสิทธิ์หน้า/API ตามบทบาท @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-03-ตารางสิทธิ์หน้า-API-ตามบทบาท-P1\\video.webm",
-    "gifSeconds": 5.51
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-03-ตารางสิทธิ์หน้า-API-ตามบทบาท-P1\\video.webm",
+    "gifSeconds": 9.13
   },
   {
     "id": "TC-RBAC-04",
@@ -316,7 +316,7 @@
     "prio": "P2",
     "title": "TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-04-ผู้ดูแลระบ-f0626-ยุด-ผู้ใช้-และยอดที่ล็อก-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-04-ผู้ดูแลระบ-f0626-ยุด-ผู้ใช้-และยอดที่ล็อก-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -325,7 +325,7 @@
     "prio": "P1",
     "title": "TC-RBAC-05 สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-05-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-05-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -334,7 +334,7 @@
     "prio": "P2",
     "title": "TC-RBAC-06 ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-06-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\rbac-TC-RBAC-06-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -431,7 +431,7 @@
     "prio": "P1",
     "title": "TC-SUBMIT-01 ยื่นคำขอ SV-01 ครบวงจร @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-01-ยื่นคำขอ-SV-01-ครบวงจร-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-01-ยื่นคำขอ-SV-01-ครบวงจร-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -440,7 +440,7 @@
     "prio": "P1",
     "title": "TC-SUBMIT-02 เอกสารบังคับครบก่อนชำระ @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-02-เอกสารบังคับครบก่อนชำระ-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-02-เอกสารบังคับครบก่อนชำระ-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -449,7 +449,7 @@
     "prio": "P2",
     "title": "TC-SUBMIT-03 ร่าง การลบร่าง และการยกเลิก @P2",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-03-ร่าง-การลบร่าง-และการยกเลิก-P2\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\submit-TC-SUBMIT-03-ร่าง-การลบร่าง-และการยกเลิก-P2\\video.webm",
     "gifSeconds": 0
   },
   {
@@ -458,7 +458,7 @@
     "prio": "P1",
     "title": "TC-UPLOAD-01 ขนาดและจำนวนไฟล์ @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-01-ขนาดและจำนวนไฟล์-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-01-ขนาดและจำนวนไฟล์-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {
@@ -467,7 +467,7 @@
     "prio": "P1",
     "title": "TC-UPLOAD-02 ชนิดไฟล์จากเนื้อไฟล์ @P1",
     "status": "pass",
-    "video": "D:\\ME\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-02-ชนิดไฟล์จากเนื้อไฟล์-P1\\video.webm",
+    "video": "C:\\Me\\PersonalCoding\\cwn2026-training-ai-vibecode\\week02_website\\e2e\\test-results\\upload-TC-UPLOAD-02-ชนิดไฟล์จากเนื้อไฟล์-P1\\video.webm",
     "gifSeconds": 5.51
   },
   {

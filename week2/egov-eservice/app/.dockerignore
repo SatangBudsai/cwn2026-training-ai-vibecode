@@ -1,0 +1,8 @@
+node_modules
+e2e
+data
+*.db
+*.db-journal
+test-results
+playwright-report
+.git

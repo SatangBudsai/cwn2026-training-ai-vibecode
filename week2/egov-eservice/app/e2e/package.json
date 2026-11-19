@@ -1,0 +1,14 @@
+{
+  "name": "egov-eservice-e2e",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Playwright ชุด TC ตาม TEST-PLAN.md (a/b/c.spec.js)",
+  "scripts": {
+    "test": "playwright test",
+    "test:list": "playwright test --list"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@axe-core/playwright": "^4.10.0"
+  }
+}
