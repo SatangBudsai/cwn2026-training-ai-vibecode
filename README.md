@@ -1,4 +1,4 @@
-# cwn2026-training-ai-vibecode
+﻿# cwn2026-training-ai-vibecode
 
 งานฝึกอบรม CWN 2026 (AI + vibe coding) สรุปผลทั้งหมดไว้ที่ไฟล์นี้
 
@@ -24,7 +24,7 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 |---|---|---|
 | LAB 1 เข้าใจโจทย์ ตอบ 3 ข้อ | ✅ | เฉลยด้านล่าง |
 | LAB 2 แผน DAG | ⚠️ ทำเป็นไฟล์เอง ไม่มีภาพ png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
-| LAB 3 สร้างเว็บ | ✅ รันได้ด้วย `node server.js` · ⚠️ **Docker ยังไม่ได้ทดสอบ** · ❌ ไม่มีรายงานเวลาแผน vs จริง | [`week02_website/app/`](week02_website/app) |
+| LAB 3 สร้างเว็บ | ✅ รันได้ด้วย `node server.js` · ✅ Docker build + รัน test ผ่าน · ❌ ไม่มีรายงานเวลาแผน vs จริง | [`week02_website/app/`](week02_website/app) |
 | LAB 4 TEST-PLAN | ✅ **61 test ผ่านครบ 61** (ครอบ 51 TC) · GIF ระดับ P1 24 ไฟล์ | `week02_website/e2e/test-report/` (เปิด `index.html`) |
 | LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12** | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
 
@@ -138,7 +138,7 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 
 ## สิ่งที่ต่างจากโจทย์ / ที่ยังไม่ได้ทำ
 
-- **Docker:** `docker compose up --build` ยังไม่ได้ทดสอบ (ผู้ใช้ยกเลิกคำสั่งทดสอบ) รันทดสอบทั้งหมดด้วย `node server.js`
+- **Docker:** `docker compose up --build` ทดสอบแล้ว: build ผ่าน, Playwright กับ container 60 ผ่าน / 1 ข้าม (NFR-03B)
 - **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเองเป็นไฟล์ (mermaid) ไม่มี `dag.png`/`gantt-plan.png`/`blocks.json` และ **ไม่มีตาราง "เวลาแผน vs จริง"** (ไม่แต่งตัวเลข) งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
 - **จำนวน test:** 61 test ครอบ 51 TC เพราะ TC-SLA-01 แยก 9 test (แถว a–i) + TC-NFR-02B, TC-NFR-03B เพิ่ม 2 ข้อ
 - **GIF 24 จาก P1 ทั้งหมด 52:** อีก 28 ข้อเรียก API อย่างเดียว ไม่เปิดเบราว์เซอร์จึงไม่มีวิดีโอ
@@ -166,3 +166,4 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | โหมดฝังบั๊ก (BUG_MODE=1) | 42 test · ผ่าน 37 · ล้ม 5 (TC-CPN-01, TC-CHK-02, TC-WISH-02, TC-WISH-03, TC-AUTH-02) · ตัดสิน "ไม่ปล่อย" |
 
 รายงาน: `week01/e2e/test-report/` และ `week01/e2e/test-report-bugmode/BUG-REPORT.md`
+
