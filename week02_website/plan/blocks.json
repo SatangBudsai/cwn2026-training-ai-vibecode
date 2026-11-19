@@ -1,0 +1,376 @@
+{
+  "plan": "egov-eservice",
+  "maxAgents": 4,
+  "quota": "สมมติ 4 บัญชี (ไม่ได้ใช้ dag-planner)",
+  "blocks": [
+    {
+      "id": "B01",
+      "name": "โครงโปรเจกต์ + Docker + SQLite + seed + นาฬิกาจำลอง + test hook",
+      "skill": "backend",
+      "difficulty": "กลาง",
+      "needs": [],
+      "output": [
+        "app/server.js",
+        "app/src/store.js",
+        "app/src/vault.js",
+        "app/src/time.js",
+        "app/Dockerfile",
+        "app/docker-compose.yml"
+      ],
+      "doneWhen": "GET /api/health ตอบ 200, PUT /api/test/clock และ reset ทำงาน",
+      "reads": [
+        "CONTRACT.md",
+        "TEST-DATA.md"
+      ],
+      "fr": [
+        "FR-28"
+      ],
+      "account": "acc1",
+      "startMin": 0,
+      "endMin": 3,
+      "rank": 59
+    },
+    {
+      "id": "B02",
+      "name": "ยืนยันตัวตน ThaiD/OTP/ล็อก + SSO เจ้าหน้าที่ + RBAC",
+      "skill": "backend",
+      "difficulty": "กลาง",
+      "needs": [
+        "B01"
+      ],
+      "output": [
+        "app/src/routes.js (auth)"
+      ],
+      "doneWhen": "TC-AUTH ผ่าน, RBAC 403 ถูกบทบาท",
+      "reads": [
+        "REQUIREMENTS.md",
+        "CONTRACT.md"
+      ],
+      "fr": [
+        "FR-01",
+        "FR-02",
+        "FR-03"
+      ],
+      "account": "acc1",
+      "startMin": 3,
+      "endMin": 6,
+      "rank": 56
+    },
+    {
+      "id": "B03",
+      "name": "ร่าง ค่าธรรมเนียม แนบไฟล์ (magic bytes) ชำระ QR เลขคำขอ",
+      "skill": "backend",
+      "difficulty": "สูง",
+      "needs": [
+        "B01",
+        "B02"
+      ],
+      "output": [
+        "app/src/routes.js (drafts/files/payments)"
+      ],
+      "doneWhen": "TC-FEE/SUBMIT/UPLOAD/PAY ผ่าน",
+      "reads": [
+        "REQUIREMENTS.md",
+        "TEST-DATA.md",
+        "DECISIONS.md"
+      ],
+      "fr": [
+        "FR-04",
+        "FR-05",
+        "FR-06",
+        "FR-07",
+        "FR-08"
+      ],
+      "reviewBy": "อีกฝั่งตรวจกฎตัวเลข",
+      "account": "acc1",
+      "startMin": 6,
+      "endMin": 11,
+      "rank": 53
+    },
+    {
+      "id": "B04",
+      "name": "SLA วันทำการ ระดับเตือน แจ้งเตือน ยกเลิกอัตโนมัติ",
+      "skill": "backend",
+      "difficulty": "สูง (กฎตัวเลข)",
+      "needs": [
+        "B01"
+      ],
+      "output": [
+        "app/src/time.js (sla)",
+        "app/src/routes.js (notify)"
+      ],
+      "doneWhen": "TC-SLA/NOTI ผ่าน",
+      "reads": [
+        "REQUIREMENTS.md",
+        "DECISIONS.md",
+        "TEST-DATA.md"
+      ],
+      "fr": [
+        "FR-19",
+        "FR-20"
+      ],
+      "reviewBy": "อีกฝั่งตรวจกฎตัวเลข",
+      "account": "acc4",
+      "startMin": 3,
+      "endMin": 7,
+      "rank": 52
+    },
+    {
+      "id": "B05",
+      "name": "Workflow: รับเรื่อง ตีกลับ ส่งต่อ อนุมัติ ออกเอกสาร ลายเซ็น PDF /verify ไฟล์แนบ",
+      "skill": "backend",
+      "difficulty": "สูง",
+      "needs": [
+        "B03",
+        "B04"
+      ],
+      "output": [
+        "app/src/routes.js (cases/documents)",
+        "app/src/exports.js (pdf)"
+      ],
+      "doneWhen": "TC-QUEUE/WORKFLOW/DOC ผ่าน",
+      "reads": [
+        "REQUIREMENTS.md",
+        "DECISIONS.md"
+      ],
+      "fr": [
+        "FR-09",
+        "FR-10",
+        "FR-11",
+        "FR-12",
+        "FR-13",
+        "FR-14",
+        "FR-15",
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "FR-29"
+      ],
+      "account": "acc1",
+      "startMin": 11,
+      "endMin": 16,
+      "rank": 48
+    },
+    {
+      "id": "B06",
+      "name": "PDPA: ปิดบังเลขบัตร unmask เข้ารหัส AES-GCM + blind index",
+      "skill": "backend",
+      "difficulty": "กลาง",
+      "needs": [
+        "B01"
+      ],
+      "output": [
+        "app/src/vault.js"
+      ],
+      "doneWhen": "TC-PDPA ผ่าน, ไม่มีเลขบัตรเต็มใน DB",
+      "reads": [
+        "REQUIREMENTS.md"
+      ],
+      "fr": [
+        "FR-21"
+      ],
+      "account": "acc4",
+      "startMin": 7,
+      "endMin": 9,
+      "rank": 42
+    },
+    {
+      "id": "B07",
+      "name": "Dashboard + ส่งออก xlsx/pdf + Audit CSV + Admin (ค่าธรรมเนียม/SLA/วันหยุด/ผู้ใช้)",
+      "skill": "backend",
+      "difficulty": "กลาง (กฎตัวเลข)",
+      "needs": [
+        "B05"
+      ],
+      "output": [
+        "app/src/routes.js (reports/audit/admin)",
+        "app/src/exports.js"
+      ],
+      "doneWhen": "TC-DASH/AUDIT ผ่าน",
+      "reads": [
+        "REQUIREMENTS.md",
+        "TEST-DATA.md"
+      ],
+      "fr": [
+        "FR-22",
+        "FR-23",
+        "FR-24",
+        "FR-25",
+        "FR-26",
+        "FR-27"
+      ],
+      "reviewBy": "อีกฝั่งตรวจกฎตัวเลข",
+      "account": "acc1",
+      "startMin": 16,
+      "endMin": 19,
+      "rank": 43
+    },
+    {
+      "id": "F01",
+      "name": "หน้าเว็บ 17 หน้า ตาม CONTRACT + ธีมน้ำเงินเข้ม",
+      "skill": "frontend",
+      "difficulty": "สูง",
+      "needs": [],
+      "output": [
+        "app/public/**"
+      ],
+      "doneWhen": "ทุกหน้ามี data-testid ตรง CONTRACT, มือถือ 375px ไม่ scroll แนวนอน",
+      "reads": [
+        "CONTRACT.md",
+        "USER-STORIES.md"
+      ],
+      "fr": [
+        "FR-01",
+        "FR-02",
+        "FR-03",
+        "FR-04",
+        "FR-05",
+        "FR-06",
+        "FR-07",
+        "FR-08",
+        "FR-09",
+        "FR-10",
+        "FR-11",
+        "FR-12",
+        "FR-13",
+        "FR-14",
+        "FR-15",
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "FR-19",
+        "FR-20",
+        "FR-21",
+        "FR-22",
+        "FR-23",
+        "FR-24",
+        "FR-25",
+        "FR-26",
+        "FR-27",
+        "FR-29"
+      ],
+      "account": "acc2",
+      "startMin": 0,
+      "endMin": 8,
+      "rank": 48
+    },
+    {
+      "id": "T01",
+      "name": "Playwright A: lib + AUTH FEE SUBMIT UPLOAD PAY",
+      "skill": "playwright",
+      "difficulty": "กลาง",
+      "needs": [],
+      "output": [
+        "e2e/lib/common.js",
+        "e2e/tests/auth…pay"
+      ],
+      "doneWhen": "ทุก TC ในกลุ่มมี test ชื่อขึ้นต้นรหัส TC",
+      "reads": [
+        "TEST-PLAN.md",
+        "CONTRACT.md",
+        "TEST-DATA.md"
+      ],
+      "fr": [],
+      "account": "acc3",
+      "startMin": 0,
+      "endMin": 5,
+      "rank": 50
+    },
+    {
+      "id": "T02",
+      "name": "Playwright B: QUEUE SLA NOTI WORKFLOW DOC",
+      "skill": "playwright",
+      "difficulty": "กลาง",
+      "needs": [
+        "T01"
+      ],
+      "output": [
+        "e2e/tests/queue…doc"
+      ],
+      "doneWhen": "เช่นเดียวกัน",
+      "reads": [
+        "TEST-PLAN.md",
+        "CONTRACT.md",
+        "TEST-DATA.md"
+      ],
+      "fr": [],
+      "account": "acc3",
+      "startMin": 5,
+      "endMin": 10,
+      "rank": 45
+    },
+    {
+      "id": "T03",
+      "name": "Playwright C: PDPA DASH AUDIT RBAC NFR",
+      "skill": "playwright",
+      "difficulty": "กลาง",
+      "needs": [
+        "T01"
+      ],
+      "output": [
+        "e2e/tests/pdpa…nfr"
+      ],
+      "doneWhen": "เช่นเดียวกัน",
+      "reads": [
+        "TEST-PLAN.md",
+        "CONTRACT.md",
+        "TEST-DATA.md"
+      ],
+      "fr": [],
+      "account": "acc4",
+      "startMin": 9,
+      "endMin": 14,
+      "rank": 45
+    },
+    {
+      "id": "I01",
+      "name": "รวม + รันชุด Playwright เต็ม 51 TC (ไม่ตั้ง BUG_MODE) 🔒",
+      "skill": "integrate",
+      "difficulty": "สูง",
+      "needs": [
+        "B05",
+        "B06",
+        "B07",
+        "F01",
+        "T02",
+        "T03"
+      ],
+      "output": [
+        "e2e/test-report/"
+      ],
+      "doneWhen": "ผ่านครบ 51 TC",
+      "reads": [
+        "TEST-PLAN.md"
+      ],
+      "fr": [],
+      "exclusive": true,
+      "account": "acc1",
+      "startMin": 19,
+      "endMin": 29,
+      "rank": 40
+    },
+    {
+      "id": "X01",
+      "name": "BUG_MODE B01–B12 ทีละตัว + ตาราง BUG-HUNT 🔒",
+      "skill": "integrate",
+      "difficulty": "สูง",
+      "needs": [
+        "I01"
+      ],
+      "output": [
+        "app/src/time.js (bug helper)",
+        "BUG-HUNT.md"
+      ],
+      "doneWhen": "ตาราง 12 แถว เทียบ BUGS.md",
+      "reads": [
+        "BUGS.md"
+      ],
+      "fr": [],
+      "exclusive": true,
+      "account": "acc1",
+      "startMin": 29,
+      "endMin": 59,
+      "rank": 30
+    }
+  ]
+}

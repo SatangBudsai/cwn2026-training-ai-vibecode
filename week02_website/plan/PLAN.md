@@ -25,6 +25,8 @@
 
 ![DAG](../docs/img/dag.png)
 
+![Gantt แผน](../docs/img/gantt-plan.png)
+
 แบบ mermaid (แก้ไขง่าย):
 
 ```mermaid
@@ -48,4 +50,6 @@ flowchart LR
 - สายวิกฤต: B01 → B02 → B03 → B05 → B07 → I01 → X01 (ฝั่ง backend ยาวสุดและกฎตัวเลขเยอะสุด)
 - บล็อกเดียวกันไม่เขียนไฟล์เดียวกัน: backend เขียนเฉพาะ `app/` (ยกเว้น `public/`) · frontend เขียนเฉพาะ `app/public/` · test เขียนเฉพาะ `e2e/`
 - I01 และ X01 เป็นบล็อก exclusive (รันทีละบล็อก เพราะ test ใช้ฐานข้อมูล/นาฬิการ่วมกัน ต้องรัน `workers: 1`)
+
+
 

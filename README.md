@@ -23,8 +23,8 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 | ขั้นตาม LAB | สถานะ | หลักฐาน |
 |---|---|---|
 | LAB 1 เข้าใจโจทย์ ตอบ 3 ข้อ | ✅ | เฉลยด้านล่าง |
-| LAB 2 แผน DAG | ⚠️ ทำเป็นไฟล์เอง ไม่มีภาพ png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
-| LAB 3 สร้างเว็บ | ✅ รันได้ด้วย `node server.js` · ✅ Docker build + รัน test ผ่าน · ❌ ไม่มีรายงานเวลาแผน vs จริง | [`week02_website/app/`](week02_website/app) |
+| LAB 2 แผน DAG | ⚠️ ทำเองไม่ผ่าน dag-planner · มี blocks.json, dag.png, gantt-plan.png | [`week02_website/plan/PLAN.md`](week02_website/plan/PLAN.md) |
+| LAB 3 สร้างเว็บ | ✅ รันได้ด้วย `node server.js` · ✅ Docker build + รัน test ผ่าน · ⚠️ มี REPORT.md/compare.png แต่เวลาแผนเป็นค่าสมมติ | [`week02_website/app/`](week02_website/app) |
 | LAB 4 TEST-PLAN | ✅ **61 test ผ่านครบ 61** (ครอบ 51 TC) · GIF ระดับ P1 24 ไฟล์ | `week02_website/e2e/test-report/` (เปิด `index.html`) |
 | LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12** | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
 
@@ -44,7 +44,17 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 
 ![Timeline](week02_website/docs/img/timeline.png)
 
-เวลาในแท่งสีมาจากที่เอเจนต์รายงานตอนจบงาน ส่วนขั้นรวม/แก้ไม่ได้จับเวลา (แท่งลายทแยง) และไม่มีกราฟ "แผน vs จริง" เพราะไม่มี dag-planner ในเครื่อง
+เวลาในแท่งสีมาจากที่เอเจนต์รายงานตอนจบงาน ส่วนขั้นรวม/แก้ไม่ได้จับเวลา (แท่งลายทแยง)
+
+### Gantt แผน / Gantt จริง / แผน vs จริง (LAB 2–3)
+
+![Gantt แผน](week02_website/docs/img/gantt-plan.png)
+
+![Gantt จริง](week02_website/docs/img/gantt-actual.png)
+
+![แผน vs จริง](week02_website/docs/img/compare.png)
+
+⚠️ เวลา "แผน" เป็นค่าสมมติ (โควตา 4 บัญชีสมมติ) ที่ตั้งหลังทำเสร็จ เพราะไม่มี dag-planner · ไฟล์: [blocks.json](week02_website/plan/blocks.json) · [REPORT.md](week02_website/plan/REPORT.md)
 
 ### ภาพหน้าเว็บ (13 หน้า)
 
@@ -139,7 +149,7 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 ## สิ่งที่ต่างจากโจทย์ / ที่ยังไม่ได้ทำ
 
 - **Docker:** `docker compose up --build` ทดสอบแล้ว: build ผ่าน, Playwright กับ container 60 ผ่าน / 1 ข้าม (NFR-03B)
-- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเองเป็นไฟล์ (mermaid) ไม่มี `dag.png`/`gantt-plan.png`/`blocks.json` และ **ไม่มีตาราง "เวลาแผน vs จริง"** (ไม่แต่งตัวเลข) งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
+- **ไม่มี `dag-planner`/`agent-team`/container `multi-account` ในเครื่อง:** เขียนแผนเอง (`plan/PLAN.md`, `plan/blocks.json`) และสร้าง `dag.png`, `gantt-plan.png`, `gantt-actual.png`, `compare.png`, `plan/REPORT.md` ด้วยสคริปต์ `e2e/make-plan-files.js` เวลา "แผน" เป็นค่าสมมติที่ตั้งหลังทำเสร็จ (ตามทางเลือกโควตาสมมติของ PROMPTS) ส่วนเวลา "จริง" คือ duration ที่เอเจนต์รายงาน ไม่ได้รันผ่านสกิล dag-planner งานสร้างเว็บและเขียน test ทำโดยเอเจนต์ย่อยของ Claude Code (Sonnet, effort low) ขนานกัน
 - **จำนวน test:** 61 test ครอบ 51 TC เพราะ TC-SLA-01 แยก 9 test (แถว a–i) + TC-NFR-02B, TC-NFR-03B เพิ่ม 2 ข้อ
 - **GIF 24 จาก P1 ทั้งหมด 52:** อีก 28 ข้อเรียก API อย่างเดียว ไม่เปิดเบราว์เซอร์จึงไม่มีวิดีโอ
 - **ไม่มีเกณฑ์ให้คะแนนในชุดโจทย์** ยังไม่ได้เทียบกับเกณฑ์แยกของผู้สอน (ถ้ามี)
@@ -166,4 +176,5 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | โหมดฝังบั๊ก (BUG_MODE=1) | 42 test · ผ่าน 37 · ล้ม 5 (TC-CPN-01, TC-CHK-02, TC-WISH-02, TC-WISH-03, TC-AUTH-02) · ตัดสิน "ไม่ปล่อย" |
 
 รายงาน: `week01/e2e/test-report/` และ `week01/e2e/test-report-bugmode/BUG-REPORT.md`
+
 

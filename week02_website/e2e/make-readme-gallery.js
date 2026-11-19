@@ -8,7 +8,8 @@ const gifs = JSON.parse(fs.readFileSync(path.join(__dirname, 'test-report/gifs.j
 
 const section = (p) => {
   let s = `## ภาพประกอบ\n\n### แผนภาพ DAG (LAB 2)\n\n![DAG](${p}docs/img/dag.png)\n\nแผนอ่านได้ที่ [PLAN.md](${p}plan/PLAN.md) · Playwright ทั้งสามชุดไม่มีลูกศรจากบล็อกเว็บ (ทำขนานกัน) · บล็อกรวมและ BUG_MODE เป็น exclusive 🔒\n\n`;
-  s += `### Timeline (LAB 3)\n\n![Timeline](${p}docs/img/timeline.png)\n\nเวลาในแท่งสีมาจากที่เอเจนต์รายงานตอนจบงาน ส่วนขั้นรวม/แก้ไม่ได้จับเวลา (แท่งลายทแยง) และไม่มีกราฟ "แผน vs จริง" เพราะไม่มี dag-planner ในเครื่อง\n\n`;
+  s += `### Timeline (LAB 3)\n\n![Timeline](${p}docs/img/timeline.png)\n\nเวลาในแท่งสีมาจากที่เอเจนต์รายงานตอนจบงาน ส่วนขั้นรวม/แก้ไม่ได้จับเวลา (แท่งลายทแยง)\n\n`;
+  s += `### Gantt แผน / Gantt จริง / แผน vs จริง (LAB 2–3)\n\n![Gantt แผน](${p}docs/img/gantt-plan.png)\n\n![Gantt จริง](${p}docs/img/gantt-actual.png)\n\n![แผน vs จริง](${p}docs/img/compare.png)\n\n⚠️ เวลา "แผน" เป็นค่าสมมติ (โควตา 4 บัญชีสมมติ) ที่ตั้งหลังทำเสร็จ เพราะไม่มี dag-planner · ไฟล์: [blocks.json](${p}plan/blocks.json) · [REPORT.md](${p}plan/REPORT.md)\n\n`;
   s += `### ภาพหน้าเว็บ (${shots.length} หน้า)\n\n| | |\n|---|---|\n`;
   for (let i = 0; i < shots.length; i += 2) {
     const cell = (x) => (x ? `**${x.note}**<br><img src="${p}docs/img/${x.name}" width="460">` : '');
