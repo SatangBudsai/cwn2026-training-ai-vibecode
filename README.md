@@ -158,7 +158,8 @@ ffmpeg-static: npm 12 บล็อก install script ให้รัน `node no
 | TC-NFR-04 | ไฟล์ DB ชื่อ `app.db` แต่ test หา `egov.db` | `app/src/vault.js` |
 | TC-NFR-01, TC-PAY-04 (บางรอบ) | race: แนบไฟล์เร็วก่อนสร้างร่างเสร็จ | `wizard.js` |
 
-**รอบ 2 (เว็บที่สร้างใหม่):** ล้ม 12 ข้อ ทั้งหมดเว็บผิด (otp-step/	haid-error/ee-error/upload-error ค้างใน DOM, /head/approvals เรียก API ผิดตัว, ปุ่มตีกลับสลับเปิดปิด, ค่าธรรมเนียมคิดฝั่ง client, aria-label ไม่ตรงข้อความ, ow-owner, ช่อง from/to ของ Audit UNMASK, issue-btn โชว์ผิดคน) ไม่แก้ test เลย ตารางเต็มใน [REPORT/รายงาน I01](week02_website/plan/REPORT.md)
+**รอบ 2 (เว็บที่สร้างใหม่):** ล้ม 12 ข้อ ทั้งหมดเว็บผิด (otp-step, thaid-error, fee-error, upload-error ค้างใน DOM · /head/approvals เรียก API ผิดตัว · ปุ่มตีกลับสลับเปิด/ปิด · ค่าธรรมเนียมคิดฝั่ง client · aria-label ไม่ตรงข้อความ · row-owner · ช่อง from/to ของ Audit UNMASK · issue-btn โชว์ผิดคน) ไม่แก้ test เลย ตารางเต็มใน [REPORT.md](week02_website/plan/REPORT.md)
+ow-owner, ช่อง from/to ของ Audit UNMASK, issue-btn โชว์ผิดคน) ไม่แก้ test เลย ตารางเต็มใน [REPORT/รายงาน I01](week02_website/plan/REPORT.md)
 
 แก้ test 1 จุด (`upload.spec.js` TC-UPLOAD-01) โดย **เพิ่ม** การตรวจให้ error ชัดขึ้นตอนเปิด B02 ไม่ได้ลดเกณฑ์
 
