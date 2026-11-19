@@ -1,0 +1,14 @@
+{
+  "name": "eservice-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "list": "playwright test --list"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "1.61.1",
+    "ffmpeg-static": "^5.2.0"
+  }
+}

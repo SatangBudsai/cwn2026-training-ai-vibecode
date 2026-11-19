@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>คิวงาน - e-Service กลาง</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปที่เนื้อหาหลัก</a>
+<div id="hdr"></div>
+<main id="main" class="container" tabindex="-1">
+  <h1>คิวงาน</h1>
+  <div id="msgs"></div>
+  <div class="card row">
+    <div class="field" style="margin:0;min-width:220px">
+      <label for="filter">กรองรายการ</label>
+      <select id="filter" data-testid="queue-filter">
+        <option value="all">ทั้งหมด</option>
+        <option value="unclaimed">ยังไม่มีผู้รับ</option>
+        <option value="mine">ของฉัน</option>
+      </select>
+    </div>
+    <p id="wl" hidden style="margin:0">งานในมือของฉัน: <strong class="kpi" data-testid="workload-count">0</strong> / 10</p>
+  </div>
+  <div class="table-wrap">
+    <table data-testid="queue-table">
+      <thead><tr><th scope="col">เลขคำขอ</th><th scope="col">บริการ</th><th scope="col">ผู้ยื่น</th><th scope="col">เลขบัตร</th><th scope="col">สถานะ</th><th scope="col">กำหนดเสร็จ</th><th scope="col">ระดับเตือน</th><th scope="col">ผู้ถือเรื่อง</th><th scope="col">ดำเนินการ</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <div id="empty-slot" aria-live="polite"></div>
+</main>
+<script type="module" src="/static/queue.js"></script>
+</body>
+</html>

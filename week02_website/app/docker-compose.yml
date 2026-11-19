@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3100:3100"
+    environment:
+      PORT: "3100"
+      TEST_MODE: "${TEST_MODE:-1}"
+      BUG_MODE: "${BUG_MODE:-}"
+      DB_PATH: "/data/app.db"
+      BASE_URL: "${BASE_URL:-http://localhost:3100}"
+    tmpfs:
+      - /data

@@ -1,0 +1,7 @@
+node_modules/
+app/data/
+*.log
+*.err
+e2e/test-results/
+e2e/test-report/html/
+e2e/run*.txt

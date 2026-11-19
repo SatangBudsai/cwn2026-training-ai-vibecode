@@ -1,0 +1,317 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>e-Service test report</title>
+<style>body{font-family:system-ui,sans-serif;margin:24px;background:#fff;color:#262626}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:#fff;border:2px solid #146c2e;padding:12px}.card.fail{border-color:#b01e24}.card.skip{border-color:#8c8c8c}
+.card img{width:100%}.badge{font-size:.8em;padding:2px 10px;border-radius:999px;background:#146c2e;color:#fff}
+.fail .badge{background:#b01e24}.skip .badge{background:#595959}.tag{color:#595959;font-size:.8em}button{margin-right:8px;padding:6px 16px;border-radius:999px;border:1px solid #262626;background:#fff}</style></head><body>
+<h1>e-Service — ผลทดสอบ 61 test: ผ่าน 61 · ล้ม 0 · ข้าม 0</h1>
+<p><button onclick="f('all')">ทั้งหมด</button><button onclick="f('pass')">ผ่าน</button><button onclick="f('fail')">ล้ม</button></p>
+<div class="grid">
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUDIT-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit @P1</p>
+    <img loading="lazy" src="gifs/TC-AUDIT-01.gif" alt="TC-AUDIT-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUDIT-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUDIT-02 Audit แก้/ลบไม่ได้ (405) @P1</p>
+    <img loading="lazy" src="gifs/TC-AUDIT-02.gif" alt="TC-AUDIT-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUDIT-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUDIT-03 กรองช่วงวันที่ตามเวลาไทย @P1</p>
+    <img loading="lazy" src="gifs/TC-AUDIT-03.gif" alt="TC-AUDIT-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-01 เลขบัตร 13 หลัก + checksum @P1</p>
+    <img loading="lazy" src="gifs/TC-AUTH-01.gif" alt="TC-AUTH-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-02 OTP ผิด 3 ครั้งล็อก 15 นาที @P1</p>
+    <img loading="lazy" src="gifs/TC-AUTH-02.gif" alt="TC-AUTH-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-03 ลงทะเบียนครั้งแรก @P1</p>
+    <img loading="lazy" src="gifs/TC-AUTH-03.gif" alt="TC-AUTH-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-AUTH-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-AUTH-04 เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DASH-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DASH-01 Dashboard ตัวเลขเริ่มต้น @P1</p>
+    <img loading="lazy" src="gifs/TC-DASH-01.gif" alt="TC-DASH-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DASH-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DASH-02 Dashboard ย้อนหลัง @P1</p>
+    <img loading="lazy" src="gifs/TC-DASH-02.gif" alt="TC-DASH-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DASH-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DASH-04 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DASH-04 ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 @P1</p>
+    <img loading="lazy" src="gifs/TC-DASH-04.gif" alt="TC-DASH-04">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DOC-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DOC-01 ออกเอกสารและข้อมูลในเอกสาร @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DOC-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DOC-02 ตรวจเอกสาร /verify @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-DOC-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-DOC-03 เอกสารหมดอายุและลายเซ็นไม่ตรง @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-FEE-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03 @P1</p>
+    <img loading="lazy" src="gifs/TC-FEE-01.gif" alt="TC-FEE-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NFR-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NFR-01 Responsive 375/768/1280 @P1</p>
+    <img loading="lazy" src="gifs/TC-NFR-01.gif" alt="TC-NFR-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NFR-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NFR-02 WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว @P1</p>
+    <img loading="lazy" src="gifs/TC-NFR-02.gif" alt="TC-NFR-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NFR-02B <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NFR-02B คีย์บอร์ดอย่างเดียวยื่นคำขอจนถึงสร้าง QR @P1</p>
+    <img loading="lazy" src="gifs/TC-NFR-02B.gif" alt="TC-NFR-02B">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NFR-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NFR-03 Health เวลาโหลด และผลซ้ำได้ @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NFR-03B <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NFR-03B ปิด hook เมื่อไม่ตั้ง TEST_MODE @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NFR-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NFR-04 เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NOTI-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NOTI-01 ผู้รับแจ้งเตือนตามระดับ @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-NOTI-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PAY-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PAY-01 อายุ QR 15:00 @P1</p>
+    <img loading="lazy" src="gifs/TC-PAY-01.gif" alt="TC-PAY-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PAY-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PAY-02 ยอดเงินและ callback ซ้ำ @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PAY-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PAY-03 ชำระพร้อมกัน เลขไม่ซ้ำ @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PAY-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PAY-04 เลขคำขอข้ามปี 2569 -> 2570 @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PDPA-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PDPA-01 ปิดบังเลขบัตรบนจอ @P1</p>
+    <img loading="lazy" src="gifs/TC-PDPA-01.gif" alt="TC-PDPA-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PDPA-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-PDPA-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit @P1</p>
+    <img loading="lazy" src="gifs/TC-PDPA-03.gif" alt="TC-PDPA-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-QUEUE-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-QUEUE-01 ลำดับคิวและขอบเขตแผนก @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-QUEUE-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-QUEUE-02 รับเรื่องซ้อน (พร้อมกันและต่อกัน) @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-QUEUE-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-QUEUE-03 งานในมือสูงสุด 10 @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-RBAC-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) @P1</p>
+    <img loading="lazy" src="gifs/TC-RBAC-01.gif" alt="TC-RBAC-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-RBAC-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) @P1</p>
+    <img loading="lazy" src="gifs/TC-RBAC-02.gif" alt="TC-RBAC-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-RBAC-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-RBAC-03 ตารางสิทธิ์หน้า/API ตามบทบาท @P1</p>
+    <img loading="lazy" src="gifs/TC-RBAC-03.gif" alt="TC-RBAC-03">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-RBAC-04 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-RBAC-05 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-RBAC-05 สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ @P1</p>
+    <img loading="lazy" src="gifs/TC-RBAC-05.gif" alt="TC-RBAC-05">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-RBAC-06 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-RBAC-06 ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-a <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว a @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-b <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว b @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-c <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว c @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-d <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว d @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-e <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว e @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-f <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว f @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-g <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว g @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-h <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว h @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-01-i <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-01 กำหนดเสร็จตามตารางวันที่ แถว i @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SLA-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SLA-03 ระดับเตือน ปกติ/ใกล้/เกิน @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SUBMIT-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SUBMIT-01 ยื่นคำขอ SV-01 ครบวงจร @P1</p>
+    <img loading="lazy" src="gifs/TC-SUBMIT-01.gif" alt="TC-SUBMIT-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SUBMIT-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SUBMIT-02 เอกสารบังคับครบก่อนชำระ @P1</p>
+    <img loading="lazy" src="gifs/TC-SUBMIT-02.gif" alt="TC-SUBMIT-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-SUBMIT-03 <span class="tag">P2</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-SUBMIT-03 ร่าง การลบร่าง และการยกเลิก @P2</p>
+    <p><i>ไม่ทำ GIF: ไม่ใช่ระดับ P1</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-UPLOAD-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-UPLOAD-01 ขนาดและจำนวนไฟล์ @P1</p>
+    <img loading="lazy" src="gifs/TC-UPLOAD-01.gif" alt="TC-UPLOAD-01">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-UPLOAD-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-UPLOAD-02 ชนิดไฟล์จากเนื้อไฟล์ @P1</p>
+    <img loading="lazy" src="gifs/TC-UPLOAD-02.gif" alt="TC-UPLOAD-02">
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WORKFLOW-01 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WORKFLOW-01 SV-01 อนุมัติ + ออกเอกสาร @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WORKFLOW-02 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WORKFLOW-02 SV-02 ผ่านหัวหน้า @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WORKFLOW-03 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WORKFLOW-03 SV-03 สามขั้นตอน @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WORKFLOW-04 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WORKFLOW-05 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WORKFLOW-05 เหตุผล >= 10 ตัวอักษร @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section>
+  <section class="card pass" data-status="pass">
+    <h3>TC-WORKFLOW-06 <span class="tag">P1</span> <span class="badge">ผ่าน</span></h3>
+    <p>TC-WORKFLOW-06 เวลาแก้ไข 168 ชั่วโมง @P1</p>
+    <p><i>ไม่มี GIF: test นี้ไม่ได้เปิดเบราว์เซอร์ (เรียก API อย่างเดียว)</i></p>
+  </section></div>
+<script>function f(s){document.querySelectorAll('.card').forEach(c=>c.style.display=(s==='all'||c.dataset.status===s)?'':'none')}</script>
+</body></html>

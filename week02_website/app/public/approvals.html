@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>รออนุมัติ - e-Service กลาง</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปที่เนื้อหาหลัก</a>
+<div id="hdr"></div>
+<main id="main" class="container" tabindex="-1">
+  <h1>รายการรออนุมัติ</h1>
+  <div id="msgs"></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">เลขคำขอ</th><th scope="col">บริการ</th><th scope="col">ผู้ยื่น</th><th scope="col">กำหนดเสร็จ</th><th scope="col">ดำเนินการ</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p id="empty" class="note" hidden>ไม่มีรายการรออนุมัติ</p>
+</main>
+<script type="module" src="/static/approvals.js"></script>
+</body>
+</html>

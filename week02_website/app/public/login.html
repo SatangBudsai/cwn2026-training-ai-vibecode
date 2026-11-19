@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>เข้าสู่ระบบ - e-Service กลาง เทศบาลนครตัวอย่าง</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="login-wrap">
+<main id="main" class="card accent">
+  <h1>e-Service กลาง เทศบาลนครตัวอย่าง</h1>
+  <p class="note">ระบบบริการอิเล็กทรอนิกส์ (ระบบจำลองเพื่อการเรียนรู้)</p>
+  <div class="tabs" role="tablist" aria-label="ประเภทผู้ใช้">
+    <button type="button" class="tab" role="tab" id="tab-c" aria-controls="panel-c" aria-selected="true" data-testid="login-tab-citizen">ประชาชน</button>
+    <button type="button" class="tab" role="tab" id="tab-s" aria-controls="panel-s" aria-selected="false" data-testid="login-tab-staff">เจ้าหน้าที่</button>
+  </div>
+
+  <section id="panel-c" role="tabpanel" aria-labelledby="tab-c">
+    <div class="field">
+      <label for="idNo">เลขบัตรประชาชน 13 หลัก</label>
+      <input type="text" id="idNo" inputmode="numeric" autocomplete="off" data-testid="thaid-id-input">
+    </div>
+    <div id="thaid-slot" aria-live="polite"></div>
+    <button type="button" class="btn" id="thaid-btn" data-testid="thaid-submit">เข้าสู่ระบบด้วย ThaiD (จำลอง)</button>
+    <div id="lock-slot" aria-live="polite"></div>
+    <div id="otp-box" hidden>
+      <h2>ยืนยันรหัส OTP</h2>
+      <div class="field">
+        <label for="otp">รหัส OTP</label>
+        <input type="text" id="otp" inputmode="numeric" autocomplete="one-time-code" data-testid="otp-input">
+      </div>
+      <div id="otp-slot" aria-live="polite"></div>
+      <button type="button" class="btn" id="otp-btn" data-testid="otp-submit">ยืนยัน OTP</button>
+    </div>
+  </section>
+
+  <section id="panel-s" role="tabpanel" aria-labelledby="tab-s" hidden>
+    <div class="field">
+      <label for="su">ชื่อผู้ใช้</label>
+      <input type="text" id="su" autocomplete="username" data-testid="staff-username">
+    </div>
+    <div class="field">
+      <label for="sp">รหัสผ่าน</label>
+      <input type="password" id="sp" autocomplete="current-password" data-testid="staff-password">
+    </div>
+    <div id="staff-slot" aria-live="polite"></div>
+    <button type="button" class="btn" id="staff-btn" data-testid="staff-submit">เข้าสู่ระบบเจ้าหน้าที่ (SSO ภาครัฐ จำลอง)</button>
+  </section>
+</main>
+</div>
+<script type="module" src="/static/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard - e-Service กลาง</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปที่เนื้อหาหลัก</a>
+<div id="hdr"></div>
+<main id="main" class="container" tabindex="-1">
+  <h1>Dashboard ผู้บริหาร</h1>
+  <div id="msgs"></div>
+  <div class="card row">
+    <div class="field" style="margin:0;min-width:200px">
+      <label for="period">ช่วงเวลา</label>
+      <select id="period" data-testid="period-select">
+        <option value="2026-12">ธ.ค. 2569</option>
+        <option value="2026-11">พ.ย. 2569</option>
+        <option value="2026-10">ต.ค. 2569</option>
+        <option value="2026">ทั้งปี 2569</option>
+      </select>
+    </div>
+    <div class="field" style="margin:0;min-width:200px">
+      <label for="service">บริการ</label>
+      <select id="service" data-testid="service-select">
+        <option value="ALL">ทุกบริการ</option>
+        <option value="SV-01">SV-01 ขอหนังสือรับรอง</option>
+        <option value="SV-02">SV-02 ขออนุญาตประกอบกิจการ</option>
+        <option value="SV-03">SV-03 ขออนุญาตก่อสร้าง/ต่อเติมอาคาร</option>
+      </select>
+    </div>
+    <a class="btn secondary" id="xlsx" href="#" download data-testid="export-xlsx-btn">ส่งออก Excel</a>
+    <a class="btn secondary" id="pdf" href="#" download data-testid="export-pdf-btn">ส่งออก PDF</a>
+  </div>
+  <section class="grid cols3" aria-label="ตัวชี้วัด">
+    <div class="card"><div class="kpi-label">รับเรื่อง</div><div class="kpi" data-testid="kpi-received">–</div></div>
+    <div class="card"><div class="kpi-label">ปิดงาน</div><div class="kpi" data-testid="kpi-closed">–</div></div>
+    <div class="card"><div class="kpi-label">ทันกำหนด %</div><div class="kpi" data-testid="kpi-ontime-pct">–</div></div>
+    <div class="card"><div class="kpi-label">งานคงค้าง</div><div class="kpi" data-testid="kpi-backlog">–</div></div>
+    <div class="card"><div class="kpi-label">เกินกำหนดคงค้าง</div><div class="kpi" data-testid="kpi-overdue">–</div></div>
+  </section>
+  <section class="card">
+    <h2>งานในมือรายเจ้าหน้าที่</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th scope="col">เจ้าหน้าที่</th><th scope="col">งานในมือ</th></tr></thead>
+      <tbody id="wl"></tbody>
+    </table></div>
+  </section>
+</main>
+<script type="module" src="/static/dashboard.js"></script>
+</body>
+</html>

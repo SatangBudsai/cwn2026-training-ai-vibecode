@@ -1,0 +1,1 @@
+server boots; smoke tests pass (node smoke: reset, auth, SV-01/02/03 flows, SLA, OTP lock, dashboard, audit, admin, pages)

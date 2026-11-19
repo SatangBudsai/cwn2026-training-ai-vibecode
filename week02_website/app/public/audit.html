@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audit Trail - e-Service กลาง</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปที่เนื้อหาหลัก</a>
+<div id="hdr"></div>
+<main id="main" class="container" tabindex="-1">
+  <h1>Audit Trail</h1>
+  <div id="msgs"></div>
+  <div class="card">
+    <div class="grid cols3">
+      <div class="field"><label for="actor">ผู้ใช้ (username)</label><input type="text" id="actor" data-testid="audit-filter-actor"></div>
+      <div class="field"><label for="event">เหตุการณ์</label><select id="event" data-testid="audit-filter-event"><option value="">ทั้งหมด</option></select></div>
+      <div class="field"><label for="from">ตั้งแต่วันที่</label><input type="date" id="from" data-testid="audit-filter-from"></div>
+      <div class="field"><label for="to">ถึงวันที่</label><input type="date" id="to" data-testid="audit-filter-to"></div>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn" id="apply" data-testid="audit-apply-btn">ค้นหา</button>
+      <a class="btn secondary" id="csv" href="#" download data-testid="audit-export-csv-btn">ส่งออก CSV</a>
+    </div>
+    <p>จำนวนรายการ: <strong data-testid="audit-count" aria-live="polite">0</strong></p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">เวลา</th><th scope="col">ผู้ใช้</th><th scope="col">บทบาท</th><th scope="col">เหตุการณ์</th><th scope="col">เลขคำขอ</th><th scope="col">สถานะ</th><th scope="col">รายละเอียด</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</main>
+<script type="module" src="/static/audit.js"></script>
+</body>
+</html>
