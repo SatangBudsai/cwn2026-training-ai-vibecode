@@ -7,7 +7,7 @@ const shots = JSON.parse(fs.readFileSync(path.join(root, 'docs/img/shots.json'),
 const gifs = JSON.parse(fs.readFileSync(path.join(__dirname, 'test-report/gifs.json'), 'utf8')).filter((t) => t.gifSeconds);
 
 const section = (p) => {
-  const q = p ? 'week2/egov-eservice/' : '../week2/egov-eservice/';
+  const q = p ? 'week02_website/egov-eservice/' : 'egov-eservice/';
   let s = `## ภาพประกอบ
 
 ### แผนภาพ DAG จาก dag-planner (LAB 2)

@@ -7,7 +7,7 @@
 | 1 | ทดสอบเว็บร้านสัตว์เลี้ยง PawPantry ด้วย Playwright ตาม test plan | [`week01/`](week01) | 41/42 ผ่านโหมดปกติ · เจอบั๊กจริง 1 · BUG_MODE ล้ม 5 |
 | 1 | เว็บสุ่มร้านอาหาร (lunch-draw) | [`week01_website/`](week01_website) | – |
 | 2 | **e-Service กลาง เทศบาลนครตัวอย่าง** (การบ้านหลัก) | [`week02_website/`](week02_website) | **Docker: 61/61 ผ่านรอบเดียว · BUG_MODE จับได้ 12/12** |
-| 2 | **LAB 2–3 ทีมเอเจนต์ (dag-planner + agent-team)** | [`week2/egov-eservice/`](week2/egov-eservice) | **13/13 บล็อก · เว็บของทีม 79/79 · BUG_MODE 12/12** |
+| 2 | **LAB 2–3 ทีมเอเจนต์ (dag-planner + agent-team)** | [`week02_website/egov-eservice/`](week02_website/egov-eservice) | **13/13 บล็อก · เว็บของทีม 79/79 · BUG_MODE 12/12** |
 | 2 | ชุดโจทย์จากผู้สอน (อ่านอย่างเดียว) | [`week2_student/`](week2_student) | – |
 
 อ่านรายละเอียดของ Week 2 เพิ่มได้ที่ [`week02_website/README.md`](week02_website/README.md)
@@ -24,8 +24,8 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 | ขั้นตาม LAB | สถานะ | หลักฐาน |
 |---|---|---|
 | LAB 1 เข้าใจโจทย์ ตอบ 3 ข้อ | ✅ | เฉลยด้านล่าง |
-| LAB 2 แผน DAG | ✅ **dag-planner ใน container `multi-account`** · โควตาจริง yolo1–3 · 13 บล็อก · แผน 112.5 นาที · สายวิกฤต B01→B03→B05→B07→I01→X01 | [`week2/egov-eservice/`](week2/egov-eservice/README.md) (blocks.json · dag.png · gantt-plan.png · PLAN.md) |
-| LAB 3 สร้างเว็บ | ✅ **agent-team รันแผนจริง เสร็จ 13/13 บล็อก** · 2,417,922 tokens · เวลาจริง 341.7 นาที (รวมรอโควตารีเซ็ต ~4 ชม.) · เว็บที่ทีมสร้างรันซ้ำบนเครื่องด้วย Docker **79/79 ผ่าน** · B01/B12 ล้มตรง TC | [`week2/egov-eservice/`](week2/egov-eservice/README.md) (gantt-actual.png · compare.png · REPORT.md · app/) |
+| LAB 2 แผน DAG | ✅ **dag-planner ใน container `multi-account`** · โควตาจริง yolo1–3 · 13 บล็อก · แผน 112.5 นาที · สายวิกฤต B01→B03→B05→B07→I01→X01 | [`week02_website/egov-eservice/`](week02_website/egov-eservice/README.md) (blocks.json · dag.png · gantt-plan.png · PLAN.md) |
+| LAB 3 สร้างเว็บ | ✅ **agent-team รันแผนจริง เสร็จ 13/13 บล็อก** · 2,417,922 tokens · เวลาจริง 341.7 นาที (รวมรอโควตารีเซ็ต ~4 ชม.) · เว็บที่ทีมสร้างรันซ้ำบนเครื่องด้วย Docker **79/79 ผ่าน** · B01/B12 ล้มตรง TC | [`week02_website/egov-eservice/`](week02_website/egov-eservice/README.md) (gantt-actual.png · compare.png · REPORT.md · app/) |
 | LAB 4 TEST-PLAN | ✅ **61/61 ผ่านในรอบเดียวกับ container Docker** (ครอบ 51 TC · 0 flaky · 2.4 นาที) · GIF P1 24 ไฟล์ · ข้อที่เคยล้มแยกเป็นเว็บผิด/test ผิด/สภาพแวดล้อม ใน README ของ week02 | `week02_website/e2e/test-report/` (เปิด `index.html`) |
 | LAB 5 BUG-HUNT | ✅ **จับได้ 12 จาก 12 ใน Docker** (สร้าง container ใหม่ทุกบั๊ก · retries 0) + รวมบั๊ก 2 ชุดได้ผลรวมพอดี | [`week02_website/BUG-HUNT.md`](week02_website/BUG-HUNT.md) |
 
@@ -37,9 +37,9 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 
 ### แผนภาพ DAG จาก dag-planner (LAB 2)
 
-![DAG](week2/egov-eservice/dag.png)
+![DAG](week02_website/egov-eservice/dag.png)
 
-แผนจากโควตาจริงของ yolo1–3 · [PLAN.md](week2/egov-eservice/PLAN.md) · [blocks.json](week2/egov-eservice/blocks.json)
+แผนจากโควตาจริงของ yolo1–3 · [PLAN.md](week02_website/egov-eservice/PLAN.md) · [blocks.json](week02_website/egov-eservice/blocks.json)
 
 ### ผล Playwright (LAB 4)
 
@@ -53,13 +53,13 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 
 ### Gantt แผน / Gantt จริง / แผน vs จริง จาก dag-planner (LAB 2–3)
 
-![Gantt แผน](week2/egov-eservice/gantt-plan.png)
+![Gantt แผน](week02_website/egov-eservice/gantt-plan.png)
 
-![Gantt จริง](week2/egov-eservice/gantt-actual.png)
+![Gantt จริง](week02_website/egov-eservice/gantt-actual.png)
 
-![แผน vs จริง](week2/egov-eservice/compare.png)
+![แผน vs จริง](week02_website/egov-eservice/compare.png)
 
-เสร็จ 13/13 บล็อก · เวลาจริงรวมช่วงรอโควตารีเซ็ต · [REPORT.md](week2/egov-eservice/REPORT.md)
+เสร็จ 13/13 บล็อก · เวลาจริงรวมช่วงรอโควตารีเซ็ต · [REPORT.md](week02_website/egov-eservice/REPORT.md)
 
 ### ภาพหน้าเว็บ (13 หน้า)
 
@@ -111,7 +111,7 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 <!-- rerun:start -->
 ## LAB 2–3 · ทีมเอเจนต์ใน container `multi-account` (dag-planner + agent-team)
 
-รันพรอมต์ขั้น 0–3 ของ PROMPTS จริงใน container `multi-account` ด้วยบัญชี Claude yolo1–yolo3 ที่ผู้ใช้ล็อกอินเอง รายละเอียดเต็ม: [`week2/egov-eservice/README.md`](week2/egov-eservice/README.md)
+รันพรอมต์ขั้น 0–3 ของ PROMPTS จริงใน container `multi-account` ด้วยบัญชี Claude yolo1–yolo3 ที่ผู้ใช้ล็อกอินเอง รายละเอียดเต็ม: [`week02_website/egov-eservice/README.md`](week02_website/egov-eservice/README.md)
 
 | ขั้น | ผลที่รันจริง |
 |---|---|
@@ -123,11 +123,11 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 | X01 (ในทีม) | BUG_MODE จับได้ 12/12 · รวมบั๊ก 2 ชุดได้ผลรวมพอดี |
 | รันซ้ำบนเครื่อง | `docker compose up` → Playwright **79 passed (1.1m)** · B01 → TC-FEE-01 ล้ม · B12 → TC-WORKFLOW-04 ล้ม |
 
-![DAG dag-planner](week2/egov-eservice/dag.png)
+![DAG dag-planner](week02_website/egov-eservice/dag.png)
 
-![Gantt จริง dag-planner](week2/egov-eservice/gantt-actual.png)
+![Gantt จริง dag-planner](week02_website/egov-eservice/gantt-actual.png)
 
-![แผน vs จริง dag-planner](week2/egov-eservice/compare.png)
+![แผน vs จริง dag-planner](week02_website/egov-eservice/compare.png)
 
 <!-- rerun:end -->
 ## วิธีรัน

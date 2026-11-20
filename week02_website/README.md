@@ -8,8 +8,8 @@ ThaiD, PromptPay และลายเซ็นดิจิทัลเป็น
 
 | ขั้น | ผล |
 |---|---|
-| LAB 2 วางแผนด้วย dag-planner | ✅ 13 บล็อก จากโควตาจริงของ yolo1–3 ใน container `multi-account` → [`../week2/egov-eservice/`](../week2/egov-eservice/README.md) |
-| LAB 3 ทีมเอเจนต์สร้างเว็บ (agent-team) | ✅ เสร็จ 13/13 บล็อก · 2,417,922 tokens · เว็บที่ได้รันซ้ำบนเครื่องผ่าน 79/79 → [`../week2/egov-eservice/`](../week2/egov-eservice/README.md) |
+| LAB 2 วางแผนด้วย dag-planner | ✅ 13 บล็อก จากโควตาจริงของ yolo1–3 ใน container `multi-account` → [`egov-eservice/`](egov-eservice/README.md) |
+| LAB 3 ทีมเอเจนต์สร้างเว็บ (agent-team) | ✅ เสร็จ 13/13 บล็อก · 2,417,922 tokens · เว็บที่ได้รันซ้ำบนเครื่องผ่าน 79/79 → [`egov-eservice/`](egov-eservice/README.md) |
 | เว็บในโฟลเดอร์นี้ (`app/`) | เว็บรอบก่อนที่ปรับดีไซน์ต่อ ใช้กับผล LAB 4–5 ด้านล่าง |
 | รัน TEST-PLAN (ไม่เปิดบั๊ก) ใน Docker | **61 test ผ่านครบ 61 ในรอบเดียว** (ครอบ 51 TC) · 0 ล้ม · 0 flaky · 0 ข้าม · 2.4 นาที → `e2e/test-report/results.json` |
 | BUG_MODE B01–B12 ใน Docker | **จับได้ 12 จาก 12** (retries 0 ไม่มี test ล้มแบบสุ่มปน) + ทดสอบรวมบั๊ก 2 ชุด → [`BUG-HUNT.md`](BUG-HUNT.md) |
@@ -63,9 +63,9 @@ OTP ผิด 3 ครั้งล็อกเลขบัตร 15 นาที
 
 ### แผนภาพ DAG จาก dag-planner (LAB 2)
 
-![DAG](../week2/egov-eservice/dag.png)
+![DAG](egov-eservice/dag.png)
 
-แผนจากโควตาจริงของ yolo1–3 · [PLAN.md](../week2/egov-eservice/PLAN.md) · [blocks.json](../week2/egov-eservice/blocks.json)
+แผนจากโควตาจริงของ yolo1–3 · [PLAN.md](egov-eservice/PLAN.md) · [blocks.json](egov-eservice/blocks.json)
 
 ### ผล Playwright (LAB 4)
 
@@ -79,13 +79,13 @@ OTP ผิด 3 ครั้งล็อกเลขบัตร 15 นาที
 
 ### Gantt แผน / Gantt จริง / แผน vs จริง จาก dag-planner (LAB 2–3)
 
-![Gantt แผน](../week2/egov-eservice/gantt-plan.png)
+![Gantt แผน](egov-eservice/gantt-plan.png)
 
-![Gantt จริง](../week2/egov-eservice/gantt-actual.png)
+![Gantt จริง](egov-eservice/gantt-actual.png)
 
-![แผน vs จริง](../week2/egov-eservice/compare.png)
+![แผน vs จริง](egov-eservice/compare.png)
 
-เสร็จ 13/13 บล็อก · เวลาจริงรวมช่วงรอโควตารีเซ็ต · [REPORT.md](../week2/egov-eservice/REPORT.md)
+เสร็จ 13/13 บล็อก · เวลาจริงรวมช่วงรอโควตารีเซ็ต · [REPORT.md](egov-eservice/REPORT.md)
 
 ### ภาพหน้าเว็บ (13 หน้า)
 
@@ -185,7 +185,7 @@ node make-charts.js     # กราฟ README ทั้งหมด → docs/img
 
 ## สิ่งที่ต่างจากโจทย์/ที่ยังไม่ได้ทำ
 
-- **LAB 2–3 รันจริงด้วย dag-planner + agent-team ใน container `multi-account`** ผลอยู่ที่ [`week2/egov-eservice/`](../week2/egov-eservice/README.md) · แผนเก่าในโฟลเดอร์ `plan/` และ `rerun/` ของโฟลเดอร์นี้เป็นรอบก่อนที่ยังไม่มี container (เก็บไว้เป็นประวัติ) · บล็อกกฎตัวเลขใช้ `yolo` แทน `review` เพราะไม่มีบัญชี Codex
+- **LAB 2–3 รันจริงด้วย dag-planner + agent-team ใน container `multi-account`** ผลอยู่ที่ [`egov-eservice/`](egov-eservice/README.md) · แผนเก่าในโฟลเดอร์ `plan/` และ `rerun/` ของโฟลเดอร์นี้เป็นรอบก่อนที่ยังไม่มี container (เก็บไว้เป็นประวัติ) · บล็อกกฎตัวเลขใช้ `yolo` แทน `review` เพราะไม่มีบัญชี Codex
 - **จำนวน test:** 61 test ครอบ 51 TC เพราะ TC-SLA-01 แยกเป็น 9 test (แถว a–i) และมี TC-NFR-02B, TC-NFR-03B เพิ่ม 2 ข้อ (TC-NFR-03B ใช้เว็บพอร์ต 3101 ที่ไม่ตั้ง TEST_MODE)
 - **GIF มี 24 จาก test ระดับ P1 ทั้งหมด 52** เพราะอีก 28 ข้อเป็น test ที่เรียก API อย่างเดียว ไม่เปิดเบราว์เซอร์ จึงไม่มีวิดีโอ
 - **ไม่มีเกณฑ์ให้คะแนนในชุดโจทย์** ถ้าผู้สอนมีเกณฑ์แยกต่างหากยังไม่ได้เทียบ
